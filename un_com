@@ -1,0 +1,40 @@
+                CHAPTER 3
+
+
+Chapter 3.  You might want to start this chapter off with a little more breadth in background.  Why do you want to algorithmically find 4-manifolds bounding 3-manifolds?  I think algorithmic computation of the Rochlin invariant of 3-manifolds is pretty compelling.  Things like trying to find exotic smooth structures on S^1 x D^3 are pretty compelling, and so on. This is a good place to talk about these things.  I can help you fill in the details when we next meet.  Friday?
+
+
+
+Just before section 5.1 you talk of a shadow of T'', but this is a punctured manifold.  In chapter 3 you show that closed manifolds have shadows, but at that point there is no discussion of shadows of punctured manifolds.  You probably should describe what you mean by a shadow of a non-closed manifold, before you talk about creating one.  If you have talked about this earlier in the paper, this would be a good place to refer back to that discussion. 
+
+
+
+                CHAPTER 2
+
+Definition 2.1.1, when you say the boundary of a manifold is closed, there are two different yet correct interpretations of this statement.  1) the boundary is a closed subspace of the ambient manifold and 2) the boundary is closed as a manifold, i.e. it has no boundary.  I suspect you mean (2).
+
+The proof of (1) basically is local compactness: that the boundary is a locally-finite union of relatively closed subspaces.   The proof of (2) is a little more involved.  In the smooth case it reduces to linear algebra, but in the topological case you need the Invariance of Dimension theorem, which isn't always considered an easy theorem -- you need some tool, like homology, to prove it.  Is there any reason you define topological manifolds?  If not, it might read more like a distraction.  Or if you want to go into some details on topological vs. PL vs. smooth manifolds it would be best to minimize it. 
+
+Definition 2.1.2 is incomplete.  You might want to also say you're going to restrict to smooth manifolds here as tangent space does not make sense for topological or PL manifolds. 
+
+Your citations in chapter 2 appear broken. 
+
+Theorem 2.1.4 could be stated more elegantly.  Perhaps remove the entire statement about h'_t being the identity on some funny set.   In the paragraph after Theorem 2.1.4 you could mention that if we let L be the union of the images of h_t for all t, then the ambient isotopy can be chosen to be the identity outside of an arbitrarily small neighbourhood of L. 
+
+Remark 2.2.2, concerning the normal bundle in point (2) at the bottom of the page, you should perhaps address the uniqueness in this "identification".  There is a uniqueness theorem for the tubular neighbourhood theorem that addresses this.  It says that the identification is isotopic to one that preserves the normal fibres.  Moreover, you can demand that the identification is linear (in the sense of vector bundles) on the normal fibres.  So your identifications are parametrized by maps from S^{k-1} to O(n-k).  
+
+Remark 2.2.3: technically a framing of \phi_0(\pm 1) is not an element of GL_n(R).  It's an element of the frame bundle of the tangent bundle of M, over the points \phi_0(\pm 1).  You can identify this with two copies of GL_n(R), but there is no canonical identification.   When you talk about the framing being orientation-preserving or reversing respectively, you perhaps mean to restrict to \phi_0(1) or \phi_0(-1) respectively.  But if you think of \phi_0(\pm 1) as a two-element set your comments do not make sense. 
+
+In your later paragraph (still 2.2.3) you talk freely about things being elements of GL_2(R) but again this is not quite true.   You should perhaps be a little more clear about your goal here.  Is the point of this paragraph to ascribe meaning to the idea of a framing as an integer -- a replacement for the actual definition of framing in the case where you only care about isotopy-classes? 
+2.3: Don't you mean to call your "An n-simplex" "the standard n-simplex"?  There appears to be no flexibility in your definition. 
+
+Bottom of page 10, your result about manifolds in dimension <= 6 having essentially unique smoothings should probably also be attributed to Hirsch and Mazur "Smoothings of PL manifolds" Ann. Math. Stud. 80.  Milnor's work is more about the fact that spheres in dimension <= 6 have unique smooth structures.  Hirsch and Mazur don't really need Milnor's work.  And the big part of Milnor's work is that in dimension 7, there are non-standard smooth structures on S^7. 
+
+            CHAPTER 4
+
+Chapter 4, especially around page 35 gets difficult to read with no figures. 
+
+            CHAPTER 5
+
+On page 44 near the top you state that "ignoring false regions... produces an equivalent 4-manifold" but you don't appear to have stated clearly what the 4-manifold construction process is in either situation.  So it feels a bit like a loose-end.    Perhaps you should fully describe the process and come to this other issue later? 
+

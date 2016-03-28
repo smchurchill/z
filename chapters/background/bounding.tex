@@ -1,0 +1,173 @@
+\label{sec:bounding}
+
+In their paper ``3--Manifolds Efficiently Bound 4--Manifolds,'' Francesco Costantino and Dylan Thurston demonstrated that $M$, a closed, orientable 3--manifold triangulated with $n$ simplices, bounds a 4--manifold $W$ triangulated using a number of simplices bounded by a quadratic polynomial in $n$.
+First, they argue that 3--manifolds bound 4--manifolds.
+Their argument builds a 4--manifold $W$ from a closed, oriented 3--manifold $M$ by filling in one boundary component of $M\times I$, denoting by $I$ the closed unit interval $[0,1]$, with 4--dimensional 2--, 3--, and 4-- handles.
+Attachment instructions for these handles are obtained by a Morse 2--function from $M$ to $\RR$.
+A Morse 2--function is defined in \cite{GayKirby14} to be a generic smooth map from a smooth $n$--manifold to a 2--manifold, just as an ordinary Morse function is a generic smooth map to a 1--manifold.
+In particular, small perturbations can turn degenerate critical points of a smooth function into non-degenerate critical points.
+In this sense, genericity guarantees non-degenerate critical points of Morse 2--functions.
+The following argument is expanded from that found in chapter 2 of \cite{CostThur08}.
+
+We prove that a 3--manifold bounds a 4--manifolds by taking $M$ to be a closed, smooth, orientable 3--manifold and $f$ a Morse 2--function from $M$ to $\RR$.
+Regular values have preimage through $f$ as the disjoint union of oriented circles.
+The image of the singular set of $f$ is a collection of arcs in $\RR$ that only intersect pairwise and transversally.
+This leaves us with a classification of critical values of $f$ into codimension 1 singularities, i.e.\ arcs away from crossings, and codimension 2 singularities, i.e.\ arc crossings.
+A 4--manifold with boundary $M$ is constructed by gluing discs to regular preimage circles and extending over each singularity type.
+To get an idea of how to extend over these singularities, we examine what happens one dimension down.
+
+A closed 2--manifold $\Sigma$ bounds a 3--manifold if and only if the Euler characteristic $\chi(\Sigma)$ is even.
+In particular, every orientable surface bounds a 3--manifold.
+Let $\Sigma$ be an oriented 2--manifold and $f$ a Morse function $\Sigma\to\R$.
+Preimages of regular values are again circles, which we fill with discs.
+We use the language of handles to describe this filling.
+Let $\Sigma\times I$ be a 3--manifold with boundary components $\Sigma\times\{0\}=\Sigma_-$ and $\Sigma\times\{1\}=\Sigma_+$, where $\Sigma_-$ is $\Sigma$ with reversed orientation.
+Specify a regular value of $f$ in each connected component of $f(\Sigma_-)$ minus the critical values of $f$.
+Each of these regular values has preimage a disjoint collection of circles in $\Sigma_-$ which we take to be the attaching spheres of 2--handles. 
+The resulting object is a 3--manifold with one boundary component of $\Sigma_+$ and the rest corresponding to singular values of $f$.
+To obtain a 3--manifold whose boundary is $\Sigma_+$, we need only fill the boundary components corresponding to the singular values of $f$.
+
+\{FIGURE: MORSE FUNCTION AND 2--HANDLE ATTACHMENT\}
+
+Because $f$ is a Morse function whose domain is a surface, its critical points are classified.
+Locally in $\Sigma_-$, a critical point of index 0 is a minimum, of index 1 a saddle, and of index 2 a maximum of $f$.
+We can immediately deduce that the preimage of a critical level $x_0$ of index 0 or 2 will consist of a disjoint collection of circles, corresponding to the regular points of $\Sigma_-$ that also map to $x$ through $f$, along with a single point -- a local maximum or minimum of $f$.
+The case of the saddle needs more care.
+
+\{FIGURE: NEIGHBOURHOODS OF INDEX 0,1,2 CRIT. PTs\}
+
+Let $p_0$ in $\Sigma_-$ be a critical point of index 1, and $x_0$ the critical level of $f$ corresponding to $p_0$.
+Critical points of Morse functions are non--degenerate, so $f\inv (x_0)$ forms a cross near $p_0$.
+Pushing off of $x_0$ in either direction gives regular values $x$ whose preimages are circles.
+As $\Sigma_-$ is oriented, pulling back the orientation of $\R$ to $\Sigma_-$ allows us to coherently orient the preimage circles of the regular values.
+The circles above and below the saddle singularity are the result of smoothing out the cross into a pair of oriented arcs, done in two possible ways.
+The orientations of these circles orient the cross, which has two incoming arms and two outgoing arms which appear in alternating order.
+A Morse function has distinct critical levels, so the cross we know about in the connected component of $f\inv(x_0)$ containing $p_0$ must have its arms connected in $\Sigma_-$ through nonsingular orientation--preserving arcs.
+The connected component of $f\inv(x_0)$ containing $p_0$ must then be the figure 8 graph.
+Let $I$ be an interval containing $x_0$ as its only critical level.
+Then the component of $f\inv(I)$ containing $p_0$ is a small pair of pants in $\Sigma_-$.
+
+\{FIGURE: SMOOTHING OUT A CROSS AND SADDLE\}
+
+We return now to the 3--manifold constructed from $\Sigma\times I$ by gluing 2--handles to the $\Sigma_-$ boundary component.
+The boundary components consist of $\Sigma_+$ as well as a collection of components corresponding to the critical points of $f$ left over in the $\Sigma_-$ side of the boundary.
+If a critical point has index 0 or 2, then its neighbourhood is a disc.
+This disc can be grown until it meets the belt sphere of the nearest 2--handle, and the boundary component is seen to be a 2--sphere, which is filled in with a 3--ball.
+Similarly, the pair of pants near a saddle singularity is grown until it meets three belt spheres from three separate 2--handle attachments.
+The boundary component is again seen to be a 2--sphere, so is also filled with a 3--ball.
+It is reasonable to note that, had $\Sigma$ not been oriented, then the boundary component corresponding to a saddle singularity could have been a copy of $\RP^2$.
+As $\RP^2$ has Euler characteristic 1, it does not bound any 3--manifold.
+
+\{FIGURE: THREE TYPES OF 3--BALL BLOCKS\}
+
+Return now to the case of a closed, oriented 3--manifold $M$ and the generic smooth map $f:M\to \RR$.
+It is assumed that $M$ is compact, so we will also assume that the image $f(M)$ is also compact.
+To build a 4--manifold $W$ whose boundary is exactly $M$, we take the 4--manifold with boundary $M\times I$.
+We again let $M\times \{0\}=M_-$ be the boundary component with orientation opposite that of $M$, and $M\times\{1\}=M_+$ the boundary component with orientation exactly that of $M$.
+For reasons that will become clear later, we fill in the boundary component $M_+$, setting the domain of $f$ to be $M_+$.
+This will result in a 4--manifold whose boundary is $M_-$.
+The image of the singular set of $f$ is, as stated before, a set of arcs in the plane.
+These arcs separate the plane into connected regions of regular values, and we can choose $f$ so that these regions are all homeomorphic to discs.
+The discs of regular values all pull back through $f$ to open solid tori in $M$.
+We fill in $M_+$ by attaching 2--, 3--, and 4--handles where the attachment instructions are obtained through $f$.
+
+First, we take care of the regular values of $f$.
+Let $R_0$ be a disc of regular values, and shrink the region away from the critical values of $f$ slightly.
+This ``shrunken'' region is topologically closed, and homeomorphic to the closed 2--dimensional disc.
+Name this ``shrunken region'' by $R$, and take $f\inv (R)$ to be a collection of attaching neighbourhoods for 4--dimensional 2--handles.
+Take a pair of arbitrary points $p$, $q$ interior to $R$, and let $T$ be an open solid torus that projects over $R$ through $f$.
+Let the circle $f\inv (p)\cap T$ be an attaching sphere for a 2--handle.
+The orientation of $\RR$ and the curve $f\inv (q)\cap T$ determines a framing of $f\inv (p)$, and this pair completely determines the 2--handle attached over $f\inv (R)$.
+
+Next, we extend over the codimension 1 singularities.
+An arc $a_0$ of codimension 1 critical values are the image of an arc $s_0$ of critical points of $f$ in $M_+$, and the connected component of $f\inv (a_0)$ containing $s_0$ is an interval crossed with the singularities that occur in the 2--dimensional case.
+The endpoints of the arc $a_0$ are codimension 2 critical values of $f$, and the endpoints of the arc $s_0$ are critical points that map to the endpoints of $a_0$.
+Slightly shrink $a_0$ away from its boundary to the arc $a$ of critical values of $f$.
+Take $A$ to be a tubular neighbourhood of $a$ in $\RR$.
+Then $A$ is a copy of $I\times I$ so that lines in the $x$ direction of $A$ are parallel to $a$ and lines in the $y$ direction are normal to $a$.
+The parallel boundary components $I\times \{0\}$ and $I\times \{1\}$ run parallel to $a$ and sit in the boundary of the shrunken regions to either side of $a_0$, and the normal boundary components $\{0\}\times I$ and $\{1\}\times I$ normally intersect $a_0$ at $\pd a$.
+For a given normal arc $\{x\}\times I$, our analysis of the singularities of the Morse function one dimension down allow us to say that $f\inv(\{x\}\times I)$ is a disjoint collection of cylinders with either a pair of pants or a disc.
+Each point of $(I\times \{0\})\cup (I\times\{1\})$ pulls back to a circle that is a boundary component of one of these three shapes.
+Pulling $I\times \{0\}$ and $I\times\{1\}$ back through $f$ then yields cylinders.
+The 2--handles attached over the preimages of the shrunken regions to either side of $a_0$ have filled these cylinders with discs.
+Boundary circles of the $f\inv (\{x\}\times I)$ are filled by discs in $(M\times I)\cup (2\text{--handles})$, so $f$ pulls the normal arcs of $A$ back to spheres in $(M\times I)\cup (2\text{--handles})$.
+This means that each connected component of $f\inv (A)$ is a copy of $S^2\times D^1$, to which we attach 4--dimensional 3--handles.
+
+Finally, we extend over codimension 2 singularities.
+The codimension 1 singularities can be classified into definite or indefinite folds.
+This classification depends on the type of 1--dimensional Morse singularity found by pulling an arc in the plane, normal to the given singular arc, back through $f$ and examining $f$ restricted to the connected component of this preimage containing the critical point that maps through $f$ to the given singular arc.
+If the component we've found is a pair of pants, then the singular arc is an indefinite fold.
+If it is a disc, then the arc is a definite fold.
+Every codimension 2 critical value is either the crossing of a pair of definite folds, a pair of indefinite folds, or of one definite and one indefinite fold.
+A codimension 2 critical is mapped to by exactly two critical points in $M$.
+Put $x$ to be our codimension 2 critical point, and $p_1$, $p_2$ to be the critical points of $f$ projecting over $x$.
+If $x$ is the crossing of a pair of definite folds then we can analyze $p_1$, $p_2$ using Morse theory, so $p_1$, $p_2$ are each of index either 0 or 2.
+We get that the connected components of $f\inv (x)$ containing $p_1$, $p_2$ are just the points $p_1$, $p_2$.
+If $x$ is the crossing of one definite and one indefinite fold, then, without loss of generality, $p_1$ is of index 1 and $p_2$ is index 0 or 2.
+Then the connected component containing $p_1$ is the figure--eight graph from above and the component containing $p_2$ is just $p_2$.
+When $x$ is the crossing of two indefinite folds, each of $p_1$, $p_2$ is of index 1.
+Our analysis only guarantees that $p_1$, $p_2$ are the centres of crosses with arms alternating in and out of $p_i$ in the connected components of $f\inv(x)$ containing $p_i$.
+If $p_{1,2}$ are in different connected components, then each of those components is a figure--eight graph.
+If $p_{1,2}$ are in the same connected component, there are exactly two different directed graphs that contain exactly two vertices, each of degree four, that each have two edges entering and two leaving.
+
+Each crossing is in the boundary of exactly four regions of regular values and in the boundary of exactly four singular arcs.
+Label the regions $R_1,\dots,R_4$ and the singular arcs by $a_{1,2},a_{2,3}, a_{3,4}, a_{4,1}$.
+The regions are labeled in an anticlockwise order about $x$, and the arcs are named for the pair of regions they border.
+Note that every point in $\RR$ outside of the range of $f$ is vacuously a regular value of $f$.
+Let $x$, $p_{1,2}$ be as they were above.
+Let $D_x$ be a small disc in the plane containing $x$.
+There is an obvious triangulation of $D_x$ with exactly four triangles so that one vertex of each triangle corresponds to $x$, the shared boundary of a pair of triangles corresponds to an arc $a_{i,i+1}$, and the interior of each triangle corresponds to a region $R_i$ of regular values whose boundary contains $x$.
+Let $R_i$ be any of the regions containing $x$ so that $f\inv (R_i)$ is nonempty.
+At this point in our construction, we may form an arc $\gamma_i$ inside of $R_i$ from $a_{i-1,i}$ to $a_{i,i+1}$ that consists entirely of points in the boundary of the shrunken region pulled back through $f$ to attach 2--handles and points in the boundary of the tubular neighbourhood of the shrunken arc pulled back through $f$ to attach 3--handles.
+If every $R_i$ is in the image of $f$, then the union of the $\gamma_i$ is the boundary of $D_x$.
+If some region $R_i$ is outside of the image of $f$, then the arcs $a_{i-1,i}$ and $a_{i,i+1}$ are each definite folds, and the regions to either side of $R_i$ are in the image of $f$.
+This is a special case where $x$ is the crossing of a pair of definite folds, and $x$ sits on the boundary of $f(M)\subset\RR$, and in this case we do not define a $\gamma_i$.
+
+Each $D_x$ pulls back through $f$ to a collection of disjoint 3--handlebodies that, together with the boundaries of handles already attached in $(M\times I)\cup$({2-- and 3--handles}), form copies of $S^3$ to which we attach 4--dimensional 4--handles.
+When all 4--handles are attached, the component $M_+$ is completely filled, and we have a 4--manifold whose boundary is exactly $M$.
+We prove this first for the connected components that consist entirely of regular points, then use similar arguments to prove this for all other cases.
+
+Let $U$ be a component of $f\inv (D_x)$ that consists entirely of regular points.
+Then the connected component of $f\inv (x)$ that sits inside of $U$ is a circle, and $T$ is a closed regular neighbourhood of this circle, i.e.\ a solid torus in $M$.
+A meridian of this solid torus maps through $f$ to the boundary of $D_x$.
+Through handle attachment we have filled every circle in $M_+$ that maps to a point in $\pd D_x$ with a disc.
+Then $U$ shares a boundary with a solid torus $V$ in $(M\times I)\cup$(2-- and 3--handles), and the meridian of $U$ is a longitude of $V$, so $U\cup V\subset (M\times I)\cup$(2-- and 3--handles) is a 3--sphere.
+We use this 3--sphere as an attaching neighbourhood of a 4--handle.
+
+Next, we consider the case where $U$ contains only one of $p_1$ or $p_2$, abbreviated to $p$, which we recall as being a critical point of $f$ so that $f(p)=x$.
+If $p$ is a definite fold, then a pair of opposite singular arcs, say $a_{4,1}$ and $a_{2,3}$, are also definite folds, and the image of $f$ near the strand of critical points $f\inv (a_{4,1}\cup x \cup a_{2,3})$ lies entirely on one side of $a_{4,1}\cup x \cup a_{2,3}$ in the plane, which we will take to be $R_1\cup a_{1,2}\cup R_2$ without loss of generality.
+The strand $a_{1,2}$ pulls back through $f$ to only regular points in $U$, so these are circles.
+It is easy to see that $U$ is a 3--ball, and $f\inv (\gamma_1\cup\gamma_2)$ is a 2--sphere filled with discs to make another 3--ball.
+Gluing these 3--balls together results in another 3--sphere over which we may attach a 4--handle.
+
+If $p$ is an indefinite fold, then the component of $f\inv (x)$ containing $p$ is an oriented figure--eight graph embedded in $U$, $U$ is a regular neighbourhood of the figure--eight graph, and $f$ maps $\pd U$ to the boundary of $D_x$.
+Again, the boundary of $U$ maps through $f$ to 
+
+In each remaining case $U$ shares a boundary with another handlebody of the same genus and the two form a Heegard Diagram of $S^3$.
+The proof is covered in detail in Section 4.4 of \cite{CostThur08}.
+At this point, $M\cup$(2--, 3--, and 4--handles) has only one boundary component: $M_-$.
+We obtain a 4--manifold whose boundary is $M$, and whose handle decomposition contains handles of index at most 2, by building the handle decomposition dual to that we've just described.
+The process can be simplified somewhat.
+For example, the only 4--handles that can't be dealt with by extending 2-- and 3-- handles are those that were added when $p_1$ and $p_2$ were in the same connected component of $f\inv (x)$.
+The object of study that simplifies our work considerably is called the \emph{Stein complex} of the Morse 2--function $f:M\to\RR$.
+
+Let $f$ be a Morse function or Morse 2--function with compact fibers as before.
+Define the \emph{Stein factorization} of $f$ to be a factorization $f=g\comp h$ so that the following are satisfied:
+\begin{enumerate}
+  \item The map $h$ has connected fibers, and
+  \item the map $g$ is finite--to--one.
+\end{enumerate}
+We can also see the image of $h$ as the quotient space of the domain of $f$ by the connected fibers of $f$.
+The image of $h$ will also be called the \emph{Stein complex} of the map $f$.
+
+In the case of the oriented surface $\Sigma$, the Stein complex of $f$ is a graph whose vertices correspond to the singularities of $f$.
+Vertices corresponding to critical points of index 0 or 2 being of degree 1, and vertices corresponding to critical points of index 1 being of degree 3.
+We form a 3--manifold whose boundary is $\Sigma$ by starting with a disc bundle over the edges of $h(\Sigma)$, then extending over the vertices by attaching 3--balls as in the analysis above.
+There is an obvious deformation retraction of the resulting 3--manifold to the Stein complex of $f$.
+
+In the case of the 3--manifold $M$, the Stein complex is generically a surface and the possible singularities are more interesting.
+As in the analysis above, some singularities are just the singularities from the lower dimensional Morse function crossed with an interval, so the corresponding shape in the Stein complex is simply a degree--one or degree--three vertex crossed with an interval.
+The more interesting parts of the Stein complex are brought forth at the crossing of indefinite folds in the plane.
+As in the case of $\Sigma$, $M$ is a circle bundle over the Stein complex at generic points and the 4--manifold $W$ with $\pd W = M$ is a disc bundle.
+We extend over singularities by attaching handles and, as before, $W$ retracts onto the Stein complex.
+The Stein complex, along with some extra information we can obtain from $f$, provides a set of building instructions for $W$ explored in the next section.

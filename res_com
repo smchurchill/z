@@ -1,0 +1,46 @@
+                CHAPTER 2
+Your formalism with simplices at the top of page 9 has some troubles.  In particular, the facet opposite the vertex \vec 0 does not make sense with your terminology.  So your comments towards the end of the paragraph (above "FIGURE HERE IS GOOD") do not make sense.  It's probably best to just define an n-simplex as the convex hull of any (n+1) points in Euclidean (or affine space) of dimension n, in general position.  Being in general position just means that no point is contained in the convex hull of the others. 
+
+                CHAPTER 3
+
+                CHAPTER 4
+
+In Definition 4.1.1 you again make this kind of mistake with planar graphs.  In your definition of planar graph, all you assert is an embedding exists.   But you go on to refer unambiguously to one particular embedding.  So you might as well make your definition of a planar graph as a graph with a fixed embedding in the plane. 
+
+Definition 4.1.2 is a little redundant.  If a function is defined on an affine space on the points p_1, p_2, ..., p_k,  then an arbitrary affine-linear combination has the form
+
+t_1 p_1 + ... + t_k p_k where t_1 + t_2 + ... + t_k = 1.  So you can define the function affine-linearly on all k-points in one go:
+
+f(t_1 p_1 + ... + t_k p_k) = t_1 f(p_1) + ... + t_k f(p_k)
+
+This allows you to avoid your statement "extending affine-linearly over the edges, faces and interior" as there's a way to do it all in one shot.  
+
+The "our algorithm" paragraph (middle page 26) you need to specify "affine linear" rather than linear. 
+
+A question: In theorem 4.1.4 what does the term "diagonal" mean? Is a diagonal a diameter?  Or just any edge from the complete (planar, regular) graph?  It's not immediately clear what Theorem 4.1.4 means, at least, not to me. 
+
+Page 27, "We call the vertices in T of an edge e by...." does not make sense to me.  What's the purpose of this sentence? 
+
+Page 28, top.  What does [1:m] mean?
+
+Page 32: drop "but in an obvious way".  It serves no purpose.  Also, given that you've defined the graph G in terms of a procedure that relies on the original triangulation, it makes no sense to talk about this operation changing G, as you have not defined G in a general-enough context to make a comparison.   You're also missing a period in this paragraph. 
+
+
+Let's jump back to Chapter 4.  Section 4.5 is where the definition of "Wedge number" is supposed to occur but you being by talking about computing the wedge number.  Start off by defining it.  It makes no sense (to a reader) to talk about computing something that has no definition.  It's clear at the bottom of section 4.5 you have a definition, but it occurs too late.  The confusion has already set in.  Also, your definition of wedge number at the end of the 1st paragraph in section 4.5 is difficult to follow.  
+
+
+
+                CHAPTER 5
+
+When talking about algorithms, words such as "quick" cause people to perk up their ears.  But at the start of Chapter 5 you don't say what the input is, or how the output is given, nor the actual run-time of the algorithm (or memory demands)...  So it's maybe best not to mention the "quickly" part at this stage.   When you can more fully-qualify the statement, put in more details at that point. 
+
+
+You might want to provide a link or reference to the definition of "edge number" when you use it at the start of Chapter 5.  Latex has the \label keyword which allows you to label your definitions, and refer back to them with \ref later. 
+
+
+
+
+                CHAPTER 6
+
+Page 50 you seem to have a typo lk(()e) ?  There seems to be some funny writing going on here, as you claim a linking number is C, but earlier C appear to be a triangulation (4th sentence, same paragraph). 
+

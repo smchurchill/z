@@ -1,0 +1,15 @@
+\begin{algorithm}
+  \label{alg:a2over}
+  \SetKwInOut{Input}{Input}
+    \SetKwInOut{Output}{Output}
+
+    \Input{Planar graph ($G$,++)}
+    \Output{Shadow $(S,\glm)$}
+      Construct a region in $S$ for every OST pulled back to by a region of $G$\;
+      Connect regions of $S$ according to instructions from the edges of $G$\;
+      Fill holes of $S$ according to instructions from the edges of $G$\;
+      Mark external boundary as false\;
+      Compute gleams $\glm$ of regions of $S$\;
+      Return $(S,\glm)$\;
+    \caption{Building a shadow}
+\end{algorithm}

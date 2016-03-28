@@ -1,0 +1,24 @@
+This algorithm takes as input:
+\begin{enumerate}
+  \item a triangulated open solid torus $V$ which is a subtriangulation of a triangulated 3--manifold $M$, itself the boundary of a triangulated 4--manifold $W$,
+  \item a triangulated longitude of $V$ represented by a curve $z$ in the boundary of $V$ which is defined as the 0--framing of the core of $V$ in $M$,
+  \item a triangulated longitude of $V$ represented by a curve $N$ in the boundary of $V$ which intersects $z$ only at vertices in exactly $n$ points.
+\end{enumerate}
+This algorithm gives as output the manifold $W\cup_\varphi h$, where $h$ is a 2--handle which is attached to $W$ over the attaching region $V$ and whose attaching sphere has framing datum associated with the element $n$ of $\pi_1(O(2))$ with respect to the 0--framing of $z$.
+
+First, we detail the completion of an open solid torus into a 4--ball.
+Let $V$ be a triangulated open solid torus, and $\lambda$ a triangulated longitude of $V$.
+Then $\pd V |\lambda$ is the boundary torus of $V$ cut along the curve $\lambda$.
+This object is an annulus $A$ whose boundary circle have the same triangulation $C$.
+The cone $C(A)$ on $A$ is not a manifold, but the only place at which $C(A)$ is degenerate is the coning point.
+We fix this by letting $B$ be the 3--ball triangulated by a number of tetrahedron equal to the number of edges is $C$, each of which share a common edge $e$.
+Then $\lk(e)$ in $B$ is $C$, and the boundary of $B$ is made of two triangulated discs which are equal to the cone on $C$.
+We attach $B$ to $C(A)$ in the obvious way.
+The result is the open solid torus $U$ which has boundary whose triangulation is equal to the triangulation of the boundary of $V$.
+The curve $\lambda$ of $U$ is a meridian of $U$, so it bounds a disc inside of $U$.
+Gluing $U$ to $V$ along their identical boundaries produces a 3--sphere $sph(V,\lambda)=U\cup V$.
+Then the 0--framing of the core of $V$ in $sph(V,\lambda)$ is given by $\lambda$, as $V$ is unknotted in $sph(V,\lambda)$, and $\lambda$ bounds a Seifert surface which is a disc in $sph(V,\lambda)$.
+The cone on $sph(V,\lambda)$, $C(sph(V,\lambda))$, is a 4--ball whose prescribed 2--handle structure is defined by a core, which is the Seifert surface disc that $\lambda$ bounds, and attaching region $V$.
+Then we denote $C(sph(V,\lambda))$ by $cmpl(V,\lambda)$ and call this object the \emph{4--dimensional 2--handle of the pair $(V,\lambda)$}.
+
+With the input data, we attach the 4--dimensional 2--handle $cmpl(V,N)$ to $M$ via the attaching map that identifies the copy of $V$ in $cmpl(V,N)$ with the copy $V$ in $M$.

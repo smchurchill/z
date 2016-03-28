@@ -1,0 +1,61 @@
+\begin{algorithm}
+  \label{alg:a1over}
+    \KwIn{Edge-distinct triangulation $T$ of the 3--manifold $M$}
+    \KwOut{Planar graph $G$, polyhedral 3--complex $T'$,  with spherical boundary components}
+     
+      Build a PL projection $\pi:T\to\RR$\;
+      Obtain a planar graph $G$ from the combinatorics of $\pi$\; 
+      Collect regional and edge information\;
+      Return ($G$,++)
+      
+    \caption{Obtaining a planar graph with additional data}
+\end{algorithm}
+
+
+\begin{algorithm}
+  \KwIn{Edge distinct 3--manifold triangulation T}
+  \KwOut{Piecewise--linear projection $\pi:T\to \C$}
+
+  Order the vertices of $T$ and label them $v_i$, starting at $v_0$;
+  Let $k$ be the smallest odd number at least as large as $|T^0|$;
+  \For{$i$ from $0$ to $|T^0|$}
+  {
+    Define $\pi(v_i)=e^{2\pi i/k}$;
+  }
+  \For{Edges $e=v_i v_j$ in $T^1$}
+  {
+    Define $\pi()$
+  }
+
+\end{algorithm}
+
+
+\begin{algorithm}
+  \KwIn{Vertex $v$ from $V(G)$ with degree $d_G(v)\geq 2$ from a planar graph $G$}
+  \KwOut{List of chordless cycles containing $v$}
+
+  Initiate empty list $L(v)$
+
+  \Repeat{$d_G(v)\leq 1$}
+  {
+    Choose any edge $e$ adjacent to $v$;
+  }
+
+\end{algorithm}
+
+
+\begin{algorithm}
+    \KwIn{Planar graph $G$}
+    \KwOut{List of chordless cycles $L$}
+    
+    Initiate empty list $L$;
+    
+    \Repeat{$V(G)$ is empty}
+    {
+      \Repeat{$d_G(v)\geq 2$ For each $v$ in $V(G)$}
+      {
+        Delete each vertex of degree at most 1;
+      }
+      Let $v$ be an arbitrary vertex of $G$;
+    }
+\end{algorithm}

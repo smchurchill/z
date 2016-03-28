@@ -1,0 +1,78 @@
+\label{alg:proj}
+Before beginning the algorithm, we should establish some properties of piecewise--linear maps from polyhedra to $\RR$.
+These properties are called upon to support some algorithms in this chapter.
+We also review the basics of planar graphs, as these are the objects that encode the information we wish to carry to Chapter~\ref{cha:alg2}.
+
+\begin{defn}
+Let $G$ be a connected graph such that an embedding of $G$ in $\RR$ exists.
+Fix $p:G\to\RR$ to be such an embedding.
+Then the pair $(G,p)$ is called a \emph{planar graph}.
+The image $p(G)$ separates $\RR$ into path connected components called the \emph{regions} of $(G,p)$.
+There is exactly one region of $(G,p)$ which is unbounded in the plane, and whose boundary is a cycle of $G$.
+This region, its boundary cycle and all edges and vertices in that boundary cycle are said to be \emph{outer}.
+All other other regions, vertices and edges are \emph{inner}.
+Regardless of the choice of embedding $p$, every chordless cycle of $G$ is the boundary of exactly one inner region of $(G,p)$, and every inner region of $(G,p)$ is bounded by exactly one chordless cycle of $G$, so the inner regions and chordless cycles of $(G,p)$ are in $1$--$1$ correspondence.
+\end{defn}
+
+\begin{defn}
+\label{def:stdproj}
+Let $T$ be a tetrahedron with the four vertices $u$, $v$, $w$, $x$, six edges $uv$, $uw$, $ux$, $vw$, $vx$, $wx$, and faces $\hat{u}$, $\hat{v}$, $\hat{w}$, $\hat{x}$, where a face is named by the vertex of $T$ it does not contain.
+Define a projection $\pi: T \to\DD$ by first choosing a map from the vertices of $T$ to distinct points in $\sone$.
+Each point $p$ of $T$ is decribed by the convex combination
+\[
+  p = t_u u + t_v v + t_w w + t_x x
+\]
+with the $t_*$ nonnegative and summing to 1.
+We can define $\pi$ at $p$ by
+\begin{eqnarray*}
+  \pi(p)
+  &=&
+  \pi(t_u u + t_v v + t_w w + t_x x)\\
+  &=&
+  t_u \pi(u) + t_v \pi(v) + t_w \pi(w) + t_x \pi(x)\\
+\end{eqnarray*}
+  
+Without loss of generality, we assume that the points $\pi(u),\pi(v),\pi(w),\pi(x)$ are ordered in a clockwise orientation about $\sone$.
+We call $\pi:T\to\DD$ a \emph{linear tetrahedral projection}.
+\end{defn}
+
+\begin{defn}
+\label{def:projpttypes}
+A point of $\DD$ in the image of $\pi$ is one of five types:
+\begin{enumerate}
+  \item The four points of type 1 are the images of the vertices of $T$ under $\pi$.
+  \item The single point of type 2 is the intersection $\pi(uw)\cap\pi(vx)$.
+  \item All points in $\pi(uv)\cup\pi(vw)\cup\pi(wx)\cup\pi(xu)$, excluding the points of type 1, are of type 3.
+  \item All points in $\pi(uw)\cup\pi(vx)$ excluding the points of type 1 or 2 are of type 4.
+  \item The points of type 5 are the points outside of the image of any vertex or edge of $T$.
+\end{enumerate}
+The image of the $1$--skeleton of $T$ forms a planar graph $G$ inside of $\DD$ whose vertex set consists of the points of types 1 and 2 and whose edges consist of points of type 3 and 4.
+The planar graph embedding cuts the plane into five connected regions, four inner regions that contain all points of type 5, and and one outer region.
+This graph has four outer edges, consisting of the points of type 3, and four inner edges, consisting of the points of type 4.
+
+By definition, the preimage of a point of type 1 is a vertex of $T$.
+The preimage of the single point of type 2 is a line segment between the edges $uw$ and $vx$ interior to $T$.
+A point of type 3 is the image of exactly one point in an edge of $T$.
+A point of type 4 is in the image of exactly one edge and one face, so the preimage of one of these points is a line segment interior to $T$ between those two facets.
+Finally, points of type 5 are in the image of exactly two faces of $T$, hence pull back to line segments interior to $T$ between those two faces.
+\end{defn}
+
+Our algorithm begins by defining a projection $\pi:T\to\RR$ satisfying some properties that are very similar to the properties of a smooth Morse 2--function.
+We demand first that if we restrict $\pi$ to any tetrahedron $\tet$ of $T$, then $\restr{\pi}{\tet}$ is an affine--linear tetrahedral projection.
+Next, let $E,E'$ be edges of $T$ and $\pi(E),\pi(E')$ their images.
+From the first condition it is guaranteed that if $\pi(E)\cap\pi(E')$ is nonempty then it consists of the single point $z$.
+We demand that if $z$ is interior to $\DD$ then it is in the image of no other edge of $T$ through $\pi$.
+
+The first requirement can be met by choosing arbitrary images for the vertices of $T$, then extending to a linear tetrahedral projection on each tetrahedron.
+An arbitrary placement of the $m$ vertices of $T$ does not, however, guarantee the second condition.
+Choosing as images for the vertices odd $n\nth$ complex roots of unity (with $n\geq m$) does guarantee this condition by a theorem in \cite{PoonRub98}.
+Line segments between vertices of a regular polygon in the plane are called \emph{diagonals}.
+The theorem places a bound on the number of diagonals that can intersect at a point.
+If the polygon has an odd number of vertices, then this bound is two.
+
+To see how we use this theorem, let $T$ be our input triangulation, and let $|T^0|=m$.
+Put an arbitrary ordering on the elements of $T^0$.
+Let $n$ be the least odd number greater than or equal to $m$.
+Define $\pi(v_k)=e^{2\pi i k/n}$ for every $v_k$ in $T^0$.
+Extend $\pi$ over all of $T$.
+Then $\pi:T\to\RR$ satisfies our desired properties.

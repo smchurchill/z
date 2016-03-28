@@ -1,0 +1,78 @@
+The main tool used to construct 4--manifolds in later chapters is handle attachment.
+We focus mainly on the definitions and results needed to meaningfully attach 2--handles to a 4--manifold.
+
+\begin{defn}
+\label{def:handle}
+Let $X$ be a smooth $n$--manifold and let $0\leq k\leq n$.
+We use $D^k$ to denote the closed $k$--disc.
+An \emph{$n$--dimensional $k$-handle}, denoted here by $h$, is a copy of $D^k\times D^{n-k}$ which we attach to $\pd X$ along $\pd D^k\times D^{n-k}$ by an embedding
+\[
+  \varphi : \pd D^k \times D^{n-k} \to \pd X.
+\]
+We call $\varphi$ an \emph{attaching map}, and canonically smooth corners \{CITE:GoSt\} in the quotient space
+\[
+  X\cup_\varphi h = \quotient{X \cup ( D^k\times D^{n-k} ) }{ \varphi(x) \sim x }
+\]
+to make $X\cup_\varphi h$ into a smooth manifold.
+The number $k$ is the \emph{index} of the handle $h$ and we call this process \emph{attaching a $k$-handle to $X$ with attachment map $\varphi$}.
+An $n$--dimensional manifold described by a handle decomposition whose handles have index no greater than $1$ is called an \emph{$n$-handlebody}.
+\end{defn}
+
+
+
+
+
+If $X\cup_\varphi h$ is a smooth manifold with attached $k$-handle, then we have special terms for the anatomy of $h$.
+The $k$--disc at $D^k\times 0$ in $h$ is called the \emph{core} of $h$ and the $(n-k)$--disc $0 \times D^{n-k}$ is called the \emph{cocore}.
+We call the $(k-1)$--sphere $\pd D^k \times 0$ the \emph{attaching sphere} and we call the $(n-k-1)$--sphere $ 0 \times \pd D^{n-k}$ the \emph{belt sphere}.
+we call $\pd D^k\times D^{n-k}$, or its image through an attaching map $\varphi$, the \emph{attaching neighbourhood}.
+
+\begin{rmk}
+If $\varphi_0$ and $\varphi_1$ are isotopic attaching maps of the $k$--handle $h$ then the manifolds $X\cup_\varphi h$ and $X\cup_{\varphi'} h$ are diffeomorphic up to ambient isotopy.
+This follows from the Isotopy Extension Theorem.
+If $\varphi_0,\varphi_1$ are isotopic maps into the closed manifold $\pd X$, then the restrictions of these maps to the compact attaching neighbourhood are also isotopic hence induce an ambient isotopy $\Phi_t$.
+The diffeomorphism
+\begin{eqnarray*}
+  \ident{I}\times \Phi : I\times \pd X 
+  & \to &
+  I\times \pd X    \text{\hspace{10mm}defined by}  \\
+  (t,x)
+  & \mapsto &
+  (t,\Phi_t(x))
+\end{eqnarray*}
+gives us the diffeomorphism $X\to X$ by identifying $I\times\pd X$ with a neighbourhood of $\pd X$ in $X$. \{CITE: RoSa\}
+
+We construct an attaching map $\varphi:\pd D^k\times D^{n-k}\to\pd X$ from an embedding of the attaching sphere $\varphi_0:\pd D^k\times 0\to \pd X$ and an identification $n$ of the normal bundle of the image of $\varphi$ with $\pd D^k \times \R^{n-k}$.
+From the Tubular Neighbourhood Theorem, this information determines an embedding of $\pd D^k\times D^{n-k}$ up to isotopy.
+Thus any attaching map is determined by
+\begin{enumerate}
+  \item an embedding $\varphi_0:S^{k-1}\to\pd X$ with trivial normal bundle, and
+  \item an identification $n$ of the normal bundle $\nu\varphi_0(S^{k-1})$ with $S^{k-1}\times\R^{n-k}$ which we call a \emph{framing of} $\varphi_0(S^{k-1})$
+\end{enumerate}
+up to isotopy, and the resulting manifold $X\cup_\varphi h$ up to diffeomorphism.
+\end{rmk}
+
+\begin{rmk}
+\label{rmk:onehandle}
+There are two important cases of handle attachment that we care about --- attachment of handles with index $1$ and $2$.
+To attach a handle of index $1$ to an $(n+1)$--manifold $W$ over its $n$--manifold boundary $M$, we specify an embedding $\varphi_0$ of $S^0=\{-1,1\}$ into $M$.
+We must also define a framing of $\varphi_0(S^{0})$ in $M$.
+If $M$ is oriented, then a framing of $\varphi_0(\pm 1)$ is an element of $\gl{n}{\R}$.
+Because an orientation of the $n$--manifold $M$ is defined by an association of an element of $\glp{n}{\R}$ to each point of $M$, we can say that a framing of $\varphi_0(\pm 1)$ is \emph{orientation preserving} if the chosen framing element is from $\glp{n}{\R}$ and \emph{orientation reversing} if the chosen framing element is from $\gln{n}{\R}$.
+With these framings defined, we can form the attaching map $\varphi$ for our 1--handle $h$.
+Because the attaching map $\varphi$ is defined on the disconnected space $S^0\times D^n$, we refer to $\varphi$ as a pair of attaching maps, one for each component. 
+Note here that if $W$ is path connected and both framings are orientation reversing or orientation preserving, then the manifold $W\cup_\varphi h$ is nonorientable.
+If exactly one framing is orientation preserving and the other orientation reversing then $W\cup_\varphi h$ is orientable.
+\end{rmk}
+
+
+
+Because our goal is to attach 2--handles to 4--manifolds, we focus now on embeddings of $\sone$ in 3--manifolds.
+We can define a framing of an embedded $\sone$ in an oriented 3--manifold from a vector field over that embedded $\sone$ and the orientation of the 3--manifold.
+Attaching a 2--handle to a 4--manifold consists of defining an embedding of $\sone\times D^2$ into the boundary of the 4--manifold.
+This embedding is defined entirely by the image of the attaching sphere and by a framing of that image.
+A framing is an association of every point of the attaching sphere with an element of $\gl{2}{\R}$.
+We care about this embedding up to isotopy, so a framing can be reduced to an element of $\pi_1(\gl{2}{\R})=\pi_1(\sone)=\Z$.
+A framing makes no sense without a zero framing as reference.
+Once that is defined, any $n$--framing is also defined.
+There is a canonical zero--framing of a knot in $\sthr$ found by the outward unit normal vector to any Seifert surface of that knot.

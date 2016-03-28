@@ -1,0 +1,62 @@
+\label{alg:countwedge}
+
+In the previous section, we built lists of circles that map through $\pi$ over the regions of $(G,p)$.
+What we do not yet have is a way of describing the fibers of $\pi$ that map over the edges of $(G,p)$.
+For an edge $e$ of $(G,p)$ with $p(e)$ in the image $\pi(E)$ for $E$ an edge of $T$, the shape of the fibers that map over $p(e)$ is entirely classified by a positive integer associated to $E$ that we call the wedge number.
+We define the wedge number and provide a method of computation.
+
+\begin{defn}
+  \label{def:wedgenumber}
+  Let $e$ be an edge of $G$, $x$ a point in $p(e)$, and $E$ the unique edge in $T$ so that $p(e)$ is entirely contained in $\pi(T)$.
+  The preimage $\pi\inv(x)$ in $T$ consists of the disjoint union of $n$ circles with a wedge of $m$ circles, for some nonnegative integers $n$, $m$.
+  More precisely,
+  \[
+    \pi\inv(x) = \Big(\coprod_{i=1}^n S^1\Big)\coprod\Big(\bigvee_{i=1}^m S^1\Big).
+  \]
+  We define the \emph{wedge number} of $E$ to be exactly $m$.
+\end{defn}
+
+\begin{rmk}
+  A justification that $\pi\inv(x)$ has exactly the structure described in Definition~\ref{def:wedgenumber} is easier to articulate once we have a method of computation.
+  Furthermore, it does double duty as a justification of the correctness of our computation method.  
+\end{rmk}
+
+Before we compute the wedge number of an edge $E$ of $T$, we find an easier number to get our hands on.
+We call this object the \emph{wedge sum} of $E$, which ends up being exactly twice the wedge number we will assign to $E$.
+Begin with the link $\lk{E}$ in $T$.
+Our triangulation is of a closed manifold, so $\lk{E}$ is a triangulated $\sone$, and each edge of $\lk{E}$ is opposite $E$ in some tetrahedron $\tet$.
+If $F$ is an edge of $\lk{E}$ then we associate to $F$ a crossing coefficient with respect to $E$.
+Because $T$ is an edge--distinct triangulation, $E$ and $F$ are non--adjacent.
+Using the method discussed in Section~\ref{alg:planar}, we check whether $\pi(E)$ and $\pi(F)$ intersect.
+The crossing coefficient of $F$ with respect to $E$ is $0$ if $\pi(E)$ and $\pi(F)$ do not intersect $P_E$, and $+1$ otherwise.
+Because $\lk{E}\cong\sone$ is closed, the sum of the crossing coefficients with respect to $e$ is even.
+The sum of the crossing coefficients with respect to $E$ is the wedge sum of $E$, and our definition will allow us to assign the wedge number of $E$ to be half the wedge sum of $E$.
+
+With the notation as in Definition~\ref{def:wedgenumber}, we justify that $\pi\inv(x)$ has the structure as the disjoint union of $n$ circles with the wedge of $m$ circles.
+Consider the tetrahedra $\tet_i$ that contain $E$.
+Following the convention in Definition~\ref{def:projpttypes}, $x$ is a point of either type 3 or type 4 in each $\tet_i$.
+In a tetrahedron $\tet$ not containing $E$, $x$ will either be a point of type 5 or will not be in the image of $\tet$.
+We can conclude from this that connected components of $\pi\inv(x)$ missing the edges of $T$ will be circles, and exactly one component of $\pi\inv(x)$ will not miss every edge of $T$, and this is the component that hits $E$ in exactly one point.
+This shows that all but one connected component of $\pi\inv(x)$ is a circle, and all that is left is to show that the last component is the wedge of some number of circles.
+
+The component of $\pi\inv(x)$ that hits $E$ will miss every other edge of $T$ outside of the $\tet_i$, and outside of the $\tet_i$ it will consist of arcs in $T$ whose endpoints are contained in the triangles of the $\tet_i$ opposite to $E$.
+What about the portion of $\pi\inv(x)$ inside of the $\tet_i$?
+We have $x$ as either type 3 or type 4 in each of the $\tet_i$, and $x$ is of type 3 in exactly the $\tet_i$ contributing $0$ to the wedge sum and of type 4 in exactly the $\tet_i$ contributing $+1$ to the wedge sum.
+This means that the portion of $\pi\inv(x)$ inside of the union of the tetrahedra containing $E$ is a star with a number of leaves equal to the wedge sum.
+Pairs of leaves of this star are connected by the arcs we found previously, and the object we end up with is a wedge of circles, the number of which coincides exactly with half the wedge sum -- i.e.\ the wedge number of $e$.
+
+\begin{rmk}
+  We may expand our interpretation of wedge numbers from the structure of $\pi\inv(x)$, notation as in Defintion~\ref{def:wedgenumber}, to the structure of a surface in $T$ containing $\pi\inv(x)$.
+  Let $P$ be the path in $G$ which is induced by an edge $E$ of $T$, as in Section~\ref{alg:planar}.
+  Let $e_i$ be an edge of $P$, and let's further assume that $P$ is a path whose edges are all interior to $G$.
+  Then $e_i$ is the border of a pair of regions $R_y$ and $R_z$.
+  Let $y\in R_y$ and $z\in R_z$.
+  We examine the preimage of $y$, $z$, and simple arc $\gamma_{y,z}$ that connects the two, intersecting $e_i$ in exactly one point and intersecting no other edges of $G$.
+  We know that the preimages of $y$ and $z$ through $\pi$ are the disjoint unions of circles
+  \[
+    \pi\inv(y)=\coprod_{i=1}^{n} \sone_{y,i} \text{ and } \pi\inv(z) = \coprod_{i=1}^{m} \sone_{z,i}.
+  \]
+  So $\pi\inv(y)$ and $\pi\inv(z)$ are cobordant through a surface $\Sigma$, and $\Sigma$ lives in $T$ as $\pi\inv(\gamma_{y,z})$.
+  A connected component of $\Sigma$ is either a cylinder, corresponding to one of the $n$ circles found in the preimage through $\pi$ of a point in $p(e_i)$, or a copy of $\stwo$ punctured $k$--times, corresponding to the wedge of $k-1$ circles found in the preimage of a point in an edge of $G$.
+  The wedge number of an edge is interpreted as the number of circles in a bouqet of circles that projects to a generic point of that edge through $\pi$ -- that is, $k-1$.
+\end{rmk}

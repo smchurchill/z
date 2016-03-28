@@ -1,0 +1,14 @@
+\label{alg:circlist}
+This algorithm takes as input a region of $R$ of $G$ and gives as output a set of lists of triangles in $T$.
+Each list unambiguously defines a piecewise-linear circle in $T$ built from line segments between the centres of consecutive triangles.
+
+Take as input a region $R$ of $G$ and build from $R$ a list $L$ of triangles using the above algorithm: \ref{alg:trilist}.
+We partition $L$ into sublists corresponding to the connected components of the preimage of a generic point of $R$.
+To separate a connected component, we examine a sublist generated from any given triangle of $L$.
+Begin by adding an arbitrary triangle $t$ to a sublist $l$ of $L$.
+The triangle $t$ is inside exactly two tetrahedra of $T$, so we choose one of these tetrahedra, $S$, arbitrarily.
+Now $S$ contains exactly one other $t'$ of $L$, which itself is inside of another tetrahedron $S'$ of $T$.
+We add $t'$ to $l$ and continue this process with $S'$ until we find ourselves back at $t$.
+Reduce $L$ to $L'=L\setminus l$, and continue until $L^{(n)}$ is empty.
+Each sublist $l$ defines a piecewise--linear circle in $T$.
+\{FIGURE: A PL CIRCLE\}

@@ -1,0 +1,39 @@
+\label{alg:fillholes}
+There are some holes in our shadow represented by digraphs whose edges are coloured $H$.
+Whenever we work with one of these graphs, it will be named $X$.
+The projection of any $X$ through $\pi$ is one of the copies of the directed cycle on 4 vertices introduced during interior vertex deletion in Section~\ref{alg:finalmod}.
+Each of the four vertices of $\pi(X)$ is adjacent to a single edge, and those edges are projected onto by a finite number of strands in $S$ by $g:S\to\DD$.
+At most one of these projecting strands per edge corresponds to a strand of singular points through $\pi$.
+These singular strands are determined by $\pi$ and extend along the entirety of the edge of $T$ in which they lie, corresponding to edges or shrinking singularites in $S$.
+This means if one of our graphs $X$ is adjacent to a strand of singular points, then it is adjacent to another strand from the same edge of $T$, hence these singular strands occur in pairs.
+
+In every case, $X$ is one of five possible graphs which we classify by their number of simple directed cycles.
+The paper on which this thesis is based contains a detailed justification of the form of polyhedron we glue to $S$ in order to fill these holes.
+The five possible graphs are classified by the number of singular and nonsingular strands adjacent to $X$.
+
+\{ FIGURE: THE FIVE POSSIBLE GRAPHS \}
+
+\{ FIGURE: THE FOUR FILLING POLYHEDRA \}
+
+The first case occurs when $X$ is adjacent to exactly two strands of shrinking singularities and one nonsingular strand.
+Here, we colour the edges of $X$ by $F$ and let $X$ join the rest of the false boundary.
+
+The second case occurs when $X$ is adjacent to no singular strands.
+We fill in the hole with a disc whose boundary has triangulation $X$.
+
+The third case occurs when $X$ is adjacent to exactly two strands of non--shrinking singularities and three nonsingular strands.
+We fill in the hole with the model shadow edge.
+
+The fourth case occurs when $X$ is adjacent to exactly four strands of non--shrinking singularites and four nonsingular strands.
+We fill this hole with the model shadow vertex.
+
+The fifth case occurs when $X$ is adjacent to exactly four strands of non--shrinking singularites and no nonsingular strands.
+We will this hole with a shadow polyhedron that has exactly two vertices and adjust the gleams of the regions adjacent to where we glue this polyhedron slightly.
+The polyhedron in this case is the shadow of $X$ as it sits in $S^3$.
+
+All boundary components of $S$ are filled this way.
+At the end of this algorithm we have a shadow of $T$.
+Once the internal regions of $S$ are assigned gleams, we will be able to construct a triangulated 4--manifold.
+
+
+

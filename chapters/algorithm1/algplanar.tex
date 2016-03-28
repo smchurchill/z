@@ -1,0 +1,54 @@
+\label{alg:planar}
+
+We construct here a planar graph $(G,p)$ from the projection $\pi:T\to\RR$ that will be used throughout this chapter.
+The projection $\pi:T\to\RR$ defined in the previous section maps vertices of $T$ to the $n\nth$ roots of unity, where $n$ is odd.
+The construction of $(G,p)$ here is essentially an extension of the construction seen in Definition \ref{def:projpttypes} to the whole of $T$.
+
+Every vertex $v$ of $T$ has a distinct image $\pi(v)$ in $\sone$, so our graph $G$ begins with these points as its vertex set $V$.
+The vertex of $G$ associated to $v$ in $T$ will be named $G(v)$.
+To fill the rest of the vertex set $V(G)$, we examine the images of each pair of non--adjacent edges of $T$ for interior intersections.
+Here, edges in $T$ are adjacent if they share a vertex.
+For a pair of non--adjacent edges $E$, $F$ of $T$ with boundary vertices $\pd E = v_E\cup w_E$ and $\pd F = v_F\cup w_F$, we may determine whether the line segments $\pi(E)$ and $\pi(F)$ in the plane intersect by checking the order in which the points $\pi(v_E)$, $\pi(w_E)$, $\pi(v_F)$, and $\pi(w_F)$ occur around $\sone$.
+Each of these points is at an $n\nth$ root of unity, so there is an obvious ordering that assigns each of these points to an integer.
+If $\pi(v_E)$ and $\pi(w_E)$ or $\pi(v_F)$ and $\pi(w_F)$ are adjacacent in this ordering, then $\pi(E)$ and $\pi(F)$ do not intersect.
+Otherwise, $\pi(E)$ and $\pi(F)$ intersect.
+Each intersection of this type adds a vertex to $V(G)$ which we will name $G(E, F)$ and these are all of the vertices we get.
+
+To make $G$ a planar graph, we need to fix an embedding $p:G\to\RR$.
+For a vertex $G(v)$ directly associated with the vertex $v$ of $T$, we define $p(G(v))=\pi(v)$.
+For a vertex $G(E,F)$ associated to the intersection of $\pi(E)$ and $\pi(F)$ in the plane, we define $p(G(E,F))=\pi(E)\cap\pi(F)$.
+This embedding is chosen so that an edge $e=uv$ of $G$, all of which will be added next, can be embedded in the plane as the line segment connecting $p(u)$ and $p(v)$.
+
+Every edge of $G$ comes from an edge of $T$, and every edge of $T$ produces at least one edge of $G$.
+If an edge $E$ of $T$ has image $\pi(E)$ that intersects no other image $\pi(F)$ with $E$, $F$ non--adjacent in $T$, then $E$ adds exactly one edge to $E(G)$ whose vertices are $G(v_E)$ and $G(w_E)$.
+Otherwise, $\pi(E)$ intersects the line segments $\pi(E_j)$ for each of the edges in $\{E_j\}_{j=1}^m$ with $E_j$ not adjacent to $E$ in $T$.
+In this case, we have a vertex $G(E,E_j)$ in $V(G)$ for each $j$, and $p(G(E,E_j))$ is the point of intersection between $\pi(E)$ and $\pi(E_j)$.
+The edges we add to $G$ from $E$ form a path $P$ in $G$ with tails $G(v_E)$ and $G(w_E)$ that passes through every $G(E,E_j)$, and all we need to know is the order in which the vertices occur in $P$.
+When this is known, we populate $P$ with edges.
+
+To determine the order of the vertices of $P$, we assume that $\pi(E)$ is a vertical line segment, which is done without loss of generality.
+For this discussion, $E$, $\{E_j\}_{j=1}^m$ are as above.
+Then
+\[
+  \pi(v_E)=e^{2\pi i k/n}\text{ and }\pi(w_E)=e^{2\pi i k/n}.
+\]
+and
+\[
+  \pi(v_{E_j})=e^{2\pi i p/n}\text{ and }\pi(w_{E_j})=e^{2\pi i q/n}.
+\]
+Then the $x$--co-ordinate of the intersection $\pi(E)\cap\pi(E_j)$ is fixed at $\cos(2\pi k/n)$, and the $y$--co-ordinate $y_j$ can be found to be
+\[
+  y_j = \frac{\sin(2\pi i \frac{q-p}{n}) + (\sin(2\pi i \frac{p}{n}) - \sin(2\pi \frac{q}{n}))\cos(2\pi \frac{k}{n})}{\cos(2\pi i \frac{p}{n})-\cos(2\pi i \frac{q}{n})}.
+\]
+We may compute and order the real numbers $y_j$.
+This orders the $v_j$ in the path $P$ from $w_E$ to $v_E$.
+This ordering is given by the permutation $\sigma\in \Sigma_m$, so we populate $P$ with the edges $(w_E,\sigma\inv(1))$, $(\sigma\inv(i),\sigma\inv(i+1))$ for $i\in\{1,\dots,m-1\}$, and the edge $(\sigma\inv(m),v_E)$.
+We perform this process for each edge of $T$.
+As stated above, $p$ is defined on an edge $e=uv$ of $G$ as the line segment between $p(u)$ and $p(v)$.
+We then have our planar graph $(G,p)$.
+
+A particularly nice property of a planar graph is that it has well--defined regions, and those regions are in one--to--one correspondence with the chordless cycles of the graph.
+Further, there exist standard algorithms to find all chordless cycles in a graph that we may use to find all regions of our planar graph.
+We do not include the details of such algorithms here.
+
+\{A FIGURE WOULD BE GREAT HERE\}

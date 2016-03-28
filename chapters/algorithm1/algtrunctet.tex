@@ -1,0 +1,40 @@
+In order to carry out edge blowups and reduce wedge numbers, we need to replace all of the tetrahedra in $T$ with truncated tetrahedra.
+Essentially, we are removing a small ball around every vertex of $T$ and leaving an $\stwo$ boundary for every removed vertex.
+This is identical to replacing every tetrahedron of $T$ with a truncated tetrahedron.
+At this point in our algorithm, the only information we need from $T$ is adjacency between tetrahedra.
+Truncating tetrahedra does not change this information, so we truncate every tetrahedron of $T$ and obtain $T'$.
+We also have $\pi'$, defined as $\pi$ restricted to $T'\subset T$.
+The objects that make up the truncated complex $T'$ are solid polyhedra that are glued together over hexagonal faces.
+We'll call this complex a \emph{solid polyhedral gluing}.
+We previously built lists of triangles in $T$ that formed $PL$--circles in $T$.
+Truncating the tetrahedra of $T$ alters these lists only by replacing the triangles in these lists with the associated truncated triangles, which are hexagonal 2--cells.
+
+In Section~\ref{alg:planar} we outlined how to obtain a planar graph $(G,f)$ associated to $T$ from the projection $\pi$.
+To obtain a planar graph associated to $T'$ and $\pi'$, we begin with the graph $(G,f)$ and examine the difference between the images $\pi'(T')$ and $f(G)$ in the plane.
+This picture suggests that we should ``cut away'' the parts of $(G,f)$ that are outside of $\pi'(T')$.
+
+Consider a vertex $v$ of $G$ that is associated to a vertex of $T$.
+Then $f(v)$ lies on the circle in the plane.
+Recall that the vertices of $T$ are mapped under $\pi$ to the $n\nth$ roots of unity in $\C$, where $n$ is an odd number at least as large as the number of vertices of $T$, so we'll assume without loss of generality that $f(v)$ is at $1\in\C$.
+A chord in the circle with endpoints $e^{\pm\pi/2n}$ intersects $\pi(T)$ in a line segment near $1$.
+The preimage of this segment is an embedded copy of $\lk{v}$ that separates $v$ from the rest of $T^0$.
+To truncate the tetrahedra of $T$ containing $v$, we remove the interior of this link.
+Truncating the tetrahedra around every vertex of $T^0$ yields $T'$ and $\pi'$, where $\pi'$ is just $\pi$ restricted to $T'$.
+We obtain a new planar graph $(G',f')$ by first subdividing every edge of $f(G)$ intersecting $\pi'(\pd T')$ into a pair of edges.
+Each subdivision deletes a single edges and introduces a pair of new edges and a single vertex.
+Connect sequential vertices on the line segments $\pi'(\pd T')$ with new edges.
+Finally, remove the vertices of $G$ that are associated to vertices of $T$ as well as all edges adjacent to these vertices.
+The result is a graph $G'$.
+
+To make $G'$ planar, we need to fix an embedding.
+We obtained $G'$ from $G$ by subdividing some edges of $G$, adding new edges between the new subdivision vertices, and deleting edges and vertices outside of the desired image.
+We can then define an embedding $f'$ on $G'$ by first making $f'(e)=f(e)$ and $f'(v)=f(v)$ for any edges and vertices of $G'$ that are untouched by our creation of $G'$.
+Let $v$ in $G'$ be a vertex added when subdividing the edge $e$ of $G$.
+We added $v$ because $f(e)$ intersected $\pi'(\pd T')$, and we define $f'(v)=f(e)\cap \pi'(\pd T')$.
+We've defined $f'$ on all vertices of $G'$.
+By design, we can define $f'$ on an edge of $G'$ to be the line segment in the plane connecting the vertices adjacent to that edge.
+
+\{FIGURE: GREAT PLACE FOR A FIGURE\}.
+
+The faces of $(G',f')$ are in 1--1 correspondence with the faces of $(G,f)$.
+The gluing $T'$ has none of the vertices of $T$, but retains all of the edges of $T$ which we call ``old'' edges and we have some new edges that are projected through $\pi'$ to outer edges of $(G',f')$, hence these edges are not asked for in any future algorithms.

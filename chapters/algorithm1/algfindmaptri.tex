@@ -1,0 +1,28 @@
+\label{alg:trilist}
+
+This algorithm takes as input a region $R$ of $G$, represented by chordless cycle $C$ in $G$, and gives as output a list of piecewise--linear circles in the triangulation $T$ that map to a generic point interior to the region $R$ bounded by $C$.
+A piecewise--linear circle is unambiguously described as an ordered list of triangles $\{t_i\}$ in $T$ so that every consecutive pair of triangles are from the same $\tet$, and so that every $\tet$ of $T$ represented by a triangle in this list is represented by exactly two triangles in this list.
+The piecewise--linear circle is then formed by connecting the centres of consecutive triangles with line segments.
+
+The projection $\pi$ maps the triangle $t$ of $T$ to the triangle $t'$ in $\DD$ so that the vertices $u'$, $v'$, $w'$ of $t'$ are all in $\sone$, and the edges of $t'$ are straight line segments between the vertices of $t'$.
+Now $t'$ splits $\DD$ into four path-connected regions: one region which is the image of $t$ and three regions which are not.
+Intuitively, take a point $p$ in the disc and a point $q$ in $\sone$ with $q\neq u',v',w'$.
+A straight line from $p$ to $q$ crosses $0$, $1$, or $2$ edges of $t'$.
+In the case of $0$ or $2$ crossings, $p$ is not in the image of $t$.
+If there is exactly $1$ crossing, then $p$ is in the image of $t$.
+
+To implement this into a graph algorithm, recognize that the edges $e_i$ of $t$ map through $\pi$ to paths $P_i$ in $G$.
+To check if a given region, represented by the chordless region $C$, is in the image of $t$ we first check whether every vertex of $C$ is in a path $P_i$.
+If this is true then we are done --- $R$ is in the image of $t$.
+Otherwise, there is a vertex $v$ of $C$ which is not in any $P_i$.
+If $v$ is an outer vertex of $G$, then $R$ is not in the image of $t$.
+Otherwise, $v$ is in the image of exactly two edges of $T$, and we choose one of those edges arbitrarily.
+That edge maps through $\pi$ to the path $P$ whose tail vertices are each outer.
+At least one tail vertex, call it $x$, is not a tail of any $P_i$ as otherwise $P$ would be some $P_i$, and this contradicts the statement that $v$ is not in any $P_i$.
+
+Now we have a graph representation of our intuitive understanding of the situation.
+The path from $v$ to $x$ represents a straight line segment connecting a point in the disc to a point on the boundary different from a vertex of our triangle.
+This is evident by our construction of $G$.
+We need only count the number of vertices that $P$ shares with the paths $P_i$.
+If exactly $1$ vertex is shared, then the region $R$ is in the image of $t$.
+Otherwise, $R$ is not in the image of $t$.

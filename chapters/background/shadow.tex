@@ -1,0 +1,176 @@
+\label{sec:shadow}
+
+The building instructions mentioned in the previous section were studied by Turaev in ~\cite{Turaev91} and are called \emph{shadows}.
+Shadows are piecewise--linear 2--dimensional structures that live inside of piecewise--linear, compact, oriented 4--manifolds.
+The central algorithm of this work uses shadows of 3-- and 4-- manifolds to construct a triangulation of a 4--manifold with a given 3--manifold boundary.
+
+\begin{defn}
+  Let $P$ to be a compact topological space.
+  If every point $p$ of $P$ has a neighbourhood homeomorphic to an open set in one of the following local models
+  \begin{enumerate}
+    \item the closed 2--disc $D^2$,
+    \item the product of the interval $I=[0,1]$ with the $Y$--shaped graph $K_{1,3}$, or
+    \item the cone on the complete graph $K_4$,
+  \end{enumerate}
+  then $P$ is a \emph{simple polyhedron}.
+  \{ FIGURE HERE DEPICTING THE LOCAL MODELS\}
+  The set of points which do not have a neighbourhood homeomorphic to an open set in $D^2$ form a 4--valent graph which we call the \emph{singular set} of $P$ and denote by $\Sing (P)$.
+  The vertices and edges of $\Sing (P)$ are called the vertices and edges of $P$.
+  We call the connected components of $P\setminus\Sing (P)$ the \emph{regions} of $P$.
+  
+  The local models each have boundary.
+  Being a surface, the 2--disc has a well defined boundary.
+  In the local model $K_{1,3}\times I$, the boundary consists of the set $(K_{1,3}\times \{0\})\cup (K_{1,3}\times \{1\})\cup (V(K_{1,3})\times I)$, where $V(K_{1,3})$ denotes the vertex set of the graph $K_{1,3}$.
+  The boundary points of the cone on $K_4$, defined at $K_4\times I /\sim$, where $\sim$ is defined to be $(x,1)\sim (y,1)$ for any $x,y$, are the points in $K_4\times \{0\}$.
+  
+  If a point $p$ of $P$ has a neighbourhood homeomorphic to an open set containing a point in the boundary of one of our three local models, then $p$ is a \emph{boundary point} of $P$.
+  The set of all boundary points of $P$ is the boundary of $P$ and is denoted by $\pd P$.
+  A region of $P$ is \emph{internal} if its closure is disjoint from $\pd P$.
+  If $\pd P$ is empty then $P$ is \emph{closed}.
+\end{defn}
+
+Simple polyhedra are almost shadows.
+To define a shadow, we need to consider simple polyhedra embedded in a 4--manifold.
+First, we introduce a concept from simple--homotopy theory.
+
+\begin{defn}
+  Let $K$ be a simplicial complex, and let $\tau$, $\sigma$ be simplices so that $\dim \sigma$ is maximal, $\dim\tau=\dim \sigma -1$, and no simplex of dimension $\dim \sigma$ other than $\sigma$ contains $\tau$.
+  We obtain the complex $L$ from $K$ by removing $\sigma$ and $\tau$.
+  That is, $L= K\setminus(\inter{\sigma}\cup\tau)$.
+  We say that $L$ is an \emph{elementary collapse} of $K$.
+  
+  If a complex $L$ is obtained from $K$ through iterated elementary collapses, then we say that $L$ is a \emph{simplicial collapse} of $K$.
+  We may also say that $K$ {\em collapses} onto $L$.   
+\end{defn}
+
+We are finally ready to define a shadow.
+
+\begin{defn}
+  Let $W$ be a piecewise--linear, compact, oriented 4--manifold.
+  Let $P\subset W$ be a closed simple sub--polyhedron of $W$ such that $W$ collapses onto $P$ and the regions of $P$ are \emph{locally flat} in $W$.
+  That is to say, if $p$ is in $P\setminus\Sing(P)$ then there is a chart $(U,f)$ of $W$ around $p$ so that $f(P\cap U)$ is contained in $\R^2\subset \R^4$.
+  We define $P$ to be a \emph{shadow polyhedron} of $W$.
+\end{defn}
+
+\begin{rmk}
+  There is a notion of shadow equivalence in~\cite{Turaev91} via basic shadow moves.
+  A shadow polyhedron whose regions are all homeomorphic to discs is called \emph{standard}, and through Turaev's shadow moves any shadow polyhedra can be made standard.
+  Furthermore, the algorithms which make up the bulk of this document produce a standard shadow polyhedron, so from here forward we always consider our polyhedra to be standard.  
+\end{rmk}
+
+Not every piecewise--linear, compact, oriented 4--manifold contains a shadow polyhedron.
+A necessary and sufficient condition for the existence of a shadow polyhedron in such a 4--manifold is the existence of a handle decomposition of $W$ containing no handles of index greater than 2, as shown in~\cite{Turaev91}.
+This requirement tells us that $W$ has a connected non-empty 3--manifold boundary $M$.
+A shadow is defined for $M$ as well.
+
+\begin{defn}
+  A shadow polyhedron of an oriented, closed 3--manifold $M$ is a shadow polyhedron $P$ of a compact 4--manifold $W$ with $\pd W=M$
+\end{defn}
+
+This gives us the following theorem for free.
+
+\begin{theorem}
+  \label{the:shadowexistence}
+  Every closed, oriented 3--manifold has a shadow polyhedron.
+\end{theorem}
+
+\begin{proof}
+  To sketch the proof, we use the results of Lickorish and Kirby as summarized in~\cite{GompStip}.
+  Any closed, oriented smooth 3--manifold $M$ has a presentation as integral surgery over a link $L$ in $\sthr$.
+  A handle decomposition of a 4--manifold with boundary equal to $M$ can be obtained from the integral surgery diagram of $M$.
+  We begin with a 0--handle, which is just a copy of $B^4$ with boundary $S^3$.
+  We put our surgery presentation in this $S^3$.
+  Each component of the surgery link in $S^3$ will be the attaching sphere of a 2--handle, and the integer surgery coeffifient will be the element of $\pi_1(\gl{2}{\R})$ that fully describes the framing of this 2--handle.
+  Adding a 2--handle over every component of the link results in a 4--manifold $W$ such that $\pd W=M$.
+ 
+  The link diagram also determines the shadow of $W$ hence of $M$.
+  Take $\pi:L\to \DD$ to be a regular projection.
+  That is, $\pi$ is injective everywhere except for at a finite number of points which coincide with the crossings of $L$.
+  Then the mapping cylinder $(I\times L)\coprod \DD/(0,x)\sim\pi(x)$ with a disc glued to the free link ends at $\{1\}\times L_i$ is, as per our definition, a shadow of $W$.
+\end{proof}
+
+It is natural to wonder how closely related shadows are with their associated 3-- and 4--manifolds.
+Just as simple--homotopy type is not a complete invariant of 4--manifolds, a shadow polyhedron does not uniquely determine a 4--manifold.
+The following example demonstrates this explicitly and hints at what kind of additional information is needed to uniquely identify a shadow with a 4--manifold.
+
+\begin{ex}
+  \label{ex:polypoly}
+  We examine disc bundles over $\stwo$.
+  Take $W_0$ to be the trivial disc bundle $\D^2\times S^2$ and $W_1$ to be the bundle whose 0--section has self--intersection number of 1 in the ambient 4--manifold.
+  Each $W_i$ collapses onto $\stwo$, so each have shadow $\stwo$.
+  Because $W_0$ is $\D^2\times S^2$, it's boundary is $S^1\times S^2$.
+  One can see that $W_1$ has handle decomposition with exactly one 0--handle $B^4$ and one 2--handle attached over the unknot in $S^3=\pd B^4$ with framing coefficient 1.
+  This manifold is a punctured $\CP^2$, so has boundary $S^3$.
+  We've defined a shadow polyhedron of an oriented, closed 3--manifold $M$ to be a shadow polyhedron $P$ of a compact 4--manifold $W$ with $\pd W=M$, so $S^3$ and $S^2\times S^1$ each have shadow polyhedron $S^2$.
+\end{ex}
+
+We've found a pair of distinct 4--manifolds with distinct boundaries, but the shadow of each is $S^2$.
+We want to construct a 4--manifold whose boundary is a given 3--manifold, and this shows that we need more than just a naked shadow polyhedron to do so.
+The information needed is carried by the internal regions of a polyhedron and are named ``gleams'' by Turaev.
+One can intuit from the Example~\ref{ex:polypoly} that a ``gleam'' might describe the regular neighbourhood of an embedded shadow.
+
+\begin{defn}
+  Let $P$ be a polyhedron embedded in the 4--manifold $W$ in a locally flat way.
+  Then there exists a canonical colouring of the internal regions of $P$ by elements of $\frac{1}{2}\Z$ called \emph{gleams}.
+  A gleam necessarily depends on the embedding of $P$.
+  We may also discern a canonical colouring of the internal regions of $P$ by elements of $\Z_2$ called the $Z_2$--\emph{gleam} that depends only on the combinatorial structure of $P$.
+  The $Z_2$--gleam of a region of $P$ determines whether the gleam of that region is an integer or half--integer.
+
+  Let $D$ be an internal region of $P$.
+  Because $P$ is assumed to be standard, we know that $D$ is an open disc and the closure of $D$ is a closed disc.
+  The embedding of $D$ in $P$ extends to an embedding $e : \bar{D} \to P$ so that $e$ takes $\pd\bar{D}$ into $\Sing(P)$.
+  Denote by $U(D)$ the simple polyhedron that is a small open regular neighborhood of $D$ in $P$.
+  We may construct $U(D)$ from $\bar{D}$ by first gluing the core of either an annulus or M\"obius strip, to $\pd\bar{D}$.
+  Then, for each point $p$ of $\pd\bar{D}$ so that $e(p)$ is a vertex of $P$, let $A_p$ be an arc in the band attached to $\pd\bar{D}$ so that $A_p$ intersects the core of the band only at $p$.
+  Obtain $U(D)$ by gluing half the boundary of a disc to $A_p$ for each $p$.
+  The map $e$ extends easily to the map $e':U(D)\to P$.
+  Define the $\Z_2$--gleam of $D$ in $P$ to be equal to $1$ if the band attached to $\pd\bar{D}$ was a M\"obius strip and $0$ if the band was an annulus.
+  
+  \{FIGURE: $U(D)$ FOR $Z_2$--GLEAM EVEN AND ODD\}
+  
+  Now, suppose that $f:P\to W$ is our locally flat embedding of $P$ and let $D, \bar{D}, e: D \to P, U(D)$ and $e'$ be defined as before.
+  Because $e'$ embeds $U(D)$ in $P$, we consider $U(D)$ to be a subset of $P$.
+  A regular neighbourhood of $f(U(D))$ in $W$ collapsing onto $f(U(D))$ is an oriented 4--ball $B^4$.
+  Let $p_0$ be a point in $\pd\bar{D}$ and $(V,g)$ a chart of $W$ with $V$ containing $p_0$ such that the intersection $V_P = V\cap f(U(D))$ is contained in $f(U(D))$.  
+  The embedding $f$ is locally flat, so $g(V_P)$ is contained in a 3--dimensional slice $B^3$ of $g(V)$ and $g(f(\bar{D})\cap V)$ is contained in a 2--dimensional slice of $B^3$.
+  If $p_0$ is not a vertex of $P$, then there are exactly two other regions $D'$ and $D''$ of $P$ that meet $D$ at $p_0$.
+  The direction in $B^3$ in which $D'$ and $D''$ separate away from $p_0$ can be extended to a direction in $g(V)$ where it is an element of the projective line $P^1$ of lines orthogonal to $f(D)$ sufficiently close to $f(p_0)$.
+  If $p_0$ is a vertex of $P$, then ignoring the region of $P$ that meets $D$ only at $p_0$ leaves two suitable separating regions that meet $D$ at $p_0$.
+  We form a smooth bundle of directions over $\pd\bar{D}$ which is a section of a $P^1$ bundle over $\pd\bar{D}$.
+  The obstruction to extend this section to all of $D$ is a class of $H^2 (D, \pd D; \pi_1 (P^1 ))$.
+  The ambient space $g(V)$ is oriented so $D$ is oriented.
+  The class of $H^2 (D, \pd D; \pi_1 (P^1 ))=\Z$ is an integer $z$ that corresponds to the number of times a section of the boundary of $D$ loops around a $P^1$ bundle, which is the number of half loops made around a $S^1$ bundle.
+  We are interested in the $S^1$ bundle, so we take the gleam of $D$ to be $z/2$.
+  Note that $z$ modulo 2 is exactly the $\Z_2$--gleam of $D$.
+\end{defn}
+
+\begin{theorem}\cite{Turaev91}
+  \label{the:turaevreconstruction}
+    Let $S$ be a polyhedron whose internal regions are equipped with gleams.
+    Then there exists a canonical construction associating to $S$ the a pair $(W,S)$, where $W$ is a piecewise--linear, compact, oriented 4--manifold $W$ containing an embedded copy of $S$ with shadow $S$ can be reconstructed from the combinatorics of $S$.
+\end{theorem}
+
+We can extend our definition of shadows to shadows of pairs $(M,G)$ where $M$ is a 3--manifold whose boundary is not necessarily empty and $G$ is an embedded framed graph whose vertices have degree either 1 or 3.
+This extension is useful because it allows us to build a shadow for a closed 3--manifold from a reasonable decomposition into blocks whose shadows are known.
+In this case, the polyhedron representing our shadow will have boundary and the 1--cells of the boundary will be classified.
+
+\begin{defn}
+  Define a \emph{boundary--decorated} standard polyhedron to be a standard polyhedron $P$ with boundary so that $\pd P$ is a graph whose edges are coloured one of $i$ for internal, $e$ for external, or $f$ for false.
+  The graph $\pd P$ then has three distinct subgraphs $\pd_i P$, $\pd_e P$ and $\pd_f P$ intersecting only at vertices and whose union is $\pd P$.
+  If $\pd_f P=\emptyset$ then we call $P$ as \emph{proper}.
+\end{defn}
+
+Boundary decorated polyhedra can be turned into a shadows for a 3--manifolds with boundary and with framed graphs embedded in their interior.
+The boundary of the 3--manifold is represented by the subgraph $\pd_e P$ and the embedded graph is represented by the subgraph $\pd_i$.
+
+\begin{defn}
+  Let $P$ be a boundary decorated standard polyhedron properly embedded in a 4--manifold $W$ so that $W$ collapses onto $P$ with a framing on $\pd_i P$.
+  An embedding $f:X\to Y$ is \emph{proper} if $f(\pd X) = f(X)\cap \pd Y$ and $f(X)$ is transverse to $\pd Y$ everywhere in $\pd X$.
+  
+  Let $M$ be the complement of an open regular neighbourhood of $\pd_e P$ in $\pd W$ and let $G$ be a framed graph embedded in $M$ whose core is $\pd_i P$.
+  Then $P$ is a \emph{shadow} of the pair $(M,G)$.
+  If the false boundary is empty, then $P$ is a \emph{proper} shadow of $(M,G)$.
+  Gleams are defined on the interior regions of $P$ as before.
+\end{defn}
+
+

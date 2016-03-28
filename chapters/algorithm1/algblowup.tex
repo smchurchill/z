@@ -1,0 +1,85 @@
+\label{alg:blowup}
+
+This algorithm takes as input an edge $e$ of the solid polyhedral gluing $T'$ with wedge number $w(e)$ at least three, and returns an altered solid polyhedral gluing $T''$ and an altered graph $G''$, where $e$ is replaced by a set of edges $e_i$, $i=1,\dots ,w(e)-1$, where each edge has wedge number exactly 2.
+We blow up edges to reduce wedge numbers and we want to reduce all wedge numbers to at most 2.
+
+To blow up the edge $e=xy$, we need to choose a pair of 3--cells over which $e$ will be blown up.
+We need to slightly modify our definition of the link of an edge because we've truncated all of our tetrahedra into 3--cells, and some edges are going to be blown up.
+Each tetrahedra has six edges and we can easily keep track of the associated edges in a truncated tetrahedron as well as a set of blown up edges in a blown up truncated tetrahedron.
+An edge or set of edge copies in a tetrahedron or blown up tetrahedron can then be said to have an associated ``old'' edge, as it would appear in $T$.
+We take $\lk{e}$ during this algorithm to be a triangulated circle $L$ whose edges are exactly the edges of the ``old'' link in $T$.
+The main information contained in an ``old'' link is a string of crossing coefficients with respect to the edge $e$, and this information is not altered by the following algorithm.
+The structure of a tetrahedron and the requirement that our initial triangulation $T$ was edge distinct means that a pair of ``old'' edges from $T$ can be opposite edges of at most one tetrahedron of $T$, hence a pair of such ``old'' edges uniquely determine a 3--cell of $T'$.
+
+Because the wedge number of $e$ is at least 3, there are at least 6 edges of $\lk{e}$ with $+1$ crossing coefficients.
+We choose a connected path $Q=q_0 \dots q_n$ in $\lk{e}$ whose crossing coefficients sum to exactly 4, and whose tail edges, $q_0 q_1$ and $q_{n-1}q_n$, each have $+1$ crossing coefficient.
+The tail edges of this path along with the edge $e$ determine two 3--cells $t_0$,$t_1$ over which we blow $e$ up.
+Two of the vertices of the $t_0$ are $x$ and $y$.
+
+The image of $e$ under $\pi$ is the path $P=v^1\dots v^k$.
+We choose to map $x$ to $v^1$ and $y$ to $v^k$.
+The vertices of $G$ on the circle which are not $v^1$ or $v^k$ are partitioned into two sets which we arbitrarily designate as ``upper'' and ``lower'' with respect to $P$.
+Subscripts containing $l$'s and $u$'s refer to lower and upper designations of the objects in question.
+Without loss of generality, we'll say that the edge opposite $e$ in $t_0$ is $q_0 q_1$ and the edge opposite $e$ in $t_1$ is $q_{n-1} q_n$. 
+Either way, the edge opposite $e$ in $t_{0,1}$ has crossing coefficient $+1$ with respect to $e$.
+Because $Q$ has crossing sum exactly 4, the vertices $q_0$, $q_n$ are both either upper or lower.
+We'll say that they're both lower, which forces $q_1$, $q_{n-1}$ to each be upper.
+Blowing up the edge of a pair of solid polyhedra adds a face to each of the two solid polyhedron over which the two become glued.
+The edge is called $e$ and has vertices $x$, $y$.
+One of the edges that $e$ splits into forms an edge of two 2--cells, one containing $q_0$ and one containing $q_n$.
+We call this edge $e_l$, and say that $e_l$ has vertices $x_l$, $y_l$.
+The other edge that $e$ splits into forms the edge of two 2--cells, one containing $q_1$ and one containing $q_{n-1}$.
+This edge is called $e_u$ and has vertices $x_u$, $y_u$.
+
+Every vertex $v^i$ of $P$ is adjacent to exactly two other vertices $v_{ll}^i$ and $v_{uu}^i$ of $G$.
+When $v^i$ is internal, each of $v^i$, $v_{ll}^i$, and $v_{uu}^i$ is on the path $P^i$, which is the image of an edge $e_i$ of $T$ through $\pi$.
+Then $v_{ll}^i$ is the vertex on the path $P^i$ from $v^i$ to a lower vertex and $v_{uu}^i$ is the vertex on the path $P^i$ from $v^i$ to an upper vertex.
+When $v^i$ is external, $v_{ll}^i$ and $v_{uu}^i$ are already upper and lower vertices, so $v_{uu}^i$ is the upper vertex and $v_{ll}^i$ is the lower vertex.
+
+\{FIGURE: SAMPLE $P^i$ AND VERTICES AS DEFINED\}
+
+
+\{FIGURE: BLOWUP ILLUSTRATED\}.
+
+The blowup of $P$ is the graph $P\times I$ which gives us a copy of $P$ at $\{0\}$ and at $\{1\}$, called $P_l$ and $P_u$ respectively.
+The new vertices are similarly subscripted, and the graph $P\times I$ also contains the edges $v_l^i v_u^i$ for every $i=1,\dots,k$.
+Blowing up $P$ inside of $G$ means that we remove $P$ and all edges incident to $P$ from $G$.
+We then add to $G$ the graph $P\times I$, and add the edges $v_{ll}^i v_l^i$ and $v_{ll}^i v_u^i$ for each $i$.
+The embedding of $G$ incorporates $P\times I$ in the way depicted in the figure.
+
+\{FIGURE: EMBEDDING OF $G$\}
+
+The regions of $G$ incident to $P$ are pushed away from each other and new regions are created.
+These new regions are bounded by the edges $v_u^i v_l^i$, $v_l^i v_l^{i+1}$, $v_l^{i+1} v_u^{i+1}$, $v_u^{i+1} v_u^i$ for $i=1,\dots,k-1$ and are the image of the new face $f$ of $T$.
+The paths $P_l$ and $P_u$ and the edges $v_u^1 v_l^1$ and $v_u^k v_l^k$ are the image of the boundary edges of $f$.
+Recall that these edges are $e_u$, $e_l$, $x_u x_l$ and $y_l y_u$.
+We get that $x_l x_u$ and $y_l y_u$ map to $v_l^1 v_u^1$ and $v_l^k v_u^k$ so that lower and upper subscripts are mapped to each other.
+This also makes $e_u$ map to $P_u$ and $e_l$ map to $P_l$.
+
+The wedge numbers of $e_u$ and $e_l$ are exactly 2 and $w(e)-1$ respectively.
+We can see this by saying that an edge of $\lk{e}$ contributes to the wedge number of $e_l$, (resp. $e_u$) if and only if that edge is adjacent to a 2--cell of $T'$ containing $e_l$, (resp. $e_u$).
+If $w(e_l)$ is still greater than 2, we proceed by choosing another pair of 3--cells to blow $e_l$ up over.
+This pair is found by extending $Q$ in both directions to $q_{-k}q_{-k+1}\dots q_0\dots q_n\dots q_{n+k'} q_{n+k'+1}$ where $q_{-k}q_{-k+1}$ and $q_n+k' q_{n+k'+1}$ each have crossing coefficient $+1$ with respect to $e_l$, and there are no other edges between $q_{-k}q_{-k+1}$ and $q_0 q_1$ and between $q_{n-1} q_{n}$ and $q_n+k' q_{n+k'+1}$ with crossing coefficient $+1$ with respect to $e_l$.
+The residual triangulation structure leaves us with exactly two 3--cells, one containing $e_l$ and $q_n+k' q_{n+k'+1}$ and one containing $e_l$ and $q_{-k}q_{-k+1}$, over which to blow up $e_l$.
+The algorithm for this blow up works for blowing up $e_l$ into $e_lu$ and $e_ll$, where $e_lu$ has wedge number 2 and $e_ll$ has wedge number $w(e_l)-1$.
+Iterate until $e$ has been blown up into exactly $w(e)-1$ edges whose wedge numbers are exactly 2.
+
+There are a few new regions in $G$, and we need to know how generic points in those regions are pulled back into $T''$ by $\pi''$.
+Fortunately, we are able to derive the mapping circles of a region of $G''$ entirely from the mapping circles of an adjacent region.
+Let $R$ be a new region of $G''$ whose mapping circles are unknown, and let $R'$ be a region of $G''$, adjacent to $R$ over the edge $e$ of $G''$, whose mapping circles are known and given as the list $L=\{l_i\}$.
+We know $R'$ is adjacent to $R$ over the edge $e$ of $G''$ and $e$ is in the image of the edge $E$ in $T''$.
+Pull from $L$ the circles $l_i\in L$ which have in their description at least one 2--cell containing $E$.
+Deconstruct the circles $l_i$ into a single unordered list $K$ of 2--cells.
+Call the list of 2--cells in $T$ containing $E$ by $\sigma(E)$.
+Note that in $\sigma(E)$ is a 2--cell created by an edge blowup that is projected over $R$ but not $R'$, and that 2--cell is absent from $K$.
+The list of 2--cells that project over $R$ includes all of the piecewise linear circles in $L\setminus K$, as well as the symmetric difference of $K$ and $\sigma(E)$.
+Recreating the circles in $L\setminus K$ is unnecessary as they are unchanged by passing over $e$.
+We've gone through great pains in our explicit description of the dge blow up in order to ensure that the piecewise--linear circles in $K\bigtriangleup L$ are realized using the exact algorithm in Section~\ref{alg:trilist}.
+More precisely, the chasing of 2--cells over 3--cells is unambiguous.
+We now have a list of piecewise--linear circles in $T''$ for any region of $G''$.
+
+
+
+
+
+

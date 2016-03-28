@@ -1,0 +1,18 @@
+A gleamed shadow of a 3-manifold M is a shadow of a 4-manifold bounded by M.
+The ultimate goal of this thesis is to provide an algorithm that takes as input an edge-distinct triangulation $T$ of the closed orientable 3--manifold $M$ and produces as output a triangulation of a 4--manifold $W$ such that $\pd W$ is equivalent in the sense of triangulations to $T$.
+This algorithm is split into three chapters.
+Chapter \ref{cha:projection} builds a piecewise--linear Morse 2--function $T\to\RR$ and collects all data from that function necessary to build a gleamed shadow shared by $T$ and a 4--manifold bounded by $T$.
+Chapter \ref{cha:shadow} builds a gleamed shadow from the information obtained in \ref{cha:projection}.
+Chapter \ref{cha:manifold} assumes we have a gleamed shadow $(S,\glm)$ and constructs a triangulated 4--manifold whose shadow is $(S,\glm)$.
+
+The data we are trying to collect and retain with the algorithms of this chapter are as follows:
+\begin{enumerate}
+  \item A list of polygons which we will call regions.
+  \item A colouring of every edge of every region using one of the three colours $i,f,h$.
+  \item A wedge number of $0$, $1$, or $2$ for any edge coloured $i$.
+  \item A list of adjacencies between regions.
+        An item in this list consists of a pair of regions and an $i$--coloured boundary edge of each region.
+  \item A list of piecewise--linear circles associated to each region.
+        An item in this list is an ordered list of polygonal 2--cells which live in a closed polyhedral 3--complex so that any two consecutive 2--cells lie on the boundary of the same 3--cell, yet any 3--cell contributes either zero or two 2--cells to any given list.  This list is indexed by the list of regions in item 1.
+\end{enumerate}
+This data is sufficient to build a shadow, as seen in Chapter \ref{cha:shadow}.

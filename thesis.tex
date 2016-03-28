@@ -1,0 +1,69 @@
+\documentclass[12pt]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{float}
+\usepackage{smartref}
+\usepackage{amsthm}
+\usepackage{setspace}
+\usepackage{units}
+\usepackage{textgreek}
+\linespread{1.5}
+
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+
+\input{chapters/smcpreamble}
+
+\author{Samuel Churchill}
+\title{3--Manifolds Algorithmically Bound 4--Manifolds}
+
+      
+\begin{document}
+\maketitle
+
+\chapter*{Abstract}
+
+\tableofcontents
+
+\chapter{Introduction}
+\input{chapters/introduction}
+
+\chapter{Manifolds}
+\input{chapters/manifolds}
+
+\chapter{Background}
+\input{chapters/background}
+
+\chapter{Projections and initial data}
+\label{cha:projection}
+\input{chapters/algorithm1}
+
+\chapter{Shadows from 3--Manifolds}
+\label{cha:shadow}
+\input{chapters/algorithm2}
+
+\chapter{4--Manifolds from Shadows}
+\label{cha:manifold}
+\input{chapters/algorithm3}
+
+\chapter{Conclusion}
+\input{chapters/conclusion}
+
+% \appendix
+% \input{appendices/calgorithms}
+
+\bibliography{mybib}{}
+\bibliographystyle{plain}
+
+
+
+\end{document}
