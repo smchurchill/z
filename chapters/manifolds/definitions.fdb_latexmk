@@ -1,0 +1,11 @@
+# Fdb version 3
+["pdflatex"] 1464206127 "definitions.tex" "definitions.pdf" "definitions" 1464206127
+  "/etc/texmf/web2c/texmf.cnf" 1455665058 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1435377840 31349 7675f8adfbe12aae865d340d35423a49 ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1435377840 31349 7675f8adfbe12aae865d340d35423a49 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1458175712 725443 26c398e3d9d008ce34333c956c466744 ""
+  "definitions.aux" 1464205832 8 a94a2480d3289e625eea47cd1b285758 ""
+  "definitions.tex" 1464206126 3239 da75db8137ee94fb09585a8322fa927c ""
+  (generated)
+  "definitions.pdf"
+  "definitions.log"

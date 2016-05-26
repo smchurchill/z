@@ -10,7 +10,6 @@ Just before section 5.1 you talk of a shadow of T'', but this is a punctured man
 
 
                 CHAPTER 2
-
 Definition 2.1.1, when you say the boundary of a manifold is closed, there are two different yet correct interpretations of this statement.  1) the boundary is a closed subspace of the ambient manifold and 2) the boundary is closed as a manifold, i.e. it has no boundary.  I suspect you mean (2).
 
 The proof of (1) basically is local compactness: that the boundary is a locally-finite union of relatively closed subspaces.   The proof of (2) is a little more involved.  In the smooth case it reduces to linear algebra, but in the topological case you need the Invariance of Dimension theorem, which isn't always considered an easy theorem -- you need some tool, like homology, to prove it.  Is there any reason you define topological manifolds?  If not, it might read more like a distraction.  Or if you want to go into some details on topological vs. PL vs. smooth manifolds it would be best to minimize it. 

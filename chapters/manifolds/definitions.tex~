@@ -1,16 +1,17 @@
 \begin{defn}
 \label{def:manifold}
-A separable Hausdorff topological space $X$ is an $n$--dimensional \emph{topological manifold} if, for every point $p$ in $X$, there is a neighbourhood $U$ of $p$ and a homeomorphism $f:V\to U$ where $V$ is an open subset of the $n$--dimensional real half space $$\RNP=\{(x_1,\dots,x_{n})\in\RRN : x_n\geq 0\}.$$
-The pair $(U,f)$ is a \emph{chart}, and a collection of charts $\{(U_\alpha,f_\alpha):\alpha\in A\}$ such that the union $\bigcup_A U_\alpha$ contains $X$ is an \emph{atlas}.
-The map $f_\alpha\inv\comp f_\beta$ defined on $f_\beta\inv(U_\alpha\cap U_\beta)$ is called the \emph{transition map} between the charts $(U_\alpha,f_\alpha)$ and $(U_\beta,f_\beta)$.
-If $\{(U_\alpha,f_\alpha):\alpha\in A\}$ is an atlas of $X$ and the transition maps $f_\alpha\inv\comp f_\beta$ are smooth maps between subsets of $\RNP$ for every $\alpha,$ $\beta$ pair in $A$, then we call $X$ a \emph{smooth} $n$--dimensional manifold.
+A separable Hausdorff topological space $X$ is an $n$--dimensional \emph{topological manifold} if, for every point $p$ in $X$, there is a neighbourhood $U$ of $p$ and a homeomorphism $f:U\to V$ for some open subset $V$ of the $n$--dimensional real half space $$\RNP=\{(x_1,\dots,x_{n})\in\RRN : x_n\geq 0\}.$$
+We call the pair $(U,f)$ a \emph{chart}, and call a collection of charts $\{(U_\alpha,f_\alpha):\alpha\in A\}$ an \emph{atlas} if our collection of neighbourhoods $U_\alpha$ cover $X$.
+The map $f_\alpha\comp f_\beta$ defined on $f_\beta(U_\alpha\cap U_\beta)$ is called the \emph{transition map} between the charts $(U_\alpha,f_\alpha)$ and $(U_\beta,f_\beta)$.
+If the transition maps $f_\alpha\comp f_\beta$ are smooth maps between subsets of $\RNP$, then we call $X$ a \emph{smooth} $n$--dimensional manifold.
 If the transition maps are piecewise--linear, then $X$ is a \emph{piecewise--linear} manifold
 
-A point $x$ of $X$ covered by chart $(U,f)$ with $f\inv(x)$ in $\{(x_1,\dots,x_n): x_n = 0\}$ is called a \emph{boundary point} of $X$.
+A point of $X$ that is mapped to the subspace $\{(x_1,\dots,x_n): x_n = 0\}$ by a chart is called a \emph{boundary point} of $X$.
 The set of all boundary points of $X$, called the \emph{boundary of $X$}, is denoted by $\pd X$ and $\pd X$ is an $(n-1)$--dimensional submanifold of $X$.
 A point $x$ in $X\setminus \pd X$ is called \emph{interior}.
-If $X$ is compact and $\pd X=\emptyset$, then $X$ is said to be a \emph{closed manifold}.
-The boundary $\pd X$ of $X$ is, itself, a closed manifold.
+If $X$ is compact and $\pd X=\emptyset$, then $X$ is said the be \emph{closed}.
+It is easy to see that the $(n-1)$--dimensional submanifold $\pd X$ of $X$ is closed.
+
 \end{defn}
 
 Brief Digression On Orientations of $\RRN$.

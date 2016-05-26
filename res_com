@@ -1,4 +1,7 @@
                 CHAPTER 2
+                
+            
+                
 Your formalism with simplices at the top of page 9 has some troubles.  In particular, the facet opposite the vertex \vec 0 does not make sense with your terminology.  So your comments towards the end of the paragraph (above "FIGURE HERE IS GOOD") do not make sense.  It's probably best to just define an n-simplex as the convex hull of any (n+1) points in Euclidean (or affine space) of dimension n, in general position.  Being in general position just means that no point is contained in the convex hull of the others. 
 
                 CHAPTER 3
