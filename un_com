@@ -25,7 +25,7 @@ Remark 2.2.2, concerning the normal bundle in point (2) at the bottom of the pag
 Remark 2.2.3: technically a framing of \phi_0(\pm 1) is not an element of GL_n(R).  It's an element of the frame bundle of the tangent bundle of M, over the points \phi_0(\pm 1).  You can identify this with two copies of GL_n(R), but there is no canonical identification.   When you talk about the framing being orientation-preserving or reversing respectively, you perhaps mean to restrict to \phi_0(1) or \phi_0(-1) respectively.  But if you think of \phi_0(\pm 1) as a two-element set your comments do not make sense. 
 
 In your later paragraph (still 2.2.3) you talk freely about things being elements of GL_2(R) but again this is not quite true.   You should perhaps be a little more clear about your goal here.  Is the point of this paragraph to ascribe meaning to the idea of a framing as an integer -- a replacement for the actual definition of framing in the case where you only care about isotopy-classes? 
-2.3: Don't you mean to call your "An n-simplex" "the standard n-simplex"?  There appears to be no flexibility in your definition. 
+
 
 Bottom of page 10, your result about manifolds in dimension <= 6 having essentially unique smoothings should probably also be attributed to Hirsch and Mazur "Smoothings of PL manifolds" Ann. Math. Stud. 80.  Milnor's work is more about the fact that spheres in dimension <= 6 have unique smooth structures.  Hirsch and Mazur don't really need Milnor's work.  And the big part of Milnor's work is that in dimension 7, there are non-standard smooth structures on S^7. 
 
@@ -36,4 +36,3 @@ Chapter 4, especially around page 35 gets difficult to read with no figures.
             CHAPTER 5
 
 On page 44 near the top you state that "ignoring false regions... produces an equivalent 4-manifold" but you don't appear to have stated clearly what the 4-manifold construction process is in either situation.  So it feels a bit like a loose-end.    Perhaps you should fully describe the process and come to this other issue later? 
-

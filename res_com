@@ -4,6 +4,8 @@
                 
 Your formalism with simplices at the top of page 9 has some troubles.  In particular, the facet opposite the vertex \vec 0 does not make sense with your terminology.  So your comments towards the end of the paragraph (above "FIGURE HERE IS GOOD") do not make sense.  It's probably best to just define an n-simplex as the convex hull of any (n+1) points in Euclidean (or affine space) of dimension n, in general position.  Being in general position just means that no point is contained in the convex hull of the others. 
 
+2.3: Don't you mean to call your "An n-simplex" "the standard n-simplex"?  There appears to be no flexibility in your definition. 
+
                 CHAPTER 3
 
                 CHAPTER 4
@@ -46,4 +48,3 @@ You might want to provide a link or reference to the definition of "edge number"
                 CHAPTER 6
 
 Page 50 you seem to have a typo lk(()e) ?  There seems to be some funny writing going on here, as you claim a linking number is C, but earlier C appear to be a triangulation (4th sentence, same paragraph). 
-

@@ -24,13 +24,14 @@ Each point $p$ of $T$ is decribed by the convex combination
 \]
 with the $t_*$ nonnegative and summing to 1.
 We can define $\pi$ at $p$ by
-\begin{eqnarray*}
+\begin{eqnarray}
+\label{affine_extension}
   \pi(p)
   &=&
-  \pi(t_u u + t_v v + t_w w + t_x x)\\
+  \pi(t_u u + t_v v + t_w w + t_x x) \nonumber \\
   &=&
-  t_u \pi(u) + t_v \pi(v) + t_w \pi(w) + t_x \pi(x)\\
-\end{eqnarray*}
+  t_u \pi(u) + t_v \pi(v) + t_w \pi(w) + t_x \pi(x)
+\end{eqnarray}
   
 Without loss of generality, we assume that the points $\pi(u),\pi(v),\pi(w),\pi(x)$ are ordered in a clockwise orientation about $\sone$.
 We call $\pi:T\to\DD$ a \emph{linear tetrahedral projection}.
@@ -47,14 +48,14 @@ A point of $\DD$ in the image of $\pi$ is one of five types:
   \item The points of type 5 are the points outside of the image of any vertex or edge of $T$.
 \end{enumerate}
 The image of the $1$--skeleton of $T$ forms a planar graph $G$ inside of $\DD$ whose vertex set consists of the points of types 1 and 2 and whose edges consist of points of type 3 and 4.
-The planar graph embedding cuts the plane into five connected regions, four inner regions that contain all points of type 5, and and one outer region.
+The planar graph embedding cuts the plane into five connected regions: four inner regions that contain all points of type 5, and and one outer region.
 This graph has four outer edges, consisting of the points of type 3, and four inner edges, consisting of the points of type 4.
 
 By definition, the preimage of a point of type 1 is a vertex of $T$.
 The preimage of the single point of type 2 is a line segment between the edges $uw$ and $vx$ interior to $T$.
 A point of type 3 is the image of exactly one point in an edge of $T$.
 A point of type 4 is in the image of exactly one edge and one face, so the preimage of one of these points is a line segment interior to $T$ between those two facets.
-Finally, points of type 5 are in the image of exactly two faces of $T$, hence pull back to line segments interior to $T$ between those two faces.
+Finally, points of type 5 are in the image of exactly two faces of $T$, and pull back to line segments interior to $T$ between those two faces.
 \end{defn}
 
 Our algorithm begins by defining a projection $\pi:T\to\RR$ satisfying some properties that are very similar to the properties of a smooth Morse 2--function.
@@ -63,7 +64,7 @@ Next, let $E,E'$ be edges of $T$ and $\pi(E),\pi(E')$ their images.
 From the first condition it is guaranteed that if $\pi(E)\cap\pi(E')$ is nonempty then it consists of the single point $z$.
 We demand that if $z$ is interior to $\DD$ then it is in the image of no other edge of $T$ through $\pi$.
 
-The first requirement can be met by choosing arbitrary images for the vertices of $T$, then extending to a linear tetrahedral projection on each tetrahedron.
+The first requirement can be met by choosing arbitrary images for the vertices of $T$, then extending to a linear tetrahedral projection on each tetrahedron as in Equation \ref{affine_extension}.
 An arbitrary placement of the $m$ vertices of $T$ does not, however, guarantee the second condition.
 Choosing as images for the vertices odd $n\nth$ complex roots of unity (with $n\geq m$) does guarantee this condition by a theorem in \cite{PoonRub98}.
 Line segments between vertices of a regular polygon in the plane are called \emph{diagonals}.

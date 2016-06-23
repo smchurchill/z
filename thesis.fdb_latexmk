@@ -1,13 +1,12 @@
 # Fdb version 3
-["bibtex thesis"] 1464207170 "thesis.aux" "thesis.bbl" "thesis" 1464207172
+["bibtex thesis"] 1466709639 "thesis.aux" "thesis.bbl" "thesis" 1466709641
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
   "mybib.bib" 1436343275 2337 df47d1b9783756b01f088230dc61e0f1 ""
-  "thesis.aux" 1464207171 5894 5b4d285520a9297603cbcd4061519607 ""
+  "thesis.aux" 1466709640 5973 c346d479401b7232837fd30f938e9212 ""
   "thesis.bcf" 0 -1 0 ""
   (generated)
   "thesis.bbl"
-  "thesis.blg"
-["pdflatex"] 1464207170 "thesis.tex" "thesis.pdf" "thesis" 1464207172
+["pdflatex"] 1466709639 "thesis.tex" "thesis.pdf" "thesis" 1466709641
   "/etc/texmf/web2c/texmf.cnf" 1455665058 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm" 1136768653 3584 f80ddd985bd00e29e9a6047ebd9d4781 ""
@@ -213,7 +212,7 @@
   "chapters/algorithm1/algfindmapcirc.tex" 1438483049 1140 3ffc7b2da5b623fde686c0f16029c187 ""
   "chapters/algorithm1/algfindmaptri.tex" 1436564144 2656 566b0b80a364bcacf2ab371ed42608dd ""
   "chapters/algorithm1/algplanar.tex" 1438545994 4468 639fc45eb607572e9b4083ff32fb6f10 ""
-  "chapters/algorithm1/algproj.tex" 1438546029 5399 a1c6098d38059ab1c43623feb5c440b8 ""
+  "chapters/algorithm1/algproj.tex" 1464486705 5467 d75def52fb64d66102c87aabf53b4617 ""
   "chapters/algorithm1/algtrunctet.tex" 1438155502 3818 5aa5657f4daf133e2f53f406b60e9c11 ""
   "chapters/algorithm2.tex" 1432265239 277 6e1558b358e749edefaa62d66c721a33 ""
   "chapters/algorithm2/a2over.tex" 1438198880 1486 775bb1886b045bb73aea7f5cd7012695 ""
@@ -232,15 +231,15 @@
   "chapters/introduction.tex" 1423184115 1 68b329da9893e34099c7d8ad5cb9c940 ""
   "chapters/manifolds.tex" 1436295792 259 974b488858798cf8670c1649df2f3289 ""
   "chapters/manifolds/definitions.tex" 1464206668 3109 cff3467d858e60813333575064562b7a ""
-  "chapters/manifolds/handles.tex" 1436049963 5556 588736fdc22e1066ade5e37c617721cb ""
-  "chapters/manifolds/triangulations.tex" 1440520664 5519 f20a5c8b47f47e165c56a8a87350db4c ""
+  "chapters/manifolds/handles.tex" 1464287038 5552 774094ed07bf40c28e8432c92524a8b9 ""
+  "chapters/manifolds/triangulations.tex" 1464287161 5521 0148481c3d4d1109d53ff22d2306d84b ""
   "chapters/smcpreamble.tex" 1436297526 3502 896289f2b50b14a2830bbe8e7000b349 ""
-  "thesis.aux" 1464207171 5894 5b4d285520a9297603cbcd4061519607 ""
-  "thesis.bbl" 1464207170 1615 c827f7a6e75aed6e8069e1b1cd2c2148 "bibtex thesis"
-  "thesis.tex" 1464207167 1276 1416e81d087f8fd76c34d35ca8120bd9 ""
-  "thesis.toc" 1464207171 1694 d1aaefe8996bad380db3100da5a48112 ""
+  "thesis.aux" 1466709640 5973 c346d479401b7232837fd30f938e9212 ""
+  "thesis.bbl" 1466709639 1615 c827f7a6e75aed6e8069e1b1cd2c2148 "bibtex thesis"
+  "thesis.tex" 1466709635 1276 1416e81d087f8fd76c34d35ca8120bd9 ""
+  "thesis.toc" 1466709640 1694 d1aaefe8996bad380db3100da5a48112 ""
   (generated)
-  "thesis.pdf"
-  "thesis.aux"
-  "thesis.log"
   "thesis.toc"
+  "thesis.pdf"
+  "thesis.log"
+  "thesis.aux"

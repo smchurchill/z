@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.3.16)  25 MAY 2016 13:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.3.16)  23 JUN 2016 12:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1414,8 +1414,8 @@ Chapter 4.
 (./chapters/algorithm1/algproj.tex [27] [28])
 (./chapters/algorithm1/algplanar.tex [29] [30])
 (./chapters/algorithm1/algfindmaptri.tex [31])
-(./chapters/algorithm1/algfindmapcirc.tex) [32]
-(./chapters/algorithm1/algcountwedgenum.tex [33] [34])
+(./chapters/algorithm1/algfindmapcirc.tex)
+(./chapters/algorithm1/algcountwedgenum.tex [32] [33] [34])
 (./chapters/algorithm1/algtrunctet.tex [35])
 (./chapters/algorithm1/algblowup.tex [36] [37] [38])
 (./chapters/algorithm1/algfinalmod.tex [39] [40])) [41]
@@ -1446,13 +1446,13 @@ File: lgrlmr.fd 2013/09/01 v1.0 Greek Latin Modern Regular
 ]
 (./thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 17144 strings out of 495000
- 313735 string characters out of 6181169
- 364804 words of memory out of 5000000
- 19892 multiletter control sequences out of 15000+600000
+ 17146 strings out of 495000
+ 313772 string characters out of 6181169
+ 364822 words of memory out of 5000000
+ 19894 multiletter control sequences out of 15000+600000
  67155 words of font info for 71 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,8n,54p,520b,210s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,8n,54p,520b,206s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/
 texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.e
 nc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf/fonts/enc
@@ -1468,7 +1468,7 @@ c/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/
 texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/l
 msy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (58 pages, 375879 bytes).
+Output written on thesis.pdf (58 pages, 375908 bytes).
 PDF statistics:
  271 PDF objects out of 1000 (max. 8388607)
  193 compressed objects within 2 object streams
