@@ -1,13 +1,23 @@
-\begin{defn}[Coordinate Systems]
+
+
+\begin{defn}[Coordinates]
 	\label{def:coordinates}
-	Let $X$ be a topological space and let $U\subset X$ and $V\subset \RN$ be open.
-	A homeomorphism (a continuous bijection with continuous inverse) $f:U\to V$ is called a \emph{coordinate system} on $U$.
+	Let $X$ be a topological space and let $U\subset X$ and $V\subset \RRN$ be open.
+	A homeomorphism $f:U\to V$ is called a \emph{coordinate system} on $U$.
 	Writing $f$ as $f(u)=(x_1(u),\dots,x_n(u))$, the functions $x_i$ are \emph{coordinate functions}.
-	The pair $(f,U)$ is a \emph{chart}, and the inverse map $f\inv$ is called a \emph{parameterization} of $U$.
+	The pair $(f,U)$ is a \emph{chart} of $X$, and the inverse map $f\inv$ is called a \emph{parameterization} of $U$.
+\end{defn}
+
+\begin{defn}[Atlas]
+	\label{def:atlas}
+	Let $\mathcal{A}=\{U_\alpha,f_\alpha\}$ be a collection of charts of $X$ parameterized by $\alpha\in A$.
+	If $\bugcup_A U_\alpha$ contains $X$, then $\mathcal{A}$ is an \emph{Atlas} for $X$.
+	The homeomorphisms $f_\alpha\comp f_\beta\inv:f_\beta(U_\alpha\cap U_\beta)\to f_\alpha(U_\alpha\cap U_\beta)$ are \emph{transition maps}.
+	
 \end{defn}
 
 
-\begin{defn}[Topological, Piecewise--Linear, and Smooth Manifolds]
+\begin{defn}[Manifolds]
 	\label{def:manifold}
 	A separable Hausdorff topological space $X$ is an $n$--dimensional \emph{topological manifold} if, for every point $p$ in $X$, there is a neighbourhood $U$ of $p$ and a homeomorphism $f:V\to U$ where $V$ is an open subset of the $n$--dimensional real half space $$\RNP=\{(x_1,\dots,x_{n})\in\RRN : x_n\geq 0\}.$$
 	The pair $(U,f)$ is a \emph{chart}, and a collection of charts $\{(U_\alpha,f_\alpha):\alpha\in A\}$ such that the union $\bigcup_A U_\alpha$ contains $X$ is an \emph{atlas}.
