@@ -1,54 +1,51 @@
-
-
 \begin{defn}[Coordinates]
 	\label{def:coordinates}
-	Let $X$ be a topological space and let $U\subset X$ and $V\subset \RRN$ be open.
+	Let $X$ be a topological space.
+	Let $U$ be an open subset of $X$ and let $V$ and open subset of the real half-space
+	$$\RNP=\{(x_1,\dots,x_{n})\in\RRN : x_n\geq 0\}.$$
 	A homeomorphism $f:U\to V$ is called a \emph{coordinate system} on $U$.
-	Writing $f$ as $f(u)=(x_1(u),\dots,x_n(u))$, the functions $x_i$ are \emph{coordinate functions}.
-	The pair $(f,U)$ is a \emph{chart} of $X$, and the inverse map $f\inv$ is called a \emph{parameterization} of $U$.
+	Writing $f$ as $f(u)=(\xi_1(u),\dots,\xi_n(u))$, the functions $\xi_i$ are \emph{coordinate functions}.
+	The pair $(U,f)$ is a \emph{chart} of $X$, and the inverse map $f\inv$ is called a \emph{parameterization} of $U$.
 \end{defn}
 
 \begin{defn}[Atlas]
 	\label{def:atlas}
-	Let $\mathcal{A}=\{U_\alpha,f_\alpha\}$ be a collection of charts of $X$ parameterized by $\alpha\in A$.
-	If $\bugcup_A U_\alpha$ contains $X$, then $\mathcal{A}$ is an \emph{Atlas} for $X$.
-	The homeomorphisms $f_\alpha\comp f_\beta\inv:f_\beta(U_\alpha\cap U_\beta)\to f_\alpha(U_\alpha\cap U_\beta)$ are \emph{transition maps}.
-	
+	Let $\mathcal{A}=\{(U_\alpha,f_\alpha)\}$ be a collection of charts of the topological space $X$ parameterized by $\alpha\in A$.
+	If $\bigcup_A U_\alpha$ contains $X$, then $\mathcal{A}$ is an \emph{atlas} for $X$.
+	The homeomorphisms $f_\alpha\comp f_\beta\inv:f_\beta(U_\alpha\cap U_\beta)\to f_\alpha(U_\alpha\cap U_\beta)$ are \emph{transition maps} of $\mathcal{A}$.
+	An atlas is said to be a \emph{smooth atlas} if all of its transition maps are smooth.
+	Two smooth atlases are \emph{equivalent} if their union is a smooth atlas.
 \end{defn}
-
 
 \begin{defn}[Manifolds]
 	\label{def:manifold}
-	A separable Hausdorff topological space $X$ is an $n$--dimensional \emph{topological manifold} if, for every point $p$ in $X$, there is a neighbourhood $U$ of $p$ and a homeomorphism $f:V\to U$ where $V$ is an open subset of the $n$--dimensional real half space $$\RNP=\{(x_1,\dots,x_{n})\in\RRN : x_n\geq 0\}.$$
-	The pair $(U,f)$ is a \emph{chart}, and a collection of charts $\{(U_\alpha,f_\alpha):\alpha\in A\}$ such that the union $\bigcup_A U_\alpha$ contains $X$ is an \emph{atlas}.
-	The map $f_\alpha\inv\comp f_\beta$ defined on $f_\beta\inv(U_\alpha\cap U_\beta)$ is called the \emph{transition map} between the charts $(U_\alpha,f_\alpha)$ and $(U_\beta,f_\beta)$.
-	If $\{(U_\alpha,f_\alpha):\alpha\in A\}$ is an atlas of $X$ and the transition maps $f_\alpha\inv\comp f_\beta$ are smooth maps between subsets of $\RNP$ for every $\alpha,$ $\beta$ pair in $A$, then we call $X$ a \emph{smooth} manifold.
-	If the transition maps are piecewise--linear, then $X$ is a \emph{piecewise--linear} manifold.
-	When we would like to emphasize the dimension, we say that $X$ is an $n$--dimensional manifold or an $n$--manifold.
+	Let $X$ be a separable Hausdorff topological space, and $\mathcal{A}$ an atlas for $X$.
+	The charts of $\mathcal{A}$ are maps from open sets of $X$ to the open half space $\RNP$.
+	If $\mathcal{A}$ is a smooth alas, then $X$ is a \emph{smooth n--manifold}, or just \emph{n--manifold}.
+	A \emph{smooth structure} on $X$ is a maximal smooth atlas for $X$.
 	If $X$ is an $n$--manifold and $Y\subset X$ satisfies the definition of an $m$--manifold, then $Y$ is an $m$--dimensional \emph{submanifold} of $X$.
 \end{defn}
-
-With that taken care of, we can stop talking about topological manifolds.
-All future instances of manifold objects and statements about them will carry the assumption that the manifold in question is either smooth or PL (piecewise--linear) unless stated otherwise.
-We will revise this assumption to make it stricter when we come to Chapter \ref{cha:alg1}, but it will suffice until then.
 
 \begin{defn}[Boundary, Interior]	
 	\label{def:boundary}
 	Let $X$ be a manifold.
-	A point $x$ of $X$ covered by chart $(U,f)$ with $f\inv(x)$ in $\{(x_1,\dots,x_n): x_n = 0\}$ is called a \emph{boundary point} of $X$.
+	Let $p\in X$ and $(U,f)$ a chart with $p\in U$.
+	If $f(p)$ is in the subset $\{(x_1,\dots,x_n): x_n = 0\}$ of $\RNP$, then $p$ is a \emph{boundary point} of $X$.
 	The set of all boundary points of $X$, called the \emph{boundary of $X$}, is denoted by $\pd X$.
 	A point $x$ in $X\setminus \pd X$ is called \emph{interior}.
-	If $X$ is compact and $\pd X=\emptyset$, then $X$ is said to be a \emph{closed manifold}.
+	If $X$ is compact and $\pd X=\emptyset$, then $X$ is a \emph{closed manifold}.
 \end{defn}
 
 \begin{prop}[Boundaries are Manifolds]
 	\label{prop:boundariesaremanifolds}
-	Let $X$ be a manifold.
+	Let $X$ be an $n$--manifold.
 	The boundary of $X$, $\pd X$, is an $(n-1)$--dimensional closed submanifold of $X$.
 \end{prop}
 
 \begin{proof}
-	content...
+	Let $\mathcal{A} = \{(U_\alpha, f_\alpha)\}$ be a smooth structure on $X$.
+	We can construct a smooth atlas for $\pd X$ from $\mathcal{A}$
+	
 \end{proof}
 
 Brief Digression On Orientations of $\RRN$.

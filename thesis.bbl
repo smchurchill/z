@@ -1,0 +1,55 @@
+\begin{thebibliography}{10}
+
+\bibitem{CostThur08}
+Francesco Costantino and Dylan Thurston.
+\newblock 3-manifolds efficiently bound 4-manifolds.
+\newblock {\em Journal of Topology}, (3) 1, 2008.
+
+\bibitem{GayKirby14}
+David Gay and Robion Kirby.
+\newblock Indefinite {M}orse 2-functions; broken fibrations and
+  generalizations, 2014.
+
+\bibitem{GompStip}
+Robert Gompf and Andr\`as Stipsicz.
+\newblock {\em 4--Manifolds and {K}irby Calculus}.
+\newblock American Mathematical Society, 1999.
+
+\bibitem{Hirsch61}
+Morris Hirsch.
+\newblock Immersions of almost parallelizable manifolds.
+\newblock {\em Proc. Amer. Math. Soc.}, 12:845–846, 1961.
+
+\bibitem{MilnStas}
+John Milnor and James Stasheff.
+\newblock {\em Characteristic Classes}.
+\newblock Princeton University Press, 1974.
+
+\bibitem{PoonRub98}
+Bjorn Poonen and Michael Rubinstein.
+\newblock The number of intersection points made by the diagonals of a regular
+  polygon.
+\newblock {\em {SIAM} Journal on Discrete Mathematics}, (1) 11:135--156, 1998.
+
+\bibitem{Rokhlin65}
+Vladimir Rokhlin.
+\newblock The embedding of non-orientable three-manifolds into five-dimensional
+  euclidean space.
+\newblock {\em Dokl. Akad. Nauk SSSR}, 160:549–551, 1965.
+
+\bibitem{Rourke85}
+Colin Rourke.
+\newblock A new proof that {\textOmega}$_3$ is zero.
+\newblock {\em J. London Math. Soc.}, (2) 31:373--376, 1985.
+
+\bibitem{Turaev91}
+Vladimir Turaev.
+\newblock Topology of shadows.
+\newblock Preprint, 1991.
+
+\bibitem{Wall65}
+Charles Terence~Clegg Wall.
+\newblock All 3-manifolds imbed in 5-space.
+\newblock {\em Bull. Amer. Math. Soc.}, 71:564–567, 1965.
+
+\end{thebibliography}
