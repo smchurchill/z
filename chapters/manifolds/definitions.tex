@@ -1,81 +1,142 @@
+At its simplest, most colloquial definition, an $n$--dimensional manifold is a space that locally looks like real $n$--dimensional space or half space $\HN$.
+We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``looks like.''
+
 \begin{defn}[Coordinates]
 	\label{def:coordinates}
-	Let $X$ be a topological space.
-	Let $U$ be an open subset of $X$ and let $V$ and open subset of the real half-space
-	$$\RNP=\{(x_1,\dots,x_{n})\in\RRN : x_n\geq 0\}.$$
-	A homeomorphism $f:U\to V$ is called a \emph{coordinate system} on $U$.
-	Writing $f$ as $f(u)=(\xi_1(u),\dots,\xi_n(u))$, the functions $\xi_i$ are \emph{coordinate functions}.
-	The pair $(U,f)$ is a \emph{chart} of $X$, and the inverse map $f\inv$ is called a \emph{parameterization} of $U$.
+	Let $\HN\subset\RRN$ denote the closed real half space with the subspace topology, defined as
+	\[
+		\HN=\{(x_1,\dots,x_{n})\in\RRN : x_n\geq 0\}.
+	\]
+	We use the notations $\inter{\HN}$ and $\pd \HN$ to denote the interior and boundary of $\HN$ as subsets of $\RRN$ which, when $n>0$, are
+	\[
+		\begin{array}{ccccc}
+			\inter{\HN} & = & \{(x_1,\dots,x_{n})\in\RRN : x_n > 0\}, & &\\
+			\pd \HN	& = & \{(x_1,\dots,x_{n})\in\RRN : x_n = 0\} & \approx & \R^{n-1}.
+		\end{array}
+	\]
+	When $n=0$, $\HH^0 = \R^0 = \{0\}$, so $\inter{\HH^0}=\R^0$ and $\pd\HH^0=\emptyset$.
+
+	Let $X$ be a second-countable Hausdorff space.
+	The pair $(U,f)$ where $U$ is an open subset of $X$ and $f$ is a homeomorphism from $U$ onto an open set of either $\RRN$ or $\HN$ is called a \emph{chart} of $X$.
+	The map $f$ is a \emph{coordinate system} on $U$ and its inverse $f\inv$ is a \emph{parameterization} of $U$.
+	Writing $f$ as
+	\[
+		f(u) = (\xi_1(u),\dots,\xi_n(u)),
+	\]
+	the functions $\xi_i$ are \emph{coordinate functions}
 \end{defn}
 
 \begin{defn}[Atlas]
 	\label{def:atlas}
-	Let $\mathcal{A}=\{(U_\alpha,f_\alpha)\}$ be a collection of charts of the topological space $X$ parameterized by $\alpha\in A$.
+	Let $\mathcal{A}=\{(U_\alpha,f_\alpha)\}$ be a collection of charts of the space $X$ parameterized by $\alpha\in A$ for some indexing set $A$.
 	If $\bigcup_A U_\alpha$ contains $X$, then $\mathcal{A}$ is an \emph{atlas} for $X$.
 	The homeomorphisms $f_\alpha\comp f_\beta\inv:f_\beta(U_\alpha\cap U_\beta)\to f_\alpha(U_\alpha\cap U_\beta)$ are \emph{transition maps} of $\mathcal{A}$.
-	An atlas is said to be a \emph{smooth atlas} if all of its transition maps are smooth.
-	Two smooth atlases are \emph{equivalent} if their union is a smooth atlas.
+	We say that $(U_\alpha,f_\alpha)$ and $(U_\beta,f_\beta)$ are \emph{smoothly compatible} if either $U_\alpha\cap U_\beta$ is empty or the transition maps $f_\alpha\comp f_\beta\inv$ and $f_\beta\comp f_\alpha\inv$ are smooth as maps $\RRN\to\RRN$, i.e.\ they have continuous partial derivatives of all orders.
+	A smooth homeomorphism with smooth inverse is called a \emph{diffeomorphism}.
+	If every pair of charts in an atlas is smoothly compatible then that atlas is a \emph{smooth atlas}.
+	Two smooth atlases are equivalent if their union is a smooth atlas.
 \end{defn}
 
 \begin{defn}[Manifolds]
 	\label{def:manifold}
-	Let $X$ be a separable Hausdorff topological space, and $\mathcal{A}$ an atlas for $X$.
-	The charts of $\mathcal{A}$ are maps from open sets of $X$ to the open half space $\RNP$.
-	If $\mathcal{A}$ is a smooth alas, then $X$ is a \emph{smooth n--manifold}, or just \emph{n--manifold}.
-	A \emph{smooth structure} on $X$ is a maximal smooth atlas for $X$.
+	Let $X$ be a second-countable Hausdorff topological space, and $\mathcal{A}$ an atlas for $X$.
+	If $\mathcal{A}$ is a smooth atlas, then the pair $(X,\mathcal{A})$ is a \emph{smooth n--manifold}, or just \emph{n--manifold}.
+	We omit writing the atlas when talking about a manifold.
+	If $\mathcal{A}$ is a maximal smooth atlas then we call it a \emph{smooth structure} on $X$.
+	We will assume that a smooth manifold is always equipped with a smooth structure.
 	If $X$ is an $n$--manifold and $Y\subset X$ satisfies the definition of an $m$--manifold, then $Y$ is an $m$--dimensional \emph{submanifold} of $X$.
 \end{defn}
 
 \begin{defn}[Boundary, Interior]	
 	\label{def:boundary}
-	Let $X$ be a manifold.
-	Let $p\in X$ and $(U,f)$ a chart with $p\in U$.
-	If $f(p)$ is in the subset $\{(x_1,\dots,x_n): x_n = 0\}$ of $\RNP$, then $p$ is a \emph{boundary point} of $X$.
-	The set of all boundary points of $X$, called the \emph{boundary of $X$}, is denoted by $\pd X$.
-	A point $x$ in $X\setminus \pd X$ is called \emph{interior}.
-	If $X$ is compact and $\pd X=\emptyset$, then $X$ is a \emph{closed manifold}.
+	Let $X$ be a smooth $n$--manifold.
+	A chart $(U,f)$ is called an \emph{interior chart} is $f(U)$ is an open subset of $\RRN$ and is a \emph{boundary chart} if $f(U)$ is an open subset of $\HN$ with $f(U)\cap\pd \HN\neq\emptyset$.
+	Let $p\in X$.
+	We say that $p$ is an \emph{interior point} if it is in the domain of an interior chart, and is a \emph{boundary point} if it is in the domain of a boundary chart $(U,f)$ so that $f(p)\in\pd\HN$.
+	The set of all boundary points of $X$ is called the \emph{boundary of $X$} and is denoted by $\pd X$.
+	Similarly, the set of all interior points of $X$ is called the \emph{interior} of $X$ and is denoted by $\inter{X}$.
+	If $X$ is compact with empty boundary then $X$ is \emph{closed} as a manifold.
 \end{defn}
 
 \begin{prop}[Boundaries are Manifolds]
 	\label{prop:boundariesaremanifolds}
-	Let $X$ be an $n$--manifold.
-	The boundary of $X$, $\pd X$, is an $(n-1)$--dimensional closed submanifold of $X$.
+	Let $X$ be an $(n+1)$--manifold.
+	The boundary of $X$, $\pd X$, is an $n$--dimensional closed submanifold of $X$.
 \end{prop}
 
 \begin{proof}
+	Let $\pd X\subset X$ be a second-countable Hausdorff space under the subspace topology.
 	Let $\mathcal{A} = \{(U_\alpha, f_\alpha)\}$ be a smooth structure on $X$.
-	We can construct a smooth atlas for $\pd X$ from $\mathcal{A}$
+	There is a smooth atlas $\mathcal{B}$ for $\pd X$ that can be described in term of $\mathcal{A}$.
+	For each $(U_\alpha,f_\alpha)$ in $\mathcal{A}$, there is a corresponding chart $(U_\beta,f_\beta)$ in $\mathcal{B}$ where $U_\beta = U_\alpha \cap \pd X$ and $f_\beta = \restr{f_\alpha}{U_\beta}$.
+	Each $f_\beta$ is a homeomorphism whose domain is a set $U_\beta$ that is open in $\pd X$.
+	Each point in $U_\beta$ is a boundary point and $f_\beta$ is a homeomorphism, so $f_\beta(U_\beta)$ is an open subset of $\pd \HH^{n+1} \approx\RRN$.
+	The union of $U_\alpha$'s contains $X$, so the union of $U_\beta$'s contains $\pd X$, so $(\pd X, \mathcal{B})$ is a smooth $n$--manifold.
+	Any chart $(U,f)$ of $\mathcal{B}$ has $f(U)$ an open subset of $\RRN$, so $(U,f)$ is an interior chart.
+	We conclude that $\pd(\pd X)$ is empty hence $\pd X$ is a closed manifold. 
+\end{proof}
+
+Another important concept in the study of manifolds is that of the tangent space.
+Manifolds are defined by their local homogeneity, and a tangent space is a precise description of that homogeneity near a point.
+
+\begin{defn}[Tangent Space]
+	\label{def:tangentspace}
+	Let $X$ be an $n$--manifold, $p$ an interior point of $X$, $(U,f)$ a chart containing $p$ with $f(p)=\vec{0}$, $B_r^k$ the open ball of radius $r$ centred at $\vec{0}$ in $\R^k$, and $\gamma$ a map $$\gamma:B_r^k\to \inter{X}$$
+	with $\gamma(0)=p$.
+	We say that $\gamma$ is \emph{smooth} in a neighbourhood of $t$ in $B_r^k$ if $f\comp\gamma$ is smooth at $t$ as a map $\R^k\supset B_r^k\to\RRN$.
+	When $k=1$ and $r$ is some small $\varepsilon$, $B_r^k$ is the interval $(-\varepsilon, \varepsilon)$.
+	In this case, when $\gamma$ is smooth on the whole of the interval $(-\varepsilon, \varepsilon)$, such a $\gamma$ is called a \emph{curve} in $X$ through $p$.
+	Note that this definition is independent of the chart used, as all of our transition maps are smooth.
+	
+	Let $C_p X$ be the space of smooth curves in $X$ through $p$ and $\gamma_1, \gamma_2$ elements of $C_p X$.
+	We can define an equivalence relation $\sim$ on $C_p(X)$ by saying that $\gamma_1\sim\gamma_2$ if
+	\[
+		\Ddt(f\comp\gamma_1)(0) = \Ddt(f\comp\gamma_2)(0).
+	\]
+	An equivalence class of $C_p X/\sim$ is a \emph{tangent vector} at $p$, and the space $C_p X/\sim$ is the \emph{tangent space} at $p$, denoted $T_p X$.
+\end{defn}
+
+\begin{prop}
+	\label{prop:tangentspacevectorspace}
+	Let $X$ be an $n$--manifold and $p$ a point in $\inter{X}$.
+	Then $T_p X$ is a vector space isomorphic to $\RRN$.
+\end{prop}
+
+\begin{proof}
+	Let $(U,f)$ be a chart containing $p$ with $f(p)=\vec{0}$.
+	For a vector $v$ of $\RRN$, let $L_v$ be the parameterized straight line through $\vec{0}$ whose velocity is $v$.
+	Precisely, $L_v(t)=tv.$
+	It follows from our definition of tangent space that the map defined by
+	\[
+		\begin{array}{cccc}
+			df : & \RRN & \to & T_p X \\
+			& v & \mapsto & [f\inv\comp L_v] .
+		\end{array}
+	\]
+	is a bijection.
+	We define the operation on $T_p X$ so that $F$ is strengthened to a vector space isomorphism:
+	\[
+		\begin{array}{ccc}
+			df(v)+df(w)=df(v+w), & \hspace{10mm} \text{and} \hspace{10mm} & tdf(v)=df(tv).
+		\end{array}
+	\]
+	The vector space structure of $T_p X$ is independent of the choice of chart.
+	To see this, let $(U_1, f_1)$ and $(U_2, f_2)$ be charts with $f_1(p)=f_2(p)=\vec{0}$ and let $\phi=f_2\comp f_1\inv$ be their transition map.
 	
 \end{proof}
 
-Brief Digression On Orientations of $\RRN$.
+The main result of this work is applicable to orientable 3--manifolds, so we will review what is meant by a space being orientable.
+Essentially, orientability is a guarantee that when you go for a walk your right and left sides haven't switched places by the time you get home.
 
-\begin{defn}
-	\label{def:orient}
-	
-	here we define tangent spaces and orientability of a manifold
-	
+\begin{defn}[Orientation]
+	\label{def:orientation}
+	Let $\RRN$ be $n$--dimensional real space, $\mathcal{B}(\RRN)$ the set of ordered bases for $\RRN$, and $\gl{n}{\R}$ the general linear group, i.e.\ the space of $n\times n$ invertible matrices with entries in $\R$.
+	Let $b_1$ and $b_2$ be any two ordered bases from $\mathcal{B}(\RRN)$.
+	It is a standard result of linear algebra that there is a unique element $A$ of $\gl{n}{\R}$ that transforms $b_1$ into $b_2$.
+	If the determinant $\det A$ is positive, then $b_1$ and $b_2$ are \emph{positively oriented} with respect to each other.
+	If $\det A$ is negative, then $b_1$ and $b_2$ are \emph{negatively oriented}.
+	We can define an equivalence relation on $\mathcal{B}(\RRN)$ by saying that $b_1$ is equivalent to $b_2$ if they are positively oriented.
+	An \emph{orientation} of $\RRN$ is a choice of one of the two equivalence classes of $\mathcal{B}(\RRN)$.
 \end{defn}
 
-\begin{defn}
-	\label{def:isotopy}
-	
-	A smooth \emph{isotopy} between embeddings $\varphi_0,\varphi_1:Y\to X$ is a smooth homotopy $\varphi_t: Y \to X$ ($0\leq t\leq 1$) through embeddings.
-	If an isotopy exists, we say that $\varphi_0,\varphi_1$ are \emph{isotopic}.
-	
-\end{defn}
 
-brief digression on isotopy extension
-
-\begin{theorem}[Isotopy Extension \{CITE: Miln\}]
-	\label{thm:isotopyextension}
-	
-	Let $M$ be a smooth compact submanifold of the smooth closed manifold $N$.
-	If $h_t$ is a smooth isotopy of the inclusion $M\into N$ then $h_t$ is the restriction of a smooth isotopy $h_t':N\to N$ of the identity $\ident{N}$ such that $h_t'$ is the identity on $N$ outside of a compact subset of $N$.
-	
-\end{theorem}
-
-We would like to restate the above theorem into a more useful form.
-Let $Y\subset X$ be a smooth compact submanifold in the interior of the smooth manifold $X$ and let $i:Y\into X$ be inclusion.
-Any smooth isotopy $\varphi_t:Y\to X$ with $\varphi_0=i$ induces an isotopy $\Phi_t:X\to X$ through diffeomorphisms $X\to X$ with $\Phi_0=\ident{X}$ and $\varphi_t=\Phi_t\comp\varphi_0$ for each $t$.
-The isotopy $\Phi_t$ is called an \emph{ambient isotopy}, and a pair of submanifolds $Y_1,Y_2$ of $X$ are \emph{ambiently isotopic} is there exists a diffeomorphism $\Phi:X\to X$ such that $\Phi$ is homotopic to $\ident{X}$ through diffeomorphisms and $\Phi$ maps $Y_1$ to $Y_2$.
