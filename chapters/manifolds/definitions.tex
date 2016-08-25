@@ -3,7 +3,7 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 
 \begin{defn}[Coordinates]
 	\label{def:coordinates}
-	Let $\HN\subset\RRN$ denote the closed real half space with the subspace topology, defined as
+	Let $\HN\subset\RRN$ denote the closed real half space under the subspace topology, defined as
 	\[
 		\HN=\{(x_1,\dots,x_{n})\in\RRN : x_n\geq 0\}.
 	\]
@@ -32,7 +32,6 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 	If $\bigcup_A U_\alpha$ contains $X$, then $\mathcal{A}$ is an \emph{atlas} for $X$.
 	The homeomorphisms $f_\alpha\comp f_\beta\inv:f_\beta(U_\alpha\cap U_\beta)\to f_\alpha(U_\alpha\cap U_\beta)$ are \emph{transition maps} of $\mathcal{A}$.
 	We say that $(U_\alpha,f_\alpha)$ and $(U_\beta,f_\beta)$ are \emph{smoothly compatible} if either $U_\alpha\cap U_\beta$ is empty or the transition maps $f_\alpha\comp f_\beta\inv$ and $f_\beta\comp f_\alpha\inv$ are smooth as maps $\RRN\to\RRN$, i.e.\ they have continuous partial derivatives of all orders.
-	A smooth homeomorphism with smooth inverse is called a \emph{diffeomorphism}.
 	If every pair of charts in an atlas is smoothly compatible then that atlas is a \emph{smooth atlas}.
 	Two smooth atlases are equivalent if their union is a smooth atlas.
 \end{defn}
@@ -40,11 +39,11 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 \begin{defn}[Manifolds]
 	\label{def:manifold}
 	Let $X$ be a second-countable Hausdorff topological space, and $\mathcal{A}$ an atlas for $X$.
-	If $\mathcal{A}$ is a smooth atlas, then the pair $(X,\mathcal{A})$ is a \emph{smooth n--manifold}, or just \emph{n--manifold}.
-	We omit writing the atlas when talking about a manifold.
+	If $\mathcal{A}$ is a smooth atlas, then the pair $(X,\mathcal{A})$ is a \emph{smooth n--manifold},  \emph{n--manifold}, or just \emph{manifold}.
+	We usually omit writing the atlas when talking about a manifold.
 	If $\mathcal{A}$ is a maximal smooth atlas then we call it a \emph{smooth structure} on $X$.
 	We will assume that a smooth manifold is always equipped with a smooth structure.
-	If $X$ is an $n$--manifold and $Y\subset X$ satisfies the definition of an $m$--manifold, then $Y$ is an $m$--dimensional \emph{submanifold} of $X$.
+	If $X$ is an $n$--manifold and $Y\subset X$ satisfies the definition of an $m$--manifold under the subspace topology, then $Y$ is an $m$--dimensional \emph{submanifold} of $X$.
 \end{defn}
 
 \begin{defn}[Boundary, Interior]	
@@ -64,17 +63,36 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 	The boundary of $X$, $\pd X$, is an $n$--dimensional closed submanifold of $X$.
 \end{prop}
 
-\begin{proof}
-	Let $\pd X\subset X$ be a second-countable Hausdorff space under the subspace topology.
-	Let $\mathcal{A} = \{(U_\alpha, f_\alpha)\}$ be a smooth structure on $X$.
-	There is a smooth atlas $\mathcal{B}$ for $\pd X$ that can be described in term of $\mathcal{A}$.
-	For each $(U_\alpha,f_\alpha)$ in $\mathcal{A}$, there is a corresponding chart $(U_\beta,f_\beta)$ in $\mathcal{B}$ where $U_\beta = U_\alpha \cap \pd X$ and $f_\beta = \restr{f_\alpha}{U_\beta}$.
-	Each $f_\beta$ is a homeomorphism whose domain is a set $U_\beta$ that is open in $\pd X$.
-	Each point in $U_\beta$ is a boundary point and $f_\beta$ is a homeomorphism, so $f_\beta(U_\beta)$ is an open subset of $\pd \HH^{n+1} \approx\RRN$.
-	The union of $U_\alpha$'s contains $X$, so the union of $U_\beta$'s contains $\pd X$, so $(\pd X, \mathcal{B})$ is a smooth $n$--manifold.
-	Any chart $(U,f)$ of $\mathcal{B}$ has $f(U)$ an open subset of $\RRN$, so $(U,f)$ is an interior chart.
-	We conclude that $\pd(\pd X)$ is empty hence $\pd X$ is a closed manifold. 
-\end{proof}
+% The following proof doesn't work
+%
+%\begin{proof}
+%	Let $\pd X\subset X$ be a second-countable Hausdorff space under the subspace topology.
+%	Let $\mathcal{A} = \{(U_\alpha, f_\alpha)\}$ be a smooth structure on $X$.
+%	There is a smooth atlas $\mathcal{B}$ for $\pd X$ that can be described in term of $\mathcal{A}$.
+%	For each $(U_\alpha,f_\alpha)$ in $\mathcal{A}$, there is a corresponding chart $(U_\beta,f_\beta)$ in $\mathcal{B}$ where $U_\beta = U_\alpha \cap \pd X$ and $f_\beta = \restr{f_\alpha}{U_\beta}$.
+%	Each $f_\beta$ is a homeomorphism whose domain is a set $U_\beta$ that is open in $\pd X$.
+%	Each point in $U_\beta$ is a boundary point and $f_\beta$ is a homeomorphism, so $f_\beta(U_\beta)$ is an open subset of $\pd \HH^{n+1} \approx\RRN$.
+%	The union of $U_\alpha$'s contains $X$, so the union of $U_\beta$'s contains $\pd X$, so $(\pd X, \mathcal{B})$ is a smooth $n$--manifold.
+%	Any chart $(U,f)$ of $\mathcal{B}$ has $f(U)$ an open subset of $\RRN$, so $(U,f)$ is an interior chart.
+%	We conclude that $\pd(\pd X)$ is empty hence $\pd X$ is a closed manifold. 
+%\end{proof}
+
+
+Some important results that help build our theory use as a tool smooth maps between manifolds.
+In particular, smooth maps allow us to declare a notion of equivalence between manifolds.
+
+\begin{defn}[Smooth Map]
+	\label{def:smoothmap}
+	Let $(X,\{U_\alpha,f_\alpha\})$ and $(Y,\{V_\beta,g_\beta\})$ be smooth $n$-- and $k$--manifolds respectively and let $\varphi:X\to Y$ be a map between them.
+	If, for any $\alpha$ and $\beta$, the composition $g_\beta\comp \varphi\comp f_\alpha\inv$ is smooth as a map $\RRN\to\R^k$, then we say $\varphi$ is \emph{smooth} as a map between manifolds.
+	If $\varphi$ is smooth and a well-defined $\varphi\inv$ exists and is smooth, then $\varphi$ is called a \emph{diffeomorphism} between manifolds.
+	We say that manifolds are \emph{diffeomorphic} if there exists a diffeomorphism between them.
+\end{defn}
+
+\begin{prop}
+	\label{prop:diffeoequiv}
+	Diffeomorphism is an equivalence relation on the space of smooth manifolds.
+\end{prop}
 
 Another important concept in the study of manifolds is that of the tangent space.
 Manifolds are defined by their local homogeneity, and a tangent space is a precise description of that homogeneity near a point.
@@ -93,7 +111,8 @@ Manifolds are defined by their local homogeneity, and a tangent space is a preci
 	\[
 		\Ddt(f\comp\gamma_1)(0) = \Ddt(f\comp\gamma_2)(0).
 	\]
-	An equivalence class of $C_p X/\sim$ is a \emph{tangent vector} at $p$, and the space $C_p X/\sim$ is the \emph{tangent space} at $p$, denoted $T_p X$.
+	An equivalence class of the curve $\gamma$ in $C_p X$ is a \emph{tangent vector} at $p$ and is written as $\gamma'(0)$.
+	The space $C_p X/\sim$ is the \emph{tangent space} at $p$, denoted $T_p X$.	
 \end{defn}
 
 \begin{prop}
@@ -104,26 +123,61 @@ Manifolds are defined by their local homogeneity, and a tangent space is a preci
 
 \begin{proof}
 	Let $(U,f)$ be a chart containing $p$ with $f(p)=\vec{0}$.
-	For a vector $v$ of $\RRN$, let $L_v$ be the parameterized straight line through $\vec{0}$ whose velocity is $v$.
-	Precisely, $L_v(t)=tv.$
 	It follows from our definition of tangent space that the map defined by
 	\[
-		\begin{array}{cccc}
-			df : & \RRN & \to & T_p X \\
-			& v & \mapsto & [f\inv\comp L_v] .
+		\begin{array}{crcl}
+			df : & T_p X & \to & \RRN \\
+			& \gamma'(0) & \mapsto & \Ddt(f\comp \gamma)(0) .
 		\end{array}
 	\]
-	is a bijection.
-	We define the operation on $T_p X$ so that $F$ is strengthened to a vector space isomorphism:
+	is a bijection, so we also have a well defined inverse $(df)\inv$.
+	We define operations on $T_p X$ so that $F$ is strengthened to a vector space isomorphism:
 	\[
-		\begin{array}{ccc}
-			df(v)+df(w)=df(v+w), & \hspace{10mm} \text{and} \hspace{10mm} & tdf(v)=df(tv).
+		\begin{array}{rcl}
+			\gamma_1'(0)+\gamma_2'(0) & = & (df)\inv(df(\gamma_1'(0))+df(\gamma_2'(0))), \\
+			t\gamma_1'(0) & = & (df)\inv(t\:df(\gamma_1'(0))).
 		\end{array}
 	\]
 	The vector space structure of $T_p X$ is independent of the choice of chart.
-	To see this, let $(U_1, f_1)$ and $(U_2, f_2)$ be charts with $f_1(p)=f_2(p)=\vec{0}$ and let $\phi=f_2\comp f_1\inv$ be their transition map.
-	
+	To see this, let $L_v$ be the parameterized straight line through $\vec{0}$ whose velocity is $v\in\RRN$.
+	Precisely, $L_v(t)=tv.$
+	For any chart $(U,f)$ with $f(p)=0$, the curve $f\inv\comp L_v$ is a curve through $p$ for which $df(f\inv\comp L_v)=v$.
+	Because an equivalence class contains such a curve for any applicable chart, the association of a tangent vector with a vector in $\RRN$ does not depend on the chart used.
 \end{proof}
+
+In normal calculus, the derivative is a linearization of a function.
+We use tangent spaces to define the derivative of a smooth map between manifolds because tangent spaces are used as pointwise linearizations of manifolds.
+
+\begin{defn}[Differential, Pushforward]
+	Let $\varphi:X\to Y$ be a smooth map between manifolds.
+	Let $p\in X$ and $\varphi(p)=q\in Y$.
+	The \emph{differential} of $\varphi$ at $p$ is a linear map defined as
+	\[
+		\begin{array}{crcl}
+			d\varphi: & T_p X & \to & T_q Y\\
+					  & \gamma'(0) & \mapsto & (\varphi\comp\gamma)'(0),
+		\end{array}
+	\]
+	and the element $(\varphi\comp\gamma)'(0)$ of $T_q Y$ is the \emph{pushforward} of the tangent vector $\gamma'(0)$.
+\end{defn}
+
+We also classify smooth maps between manifolds.
+This classification contributes to the idea of an \emph{embedded submanifold} and provides some of the groundwork for defining handles in the next chapter.
+
+\begin{defn}[Submersion, Immersion, Embedding]
+	Let $\varphi:X\to Y$ be a smooth map between manifolds.
+	The \emph{rank} of $\varphi$ at the point $p\in X$ is the rank of the differential $d\varphi$.
+	This is computed as the rank of the Jacobian matrix of $\varphi$ under a coordinate system or as the dimension of $\varphi(T_p X)\subset T_q Y$.
+	If $\varphi$ has rank $k$ for every $p$ in $X$, then $\varphi$ is of \emph{constant rank} and we say $\rk\varphi=k$.
+	
+	If $d\varphi$ is injective at each point, then $\varphi$ is an \emph{immersion}.
+	This is equivalent to $\rk{\varphi}=\dimn X$.
+	If $d\varphi$ is surjective at each point, then $\varphi$ is a \emph{submersion}.
+	This is equivalent to $\rk{\varphi}=\dimn Y$.
+	If $\varphi$ is an injective immersion that is a homeomorphism onto its image $\varphi(X)\subset Y$ under the subspace topology, then it is a \emph{smooth embedding} or just \emph{embedding}.
+\end{defn}
+
+
 
 The main result of this work is applicable to orientable 3--manifolds, so we will review what is meant by a space being orientable.
 Essentially, orientability is a guarantee that when you go for a walk your right and left sides haven't switched places by the time you get home.
@@ -135,8 +189,30 @@ Essentially, orientability is a guarantee that when you go for a walk your right
 	It is a standard result of linear algebra that there is a unique element $A$ of $\gl{n}{\R}$ that transforms $b_1$ into $b_2$.
 	If the determinant $\det A$ is positive, then $b_1$ and $b_2$ are \emph{positively oriented} with respect to each other.
 	If $\det A$ is negative, then $b_1$ and $b_2$ are \emph{negatively oriented}.
-	We can define an equivalence relation on $\mathcal{B}(\RRN)$ by saying that $b_1$ is equivalent to $b_2$ if they are positively oriented.
+	We can define an equivalence relation $\sim$ on $\mathcal{B}(\RRN)$ by saying that $b_1\sim b_2$ if they are positively oriented.
 	An \emph{orientation} of $\RRN$ is a choice of one of the two equivalence classes of $\mathcal{B}(\RRN)$.
+	This also allows us to classify linear transformations of $\gl{n}{\R}$ by their action on the quotient space $\mathcal{B}(\RRN)/\sim$ by saying they are \emph{orientation preserving} if they have positive determinant and \emph{orientation reversing} if they have negative determinant.
+	
+	Suppose we have fixed an orientation of $\RRN$.
+	Let $X$ be an $n$--manifold.
+	We say that an \emph{orientation} of $X$ is a consistent choice of orientation of the tangent space at every point of $X$.
+	A consistent choice of orientation means that for every chart $(U,f)$ with $f:U\to\RRN$, the vector space isomorphism $df:T_p X\to \RRN$ is orientation preserving at every point in $U$. 
+	If $X$ admits an orientation, then it is \emph{orientable}.
+	If $X$ does not admit an orientation, then it is \emph{non-orientable}.
 \end{defn}
 
+A common tool in both the construction and description of a manifold is the \emph{bundle}.
 
+\begin{defn}
+	A fibre bundle is most concisely represented by the composition
+	\[
+		F\into E\overset{p}{\onto} B,
+	\]
+	where $B$ is called the \emph{base space}, $E$ the \emph{total space}, $F$ the \emph{fibre}, and $p$ the \emph{projection}.
+	For the tuple $(F,E,B,p)$ to be a fibre bundle, we require that $p$ be continuous, that the subspaces $p\inv(x)$ are each homeomorphic to $F$, and that for every point $x\in X$ there exists a neighbourhood $U$ of $x$ and a homeomorphism
+	\[
+		\varphi: U\times F\to p\inv(U)
+	\]
+	so that $p\comp\varphi(y,f)=y$ for any pair $(y,f)$ in $U\times F$.
+	
+\end{defn}
