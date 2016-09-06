@@ -1,46 +1,11 @@
 The main tool used to construct 4--manifolds in later chapters is handle attachment.
 We focus mainly on the definitions and results needed to meaningfully attach 2--handles to a 4--manifold.
-First, we build the language of continuous deformation.
 
-\begin{defn}[Homotopy, Isotopy]
-	\label{def:isotopy}
-	Let $f,g:X\to Y$ be smooth maps between smooth manifolds.
-	A function $H:X\times [0,1]\to Y$ with $H(x,0)=f(x)$ and $H(x,1)=g(x)$ is a \emph{homotopy} between $f$ and $g$.
-	If a homotopy exists, then $f$ and $g$ are \emph{homotopic}.
-	Less formally, $f$ and $g$ being homotopic means that one can be continuously deformed into the other.
-	We often drop the second index in the definition and instead consider a homotopy to be a 1--parameter family of functions parameterized by $t$.
-	In this case define the functions $H_t:X\to Y$ by $H_t(x)=H(x,t)$ for any $t$ in $[0,1]$.
-	The topological spaces $X$ and $Y$ are \emph{homotopy equivalent} if there exist continuous maps $f:X\to Y$ and $g:Y\to X$ for which $g\comp f$ is homotopic to $\ident{X}$ and $f\comp g$ is homotopic to $\ident{Y}$.
-	
-	Because we are primarily interested in smooth functions, we extend our definition of homotopy to a smooth version.
-	With the notation above, a smooth map $H:X\times[0,1]\to Y$ with $H(x,0)=f(x)$ and $H(x,1)=g(x)$ is a \emph{smooth homotopy} between $f$ and $g$.
-	If a smooth homotopy exists, then $f$ and $g$ are \emph{smoothly homotopic}.
-	
-	Let $X$ and $Y$ be smooth manifolds, and let $\varphi_0,\varphi_1:X\to Y$ be smoothly homotopic embeddings.
-	A smooth homotopy $\Phi$ between $\varphi_0$ and $\varphi_1$ with $\Phi_t$ an embedding for each $t$ is an \emph{isotopy} between $\varphi_0$ and $\varphi_1$.
-	If an isotopy exists, then $\varphi_0$ and $\varphi_1$ are \emph{isotopic}.
-\end{defn}
 
-\begin{theorem}[Isotopy Extension]
-	\label{thm:isotopyextension}
-	Let $X$ be a smooth compact submanifold of the smooth closed manifold $Y$, let $\iota: X\into Y$ be inclusion, and let $\varphi:X\to Y$ be an embedding that is isotopic to $\iota$ through $\Phi':X\times[0,1]\to Y$.
-	Let $L$ be the subset of $Y$ equal to the union of the images of $\Phi_t'$ for each $t$.
-	More precisely,
-	\[
-		L = \bigcup_{t\in[0,1]} \Phi_t'(X).
-	\]
-	Then there exists a smooth isotopy $\Phi:Y\times[0,1]\to Y$ so that $\Phi_0=\ident{Y}$, $\Phi_1$ is equal to $\varphi$ on $X\subset Y$, and $\Phi_t$ is the identity outside of an arbitrarily small neighbourhood of $L$ for each $t$.
-\end{theorem}
-
-\begin{defn}
-	Let $X$, $Y$, $\iota$, and $\varphi$ be as above.
-	The isotopy $\Phi:Y\times[0,1]\to Y$ guaranteed by Theorem \ref{thm:isotopyextension} is called an \emph{ambient isotopy}.
-	The images $\iota(X)$ and $\varphi(X)$ are \emph{ambiently isotopic} as submanifolds of $Y$.
-\end{defn}
 
 \begin{defn}
 	\label{def:handle}
-	Let $X$ be a smooth $n$--manifold and let $0\leq k\leq n$.
+	Let $X$ be a smooth $n$--manifold with nonempty boundary and let $0\leq k\leq n$.
 	We use $D^k$ to denote the closed $k$--disc.
 	An \emph{$n$--dimensional $k$-handle}, denoted here by $h$, is a copy of $D^k\times D^{n-k}$ which we attach to $\pd X$ along $\pd D^k\times D^{n-k}$ by an embedding
 	\[

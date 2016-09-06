@@ -60,23 +60,20 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 \begin{prop}[Boundaries are Manifolds]
 	\label{prop:boundariesaremanifolds}
 	Let $X$ be an $(n+1)$--manifold.
-	The boundary of $X$, $\pd X$, is an $n$--dimensional closed submanifold of $X$.
+	The boundary $\pd X$ is an $n$--dimensional submanifold of $X$ with empty boundary.
 \end{prop}
 
-% The following proof doesn't work
-%
-%\begin{proof}
-%	Let $\pd X\subset X$ be a second-countable Hausdorff space under the subspace topology.
-%	Let $\mathcal{A} = \{(U_\alpha, f_\alpha)\}$ be a smooth structure on $X$.
-%	There is a smooth atlas $\mathcal{B}$ for $\pd X$ that can be described in term of $\mathcal{A}$.
-%	For each $(U_\alpha,f_\alpha)$ in $\mathcal{A}$, there is a corresponding chart $(U_\beta,f_\beta)$ in $\mathcal{B}$ where $U_\beta = U_\alpha \cap \pd X$ and $f_\beta = \restr{f_\alpha}{U_\beta}$.
-%	Each $f_\beta$ is a homeomorphism whose domain is a set $U_\beta$ that is open in $\pd X$.
-%	Each point in $U_\beta$ is a boundary point and $f_\beta$ is a homeomorphism, so $f_\beta(U_\beta)$ is an open subset of $\pd \HH^{n+1} \approx\RRN$.
-%	The union of $U_\alpha$'s contains $X$, so the union of $U_\beta$'s contains $\pd X$, so $(\pd X, \mathcal{B})$ is a smooth $n$--manifold.
-%	Any chart $(U,f)$ of $\mathcal{B}$ has $f(U)$ an open subset of $\RRN$, so $(U,f)$ is an interior chart.
-%	We conclude that $\pd(\pd X)$ is empty hence $\pd X$ is a closed manifold. 
-%\end{proof}
-
+\begin{proof}
+	Let $\pd X\subset X$ be a second-countable Hausdorff space under the subspace topology.
+	Let $\mathcal{A} = \{(U_\alpha, f_\alpha)\}$ be a smooth structure on $X$.
+	There is a smooth atlas $\mathcal{B}$ for $\pd X$ that can be described in term of $\mathcal{A}$.
+	For each $(U_\alpha,f_\alpha)$ in $\mathcal{A}$, there is a corresponding chart $(U_\beta,f_\beta)$ in $\mathcal{B}$ where $U_\beta = U_\alpha \cap \pd X$ and $f_\beta = \restr{f_\alpha}{U_\beta}$.
+	Each $f_\beta$ is a homeomorphism whose domain is a set $U_\beta$ that is open in $\pd X$.
+	Each point in $U_\beta$ is a boundary point and $f_\beta$ is a homeomorphism, so $f_\beta(U_\beta)$ is an open subset of $\pd \HH^{n+1} \approx\RRN$.
+	The union of $U_\alpha$'s contains $X$, so the union of $U_\beta$'s contains $\pd X$, so $(\pd X, \mathcal{B})$ is a smooth $n$--manifold.
+	Any chart $(U,f)$ of $\mathcal{B}$ has $f(U)$ an open subset of $\RRN$, so $(U,f)$ is an interior chart and $\pd(\pd X)$ is therefore empty.
+	We conclude that $\pd X$ is a smooth closed $n$--manifold. 
+\end{proof}
 
 Some important results that help build our theory use as a tool smooth maps between manifolds.
 In particular, smooth maps allow us to declare a notion of equivalence between manifolds.
@@ -203,16 +200,180 @@ Essentially, orientability is a guarantee that when you go for a walk your right
 
 A common tool in both the construction and description of a manifold is the \emph{bundle}.
 
-\begin{defn}
-	A fibre bundle is most concisely represented by the composition
+\begin{defn}[Bundles]
+	A \emph{fibre bundle} is most concisely represented by the composition
 	\[
-		F\into E\overset{p}{\onto} B,
+		F\into E\overset{\pi}{\onto} B,
 	\]
 	where $B$ is called the \emph{base space}, $E$ the \emph{total space}, $F$ the \emph{fibre}, and $p$ the \emph{projection}.
-	For the tuple $(F,E,B,p)$ to be a fibre bundle, we require that $p$ be continuous, that the subspaces $p\inv(x)$ are each homeomorphic to $F$, and that for every point $x\in X$ there exists a neighbourhood $U$ of $x$ and a homeomorphism
+	For the tuple $\beta = (F,E,B,\pi)$ to be a fibre bundle, we require that $\pi$ be continuous, that the subspaces $F_x = \pi\inv(x)$ are each homeomorphic to $F$, and that for every point $x\in B$ there exists a neighbourhood $U$ of $x$ and a homeomorphism
 	\[
-		\varphi: U\times F\to p\inv(U)
+		\varphi: U\times F\to \pi\inv(U)
 	\]
-	so that $p\comp\varphi(y,f)=y$ for any pair $(y,f)$ in $U\times F$.
+	so that $\pi\comp\varphi(y,v)=u$ for any pair $(y,v)$ in $U\times F$.
+	Any point $p\in E$ may be represented uniquely by a pair $p=(x,v)$ with $x\in B$, $v\in F$, and $\pi(p)=x$.
+	When $F$ is a vector space, we call $\beta$ a \emph{vector bundle}.
+	A function $s:B\into E$ so that $s(x)\in F_x$ for every $x\in B$ is called a \emph{section}.
+	When $\beta$ is a vector bundle, we can define the \emph{zero section} of $\beta$ to be the map
+	\[
+		\begin{array}{cccc}
+			z: & B & \to 	 & E \\
+			   & x & \mapsto & (x,0).
+		\end{array}
+	\]
+	We also call the subspace $z(B)\subset E$ the zero section of $E$.
+\end{defn}
+
+\begin{defn}
+	Let $\Phi:\beta_0\to \beta_1$ be a map between vector bundles.
+	We call $\Phi$ a \emph{fibre map} if $\Phi:E_0\to E_1$ covers a map $\varphi:B_0\to B_1$.
+	For $\Phi$ to cover $\varphi$, that means the following diagram commutes:
+	\[
+		\begin{tikzcd}
+			E_0 \arrow{r}{\Phi} \arrow[swap]{d}{\pi_0} & E_1 \arrow{d}{\pi_1} \\
+			B_0 \arrow{r}{\varphi} & B_1
+		\end{tikzcd}
+	\]
+	This means that if $x\in B_0$ and $\varphi(x)=y$, then $\Phi$ maps $F_x$, the fibre over $x$, to $F_y$, the fibre over $y$ by a map we will denote $\Phi_x$.
+	If $\Phi_x$ is a linear map for every $x\in B_0$, then we call $\Phi$ a \emph{bundle morphism}.
+	If $\Phi$ is a bundle morphism, $B_0=B_1=B$, $\Phi_x$ bijective for each $x\in B$, and $\varphi$ is $\ident{B}$, then $\Phi$ is a bundle \emph{isomorphism}.
+\end{defn}
+
+\begin{defn}[Tangent Bundle]
+	Let $X$ be an $n$--manifold.
+	We define the total space $TX$ of a vector bundle with base space $X$ and fibres $\RRN\approx T_p X$ at any $p\in X$ by taking the disjoint union of all tangent spaces:
+	\[
+		TX = \bigsqcup_{p\in X} T_p X.
+	\]
+	The projection $\pi:TX\to X$ is defined by $\pi(q)=p$ for every $q\in T_p X$.
+	We call $TX$ the \emph{tangent bundle} over $X$.
+\end{defn}
+
+\begin{defn}[Normal Bundle]
+	Let $X$ be a $k$--dimensional submanifold of the $n$--manifold $Y$.
+	At a point $p\in X\subset Y$, the tangent space $T_p X$ is a subspace of the tangent space $T_p Y$.
+	Denote the orthogonal complement to $T_p X$ in $T_p Y$ by $N_p X$ and call it the normal space at $p$ in $X$.
+	That is, $T_p X\oplus N_p X = T_p Y$.
+	We define the total space $NX$ of a vector bundle with base space $X$ and fibres $\RRN\approx T_p X$ at any $p\in X$ by taking the disjoint union of all normal spaces:
+	\[
+		NX = \bigsqcup_{p\in X} N_p X.
+	\]
+	The projection $\pi:NX\to X$ is defined by $\pi(q)=p$ for every $q\in N_p X$.
+	We call $NX$ the \emph{normal bundle} over $X$.	
+\end{defn}
+
+\begin{defn}[Tubular Neighbourhood]
+	\label{def:tubularneighbourhood}
+	Let $X\subset Y$ be a submanifold with $\pd X = \pd Y = \emptyset$.
+	An embedding $f:NX\to Y$ with $f(x,0)=x$ and $f(NX)$ an open neighbourhood of $X$ in $Y$ is called a \emph{tubular neighbourhood} of $X$ in $Y$.
+	Denote the neighbourhood as a subset of $Y$ by $\nu(X)=f(NX)$.
+\end{defn}
+
+\begin{theorem}[Tubular Neighbourhood, Theorem 4.5.2 in \cite{Hirsch67}]
+	\label{thm:tubularneighbourhood}
+	Let $X$ be a smooth closed submanifold of the smooth closed manifold $Y$.
+	Then $X$ has a tubular neighbourhood in $Y$.
+\end{theorem}
+
+Tubular neighbourhoods are unique up to a fibre-preserving isotopy, so lets define precisely what that means.
+
+\begin{defn}[Homotopy]
+	\label{def:homotopy}
+	Let $f,g:X\to Y$ be smooth maps between smooth manifolds.
+	Denote the closed unit interval $[0,1]$ by $\I$.
+	A function 
+	\[
+		\begin{array}{cccc}
+			H: & X\times \I & \to & Y \\
+			   & (x,t)	& \mapsto & H_t(x)
+		\end{array}
+	\]
+	with $H_0(x)=f(x)$ and $H_1(x)=g(x)$ is a \emph{homotopy} between $f$ and $g$.
+	If a homotopy exists, then $f$ and $g$ are \emph{homotopic}.
+	Less formally, $f$ and $g$ being homotopic means that one can be continuously deformed into the other.
+	The topological spaces $X$ and $Y$ are \emph{homotopy equivalent} if there exist continuous maps $f:X\to Y$ and $g:Y\to X$ for which $g\comp f$ is homotopic to $\ident{X}$ and $f\comp g$ is homotopic to $\ident{Y}$.
 	
+	Because we are primarily interested in smooth functions to build our machinery, we extend our definition of homotopy to a smooth version.
+	With the notation above, a smooth map $H:X\times[0,1]\to Y$ with $H_0(x)=f(x)$ and $H_1(x)=g(x)$ is a \emph{smooth homotopy} between $f$ and $g$.
+	If a smooth homotopy exists, then $f$ and $g$ are \emph{smoothly homotopic}.
+\end{defn}
+
+A homotopy through embeddings is called an isotopy.
+This is useful for comparing embedded submanifolds.
+
+\begin{defn}[Isotopy]
+	\label{def:isotopy}
+	Let $X$ be a smoothly embedded submanifold of $Y$.
+	An \emph{isotopy} of $X$ in $Y$ is a smooth homotopy
+	\[
+		\begin{array}{crcl}
+			F: & X\times \I & \to & Y \\
+			   & F(x,t) & = & F_t(x)
+		\end{array}
+	\]
+	such that the related map
+	\[
+		\begin{array}{cccc}
+			\hat{F}: & X\times\I & \to & Y\times\I \\
+					 & (x,t) & \mapsto & (F_t(x),t)
+		\end{array}
+	\]
+	is an embedding.
+	The submanifolds $F_0(X)$ and $F_1(X)$ are \emph{isotopic}.
+	When $X=Y$ and $F_t$ is a diffeomorphism for each $t$, $F$ is a \emph{diffeotopy} of $Y$.
+	
+	Let $X$ be a smoothly embedded submanifold of $Y$ and consider the tubular neighbourhood $f:NX\to Y$.
+	An isotopy
+	\[
+		\begin{array}{crcl}
+			F: & \nu(X)\times\I & \to & Y \\
+			   & F(x,t) & = & F_t(x)
+		\end{array}
+	\]
+	satisfying the following properties:
+	\begin{enumerate}
+		\item $F_0(\nu(X))=F_1(\nu(X))$,
+		\item $F_1\inv\comp F_0:\nu(X)\to\nu(X)$ is a vector bundle isomorphism $NX\to NX$,
+	\end{enumerate}
+	 is an \emph{isotopy of tubular neighbourhoods}.
+\end{defn}
+
+This leads into our uniqueness result for tubular neighbourhoods.
+
+\begin{prop}[Uniqueness of Tubular Neighbourhoods, Theorem 4.5.3 in \cite{Hirsch67}]
+	\label{prop:uniquenesstubularneighbourhood}
+	Let $X\subset Y$ be a submanifold with $\pd X=\pd Y=\emptyset$.
+	Any pair of tubular neighbourhoods of $X$ in $Y$ are isotopic.
+\end{prop}	
+
+\begin{theorem}[Isotopy Extension]
+	\label{thm:isotopyextension}
+	Let $X$ be a smooth compact submanifold of the smooth closed manifold $Y$, and let
+	\[
+		\begin{array}{crcl}
+			F: & X\times\I & \to & Y \\
+			   & F(x,t) & = & F_t(x)
+		\end{array}
+	\]
+	be an isotopy of $X$ in $Y$.
+	Let $L$ be the subset of $Y$ equal to the union of the images of $F_t$ for each $t$.
+	More precisely,
+	\[
+		L = \bigcup_{t\in[0,1]} F_t(X).
+	\]
+	There exists a diffeotopy 
+	\[
+		\begin{array}{crcl}
+			G: & Y\times\I & \to & Y \\
+			   & G(y,t) & = & G_t(y)				
+		\end{array}
+	\]
+	with $G_0=\ident{Y}$, $G_1$ equal to $F_1$ on $X\subset Y$, and $F_t$ the identity on $Y$ outside of an arbitrarily small neighbourhood of $L$ for all $t$.
+\end{theorem}
+
+\begin{defn}[Ambient Isotopy]
+	\label{def:ambientisotopy}
+	Let $X$, $Y$, $F$ be as above.
+	The isotopy $G:Y\times\I\to Y$ guaranteed by Theorem \ref{thm:isotopyextension} is called an \emph{ambient isotopy}.
+	The images $F_0(X)$ and $F_1(X)$ are \emph{ambiently isotopic} as submanifolds of $Y$.
 \end{defn}
