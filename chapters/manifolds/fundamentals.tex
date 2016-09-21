@@ -1,4 +1,4 @@
-At its simplest, most colloquial definition, an $n$--dimensional manifold is a space that locally looks like real $n$--dimensional space or half space $\HN$.
+At its simplest, most colloquial definition, an $n$--dimensional manifold is a space that locally looks like an $n$--dimensional real or half space.
 We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``looks like.''
 
 \begin{defn}[Coordinates]
@@ -7,7 +7,7 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 	\[
 		\HN=\{(x_0,\dots,x_{n-1})\in\RRN : x_0\geq 0\}.
 	\]
-	We use the notations $\inter{\HN}$ and $\pd \HN$ to denote the interior and boundary of $\HN$ as subsets of $\RRN$ which, when $n>0$, are
+	We use the notations $\inter{\HN}$ and $\pd \HN$ to denote the topological interior and boundary of $\HN$ as subsets of $\RRN$ which, when $n>0$, are
 	\[
 		\begin{array}{ccccc}
 			\inter{\HN} & = & \{(x_0,\dots,x_{n-1})\in\RRN : x_0 > 0\}, & &\\
@@ -28,7 +28,8 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 
 \begin{defn}[Atlas]
 	\label{def:atlas}
-	Let $\mathcal{A}=\{(U_\alpha,f_\alpha)\}$ be a collection of charts of the space $X$ parameterized by $\alpha\in A$ for some indexing set $A$.
+	Fix a nonnegative integer $n$.
+	Let $\mathcal{A}=\{(U_\alpha,f_\alpha):\alpha\in A\}$ be a collection of charts of $X$ such that the codomain for each chart is of the fixed dimension $n$.
 	If $\bigcup_A U_\alpha$ contains $X$, then $\mathcal{A}$ is an \emph{atlas} for $X$.
 	The homeomorphisms $f_\alpha\comp f_\beta\inv:f_\beta(U_\alpha\cap U_\beta)\to f_\alpha(U_\alpha\cap U_\beta)$ are \emph{transition maps} of $\mathcal{A}$.
 	We say that $(U_\alpha,f_\alpha)$ and $(U_\beta,f_\beta)$ are \emph{smoothly compatible} if either $U_\alpha\cap U_\beta$ is empty or the transition maps $f_\alpha\comp f_\beta\inv$ and $f_\beta\comp f_\alpha\inv$ are smooth as maps $\RRN\to\RRN$, i.e.\ they have continuous partial derivatives of all orders.
@@ -38,13 +39,14 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 
 \begin{defn}[Manifolds]
 	\label{def:manifold}
-	Let $X$ be a second-countable Hausdorff topological space, and $\mathcal{A}$ an atlas for $X$.
+	Let $X$ be a second-countable Hausdorff topological space, $\mathcal{A}$ an atlas for $X$, and $n$ the dimension of the codomain of each chart in $\mathcal{A}$.
 	If $\mathcal{A}$ is a smooth atlas, then the pair $(X,\mathcal{A})$ is a \emph{smooth n--manifold},  \emph{n--manifold}, or just \emph{manifold}.
-	We usually omit writing the atlas when talking about a manifold.
 	If $\mathcal{A}$ is a maximal smooth atlas then we call it a \emph{smooth structure} on $X$.
-	We will assume that a smooth manifold is always equipped with a smooth structure.
 \end{defn}
 
+It eases the notational burden to assume that our manifolds are always equipped with a smooth structure.
+This assumption allows us to omit writing the an atlas when talking about a manifold.
+	
 \begin{defn}[Boundary, Interior]	
 	\label{def:boundary}
 	Let $X$ be a smooth $n$--manifold.
@@ -54,10 +56,11 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 	The set of all boundary points of $X$ is called the \emph{boundary of $X$} and is denoted by $\pd X$.
 	Similarly, the set of all interior points of $X$ is called the \emph{interior} of $X$ and is denoted by $\inter{X}$.
 	If $X$ is compact with empty boundary then $X$ is \emph{closed} as a manifold.
-	There is a potential conflict of this definition with the concept of topological closure.
-	In the rare case that we want to say that a manifold is topologically closed, we will specify that the type of closure is topological.
-	Otherwise, the statement of a ``closed manifold'' will refer to a manifold with empty boundary.
 \end{defn}
+
+There is a potential conflict of this definition with the concept of topological closure.
+In the rare case that we want to say that a manifold is topologically closed, we will specify that the type of closure is topological.
+Otherwise, the statement of a ``closed manifold'' will refer to a manifold with empty boundary.
 
 \begin{ex}
 	The $n$--sphere, denoted $S^n$ and defined as a subset of $\R^{n+1}$, is
