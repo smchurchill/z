@@ -1,9 +1,41 @@
 The main tool used to construct 4--manifolds in later chapters is handle attachment.
 We focus mainly on the definitions and results needed to meaningfully attach 2--handles to a 4--manifold, using the methods that are explored in detail in \cite{Kosi93} to attach handles in way that ensures the resulting manifold is smooth.
+This is accomplished by piping the areas to be joined together through cooked up diffeomorphisms.
+We lay out the general theory behind joining manifolds along submanifolds of the boundary, then move into the specifics of handle attachment.
 
-Let $n=\lambda+\mu$.
-We write elements of $\RRN=\R^\lambda\times\R^\mu$ as $x=(x_\lambda,x_\mu)$, where $x_\lambda$ is the result of projecting $x$ onto the first $\lambda$ coordinates of $\RRN$ and $x_\mu$ is the result of projection onto the last $\mu$ coordinates.
-This notation also lets us write $S^{\mu-1}$ in $\RRN$ as
+Let $\beta=(\R^k,E,Y,\pi)$ be a $k$-vector bundle with $Y$ a compact $n$--manifold.
+Let $\alpha:(0,\infty)\to(0,\infty)$ be an orientation reversing diffeomorphism.
+Define a map $\alpha_E: E\setminus z(Y) \to E\setminus z(Y)$ by
+\begin{equation}
+	\label{eqn:alpha}
+	\alpha_E(y,v) = \Big(y,\alpha(\norm{v})\frac{v}{\norm{v}}\Big).
+\end{equation}
+Let $X_1$, $X_2$ be $(n+k+1)$--manifolds with boundary, and let $h_1$, $h_2$ be embeddings of $E$ in $\pd X_1$ and $\pd X_2$.
+Restricting the $h_i$ to $z(Y)$, we get $h_i(z(Y))$ as a embedded submanifolds of the boundaries $\pd X_i$.
+We may then view the $(E,h_i)$ as tubular neighbourhoods of $h(z(Y))$ in $\pd X_i$, and can extend the neighbourhoods to $X_i$ as in Definition \ref{def:halfneighbourhood}, using two copies of $\HH^1$.
+This extends the fibre of $\beta$ from $\R^k$ to $\R^k\times \HH^1$.
+
+Denote the extended embeddings by $H_i$.
+If we extend the bundle even further to $\mathcal{B}=(\R^k\times \R,\mathcal{E},Y,\pi)$, we can think of $H_1$, $H_2$ as each embedding ``one-half'' of $\mathcal{E}$ in the boundaries of $\pd X_1$ and $\pd X_2$.
+We obtain a new object by ``joining'' $X_1$ and $X_2$ along the embeddings $H_1$, $H_2$.
+Explicitly, identify $(y,v)$ in $H_1(\mathcal{E}\setminus z(Y))$ with $H_2\comp \alpha_\mathcal{E}\comp H_1\inv(y,v)$.
+A space obtained in this manner will be denoted $X(h_1,h_2)$.
+
+\begin{theorem}
+	\label{thm:joinman}
+	Let $\beta$, $X_i$, $h_i$ be as above.
+	The space $X(h_1,h_2)$ is a smooth $(n+k+1)$--manifold unique up to bundle automorphisms of $E$.	
+\end{theorem}
+
+The machinery used to prove Theorem \ref{thm:joinman} is built up throughout Chapter \rom{6} of \cite{Kosi93}.
+Now, we build up the details of handle attachment -- an explicit application of Theorem \ref{thm:joinman}.
+
+Let $n=\lambda+\mu$ and $X$ be an $n$--manifold with boundary.
+Attaching an $n$--dimensional $\lambda$--handle to $X$ is the process of joining $X$ to $D^n$ along embeddings of $\beta=(\R^\mu,E,S^{\lambda-1},\pi)$, a $\mu$--vector bundle over $S^{\lambda-1}$, into the boundaries of $X$ and $D^n$.
+%An explicit embedding of $E$ into $\pd D^n$ is explored in depth in \rom{6}.6 of \cite{Kosi93}, so we will touch only on the facts necessary to explicitly define handles.
+
+Write elements of $\RRN=\R^\lambda\times\R^\mu$ as $x=(x_\lambda,x_\mu)$, where $x_\lambda$ is the result of projecting $x$ onto the first $\lambda$ coordinates of $\RRN$ and $x_\mu$ is the result of projection onto the last $\mu$ coordinates.
+This notation lets us write $S^{\mu-1}$ in $\RRN$ as
 \[
 	S^{\mu-1} = \{x\in D^n: x_\lambda=\vec{0},\norm{x_\mu}=1\}.
 \]
@@ -12,14 +44,13 @@ For $\varepsilon\in [\,0,1)$ define $T(\varepsilon)$ as a subset of $D^n$ by
 	T(\varepsilon) = \{x\in D^n: \norm{x_\lambda}^2>\varepsilon\}.
 \]
 Note that $T(\varepsilon)$ collapses onto $S^{\lambda-1}$ via the projection $(x_\lambda,x_\mu)\mapsto x_\lambda/\norm{x_\lambda}$.
-We abbreviate $T(0)$ to be just $T$.
-
-The methods in \cite{Kosi93} build the standard tools of connect sum, boundary connect sum, and joining of manifolds along submanifolds in such a way that the resulting manifold is smooth.
-This is accomplished by piping the areas to be joined together through cooked up diffeomorphisms.
-For the case of handle attachment, define a function $
-	\alpha:T(\varepsilon)\setminus S^{\lambda-1} \to T(\varepsilon)\setminus S^{\lambda-1}
-$ by
+Abbreviate $T(0)$ as $T$.
+Define a map
 \[
+	\alpha:T(\varepsilon)\setminus S^{\lambda-1} \to T(\varepsilon)\setminus S^{\lambda-1}
+\]
+defined by
+\begin{equation}
 	\alpha(x_\lambda, x_\mu) =
 	\Bigg( 
 		\frac{x_\lambda}{\norm{x_\lambda}}
@@ -31,25 +62,40 @@ $ by
 			(1-\norm{x_\lambda}^2)^{1/2}
 		}
 	\Bigg).
-\]
+\end{equation}
+To relate handle attachment with our initial definition of joining manifolds over submanifolds in the boundary, first notice that $T(\varepsilon)$ has the structure of ``one-half'' of a $(\mu+1)$--vector bundle over $S^{\lambda-1}$.
+Next, $\alpha$ is a composition of the diffeomorphism $D^n\setminus S^{\lambda-1}\to\inter{D^\lambda}\times D^\mu$ given by
+\begin{equation}
+	\label{eqn:diffeo}
+	(x_\lambda,x_\mu)\mapsto \Big(x_\lambda,\frac{x_\mu}{(1-\norm{x_\lambda}^2)^{1/2}}\Big)
+\end{equation}
+with an involution on $(\inter{D^\lambda}\setminus\{\vec{0}\})\times D^\mu$ given by
+\begin{equation}
+	(x_\lambda,x_\mu)\mapsto \Big(\frac{x_\lambda}{\norm{x_\lambda}}(1-\norm{x_\lambda}^2+\varepsilon)^{1/2},x_\mu \Big)
+\end{equation}
+and then with the inverse of equation \ref{eqn:diffeo}.
+Thus, $\alpha$ is an orientation reversing diffeomorphism as in equation \ref{eqn:alpha}.
 
-
-
-\begin{defn}
+\begin{defn}[Handle]
 	\label{def:handle}	
-	Let $X$ be a smooth $n$--manifold with nonempty boundary and let $0\leq k\leq n$.
-	An \emph{$n$--dimensional $k$-handle}, denoted here by $h$, is a copy of $D^k\times D^{n-k}$ which we attach to $\pd X$ along $\pd D^k\times D^{n-k}$ by an embedding
+	Let $X$ be a smooth $n$--manifold with nonempty boundary and let $n=\lambda+\mu$.
+	Let $h:S^{\lambda-1}\to \pd X$ be an embedding with extension $H:T\to X$ such that $H(T)$ is a tubular neighbourhood of $h(S^{\lambda-1})$ in $X$ in the sense of Definition \ref{def:halfneighbourhood}.
+	
+	An \emph{$n$--dimensional $\lambda$-handle}, is a copy of $D^k\times D^{n-k}$ which we attach to $\pd X$ along $\pd D^k\times D^{n-k}$ by an embedding
 	\[
-	  \varphi : \pd D^k \times D^{n-k} \to \pd X.
+	\varphi : \pd D^k \times D^{n-k} \to \pd X.
 	\]
 	We call $\varphi$ an \emph{attaching map}, and canonically smooth corners \cite{GompStip} in the quotient space
 	\[
-	  X\cup_\varphi h = \quotient{X \cup ( D^k\times D^{n-k} ) }{ \varphi(x) \sim x }
+	X\cup_\varphi h = \quotient{X \cup ( D^k\times D^{n-k} ) }{ \varphi(x) \sim x }
 	\]
 	to make $X\cup_\varphi h$ into a smooth manifold.
 	The number $k$ is the \emph{index} of the handle $h$ and we call this process \emph{attaching a $k$-handle to $X$ with attachment map $\varphi$}.
 	An $n$--dimensional manifold described by a handle decomposition whose handles have index no greater than $1$ is called an \emph{$n$-handlebody}.
 \end{defn}
+
+
+
 
 If $X\cup_\varphi h$ is a smooth manifold with attached $k$-handle, then we have special terms for the anatomy of $h$.
 The $k$--disc at $D^k\times 0$ in $h$ is called the \emph{core} of $h$ and the $(n-k)$--disc $0 \times D^{n-k}$ is called the \emph{cocore}.

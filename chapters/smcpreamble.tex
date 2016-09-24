@@ -13,6 +13,7 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\RR}{\R^2}
 \newcommand{\RRN}{\R^n}
+\newcommand{\RRM}{\R^m}
 \newcommand{\RNP}{\R_+^n}
 \newcommand{\RNPP}{\R_{++}^n}
 \newcommand{\C}{\mathbb{C}}
@@ -22,6 +23,7 @@
 \newcommand{\DN}{\D^n}
 \newcommand{\HH}{\mathbb{H}}
 \newcommand{\HN}{\mathbb{H}^n}
+\newcommand{\HM}{\HH^m}
 \newcommand{\dd}{\; \mathrm{d}}
 \newcommand{\res}{\;\mathrm{res}}
 \newcommand{\id}{\mathrm{id}}
@@ -121,6 +123,10 @@
 
 \makeatletter
 \def\Biggn#1{\mathclose{\hbox{$\left#1\vbox to17.5\p@{}\right.\n@space$}}\mathopen{}}
+\makeatother
+
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
 \makeatother
 
 \def\quotient#1#2{%

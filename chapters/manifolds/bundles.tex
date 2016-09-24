@@ -1,7 +1,7 @@
 A common tool in both the construction and description of a manifold is a \emph{bundle}.
 The ultimate construction in this section is the tubular neighbourhood of a submanifold, which is unique up to a fibre-preserving isotopy.
 
-\begin{defn}[Bundles]
+\begin{defn}[Bundle]
 	A bundle is most concisely represented by the composition
 	\[
 		F\into E\overset{\pi}{\onto} X,
@@ -17,7 +17,8 @@ The ultimate construction in this section is the tubular neighbourhood of a subm
 	Any point $p\in E$ may be represented uniquely by a pair $p=(x,f)$ with $x\in X$, $f\in F$, and $\pi(x,f)=x$.
 	
 	A bundle that is simply $F\times X$ is called a \emph{trivial bundle}.
-	When $F$ is a vector space, we call $\beta$ a \emph{vector bundle}.
+	When $F$ is a $k$--dimensional vector space, we call $\beta$ a \emph{$k$--vector bundle}.
+	If $\beta$ is a $k$--vector bundle with base space an $n$--manifold, then $E$ is an $(n+k)$--manifold.
 	
 	A continuous map $s:X\into E$ so that $s(x)\in F_x$ for every $x\in X$ is called a \emph{section}.
 	When $\beta$ is a vector bundle, we can define the \emph{zero section} of $\beta$ to be the map
@@ -44,6 +45,7 @@ The ultimate construction in this section is the tubular neighbourhood of a subm
 
 	If $\beta_{0,1}$ are vector bundles and $\Phi_x$ is a linear map for every $x\in X_0$, then we call $\Phi$ a \emph{bundle morphism}.
 	If $\Phi$ is a bundle morphism, $X_0=X_1=X$, $\Phi_x$ bijective for each $x\in X$, and $\varphi$ is $\ident{X}$, then $\Phi$ is a \emph{bundle isomorphism}.
+	A bundle isomorphism $\Phi:E\to E$ is a \emph{bundle automorphism}.
 \end{defn}
 
 \begin{defn}[Tangent Bundle]
@@ -81,7 +83,7 @@ Similar to the tubular neighbourhood is the \emph{closed tubular neighbourhood},
 This is a restriction of the normal bundle to vectors of length at most 1, so no new machinery is needed.
 The notion of ``closed'' used in this naming convention is that of topological closure.
 
-\begin{theorem}[Tubular Neighbourhood, Theorem 4.5.2 in \cite{Hirsch67}]
+\begin{theorem}[Existence of Tubular Neighbourhoods, Theorem 4.5.2 in \cite{Hirsch67}]
 	\label{thm:tubularneighbourhood}
 	Let $X$ be a closed submanifold of the closed manifold $Y$.
 	Then $X$ has a tubular neighbourhood in $Y$.
@@ -89,7 +91,7 @@ The notion of ``closed'' used in this naming convention is that of topological c
 
 Similar to the tubular neighbourhood is the collar of a manifold's boundary.
 
-\begin{prop}[Collars]
+\begin{prop}[Collar]
 	\label{defthm:collar}
 	Let $Y$ be a manifold with nonempty boundary $X = \pd Y$.
 	There exists an open neighbourhood $U$ of $X$ in $Y$ and a diffeomorphism
@@ -229,7 +231,7 @@ Examples of improper tubular neighbourhoods would be $\RRN$ as a neighbourhood o
 An example of a proper tubular neighbourhood would be the same strip, but with fibres $y=c$.
 It should be clear that the interior of a closed tubular neighbourhood is proper, and every proper tubular neighbourhood is the interior of a closed tubular neighbourhood.
 
-\begin{theorem}[Uniqueness of Tubular Neighbourhoods, Theorem 3.3.5 of \cite{Kosi93}]
+\begin{theorem}[Uniqueness of Proper Tubular Neighbourhoods, Theorem 3.3.5 of \cite{Kosi93}]
 	Let $X$ be a closed submanifold of $Y$.
 	Any two proper tubular neighbourhoods of $X$ are isotopic through an isotopy that can be extended to an ambient isotopy.
 \end{theorem}
@@ -266,6 +268,7 @@ Letting $X=\pd Y$, notice that $\pd Y$ has a trivial normal bundle $\pd Y\times 
 It is clear that an appropriate analogue of the tubular neighbourhood to submanifolds of the boundary would be a generalization of the collar to a sort of ``half-tubular neighbourhood.''
 
 \begin{defn}
+	\label{def:halfneighbourhood}
 	Let $Z$ be a manifold with boundary and let $X$ be a submanifold of $Y=\pd Z$.
 	The normal bundle of $X$ in $Z$ is the fibre-wise direct sum of $N_Y X$ with $\restr{(N_Z Y)}{X}$.
 	Because $N_Z Y$ is a trivial bundle, the normal bundle of $X$ in $Z$ is just $N_Y X\times \R$.

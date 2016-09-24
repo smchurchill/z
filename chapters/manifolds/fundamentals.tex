@@ -37,7 +37,7 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 	Two smooth atlases are equivalent if their union is a smooth atlas.
 \end{defn}
 
-\begin{defn}[Manifolds]
+\begin{defn}[Manifold]
 	\label{def:manifold}
 	Let $X$ be a second-countable Hausdorff topological space, $\mathcal{A}$ an atlas for $X$, and $n$ the dimension of the codomain of each chart in $\mathcal{A}$.
 	If $\mathcal{A}$ is a smooth atlas, then the pair $(X,\mathcal{A})$ is a \emph{smooth n--manifold},  \emph{n--manifold}, or just \emph{manifold}.
@@ -47,8 +47,7 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 It eases the notational burden to assume that our manifolds are always equipped with a smooth structure.
 This assumption allows us to omit writing the an atlas when talking about a manifold.
 	
-\begin{defn}[Boundary, Interior]	
-	\label{def:boundary}
+\begin{defn}[Boundary]
 	Let $X$ be a smooth $n$--manifold.
 	A chart $(U,f)$ is called an \emph{interior chart} is $f(U)$ is an open subset of $\RRN$ and is a \emph{boundary chart} if $f(U)$ is an open subset of $\HN$ with $f(U)\cap\pd \HN\neq\emptyset$.
 	Let $p\in X$.
@@ -65,15 +64,15 @@ Otherwise, the statement of a ``closed manifold'' will refer to a manifold with 
 \begin{ex}
 	The $n$--sphere, denoted $S^n$ and defined as a subset of $\R^{n+1}$, is
 	\[
-	S^n = \{x\in\R^{n+1}:\norm{x}=1\},
+	S^n = \{x\in\R^{n+1}:\norm{x}=1\}.
 	\]
-	and the $(n+1)$--dimension closed disc, or $(n+1)$--disc, defined also as a subset of $\R^{n+1}$, is
+	The $(n+1)$--dimensional topologically closed disc, or $(n+1)$--disc, defined as a subset of $\R^{n+1}$, is
 	\[
-	D^{n+1} = \{x\in\R^{n+1}:\norm{x}\leq 1\},
+	D^{n+1} = \{x\in\R^{n+1}:\norm{x}\leq 1\}.
 	\]
-	Where $\norm{\,\cdot\,}$ is the euclidean norm defined for $x\in\R^{n+1}$ by
+	We use $\norm{\,\cdot\,}$ to denote the euclidean norm defined for $x\in\R^{n+1}$ by
 	\[
 	\norm{x} = \Big( \sum x_i^2 \Big)^{1/2}.
 	\]
-	Note that the $(n+1)$--disc is an $(n+1)$--manifold with boundary, and that boundary is exactly the $n$--sphere, a closed $n$--manifold.
+	The $(n+1)$--disc is an $(n+1)$--manifold with boundary, and that boundary is exactly the $n$--sphere, a closed $n$--manifold.
 \end{ex}

@@ -72,7 +72,7 @@ We use tangent spaces to define the derivative of a smooth map between manifolds
 	The \emph{differential} of $\varphi$ at $p$ is a linear map defined as
 	\[
 		\begin{array}{crcl}
-			d\varphi: & T_p X & \to & T_q Y\\
+			d\varphi_p: & T_p X & \to & T_q Y\\
 					  & \gamma'(0) & \mapsto & (\varphi\comp\gamma)'(0),
 		\end{array}
 	\]
@@ -99,7 +99,7 @@ This classification helps us define a submanifold and provides some of the groun
 	One can consider $X$ to be a manifold with smooth structure induced by the embedding.
 \end{defn}
 
-\begin{prop}[Boundaries are Manifolds]
+\begin{prop}
 	\label{prop:boundariesaremanifolds}
 	Let $X$ be an $(n+1)$--manifold.
 	The boundary $\pd X$ is an $n$--dimensional closed submanifold of $X$.
@@ -108,21 +108,32 @@ This classification helps us define a submanifold and provides some of the groun
 The main result of this work is applicable to orientable 3--manifolds, so we will review what is meant by a space being orientable.
 Essentially, orientability is a guarantee that when you go for a walk your right and left sides haven't switched places by the time you get home.
 
-\begin{defn}[Orientation]
+\begin{defn}
 	\label{def:orientation}
-	Let $\RRN$ be $n$--dimensional real space, $\mathcal{B}(\RRN)$ the set of ordered bases for $\RRN$, and $\gl{n}{\R}$ the general linear group, i.e.\ the space of $n\times n$ invertible matrices with entries in $\R$.
-	Let $b_1$ and $b_2$ be any two ordered bases from $\mathcal{B}(\RRN)$.
+	Let $V^n$ be an $n$--dimensional real vector space, $\mathcal{B}(V^n)$ the set of ordered bases for $V^n$, and $\gl{n}{\R}$ the general linear group, i.e.\ the space of $n\times n$ invertible matrices with entries in $\R$.
+	Let $b_1$ and $b_2$ be any two ordered bases from $\mathcal{B}(V^n)$.
 	It is a standard result of linear algebra that there is a unique element $A$ of $\gl{n}{\R}$ that transforms $b_1$ into $b_2$.
 	If the determinant $\det A$ is positive, then $b_1$ and $b_2$ are \emph{positively oriented} with respect to each other.
 	If $\det A$ is negative, then $b_1$ and $b_2$ are \emph{negatively oriented}.
-	We can define an equivalence relation $\sim$ on $\mathcal{B}(\RRN)$ by saying that $b_1\sim b_2$ if they are positively oriented.
-	An \emph{orientation} of $\RRN$ is a choice of one of the two equivalence classes of $\mathcal{B}(\RRN)$.
-	This also allows us to classify linear transformations of $\gl{n}{\R}$ by their action on the quotient space $\mathcal{B}(\RRN)/\sim$ by saying they are \emph{orientation preserving} if they have positive determinant and \emph{orientation reversing} if they have negative determinant.
-	
+	We can define an equivalence relation $\sim$ on $\mathcal{B}(V^n)$ by saying that $b_1\sim b_2$ if they are positively oriented.
+	An \emph{orientation} of $V^n$ is a choice of one of the two equivalence classes of $\mathcal{B}(V^n)$.
+	This also allows us to classify linear transformations of $\gl{n}{\R}$ by their action on the quotient space $\mathcal{B}(V^n)/\sim$ by saying they are \emph{orientation preserving} if they have positive determinant and \emph{orientation reversing} if they have negative determinant.
+\end{defn}
+
+Orientations of $\RRN$ let us define orientations of manifolds.
+
+\begin{defn}
 	Suppose we have fixed an orientation of $\RRN$.
 	Let $X$ be an $n$--manifold.
 	We say that an \emph{orientation} of $X$ is a consistent choice of orientation of the tangent space at every point of $X$.
 	A consistent choice of orientation means that for every chart $(U,f)$ with $f:U\to\RRN$, the vector space isomorphism $df:T_p X\to \RRN$ is orientation preserving at every point in $U$. 
 	If $X$ admits an orientation, then it is \emph{orientable}.
-	If $X$ does not admit an orientation, then it is \emph{non-orientable}.
+	If $X$ does not admit an orientation, then it is \emph{non-orientable}.	
+\end{defn}
+
+Orientations of manifolds let us decide whether a map is orientation preserving or reversing.
+
+\begin{defn}
+	Let $\phi:X\to Y$ be a smooth map between oriented $n$--manifolds.
+	If the differential $df_p:T_p X\to T_{\phi(p)} Y$ is orientation preserving (resp. orientation reversing) as a map between vector spaces for every $p$ in $X$, then $\phi$ is \emph{orientation preserving} (resp. \emph{orientation reversing}) as a map.
 \end{defn}
