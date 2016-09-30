@@ -3,35 +3,35 @@ We focus mainly on the definitions and results needed to meaningfully attach 2--
 This is accomplished by piping the areas to be joined together through cooked up diffeomorphisms.
 We lay out the general theory behind joining manifolds along submanifolds of the boundary, then move into the specifics of handle attachment.
 
-Let $\beta=(\R^k,E,Y,\pi)$ be a $k$-vector bundle with $Y$ a compact $n$--manifold.
+Let $\beta=(E,B,\pi)$ be a $k$-vector bundle with $B$ a compact $n$--manifold.
 Let $\alpha:(0,\infty)\to(0,\infty)$ be an orientation reversing diffeomorphism.
-Define a map $\alpha_E: E\setminus z(Y) \to E\setminus z(Y)$ by
+Define a map $\alpha_E: E\setminus z(B) \to E\setminus z(B)$ by
 \begin{equation}
 	\label{eqn:alpha}
-	\alpha_E(y,v) = \Big(y,\alpha(\norm{v})\frac{v}{\norm{v}}\Big).
+	\alpha_E(b,v) = \Big(b,\alpha(\norm{v})\frac{v}{\norm{v}}\Big).
 \end{equation}
-Let $X_1$, $X_2$ be $(n+k+1)$--manifolds with boundary, and let $h_1$, $h_2$ be embeddings of $E$ in $\pd X_1$ and $\pd X_2$.
-Restricting the $h_i$ to $z(Y)$, we get $h_i(z(Y))$ as a embedded submanifolds of the boundaries $\pd X_i$.
-We may then view the $(E,h_i)$ as tubular neighbourhoods of $h(z(Y))$ in $\pd X_i$, and can extend the neighbourhoods to $X_i$ as in Definition \ref{def:halfneighbourhood}, using two copies of $\HH^1$.
-This extends the fibre of $\beta$ from $\R^k$ to $\R^k\times \HH^1$.
+Let $M_1$, $M_2$ be $(n+k+1)$--manifolds with boundary, and let $f_1$, $f_2$ be embeddings of $E$ in $\pd M_1$ and $\pd M_2$.
+Restricting the $f_i$ to $z(B)$, we get $f_i(z(B))$ as embedded submanifolds of the boundaries $\pd M_i$.
+We may then view the $(E,f_i)$ as tubular neighbourhoods of $f(z(B))$ in $\pd M_i$, and can extend the neighbourhoods to $M_i$ as in Definition \ref{def:halfneighbourhood}, using two copies of $\HH^1$.
 
-Denote the extended embeddings by $H_i$.
-If we extend the bundle even further to $\mathcal{B}=(\R^k\times \R,\mathcal{E},Y,\pi)$, we can think of $H_1$, $H_2$ as each embedding ``one-half'' of $\mathcal{E}$ in the boundaries of $\pd X_1$ and $\pd X_2$.
-We obtain a new object by ``joining'' $X_1$ and $X_2$ along the embeddings $H_1$, $H_2$.
-Explicitly, identify $(y,v)$ in $H_1(\mathcal{E}\setminus z(Y))$ with $H_2\comp \alpha_\mathcal{E}\comp H_1\inv(y,v)$.
-A space obtained in this manner will be denoted $X(h_1,h_2)$.
+We can extend $\beta$ to a $(k+1)$--vector bundle $\mathcal{B}=(\mathcal{E},B,\Pi)$ and extend the $f_i$ to a pair of embeddings $F_1$, $F_2$ each defined on ``one-half'' of $\mathcal{E}$.
+Then $F_i$ embeds its half of $\mathcal{E}$ in the boundary $\pd M_i$.
+We obtain a new object by ``joining'' $M_1$ and $M_2$ along the embeddings $F_1$, $F_2$.
+Explicitly, identify $(b,v)$ in $F_1(\mathcal{E}\setminus z(B))$ with $F_2\comp \alpha_\mathcal{E}\comp F_1\inv(b,v)$.
+A space obtained in this manner will be denoted $M(f_1,f_2)$.
 
-\begin{theorem}
+\begin{theorem}[Proposition \rom{6}.5.1 of \cite{Kosi93}]
 	\label{thm:joinman}
-	Let $\beta$, $X_i$, $h_i$ be as above.
-	The space $X(h_1,h_2)$ is a smooth $(n+k+1)$--manifold unique up to bundle automorphisms of $E$.	
+	Let $\beta$, $M_i$, $f_i$ be as above, and let $M'=M(f_1',f_2')$ with $\restr{f_i}{B}=\restr{f_i'}{B}$, $i=1,2$.
+	Then there is an automorphism $g$ of $E$ such that $M'$ is diffeomorphic to $M(f_1\comp g,f_2)$.
 \end{theorem}
 
 The machinery used to prove Theorem \ref{thm:joinman} is built up throughout Chapter \rom{6} of \cite{Kosi93}.
+To concisely state the content of this theorem, we say that handle attachment over the chosen embeddings $f_1$, $f_2$ is \emph{unique up to bundle automorphisms of $E$}.
 Now, we build up the details of handle attachment -- an explicit application of Theorem \ref{thm:joinman}.
 
-Let $n=\lambda+\mu$ and $X$ be an $n$--manifold with boundary.
-Attaching an $n$--dimensional $\lambda$--handle to $X$ is the process of joining $X$ to $D^n$ along embeddings of $\beta=(\R^\mu,E,S^{\lambda-1},\pi)$, a $\mu$--vector bundle over $S^{\lambda-1}$, into the boundaries of $X$ and $D^n$.
+Put $n=\lambda+\mu$ and let $M$ be an $n$--manifold with boundary.
+Attaching an $n$--dimensional $\lambda$--handle to $M$ is the process of joining $M$ to $D^n$ along embeddings of $\beta=(E,S^{\lambda-1},\pi)$, a $\mu$--vector bundle over $S^{\lambda-1}$, into the boundaries of $M$ and $D^n$.
 %An explicit embedding of $E$ into $\pd D^n$ is explored in depth in \rom{6}.6 of \cite{Kosi93}, so we will touch only on the facts necessary to explicitly define handles.
 
 Write elements of $\RRN=\R^\lambda\times\R^\mu$ as $x=(x_\lambda,x_\mu)$, where $x_\lambda$ is the result of projecting $x$ onto the first $\lambda$ coordinates of $\RRN$ and $x_\mu$ is the result of projection onto the last $\mu$ coordinates.
@@ -77,104 +77,89 @@ and then with the inverse of equation \ref{eqn:diffeo}.
 Thus, $\alpha$ is an orientation reversing diffeomorphism as in equation \ref{eqn:alpha}.
 
 \begin{defn}[Handle]
-	Let $X$ be a smooth $n$--manifold with nonempty boundary and let $n=\lambda+\mu$.
-	Let $h:S^{\lambda-1}\to \pd X$ be an embedding with extension $H:T\to X$ such that $H(T)$ is a tubular neighbourhood of $h(S^{\lambda-1})$ in $X$ in the sense of Definition \ref{def:halfneighbourhood}.
-	We obtain a new space by identifying $x\in T\setminus h(S^{\lambda-1})$ with $H\comp\alpha(x)\in X\setminus h(S^{\lambda-1})$, a process we call \emph{attaching an $n$--dimensional $\lambda$--handle to $X$ along $h(S^{\lambda-1})$}.
-	We denote the new space by $X\cup_h H^\lambda$.	
+	Let $M$ be a smooth $n$--manifold with nonempty boundary and let $n=\lambda+\mu$.
+	Let $f:S^{\lambda-1}\to \pd M$ be an embedding with extension $F:T\to M$ such that $F(T)$ is a tubular neighbourhood of $f(S^{\lambda-1})$ in $M$ in the sense of Definition \ref{def:halfneighbourhood}.
+	We obtain a new space by identifying $x\in T\setminus h(S^{\lambda-1})$ with $F\comp\alpha(x)\in M\setminus f(S^{\lambda-1})$, a process we call \emph{attaching an $n$--dimensional $\lambda$--handle to $M$ along $f(S^{\lambda-1})$}.
+	We denote the new space by $M\cup_f H^\lambda$.	
 \end{defn}
 
-Attaching a handle is a special case of joining a pair of manifolds along submanifolds of the boundary so Theorem \ref{thm:joinman} applies.
-Thus, $X\cup_h H^\lambda$ is a smooth $n$--dimensional manifold unique up to automorphisms of $\mu$--vector bundles over $S^{\lambda-1}$.
-This means that the characteristics of handle attachment that fully describe the manifold $X\cup_h H^\lambda$ are:
+Attaching a handle is a special case of joining a pair of manifolds along submanifolds of the boundary.
+Theorem \ref{thm:joinman} applies, so attachment of a handle over $f$ is unique up to a bundle automorphism.
+Our uniqueness theorem for proper tubular neighbourhoods applies as well, so attachment of a handle is unique up to ambient isotopy of the embedding $f$.
+In other words, the characteristics of handle attachment that fully describe the smooth $n$--manifold $M\cup_f H^\lambda$ up to diffeomorphism are:
 \begin{enumerate}
-	\item The embedding $h:S^{\lambda-1}\to\pd X$ and its resulting tubular neighbourhood in $X$ which is unique up to ambient isotopy of $X$, and
-	\item The structure of
-	\item
-	
+	\item The isotopy class of the embedding $f:S^{\lambda-1}\to\pd M$ where $f(S^{\lambda-1})$ has trivial normal bundle, and 
+	\item the isotopy class of an explicit trivialization of $N_{\pd M}\,h(S^{\lambda-1})$.
 \end{enumerate}
 
-There is some specific language that is useful to the description of handle attachment,.
-The subset of $X$ along which the handle is attached is $h(S^{\lambda-1})$
+There is some specific language that is useful to the description of handle attachment.
 
-
-\newpage
-
-\begin{center}
-	What follows is unedited
-\end{center}
-
-\newpage
-
-\begin{defn}[Handle]
-	\label{def:handle}	
-	Let $X$ be a smooth $n$--manifold with nonempty boundary and let $n=\lambda+\mu$.
-	Let $h:S^{\lambda-1}\to \pd X$ be an embedding with extension $H:T\to X$ such that $H(T)$ is a tubular neighbourhood of $h(S^{\lambda-1})$ in $X$ in the sense of Definition \ref{def:halfneighbourhood}.
-	
-	An \emph{$n$--dimensional $\lambda$-handle}, is a copy of $D^k\times D^{n-k}$ which we attach to $\pd X$ along $\pd D^k\times D^{n-k}$ by an embedding
-	\[
-	\varphi : \pd D^k \times D^{n-k} \to \pd X.
-	\]
-	We call $\varphi$ an \emph{attaching map}, and canonically smooth corners \cite{GompStip} in the quotient space
-	\[
-	X\cup_\varphi h = \quotient{X \cup ( D^k\times D^{n-k} ) }{ \varphi(x) \sim x }
-	\]
-	to make $X\cup_\varphi h$ into a smooth manifold.
-	The number $k$ is the \emph{index} of the handle $h$ and we call this process \emph{attaching a $k$-handle to $X$ with attachment map $\varphi$}.
-	An $n$--dimensional manifold described by a handle decomposition whose handles have index no greater than $1$ is called an \emph{$n$-handlebody}.
+\begin{defn}
+	Let $M\cup_h H^\lambda$ be an $n$--manifold with a $\lambda$--handle attached.
+	The embedding $f:S^{\lambda-1}\to\pd M$ is called the \emph{attaching map}, its image $f(S^{\lambda-1})$ is the \emph{attaching sphere}, and its tubular neighbourhood is the \emph{attaching neighbourhood}.
+	The explicit trivialization of $N_{\pd M}h(S^{\lambda-1})$ is called a \emph{normal framing} or just \emph{framing}.
+	The group of isotopy classes of automorphisms of a manifold $X$ is the \emph{mapping class group} of $X$ and denoted $mpg(X)$, so a framing is an element of the mapping class group of the normal bundle $N_{\pd M}h(S^{\lambda-1})$.
+	Identify $M\setminus f(S^{\lambda})$ and $D^n\setminus S^{\lambda-1}$ with their images in $M\cup_f H^\lambda$.
+	Then $D^n\setminus S^{\lambda-1}$ is the \emph{handle}, the disc $D^\lambda=D^n\cap(\R^\lambda\times\{\vec{0}\})$ is the \emph{core} of the handle, and the disc $D^\mu=D^n\cap(\{\vec{0}\}\times\R^\mu)$ is the \emph{cocore} of the handle.
+	The boundary $S^{\mu-1}$ of the cocore is the \emph{belt sphere}.
 \end{defn}
 
+There are two special cases of handle attachment to discuss.
+First, let $M$ be a smooth, orientable, path--connected $n$--manifold.
+The attaching sphere of a 1--handle is $\pd D^1$, which is a pair of points.
+For $\pd M$ compact, connected, and nonempty, there is a unique isotopy class of embeddings $f:S^0\to\pd M$.
+This means that $M\cup_f H^1$ is determined entirely by the isotopy class of an explicit trivialization of the normal bundle to $f(S^0)$ in $\pd M$.
+This normal bundle is a pair of $(n-1)$--discs, and an automorphism of $D^{n-1}\sqcup D^{n-1}$ can be thought of as a pair $(\varphi,\psi)$ of maps $D^{n-1}\to D^{n-1}$.
+In this format, it is easy to see that are exactly two types of isotopy classes of automorphisms of $D^{n-1}\sqcup D^{n-1}$; either both $\varphi$ and $\psi$ are are orientation preserving (reversing), or $\varphi$ is orientation preserving (reversing) and $\psi$ is orientation reversing (preserving).
+Under the first type of automorphism, $M\cup_f H^1$ is a non-orientable manifold.
+Under the second, $M\cup_f H^1$ is orientable.
 
+Next, let $W$ be a 4--manifold with orientable boundary $M$.
+To attach a 2--handle to $W$, we need an embedding $f:S^1\to M$ and a framing of the normal bundle $N_M f(S^1)$.
+The normal bundle is homeomorphic to $S^1\times D^2$, so it is what we call a solid torus.
 
-
-If $X\cup_\varphi h$ is a smooth manifold with attached $k$-handle, then we have special terms for the anatomy of $h$.
-The $k$--disc at $D^k\times 0$ in $h$ is called the \emph{core} of $h$ and the $(n-k)$--disc $0 \times D^{n-k}$ is called the \emph{cocore}.
-We call the $(k-1)$--sphere $\pd D^k \times 0$ the \emph{attaching sphere} and we call the $(n-k-1)$--sphere $ 0 \times \pd D^{n-k}$ the \emph{belt sphere}.
-we call $\pd D^k\times D^{n-k}$, or its image through an attaching map $\varphi$, the \emph{attaching neighbourhood}.
-
-\begin{rmk}
-	If $\varphi$ and $\varphi'$ are isotopic attaching maps of the $k$--handle $h$ then the manifolds $X\cup_\varphi h$ and $X\cup_{\varphi'} h$ are diffeomorphic up to ambient isotopy.
-	This follows from the Isotopy Extension Theorem.
-	If $\varphi,$ $\varphi'$ are isotopic maps into the closed manifold $\pd X$, then the restrictions of these maps to the compact attaching neighbourhood are also isotopic hence induce an ambient isotopy $\Phi_t$.
-	The diffeomorphism
-	\[
-		\begin{array}{cccc}
-			\ident{[0,1]}\times\Phi: & [0,1]\times \pd X & \to & [0,1]\times\pd X \\
-									 & (t,x) & \mapsto & (t,\Phi_t(x))
-		\end{array}
-	\]
-	gives us the diffeomorphism $X\to X$ by identifying $[0,1]\times\pd X$ with a neighbourhood of $\pd X$ in $X$. \{CITE: RoSa\}
+\begin{defn}
+	Let $V$ be a space homeomorphic to $S^1\times D^2$.
+	We call $V$ a \emph{solid torus}.
 	
-	We construct an attaching map $\varphi:\pd D^k\times D^{n-k}\to\pd X$ from an embedding of the attaching sphere $\varphi_0:\pd D^k\times 0\to \pd X$ and an identification $n$ of the normal bundle of the image of $\varphi$ with $\pd D^k \times \R^{n-k}$.
-	From the Tubular Neighbourhood Theorem, this information determines an embedding of $\pd D^k\times D^{n-k}$ up to isotopy.
-	Thus any attaching map is determined by
-	\begin{enumerate}
-	  \item an embedding $\varphi_0:S^{k-1}\to\pd X$ with trivial normal bundle, and
-	  \item an identification $n$ of the normal bundle $\nu\varphi_0(S^{k-1})$ with $S^{k-1}\times\R^{n-k}$ which we call a \emph{framing of} $\varphi_0(S^{k-1})$
-	\end{enumerate}
-	up to isotopy, and the resulting manifold $X\cup_\varphi h$ up to diffeomorphism.
-\end{rmk}
+	A simple closed curve $J$ in $\pd V$ that bounds a 2--disc in $V$ is called a \emph{meridian}.
+	A simple closed curve $K$ in $\pd V$ that intersects a meridian at a single point is called a \emph{longitude}.
+\end{defn}
 
-\begin{rmk}
-\label{rmk:onehandle}
-There are two important cases of handle attachment that we care about --- attachment of handles with index $1$ and $2$.
-To attach a handle of index $1$ to an $(n+1)$--manifold $W$ over its $n$--manifold boundary $M$, we specify an embedding $\varphi_0$ of $S^0=\{-1,1\}$ into $M$.
-We must also define a framing of $\varphi_0(S^{0})$ in $M$.
-If $M$ is oriented, then a framing of $\varphi_0(\pm 1)$ is an element of $\gl{n}{\R}$.
-Because an orientation of the $n$--manifold $M$ is defined by an association of an element of $\glp{n}{\R}$ to each point of $M$, we can say that a framing of $\varphi_0(\pm 1)$ is \emph{orientation preserving} if the chosen framing element is from $\glp{n}{\R}$ and \emph{orientation reversing} if the chosen framing element is from $\gln{n}{\R}$.
-With these framings defined, we can form the attaching map $\varphi$ for our 1--handle $h$.
-Because the attaching map $\varphi$ is defined on the disconnected space $S^0\times D^n$, we refer to $\varphi$ as a pair of attaching maps, one for each component. 
-Note here that if $W$ is path connected and both framings are orientation reversing or orientation preserving, then the manifold $W\cup_\varphi h$ is nonorientable.
-If exactly one framing is orientation preserving and the other orientation reversing then $W\cup_\varphi h$ is orientable.
-\end{rmk}
+Once an embedding $f:S^1\to M$ is chosen, $W\cup_f H^2$ is determined by a choice of element of the mapping class group of a solid torus.
+This space is very closely linked to the mapping class group of the torus $T^2 = S^1\times S^1$, which is the special linear group $\textrm{SL}_2(\Z)$, the group of $2\times 2$ matrices with integer entries and determinant $\pm 1$.
+\begin{lem}
+	Let $V$ be an open solid torus and let $f$ be an automorphism of the torus $\pd V$.
+	Then $h$ extends to an automorphism of $V$ if and only if $f$ maps a meridian to a meridian.	
+\end{lem}
 
+\begin{lem}
+	A pair of automorphisms $f,g$ of $V$ that agree on $\pd V$ and map a meridian to a meridian are isotopic.	
+\end{lem}
 
+\begin{theorem}
+	The mapping class group of a solid torus $V$ is the subgroup of the mapping class group of $\pd V$ containing automorphisms that map meridians to meridians.
+	This subgroup is isomorphic to $\Z$.	
+\end{theorem}
 
-Because our goal is to attach 2--handles to 4--manifolds, we focus now on embeddings of $\sone$ in 3--manifolds.
-We can define a framing of an embedded $\sone$ in an oriented 3--manifold from a vector field over that embedded $\sone$ and the orientation of the 3--manifold.
-Attaching a 2--handle to a 4--manifold consists of defining an embedding of $\sone\times D^2$ into the boundary of the 4--manifold.
-This embedding is defined entirely by the image of the attaching sphere and by a framing of that image.
-A framing is an association of every point of the attaching sphere with an element of $\gl{2}{\R}$.
-We care about this embedding up to isotopy, so a framing can be reduced to an element of $\pi_1(\gl{2}{\R})=\pi_1(\sone)=\Z$.
-A framing makes no sense without a zero framing as reference.
-Once that is defined, any $n$--framing is also defined.
-There is a canonical zero--framing of a knot in $\sthr$ found by the outward unit normal vector to any Seifert surface of that knot.
+\begin{proof}
+	In \cite{Rolf76}, it is shown that the mapping class group of $T^2$ is $\textrm{SL}_2(\Z)$ by generating the group from a pair of basic automorphisms of $T^2$ called \emph{twists}, and the swapping map $(z,w)\to(w,z)$.
+	The twists are defined as:
+	\[
+	\begin{array}{ccccc}
+	h_L(e^{i\theta},e^{i\phi}) & = & (e^{i(\theta+\phi)},e^{i\phi}) & & \textrm{``longitudinal twist''} \\
+	
+	h_M(e^{i\theta},e^{i\phi}) & = & (e^{i\phi},e^{i(\theta+\phi)}) & & \textrm{``meridinal twist''}	
+	\end{array}
+	\]
+	Fix the meridinal and longitudinal directions of the boundary of an open solid torus $V$ to coincide with the meridinal and longitudinal directions of $V$.
+	This would mean that we write $V=S^1\times D^2$, with $\{1\}\times S^1$ a meridian and $S^1\times\{1\}$ a longitude.
+	Let $F$ be an automorphism of $V$ with restriction $f$ to $\pd V$.
+	Because $f$ is an automorphism of $\pd V$, it can be written as the product of twists and swaps.
+	Because $f$ preserves meridians, it can be written entirely as a power of the meridinal twist.
+	In the other direction, any automorphism that is the power of a meridinal twist clearly preserves meridians.
+	Because these automorphisms are written as powers of $h_M$, there is a clear isomorphism from this subgroup to $\Z$.
+\end{proof}
+
+The content of these results means that the attachment of a 2--handle to a 4--manifold can be described by an embedding $f:S^1\to M$ and an integer $k$ called the \emph{framing constant} that determines the framing automorphism as long as we know what a framing constant of $0$ means.
+When $M$ is $S^3$, there exists 
