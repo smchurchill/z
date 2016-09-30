@@ -16,8 +16,8 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 	\]
 	When $n=0$, $\HH^0 = \R^0 = \{0\}$, so $\inter{\HH^0}=\R^0$ and $\pd\HH^0=\emptyset$.
 
-	Let $X$ be a second-countable Hausdorff space.
-	The pair $(U,f)$ where $U$ is an open subset of $X$ and $f$ is a homeomorphism from $U$ onto an open set of either $\RRN$ or $\HN$ is called a \emph{chart} of $X$.
+	Let $M$ be a second-countable Hausdorff space.
+	The pair $(U,f)$ where $U$ is an open subset of $M$ and $f$ is a homeomorphism from $U$ onto an open set of either $\RRN$ or $\HN$ is called a \emph{chart} of $M$.
 	The map $f$ is a \emph{coordinate system} on $U$ and its inverse $f\inv$ is a \emph{parameterization} of $U$.
 	Writing $f$ as
 	\[
@@ -29,8 +29,8 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 \begin{defn}[Atlas]
 	\label{def:atlas}
 	Fix a nonnegative integer $n$.
-	Let $\mathcal{A}=\{(U_\alpha,f_\alpha):\alpha\in A\}$ be a collection of charts of $X$ such that the codomain for each chart is of the fixed dimension $n$.
-	If $\bigcup_A U_\alpha$ contains $X$, then $\mathcal{A}$ is an \emph{atlas} for $X$.
+	Let $\mathcal{A}=\{(U_\alpha,f_\alpha):\alpha\in A\}$ be a collection of charts of $M$ such that the codomain for each chart is of the fixed dimension $n$.
+	If $\bigcup_A U_\alpha$ contains $M$, then $\mathcal{A}$ is an \emph{atlas} for $M$.
 	The homeomorphisms $f_\alpha\comp f_\beta\inv:f_\beta(U_\alpha\cap U_\beta)\to f_\alpha(U_\alpha\cap U_\beta)$ are \emph{transition maps} of $\mathcal{A}$.
 	We say that $(U_\alpha,f_\alpha)$ and $(U_\beta,f_\beta)$ are \emph{smoothly compatible} if either $U_\alpha\cap U_\beta$ is empty or the transition maps $f_\alpha\comp f_\beta\inv$ and $f_\beta\comp f_\alpha\inv$ are smooth as maps $\RRN\to\RRN$, i.e.\ they have continuous partial derivatives of all orders.
 	If every pair of charts in an atlas is smoothly compatible then that atlas is a \emph{smooth atlas}.
@@ -39,22 +39,22 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 
 \begin{defn}[Manifold]
 	\label{def:manifold}
-	Let $X$ be a second-countable Hausdorff topological space, $\mathcal{A}$ an atlas for $X$, and $n$ the dimension of the codomain of each chart in $\mathcal{A}$.
-	If $\mathcal{A}$ is a smooth atlas, then the pair $(X,\mathcal{A})$ is a \emph{smooth n--manifold},  \emph{n--manifold}, or just \emph{manifold}.
-	If $\mathcal{A}$ is a maximal smooth atlas then we call it a \emph{smooth structure} on $X$.
+	Let $M$ be a second-countable Hausdorff topological space, $\mathcal{A}$ an atlas for $M$, and $n$ the dimension of the codomain of each chart in $\mathcal{A}$.
+	If $\mathcal{A}$ is a smooth atlas, then the pair $(M,\mathcal{A})$ is a \emph{smooth n--manifold},  \emph{n--manifold}, or just \emph{manifold}.
+	If $\mathcal{A}$ is a maximal smooth atlas then we call it a \emph{smooth structure} on $M$.
 \end{defn}
 
 It eases the notational burden to assume that our manifolds are always equipped with a smooth structure.
 This assumption allows us to omit writing the an atlas when talking about a manifold.
 	
 \begin{defn}[Boundary]
-	Let $X$ be a smooth $n$--manifold.
+	Let $M$ be a smooth $n$--manifold.
 	A chart $(U,f)$ is called an \emph{interior chart} is $f(U)$ is an open subset of $\RRN$ and is a \emph{boundary chart} if $f(U)$ is an open subset of $\HN$ with $f(U)\cap\pd \HN\neq\emptyset$.
-	Let $p\in X$.
+	Let $p\in M$.
 	We say that $p$ is an \emph{interior point} if it is in the domain of an interior chart, and is a \emph{boundary point} if it is in the domain of a boundary chart $(U,f)$ so that $f(p)\in\pd\HN$.
-	The set of all boundary points of $X$ is called the \emph{boundary of $X$} and is denoted by $\pd X$.
-	Similarly, the set of all interior points of $X$ is called the \emph{interior} of $X$ and is denoted by $\inter{X}$.
-	If $X$ is compact with empty boundary then $X$ is \emph{closed} as a manifold.
+	The set of all boundary points of $M$ is called the \emph{boundary of $M$} and is denoted by $\pd M$.
+	Similarly, the set of all interior points of $M$ is called the \emph{interior} of $M$ and is denoted by $\inter{M}$.
+	If $M$ is compact with empty boundary then $M$ is \emph{closed} as a manifold.
 \end{defn}
 
 There is a potential conflict of this definition with the concept of topological closure.
