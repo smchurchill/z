@@ -1,56 +1,18 @@
 The main tool used to construct 4--manifolds in later chapters is handle attachment.
-We focus mainly on the definitions and results needed to meaningfully attach 2--handles to a 4--manifold, using the methods that are explored in detail in \cite{Kosi93} to attach handles in way that ensures the resulting manifold is smooth.
-This is accomplished by piping the areas to be joined together through cooked up diffeomorphisms.
-We lay out the general theory behind joining manifolds along submanifolds of the boundary, then move into the specifics of handle attachment.
+We focus mainly on the definitions and results needed to meaningfully attach 1-- and 2--handles to a 4--manifold.
+There is more than one way to define handle attachment, and we choose to do so in a way that feels more combinatorial in nature.
+The main concern of this approach is that the object resulting from handle attachment is a ``manifold with corners'' rather than a smooth manifold.
+There are arguments that the corners can be smoothed away in a canonical way such that a manifold obtained via handle attachment is unique up to diffeomorphism, but delving into such an argument at this point would be a distraction.
+\{NOTE: perhaps include an argument as an appendix?\}
+A construction that does not require the smoothing of corners can be found in \cite{Kosi93}, but the machinery makes explicit handle attachment unnecessarily complicated.
 
-Let $\beta=(E,B,\pi)$ be a $k$-vector bundle with $B$ a compact $n$--manifold.
-Let $\alpha:(0,\infty)\to(0,\infty)$ be an orientation reversing diffeomorphism.
-Define a map $\alpha_E: E\setminus z(B) \to E\setminus z(B)$ by
-\begin{equation}
-	\label{eqn:alpha}
-	\alpha_E(b,v) = \Big(b,\alpha(\norm{v})\frac{v}{\norm{v}}\Big).
-\end{equation}
-Let $M_1$, $M_2$ be $(n+k+1)$--manifolds with boundary, and let $f_1$, $f_2$ be embeddings of $E$ in $\pd M_1$ and $\pd M_2$.
-Restricting the $f_i$ to $z(B)$, we get $f_i(z(B))$ as embedded submanifolds of the boundaries $\pd M_i$.
-We may then view the $(E,f_i)$ as tubular neighbourhoods of $f(z(B))$ in $\pd M_i$, and can extend the neighbourhoods to $M_i$ as in Definition \ref{def:halfneighbourhood}, using two copies of $\HH^1$.
 
-We can extend $\beta$ to a $(k+1)$--vector bundle $\mathcal{B}=(\mathcal{E},B,\Pi)$ and extend the $f_i$ to a pair of embeddings $F_1$, $F_2$ each defined on ``one-half'' of $\mathcal{E}$.
-Then $F_i$ embeds its half of $\mathcal{E}$ in the boundary $\pd M_i$.
-We obtain a new object by ``joining'' $M_1$ and $M_2$ along the embeddings $F_1$, $F_2$.
-Explicitly, identify $(b,v)$ in $F_1(\mathcal{E}\setminus z(B))$ with $F_2\comp \alpha_\mathcal{E}\comp F_1\inv(b,v)$.
-A space obtained in this manner will be denoted $M(f_1,f_2)$.
+Attaching an $n$--dimensional $\lambda$--handle to $M$ is the process of joining $M$ to $\D^\lambda\times\D^\mu$ along an embedding of $\pd\D^\lambda\times\D^\mu$ in $\pd M$.
 
-\begin{theorem}[Proposition \rom{6}.5.1 of \cite{Kosi93}]
-	\label{thm:joinman}
-	Let $\beta$, $M_i$, $f_i$ be as above, and let $M'=M(f_1',f_2')$ with $\restr{f_i}{B}=\restr{f_i'}{B}$, $i=1,2$.
-	Then there is an automorphism $g$ of $E$ such that $M'$ is diffeomorphic to $M(f_1\comp g,f_2)$.
-\end{theorem}
-
-The machinery used to prove Theorem \ref{thm:joinman} is built up throughout Chapter \rom{6} of \cite{Kosi93}.
-To concisely state the content of this theorem, we say that handle attachment over the chosen embeddings $f_1$, $f_2$ is \emph{unique up to bundle automorphisms of $E$}.
-Now, we define handle attachment -- an explicit application of Theorem \ref{thm:joinman}.
-
-Put $n=\lambda+\mu$ and let $M$ be an $n$--manifold with boundary.
-Attaching an $n$--dimensional $\lambda$--handle to $M$ is the process of joining $M$ to $\DN$ along embeddings of a $\mu$--disc bundle over $S^{\lambda-1}$, into the boundaries of $M$ and $\DN$.
-Write elements of $\RRN=\R^\lambda\times\R^\mu$ as $x=(x_\lambda,x_\mu)$, where $x_\lambda$ is the result of projecting $x$ onto the first $\lambda$ coordinates of $\RRN$ and $x_\mu$ is the result of projection onto the last $\mu$ coordinates.
-This notation lets us write $\DN$, $\D^\lambda$, and $S^{\lambda-1}$ in $\RRN$ as
-\[
-	\begin{array}{cclr}
-		\DN & = & \{x\in\RRN : \norm{x_\mu}^2 + \norm{x_\lambda}^2 \leq 1\}, & \\
-		\D^\lambda & = & \{x\in\RRN : x_\mu=\vec{0}, \norm{x_\lambda}^2 \leq 1\}, & \textrm{and} \\
-		S^{\lambda-1} & = & \{x\in \DN: x_\mu=\vec{0}, \norm{x_\lambda}=1\}. &
-	\end{array}
-\]
 
 \begin{defn}[Handle]
-% arctan isn't going to work, remember that x_\mu is a vector	
-	Let $M$ be a smooth $n$--manifold with nonempty boundary and let $n=\lambda+\mu$.
-	Let $S^{\lambda-1}\times \R^\mu$ be a trivial $\mu$--vector bundle.
-	Define an embedding $f_2:S^{\lambda-1}\times\R^\mu\to S^{\lambda+\mu-1}=\pd\DN$ by
-	\[
-		f_2\big((x_\lambda,0),(0,x_\mu)\big) = \frac{(x_\lambda,\arctan x_\mu)}{(\norm{x_\lambda}^2+\norm{x_\mu}^2)^{1/2}},
-	\]
-	and let $f_1:S^{\lambda-1}\times\D^\mu\to \pd M$ be an embedding such that 
+	Put $n=\lambda+\mu$ and let $M$ be an $n$--manifold with boundary.
+	
 	
 	Let $f:S^{\lambda-1}\to \pd M$ be an embedding with proper tubular neighbourhoods $\nu_{\pd M}\,f$ and $\nu_M\,f$ and $F:T\to M$ an extension of $f$ such that $\restr{F}{S^\lambda}$ is a vector bundle isomorphism to a proper tubular neighbourhood of $f(S^{\lambda-1})$ in $\pd M$, and $F(T)$ is a proper tubular neighbourhood in the sense of Definition \ref{def:halfneighbourhood} .
 	We obtain a new space by identifying $x\in T\setminus h(S^{\lambda-1})$ with $F\comp\alpha(x)\in M\setminus f(S^{\lambda-1})$, a process we call \emph{attaching an $n$--dimensional $\lambda$--handle to $M$ along $f(S^{\lambda-1})$}.
