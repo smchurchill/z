@@ -1,0 +1,45 @@
+Put $n=\lambda+\mu$ and let $M$ be an $n$--manifold with boundary.
+Attaching an $n$--dimensional $\lambda$--handle to $M$ is the process of joining $M$ to $\DN$ along embeddings of $\beta=(E,S^{\lambda-1},\pi)$, a $\mu$--vector bundle over $S^{\lambda-1}$, into the boundaries of $M$ and $\DN$.
+%An explicit embedding of $E$ into $\pd D^n$ is explored in depth in \rom{6}.6 of \cite{Kosi93}, so we will touch only on the facts necessary to explicitly define handles.
+
+Write elements of $\RRN=\R^\lambda\times\R^\mu$ as $x=(x_\lambda,x_\mu)$, where $x_\lambda$ is the result of projecting $x$ onto the first $\lambda$ coordinates of $\RRN$ and $x_\mu$ is the result of projection onto the last $\mu$ coordinates.
+This notation lets us write $S^{\mu-1}$ in $\RRN$ as
+\[
+	S^{\mu-1} = \{x\in \DN: x_\lambda=\vec{0},\norm{x_\mu}=1\}.
+\]
+For $\varepsilon\in [\,0,1)$ define $T(\varepsilon)$ as a subset of $\DN$ by
+\[
+	T(\varepsilon) = \{x\in \DN: \norm{x_\lambda}^2>\varepsilon\}.
+\]
+Note that $T(\varepsilon)$ collapses onto $S^{\lambda-1}$ via the projection $(x_\lambda,x_\mu)\mapsto x_\lambda/\norm{x_\lambda}$.
+Abbreviate $T(0)$ as $T$.
+Define a map
+\[
+	\alpha:T(\varepsilon)\setminus S^{\lambda-1} \to T(\varepsilon)\setminus S^{\lambda-1}
+\]
+defined by
+\begin{equation}
+	\alpha(x_\lambda, x_\mu) =
+	\Bigg( 
+		\frac{x_\lambda}{\norm{x_\lambda}}
+		(1-\norm{x_\lambda}^2+\varepsilon)^{1/2},
+		x_\mu
+		\frac{
+			(\norm{x_\lambda}^2-\varepsilon)^{1/2}
+		}{
+			(1-\norm{x_\lambda}^2)^{1/2}
+		}
+	\Bigg).
+\end{equation}
+To relate handle attachment with our initial definition of joining manifolds over submanifolds in the boundary, first notice that $T(\varepsilon)$ has the structure of ``one-half'' of a $(\mu+1)$--vector bundle over $S^{\lambda-1}$.
+Next, $\alpha$ is a composition of the diffeomorphism $\DN\setminus S^{\lambda-1}\to D^\lambda\times \D^\mu$ given by
+\begin{equation}
+	\label{eqn:diffeo}
+	(x_\lambda,x_\mu)\mapsto \Big(x_\lambda,\frac{x_\mu}{(1-\norm{x_\lambda}^2)^{1/2}}\Big)
+\end{equation}
+with an involution on $(D^\lambda\setminus\{\vec{0}\})\times \D^\mu$ given by
+\begin{equation}
+	(x_\lambda,x_\mu)\mapsto \Big(\frac{x_\lambda}{\norm{x_\lambda}}(1-\norm{x_\lambda}^2+\varepsilon)^{1/2},x_\mu \Big)
+\end{equation}
+and then with the inverse of equation \ref{eqn:diffeo}.
+Thus, $\alpha$ is an orientation reversing diffeomorphism as in equation \ref{eqn:alpha}.

@@ -28,57 +28,31 @@ A space obtained in this manner will be denoted $M(f_1,f_2)$.
 
 The machinery used to prove Theorem \ref{thm:joinman} is built up throughout Chapter \rom{6} of \cite{Kosi93}.
 To concisely state the content of this theorem, we say that handle attachment over the chosen embeddings $f_1$, $f_2$ is \emph{unique up to bundle automorphisms of $E$}.
-Now, we build up the details of handle attachment -- an explicit application of Theorem \ref{thm:joinman}.
+Now, we define handle attachment -- an explicit application of Theorem \ref{thm:joinman}.
 
 Put $n=\lambda+\mu$ and let $M$ be an $n$--manifold with boundary.
-Attaching an $n$--dimensional $\lambda$--handle to $M$ is the process of joining $M$ to $D^n$ along embeddings of $\beta=(E,S^{\lambda-1},\pi)$, a $\mu$--vector bundle over $S^{\lambda-1}$, into the boundaries of $M$ and $D^n$.
-%An explicit embedding of $E$ into $\pd D^n$ is explored in depth in \rom{6}.6 of \cite{Kosi93}, so we will touch only on the facts necessary to explicitly define handles.
-
+Attaching an $n$--dimensional $\lambda$--handle to $M$ is the process of joining $M$ to $\DN$ along embeddings of a $\mu$--disc bundle over $S^{\lambda-1}$, into the boundaries of $M$ and $\DN$.
 Write elements of $\RRN=\R^\lambda\times\R^\mu$ as $x=(x_\lambda,x_\mu)$, where $x_\lambda$ is the result of projecting $x$ onto the first $\lambda$ coordinates of $\RRN$ and $x_\mu$ is the result of projection onto the last $\mu$ coordinates.
-This notation lets us write $S^{\mu-1}$ in $\RRN$ as
+This notation lets us write $\DN$, $\D^\lambda$, and $S^{\lambda-1}$ in $\RRN$ as
 \[
-	S^{\mu-1} = \{x\in D^n: x_\lambda=\vec{0},\norm{x_\mu}=1\}.
+	\begin{array}{cclr}
+		\DN & = & \{x\in\RRN : \norm{x_\mu}^2 + \norm{x_\lambda}^2 \leq 1\}, & \\
+		\D^\lambda & = & \{x\in\RRN : x_\mu=\vec{0}, \norm{x_\lambda}^2 \leq 1\}, & \textrm{and} \\
+		S^{\lambda-1} & = & \{x\in \DN: x_\mu=\vec{0}, \norm{x_\lambda}=1\}. &
+	\end{array}
 \]
-For $\varepsilon\in [\,0,1)$ define $T(\varepsilon)$ as a subset of $D^n$ by
-\[
-	T(\varepsilon) = \{x\in D^n: \norm{x_\lambda}^2>\varepsilon\}.
-\]
-Note that $T(\varepsilon)$ collapses onto $S^{\lambda-1}$ via the projection $(x_\lambda,x_\mu)\mapsto x_\lambda/\norm{x_\lambda}$.
-Abbreviate $T(0)$ as $T$.
-Define a map
-\[
-	\alpha:T(\varepsilon)\setminus S^{\lambda-1} \to T(\varepsilon)\setminus S^{\lambda-1}
-\]
-defined by
-\begin{equation}
-	\alpha(x_\lambda, x_\mu) =
-	\Bigg( 
-		\frac{x_\lambda}{\norm{x_\lambda}}
-		(1-\norm{x_\lambda}^2+\varepsilon)^{1/2},
-		x_\mu
-		\frac{
-			(\norm{x_\lambda}^2-\varepsilon)^{1/2}
-		}{
-			(1-\norm{x_\lambda}^2)^{1/2}
-		}
-	\Bigg).
-\end{equation}
-To relate handle attachment with our initial definition of joining manifolds over submanifolds in the boundary, first notice that $T(\varepsilon)$ has the structure of ``one-half'' of a $(\mu+1)$--vector bundle over $S^{\lambda-1}$.
-Next, $\alpha$ is a composition of the diffeomorphism $D^n\setminus S^{\lambda-1}\to\inter{D^\lambda}\times D^\mu$ given by
-\begin{equation}
-	\label{eqn:diffeo}
-	(x_\lambda,x_\mu)\mapsto \Big(x_\lambda,\frac{x_\mu}{(1-\norm{x_\lambda}^2)^{1/2}}\Big)
-\end{equation}
-with an involution on $(\inter{D^\lambda}\setminus\{\vec{0}\})\times D^\mu$ given by
-\begin{equation}
-	(x_\lambda,x_\mu)\mapsto \Big(\frac{x_\lambda}{\norm{x_\lambda}}(1-\norm{x_\lambda}^2+\varepsilon)^{1/2},x_\mu \Big)
-\end{equation}
-and then with the inverse of equation \ref{eqn:diffeo}.
-Thus, $\alpha$ is an orientation reversing diffeomorphism as in equation \ref{eqn:alpha}.
 
 \begin{defn}[Handle]
+% arctan isn't going to work, remember that x_\mu is a vector	
 	Let $M$ be a smooth $n$--manifold with nonempty boundary and let $n=\lambda+\mu$.
-	Let $f:S^{\lambda-1}\to \pd M$ be an embedding with extension $F:T\to M$ such that $F(T)$ is a tubular neighbourhood of $f(S^{\lambda-1})$ in $M$ in the sense of Definition \ref{def:halfneighbourhood}.
+	Let $S^{\lambda-1}\times \R^\mu$ be a trivial $\mu$--vector bundle.
+	Define an embedding $f_2:S^{\lambda-1}\times\R^\mu\to S^{\lambda+\mu-1}=\pd\DN$ by
+	\[
+		f_2\big((x_\lambda,0),(0,x_\mu)\big) = \frac{(x_\lambda,\arctan x_\mu)}{(\norm{x_\lambda}^2+\norm{x_\mu}^2)^{1/2}},
+	\]
+	and let $f_1:S^{\lambda-1}\times\D^\mu\to \pd M$ be an embedding such that 
+	
+	Let $f:S^{\lambda-1}\to \pd M$ be an embedding with proper tubular neighbourhoods $\nu_{\pd M}\,f$ and $\nu_M\,f$ and $F:T\to M$ an extension of $f$ such that $\restr{F}{S^\lambda}$ is a vector bundle isomorphism to a proper tubular neighbourhood of $f(S^{\lambda-1})$ in $\pd M$, and $F(T)$ is a proper tubular neighbourhood in the sense of Definition \ref{def:halfneighbourhood} .
 	We obtain a new space by identifying $x\in T\setminus h(S^{\lambda-1})$ with $F\comp\alpha(x)\in M\setminus f(S^{\lambda-1})$, a process we call \emph{attaching an $n$--dimensional $\lambda$--handle to $M$ along $f(S^{\lambda-1})$}.
 	We denote the new space by $M\cup_f H^\lambda$.	
 \end{defn}
@@ -88,8 +62,8 @@ Theorem \ref{thm:joinman} applies, so attachment of a handle over $f$ is unique 
 Our uniqueness theorem for proper tubular neighbourhoods applies as well, so attachment of a handle is unique up to ambient isotopy of the embedding $f$.
 In other words, the characteristics of handle attachment that fully describe the smooth $n$--manifold $M\cup_f H^\lambda$ up to diffeomorphism are:
 \begin{enumerate}
-	\item The isotopy class of the embedding $f:S^{\lambda-1}\to\pd M$ where $f(S^{\lambda-1})$ has trivial normal bundle, and 
-	\item the isotopy class of an explicit trivialization of $N_{\pd M}\,h(S^{\lambda-1})$.
+	\item The isotopy class of the embedding $f:S^{\lambda-1}\to\pd M$ where the proper tubular neighbourhood $\nu_{\pd M}\,f(S^{\lambda-1})$ has trivial structure as the normal bundle $N_{\pd M}\,f(S^{\lambda-1})$, and 
+	\item the isotopy class of the extension of $f$ to $F: S^{\lambda-1}\times R^\mu\to \nu_{\pd M}\,f(S^{\lambda-1})$, an explicit trivialization of the normal bundle.
 \end{enumerate}
 
 There is some specific language that is useful to the description of handle attachment.
@@ -97,20 +71,23 @@ There is some specific language that is useful to the description of handle atta
 \begin{defn}
 	Let $M\cup_h H^\lambda$ be an $n$--manifold with a $\lambda$--handle attached.
 	The embedding $f:S^{\lambda-1}\to\pd M$ is called the \emph{attaching map}, its image $f(S^{\lambda-1})$ is the \emph{attaching sphere}, and its tubular neighbourhood is the \emph{attaching neighbourhood}.
-	The explicit trivialization of $N_{\pd M}h(S^{\lambda-1})$ is called a \emph{normal framing} or just \emph{framing}.
-	The group of isotopy classes of automorphisms of a manifold $X$ is the \emph{mapping class group} of $X$ and denoted $mpg(X)$, so a framing is an element of the mapping class group of the normal bundle $N_{\pd M}h(S^{\lambda-1})$.
-	Identify $M\setminus f(S^{\lambda})$ and $D^n\setminus S^{\lambda-1}$ with their images in $M\cup_f H^\lambda$.
-	Then $D^n\setminus S^{\lambda-1}$ is the \emph{handle}, the disc $D^\lambda=D^n\cap(\R^\lambda\times\{\vec{0}\})$ is the \emph{core} of the handle, and the disc $D^\mu=D^n\cap(\{\vec{0}\}\times\R^\mu)$ is the \emph{cocore} of the handle.
+	The explicit trivialization $F: S^{\lambda-1}\times \R^\mu\to \nu_{\pd M}\,h(S^{\lambda-1})$ is called a \emph{normal framing} or just \emph{framing}.
+	Identify $M\setminus f(S^{\lambda})$ and $\DN\setminus S^{\lambda-1}$ with their images in $M\cup_f H^\lambda$.
+	Then $\DN\setminus S^{\lambda-1}$ is the \emph{handle}, the disc $\D^\lambda=\DN\cap(\R^\lambda\times\{\vec{0}\})$ is the \emph{core} of the handle, and the disc $\D^\mu=\DN\cap(\{\vec{0}\}\times\R^\mu)$ is the \emph{cocore} of the handle.
 	The boundary $S^{\mu-1}$ of the cocore is the \emph{belt sphere}.
 \end{defn}
 
 There are two special cases of handle attachment to discuss.
 First, let $M$ be a smooth, orientable, path--connected $n$--manifold.
-The attaching sphere of a 1--handle is $\pd D^1$, which is a pair of points.
+The attaching sphere of a 1--handle is $S^0=\pd \D^1$, which is a pair of points.
 For $\pd M$ compact, connected, and nonempty, there is a unique isotopy class of embeddings $f:S^0\to\pd M$.
-This means that $M\cup_f H^1$ is determined entirely by the isotopy class of an explicit trivialization of the normal bundle to $f(S^0)$ in $\pd M$.
-This normal bundle is a pair of $(n-1)$--discs, and an automorphism of $D^{n-1}\sqcup D^{n-1}$ can be thought of as a pair $(\varphi,\psi)$ of maps $D^{n-1}\to D^{n-1}$.
-In this format, it is easy to see that are exactly two types of isotopy classes of automorphisms of $D^{n-1}\sqcup D^{n-1}$; either both $\varphi$ and $\psi$ are are orientation preserving (reversing), or $\varphi$ is orientation preserving (reversing) and $\psi$ is orientation reversing (preserving).
+This means that $M\cup_f H^1$ is determined entirely by the extension of $f$.
+The normal bundle is a $(n-1)$--vector bundle over $S^0$, so it is vacuously trivial.
+A trivialization of $\R^{n-1}\times S^0$ can be written as a pair of elements $A_{-1}$, $A_1$ from $\gl{n-1}{\R}$, each acting on one of the connected components of $\R^{n-1}\times S^0$.
+The group $\gl{n-1}{\R}$ has two path--connected components, denoted $\gln{n-1}{\R}$ and $\glp{n-1}{\R}$, which are the spaces of negative and positive determinant transformations respectively.
+Every element of $\gl{n-1}{\R}$ is an embedding $\R^{n-1}\to\R^{n-1}$, so any path in $\gl{n-1}{\R}$ is an isotopy of its endpoints.
+It is then easy to see that are four isotopy classes of our trivialization, and those fall into two types.
+Either both $A_{-1}$ and $A_1$ are are orientation preserving (reversing), or $A_{-1}$ is orientation preserving (reversing) and $A_1$ is orientation reversing (preserving).
 Under the first type of automorphism, $M\cup_f H^1$ is a non-orientable manifold.
 Under the second, $M\cup_f H^1$ is orientable.
 
@@ -119,15 +96,16 @@ To attach a 2--handle to $W$, we need an embedding $f:S^1\to M$ and a framing of
 The normal bundle is homeomorphic to $S^1\times D^2$, so it is what we call a solid torus.
 
 \begin{defn}
-	Let $V$ be a space homeomorphic to $S^1\times D^2$.
-	We call $V$ a \emph{solid torus}.
-	
+	A space $V$ that is homeomorphic to $S^1\times\DD$ is called a \emph{solid torus}.	
 	A simple closed curve $J$ in $\pd V$ that bounds a 2--disc in $V$ is called a \emph{meridian}.
 	A simple closed curve $K$ in $\pd V$ that intersects a meridian at a single point is called a \emph{longitude}.
+	Note that there are infinitely many isotopy classes of longitudes of $V$, whereas there's exactly one isotopy class of meridians.
 \end{defn}
 
-Once an embedding $f:S^1\to M$ is chosen, $W\cup_f H^2$ is determined by a choice of element of the mapping class group of a solid torus.
-This space is very closely linked to the mapping class group of the torus $T^2 = S^1\times S^1$, which is the special linear group $\textrm{SL}_2(\Z)$, the group of $2\times 2$ matrices with integer entries and determinant $\pm 1$.
+Once an embedding $f:S^1\to M$ is chosen, $W\cup_f H^2$ is determined by the framing $F:S^1\times \R^2\to \nu_{\pd M}\,f(S^1)$.
+To investigate possible framings, we consider the \emph{mapping class group} of the solid torus.
+The mapping class group of a space $X$ is the group of isotopy classes of automorphisms $X$, and it is denoted $mpg(X)$.
+For $V$ a solid torus, $mpg(V)$ is very closely linked to the mapping class group of the torus $T^2 = S^1\times S^1=\pd V$, which is the special linear group $\textrm{SL}_2(\Z)$, the group of $2\times 2$ matrices with integer entries and determinant $\pm 1$.
 \begin{lem}
 	Let $V$ be an open solid torus and let $f$ be an automorphism of the torus $\pd V$.
 	Then $h$ extends to an automorphism of $V$ if and only if $f$ maps a meridian to a meridian.	
@@ -149,11 +127,14 @@ This space is very closely linked to the mapping class group of the torus $T^2 =
 	\begin{array}{ccccc}
 	h_L(e^{i\theta},e^{i\phi}) & = & (e^{i(\theta+\phi)},e^{i\phi}) & & \textrm{``longitudinal twist''} \\
 	
-	h_M(e^{i\theta},e^{i\phi}) & = & (e^{i\phi},e^{i(\theta+\phi)}) & & \textrm{``meridinal twist''}	
+	h_M(e^{i\theta},e^{i\phi}) & = & (e^{i\theta},e^{i(\theta+\phi)}) & & \textrm{``meridinal twist''}	
 	\end{array}
 	\]
 	Fix the meridinal and longitudinal directions of the boundary of an open solid torus $V$ to coincide with the meridinal and longitudinal directions of $V$.
 	This would mean that we write $V=S^1\times D^2$, with $\{1\}\times S^1$ a meridian and $S^1\times\{1\}$ a longitude.
+	Notice that the meridinal twist maps a meridian to a meridian, so it extends to an automorphism of $V$.
+	Also, neither the longitudinal twist nor the swap map a meridian to a meridian, so neither extend to an automorphism of $V$.
+	
 	Let $F$ be an automorphism of $V$ with restriction $f$ to $\pd V$.
 	Because $f$ is an automorphism of $\pd V$, it can be written as the product of twists and swaps.
 	Because $f$ preserves meridians, it can be written entirely as a power of the meridinal twist.
@@ -162,4 +143,26 @@ This space is very closely linked to the mapping class group of the torus $T^2 =
 \end{proof}
 
 The content of these results means that the attachment of a 2--handle to a 4--manifold can be described by an embedding $f:S^1\to M$ and an integer $k$ called the \emph{framing constant} that determines the framing automorphism as long as we know what a framing constant of $0$ means.
-When $M$ is $S^3$, there exists 
+To see this, first notice that $h_M$ can be extended to
+\[
+	\begin{array}{cccc}
+		H_M: & S^1\times\DD & \to & S^1\times\DD \\
+			& (e^{i\theta}, re^{i\phi}) & \mapsto & (e^{i\theta},re^{i(\theta+\phi)})	
+	\end{array}
+\]
+which represents a generator of $mpg(S^1\times\DD)$.
+
+
+ restricts to , and can be pre-- and post--composed by the homeomorphism
+\[
+	\begin{array}{cccl}
+		\varphi: & S^1\times D^2 & \to & S^1\times \R^2 \\
+				 & (e^{i\theta}, re^{i\phi}) & \mapsto & (e^{i\theta}, -\ln(1-r)e^{i\phi})
+	\end{array}	
+\]
+and its inverse to obtain a homeomorphism $S^1\times \R^2\to S^1\times \R^2$ that represents a generator of $mpg(S^1\times\R^2)$.
+Because $\nu_{\pd M}\,f(S^1)$ is homeomorphic to $S^1\times\R^2$, a one-to-one correspondence
+$\psi$ between $mpg(S^1\times\R^2)$ and the isotopy classes of maps $S^1\times\R^2\to\nu_{\pd M}\,f(S^1)$ is determined entirely by $\psi(\id)$.
+
+When $M$ is $S^3$, $f:S^1\to S^3$ is a \emph{knot}, and $\nu_M\,f(S^1)$ is an open solid torus.
+There is choice of longitude for 

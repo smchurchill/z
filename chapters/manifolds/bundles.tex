@@ -11,10 +11,29 @@ The ultimate construction in this section is the tubular neighbourhood of a subm
 	\[
 		\varphi: U\times \RRN\to \pi\inv(U)
 	\]
-	such that the map $v\mapsto h(b,v)$ is a vector space isomorphism $\RRN\mapsto V_b$ for every $b\in U$.
+	such that the map $v\mapsto\varphi(b,v)$ is a vector space isomorphism $\RRN\mapsto V_b$ for every $b\in U$.
 	Such a homeomorphism is called a \emph{local trivialization}, and such a pair is a \emph{local coordinate system}.
-	If it is possible to take $U$ to be all of $B$, then $\beta$ is a \emph{trivial bundle}.
-	By using a local trivialization, any point $p\in E$ may be represented by a pair $p=(b,v)$ with $b\in B$, $v\in \RRN$, and $\pi(b,v)=b$.
+	Any pair of local trivializations
+	\[
+		\begin{array}{cccc}
+			\varphi_U: & U\times\RRN & \to & \pi\inv(U), \\
+			\varphi_V: & V\times\RRN & \to & \pi\inv(V)
+		\end{array}
+	\]
+	must be compatible in the sense that the composition 
+	\[
+		\varphi_V\inv\comp\varphi_U : (U\cap V)\times\RRN\to (U\cap V)\times\RRN,
+	\]
+	is well defined on $U\cap V$ and satisfies
+	\[
+		\varphi_V\inv\comp\varphi_U(b,v) = (b, A_{UV}(b)(v))
+	\]
+	for every $b$ in $U\cap V$, where $A_{UV}$ is a function
+	\[
+		A_{UV}: U\cap V\to \gl{n}{\R}
+	\]
+	that assigns a linear transformation from $\gl{n}{\R}$ to every point $b$ of $U\cap V$.
+	If it is possible to take $U$ to be all of $B$, then $\beta$ is a \emph{trivial bundle} and the map $U\times\RRN\to E$ is a \emph{trivialization} of the bundle.
 	
 	When $E$ and $B$ are smooth manifolds, $\pi$ is smooth, and the local trivializations are diffeomorphisms, $\beta$ is a \emph{smooth vector bundle}.
 	
@@ -27,6 +46,10 @@ The ultimate construction in this section is the tubular neighbourhood of a subm
 		\end{array}
 	\]
 	and its image $z(B)$ in $E$.
+	Note that the compatibility condition on local trivialization guarantees that the zero section is well defined.
+	
+	For $\beta$ a $k$--vector bundle, we can form a new object called a \emph{$k$--disc bundle} by restricting the fibres of $\beta$ to the set of vectors of length at most 1.
+	The machinery we build for vector bundles is applicable to disc bundles via restriction.
 \end{defn}
 
 \begin{defn}[Bundle Isomorphism]
@@ -78,8 +101,8 @@ The ultimate construction in this section is the tubular neighbourhood of a subm
 	We often denote the pair $(X,f)$ by $\nu_M X$.
 \end{defn}
 
-Similar to the tubular neighbourhood is the \emph{closed tubular neighbourhood}, which is defined by restricting the vector space fibres $N_M X$ to the closed $n$--disc.
-This is a restriction of the normal bundle to vectors of length at most 1, so no new machinery is needed.
+Similar to the tubular neighbourhood is the \emph{closed tubular neighbourhood}, which has instead the structure of a normal disc bundle over $X$.
+We use $\D_M X\subset N_M X$ to denote the disc bundle over $X$, and $\overline{\nu}_M X$ to denote a closed tubular neighbourhood.
 The notion of ``closed'' used in this naming convention is that of topological closure.
 
 \begin{theorem}[Existence of Tubular Neighbourhoods, Theorem 4.5.2 in \cite{Hirsch67}]
