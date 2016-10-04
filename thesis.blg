@@ -1,4 +1,6 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: thesis.aux
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: mybib.bib
 Warning--entry type for "GayKirby14" isn't style-file defined
@@ -9,4 +11,45 @@ Unbalanced braces---line 118 of file mybib.bib
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--empty year in Rolf76
+You've used 14 entries,
+            2118 wiz_defined-function locations,
+            587 strings with 5413 characters,
+and the built_in function-call counts, 3533 in all, are:
+= -- 333
+> -- 128
+< -- 0
++ -- 55
+- -- 38
+* -- 189
+:= -- 623
+add.period$ -- 41
+call.type$ -- 14
+change.case$ -- 55
+chr.to.int$ -- 0
+cite$ -- 15
+duplicate$ -- 150
+empty$ -- 319
+format.name$ -- 38
+if$ -- 735
+int.to.chr$ -- 0
+int.to.str$ -- 14
+missing$ -- 18
+newline$ -- 72
+num.names$ -- 28
+pop$ -- 77
+preamble$ -- 1
+purify$ -- 47
+quote$ -- 0
+skip$ -- 95
+stack$ -- 0
+substring$ -- 196
+swap$ -- 13
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 44
+warning$ -- 1
+while$ -- 33
+width$ -- 16
+write$ -- 145
 (There was 1 error message)

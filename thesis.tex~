@@ -9,6 +9,7 @@
 \usepackage{amssymb}
 \usepackage{relsize}
 \usepackage{tikz}
+\usepackage{tikz-cd}
 \usepackage{mathtools}
 \usepackage{wasysym}
 \usepackage{float}
@@ -57,6 +58,7 @@
 
 \chapter{Conclusion}
 \input{chapters/conclusion}
+
 
 % \appendix
 % \input{appendices/calgorithms}

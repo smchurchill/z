@@ -16,28 +16,25 @@ Let $E'$ be a $k+1$ element subset of $E$.
 The convex hull on $E'$ is called a \emph{facet} of $\sigma$ and is itself a $k$--simplex.
 A zero--dimensional facet is a \emph{vertex}, one--dimensional an \emph{edge}, two--dimensional a \emph{triangle}, three--dimensional a \emph{tetrahedron} and four--dimensional a \emph{pentachoron}.
 These names are also applied to the 0--, 1--, 2--, 3--, and 4--simplices.
-A facet with dimension $n-1$ is called a \emph{face} of the simplex that contains it.
-We number the vertices of the $n$--simplex with the numbers $0,\dots,n$.
+A facet with dimension $n-1$ is called a \emph{face}.
+We number the vertices of the $n$--simplex with the numbers $0,\dots,n$
 Every face of $\sigma$ contains all but one vertex of $\sigma$, and this gives a numbering to the faces of $\sigma$.
 The $i^{th}$ face of $\sigma$ is found via the \emph{face map} $F^i(\sigma)$.
 Removing from a simplex all of its proper faces gives us the \emph{interior} of $\sigma$.
 
 \{FIGURE HERE IS GOOD\}
 
-A \emph{simplicial complex} is a locally finite collection $\Sigma$ of simplices embedded in some affine space satisfying two conditions.
+We define a \emph{simplicial complex}, or just \emph{complex}, to be a locally finite collection $\Sigma$ of simplices embedded in some affine space satisfying two conditions.
 First, any facet of a simplex in $\Sigma$ is also in $\Sigma$.
 Second, the intersection of two simplices in $\Sigma$ is either empty or a facet of both.
 
-An $n$--\emph{dimensional gluing complex} is a space obtained from a finite set of $n$--simplices and a collection of maps between faces $\{F^i(\sigma)\to F^j(\tau)\}$ called \emph{gluings}.
-We demand that any face appears in exactly one of the gluings and that each gluing is an affine linear map that dictates how the faces $F^i(\sigma)$ and $F^j(\tau)$ are identified.
-A gluing $F^i(\sigma)\to F^j(\tau)$ is defined completely by a bijection of the vertices of $F^i(\sigma)$ to the vertices of $F^j(\tau)$ and extended linearly in order of ascending dimension over all facets of the faces.
-The quotient space of the union of our simplices relative to the equivalence relation defined by the gluings is the \emph{gluing conplex}.
-An $n$--dimensional gluing complex can be seen as a simplicial complex by embedding it in some high--dimensional Euclidean space.
-Denote an $n$--gluing complex by $T$ and define the \emph{$k$--skeleton} of $T$ to be the union of all facets of $T$ of dimension at most $k$ with $0\leq k\leq n$.
+An $n$--\emph{dimensional gluing} consists of a finite set of $n$--simplices, and a collection of face pairs $(F^i(\sigma),F^j(\tau))$ and gluing maps $g$.
+We demand that any face appears in exactly one of the face pairs, and $g$ is an affine linear map that dictates how the faces $F^i(\sigma)$ and $F^j(\tau)$ are identified.
+The gluing of the faces $F^i(\sigma),F^j(\tau)$ is defined by a bijection of the vertices of $F^i(\sigma)$ to the vertices of $F^j(\tau)$ and extended linearly in order of ascending dimension over all facets of the faces.
+We are interested in the quotient space of the union of our simplices by the equivalence relation defined by our gluing maps, and this quotient space is often referred to as a \emph{gluing}.
+An $n$--dimensional gluing can be seen as a simplicial complex by embedding it in some high--dimensional Euclidean space.
+Denote an $n$--gluing by $T$ and define the \emph{$k$--skeleton} of $T$ to be the union of all facets of $T$ of dimension at most $k$ with $0\leq k\leq n$.
 Denote the $k$--skeleton of $T$ by $T^k$, and note that $T^n=T$.
-
-
-
 
 Recall from Definition \ref{def:manifold} that an $n$--dimensional piecewise--linear manifold $M$ is a manifold whose atlas of $M$ has piecewise linear transition maps.
 If a gluing satisfies this property, we call it a \emph{simplicial manifold}.
@@ -59,16 +56,5 @@ Until now, our definitions only allow for closed simplicial manifolds.
 If we allow our $n$--dimensional gluing to have unpaired faces, then we impose the additional restriction that the links of unglued vertices are $(n-1)$--dimensional discs with boundary $(n-2)$--spheres triangulated by facets entirely from unglued faces.
 If this additional condition is met, then the unglued faces form an $(n-1)$--dimensional simplicial manifold in their own right.
 
-We also consider a similar and more general construction of a piecewise--linear structure on a manifold called a cell decomposition.
-Their main use in this work is as a combinatorial structure dual to the triangulation.
-
-\begin{defn}
-  A space homeomorphic to $B^n$ is called an \emph{$n$--cell}.
-\end{defn}
-
-
-
-
-
-%A theorem of Whitehead \{CITE: Whitehead 1940\} tells us that every smooth manifold has a canonical piecewise--linear structure hence a structure as a simplicial manifold.
-%It is also true that every simplicial manifold of dimension $\leq 6$ has an essentially unique smoothing up to diffeomorphism \{CITE:Milnor, topology 46 years later\}
+A theorem of Whitehead \{CITE: Whitehead 1940\} tells us that every smooth manifold has a canonical piecewise--linear structure hence a structure as a simplicial manifold.
+It is also true that every simplicial manifold of dimension $\leq 6$ has an essentially unique smoothing up to diffeomorphism \{CITE:Milnor, topology 46 years later\}
