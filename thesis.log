@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.1)  3 OCT 2016 12:27
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.1)  3 OCT 2016 16:57
 entering extended mode
 **thesis.tex
 (C:\Users\swam\Documents\tex\z\thesis.tex
@@ -1397,13 +1397,9 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [9] [10])
 (C:\Users\swam\Documents\tex\z\chapters/manifolds/bundles.tex [11] [12]
 [13] [14] [15] [16] [17])
-(C:\Users\swam\Documents\tex\z\chapters/manifolds/handles.tex [18]
-
-LaTeX Warning: Reference `thm:joinman' on page 19 undefined on input line 23.
-
-[19] [20] [21])
-(C:\Users\swam\Documents\tex\z\chapters/manifolds/triangulations.tex [22]
-[23])) [24]
+(C:\Users\swam\Documents\tex\z\chapters/manifolds/handles.tex [18] [19]
+[20] [21]) (C:\Users\swam\Documents\tex\z\chapters/manifolds/triangulations.tex
+[22] [23])) [24]
 Chapter 3.
 (C:\Users\swam\Documents\tex\z\chapters/background.tex
 (C:\Users\swam\Documents\tex\z\chapters/background/bounding.tex [25
@@ -1464,23 +1460,19 @@ File: lgrlmr.fd 2016/03/04 v1.1 Scalable Greek Latin Modern Regular
 ) [70
 
 ])
-[71] (C:\Users\swam\Documents\tex\z\thesis.aux)
-
-LaTeX Warning: There were undefined references.
-
- )
+[71] (C:\Users\swam\Documents\tex\z\thesis.aux) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 17445 strings out of 493921
- 339172 string characters out of 3144880
- 367351 words of memory out of 3000000
- 20231 multiletter control sequences out of 15000+200000
+ 17449 strings out of 493921
+ 339215 string characters out of 3144880
+ 367409 words of memory out of 3000000
+ 20235 multiletter control sequences out of 15000+200000
  83442 words of font info for 82 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 56i,15n,82p,521b,2434s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,15n,82p,521b,2435s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy
 .enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Pr
 ogram Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files (x8
@@ -1501,7 +1493,7 @@ fonts/type1/public/lm/lmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
 public/lm/lmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lm
 tt12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols
 /msbm10.pfb>
-Output written on thesis.pdf (72 pages, 471913 bytes).
+Output written on thesis.pdf (72 pages, 471471 bytes).
 PDF statistics:
  314 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
