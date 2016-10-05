@@ -322,17 +322,6 @@ INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmtt8.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmtt8.tfm
 INPUT chapters/manifolds/bundles.tex
 INPUT chapters/manifolds/bundles.tex
-INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmbx12.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmbx8.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmbx6.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmr5.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/lmmi5.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/lmsy5.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmbx5.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmtt8.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/wasy/wasy5.tfm
 INPUT chapters/manifolds/handles.tex
 INPUT chapters/manifolds/handles.tex
 INPUT chapters/manifolds/triangulations.tex
