@@ -1,3 +1,7 @@
+A \emph{CW--complex} is a combinatorial description of a manifold originally developed as a tool for homotopy theory.
+Specific types of CW--complexes called \emph{triangulations}
+
+
 A simplicial manifold is a special description of a piecewise--linear structure on a manifold.
 We describe it as being built from a patchwork of pieces carved from a finite dimensional Euclidean space which we call simplices.
 
@@ -10,17 +14,39 @@ The \emph{standard} $n$--\emph{simplex} $\sigma$ is defined as
 \[
   \sigma = \{p\in F : p = \sum_{i=1}^n t_i e_i,\text{ } e_i\in E,\text{ } t_i\geq 0\text{ for each }i, \text{ and }\sum_{i=1}^n t_i=1\}.
 \]
-The above set is also called the \emph{convex hull} of $E$.
+The above construction is called taking the \emph{convex hull} over $E$.
 
 Let $E'$ be a $k+1$ element subset of $E$.
-The convex hull on $E'$ is called a \emph{facet} of $\sigma$ and is itself a $k$--simplex.
+The convex hull over $E'$ is called a \emph{facet} or \emph{$k$--facet} of $\sigma$ and is itself a $k$--simplex.
 A zero--dimensional facet is a \emph{vertex}, one--dimensional an \emph{edge}, two--dimensional a \emph{triangle}, three--dimensional a \emph{tetrahedron} and four--dimensional a \emph{pentachoron}.
 These names are also applied to the 0--, 1--, 2--, 3--, and 4--simplices.
 A facet with dimension $n-1$ is called a \emph{face} of the simplex that contains it.
 We number the vertices of the $n$--simplex with the numbers $0,\dots,n$.
 Every face of $\sigma$ contains all but one vertex of $\sigma$, and this gives a numbering to the faces of $\sigma$.
 The $i^{th}$ face of $\sigma$ is found via the \emph{face map} $F^i(\sigma)$.
-Removing from a simplex all of its proper faces gives us the \emph{interior} of $\sigma$.
+Removing all of the proper faces of a simplex leaves us with the \emph{interior} of $\sigma$.
+
+Fix $n>0$ and let $\sigma$, $\tau$ be $n$--simplices.
+A linear map $F^i(\sigma)\to F^j(\tau)$ defined by mapping the vertices of $F^i(\sigma)$ to the vertices of $F^j(\tau)$ and then extending linearly over the facets of $F^i(\sigma)$ is called a \emph{gluing map}.
+
+Let $g:F^i(\sigma)\to F^j(\tau)$ be a gluing map and define the relation $\sim_g$ by $g(x)\sim_g x$ for every $x$ in $F^i(\sigma)$.
+The quotient space $\sigma\sqcup\tau/\sim_g$ is called the \emph{gluing complex} of $\sigma\sqcup\tau$ over $g$.
+This definition can be extended to larger collections of simplices.
+Let $A=\bigsqcup_i\sigma_i$ be a collection of $n$--simplices and $G$ a collection of gluing maps between the faces of $A$ such that any face of $A$ appears as the domain or range of at most one gluing map.
+We once again define a relation $\sim_G$ by $g(x)\sim_G x$ for every $x$ in the domain of $g$ and every $g\in G$. 
+The quotient space $A/\sim_G$ is then the \emph{gluing complex} of $A$ over $G$.
+
+Put $n=k+m$ and let $\sigma$ be an $m$--simplex in an $n$--gluing complex $C$ and consider an $n$--simplex $\tau$ containing $\sigma$.
+There is a $k$--facet $\tau_k$ that is ``opposite'' $\sigma$ in the sense that $\sigma\cap\tau_k=\emptyset$ and $\tau$ is the convex hull of $\sigma\cup\tau_k$.
+The subset of $C$ built as the union of all $\tau_k$ corresponding to a $\tau$ containing $\sigma$ is the \emph{link} of $\sigma$ and is denoted $\lk{\sigma}$.
+
+Let $C$ be a gluing complex.
+
+
+
+Let $C$ be a collection of simplices and gluing maps between the faces of the simplices.
+
+<<<<<<< HEAD
 
 
 
@@ -36,7 +62,9 @@ Removing from a simplex all of its proper faces gives us the \emph{interior} of 
 
 
 
-
+=======
+\{Figure: 3-simplex (tetrahedron)\}
+>>>>>>> fbb71f84e5401d9bb54d49c5b667237e25740beb
 
 A \emph{simplicial complex} is a locally finite collection $\Sigma$ of simplices embedded in some affine space satisfying two conditions.
 First, any facet of a simplex in $\Sigma$ is also in $\Sigma$.
@@ -61,9 +89,6 @@ This leaves the task of defining charts for the vertices of $T$.
 An important notion in constructing these charts is the \emph{link} of a simplex.
 
 \begin{defn}
-  If $\sigma$ is a $k$--simplex in an $n$--gluing $T$, consider a simplex $\tau$ containing $\sigma$.  
-  Then there is a facet $\tau'$ that is ``opposite'' $\sigma$ in the sense that $\sigma\cap \tau'=\emptyset$ and $\tau$ is the convex hull of $\sigma\cup \tau'$.
-  The gluing made up of the $F^i(\tau)$ corresponding to all $\tau$ containing $\sigma$ is the \emph{link} of $\sigma$ and is denoted $\lk{\sigma}$.
 \end{defn}
 
 If the link of a vertex $v$ in $T$ has $\lk{v}=S^{n-1}$, then the cone on that link is a neighbourhood of $v$ in the gluing and is piecewise-linearly homeomorphic to the $n$--disc.

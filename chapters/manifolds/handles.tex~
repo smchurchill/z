@@ -10,25 +10,15 @@ We focus mainly on the definitions and results needed to meaningfully attach 1--
 	A construction that does not require the smoothing of corners can be found in \cite{Kosi93}, but the machinery makes explicit handle attachment unnecessarily complicated.
 \end{rmk}
 
-There is a common tool in topology called the \emph{attaching map} that we will use in this section and the next in order to build our machinery, so we take this opportunity to lay out the definition and notation.
-
-\begin{defn}
-  Let $X$ and $Y$ be topological spaces, $A\subset X$ a subspace, and $f:A\to Y$ a continuous map.
-  We define a relation $\sim$ by putting $f(x)\sim x$ for every $x$ in $A$.
-  Denote the quotient space $X\sqcup Y/\sim$ by $X\cup_f Y$.
-  We call the map $f$ the \emph{attaching map}.  
-  We say that $X$ is \emph{attached} or \emph{glued} to $Y$ over $A$.
-\end{defn}
-
 Throughout this section, we will have $n=\lambda+\mu$, $M$ an $n$--manifold with boundary, and $H^\lambda=\D^\lambda\times\D^\mu$.
-Attaching an $n$--dimensional $\lambda$--handle to $M$ is the process of joining $M$ to $H^\lambda$ along an embedding of $\pd\D^\lambda\times\D^\mu$ in $\pd M$. 
+Attaching an $n$--dimensional $\lambda$--handle to $M$ is the process of joining $M$ to $H^\lambda$ along an embedding of $\pd\D^\lambda\times\D^\mu$ in $\pd M$.
 
 \begin{defn}[Handle]
 	\label{def:handle}
-	Let $\varphi:\pd\D^\lambda\times\D^\mu\to\pd M$ be an embedding, and consider it to be an attaching map between $M$ and $H^\lambda$.
-	The space $M\cup_\varphi H^\lambda$ is a ``manifold with corners,'' and we smooth those corners immediately smooth in a canonical way as mentioned in Remark \ref{rmk:corners}.
-	We will continue to denote the smooth manifold obtained by $M\cup_\varphi H^\lambda$.
-	The attached space $H^\lambda$ is an \emph{$n$--dimensional $\lambda$--handle}, and $M\cup_\varphi H^\lambda$ is the result of an $n$--dimensional \emph{$\lambda$--handle attachment}.
+	Let $\varphi:\pd\D^\lambda\times\D^\mu\to\pd M$ be an embedding.
+	A new space is defined through the equivalence $x\sim \varphi(x)$ where $x$ in $\pd\D^\lambda\times\D^\mu$ by first considering the space $M\cup H^\lambda/\sim$, a ``manifold with corners.''
+	Through canonical smoothing of the corners mentioned in Remark \ref{rmk:corners}, we obtain space $M\cup_\varphi H^\lambda$ that is a smooth $n$--manifold.
+	We call $H^\lambda$ an \emph{$n$--dimensional $\lambda$--handle}, and say that $M\cup_\varphi H^\lambda$ is the result of an $n$--dimensional \emph{$\lambda$--handle attachment}.
 \end{defn}
 
 Note that the domain of $\varphi$ has the structure of a trivial $\mu$--disc bundle over $S^{\lambda-1}$ and, using the language of vector bundles, the image of $\varphi$ has the structure of a closed tubular neighbourhood of $f_0(S^{\lambda-1})=\varphi\comp z(S^{\lambda-1})$.
@@ -147,3 +137,4 @@ Moreover, for any representative $J$ of $[J]$ there is a framing $f_J:S^1\times\
 Our canonical choice for $\psi(\id)$ is $[f_J]$, and this generates the rest of the map, i.e.\ $\psi([H_M^k])=[f_J\comp H_M^k]$.
 The isotopy class of a framing $f:S^1\times\DD\to\overline{\nu}_{S^3}f_0(S^1)$ can then be classified entirely by an integer $k$ that describes the number of meridinal twists it takes to get to $f$ from the preferred one.
 We call $k$ the \emph{framing constant} for $f$.
+
