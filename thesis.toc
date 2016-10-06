@@ -1,0 +1,29 @@
+\contentsline {chapter}{\numberline {1}Introduction}{4}
+\contentsline {chapter}{\numberline {2}Manifolds}{5}
+\contentsline {section}{\numberline {2.1}Fundamentals}{5}
+\contentsline {section}{\numberline {2.2}Smooth Maps}{7}
+\contentsline {section}{\numberline {2.3}Bundles}{11}
+\contentsline {section}{\numberline {2.4}Handles}{18}
+\contentsline {section}{\numberline {2.5}Triangulations}{22}
+\contentsline {chapter}{\numberline {3}Background}{25}
+\contentsline {section}{\numberline {3.1}3--Manifolds Bound 4--Manifolds}{25}
+\contentsline {section}{\numberline {3.2}Shadows of 3-- and 4--Manifolds}{32}
+\contentsline {chapter}{\numberline {4}Projections and initial data}{38}
+\contentsline {section}{\numberline {4.1}Preliminaries}{39}
+\contentsline {section}{\numberline {4.2}Build a projection}{40}
+\contentsline {section}{\numberline {4.3}Obtain a planar graph}{41}
+\contentsline {section}{\numberline {4.4}Find all mapping triangles}{43}
+\contentsline {section}{\numberline {4.5}Find all mapping circles}{44}
+\contentsline {section}{\numberline {4.6}Count wedge numbers}{45}
+\contentsline {section}{\numberline {4.7}Truncate tetrahedra}{47}
+\contentsline {section}{\numberline {4.8}Blow up edges}{48}
+\contentsline {section}{\numberline {4.9}Final Modifications}{51}
+\contentsline {chapter}{\numberline {5}Shadows from 3--Manifolds}{54}
+\contentsline {section}{\numberline {5.1}Construct and connect regions}{54}
+\contentsline {section}{\numberline {5.2}Extend over vertices}{57}
+\contentsline {section}{\numberline {5.3}Compute Framing Constants}{58}
+\contentsline {chapter}{\numberline {6}4--Manifolds from Shadows}{60}
+\contentsline {section}{\numberline {6.1}The triangulated prism}{61}
+\contentsline {section}{\numberline {6.2}Build a handlebody}{63}
+\contentsline {section}{\numberline {6.3}Attach 2-handles}{67}
+\contentsline {chapter}{\numberline {7}Conclusion}{69}
