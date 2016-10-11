@@ -11,7 +11,7 @@ The \emph{CW--complex} is our first foray into combinatorial descriptions of man
 	Let $T$ be a cell decomposition of the Hausdorff space $M$.
 	Then $T$ is a \emph{closure--finite weak--topology complex} if the following are satisfied: 
 	\begin{enumerate}
-		\item For any $n$--cell $t_\alpha$ in $T$, there exists a continuous map $f:\DN\to M$ such that the $\restr{f}{B^n}$ is a homeomorphism onto $t_\alpha$ and $f(S^{n-1})$ is contained in $T^{n-1}$.
+		\item For any $n$--cell $t_\alpha$ in $T$, there exists a continuous map $f:\DN\to M$ such that $\restr{f}{B^n}$ is a homeomorphism onto $t_\alpha$ and $f(S^{n-1})$ is contained in $T^{n-1}$.
 		\item The closure of any cell of $T$ intersects only a finite number of other cells in $T$ (i.e.\ $T$ is closure finite).
 		\item A subset $X$ of $M$ is closed if and only if $X\cap \overline{t_\alpha}$ is closed for every $t_\alpha$ in $T$ (i.e. the topology of $M$ is weak).		
 	\end{enumerate}
@@ -50,8 +50,44 @@ Next, let $\sigma$, $\tau$ be $n$--simplices, $n>0$.
 A linear attaching map $F^i(\sigma)\to F^j(\tau)$ can be defined by mapping the vertices of $F^i(\sigma)$ to the vertices of $F^j(\tau)$ and then extending linearly over the facets of $F^i(\sigma)$.
 Let $g:F^i(\sigma)\to F^j(\tau)$ be such an attaching map, and form the space $\sigma\cup_g \tau$.
 There is also a canonical cell decomposition of $\sigma\cup_g \tau$ built from the interiors of the facets of $\sigma$ and $\tau$.
+Extending to a collection of $n$--simplices and gluing maps, a cell decomposition continues to be simple to define, and we may say the the adjunction formed from simplices in a collection $\{\sigma_i\}$ over gluing maps $\{g_j\}$ has a canonical cell decomposition into a CW--complex.
 
-Extending to a collection of simplices and gluing maps, a cell decomposition continues to be simple to define.
+\begin{defn}
+  A CW--complex matching the description above is called an \emph{$n$--dimensional simplicial gluing complex} or just \emph{gluing complex}.
+  The faces of a gluing complex $T$ can be partitioned into two subsets based on whether the face has been glued to another face.
+  If a face $F^i(\sigma)$ has been glued to another face $F^j(\tau)$, both faces are \emph{glued}.
+  Otherwise, $F^i(\sigma)$ is \emph{unglued}.
+  The set of unglued faces and all facets contained in those faces form the \emph{boundary} of a gluing complex, and is denoted $\pd T$.
+  The remaining facets are \emph{internal}.
+  A gluing complex with empty boundary is \emph{closed}.
+
+  Put $n=k+m$ and let $\sigma$ be an $m$--simplex in an $n$--gluing complex $T$ and consider an $n$--simplex $\tau$ containing $\sigma$.
+  There is a $k$--facet $\tau_k$ that is ``opposite'' $\sigma$ in the sense that $\sigma\cap\tau_k=\emptyset$ and $\tau$ is the convex hull of $\sigma\cup\tau_k$.
+  The subset of $C$ built as the union of all $\tau_k$ corresponding to a $\tau$ containing $\sigma$ is the \emph{link} of $\sigma$ and is denoted $\lk{\sigma}$.
+  Note that $\lk{\sigma}$ is an $m$--gluing complex in its own right.
+
+  If $M$ is an $n$--manifold and $T$ is an $n$--simplicial gluing complex that is homeomorphic to $M$, then we say that $T$ is a \emph{triangulation} of $M$.
+\end{defn}
+
+There is a very slick way of checking whether a gluing complex is a triangulation of some $n$--manifold using only the links of vertices.
+
+\begin{theorem}
+  An $n$--gluing complex $T$ is the triangulation of some $n$--manifold $M$ if and only if the link of every internal vertex $v$ is homeomorphic to $S^{n-1}$ and the link of every boundary vertex $w$ is homeomorphic to $D^{n-1}$ with $\pd\lk(w)$ contained in $\pd T$.
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 This definition can be extended to larger collections of simplices.
@@ -59,9 +95,6 @@ Let $A=\bigsqcup_i\sigma_i$ be a collection of $n$--simplices and $G$ a collecti
 We once again define a relation $\sim_G$ by $g(x)\sim_G x$ for every $x$ in the domain of $g$ and every $g\in G$. 
 The quotient space $A/\sim_G$ is then the \emph{gluing complex} of $A$ over $G$.
 
-Put $n=k+m$ and let $\sigma$ be an $m$--simplex in an $n$--gluing complex $C$ and consider an $n$--simplex $\tau$ containing $\sigma$.
-There is a $k$--facet $\tau_k$ that is ``opposite'' $\sigma$ in the sense that $\sigma\cap\tau_k=\emptyset$ and $\tau$ is the convex hull of $\sigma\cup\tau_k$.
-The subset of $C$ built as the union of all $\tau_k$ corresponding to a $\tau$ containing $\sigma$ is the \emph{link} of $\sigma$ and is denoted $\lk{\sigma}$.
 
 Let $C$ be a gluing complex.
 
