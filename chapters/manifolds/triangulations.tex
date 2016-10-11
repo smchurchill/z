@@ -1,36 +1,59 @@
-A \emph{CW--complex} is a combinatorial description of a manifold originally developed as a tool for homotopy theory.
-Specific types of CW--complexes called \emph{triangulations}
+The \emph{CW--complex} is our first foray into combinatorial descriptions of manifolds.
+
+\begin{defn}
+	For $n>0$, a topological space that is homeomorphic to the $n$--ball is called an \emph{open $n$--cell}, and a topological space that is homeomorphic to the $n$--disc is called a \emph{closed $n$--cell}.
+	For $n=0$, we say that a singleton set is both a closed and open 0--cell.
+	
+	Let $M$ be a Hausdorff space.
+	A \emph{cell decomposition} of $M$ is a collection $T=\{t_\alpha\}$ such that every $t_\alpha$ is an open cell, every pair of cells of $T$ is disjoint, and the union of the cells of $T$ is exactly $M$.
+	The \emph{$n$--skeleton} of $T$ is the disjoint union of the cells of $T$ with dimension at most $n$, and it is denoted $T^n$.
+	
+	Let $T$ be a cell decomposition of the Hausdorff space $M$.
+	Then $T$ is a \emph{closure--finite weak--topology complex} if the following are satisfied: 
+	\begin{enumerate}
+		\item For any $n$--cell $t_\alpha$ in $T$, there exists a continuous map $f:\DN\to M$ such that the $\restr{f}{B^n}$ is a homeomorphism onto $t_\alpha$ and $f(S^{n-1})$ is contained in $T^{n-1}$.
+		\item The closure of any cell of $T$ intersects only a finite number of other cells in $T$ (i.e.\ $T$ is closure finite).
+		\item A subset $X$ of $M$ is closed if and only if $X\cap \overline{t_\alpha}$ is closed for every $t_\alpha$ in $T$ (i.e. the topology of $M$ is weak).		
+	\end{enumerate}
+	It is standard to abbreviate such a cell decomposition as a \emph{CW--complex}.	
+\end{defn}
+
+We concern ourselves mostly with a specific type of cell decomposition called a \emph{triangulation.}
+The cells of a triangulation are the interiors of \emph{$n$--simplices}, which can be through of as generalizations of the most basic 2--dimensional building block, the triangle, to arbitrary dimensions.
+
+\begin{defn}
+	Let $E=\{e_0,\dots,e_n\}$ be a set of $n+1$ points in some $n$--dimensional affine space $F$ such that
+	\[
+	  e_i\neq \sum_{j\neq i}t_j e_j
+	\]
+	for each $i$ and any collection of nonnegative real $t_j$ with $\sum t_j=1$.
+	The \emph{standard} $n$--\emph{simplex} $\sigma$ is defined as
+	\[
+	  \sigma = \{p\in F : p = \sum_{i=1}^n t_i e_i,\text{ } e_i\in E,\text{ } t_i\geq 0\text{ for each }i, \text{ and }\sum_{i=1}^n t_i=1\}.
+	\]
+	The above construction is called taking the \emph{convex hull} over $E$.
+	
+	Let $E'$ be a $k+1$ element subset of $E$.
+	The convex hull over $E'$ is called a \emph{facet} or \emph{$k$--facet} of $\sigma$ and is itself a $k$--simplex.
+	A zero--dimensional facet is a \emph{vertex}, one--dimensional an \emph{edge}, two--dimensional a \emph{triangle}, three--dimensional a \emph{tetrahedron} and four--dimensional a \emph{pentachoron}.
+	These names are also applied to the 0--, 1--, 2--, 3--, and 4--simplices.
+	A facet with dimension $n-1$ is called a \emph{face} of the simplex that contains it.
+	We number the vertices of the $n$--simplex with the numbers $0,\dots,n$.
+	Every face of $\sigma$ contains all but one vertex of $\sigma$, and this gives a numbering to the faces of $\sigma$.
+	The $i^{th}$ face of $\sigma$ is found via the \emph{face map} $F^i(\sigma)$.
+	Removing all of the proper faces of a simplex leaves us with the \emph{interior} of $\sigma$.
+\end{defn}
+
+Let's start building some cell structures out of simplices.
+First, notice that a simplex has a canonical cell decomposition into the interiors of its facets.
+Next, let $\sigma$, $\tau$ be $n$--simplices, $n>0$.
+A linear attaching map $F^i(\sigma)\to F^j(\tau)$ can be defined by mapping the vertices of $F^i(\sigma)$ to the vertices of $F^j(\tau)$ and then extending linearly over the facets of $F^i(\sigma)$.
+Let $g:F^i(\sigma)\to F^j(\tau)$ be such an attaching map, and form the space $\sigma\cup_g \tau$.
+There is also a canonical cell decomposition of $\sigma\cup_g \tau$ built from the interiors of the facets of $\sigma$ and $\tau$.
+
+Extending to a collection of simplices and gluing maps, a cell decomposition continues to be simple to define.
 
 
-A simplicial manifold is a special description of a piecewise--linear structure on a manifold.
-We describe it as being built from a patchwork of pieces carved from a finite dimensional Euclidean space which we call simplices.
-
-Let $E=\{e_0,\dots,e_n\}$ be a set of $n+1$ points in some $n$--dimensional affine space $F$ such that
-\[
-  e_i\neq \sum_{j\neq i}t_j e_j
-\]
-for each $i$ and any collection of nonnegative real $t_j$ with $\sum t_j=1$.
-The \emph{standard} $n$--\emph{simplex} $\sigma$ is defined as
-\[
-  \sigma = \{p\in F : p = \sum_{i=1}^n t_i e_i,\text{ } e_i\in E,\text{ } t_i\geq 0\text{ for each }i, \text{ and }\sum_{i=1}^n t_i=1\}.
-\]
-The above construction is called taking the \emph{convex hull} over $E$.
-
-Let $E'$ be a $k+1$ element subset of $E$.
-The convex hull over $E'$ is called a \emph{facet} or \emph{$k$--facet} of $\sigma$ and is itself a $k$--simplex.
-A zero--dimensional facet is a \emph{vertex}, one--dimensional an \emph{edge}, two--dimensional a \emph{triangle}, three--dimensional a \emph{tetrahedron} and four--dimensional a \emph{pentachoron}.
-These names are also applied to the 0--, 1--, 2--, 3--, and 4--simplices.
-A facet with dimension $n-1$ is called a \emph{face} of the simplex that contains it.
-We number the vertices of the $n$--simplex with the numbers $0,\dots,n$.
-Every face of $\sigma$ contains all but one vertex of $\sigma$, and this gives a numbering to the faces of $\sigma$.
-The $i^{th}$ face of $\sigma$ is found via the \emph{face map} $F^i(\sigma)$.
-Removing all of the proper faces of a simplex leaves us with the \emph{interior} of $\sigma$.
-
-Fix $n>0$ and let $\sigma$, $\tau$ be $n$--simplices.
-A linear map $F^i(\sigma)\to F^j(\tau)$ defined by mapping the vertices of $F^i(\sigma)$ to the vertices of $F^j(\tau)$ and then extending linearly over the facets of $F^i(\sigma)$ is called a \emph{gluing map}.
-
-Let $g:F^i(\sigma)\to F^j(\tau)$ be a gluing map and define the relation $\sim_g$ by $g(x)\sim_g x$ for every $x$ in $F^i(\sigma)$.
-The quotient space $\sigma\sqcup\tau/\sim_g$ is called the \emph{gluing complex} of $\sigma\sqcup\tau$ over $g$.
 This definition can be extended to larger collections of simplices.
 Let $A=\bigsqcup_i\sigma_i$ be a collection of $n$--simplices and $G$ a collection of gluing maps between the faces of $A$ such that any face of $A$ appears as the domain or range of at most one gluing map.
 We once again define a relation $\sim_G$ by $g(x)\sim_G x$ for every $x$ in the domain of $g$ and every $g\in G$. 
