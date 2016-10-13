@@ -50,7 +50,7 @@ Next, let $\sigma$, $\tau$ be $n$--simplices, $n>0$.
 A linear attaching map $F^i(\sigma)\to F^j(\tau)$ can be defined by mapping the vertices of $F^i(\sigma)$ to the vertices of $F^j(\tau)$ and then extending linearly over the facets of $F^i(\sigma)$.
 Let $g:F^i(\sigma)\to F^j(\tau)$ be such an attaching map, and form the space $\sigma\cup_g \tau$.
 There is also a canonical cell decomposition of $\sigma\cup_g \tau$ built from the interiors of the facets of $\sigma$ and $\tau$.
-Extending to a collection of $n$--simplices and gluing maps, a cell decomposition continues to be simple to define, and we may say the the adjunction formed from simplices in a collection $\{\sigma_i\}$ over gluing maps $\{g_j\}$ has a canonical cell decomposition into a CW--complex.
+Extending to a collection of $n$--simplices and gluing maps, a cell decomposition continues to be simple to define, and we may say the the adjunction formed from simplices in a collection $\{\sigma_i\}$ over gluing maps $\{g_j\}$ has a canonical cell decomposition.
 
 \begin{defn}
   A CW--complex matching the description above is called an \emph{$n$--dimensional simplicial gluing complex} or just \emph{gluing complex}.
@@ -77,13 +77,19 @@ There is a very slick way of checking whether a gluing complex is a triangulatio
 
 When we have a triangulation $T$ for a closed, oriented $n$--manifold $M$, we can also define a structure dual to that triangulation that is useful for computation.
 This structure, denoted $T^*$, is a cell decomposition dual to $T$ in the sense that each $(n-k)$--cell of $T^*$ is associated with a $k$--cell of $T$.
-For a $k$--simplex $\sigma$ of $T$, denote the dual cell in $T^*$ to $\sigma$ by $\sigma^*$
+For a $k$--simplex $\sigma$ of $T$, denote the dual cell in $T^*$ to $\sigma$ by $\sigma^*$.
+When $T^*$ is fully defined, this will form a bijection between the $k$--cells of $T$ and the $(n-k)$--cells of $T^*$.
+Now, $\sigma$ is contained in a finite number of $n$--simplices $\tau_i$, and we can fully describe $\sigma^*$ by describing how $\sigma^*$ meets these $\tau_i$.
+
+For a given $\tau$ containing $\sigma$, there are $2^{n-k}$ subsets of the vertices of $\tau$, i.e.\ the 0--skeleton of $\tau$, i.e.\ $\tau^0$, that contain the vertices of $\sigma$.
+Each subset $s_j\subset\tau^0$ has a barycentre $b(s_j)$, so we form a collection $B_\tau(\sigma)=\{b(s_j)\}$ of these barycentres.
+Then the intersection of $\sigma^*$ with $\tau$ is defined as the convex hull over $B_\tau(\sigma)$ inside of $\tau$.
+The union of these hulls over all $\tau_i$ containing $\sigma$ is then a closed $(n-k)$--cell whose interior is then defined to be the dual cell $\sigma^*$.
+The union of all $\sigma^*$ forms a CW--complex $T^*$ for $M$ that we call the \emph{dual decomposition} to $T$.
 
 
-We build $T^*$ iteratively.
 
-First, we place a 0--cell of $T^*$ in the barycentre of each $n$--simplex of $T$.
-The simplices of $T$ are joined over faces, so from each 
+
 
 
 

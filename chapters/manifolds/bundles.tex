@@ -148,6 +148,10 @@ Let's define precisely what that means.
 	Because we are primarily interested in smooth functions to build our machinery, we extend our definition of homotopy to a smooth version.
 	With the notation above, a smooth map $H:X\times[0,1]\to M$ with $H_0(x)=f(x)$ and $H_1(x)=g(x)$ is a \emph{smooth homotopy} between $f$ and $g$.
 	If a smooth homotopy exists, then $f$ and $g$ are \emph{smoothly homotopic}.
+	
+	Let $M$ be a manifold and $X\subset M$ a subspace that is not necessarily a submanifold.
+	A continuous map $F:M\times\I\to M$ such that, for every $m$ in $M$ and $x$ in $X$, $F(m,0)=m$, $F(m,1)\in X$, and $F(x,1)=x$, is called a \emph{deformation retraction}, and the subspace $X$ is called a \emph{deformation retract} of $M$.
+	Note that a deformation retraction is a homotopy equivalence between $M$ and $X$, so a deformation retraction from $M$ onto $X$ exists if and only if $M$ and $X$ are homotopic.
 \end{defn}
 
 A homotopy through embeddings is called an isotopy.

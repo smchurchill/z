@@ -126,25 +126,56 @@ For $V$ a solid torus, $mpg(V)$ is very closely linked to the mapping class grou
 	Because these automorphisms are written as powers of $h_M$, there is a clear isomorphism from this subgroup to $\Z$.
 \end{proof}
 
-The content of these results means that the attachment of a 2--handle to a 4--manifold can be described by an embedding $f_0:S^1\to M$ and an integer $k$ called the \emph{framing constant} that determines the framing automorphism as long as we know what a framing constant of $0$ means.
-To see this, first notice that $h_M$ can be extended to
-\[
-	\begin{array}{cccc}
-		H_M: & S^1\times\DD & \to & S^1\times\DD \\
-			& (e^{i\theta}, re^{i\phi}) & \mapsto & (e^{i\theta},re^{i(\phi+\theta)})	
-	\end{array}
-\]
-which represents a generator of $mpg(S^1\times\DD)$.
-Because $\nu_{\pd M}\,f(S^1)$ is a solid torus, a one-to-one correspondence
-$\psi$ between $mpg(S^1\times\R^2)$ and the isotopy classes of maps $S^1\times\DD\to\nu_{\pd M}\,f(S^1)$ is determined entirely by $\psi(\id)$.
-The image of $\psi(\id)$ is called the class of \emph{preferred framings}.
-Sometimes, there is a canonical class of preferred framings.
-One important case is when $M$ is $S^3$.
+\begin{rmk}
+  The content of these results means that the attachment of a 2--handle to a 4--manifold can be described by an embedding $f_0:S^1\to M$ and an integer $k$ called the \emph{framing constant} that determines the framing automorphism as long as we know what a framing constant of $0$ means.
+  To see this, first notice that $h_M$ can be extended to
+  \[
+	  \begin{array}{cccc}
+		  H_M: & S^1\times\DD & \to & S^1\times\DD \\
+			  & (e^{i\theta}, re^{i\phi}) & \mapsto & (e^{i\theta},re^{i(\phi+\theta)})	
+	  \end{array}
+  \]
+  which represents a generator of $mpg(S^1\times\DD)$.
+  Because $\nu_{\pd M}\,f(S^1)$ is a solid torus, a one-to-one correspondence
+  $\psi$ between $mpg(S^1\times\R^2)$ and the isotopy classes of maps $S^1\times\DD\to\nu_{\pd M}\,f(S^1)$ is determined entirely by $\psi(\id)$.
+  The image of $\psi(\id)$ is called the class of \emph{preferred framings}.
+  Sometimes, there is a canonical class of preferred framings.
+  One important case is when $M$ is $S^3$.
 
-Let $f_0:S^1\to S^3$ be an embedding.
-Let $V$ be a solid torus that is a closed tubular neighbourhood of the knot $f_0(S^1)$ in $S^3$.
-Then there is exactly one isotopy class $[J]$ of longitudes of $V$, unique up to ambient isotopy of $f_0$, such that any curve in $[J]$ bounds a disc in $S^3\setminus V$.
-Moreover, for any representative $J$ of $[J]$ there is a framing $f_J:S^1\times\DD\to V$ such that $f_J(S^1\times\{\vec{1}\})=J$, and the isotopy class of $[f_J]$ is in one--to--one correspondence with $[J]$.
-Our canonical choice for $\psi(\id)$ is $[f_J]$, and this generates the rest of the map, i.e.\ $\psi([H_M^k])=[f_J\comp H_M^k]$.
-The isotopy class of a framing $f:S^1\times\DD\to\overline{\nu}_{S^3}f_0(S^1)$ can then be classified entirely by an integer $k$ that describes the number of meridinal twists it takes to get to $f$ from the preferred one.
-We call $k$ the \emph{framing constant} for $f$.
+  Let $f_0:S^1\to S^3$ be an embedding.
+  Let $V$ be a solid torus that is a closed tubular neighbourhood of the knot $f_0(S^1)$ in $S^3$.
+  Then there is exactly one isotopy class $[J]$ of longitudes of $V$, unique up to ambient isotopy of $f_0$, such that any curve in $[J]$ bounds a disc in $S^3\setminus V$.
+  Moreover, for any representative $J$ of $[J]$ there is a framing $f_J:S^1\times\DD\to V$ such that $f_J(S^1\times\{\vec{1}\})=J$, and the isotopy class of $[f_J]$ is in one--to--one correspondence with $[J]$.
+  Our canonical choice for $\psi(\id)$ is $[f_J]$, and this generates the rest of the map, i.e.\ $\psi([H_M^k])=[f_J\comp H_M^k]$.
+  The isotopy class of a framing $f:S^1\times\DD\to\overline{\nu}_{S^3}f_0(S^1)$ can then be classified entirely by an integer $k$ that describes the number of meridinal twists it takes to get to $f$ from the preferred one.
+  We call $k$ the \emph{framing constant} for $f$.
+\end{rmk}
+
+It is convenient to now delve into some Morse theory.
+The fundamental theorems of Morse theory are used to define the \emph{handle decomposition} and \emph{dual handle decomposition} of a manifold.
+
+\begin{defn}
+  A generic smooth function $f:M\to\R$ where $M$ is an $n$--manifold is called a \emph{Morse function}.
+  For a critical point $p\in M$ of $f$, the \emph{index} of $p$ is the dimension of the largest subspace of $T_p M$ such that $d^2f_p$ is negative definite.
+  Less formally, this corresponds to the number of independant directions in $M$ along which $f$ decreases.
+  We denote by $M^a$ the subspace $f\inv(-\infty,a\,]$ where $f$ is a fixed Morse function on $M$.
+\end{defn}
+
+A key question of Morse theory regards how the topology of $M^a$ changes as $a$ passes the critical values of $f$.
+This question is answered by the following two theorems.
+
+\begin{theorem}
+  Let $f:M\to\R$ be a Morse function with no critical values in $(a,b\,]$, $a<b$.
+  If $f\inv[\,a,b\,]$ is compact, then $M^a$ and $M^b$ are diffeomorphic, and $M^b$ deformation retracts onto $M^a$.
+\end{theorem}
+
+\begin{theorem}
+  Let $f:M\to\R$ be a Morse function.
+  Let $p$ be a critical point of $f$ of index $\lambda$ with associated critical value $f(p)=q$.
+  If $f\inv[\,q-\varepsilon, q+\varepsilon\,]$ is compact and contains no critical points other than $p$, then $M^{q+\varepsilon}$ is diffeomorphic to $M^{q-\varepsilon}\cup_\varphi H^\lambda$ for some attaching map $\varphi:H^\lambda\to f\inv(q-\varepsilon)$.
+\end{theorem}
+
+\begin{definition}
+  Let $f:M\to\R$ be a Morse function on a closed $n$--manifold $M$ with critical points $\{p_0,\dots,p_k\}$ of indices $\{\lambda_0,\dots,\lambda_k\}$, such that $f(p_i)<f(p_{i+1})$ and $\lambda_i\leq\lambda_{i+1}$ for $i\geq 0$.
+  The previous theorems guarantee that $M$ is diffeomorphic to 
+\end{definition}
