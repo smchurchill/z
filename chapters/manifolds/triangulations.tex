@@ -63,7 +63,7 @@ Extending to a collection of $n$--simplices and gluing maps, a cell decompositio
 
   Put $n=k+m$ and let $\sigma$ be an $m$--simplex in an $n$--gluing complex $T$ and consider an $n$--simplex $\tau$ containing $\sigma$.
   There is a $k$--facet $\tau_k$ that is ``opposite'' $\sigma$ in the sense that $\sigma\cap\tau_k=\emptyset$ and $\tau$ is the convex hull of $\sigma\cup\tau_k$.
-  The subset of $C$ built as the union of all $\tau_k$ corresponding to a $\tau$ containing $\sigma$ is the \emph{link} of $\sigma$ and is denoted $\lk{\sigma}$.
+  The subset of $C$ built as the union of all $\tau_k$ corresponding to $\tau$ containing $\sigma$ is the \emph{link} of $\sigma$ and is denoted $\lk{\sigma}$.
   Note that $\lk{\sigma}$ is an $m$--gluing complex in its own right.
 
   If $M$ is an $n$--manifold and $T$ is an $n$--simplicial gluing complex that is homeomorphic to $M$, then we say that $T$ is a \emph{triangulation} of $M$.
@@ -72,78 +72,18 @@ Extending to a collection of $n$--simplices and gluing maps, a cell decompositio
 There is a very slick way of checking whether a gluing complex is a triangulation of some $n$--manifold using only the links of vertices.
 
 \begin{theorem}
-  An $n$--gluing complex $T$ is the triangulation of some $n$--manifold $M$ if and only if the link of every internal vertex $v$ is homeomorphic to $S^{n-1}$ and the link of every boundary vertex $w$ is homeomorphic to $D^{n-1}$ with $\pd\lk(w)$ contained in $\pd T$.
+  An $n$--gluing complex $T$ is the triangulation of some $n$--manifold $M$ if and only if the link of every internal vertex $v$ is homeomorphic to $S^{n-1}$ and the link of every boundary vertex $w$ is homeomorphic to $D^{n-1}$ with $\pd\lk{w}$ contained in $\pd T$.
 \end{theorem}
 
+When we have a triangulation $T$ for a closed, oriented $n$--manifold $M$, we can also define a structure dual to that triangulation that is useful for computation.
+This structure, denoted $T^*$, is a cell decomposition dual to $T$ in the sense that each $(n-k)$--cell of $T^*$ is associated with a $k$--cell of $T$.
+For a $k$--simplex $\sigma$ of $T$, denote the dual cell in $T^*$ to $\sigma$ by $\sigma^*$
 
 
+We build $T^*$ iteratively.
 
-
-
-
-
-
-
-
-
-
-
-
-
-This definition can be extended to larger collections of simplices.
-Let $A=\bigsqcup_i\sigma_i$ be a collection of $n$--simplices and $G$ a collection of gluing maps between the faces of $A$ such that any face of $A$ appears as the domain or range of at most one gluing map.
-We once again define a relation $\sim_G$ by $g(x)\sim_G x$ for every $x$ in the domain of $g$ and every $g\in G$. 
-The quotient space $A/\sim_G$ is then the \emph{gluing complex} of $A$ over $G$.
-
-
-Let $C$ be a gluing complex.
-
-
-
-Let $C$ be a collection of simplices and gluing maps between the faces of the simplices.
-
-\{Figure: 3-simplex (tetrahedron)\}
-
-
-A \emph{simplicial complex} is a locally finite collection $\Sigma$ of simplices embedded in some affine space satisfying two conditions.
-First, any facet of a simplex in $\Sigma$ is also in $\Sigma$.
-Second, the intersection of two simplices in $\Sigma$ is either empty or a facet of both.
-
-An $n$--\emph{dimensional gluing complex} is a space obtained from a finite set of $n$--simplices and a collection of maps between faces $\{F^i(\sigma)\to F^j(\tau)\}$ called \emph{gluings}.
-We demand that any face appears in exactly one of the gluings and that each gluing is an affine linear map that dictates how the faces $F^i(\sigma)$ and $F^j(\tau)$ are identified.
-A gluing $F^i(\sigma)\to F^j(\tau)$ is defined completely by a bijection of the vertices of $F^i(\sigma)$ to the vertices of $F^j(\tau)$ and extended linearly in order of ascending dimension over all facets of the faces.
-The quotient space of the union of our simplices relative to the equivalence relation defined by the gluings is the \emph{gluing conplex}.
-An $n$--dimensional gluing complex can be seen as a simplicial complex by embedding it in some high--dimensional Euclidean space.
-Denote an $n$--gluing complex by $T$ and define the \emph{$k$--skeleton} of $T$ to be the union of all facets of $T$ of dimension at most $k$ with $0\leq k\leq n$.
-Denote the $k$--skeleton of $T$ by $T^k$, and note that $T^n=T$.
-
-
-
-
-Recall from Definition \ref{def:manifold} that an $n$--dimensional piecewise--linear manifold $M$ is a manifold whose atlas of $M$ has piecewise linear transition maps.
-If a gluing satisfies this property, we call it a \emph{simplicial manifold}.
-To build an atlas for an $n$--gluing $T$, a point $p$ in $T\setminus T^{n-1}$ has an obvious chart $(\inter{\sigma},f)$ where $\sigma$ is the $n$--simplex whose interior contains $p$ and $f$ is the trivial linear map from $\inter{\sigma}$ to the interior of the standard $n$--simplex, an open subset of $\RRN$.
-Because a chart for every point interior to an $n$--simplex exists and because no face of this complex is unglued, we may iteratively define piecewise--linear homeomorphisms for points in $T\setminus T^{k}$ as $k$ descends to zero.
-This leaves the task of defining charts for the vertices of $T$.
-An important notion in constructing these charts is the \emph{link} of a simplex.
-
-\begin{defn}
-\end{defn}
-
-If the link of a vertex $v$ in $T$ has $\lk{v}=S^{n-1}$, then the cone on that link is a neighbourhood of $v$ in the gluing and is piecewise-linearly homeomorphic to the $n$--disc.
-Because the rest of the atlas is immediate from our definition of gluing, the condition that vertex links are spheres is necessary and sufficient to say that a gluing is a simplicial manifold.
-
-Until now, our definitions only allow for closed simplicial manifolds.
-If we allow our $n$--dimensional gluing to have unpaired faces, then we impose the additional restriction that the links of unglued vertices are $(n-1)$--dimensional discs with boundary $(n-2)$--spheres triangulated by facets entirely from unglued faces.
-If this additional condition is met, then the unglued faces form an $(n-1)$--dimensional simplicial manifold in their own right.
-
-We also consider a similar and more general construction of a piecewise--linear structure on a manifold called a cell decomposition.
-Their main use in this work is as a combinatorial structure dual to the triangulation.
-
-\begin{defn}
-  A space homeomorphic to $B^n$ is called an \emph{$n$--cell}.
-\end{defn}
-
+First, we place a 0--cell of $T^*$ in the barycentre of each $n$--simplex of $T$.
+The simplices of $T$ are joined over faces, so from each 
 
 
 
