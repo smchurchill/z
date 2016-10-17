@@ -165,20 +165,22 @@ A key question of Morse theory regards how the topology of $M^a$ changes as $a$ 
 This question is answered by the following two theorems.
 
 \begin{theorem}
+  \label{thm:morseretract}
   Let $f:M\to\R$ be a Morse function with no critical values in $(a,b\,]$, $a<b$.
   If $f\inv[\,a,b\,]$ is compact, then $M^a$ and $M^b$ are diffeomorphic, and $M^b$ deformation retracts onto $M^a$.
 \end{theorem}
 
 \begin{theorem}
+  \label{thm:morsehandle}
   Let $f:M\to\R$ be a Morse function.
   Let $p$ be a critical point of $f$ of index $\lambda$ with associated critical value $f(p)=q$.
-  If $f\inv[\,q-\varepsilon, q+\varepsilon\,]$ is compact and contains no critical points other than $p$, then $M^{q+\varepsilon}$ is diffeomorphic to $M^{q-\varepsilon}\cup_\varphi H^\lambda$ for some attaching map $\varphi:H^\lambda\to f\inv(q-\varepsilon)$.
+  If $f\inv[\,q-\varepsilon, q+\varepsilon\,]$ is compact and contains no critical points other than $p$, then $M^{q+\varepsilon}$ is diffeomorphic to $M^{q-\varepsilon}\cup_\varphi H^\lambda$ for some attaching map $\varphi:S^{\lambda-1}\times\D^\mu\to \pd(M^{q-\varepsilon})$.
 \end{theorem}
 
 \begin{defn}
   Let $f:M\to\R$ be a Morse function on a closed $n$--manifold $M$ with critical points $\{p_1,\dots,p_k\}$ of indices $\{\lambda_1,\dots,\lambda_k\}$ and a set $\{t_0,\dots,t_k\}$ of numbers in $\R$ such that
   \[
-	t_0 < f(p_1) < t_1 < f(p_2) < \cdots < t_{k-1} < f(p_k) < t_k,
+	0\leq t_0 < f(p_1) < t_1 < f(p_2) < \cdots < t_{k-1} < f(p_k) < t_k \leq 1,
   \]
   and
   \[
@@ -192,9 +194,11 @@ This question is answered by the following two theorems.
   Such a realization is called a \emph{handle decomposition} of $M$.
 \end{defn}
 
-A Morse function $f$ satisfying the requirements to define a handle decomposition actually defines two handle decompositions -- one from $f$ and one from $-f$.
-The handle decompositions from $f$ and $-f$ are dual in the sense that every $\lambda$--handle attached in the making of the decomposition from $f$ has a corresponding $\mu$--handle in the decomposition from $-f$.
+A Morse function $f$ satisfying the requirements to define a handle decomposition actually defines two handle decompositions -- one from $f$ and one from $1-f$.
+The handle decompositions from $f$ and $1-f$ are dual in the sense that every $\lambda$--handle attached in the making of the decomposition from $f$ has a corresponding $\mu$--handle in the decomposition from $1-f$.
 This handle is realized by reversing the roles of the core and co--core in a given $\lambda$--handle $H^\lambda$ to obtain a $\mu$--handle $H^\mu$.
 
-These definitions can be extended to manifolds with boundary.
-Let $W$ be an $n$--manifold with boundary $\pd W = M_1\cup M_2$.
+Similar results can be found for manifolds with boundary.
+Let $W$ be an $n$--manifold with boundary $\pd W = M_0\sqcup M_1$, where both $M_0$ and $M_1$ are compact.
+The Morse functions on $W$ that extend Theorems \ref{thm:morseretract} and \ref{thm:morsehandle} are those that fix $f(M_0)=0$, $f(M_1)=1$.
+Now, the handle decomposition of $W$ is built on top of the component $M_1\times\{1\}$ of $M_0\times\I$, with $M_0\times\{0\}$ corresponding to the boundary component $M_0$ in the finished product.
