@@ -6,43 +6,43 @@ The second is the \emph{Stein complex} of a Morse function on a manifold.
 The main results from this chapter connect a Stein complex with a handle decomposition, and this construction is extended to triangulations in the remaining chapters.
 
 \begin{defn}
-  A generic smooth function $f:M\to\R$ where $M$ is an $n$--manifold is called a \emph{Morse function}.
-  For a critical point $p\in M$ of $f$, the \emph{index} of $p$ is the dimension of the largest subspace of $T_p M$ such that $d^2f_p$ is negative definite.
-  Less formally, this corresponds to the number of independent directions in $M$ along which $f$ decreases.
-  We denote by $M^a$ the subspace $f\inv(-\infty,a\,]$ where $f$ is a fixed Morse function on $M$.
+	A generic smooth function $f:M\to\R$ where $M$ is an $n$--manifold is called a \emph{Morse function}.
+	For a critical point $p\in M$ of $f$, the \emph{index} of $p$ is the dimension of the largest subspace of $T_p M$ such that $d^2f_p$ is negative definite.
+	Less formally, this corresponds to the number of independent directions in $M$ along which $f$ decreases.
+	We denote by $M^a$ the subspace $f\inv(-\infty,a\,]$ where $f$ is a fixed Morse function on $M$.
 \end{defn}
 
 A key question of Morse theory regards how the topology of $M^a$ changes as $a$ passes the critical values of $f$.
 This question is answered by the following two theorems.
 
 \begin{theorem}
-  \label{thm:morseretract}
-  Let $f:M\to\R$ be a Morse function with no critical values in $(a,b\,]$, $a<b$.
-  If $f\inv[\,a,b\,]$ is compact, then $M^a$ and $M^b$ are diffeomorphic, and $M^b$ deformation retracts onto $M^a$.
+	\label{thm:morseretract}
+	Let $f:M\to\R$ be a Morse function with no critical values in $(a,b\,]$, $a<b$.
+	If $f\inv[\,a,b\,]$ is compact, then $M^a$ and $M^b$ are diffeomorphic, and $M^b$ deformation retracts onto $M^a$.
 \end{theorem}
 
 \begin{theorem}
-  \label{thm:morsehandle}
-  Let $f:M\to\R$ be a Morse function.
-  Let $p$ be a critical point of $f$ of index $\lambda$ with associated critical value $f(p)=q$.
-  If $f\inv[\,q-\varepsilon, q+\varepsilon\,]$ is compact and contains no critical points other than $p$, then $M^{q+\varepsilon}$ is diffeomorphic to $M^{q-\varepsilon}\cup_\varphi H^\lambda$ for some attaching map $\varphi:S^{\lambda-1}\times\D^\mu\to \pd(M^{q-\varepsilon})$.
+	\label{thm:morsehandle}
+	Let $f:M\to\R$ be a Morse function.
+	Let $p$ be a critical point of $f$ of index $\lambda$ with associated critical value $f(p)=q$.
+	If $f\inv[\,q-\varepsilon, q+\varepsilon\,]$ is compact and contains no critical points other than $p$, then $M^{q+\varepsilon}$ is diffeomorphic to $M^{q-\varepsilon}\cup_\varphi H^\lambda$ for some attaching map $\varphi:S^{\lambda-1}\times\D^\mu\to \pd(M^{q-\varepsilon})$.
 \end{theorem}
 
 \begin{defn}
-  Let $f:M\to\R$ be a Morse function on a closed $n$--manifold $M$ with critical points $\{p_1,\dots,p_k\}$ of indices $\{\lambda_1,\dots,\lambda_k\}$ and a set $\{t_0,\dots,t_k\}$ of numbers in $\R$ such that
-  \[
-	0\leq t_0 < f(p_1) < t_1 < f(p_2) < \cdots < t_{k-1} < f(p_k) < t_k \leq 1,
-  \]
-  and
-  \[
-	  \lambda_1 \geq \lambda_2 \geq \cdots \geq \lambda_k.
-  \]
-  The previous theorems guarantee that, for each $i\geq 1$, $f\inv[\,t_{i-1},t_i\,]$ is diffeomorphic to $(f\inv(t_{i-1})\times\I)\cup H^{\lambda_i}$, giving us a realization of $M$ as
-  \[
-	  \emptyset = M_0 \subset M_1 \subset M_2 \subset \cdots \subset M_{k-1} \subset M_k = M
-  \]
-  where $M_i$ is obtained from $M_{i-1}$ by attaching a $\lambda_i$--handle.
-  Such a realization is called a \emph{handle decomposition} of $M$.
+	Let $f:M\to\R$ be a Morse function on a closed $n$--manifold $M$ with critical points $\{p_1,\dots,p_k\}$ of indices $\{\lambda_1,\dots,\lambda_k\}$ and a set $\{t_0,\dots,t_k\}$ of numbers in $\R$ such that
+	\[
+		0\leq t_0 < f(p_1) < t_1 < f(p_2) < \cdots < t_{k-1} < f(p_k) < t_k \leq 1,
+	\]
+	and
+	\[
+		\lambda_1 \geq \lambda_2 \geq \cdots \geq \lambda_k.
+	\]
+	The previous theorems guarantee that, for each $i\geq 1$, $f\inv[\,t_{i-1},t_i\,]$ is diffeomorphic to $(f\inv(t_{i-1})\times\I)\cup H^{\lambda_i}$, giving us a realization of $M$ as
+	\[
+		\emptyset = M_0 \subset M_1 \subset M_2 \subset \cdots \subset M_{k-1} \subset M_k = M
+	\]
+	where $M_i$ is obtained from $M_{i-1}$ by attaching a $\lambda_i$--handle.
+	Such a realization is called a \emph{handle decomposition} of $M$.
 \end{defn}
 
 A Morse function $f$ satisfying the requirements to define a handle decomposition actually defines two handle decompositions --- one from $f$ and one from $1-f$.
@@ -54,15 +54,63 @@ Let $W$ be an $n$--manifold with boundary $\pd W = M_0\sqcup M_1$, where both $M
 The Morse functions on $W$ that extend Theorems \ref{thm:morseretract} and \ref{thm:morsehandle} are those that fix $f(M_0)=0$, $f(M_1)=1$.
 Now, the handle decomposition of $W$ is built on top of the component $M_1\times\{1\}$ of $M_0\times\I$, with $M_0\times\{0\}$ corresponding to the boundary component $M_0$ in the finished product.
 
+
+
+
 \begin{defn}
-  \label{def:morse2function}
-  A generic smooth function $f:M\to\RR$ where $M$ is an $n$--manifold is called a \emph{Morse 2--function}.
+	\label{def:steinfactorization}
 \end{defn}
 
 \begin{defn}
-  \label{def:steinfactorization}
+	\label{def:steincomplex}
 \end{defn}
 
+
+
+Let $f$ be a Morse function or Morse 2--function with compact fibers as before.
+Define the \emph{Stein factorization} of $f$ to be a factorization $f=g\comp h$ so that the following are satisfied:
+\begin{enumerate}
+	\item The map $h$ has connected fibers, and
+	\item the map $g$ is finite--to--one.
+\end{enumerate}
+We can also see the image of $h$ as the quotient space of the domain of $f$ by the connected fibers of $f$.
+The image of $h$ will also be called the \emph{Stein complex} of the map $f$.
+
+In the case of the oriented surface $\Sigma$, the Stein complex of $f$ is a graph whose vertices correspond to the singularities of $f$.
+Vertices corresponding to critical points of index 0 or 2 being of degree 1, and vertices corresponding to critical points of index 1 being of degree 3.
+We form a 3--manifold whose boundary is $\Sigma$ by starting with a disc bundle over the edges of $h(\Sigma)$, then extending over the vertices by attaching 3--balls as in the analysis above.
+There is an obvious deformation retraction of the resulting 3--manifold to the Stein complex of $f$.
+
+In the case of the 3--manifold $M$, the Stein complex is generically a surface and the possible singularities are more interesting.
+As in the analysis above, some singularities are just the singularities from the lower dimensional Morse function crossed with an interval, so the corresponding shape in the Stein complex is simply a degree--one or degree--three vertex crossed with an interval.
+The more interesting parts of the Stein complex are brought forth at the crossing of indefinite folds in the plane.
+As in the case of $\Sigma$, $M$ is a circle bundle over the Stein complex at generic points and the 4--manifold $W$ with $\pd W = M$ is a disc bundle.
+We extend over singularities by attaching handles and, as before, $W$ retracts onto the Stein complex.
+The Stein complex, along with some extra information we can obtain from $f$, provides a set of building instructions for $W$ explored in the next section.
+
+
+\begin{cor}
+	Let $M$ be a closed, orientable 3--manifold.
+	Then there exists a Morse 2--function $f:M\to\RR$ with Stein factorization $f=g\comp h$ and a Stein complex $S=h(M)$ whose regions can be assigned framing constants such that $S$ provides a full set of instructions for the construction of a 4--manifold $W$ with $\pd W=M$.
+\end{cor}
+
+
+
+
+
 \begin{defn}
-  \label{def:steincomplex}
+	\label{def:morse2function}
+	A generic smooth function $f:M\to\RR$ where $M$ is an $n$--manifold is called a \emph{Morse 2--function}.
 \end{defn}
+
+
+
+
+
+
+
+In a similar fashion to when we worked with Morse functions, assume that $M$ is closed and oriented and require that the image of $f$ is contained inside of $\DD\subset\RR$.
+From the regular value theorem, the preimage of a regular value of $f$ is the disjoint union of oriented circles in $M$.
+The image of the singular set of $f$ is a collection of arcs in $\RR$ that only intersect pairwise and transversally.
+This leaves us with a classification of critical values of $f$ into codimension 1 singularities, i.e.\ arcs away from crossings, and codimension 2 singularities, i.e.\ arc crossings.
+
