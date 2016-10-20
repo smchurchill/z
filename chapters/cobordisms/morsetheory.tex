@@ -6,7 +6,7 @@ The second is the \emph{Stein complex} of a Morse function on a manifold.
 The main results from this chapter connect a Stein complex with a handle decomposition, and this construction is extended to triangulations in the remaining chapters.
 
 \begin{defn}
-	A generic smooth function $f:M\to\R$ where $M$ is an $n$--manifold is called a \emph{Morse function}.
+	A generic smooth function $f:M\to\R$ with $M$ an $n$--manifold is called a \emph{Morse function}.
 	For a critical point $p\in M$ of $f$, the \emph{index} of $p$ is the dimension of the largest subspace of $T_p M$ such that $d^2f_p$ is negative definite.
 	Less formally, this corresponds to the number of independent directions in $M$ along which $f$ decreases.
 	We denote by $M^a$ the subspace $f\inv(-\infty,a\,]$ where $f$ is a fixed Morse function on $M$.
@@ -35,7 +35,7 @@ This question is answered by the following two theorems.
 	\]
 	and
 	\[
-		\lambda_1 \geq \lambda_2 \geq \cdots \geq \lambda_k.
+		\lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_k.
 	\]
 	The previous theorems guarantee that, for each $i\geq 1$, $f\inv[\,t_{i-1},t_i\,]$ is diffeomorphic to $(f\inv(t_{i-1})\times\I)\cup H^{\lambda_i}$, giving us a realization of $M$ as
 	\[
@@ -47,70 +47,43 @@ This question is answered by the following two theorems.
 
 A Morse function $f$ satisfying the requirements to define a handle decomposition actually defines two handle decompositions --- one from $f$ and one from $1-f$.
 The handle decompositions from $f$ and $1-f$ are dual in the sense that every $\lambda$--handle attached in the making of the decomposition from $f$ has a corresponding $\mu$--handle in the decomposition from $1-f$.
-This handle is realized by reversing the roles of the core and co--core in a given $\lambda$--handle $H^\lambda$ to obtain a $\mu$--handle $H^\mu$.
+This handle is obtained by reversing the roles of the core and co--core in a given $\lambda$--handle $H^\lambda$ to obtain a $\mu$--handle $H^\mu$.
 
-Similar results can be found for manifolds with boundary.
+Similar definitions can be made for manifolds with boundary.
 Let $W$ be an $n$--manifold with boundary $\pd W = M_0\sqcup M_1$, where both $M_0$ and $M_1$ are compact.
 The Morse functions on $W$ that extend Theorems \ref{thm:morseretract} and \ref{thm:morsehandle} are those that fix $f(M_0)=0$, $f(M_1)=1$.
 Now, the handle decomposition of $W$ is built on top of the component $M_1\times\{1\}$ of $M_0\times\I$, with $M_0\times\{0\}$ corresponding to the boundary component $M_0$ in the finished product.
 
-
-
-
-\begin{defn}
-	\label{def:steinfactorization}
-\end{defn}
-
-\begin{defn}
-	\label{def:steincomplex}
-\end{defn}
-
-
-
-Let $f$ be a Morse function or Morse 2--function with compact fibers as before.
-Define the \emph{Stein factorization} of $f$ to be a factorization $f=g\comp h$ so that the following are satisfied:
-\begin{enumerate}
-	\item The map $h$ has connected fibers, and
-	\item the map $g$ is finite--to--one.
-\end{enumerate}
-We can also see the image of $h$ as the quotient space of the domain of $f$ by the connected fibers of $f$.
-The image of $h$ will also be called the \emph{Stein complex} of the map $f$.
-
-In the case of the oriented surface $\Sigma$, the Stein complex of $f$ is a graph whose vertices correspond to the singularities of $f$.
-Vertices corresponding to critical points of index 0 or 2 being of degree 1, and vertices corresponding to critical points of index 1 being of degree 3.
-We form a 3--manifold whose boundary is $\Sigma$ by starting with a disc bundle over the edges of $h(\Sigma)$, then extending over the vertices by attaching 3--balls as in the analysis above.
-There is an obvious deformation retraction of the resulting 3--manifold to the Stein complex of $f$.
-
-In the case of the 3--manifold $M$, the Stein complex is generically a surface and the possible singularities are more interesting.
-As in the analysis above, some singularities are just the singularities from the lower dimensional Morse function crossed with an interval, so the corresponding shape in the Stein complex is simply a degree--one or degree--three vertex crossed with an interval.
-The more interesting parts of the Stein complex are brought forth at the crossing of indefinite folds in the plane.
-As in the case of $\Sigma$, $M$ is a circle bundle over the Stein complex at generic points and the 4--manifold $W$ with $\pd W = M$ is a disc bundle.
-We extend over singularities by attaching handles and, as before, $W$ retracts onto the Stein complex.
-The Stein complex, along with some extra information we can obtain from $f$, provides a set of building instructions for $W$ explored in the next section.
-
-
-\begin{cor}
-	Let $M$ be a closed, orientable 3--manifold.
-	Then there exists a Morse 2--function $f:M\to\RR$ with Stein factorization $f=g\comp h$ and a Stein complex $S=h(M)$ whose regions can be assigned framing constants such that $S$ provides a full set of instructions for the construction of a 4--manifold $W$ with $\pd W=M$.
-\end{cor}
-
-
-
-
+Extending the range of a Morse function to $\RR$ yields another class of functions.
+Members of this class exhibit some properties that are desirable for computational purposes.
 
 \begin{defn}
 	\label{def:morse2function}
-	A generic smooth function $f:M\to\RR$ where $M$ is an $n$--manifold is called a \emph{Morse 2--function}.
+	A generic smooth function $f:M\to\RR$ with $M$ an $n$--manifold is called a \emph{Morse 2--function}.
 \end{defn}
 
+In a similar fashion to basic Morse functions, assume that $M$ is closed and require that the image of $f$ is contained inside of $\DD\subset\RR$.
 
+As stated before, we are using Morse theory to realize handle decompositions.
+Our methods either use a Morse function $\Sigma\to[0,1]$ where $\Sigma$ is a 2--manifold or a Morse 2--function $M\to\DD$ where $M$ is a 3--manifold.
+In these cases we introduce a factorization of our functions that yields the second construction alluded to at the beginning of this section.
 
+\begin{defn}
+	\label{def:stein}
+	A function $f:X\to Y$ is \emph{proper} if, for any compact subset $C\subset Y$, the preimage $f\inv(C)$ is compact in $X$.
+	A \emph{Stein factorization} of a proper function $f$ is a a decomposition of $f$ into $g\comp h$ with $$X\overset{h}{\to} S \overset{g}{\to} Y$$ such that $g$ is a finite--to--one map and $h$ has connected fibers.
+	The intermediate space $S$ is called the \emph{Stein complex} of the factorization.
+\end{defn}
 
+The Stein complex of a proper function $f:X\to Y$ can be thought of as the quotient space of $X$ by a particular relation $\sim$.
+For a pair of points $x_1$, $x_2$ in $X$ with $f(x_1)=f(x_2)=y$, we would define $x_1\sim x_2$ if $x_1$ and $x_2$ are in the same connected component of $f\inv(y)$.
 
+Of primary interest are Morse functions $\Sigma\to[0,1]$ with $\Sigma$ a surface and Morse 2--functions $M\to\DD$ with $M$ a 3--manifold.
+At this point we are delving into our main results, so we will begin assuming $\Sigma$ and $M$ are oriented.
+To ensure a Stein factorization, a convenient assumption to make is that the manifold in question is compact.
+We will go even further and make the stronger assumption that $\Sigma$ and $M$ are each closed.
 
-
-In a similar fashion to when we worked with Morse functions, assume that $M$ is closed and oriented and require that the image of $f$ is contained inside of $\DD\subset\RR$.
-From the regular value theorem, the preimage of a regular value of $f$ is the disjoint union of oriented circles in $M$.
-The image of the singular set of $f$ is a collection of arcs in $\RR$ that only intersect pairwise and transversally.
-This leaves us with a classification of critical values of $f$ into codimension 1 singularities, i.e.\ arcs away from crossings, and codimension 2 singularities, i.e.\ arc crossings.
-
+When these assumptions are made and $f$ is a Morse function or Morse 2--function from an appropriate manifold, the regular value theorem guarantees that the preimage of a regular value of $f$ is the disjoint union of oriented circles.
+This gives way to the general idea behind our algorithms.
+The particulars of a Stein complex for a Morse function $\Sigma\to[0,1]$ or a Morse 2--function $M\to\DD$ are explored in the next two sections.
+We then use the Stein complex as a set of instructions for constructing cobordisms for the pairs $(\Sigma,\emptyset)$ and $(M,\emptyset)$.
