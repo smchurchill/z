@@ -5,10 +5,14 @@ This is useful as a jumping off point for the case one dimension higher, that of
 
 Let $\Sigma$ be an oriented surface and $f:\Sigma\to\R$ a Morse function with distinct critical values.
 We begin by examining the preimages of points $x\in\R$, denoting the space $f\inv(x)$ by $\Sigma_x$.
+A space $\Sigma_x$ may not be connected, so we index the connected components by superscript.
 By the regular value theorem, any regular value pulls back through $f\inv$ to a disjoint collection of oriented circles in $\Sigma$.
 Let $p$ be a critical point of $f$ with critical value $f(p)=x$.
 By our assumptions, $p$ is the only critical point of $f$ in $\Sigma_x$.
-This means $\Sigma_x$ consists of the union of a connected subspace of $\Sigma$ containing $p$, called the critical level of $f$ at $p$ and denoted $\Sigma_x^p$, with a disjoint collection of circles.
+The connected component of $\Sigma_x$ containing $p$ is called the \emph{critical level} at $p$ and is denoted $\Sigma_x^p$.
+The remaining connected components of $\Sigma_x$ are all copies of $S^1$, and we will index them by $\Sigma_x^i$, for $i=1,\dots,k$.
+
+consists of the union of a connected subspace of $\Sigma$ containing $p$, called the critical level of $f$ at $p$ and denoted $\Sigma_x^p$, with a disjoint collection of circles.
 
 The shape of the critical level is determined by the index of $p$.
 Because $f$ is a Morse function whose domain is a surface, its critical points are easily classified by the Morse lemma, Lemma \ref{lem:morselemma}.
@@ -25,13 +29,19 @@ The orientations of these circles orient the cross, which has two incoming arms 
 A Morse function has distinct critical levels, so the cross we know about in $\Sigma_x^p$ must have its arms connected in $\Sigma_x^p$ through nonsingular orientation--preserving arcs.
 We can then see that $\Sigma_x^p$ is a figure 8, and $\varepsilon^p(\Sigma_x)$ is a is a pair of pants in $\Sigma$.
 
-\{FIGURE: SMOOTHING OUT A CROSS AND SADDLE\}
+The components of $\varepsilon(\Sigma_x)$ that contain no critical points of $f$ are disjoint unions of annuli, one for each circle in $\Sigma_x$.
+Similarly, the preimage of an interval of regular values in $\R$ is the disjoint union of annuli in $\Sigma$.
 
-\{FIGURE: NEIGHBOURHOODS OF INDEX 0,1,2 CRIT. PTs\}
+\{figure: smoothing a cross into a saddle\}
+
+\{figure: neighbourhoods of critical points (index 0,1,2)\}
 
 Let $\Sigma\times I$ be a 3--manifold with oriented boundary components $\Sigma\times\{0\}=\Sigma_0$ and $\Sigma\times\{1\}=\Sigma_1$, where $\Sigma_0$ has orientation opposite that of $\Sigma$ and $\Sigma_1$.
 Let $f$ be a Morse function on $\Sigma_0$ satisfying the assumptions of Definiton \ref{def:morsehandle}.
+Take $f=g\comp h$, where $g$ is the map that crushes the connected components of $\Sigma_x$ to distinct points, and $h$ is the map that 
 
+
+easy away from the critical values of $f$.
 
  Specify a regular value of $f$ in each connected component of $f(\Sigma_0)$ minus the critical values of $f$.
 Each of these regular values has preimage a disjoint collection of circles in $\Sigma_-$ which we take to be the attaching spheres of 3--dimensional 2--handles. 
