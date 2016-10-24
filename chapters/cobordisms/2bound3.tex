@@ -8,37 +8,32 @@ We begin by examining the preimages of points $x\in\R$, denoting the space $f\in
 By the regular value theorem, any regular value pulls back through $f\inv$ to a disjoint collection of oriented circles in $\Sigma$.
 Let $p$ be a critical point of $f$ with critical value $f(p)=x$.
 By our assumptions, $p$ is the only critical point of $f$ in $\Sigma_x$.
-This means $\Sigma_x$ consists of the union of a connected subspace of $\Sigma$ containing $p$, called the critical level of $f$ at $p$, with a disjoint collection of circles.
+This means $\Sigma_x$ consists of the union of a connected subspace of $\Sigma$ containing $p$, called the critical level of $f$ at $p$ and denoted $\Sigma_x^p$, with a disjoint collection of circles.
 
 The shape of the critical level is determined by the index of $p$.
-Because $f$ is a Morse function whose domain is a surface, its critical points are classified.
+Because $f$ is a Morse function whose domain is a surface, its critical points are easily classified by the Morse lemma, Lemma \ref{lem:morselemma}.
 Locally in $\Sigma$, a critical point of index 0 is a minimum, of index 1 a saddle, and of index 2 a maximum of $f$.
+
 Let $\varepsilon(x)=(x-\varepsilon,x+\varepsilon)$ be an interval containing $x$ and no other critical values of $f$.
-Denote by $\varepsilon(\Sigma_x)$ the neighbourhood $f\inv(\varepsilon(x))$ of $\Sigma_x$, and denote the connected component of $\varepsilon(\Sigma_x)$ containing $p$ by $\varepsilon_p(\Sigma_x)$.
-When $p$ is of index 0 or 2, we can immediately deduce that $\varepsilon_p(\Sigma_x)$ is a disc.
-To see this, recognize that our critical values are isolated, so a value in $\varepsilon(x)$ that is not $x$ is regular, hence pulls back to a disjoint collection of circles.
-Because $p$ is a maximum or minimum, all of the 
-
- corresponding to the regular points of $\Sigma_-$ that also map to $x$ through $f$ along with a single point -- $p$.
-
-\{FIGURE: NEIGHBOURHOODS OF INDEX 0,1,2 CRIT. PTs\}
-
-The case of the saddle needs more care.
-Suppose that $p$ is of index 1.
-Critical points of Morse functions are non--degenerate, so $f\inv (x)$ forms a cross near $p$.
-For $y\in\varepsilon(x)$ not equal to $x$, $y$ is a regular value whose preimage is a disjoint union of circles.
-As $\Sigma_-$ is oriented, pulling back the orientation of $\R$ to $\Sigma_-$ allows us to coherently orient the preimage circles of the regular values.
+Denote the neighbourhood $f\inv(\varepsilon(x))$ of $\Sigma_x$ by $\varepsilon(\Sigma_x)$, and denote the connected component of $\varepsilon(\Sigma_x)$ containing $p$ by $\varepsilon^p(\Sigma_x)$.
+When $p$ is of index 0 or 2, we can immediately deduce that $\varepsilon^p(\Sigma_x)$ is diffeomorphic to a disc.
+When $p$ is of index 1, the Morse lemma tells us that $\Sigma$ looks like a standard saddle near $p$.
+The intersection of $\Sigma_x^p$ with this saddle is a cross whose centre is $p$.
+For $y\in\varepsilon(x)$, $y$ is a regular value whose preimage is a disjoint union of oriented circles.
 The circles above and below the saddle singularity are the result of smoothing out the cross into a pair of oriented arcs, done in two possible ways.
 The orientations of these circles orient the cross, which has two incoming arms and two outgoing arms which appear in alternating order.
-A Morse function has distinct critical levels, so the cross we know about in the connected component of $f\inv(x_0)$ containing $p_0$ must have its arms connected in $\Sigma_-$ through nonsingular orientation--preserving arcs.
-The connected component of $f\inv(x_0)$ containing $p_0$ must then be a figure 8.
-Thus, the component of $f\inv(\varepsilon)$ containing $p$ is a pair of pants in $\Sigma_-$.
+A Morse function has distinct critical levels, so the cross we know about in $\Sigma_x^p$ must have its arms connected in $\Sigma_x^p$ through nonsingular orientation--preserving arcs.
+We can then see that $\Sigma_x^p$ is a figure 8, and $\varepsilon^p(\Sigma_x)$ is a is a pair of pants in $\Sigma$.
 
 \{FIGURE: SMOOTHING OUT A CROSS AND SADDLE\}
 
+\{FIGURE: NEIGHBOURHOODS OF INDEX 0,1,2 CRIT. PTs\}
 
-Let $\Sigma\times I$ be a 3--manifold with oriented boundary components $\Sigma\times\{0\}=\Sigma_-$ and $\Sigma\times\{1\}=\Sigma_+$, where $\Sigma_-$ has orientation opposite that of $\Sigma$ and $\Sigma_+$.
-Specify a regular value of $f$ in each connected component of $f(\Sigma_-)$ minus the critical values of $f$.
+Let $\Sigma\times I$ be a 3--manifold with oriented boundary components $\Sigma\times\{0\}=\Sigma_0$ and $\Sigma\times\{1\}=\Sigma_1$, where $\Sigma_0$ has orientation opposite that of $\Sigma$ and $\Sigma_1$.
+Let $f$ be a Morse function on $\Sigma_0$ satisfying the assumptions of Definiton \ref{def:morsehandle}.
+
+
+ Specify a regular value of $f$ in each connected component of $f(\Sigma_0)$ minus the critical values of $f$.
 Each of these regular values has preimage a disjoint collection of circles in $\Sigma_-$ which we take to be the attaching spheres of 3--dimensional 2--handles. 
 The resulting object is a 3--manifold with one boundary component of $\Sigma_+$ and the rest corresponding to singular values of $f$.
 To obtain a 3--manifold whose boundary is $\Sigma_+$, we need only fill the boundary components corresponding to the singular values of $f$.

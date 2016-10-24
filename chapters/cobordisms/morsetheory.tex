@@ -12,16 +12,28 @@ The main results from this chapter connect a Stein complex with a handle decompo
 	We denote by $M^a$ the subspace $f\inv(-\infty,a\,]$ where $f$ is a fixed Morse function on $M$.
 \end{defn}
 
+We can expand the interpretation of the index of a critical point via the Morse lemma.
+
+\begin{lem}[Lemma 2.2 of \cite{Miln63}]
+  \label{lem:morselemma}
+  Let $M$ be an $n$--manifold, let $f:M\to\R$ be a Morse function, and let $p$ be an index $i$ critical point of $f$.
+  Then there exists a chart $(U,g=(\xi_0,\dots,\xi_{n-1}))$ around $p$ such that $\xi_j(p)=p_j=0$ for each $j$ and
+  \[
+    g(q) = g(p) - q_0^2 - \cdots - q_{i-1}^2 + q_i^2 + \cdots + q_{n-1}^2
+  \]
+  for each $q$ in $U$.
+\end{lem}
+
 A key question of Morse theory regards how the topology of $M^a$ changes as $a$ passes the critical values of $f$.
 This question is answered by the following two theorems.
 
-\begin{theorem}
+\begin{theorem}[Theorem 3.1 of \cite{Miln63}]
 	\label{thm:morseretract}
 	Let $f:M\to\R$ be a Morse function with no critical values in $(a,b\,]$, $a<b$.
 	If $f\inv[\,a,b\,]$ is compact, then $M^a$ and $M^b$ are diffeomorphic, and $M^b$ deformation retracts onto $M^a$.
 \end{theorem}
 
-\begin{theorem}
+\begin{theorem}[\cite{GompStip}]
 	\label{thm:morsehandle}
 	Let $f:M\to\R$ be a Morse function.
 	Let $p$ be a critical point of $f$ of index $\lambda$ with associated critical value $f(p)=q$.
@@ -29,6 +41,7 @@ This question is answered by the following two theorems.
 \end{theorem}
 
 \begin{defn}
+  \label{def:morsehandle}
 	Let $f:M\to\R$ be a Morse function on a closed $n$--manifold $M$ with critical points $\{p_1,\dots,p_k\}$ of indices $\{\lambda_1,\dots,\lambda_k\}$ and a set $\{t_0,\dots,t_k\}$ of numbers in $\R$ such that
 	\[
 		0\leq t_0 < f(p_1) < t_1 < f(p_2) < \cdots < t_{k-1} < f(p_k) < t_k \leq 1,
