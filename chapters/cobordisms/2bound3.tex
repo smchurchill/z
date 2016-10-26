@@ -5,19 +5,21 @@ This is useful as a jumping off point for the case one dimension higher, that of
 
 Let $\Sigma$ be an oriented surface and $f:\Sigma\to\R$ a Morse function with distinct critical values.
 We begin by examining the preimages of points $x\in\R$, denoting the space $f\inv(x)$ by $\Sigma_x$.
-A space $\Sigma_x$ may not be connected, so we index the connected components by superscript.
+Denote a small interval around $x$ by $\varepsilon(x)=(x-\varepsilon,x+\varepsilon)$, and denote the neighbourhood in $\Sigma$ around $\Sigma_x$ by $f\inv(\varepsilon(x))=\varepsilon(\Sigma_x)$.
+The spaces $\Sigma_x$ and $\varepsilon(\Sigma_x)$ may not be connected, so we index the connected components by superscript.
 Let $p$ be a critical point of $f$ with critical value $f(p)=x$.
 By our assumption that critical values are distinct, $p$ is the only critical point of $f$ in $\Sigma_x$.
 The connected component of $\Sigma_x$ containing $p$ is called the \emph{critical level} at $p$ and is denoted $\Sigma_x^p$.
+The connected component of $\varepsilon(\Sigma_x)$ containing $p$ is called the \emph{critical neighbourhood} at $p$ and is denoted $\varepsilon^p(\Sigma_x)$.
 By the regular value theorem, any regular value pulls back through $f\inv$ to a disjoint collection of oriented circles in $\Sigma$.
-The restriction of $f$ to the components of $\Sigma_x$ that do not contain a critical point has $x$ as a regular value, so the remaining connected components of $\Sigma_x$ are all copies of $S^1$, and we will index them by $\Sigma_x^i$ for $i=1,\dots,k$.
+Likewise, a neighbourhood $\varepsilon(x)$ that contains no critical values of $f$ pulls back to a disjoint collection of annuli in $\Sigma$.
+The restriction of $f$ to the components of $\Sigma_x$ that do not contain a critical point has $x$ as a regular value, so the remaining connected components of $\Sigma_x$ are all copies of $S^1$ that we index by $\Sigma_x^i$ for $i=1,\dots,k$, and their associated neighbourhoods are the annuli $\varepsilon^i(\Sigma_x)$.
 
 The shape of a critical level $\Sigma_x^p$ is determined by the index of $p$.
-Because $f$ is a Morse function whose domain is a surface, its critical points are easily classified by the Morse lemma, Lemma \ref{lem:morselemma}.
+Because $f$ is a Morse function whose domain is a surface, its critical points are easily classified by the Morse lemma (Lemma \ref{lem:morselemma}).
 Locally in $\Sigma$, a critical point of index 0 is a minimum, of index 1 a saddle, and of index 2 a maximum of $f$.
 
-Let $\varepsilon(x)=(x-\varepsilon,x+\varepsilon)$ be an interval containing $x$ and no other critical values of $f$.
-Denote the neighbourhood $f\inv(\varepsilon(x))$ of $\Sigma_x$ by $\varepsilon(\Sigma_x)$, and denote the connected component of $\varepsilon(\Sigma_x)$ containing $p$ by $\varepsilon^p(\Sigma_x)$.
+Let $x$ be a critical value for the critical point $p$ and take $\varepsilon$ to be small enough that $\varepsilon(x)$ contains no critical values other than $x$.
 When $p$ is of index 0 or 2, we can immediately deduce that $\varepsilon^p(\Sigma_x)$ is diffeomorphic to a disc.
 When $p$ is of index 1, the Morse lemma tells us that $\Sigma$ looks like a standard saddle near $p$.
 The intersection of $\Sigma_x^p$ with this saddle is a cross whose centre is $p$.
@@ -26,6 +28,14 @@ The circles above and below the saddle singularity are the result of smoothing o
 The orientations of these circles orient the cross, which has two incoming arms and two outgoing arms which appear in alternating order.
 A Morse function has distinct critical levels, so the cross we know about in $\Sigma_x^p$ must have its arms connected in $\Sigma_x^p$ through nonsingular orientation--preserving arcs.
 We can then see that $\Sigma_x^p$ is a figure 8, and $\varepsilon^p(\Sigma_x)$ is a is a pair of pants in $\Sigma$.
+
+A Stein factorization $f=g\comp h$ is simple to define.
+We first define $h$ on the subspaces $\Sigma_x^i$ of $\Sigma$, i.e.\ the connected levels of $\Sigma$ that do not contain critical points.
+Between every pair of adjacent critical values $x_j < x_k$ there is a maximal interval $(x_j,x_k)$ that contains only regular values.
+This is of the form $\varepsilon(x)$ for $\varepsilon=(x_k-x_j)/2$ and $x=(x_j+x_k)/2$, and the associated neighbourhood in $\Sigma$ is a collection of annuli 
+
+Take $h$ to be a function that crushes the connected components of $\Sigma_x$ to distinct points subject to the constraint that $h(\Sigma_x^i)=h(\Sigma_y^j)$ when $\Sigma_x^i$ and $\Sigma_y^j$ are 
+
 
 The components of $\varepsilon(\Sigma_x)$ that contain no critical points of $f$ are disjoint unions of annuli, one for each circle in $\Sigma_x$.
 Similarly, the preimage of an interval of regular values in $\R$ is the disjoint union of annuli in $\Sigma$.
