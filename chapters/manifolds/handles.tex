@@ -64,18 +64,21 @@ There are two special cases of handle attachment.
 The first is 1--handle attachment, which reduces to investigating the orientations of the attaching maps.
 The second is 4--dimensional 2--handle attachment, which draws on concepts central to knot theory.
 
-Let $M$ be orientable and path--connected with $\pd M$ compact, connected, and nonempty.
-The attaching sphere of a 1--handle is $S^0=\pd \D^1$, which is a pair of points.
-There is a unique isotopy class of embeddings $f_0:S^0\to\pd M$.
-This means that $M\cup_\varphi H^1$ is determined entirely by the framing $f$.
-The normal disc bundle of $f_0(S^0)$ is a bundle over $S^0$, so it is vacuously trivial.
-Using the vector bundle structure of the tubular neighbourhood, we write an embedding of $S^0\times\D^{n-1}\to S^0\times\D^{n-1}$ as a pair of length--preserving linear transformations $\R^{n-1}\to\R^{n-1}$, i.e.\ elements of the orthogonal group $\orth{n-1}{\R}$, each restricted to act on one of the connected components of $S^0\times\D^{n-1}$.
-The determinant of an element of $\orth{n-1}{\R}$ is either $1$ or -$1$, and $\orth{n-1}{\R}$ has two path--connected components corresponding to these two cases.
-Every element of $\orth{n-1}{\R}$ is an embedding $\R^{n-1}\to\R^{n-1}$, so any path in $\orth{n-1}{\R}$ is an isotopy of its endpoints.
-It is then easy to see that are four isotopy classes of our trivialization, and those fall into two types.
-Either both transformations are are orientation preserving (reversing), or one is orientation preserving (reversing) and the other is orientation reversing (preserving).
-Under the first type of automorphism, $M\cup_\varphi H^1$ is a non-orientable manifold.
-Under the second, $M\cup_\varphi H^1$ is orientable.
+\begin{rmk}
+	\label{rmk:1handle}
+	Let $M$ be orientable and path--connected with $\pd M$ compact, connected, and nonempty.
+	The attaching sphere of a 1--handle is $S^0=\pd \D^1$, which is a pair of points.
+	There is a unique isotopy class of embeddings $f_0:S^0\to\pd M$.
+	This means that $M\cup_\varphi H^1$ is determined entirely by the framing $f$.
+	The normal disc bundle of $f_0(S^0)$ is a bundle over $S^0$, so it is vacuously trivial.
+	Using the vector bundle structure of the tubular neighbourhood, we write an embedding of $S^0\times\D^{n-1}\to S^0\times\D^{n-1}$ as a pair of length--preserving linear transformations $\R^{n-1}\to\R^{n-1}$, i.e.\ elements of the orthogonal group $\orth{n-1}{\R}$, each restricted to act on one of the connected components of $S^0\times\D^{n-1}$.
+	The determinant of an element of $\orth{n-1}{\R}$ is either $1$ or -$1$, and $\orth{n-1}{\R}$ has two path--connected components corresponding to these two cases.
+	Every element of $\orth{n-1}{\R}$ is an embedding $\R^{n-1}\to\R^{n-1}$, so any path in $\orth{n-1}{\R}$ is an isotopy of its endpoints.
+	It is then easy to see that are four isotopy classes of our trivialization, and those fall into two types.
+	Either both transformations are are orientation preserving (reversing), or one is orientation preserving (reversing) and the other is orientation reversing (preserving).
+	Under the first type of automorphism, $M\cup_\varphi H^1$ is a non-orientable manifold.
+	Under the second, $M\cup_\varphi H^1$ is orientable.
+\end{rmk}
 
 Let $W$ be a 4--manifold with orientable boundary $M$.
 To attach a 2--handle to $W$, we need an embedding $f_0:S^1\to M$ and a framing $S^1\times\D^2\to\overline{\nu}_{\pd M}f_0(S^1)$.
@@ -129,27 +132,28 @@ For $V$ a solid torus, $mpg(V)$ is very closely linked to the mapping class grou
 \end{proof}
 
 \begin{rmk}
-  The content of these results means that the attachment of a 2--handle to a 4--manifold can be described by an embedding $f_0:S^1\to M$ and an integer $k$ called the \emph{framing constant} that determines the framing automorphism as long as we know what a framing constant of $0$ means.
-  To see this, first notice that $h_M$ can be extended to
-  \[
-	  \begin{array}{cccc}
-		  H_M: & S^1\times\DD & \to & S^1\times\DD \\
-			  & (e^{i\theta}, re^{i\phi}) & \mapsto & (e^{i\theta},re^{i(\phi+\theta)})	
-	  \end{array}
-  \]
-  which represents a generator of $mpg(S^1\times\DD)$.
-  Because $\nu_{\pd M}\,f(S^1)$ is a solid torus, a one-to-one correspondence
-  $\psi$ between $mpg(S^1\times\R^2)$ and the isotopy classes of maps $S^1\times\DD\to\nu_{\pd M}\,f(S^1)$ is determined entirely by $\psi(\id)$.
-  The image of $\psi(\id)$ is called the class of \emph{preferred framings}.
-  Sometimes, there is a canonical class of preferred framings.
-  One important case is when $M$ is $S^3$.
-
-  Let $f_0:S^1\to S^3$ be an embedding.
-  Let $V$ be a solid torus that is a closed tubular neighbourhood of the knot $f_0(S^1)$ in $S^3$.
-  Then there is exactly one isotopy class $[J]$ of longitudes of $V$, unique up to ambient isotopy of $f_0$, such that any curve in $[J]$ bounds a disc in $S^3\setminus V$.
-  Moreover, for any representative $J$ of $[J]$ there is a framing $f_J:S^1\times\DD\to V$ such that $f_J(S^1\times\{\vec{1}\})=J$, and the isotopy class of $[f_J]$ is in one--to--one correspondence with $[J]$.
-  Our canonical choice for $\psi(\id)$ is $[f_J]$, and this generates the rest of the map, i.e.\ $\psi([H_M^k])=[f_J\comp H_M^k]$.
-  The isotopy class of a framing $f:S^1\times\DD\to\overline{\nu}_{S^3}f_0(S^1)$ can then be classified entirely by an integer $k$ that describes the number of meridinal twists it takes to get to $f$ from the preferred one.
-  We call $k$ the \emph{framing constant} for $f$.
+	\label{rmk:2handle}
+	The content of these results means that the attachment of a 2--handle to a 4--manifold can be described by an embedding $f_0:S^1\to M$ and an integer $k$ called the \emph{framing constant} that determines the framing automorphism as long as we know what a framing constant of $0$ means.
+	To see this, first notice that $h_M$ can be extended to
+	\[
+	\begin{array}{cccc}
+		H_M: & S^1\times\DD & \to & S^1\times\DD \\
+		& (e^{i\theta}, re^{i\phi}) & \mapsto & (e^{i\theta},re^{i(\phi+\theta)})	
+	\end{array}
+	\]
+	which represents a generator of $mpg(S^1\times\DD)$.
+	Because $\nu_{\pd M}\,f(S^1)$ is a solid torus, a one-to-one correspondence
+	$\psi$ between $mpg(S^1\times\R^2)$ and the isotopy classes of maps $S^1\times\DD\to\nu_{\pd M}\,f(S^1)$ is determined entirely by $\psi(\id)$.
+	The image of $\psi(\id)$ is called the class of \emph{preferred framings}.
+	Sometimes, there is a canonical class of preferred framings.
+	One important case is when $M$ is $S^3$.
+	
+	Let $f_0:S^1\to S^3$ be an embedding.
+	Let $V$ be a solid torus that is a closed tubular neighbourhood of the knot $f_0(S^1)$ in $S^3$.
+	Then there is exactly one isotopy class $[J]$ of longitudes of $V$, unique up to ambient isotopy of $f_0$, such that any curve in $[J]$ bounds a disc in $S^3\setminus V$.
+	Moreover, for any representative $J$ of $[J]$ there is a framing $f_J:S^1\times\DD\to V$ such that $f_J(S^1\times\{\vec{1}\})=J$, and the isotopy class of $[f_J]$ is in one--to--one correspondence with $[J]$.
+	Our canonical choice for $\psi(\id)$ is $[f_J]$, and this generates the rest of the map, i.e.\ $\psi([H_M^k])=[f_J\comp H_M^k]$.
+	The isotopy class of a framing $f:S^1\times\DD\to\overline{\nu}_{S^3}f_0(S^1)$ can then be classified entirely by an integer $k$ that describes the number of meridinal twists it takes to get to $f$ from the preferred one.
+	We call $k$ the \emph{framing constant} for $f$.
 \end{rmk}
 
