@@ -28,7 +28,6 @@ Attaching an $n$--dimensional $\lambda$--handle to $M$ is the process of joining
 	\label{def:handle}
 	Let $\varphi:\pd\D^\lambda\times\D^\mu\to\pd M$ be an embedding, and consider it to be an attaching map between $M$ and $H^\lambda$.
 	The space $M\cup_\varphi H^\lambda$ is a ``manifold with corners,'' and we smooth those corners immediately smooth in a canonical way as mentioned in Remark \ref{rmk:corners}.
-	We continue to denote the smooth manifold obtained by $M\cup_\varphi H^\lambda$.
 	The attached space $H^\lambda$ is an \emph{$n$--dimensional $\lambda$--handle}, and $M\cup_\varphi H^\lambda$ is the result of an $n$--dimensional \emph{$\lambda$--handle attachment}.
 \end{defn}
 
@@ -61,13 +60,16 @@ There is some specific language that is useful to the description of handle atta
 	The integer $\lambda$ is the \emph{index} of the handle.
 \end{defn}
 
-There are two special cases of handle attachment to discuss.
-First, let $M$ be orientable and path--connected with $\pd M$ compact, connected, and nonempty.
+There are two special cases of handle attachment.
+The first is 1--handle attachment, which reduces to investigating the orientations of the attaching maps.
+The second is 4--dimensional 2--handle attachment, which draws on concepts central to knot theory.
+
+Let $M$ be orientable and path--connected with $\pd M$ compact, connected, and nonempty.
 The attaching sphere of a 1--handle is $S^0=\pd \D^1$, which is a pair of points.
 There is a unique isotopy class of embeddings $f_0:S^0\to\pd M$.
 This means that $M\cup_\varphi H^1$ is determined entirely by the framing $f$.
 The normal disc bundle of $f_0(S^0)$ is a bundle over $S^0$, so it is vacuously trivial.
-Using the vector bundle structure of the tubular neighbourhood, we write an embedding of $S^0\times\D^{n-1}\to S^0\times\D^{n-1}$ as a pair of length--preserving linear transformations $\R^{n-1}\to\R^{n-1}$, i.e.\ elements of $\orth{n-1}{\R}$, each restricted to act on one of the connected components of $S^0\times\D^{n-1}$.
+Using the vector bundle structure of the tubular neighbourhood, we write an embedding of $S^0\times\D^{n-1}\to S^0\times\D^{n-1}$ as a pair of length--preserving linear transformations $\R^{n-1}\to\R^{n-1}$, i.e.\ elements of the orthogonal group $\orth{n-1}{\R}$, each restricted to act on one of the connected components of $S^0\times\D^{n-1}$.
 The determinant of an element of $\orth{n-1}{\R}$ is either $1$ or -$1$, and $\orth{n-1}{\R}$ has two path--connected components corresponding to these two cases.
 Every element of $\orth{n-1}{\R}$ is an embedding $\R^{n-1}\to\R^{n-1}$, so any path in $\orth{n-1}{\R}$ is an isotopy of its endpoints.
 It is then easy to see that are four isotopy classes of our trivialization, and those fall into two types.
@@ -75,7 +77,7 @@ Either both transformations are are orientation preserving (reversing), or one i
 Under the first type of automorphism, $M\cup_\varphi H^1$ is a non-orientable manifold.
 Under the second, $M\cup_\varphi H^1$ is orientable.
 
-Next, let $W$ be a 4--manifold with orientable boundary $M$.
+Let $W$ be a 4--manifold with orientable boundary $M$.
 To attach a 2--handle to $W$, we need an embedding $f_0:S^1\to M$ and a framing $S^1\times\D^2\to\overline{\nu}_{\pd M}f_0(S^1)$.
 The space $S^1\times D^2$ is what we call a solid torus.
 
@@ -92,7 +94,7 @@ The mapping class group of a space $X$ is the group of isotopy classes of automo
 For $V$ a solid torus, $mpg(V)$ is very closely linked to the mapping class group of the torus $T^2 = S^1\times S^1=\pd V$, which is the special linear group $\textrm{SL}_2(\Z)$, the group of $2\times 2$ matrices with integer entries and determinant $\pm 1$.
 \begin{lem}
 	Let $V$ be a solid torus and let $f$ be an automorphism of the torus $\pd V$.
-	Then $h$ extends to an automorphism of $V$ if and only if $f$ maps a meridian to a meridian.	
+	Then $f$ extends to an automorphism of $V$ if and only if $f$ maps a meridian to a meridian.	
 \end{lem}
 
 \begin{lem}
