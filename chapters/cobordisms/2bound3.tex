@@ -9,7 +9,15 @@ This is useful as a jumping off point for the case one dimension higher, that of
 	Then there exists a cobordism of the pair $(\Sigma,\emptyset)$ with an explicit handle decomposition described fully by a Stein complex of $f$.
 \end{theorem}
 
+\begin{figure}
+	\caption{A typical Morse function $T\# T\to\R$.}
+	\centering
+	\includegraphics[height=3cm]{figures/dummy.jpg}
+	\label{fig:typicalmorse}
+\end{figure}
+
 \begin{proof}
+	Figure \ref{fig:typicalmorse} depicts a typical Morse function acting on the closed oriented surface of genus 2, and samples some of the notation we will define initially.
 	We begin by examining the preimages of points $x\in\R$.
 	Denote the space $f\inv(x)$ by $\Sigma_x$, a small interval around $x$ by $\varepsilon(x)=(x-\varepsilon,x+\varepsilon)$, and the neighbourhood in $\Sigma$ around $\Sigma_x$ by $f\inv(\varepsilon(x))=\varepsilon(\Sigma_x)$.
 	The spaces $\Sigma_x$ and $\varepsilon(\Sigma_x)$ may not be connected, so we index the connected components by superscript.
@@ -36,6 +44,21 @@ This is useful as a jumping off point for the case one dimension higher, that of
 	A Morse function has distinct critical levels, so the cross we know about in $\Sigma_x^p$ must have its arms connected in $\Sigma_x^p$ through nonsingular orientation--preserving arcs.
 	We can then see that $\Sigma_x^p$ is a figure 8, and $\varepsilon^p(\Sigma_x)$ is a is a pair of pants in $\Sigma$.
 	
+
+	\begin{figure}
+		\centering
+		\caption{Smoothing a cross into a saddle}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:2dimsteindual}
+	\end{figure}	
+	
+	\begin{figure}
+		\centering
+		\caption{Critical neighbourhoods and regular annuli}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:2critnbhd}
+	\end{figure}
+	
 	This analysis is sufficient to form a handle decomposition for a cobordism of $(\Sigma,\emptyset)$.
 	We begin with the 3--manifold $\Sigma\times\I$ with boundary components $\Sigma_0=\Sigma\times\{0\}$ and $\Sigma_1=\Sigma\times\{1\}$, and let $f:\Sigma_0\to\I$ be a Morse function with distinct critical values $x_i$.
 	The general idea is that we attach handles to $\Sigma_0$, altering that boundary component until it is empty.
@@ -53,6 +76,21 @@ This is useful as a jumping off point for the case one dimension higher, that of
 	The altered boundary described before is therefore a collection of copies of $S^2$, which we take to be the attaching regions of 3--dimensional 3--handles.
 	
 	With these handles attached, we obtain $(\Sigma\times\I)\cup\{\textrm{2--handles}\}\cup\{\textrm{3--handles}\}$, which is a 3--manifold with exactly one boundary component of $\Sigma_1$, i.e. a cobordism of the pair $(\Sigma,\emptyset)$.
+	
+	\begin{figure}
+		\centering
+		\caption{Attaching regions for 2--dimensional 2--handles and 3--handles}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:2dim2handle3handle}
+	\end{figure}
+	
+	\begin{figure}
+		\centering
+		\caption{Stein factorization, Stein complex, and dual decomposition}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:2dimsteindual}
+	\end{figure}
+	
 	
 	The corresponding dual handle decomposition is realized by turning the process upside down.
 	Where we previously had 3--handle attachments with cores $\D^3\times\{\vec{0}\}$ and cocores $\{\vec{0}\}\times\{\vec{0}\}$, we now have 0--handles with cores $\{\vec{0}\}\times\{\vec{0}\}$ and cocores $\D^3\times\{\vec{0}\}$.
@@ -85,9 +123,3 @@ In particular, a vertex $v$ of $G$ that is adjacent to exactly two verticex $u$ 
 To see that the handle decomposition described by this Stein complex graph is equivalent, examine the attaching region of the 1--handle corresponding to $(u,v)$ as it sits inside the boundary of the 0--handle corresponding to $v$.
 This region may be isotoped over the 1--handle corresponding to $(v,w)$, where it ends up in the boundary of the 0--handle corresponding to $w$.
 We are left with a 0--handle $v$ and 1--handle $(v,w)$ that are contractible into $w$.
-
-\{figure: smoothing a cross into a saddle\}
-
-\{figure: neighbourhoods of critical points (index 0,1,2)\}
-
-\{figure: morse function, 2-- and 3--handle attachment\}

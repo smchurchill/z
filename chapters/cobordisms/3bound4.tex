@@ -1,11 +1,11 @@
 \label{sec:3bound4}
 
-To extend the results of the previous section to the case of 3--manifolds bounding 4--manifolds, we consider generic proper maps from closed orientable 3--manifolds into the 2--ball $B^2$.
+To extend the results of the previous section to the case of 3--manifolds bounding 4--manifolds, we consider generic proper smooth maps from closed orientable 3--manifolds into the 2--ball $B^2$.
 Such a map is Morse--like in the sense that its singular set is well behaved, it can be studied via the same techniques as in Section \ref{sec:2bound3}, and we may recover a Stein factorization and Stein complex that define a handle decomposition for a bounding 4--manifold.
 
 \begin{theorem}
 	\label{thm:3bound4}
-	Let $M$ be a closed orientable 3--manifold and $f:M\to \BB$ a proper generic map.
+	Let $M$ be a closed orientable 3--manifold and $f:M\to \BB$ a proper generic smooth map.
 	Then there exists a cobordism of the pair $(M,\emptyset)$ with an explicit handle decomposition described fully by an integer decorated Stein complex of $f$.
 \end{theorem}
 
@@ -15,18 +15,18 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 	This leaves us with a classification of critical values of $f$ into codimension 1 critical values, i.e.\ arcs away from crossings, and codimension 2 critical values, i.e.\ arc crossings.
 	This classification gives $f(s_f)$ a natural structure as a 4--valent planar graph, where the vertex set is given by the set of codimension 2 critical values and the edge set is the collection of codimension 1 critical values.
 	
-
 	We obtain a 4--manifold with boundary $M$ by attaching 2--handles corresponding to the regular regions $R_i$, 3--handles corresponding to codimension 1 singularities, and 4--handles corresponding to codimension 2 singularities.
 	
 	We will first focus on a region $R$ in $\BB$ that is not $R_\infty$.
 	Begin by ``shrinking'' $R$ away from $f(s_f)$ into a space $\D$ that is homeomorphic to $\DD$
 	Every point $x\in D$ has preimage a disjoint collection of copies of $S^1$ by the regular value theorem, giving the preimage $f\inv(\D)$ the structure of a disjoint collection of 1--sphere bundles over $\DD$.
 	As $\DD$ is contractible, these bundles are trivial, and the connected components of $f\inv(\D)$ are solid tori.
-	We indexed the regions by $R_i$, so the disc $\D$ is indexed $\D_i$ and the $k\nth$ solid torus that maps over $D_i$ is denoted $V_{i,k}$.
+	In particular, they are solid tori for which the zero section of the trivial bundle corresponds to a meridinal disc, and for which the preimages of a boundary point yields a collection of longitudes, one for each connected component of $f\inv(\D)$.
+	We indexed the regions by $R_i$ so the disc $\D$ is indexed $\D_i$ and the $k\nth$ solid torus that maps over $D_i$ is denoted $V_{i,k}$.
 	
-	\begin{figure}[h]
-		\caption{A closed sleeve around an arc of codimension 1 critical values}
+	\begin{figure}
 		\centering
+		\caption{A closed sleeve around an arc of codimension 1 critical values}
 		\includegraphics[height=3cm]{figures/dummy.jpg}
 		\label{fig:arcsleeve}
 	\end{figure}
@@ -41,10 +41,10 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 	When $\varepsilon(\alpha)$ pulls back to a pair of pants crossed with an interval, $\alpha$ is called an \emph{indefinite fold}.
 	Otherwise, $\varepsilon(\alpha)$ pulls back to a cup/cap crossed with an interval and $\alpha$ is a \emph{definite fold} in this case.
 	
-	\begin{figure}[h]
-		\caption{A closed sleeve around a codimension 2 critical value}
+	\begin{figure}
 		\centering
-		\includegraphics[height=2cm]{figures/dummy.jpg}
+		\caption{A closed sleeve around a codimension 2 critical value}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
 		\label{fig:isolatesleeve}
 	\end{figure}
 	
@@ -52,20 +52,50 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 	The possible singular fibers over $x$ are cataloged in \cite{Saeki}, and Figure \ref{fig:saekising} displays them.
 	When the singular fibers are disconnected, $f\inv(\varepsilon(x))$ is categorized by the codimension 1 analysis.
 	Otherwise, we can find a full analysis in Section 4.4 of \cite{CostThur08}.
-	In each case, $\varepsilon(x)$ pulls back to a genus 3 handlebody whose boundary is $f\inv(\pd\varepsilon(x))$.
-	It is shown in \cite{CostThur08} that filling in $f\inv(\pd\varepsilon(x))$ with 2--discs and gluing the two genus 3 handlebodies together results in a Heegard splitting of $S^3$.
+	In each case, $\varepsilon(x)$ pulls back to a genus 3 handlebody whose boundary is $f\inv(\pd\,\varepsilon(x))$.
+	It is shown in \cite{CostThur08} that filling in $f\inv(\pd\,\varepsilon(x))$ with 2--discs and gluing the two genus 3 handlebodies together over $f\inv(\pd\,\varepsilon(x))$ results in a Heegard splitting of $S^3$.
 		
 	\begin{figure}
-		\caption{Possible singular fibers of a proper generic smooth map from an orientable 3--manifold to a surface}
 		\centering
-		\includegraphics[height=4cm]{figures/dummy.jpg}
+		\captionsetup{justification=centering}
+		\caption{Possible singular fibers of a proper generic smooth map from an orientable 3--manifold to a surface}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
 		\label{fig:saekising}
 	\end{figure}
 	
-	A full analysis of this situation is considered in , and the critical preimage to such a sleeve has multiple forms.
-	The singular fibers over $x$ are catalogued 
+	We may now begin describing a handle decomposition for a cobordism $W$ of the pair $(M,\emptyset)$.
+	Begin with $M\times\I$, whose boundary is $M_0\sqcup M_1$ with $M_0=M\times\{0\}$ and $M_1 = M\times\{1\}$, and a proper generic smooth map $f:M_0\to\BB$.
+	First, we attach 2--handles over the solid tori $V_{i,k}$ that map over the shrunken regions $D_i$.
+	For a shrunken region $\D_i$, take an arbitrary internal point $x$ and an arbitrary boundary point $y$.
+	Let $V_{i,k}$ be a closed tubular neighbourhood to the $k\nth$ circle that maps over $x$.
+	Take a copy $H_{i,k}^2=\DD\times\DD$ for $V_{i,k}$, and define an attaching map
+	\[
+		\varphi : V_{i,k}\to S^1\times\DD = \pd\DD\times\DD\subset H_{i,k}^2
+	\]
+	by extending the conditions
+	\[
+		\begin{array}{rclr}
+			\varphi(z(V_{i,k})) 	& = & \{1\}\times\DD,	& \\
+			\varphi(f\inv(x))  		& = & S^1\times\{0\},	&\textrm{and} \\ 
+			\varphi(f\inv(y)) 		& = & S^1\times\{1\}, 		&			
+		\end{array}	
+	\]
+	over the bundle structure of $V_{i,k}$.
 	
+	With 2--handles attached, we move onto the preimages of arc sleeves.
+	Let $\varepsilon(\alpha)$ be an arc sleeve, and consider the connected components of $f\inv(\varepsilon(\alpha))$.
+	Figure \ref{fig:arcsleevepre} displays the possible connected components of arc sleeve preimages, each of which has the form of a surface crossed with the interval.
+	The boundary circles of these surfaces at a cross section $\Sigma\times\{t\}$ project through $f$ over the boundaries of shrunken regions, so they are filled with discs that sit inside of attached 2--handles from the previous step.
+	In each case, we obtain a copy of $S^2\times\D^1$ over which we attach a 3--handle.
 	
+	\begin{figure}
+		\centering
+		\caption{Possible connected components of arc sleeve preimages}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:arcsleevepre}
+	\end{figure}
+	
+	Finally, let $x$ be a codimension 2 critical value and let $\varepsilon(x)$ be its sleeve.
 	
 
 
@@ -93,14 +123,6 @@ The image of the singular set of $f$ is, as stated before, a set of arcs in the 
 These arcs separate the plane into connected regions of regular values, and we can choose $f$ so that these regions are all homeomorphic to discs.
 The discs of regular values all pull back through $f$ to open solid tori in $M$.
 We fill in $M_+$ by attaching 2--, 3--, and 4--handles where the attachment instructions are obtained through $f$.
-
-	First, we take care of the regular values of $f$.
-	Let $R_0$ be a disc of regular values, and shrink the region away from the critical values of $f$ slightly.
-	This ``shrunken'' region is topologically closed, and homeomorphic to the closed 2--dimensional disc.
-	Name this ``shrunken region'' by $R$, and take $f\inv (R)$ to be a collection of attaching neighbourhoods for 4--dimensional 2--handles.
-	Take a pair of arbitrary points $p$, $q$ interior to $R$, and let $T$ be an open solid torus that projects over $R$ through $f$.
-	Let the circle $f\inv (p)\cap T$ be an attaching sphere for a 2--handle.
-	The orientation of $\RR$ and the curve $f\inv (q)\cap T$ determines a framing of $f\inv (p)$, and this pair completely determines the 2--handle attached over $f\inv (R)$.
 
 Next, we extend over the codimension 1 singularities.
 An arc $a_0$ of codimension 1 critical values are the image of an arc $s_0$ of critical points of $f$ in $M_+$, and the connected component of $f\inv (a_0)$ containing $s_0$ is an interval crossed with the singularities that occur in the 2--dimensional case.
