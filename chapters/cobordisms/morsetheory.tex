@@ -40,47 +40,28 @@ This question is answered by the following two theorems.
 	If $f\inv[\,q-\varepsilon, q+\varepsilon\,]$ is compact and contains no critical points other than $p$, then $M^{q+\varepsilon}$ is diffeomorphic to $M^{q-\varepsilon}\cup_\varphi H^\lambda$ for some attaching map $\varphi:S^{\lambda-1}\times\D^\mu\to \pd(M^{q-\varepsilon})$.
 \end{theorem}
 
-\begin{defn}
-  \label{def:morsehandle}
-	Let $f:M\to\R$ be a Morse function on a closed $n$--manifold $M$ with critical points $\{p_1,\dots,p_k\}$ of indices $\{\lambda_1,\dots,\lambda_k\}$ and a set $\{t_0,\dots,t_k\}$ of numbers in $\R$ such that
-	\[
-		0\leq t_0 < f(p_1) < t_1 < f(p_2) < \cdots < t_{k-1} < f(p_k) < t_k \leq 1,
-	\]
-	and
-	\[
-		\lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_k.
-	\]
-	The previous theorems guarantee that, for each $i\geq 1$, $f\inv[\,t_{i-1},t_i\,]$ is diffeomorphic to $(f\inv(t_{i-1})\times\I)\cup H^{\lambda_i}$, giving us a realization of $M$ as
-	\[
-		\emptyset = M_0 \subset M_1 \subset M_2 \subset \cdots \subset M_{k-1} \subset M_k = M
-	\]
-	where $M_i$ is obtained from $M_{i-1}$ by attaching a $\lambda_i$--handle.
-	Such a realization is called a \emph{handle decomposition} of $M$.
-\end{defn}
-
-A Morse function $f$ satisfying the requirements to define a handle decomposition actually defines two handle decompositions --- one from $f$ and one from $1-f$.
-The handle decompositions from $f$ and $1-f$ are dual in the sense that every $\lambda$--handle attached in the making of the decomposition from $f$ has a corresponding $\mu$--handle in the decomposition from $1-f$.
-This handle is obtained by reversing the roles of the core and co--core in a given $\lambda$--handle $H^\lambda$ to obtain a $\mu$--handle $H^\mu$.
+Let $f:M\to\R$ be a Morse function on a closed $n$--manifold $M$.
+If $f$ has critical points $\{p_1,\dots,p_k\}$ of indices $\{\lambda_1,\dots,\lambda_k\}$ such that
+\[
+	0\leq t_0 < f(p_1) < t_1 < f(p_2) < \cdots < t_{k-1} < f(p_k) < t_k \leq 1
+\]
+and
+\[
+	\lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_k,
+\]
+then Theorem \ref{thm:morsehandle} guarantees that, for each $i\geq 1$, $f\inv[\,t_{i-1},t_i\,]$ is diffeomorphic to $(f\inv(t_{i-1})\times\I)\cup H^{\lambda_i}$.
+Such a Morse function then defines a handle decomposition
+\[
+	\emptyset = M_0 \subset M_1 \subset M_2 \subset \cdots \subset M_{k-1} \subset M_k = M
+\]
+where $M_i$ is obtained from $M_{i-1}$ by attaching a $\lambda_i$--handle, and the Morse function $1-f$ defines the dual decomposition.
 
 Similar definitions can be made for manifolds with boundary.
 Let $W$ be an $n$--manifold with boundary $\pd W = M_0\sqcup M_1$, where both $M_0$ and $M_1$ are compact.
 The Morse functions on $W$ that extend Theorems \ref{thm:morseretract} and \ref{thm:morsehandle} are those that fix $f(M_0)=0$, $f(M_1)=1$.
 Now, the handle decomposition of $W$ is built on top of the component $M_1\times\{1\}$ of $M_0\times\I$, with $M_0\times\{0\}$ corresponding to the boundary component $M_0$ in the finished product.
 
-Extending the range of a Morse function to $\RR$ yields another class of functions.
-Members of this class exhibit some properties that are desirable for computational purposes.
-Our construction follows the general pattern from \cite{GayKirby14}.
-
-\begin{defn}
-	\label{def:morse2function}
-	A generic smooth function $f:M\to\RR$ with $M$ an $n$--manifold is called a \emph{Morse 2--function}.
-\end{defn}
-
-In a similar fashion to basic Morse functions, assume that $M$ is closed and require that the image of $f$ is contained inside of $\DD\subset\RR$.
-
-As stated before, we are using Morse theory to realize handle decompositions.
-Our methods either use a Morse function $\Sigma\to[0,1]$ where $\Sigma$ is a 2--manifold or a Morse 2--function $M\to\DD$ where $M$ is a 3--manifold.
-In these cases we introduce a factorization of our functions that yields the second construction alluded to at the beginning of this section.
+We use Stein factorizations and complexes to get our hands on explicit handle decompositions.
 
 \begin{defn}
 	\label{def:stein}
@@ -89,15 +70,7 @@ In these cases we introduce a factorization of our functions that yields the sec
 	The intermediate space $S$ is called the \emph{Stein complex} of the factorization.
 \end{defn}
 
-The Stein complex of a proper function $f:X\to Y$ can be thought of as the quotient space of $X$ by a particular relation $\sim$.
-For a pair of points $x_1$, $x_2$ in $X$ with $f(x_1)=f(x_2)=y$, we would define $x_1\sim x_2$ if $x_1$ and $x_2$ are in the same connected component of $f\inv(y)$.
+The Stein complex of a proper function $f:X\to Y$ is the quotient space of $X$ by a particular relation $\sim$.
+For a pair of points $x_1$, $x_2$ in $X$ with $f(x_1)=f(x_2)=y$, we define $x_1\sim x_2$ if $x_1$ and $x_2$ are in the same connected component of $f\inv(y)$.
 
-Of primary interest are Morse functions $\Sigma\to[0,1]$ with $\Sigma$ a surface and Morse 2--functions $M\to\DD$ with $M$ a 3--manifold.
-At this point we are delving into our main results, so we begin assuming $\Sigma$ and $M$ are oriented.
-To ensure a Stein factorization, a convenient assumption to make is that the manifold in question is compact.
-We go even further and make the stronger assumption that $\Sigma$ and $M$ are each closed.
-
-When these assumptions are made and $f$ is a Morse function or Morse 2--function from an appropriate manifold, the regular value theorem guarantees that the preimage of a regular value of $f$ is the disjoint union of oriented circles.
-This gives way to the general idea behind our algorithms.
-The particulars of a Stein complex for a Morse function $\Sigma\to[0,1]$ or a Morse 2--function $M\to\DD$ are explored in the next two sections.
-We then use the Stein complex as a set of instructions for constructing cobordisms for the pairs $(\Sigma,\emptyset)$ and $(M,\emptyset)$.
+The particulars of a Stein complex are explored in the next two sections, where our ultimate goal is to use the Stein complex as a set of instructions for constructing explicit cobordisms.

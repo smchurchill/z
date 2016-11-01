@@ -157,3 +157,40 @@ For $V$ a solid torus, $mpg(V)$ is very closely linked to the mapping class grou
 	We call $k$ the \emph{framing constant} for $f$.
 \end{rmk}
 
+It is desirable to describe a manifold entirely via handle attachments.
+For this we define the general notion of a decomposition.
+
+\begin{defn}
+	\label{def:morsehandle}
+	Let $W$ be a compact $n$--manifold.
+	The boundary $\pd W$ will be taken to be a disjoint pair $M_0\sqcup M_1$, neither of which is necessarily nonempty.
+	Describe $W$ as a chain of inclusions
+	\[
+		M_0 \times\I = W_0 \subset W_1 \subset W_2 \subset \cdots \subset W_{k-1} \subset W_k = W
+	\]
+	where $W_i$ is obtained from $W_{i-1}$ by attaching a handle and $M_0$ is identified with $M_0\times \{0\}$.
+	This is called a \emph{handle decomposition} of the pair $(W,M_0)$.
+\end{defn}
+
+Our handle decompositions usually arise from Morse functions as discussed in Chapter \ref{cha:cobordisms}.
+In general, attaching maps may be isotoped in order to inject more structure into a handle decomposition.
+
+\begin{prop}[Proposition 4.2.7 of \cite{GompStip}]
+	\label{prop:incrindex}
+	Any handle decomposition of the compact pair $(W,M_0)$ can be modified so that handles are attached in order of increasing index.
+	Handles of the same index can be attached in any order.	
+\end{prop}
+
+Because a $\lambda$--handle is also a $\mu$--handle of the same dimension, any handle decomposition actually defines a pair of dual decompositions.
+
+\begin{defn}
+	Let $W$ be a compact manifold with $\pd W = M_0 \sqcup M_1$ and handle decomposition
+	\[
+		M_0\times\I = W_0 \subset W_1 \subset W_2 \subset \cdots \subset W_{k-1} \subset W_k = W.
+	\]
+	By attaching a copy of $M_1 \times\I$ to $M_1$ and removing the collar $M_0\times\I$, we obtain a handle decomposition of the pair $(W,M_1)$.
+	Each $\lambda$--handle in the decomposition of $(W,M_0)$ gives us a $\mu$--handle in the decomposition of $(W,M_1)$ that can be seen by reversing the roles of the core and cocore within the handle.
+	The decomposition obtained is called the \emph{dual handle decomposition} of the pair $(W,M_1)$.
+\end{defn}
+
+Notice that if the handles of a decomposition are attached in order of increasing index, then the handles of the dual decomposition are as well.

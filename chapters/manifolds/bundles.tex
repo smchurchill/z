@@ -48,8 +48,8 @@ The ultimate construction in this section is the tubular neighbourhood of a subm
 	and its image $z(B)$ in $E$.
 	Note that the compatibility condition on local trivialization guarantees that the zero section is well defined.
 	
-	For $\beta$ a $k$--vector bundle, we can form a new object called a \emph{$k$--disc bundle} by restricting the fibres of $\beta$ to the set of vectors of length at most 1.
-	The machinery we build for vector bundles is applicable to disc bundles via restriction.
+	For $\beta$ a $k$--vector bundle, we can form new objects called \emph{$k$--disc bundles} and \emph{$(k-1)$--sphere bundles} by restricting the fibres of $\beta$ to of vectors of length at most 1 or exactly 1.
+	The machinery we build for vector bundles can be restricted to apply to either of these constructions.
 \end{defn}
 
 \begin{defn}[Bundle Isomorphism]
@@ -126,36 +126,7 @@ Similar to the tubular neighbourhood is the collar of a manifold's boundary.
 
 Note that the collar is actually a fibre bundle with base $\pd M$, fibre $\HH^1$, and trivial structure.
 This allows us to relate our future results on tubular neighbourhoods to include collars.
-In particular, tubular neighbourhoods are unique up to a fibre-preserving isotopy.
-Let's define precisely what that means.
-
-\begin{defn}[Homotopy]
-	\label{def:homotopy}
-	Let $f,g:X\to M$ be smooth maps between smooth manifolds.
-	Denote the closed unit interval $[0,1]$ by $\I$.
-	A function 
-	\[
-		\begin{array}{cccc}
-			H: & X\times \I & \to & M \\
-			   & (x,t)	& \mapsto & H_t(x)
-		\end{array}
-	\]
-	with $H_0(x)=f(x)$ and $H_1(x)=g(x)$ is a \emph{homotopy} between $f$ and $g$.
-	If a homotopy exists, then $f$ and $g$ are \emph{homotopic}.
-	Less formally, $f$ and $g$ being homotopic means that one can be continuously deformed into the other.
-	The topological spaces $X$ and $M$ are \emph{homotopy equivalent} if there exist continuous maps $f:X\to M$ and $g:M\to X$ for which $g\comp f$ is homotopic to $\ident{X}$ and $f\comp g$ is homotopic to $\ident{M}$.
-	
-	Because we are primarily interested in smooth functions to build our machinery, we extend our definition of homotopy to a smooth version.
-	With the notation above, a smooth map $H:X\times[0,1]\to M$ with $H_0(x)=f(x)$ and $H_1(x)=g(x)$ is a \emph{smooth homotopy} between $f$ and $g$.
-	If a smooth homotopy exists, then $f$ and $g$ are \emph{smoothly homotopic}.
-	
-	Let $M$ be a manifold and $X\subset M$ a subspace that is not necessarily a submanifold.
-	A continuous map $F:M\times\I\to M$ such that, for every $m$ in $M$ and $x$ in $X$, $F(m,0)=m$, $F(m,1)\in X$, and $F(x,1)=x$, is called a \emph{deformation retraction}, and the subspace $X$ is called a \emph{deformation retract} of $M$.
-	Note that a deformation retraction is a homotopy equivalence between $M$ and $X$, so a deformation retraction from $M$ onto $X$ exists if and only if $M$ and $X$ are homotopic.
-\end{defn}
-
-A homotopy through embeddings is called an isotopy.
-This is useful in general for comparing embedded submanifolds.
+In particular, tubular neighbourhoods are unique up to a fibre-preserving isotopy, which we define now.
 
 \begin{defn}[Isotopy]
 	\label{def:isotopy}
@@ -195,7 +166,7 @@ This is useful in general for comparing embedded submanifolds.
 	 is an \emph{isotopy of tubular neighbourhoods}, and the tubular neighbourhoods $(X,f)$ and $(X,g)$ are \emph{isotopic}.
 \end{defn}
 
-This leads into our uniqueness result for tubular neighbourhoods.
+This lets us precisely state our uniqueness result for tubular neighbourhoods.
 
 \begin{theorem}[Uniqueness of Tubular Neighbourhoods, Theorem 3.3.1 of \cite{Kosi93}]
 	\label{prop:uniquenesstubularneighbourhood}

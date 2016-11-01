@@ -1,8 +1,8 @@
 \begin{defn}[Smooth Map]
 	\label{def:smoothmap}
-	Let $(X,\{U_\alpha,f_\alpha\})$ and $(M,\{V_\beta,g_\beta\})$ be smooth $n$-- and $k$--manifolds respectively and let $\varphi:X\to M$ be a map between them.
-	If, for any $\alpha$ and $\beta$, the composition $g_\beta\comp \varphi\comp f_\alpha\inv$ is smooth as a map $\RRN\to\R^k$, then we say $\varphi$ is \emph{smooth} as a map between manifolds.
-	If $\varphi$ is smooth and a well-defined $\varphi\inv$ exists and is smooth, then $\varphi$ is called a \emph{diffeomorphism} between manifolds.
+	Let $(X,\{U_\alpha,\varphi_\alpha\})$ and $(M,\{V_\beta,\psi_\beta\})$ be smooth $n$-- and $k$--manifolds respectively and let $f:X\to M$ be a map between them.
+	If, for any $\alpha$ and $\beta$, the composition $\psi_\beta\comp f\comp \varphi_\alpha\inv$ is smooth as a map $\RRN\to\R^k$, then we say $f$ is \emph{smooth} as a map between manifolds.
+	If $f$ is smooth and a well-defined $f\inv$ exists and is smooth, then $f$ is called a \emph{diffeomorphism} between manifolds.
 	We say that manifolds are \emph{diffeomorphic} if there exists a diffeomorphism between them.
 \end{defn}
 
@@ -67,55 +67,106 @@ In normal calculus, the derivative is a linearization of a function.
 We use tangent spaces to define the derivative of a smooth map between manifolds because tangent spaces are used as pointwise linearizations of manifolds.
 
 \begin{defn}[Differential]
-	Let $\varphi:X\to M$ be a smooth map between manifolds.
-	Let $p\in X$ and $\varphi(p)=q\in M$.
-	The \emph{differential} of $\varphi$ at $p$ is a linear map defined as
+	Let $f:X\to M$ be a smooth map between manifolds.
+	Let $p\in X$ and $f(p)=q\in M$.
+	The \emph{differential} of $f$ at $p$ is a linear map defined as
 	\[
 		\begin{array}{crcl}
-			d\varphi_p: & T_p X & \to & T_q M\\
-					  & \gamma'(0) & \mapsto & (\varphi\comp\gamma)'(0),
+			df_p: & T_p X & \to & T_q M\\
+					  & \gamma'(0) & \mapsto & (f\comp\gamma)'(0),
 		\end{array}
 	\]
-	and the element $(\varphi\comp\gamma)'(0)$ of $T_q M$ is the \emph{pushforward} of the tangent vector $\gamma'(0)$.
+	and the element $(f\comp\gamma)'(0)$ of $T_q M$ is the \emph{pushforward} of the tangent vector $\gamma'(0)$.
 \end{defn}
 
 We also classify smooth maps between manifolds.
 This classification helps us define a submanifold and provides some of the groundwork for defining handles in the next chapter.
 
 \begin{defn}[Embedding]
-	Let $\varphi:X\to M$ be a smooth map between manifolds.
-	The \emph{rank} of $\varphi$ at the point $p\in X$ is the rank of the differential $d\varphi$.
-	This is computed as the rank of the Jacobian matrix of $\varphi$ under a coordinate system or as the dimension of $\varphi(T_p X)\subset T_q M$.
-	If $\varphi$ has rank $k$ for every $p$ in $X$, then $\varphi$ is of \emph{constant rank} and we say $\rk\varphi=k$.
-	 
-	If $d\varphi$ is injective at $p$, then $\varphi$ is \emph{immersive} at $p$.
-	If $\varphi$ is an everywhere immersive, then it is an \emph{immersion}.
-	This is equivalent to $\rk{\varphi}=\dimn X$.
-	If $d\varphi$ is surjective at $p$, then $\varphi$ is \emph{submersive} at $p$, and $p$ is a \emph{regular point} of $\varphi$.
-	If $\varphi$ is everywhere submersive, then it is a \emph{submersion}.
-	This is equivalent to $\rk{\varphi}=\dimn M$.
-	If $\rk{d\varphi_p}$ is less than maximal, then $p$ is a \emph{critical point} of $\varphi$.
-	In this case, $\varphi(p)=q$ is a \emph{critical value}.
-	The set of critical points of $f$ in $M$ is called the \emph{singular set} of $M$.
-	If $p$ is a critical point and $d^2\varphi_p$ is of less than full rank, then $p$ is a \emph{degenerate critical point}.
-	A smooth map with no degenerate critical points is called \emph{generic}.
-	A point $q\in M$ whose preimage $\varphi\inv(q)$ consists entirely of regular points is called a \emph{regular value}.
+	Let $f:X\to M$ be a smooth map between manifolds.
+	The \emph{rank} of $f$ at the point $p\in X$ is the rank of the differential $df$.
+	This is computed as the rank of the Jacobian matrix of $f$ under a coordinate system or as the dimension of $f(T_p X)\subset T_q M$.
+	If $f$ has rank $k$ for every $p$ in $X$, then $f$ is of \emph{constant rank} and we say $\rk f=k$.
 	
-	If $\varphi$ is an injective immersion that is a homeomorphism onto its image $\varphi(X)\subset M$ under the subspace topology, then it is a \emph{smooth embedding} or just \emph{embedding}.
+	If $df$ is injective at $p$, then $f$ is \emph{immersive} at $p$.
+	If $f$ is an everywhere immersive, then it is an \emph{immersion}.
+	This is equivalent to $\rk{f}=\dimn X$.
+	If $df$ is surjective at $p$, then $f$ is \emph{submersive} at $p$, and $p$ is a \emph{regular point} of $f$.
+	If $f$ is everywhere submersive, then it is a \emph{submersion}.
+	This is equivalent to $\rk{f}=\dimn M$.
+	If $\rk{df_p}$ is less than maximal, then $p$ is a \emph{critical point} of $f$.
+	In this case, $f(p)=q$ is a \emph{critical value}.
+	The set of critical points of $f$ in $M$ is called the \emph{singular set} of $M$, and is denoted $s_f$.
+	If $p$ is a critical point and $d^2f_p$ is of less than full rank, then $p$ is a \emph{degenerate critical point}.
+	A point $q\in M$ whose preimage $f\inv(q)$ consists entirely of regular points is called a \emph{regular value}.
+	
+	If $f$ is an injective immersion that is a homeomorphism onto its image $f(X)\subset M$ under the subspace topology, then it is a \emph{smooth embedding} or just \emph{embedding}.
 	
 	Let $X\subset M$ where $M$ is a manifold, and let $i:X\into M$ be inclusion.
 	If $i$ is an embedding, then we call $X$ an \emph{embedded submanifold} or \emph{submanifold} of $M$.
 	One can consider $X$ to be a manifold with smooth structure induced by the embedding.
 \end{defn}
 
-To clarify what it means for a smooth function to be generic, consider a smooth function with degenerate critical points.
-Through small perturbations, these degenerate critical points can be turned into non-degenerate critical points.
-Because such a function could be easily `fixed,' we say that a generic smooth map is one whose critical points are all non-degenerate.
+Maps that are ``close enough'' to one another via perturbation tend to be considered equivalent.
+
+\begin{defn}[Homotopy]
+	\label{def:homotopy}
+	Let $f,g:X\to M$ be smooth maps between smooth manifolds.
+	Denote the closed unit interval $[0,1]$ by $\I$.
+	A continuous function 
+	\[
+		\begin{array}{cccc}
+			H: & X\times \I & \to & M \\
+			& (x,t)	& \mapsto & H_t(x)
+		\end{array}
+	\]
+	with $H_0(x)=f(x)$ and $H_1(x)=g(x)$ is a \emph{homotopy} between $f$ and $g$.
+	If a homotopy exists, then $f$ and $g$ are \emph{homotopic}.
+	Less formally, $f$ and $g$ being homotopic means that one can be continuously deformed into the other.
+	The topological spaces $X$ and $M$ are \emph{homotopy equivalent} if there exist continuous maps $f:X\to M$ and $g:M\to X$ for which $g\comp f$ is homotopic to $\ident{X}$ and $f\comp g$ is homotopic to $\ident{M}$.
+	
+	Because we are primarily interested in smooth functions to build our machinery, we extend our definition of homotopy to a smooth version.
+	With the notation above, a smooth map $H:X\times[0,1]\to M$ with $H_0(x)=f(x)$ and $H_1(x)=g(x)$ is a \emph{smooth homotopy} between $f$ and $g$.
+	If a smooth homotopy exists, then $f$ and $g$ are \emph{smoothly homotopic}.
+	
+	Let $M$ be a manifold and $X\subset M$ a subspace that is not necessarily a submanifold.
+	A continuous map $F:M\times\I\to M$ such that, for every $m$ in $M$ and $x$ in $X$, $F(m,0)=m$, $F(m,1)\in X$, and $F(x,1)=x$, is called a \emph{deformation retraction}, and the subspace $X$ is called a \emph{deformation retract} of $M$.
+	Note that a deformation retraction is a homotopy equivalence between $M$ and $X$, so a deformation retraction from $M$ onto $X$ exists if and only if $M$ and $X$ are homotopic.
+\end{defn}
+
+\begin{prop}
+	For a fixed pair $(X,M)$ of spaces, homotopy and smooth homotopy are equivalence relations on the space of maps $X\to M$.
+\end{prop}
+
+This also allows us to classify the properties of a smooth map.
+
+\begin{defn}
+	Let $f:X\to M$ be a smooth map between manifolds.
+	A property of $f$ is \emph{stable under perturbation} if, for any smooth homotopy $H:X\times \I\to M$ with $H_0=f$, there is an $\varepsilon>0$ such that $H_t$ has that property for any $t<\varepsilon$.
+	
+	A property of $f$ is considered \emph{generic} if $f$ does not have that property but is homotopic to a map for which that property is stable.
+\end{defn}
+
+The property of having no degenerate critical points is our standard model for genericity.
+Consider the map $f:\R\to\R$, $f(x)=x^3$.
+The critical point at $x=0$ is degenerate, but it may be perturbed into a pair of nondegenerate critical points or into a map with no critical points, and for either of these maps that property is stable.
+Because degenerate critical points may be easily ``fixed,'' we use \emph{generic} to refer to a map whose critical points are all nondegenerate.
+Another generic property is transversality.
+
+\begin{defn}
+	Let $M$ be a $n$--manifold with submanifolds $X$ and $Y$.
+	We say that $X$ and $Y$ are \emph{transvere} as submanifolds if, at every intersection point, the sum of their tangent spaces is the tangent space of $M$ at that point.
+	Symbolically, transversality is denoted by $\pitchfork$ and the condition is stated by $X\pitchfork Y$ if and only if for every point $p\in X\cap Y$, $T_p X\oplus T_p Y=T_p M$.
+	We may also say that an intersection point is, itself, \emph{transverse}, or that $X$ and $Y$ \emph{intersect transversally at a point}.	
+\end{defn}
+
+Transversality of a pair of submanifolds $X$, $Y$ is stable under small perturbations of the embeddings $X\into M$ and $Y\into M$.
+If $\dim X + \dim Y = M$, the intersection points $X$ and $Y$ that are not transverse may be perturbed into stable transversality or non-intersection.
 
 \begin{theorem}[Regular Value Theorem]
-	Let $\varphi:X\to M$ be a smooth map between manifolds.
+	Let $f:X\to M$ be a smooth map between manifolds.
 	Let $q\in M$ be a regular value.
-	The preimage $\varphi\inv(q)$ is either empty or a $(\dimn{X}-\dimn{M})$--submanifold of $X$.
+	The preimage $f\inv(q)$ is either empty or a $(\dimn{X}-\dimn{M})$--submanifold of $X$.
 \end{theorem}
 
 \begin{prop}

@@ -5,8 +5,8 @@ This is useful as a jumping off point for the case one dimension higher, that of
 
 \begin{theorem}
 	\label{thm:2bound3}
-	Let $\Sigma$ be an oriented surface and $f:\Sigma\to\R$ a Morse function with distinct critical values.
-	Then there exists a cobordism of the pair $(\Sigma,\emptyset)$ with an explicit handle decomposition decribed fully by a Stein complex of $f$.
+	Let $\Sigma$ be a closed orientable surface and $f:\Sigma\to[\,0,1\,]$ a proper Morse function with distinct critical values.
+	Then there exists a cobordism of the pair $(\Sigma,\emptyset)$ with an explicit handle decomposition described fully by a Stein complex of $f$.
 \end{theorem}
 
 \begin{proof}
@@ -68,12 +68,11 @@ This is useful as a jumping off point for the case one dimension higher, that of
 	Then $h$ is the quotient map $\Sigma\to \Sigma/\!\!\sim$ where the points of $\Sigma/\!\!\sim$ are the subspaces $\Sigma_x^*$, and $g$ is the map $\Sigma/\!\!\sim\, \to\R$ defined by $g(\Sigma_x^*)=x$.
 
 	The Stein complex $S=\Sigma/\!\!\sim$ can be viewed as a graph $G$.
-	We first realize a vertex set, then an edge set, and then perform a small modification to the graph that reflects the dual handle decomposition defined earlier.
-	Each critical value $x=f(p)$ has an associated critical level $\Sigma_x^p$ in $S$, and possibly some copies of $S^1$ given by $\Sigma_x^i$.
-	We take the associated points $h(\Sigma_x)$ in $S$ to be the vertex set $v(G)$.
+	A critical value $x=f(p)$ has an associated critical level $\Sigma_x^p$ in $S$, and possibly some copies of $S^1$ given by $\Sigma_x^i$.
+	We take the associated points $h(\Sigma_x)$ in $S$ for each critical value to be the vertex set $v(G)$.
 	For a pair of adjacent critical values $x_{j}$, $x_{j+1}$, an appropriate choice of $\varepsilon$ and $x\in(x_{j},x_{j+1})$ yields a collection of regular annuli $\varepsilon(\Sigma_x)$ in $\Sigma$ that has boundary inside of $\Sigma_{x_{j}}\cup\Sigma_{x_{j+1}}$.
 	In $S$, we find $h(\varepsilon(\Sigma_x))$ to consist of 1--dimensional strands that connect components of $\Sigma_{x_{j}}$ and $\Sigma_{x_{j+1}}$.
-	The set of pairs $(v,w)$ of connected subspaces with $v\in\Sigma_{x_{j}}$ and $w\in\Sigma_{x_{j+1}}$ such that $v$ and $w$ are connected by a strand in $S$ will form the edge set $e(G)$.
+	The set of pairs $(v,w)$ of connected subspaces with $v\in\Sigma_{x_{j}}$ and $w\in\Sigma_{x_{j+1}}$ such that $v$ and $w$ are connected by a strand in $S$ forms the edge set $e(G)$.
 	
 	At this point, $G$ corresponds exactly to the dual handle decomposition given earlier.
 	For each vertex of $G$ we get a 0--handle.
