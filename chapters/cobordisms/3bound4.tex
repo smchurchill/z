@@ -33,13 +33,13 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 	
 	Next, consider an arc $\alpha$ of codimension 1 critical values that separates a pair of regions $R_i$ and $R_j$ where either $i$ or $j$ may be $\infty$.
 	As when we considered regions, $\alpha$ has been shrunk away from the codimension 2 critical values it connects.
-	Let $\varepsilon(\alpha)$ be a closed ``sleeve'' around $\alpha$ whose boundary intersects the boundary of each of $D_i$ and $D_j$ as in Figure \ref{fig:arcsleeve}.
+	Let $\nbhd{\alpha}$ be a closed ``sleeve'' around $\alpha$ whose boundary intersects the boundary of each of $D_i$ and $D_j$ as in Figure \ref{fig:arcsleeve}.
 	The restriction of $f$ to the preimage of a linear transversal to $\alpha$ that connects $D_i$ and $D_j$ is, itself, a Morse function.
-	The intersection with $\alpha$ is a critical point of this restriction, and the same techniques from the proof of Theorem \ref{thm:2bound3} may be applied to $f\inv(\varepsilon(\alpha))$.
-	We find that $f\inv(\varepsilon(\alpha))$ is the union of either a single copy of $P\times\I$, the interval crossed with a pair of pants, or a single copy of $E\times\I$, the interval crossed with a cup or cap extremum, with a disjoint collection of $A\times\I$, the interval crossed with an annulus.
+	The intersection with $\alpha$ is a critical point of this restriction, and the same techniques from the proof of Theorem \ref{thm:2bound3} may be applied to $f\inv(\nbhd{\alpha})$.
+	We find that $f\inv(\nbhd{\alpha})$ is the union of either a single copy of $P\times\I$, the interval crossed with a pair of pants, or a single copy of $E\times\I$, the interval crossed with a cup or cap extremum, with a disjoint collection of $A\times\I$, the interval crossed with an annulus.
 	In particular, whenever one of the regions that $\alpha$ separates is $R_\infty$, we get the situation where the singular fiber over a point in $\alpha$ is a single point corresponding to a cup/cap extremum.
-	When $\varepsilon(\alpha)$ pulls back to a pair of pants crossed with an interval, $\alpha$ is called an \emph{indefinite fold}.
-	Otherwise, $\varepsilon(\alpha)$ pulls back to a cup/cap crossed with an interval and $\alpha$ is a \emph{definite fold} in this case.
+	When $\nbhd{\alpha}$ pulls back to a pair of pants crossed with an interval, $\alpha$ is called an \emph{indefinite fold}.
+	Otherwise, $\nbhd{\alpha}$ pulls back to a cup/cap crossed with an interval and $\alpha$ is a \emph{definite fold} in this case.
 	
 	\begin{figure}
 		\centering
@@ -48,13 +48,12 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 		\label{fig:isolatesleeve}
 	\end{figure}
 	
-	Let $x$ be a codimension 2 critical value $x$ and $\varepsilon(x)$ its neighbourhood that intersects the boundaries of the shrunken regions and arc sleeves it is near as in Figure \ref{fig:isolatesleeve}.
+	Let $x$ be a codimension 2 critical value $x$ and $\nbhd{x}$ its neighbourhood that intersects the boundaries of the shrunken regions and arc sleeves it is near as in Figure \ref{fig:isolatesleeve}.
 	The possible singular fibers over $x$ are cataloged in \cite{Saeki}, and Figure \ref{fig:saekising} displays them.
-	When the singular fibers are disconnected, $f\inv(\varepsilon(x))$ is categorized by the codimension 1 analysis.
+	When the singular fibers are disconnected, $f\inv(\nbhd{x})$ is categorized by the codimension 1 analysis.
 	Otherwise, we can find a full analysis in Section 4.4 of \cite{CostThur08}.
-	In each case, $\varepsilon(x)$ pulls back to a genus 3 handlebody whose boundary is $f\inv(\pd\,\varepsilon(x))$.
-	It is shown in \cite{CostThur08} that filling in $f\inv(\pd\,\varepsilon(x))$ with 2--discs and gluing the two genus 3 handlebodies together over $f\inv(\pd\,\varepsilon(x))$ results in a Heegard splitting of $S^3$.
-		
+	In each case, $\nbhd{x}$ pulls back to a genus 3 handlebody whose boundary is $f\inv(\pd\,\nbhd{x})$.
+	
 	\begin{figure}
 		\centering
 		\captionsetup{justification=centering}
@@ -83,7 +82,7 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 	over the bundle structure of $V_{i,k}$.
 	
 	With 2--handles attached, we move onto the preimages of arc sleeves.
-	Let $\varepsilon(\alpha)$ be an arc sleeve, and consider the connected components of $f\inv(\varepsilon(\alpha))$.
+	Let $\nbhd{\alpha)$ be an arc sleeve, and consider the connected components of $f\inv(\nbhd{\alpha))$.
 	Figure \ref{fig:arcsleevepre} displays the possible connected components of arc sleeve preimages, each of which has the form of a surface crossed with the interval.
 	The boundary circles of these surfaces at a cross section $\Sigma\times\{t\}$ project through $f$ over the boundaries of shrunken regions, so they are filled with discs that sit inside of attached 2--handles from the previous step.
 	In each case, we obtain a copy of $S^2\times\D^1$ over which we attach a 3--handle.
@@ -95,7 +94,35 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 		\label{fig:arcsleevepre}
 	\end{figure}
 	
-	Finally, let $x$ be a codimension 2 critical value and let $\varepsilon(x)$ be its sleeve.
+	Finally, let $x$ be a codimension 2 critical value and let $\nbhd{x}$ be its sleeve.
+	We find $x$ at the crossing of a pair of strands of codimension 1 critical values, and those strands are classified as definite or indefinite folds.
+	The analysis of the codimension 2 critical value is then broken down into cases:
+	\begin{enumerate}[label=(\alph*)]
+		\item \label{case:defdef} The crossing of definite folds.
+		\item \label{case:defin} The crossing of a definite fold with an indefinite fold.
+		\item \label{case:inindisc} The crossing of indefinite folds with disconnected singular fiber.
+		\item \label{case:ininconn} The crossing of indefinite folds with connected singular fiber.
+	\end{enumerate}
+	Cases \ref{case:defdef}, \ref{case:defin}, and \ref{case:inindisc} are simply extensions of the codimension 1 situation, except we are at the point where we may attach 4--handles to close off these boundary components.
+	The folds and singular fibers in case \ref{case:ininconn} are said to be \emph{interactive}, rather than the \emph{uninteractive} cases \ref{case:defdef}, \ref{case:defin}, and \ref{case:inindisc}.
+	Definite folds are necessarily uninteractive, so pairing 
+	
+	First, however, we look at the connected components of $f\inv(\nbhd{x})$ that do not contain a singular fiber over $x$.
+	These connected components are made from regular fibers, i.e.\ circles, that project over $\nbhd{x}$, i.e. a 2--disc.
+	As in the case of regions of regular values, they are solid tori $V_{x,k}$, using the same naming convention that has been established for solid tori that map over the regions $D_i$.
+	Seeing $V_{x,k}$ as a circle bundles over $\nbhd{x}$, we can see that longitudes of $V_{x,k}$ map over the boundary $\pd\nbhd{x}$.
+	This means the longitudinal circles of $V_{x,k}$ were filled with discs when we attached 2-- and 3--handles.
+	Taking the union of these discs to be meridinal in another solid torus $V_{x,k}^*$, we now have a Heegaard splitting $V_{x,k}\cup_\varphi V_{x,k}^*$ where $\varphi$ takes a longitude of $V_{x,k}$ to a meridian of $V_{x,k}^*$.
+	This is the standard genus 1 Heegaard splitting of $S^3$, so we have a copy of $S^3\times\D^0$ over which we may attach a 4--handle.
+
+	The component that comes from a definite fold is of the form $\DD\times\I$ as in the case of codimension 1 critical values.
+	The 2--sphere boundary of this shape is filled with 2--discs from our 2-- and 3--handles, so this shape is the adjunction of a pair of 3--discs glued over their boundary.
+	This is the genus 0 Heegaard splitting of $S^3$, so we have a copy of $S^3\times\D^0$ over which we may attach a 4--handle.
+	
+	An uninteractive singular fiber that comes from an indefinite fold is the figure 8, and the preimage $f\inv(\nbhd{x})$ is a tubular neighbourhood of the singular fiber whose boundary maps over $\pd\nbhd{x}$.
+	 
+	It is shown in \cite{CostThur08} that filling in $f\inv(\pd\,\nbhd{x})$ with 2--discs and gluing the two genus 3 handlebodies together over $f\inv(\pd\,\nbhd{x})$ results in a Heegard splitting of $S^3$.
+	
 	
 
 
