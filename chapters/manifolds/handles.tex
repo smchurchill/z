@@ -60,6 +60,79 @@ There is some specific language that is useful to the description of handle atta
 	The integer $\lambda$ is the \emph{index} of the handle.
 \end{defn}
 
+It is desirable to describe a manifold entirely via handle attachments.
+For this we define the general notion of a decomposition.
+
+\begin{defn}
+	\label{def:morsehandle}
+	Let $W$ be a compact $n$--manifold.
+	The boundary $\pd W$ will be taken to be a disjoint pair $M_0\sqcup M_1$, neither of which is necessarily nonempty.
+	Describe $W$ as a chain of inclusions
+	\[
+	M_0 \times\I = W_0 \subset W_1 \subset W_2 \subset \cdots \subset W_{k-1} \subset W_k = W
+	\]
+	where $W_i$ is obtained from $W_{i-1}$ by attaching a handle and $M_0$ is identified with $M_0\times \{0\}$.
+	This is called a \emph{handle decomposition} of the pair $(W,M_0)$.
+\end{defn}
+
+\begin{defn}
+	A manifold $M$ with handle decomposition that consists of exactly one of 0--handle and $g$ 1--handles is called a \emph{handlebody} of \emph{genus} $g$.
+	Let $V$ be a handlebody of genus $g$.
+	A simple closed curve $J$ in $\pd V$ that bounds a 2--disc in $V$ is called a \emph{meridian}.
+	A simple closed curve in $\pd V$ is called \emph{essential} if it is not homotopic to a point.
+\end{defn}
+
+An essential role of the handlebody is in the definition of a Heegaard splitting of a closed, orientable 3--manifold.
+
+\begin{defn}	
+	Let $U$ and $V$ be 3--dimensional handlebodies of genus $g$ and let $f:\pd U\to \pd V$ be an orientation reversing diffeomorphism.
+	The adjunction $M=U\cup_f V$ is a \emph{Heegaard splitting} of $M$, the shared boundary $H = \pd U = \pd V$ is the \emph{Heegaard surface} of the splitting, and the shared genus of $U$ and $V$ is the \emph{genus} of the splitting as well.
+	
+	Let $M=U\cup_f V$ be a Heegaard splitting of $M$, and $\alpha$, $\beta$ a pair of simple, closed, essential curves in $H$.
+	If $\alpha$ is a meridian of $U$, $\beta$ is a meridian of $V$, and $|\alpha\cap\beta|=1$, then the pair $(\alpha,\beta)$ is a \emph{stabilization} of the splitting.
+\end{defn}
+
+\begin{theorem}
+	Let $M$ be a closed, orientable 3--manifold.
+	If $M$ has a Heegaard splitting of genus 0, then $M$ is homeomorphic to $S^3$.
+\end{theorem}
+
+\begin{theorem}
+	Let $M$ be a closed, orientable 3--manifold with a Heegaard splitting $U\cup_f V$ of genus $g$.
+	If there is a collection of $g$ disjoint stabilizations for the Heegaard splitting of $M$, then $M$ is homeomorphic to $S^3$.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+	
+\end{proof}
+
+\begin{theorem}
+	Every closed, orientable 3--manifold can be realized as a Heegaard splitting.
+\end{theorem}
+
+Our handle decompositions usually arise from Morse functions as discussed in Chapter \ref{cha:cobordisms}.
+In general, attaching maps may be isotoped in order to inject more structure into a handle decomposition.
+
+\begin{prop}[Proposition 4.2.7 of \cite{GompStip}]
+	\label{prop:incrindex}
+	Any handle decomposition of the compact pair $(W,M_0)$ can be modified so that handles are attached in order of increasing index.
+	Handles of the same index can be attached in any order.	
+\end{prop}
+
+Because a $\lambda$--handle is also a $\mu$--handle of the same dimension, any handle decomposition actually defines a pair of dual decompositions.
+
+\begin{defn}
+	Let $W$ be a compact manifold with $\pd W = M_0 \sqcup M_1$ and handle decomposition
+	\[
+	M_0\times\I = W_0 \subset W_1 \subset W_2 \subset \cdots \subset W_{k-1} \subset W_k = W.
+	\]
+	By attaching a copy of $M_1 \times\I$ to $M_1$ and removing the collar $M_0\times\I$, we obtain a handle decomposition of the pair $(W,M_1)$.
+	Each $\lambda$--handle in the decomposition of $(W,M_0)$ gives us a $\mu$--handle in the decomposition of $(W,M_1)$ that can be seen by reversing the roles of the core and cocore within the handle.
+	The decomposition obtained is called the \emph{dual handle decomposition} of the pair $(W,M_1)$.
+\end{defn}
+
+Notice that if the handles of a decomposition are attached in order of increasing index, then the handles of the dual decomposition are as well.
+
 There are two special cases of handle attachment.
 The first is 1--handle attachment, which reduces to investigating the orientations of the attaching maps.
 The second is 4--dimensional 2--handle attachment, which draws on concepts central to knot theory.
@@ -85,10 +158,9 @@ To attach a 2--handle to $W$, we need an embedding $f_0:S^1\to M$ and a framing 
 The space $S^1\times D^2$ is what we call a solid torus.
 
 \begin{defn}
-	A space $V$ that is homeomorphic to $S^1\times\DD$ is called a \emph{solid torus}.	
-	A simple closed curve $J$ in $\pd V$ that bounds a 2--disc in $V$ is called a \emph{meridian}.
-	A simple closed curve $K$ in $\pd V$ that intersects a meridian at a single point is called a \emph{longitude}.
-	Note that there are infinitely many isotopy classes of longitudes of $V$, whereas there's exactly one isotopy class of meridians.
+	A space $V$ that is homeomorphic to $S^1\times\DD$ is called a \emph{solid torus}, and is a handlebody of genus 1.
+	A simple closed curve $J$ in $\pd V$ that intersects a meridian at a single point is called a \emph{longitude}.
+	Note that a longitude is essential in $V$, and that there are infinitely many isotopy classes of longitudes of $V$, whereas there's exactly one isotopy class of meridians.
 \end{defn}
 
 Once an embedding $f_0:S^1\to M$ is chosen, $W\cup_\varphi H^2$ is determined by the framing $f:S^1\times \D^2\to \overline{\nu}_{\pd M}\,f(S^1)$.
@@ -156,51 +228,3 @@ For $V$ a solid torus, $mpg(V)$ is very closely linked to the mapping class grou
 	The isotopy class of a framing $f:S^1\times\DD\to\overline{\nu}_{S^3}f_0(S^1)$ can then be classified entirely by an integer $k$ that describes the number of meridinal twists it takes to get to $f$ from the preferred one.
 	We call $k$ the \emph{framing constant} for $f$.
 \end{rmk}
-
-It is desirable to describe a manifold entirely via handle attachments.
-For this we define the general notion of a decomposition.
-
-\begin{defn}
-	\label{def:morsehandle}
-	Let $W$ be a compact $n$--manifold.
-	The boundary $\pd W$ will be taken to be a disjoint pair $M_0\sqcup M_1$, neither of which is necessarily nonempty.
-	Describe $W$ as a chain of inclusions
-	\[
-		M_0 \times\I = W_0 \subset W_1 \subset W_2 \subset \cdots \subset W_{k-1} \subset W_k = W
-	\]
-	where $W_i$ is obtained from $W_{i-1}$ by attaching a handle and $M_0$ is identified with $M_0\times \{0\}$.
-	This is called a \emph{handle decomposition} of the pair $(W,M_0)$.
-\end{defn}
-
-\begin{defn}
-	A manifold $M$ with handle decomposition that consists of exactly one of 0--hangle and $g$ 1--handles is called a \emph{handlebody} of \emph{genus} $g$.
-	Let $U$ and $V$ be 3--dimensional handlebodies of genus $g$ and let $f:\pd U\to \pd V$ be an orientation reversing diffeomorphism.
-	The adjunction $M=U\cup_f V$ is a \emph{Heegaard splitting} of $M$, the shared boundary $H = \pd U = \pd V$ is the \emph{Heegaard surface} of the splitting, and the shared genus of $U$ and $V$ is the \emph{genus} of the splitting as well.
-\end{defn}
-
-\begin{theorem}
-	Every closed, orientable 3--manifold can be realized as a Heegaard splitting.
-\end{theorem}
-
-Our handle decompositions usually arise from Morse functions as discussed in Chapter \ref{cha:cobordisms}.
-In general, attaching maps may be isotoped in order to inject more structure into a handle decomposition.
-
-\begin{prop}[Proposition 4.2.7 of \cite{GompStip}]
-	\label{prop:incrindex}
-	Any handle decomposition of the compact pair $(W,M_0)$ can be modified so that handles are attached in order of increasing index.
-	Handles of the same index can be attached in any order.	
-\end{prop}
-
-Because a $\lambda$--handle is also a $\mu$--handle of the same dimension, any handle decomposition actually defines a pair of dual decompositions.
-
-\begin{defn}
-	Let $W$ be a compact manifold with $\pd W = M_0 \sqcup M_1$ and handle decomposition
-	\[
-		M_0\times\I = W_0 \subset W_1 \subset W_2 \subset \cdots \subset W_{k-1} \subset W_k = W.
-	\]
-	By attaching a copy of $M_1 \times\I$ to $M_1$ and removing the collar $M_0\times\I$, we obtain a handle decomposition of the pair $(W,M_1)$.
-	Each $\lambda$--handle in the decomposition of $(W,M_0)$ gives us a $\mu$--handle in the decomposition of $(W,M_1)$ that can be seen by reversing the roles of the core and cocore within the handle.
-	The decomposition obtained is called the \emph{dual handle decomposition} of the pair $(W,M_1)$.
-\end{defn}
-
-Notice that if the handles of a decomposition are attached in order of increasing index, then the handles of the dual decomposition are as well.
