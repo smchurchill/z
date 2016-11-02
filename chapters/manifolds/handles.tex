@@ -78,8 +78,14 @@ For this we define the general notion of a decomposition.
 \begin{defn}
 	A manifold $M$ with handle decomposition that consists of exactly one of 0--handle and $g$ 1--handles is called a \emph{handlebody} of \emph{genus} $g$.
 	Let $V$ be a handlebody of genus $g$.
-	A simple closed curve $J$ in $\pd V$ that bounds a 2--disc in $V$ is called a \emph{meridian}.
 	A simple closed curve in $\pd V$ is called \emph{essential} if it is not homotopic to a point.
+	A simple closed curve $J$, essential in $\pd V$, that bounds a 2--disc in $V$ is called a \emph{meridian}.
+	The properly embedded disc in $V$ that has boundary $J$ is called a \emph{meridinal disc}.
+	
+	The special case of the oriented genus 1 handlebody is called a \emph{solid torus}.
+	More generally, any space that is homeomorphic to $S^1\times\DD$ is called a \emph{solid torus}.
+	A simple closed curve $J$ in the boundary of a solid torus that intersects a meridian at a single point is called a \emph{longitude}.
+	Note that a longitude is essential in a solid torus and that there are infinitely many isotopy classes of longitudes, whereas there's exactly one isotopy class of meridians.
 \end{defn}
 
 An essential role of the handlebody is in the definition of a Heegaard splitting of a closed, orientable 3--manifold.
@@ -87,31 +93,79 @@ An essential role of the handlebody is in the definition of a Heegaard splitting
 \begin{defn}	
 	Let $U$ and $V$ be 3--dimensional handlebodies of genus $g$ and let $f:\pd U\to \pd V$ be an orientation reversing diffeomorphism.
 	The adjunction $M=U\cup_f V$ is a \emph{Heegaard splitting} of $M$, the shared boundary $H = \pd U = \pd V$ is the \emph{Heegaard surface} of the splitting, and the shared genus of $U$ and $V$ is the \emph{genus} of the splitting as well.
+	We also denote a Heegaard splitting by the pair $(M,H)$.
 	
-	Let $M=U\cup_f V$ be a Heegaard splitting of $M$, and $\alpha$, $\beta$ a pair of simple, closed, essential curves in $H$.
-	If $\alpha$ is a meridian of $U$, $\beta$ is a meridian of $V$, and $|\alpha\cap\beta|=1$, then the pair $(\alpha,\beta)$ is a \emph{stabilization} of the splitting.
+	We use the notion of equivalence between splittings from \cite{SchlWald}.
+	A pair of splittings $(M,H)$ and $(M,H')$ are \emph{equivalent} if there is a homeomorphism $h:M\to M$ such that $h$ is isotopic to $\ident{M}$ and $\restr{h}{H}$ is an orientation preserving homeomorphism $H\to H'$.
+\end{defn}
+
+\begin{figure}
+		\centering
+		\caption{Genus 1 Heegaard splitting of $S^3$}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:genus1split}
+\end{figure}
+
+\begin{ex}
+	The 3--sphere $S^3$ has a number of standard Heegaard splittings.
+	The first is the genus 0 splitting, usually realized by considering $S^3$ as the set of unit vectors in $\R^4$.
+	Take the Heegaard surface to be the intersection of $S^3$ with the $xyz$--hyperplane in $\R^4$.
+	This yields a copy of $S^2$ that separates $S^3$ into two connected components.
+	This splitting is written $(S^3,S^2)$
+	
+	The second is the genus 1 splitting, which is visualized using the realization of $S^3$ as the one--point compactification of $\R^3$.
+	Take solid tori $U$ and $V$ and identify $\pd U$ with $\pd V$ by the homeomorphism that swaps a meridian with a longitude.
+	The adjunction that results is $S^3$, and the pair of solid tori are displayed in Figure \ref{fig:genus1split}.
+	This splitting is written $(S^3,T^2)$
+\end{ex}
+
+The standard genus 1 splitting is used in conjunction with the connect sum operation in the following essential theorems.
+
+\begin{defn}
+	Let $M$ and $X$ be closed, oriented $n$--manifolds.
+	The manifold obtained by identifying the boundary $(n-1)$--spheres of $M\setminus\B^3$ and $X\setminus\B^3$ in an orientation reversing way is called the \emph{connected sum} of $M$ and $X$ and is denoted $M\# X$.
 \end{defn}
 
 \begin{theorem}
-	Let $M$ be a closed, orientable 3--manifold.
-	If $M$ has a Heegaard splitting of genus 0, then $M$ is homeomorphic to $S^3$.
+	Connected sum is a well defined operation up to homeomorphism on the space of closed, oriented $n$--manifolds with identity element $S^n$.
 \end{theorem}
-
-\begin{theorem}
-	Let $M$ be a closed, orientable 3--manifold with a Heegaard splitting $U\cup_f V$ of genus $g$.
-	If there is a collection of $g$ disjoint stabilizations for the Heegaard splitting of $M$, then $M$ is homeomorphic to $S^3$.
-\end{theorem}
-
-\begin{proof}[Proof sketch]
 	
-\end{proof}
+\begin{defn}
+	Let $(M,H)=U\cup_f V$ be a Heegaard splitting of $M$.
+	The connected sum $(M,H)\#(S^3,T^2)$ is called an \emph{elementary stabilization} of $M$, and itself is a splitting $(M,H\#T^2)$.
+	A Heegaard splitting $(M,H)$ is called a \emph{stabilization} of another splitting $(M,H')$ if it obtained from $(M,H')$ via a finite number of elementary stabilizations.
+\end{defn}
 
-\begin{theorem}
-	Every closed, orientable 3--manifold can be realized as a Heegaard splitting.
+Consider the meridians of the solid tori in the standard genus 1 splitting of $S^3$.
+They each bound a disc in their respective handlebody, and they intersect in exactly one point.
+We would expect to be able to find such curves in any 3--manifold obtained as a stabilization.
+	
+\begin{defn}	
+	Let $(M,H)=U\cup_f V$ be a Heegaard splitting of genus $g$ and $\alpha$, $\beta$ a pair of simple, closed, essential curves in $H$.
+	Let $\alpha$ be a meridian of $U$ and $\beta$ be a meridian of $V$ with associated meridinal discs $D_\alpha$, $D_\beta$.
+	If $\alpha$ and $\beta$ intersect exactly once, then the pair $(\alpha,\beta)$ is a \emph{meridinal pair} or \emph{destabilizing pair} of the splitting.
+\end{defn}
+
+To see why $(\alpha,\beta)$ would be called a destabilizing pair, remove a tubular neighbourhood of $D_\alpha$ from $U$ and add it to $V$ as a 2--handle along a tubular neighbourhood of $\alpha$ in $H$.
+In the proof of Waldhausen's Theorem it is shown that these altered spaces $U'$ and $V'$ are handlebodies of genus $g-1$ with $H'= \pd U' = \pd V'$, and $(M,H)$ is a stabilization $(M,H')\#(S^3,T^2)$.
+
+\begin{theorem}[Waldhausen's theorem, \cite{SchlWald}]
+	If $(S^3,H)$ and $(S^3,H')$ are Heegaard splittings of the same genus, then they are equivalent.
 \end{theorem}
 
-Our handle decompositions usually arise from Morse functions as discussed in Chapter \ref{cha:cobordisms}.
-In general, attaching maps may be isotoped in order to inject more structure into a handle decomposition.
+In the proof of Waldhausen's theorem, destabilizing pairs are identified and reduced.
+We don't need the full power of Waldhausen's theorem, just a weaker version to use in Chapter \ref{cha:cobordisms}.
+
+\begin{theorem}
+	\label{thm:lilwald}
+	Let $M$ be a closed, orientable 3--manifold with a Heegaard splitting $(M,H)$ of genus $g$.
+	If there is a collection of $g$ disjoint destabilizing pairs in $H$, then $M$ is homeomorphic to $S^3$.
+\end{theorem}
+
+Heegaard splittings are a specific application of a specific type of handle decomposition.
+General decompositions do not arise in this way.
+They usually occur naturally by studying Morse functions as discussed in Chapter \ref{cha:cobordisms}.
+More structure can be demanded out of a decomposition with handles of varying indices by isotoping attaching maps.
 
 \begin{prop}[Proposition 4.2.7 of \cite{GompStip}]
 	\label{prop:incrindex}
@@ -155,14 +209,7 @@ The second is 4--dimensional 2--handle attachment, which draws on concepts centr
 
 Let $W$ be a 4--manifold with orientable boundary $M$.
 To attach a 2--handle to $W$, we need an embedding $f_0:S^1\to M$ and a framing $S^1\times\D^2\to\overline{\nu}_{\pd M}f_0(S^1)$.
-The space $S^1\times D^2$ is what we call a solid torus.
-
-\begin{defn}
-	A space $V$ that is homeomorphic to $S^1\times\DD$ is called a \emph{solid torus}, and is a handlebody of genus 1.
-	A simple closed curve $J$ in $\pd V$ that intersects a meridian at a single point is called a \emph{longitude}.
-	Note that a longitude is essential in $V$, and that there are infinitely many isotopy classes of longitudes of $V$, whereas there's exactly one isotopy class of meridians.
-\end{defn}
-
+Recall that the space $S^1\times D^2$ is what we call a solid torus.
 Once an embedding $f_0:S^1\to M$ is chosen, $W\cup_\varphi H^2$ is determined by the framing $f:S^1\times \D^2\to \overline{\nu}_{\pd M}\,f(S^1)$.
 To investigate possible framings, we consider the \emph{mapping class group} of the solid torus.
 The mapping class group of a space $X$ is the group of isotopy classes of automorphisms $X$, and it is denoted $mpg(X)$.

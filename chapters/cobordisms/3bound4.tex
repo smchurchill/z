@@ -82,7 +82,7 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 	over the bundle structure of $V_{i,k}$.
 	
 	With 2--handles attached, we move onto the preimages of arc sleeves.
-	Let $\nbhd{\alpha)$ be an arc sleeve, and consider the connected components of $f\inv(\nbhd{\alpha))$.
+	Let $\nbhd{\alpha}$ be an arc sleeve, and consider the connected components of $f\inv(\nbhd{\alpha})$.
 	Figure \ref{fig:arcsleevepre} displays the possible connected components of arc sleeve preimages, each of which has the form of a surface crossed with the interval.
 	The boundary circles of these surfaces at a cross section $\Sigma\times\{t\}$ project through $f$ over the boundaries of shrunken regions, so they are filled with discs that sit inside of attached 2--handles from the previous step.
 	In each case, we obtain a copy of $S^2\times\D^1$ over which we attach a 3--handle.
@@ -120,9 +120,23 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 	This is the genus 0 Heegaard splitting of $S^3$, so we have a copy of $S^3\times\D^0$ over which we may attach a 4--handle.
 	
 	An uninteractive singular fiber that comes from an indefinite fold is the figure 8, and the preimage $f\inv(\nbhd{x})$ is $P\times \I$, as in the codimension 1 case.
+	Here, we find a Heegaard splitting of genus 2 with two destabilizing pairs, showing that the splitting is a splitting of $S^3$, and we can attach a 4--handle to it by Theorem \ref{thm:lilwald}.
+	An appropriate choice of meridians in $f\inv(\nbhd{x})$ would be a pair of curves that run from cuff to waist along the inside of each of the legs in the pair of pants, crest the waist, then down the outside of the legs back to the cuff.
+	Meridians for the solid filled by our 2-- and 3--handles would run around the cuffs of each leg.
+	Figure \ref{fig:destabpants} illustrates the idea.
 	
-	 
-	It is shown in \cite{CostThur08} that filling in $f\inv(\pd\,\nbhd{x})$ with 2--discs and gluing the two genus 3 handlebodies together over $f\inv(\pd\,\nbhd{x})$ results in a Heegard splitting of $S^3$.
+	\begin{figure}
+		\centering
+		\caption{Destabilizing pairs for the pair of pants}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:destabpants}
+	\end{figure}
+	
+	This leaves us with the case of interacting indefinite folds.
+	The full analysis is covered in Section 4.4 of \cite{CostThur08}.
+	They show that filling in $f\inv(\pd\,\nbhd{x})$ with 2--discs and gluing the two genus 3 handlebodies together over $f\inv(\pd\,\nbhd{x})$ results in a Heegard splitting of $S^3$ by explicitly finding 3 destabilizing pairs.
+	We again attach 4--handles over 3--spheres and we are done.
+	
 	
 	
 
