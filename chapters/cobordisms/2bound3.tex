@@ -23,14 +23,14 @@ This is useful as a jumping off point for the case one dimension higher, that of
 	The spaces $\Sigma_x$ and $\varepsilon(\Sigma_x)$ may not be connected, so we index the connected components by superscript.
 	Let $p$ be a critical point of $f$ with critical value $f(p)=x$.
 	By our assumption that critical values are distinct, $p$ is the only critical point of $f$ in $\Sigma_x$.
-	The connected component of $\Sigma_x$ containing $p$ is called the \emph{critical level} at $p$ and is denoted $\Sigma_x^p$.
+	The connected component of $\Sigma_x$ containing $p$ is called the \emph{singular fiber} at $p$ and is denoted $\Sigma_x^p$.
 	The connected component of $\varepsilon(\Sigma_x)$ containing $p$ is called the \emph{critical neighbourhood} at $p$ and is denoted $\varepsilon^p(\Sigma_x)$.
-	By the regular value theorem, any regular value pulls back through $f\inv$ to a disjoint collection of oriented circles in $\Sigma$.
+	By the regular value theorem, any regular value pulls back through $f\inv$ to a disjoint collection of circles in $\Sigma$m called \emph{regular fibers}.
 	Likewise, a neighbourhood $\varepsilon(x)$ that contains no critical values of $f$ pulls back to a disjoint collection of annuli in $\Sigma$.
 	The restriction of $f$ to the components of $\Sigma_x$ that do not contain a critical point has $x$ as a regular value, so the remaining connected components of $\Sigma_x$ are all copies of $S^1$ that we index by $\Sigma_x^i$ for $i=1,\dots,k$, and their associated neighbourhoods are the annuli $\varepsilon^i(\Sigma_x)$.
-	When referring to an arbitrary connected subspace of $\Sigma_x$ that could be the critical level $\Sigma_x^p$ or a circle $\Sigma_x^i$, we will use the notation $\Sigma_x^*$.
+	When referring to an arbitrary connected subspace of $\Sigma_x$ that could be the singular fiber $\Sigma_x^p$ or a regular fiber $\Sigma_x^i$, we will use the notation $\Sigma_x^*$.
 	
-	The shape of a critical level $\Sigma_x^p$ is determined by the index of $p$.
+	The shape of a singular fiber $\Sigma_x^p$ is determined by the index of $p$.
 	Because $f$ is a Morse function whose domain is a surface, its critical points are easily classified by the Morse lemma (Lemma \ref{lem:morselemma}).
 	Locally in $\Sigma$, a critical point of index 0 is a minimum, of index 1 a saddle, and of index 2 a maximum of $f$.
 	
@@ -38,10 +38,10 @@ This is useful as a jumping off point for the case one dimension higher, that of
 	When $p$ is of index 0 or 2, we can immediately deduce that $\varepsilon^p(\Sigma_x)$ is diffeomorphic to a disc.
 	When $p$ is of index 1, the Morse lemma tells us that $\Sigma$ looks like a standard saddle near $p$.
 	The intersection of $\Sigma_x^p$ with this saddle is a cross whose centre is $p$.
-	For $y\in\varepsilon(x)$, $y$ is a regular value whose preimage is a disjoint union of oriented circles.
+	For $y\in\varepsilon(x)$, $y$ is a regular value whose preimage is a disjoint union of circles.
 	The circles above and below the saddle singularity are the result of smoothing out the cross into a pair of oriented arcs, done in two possible ways.
 	The orientations of these circles orient the cross, which has two incoming arms and two outgoing arms which appear in alternating order.
-	A Morse function has distinct critical levels, so the cross we know about in $\Sigma_x^p$ must have its arms connected in $\Sigma_x^p$ through nonsingular orientation--preserving arcs.
+	A Morse function has distinct singular fibers, so the cross we know about in $\Sigma_x^p$ must have its arms connected in $\Sigma_x^p$ through nonsingular orientation--preserving arcs.
 	We can then see that $\Sigma_x^p$ is a figure 8, and $\varepsilon^p(\Sigma_x)$ is a is a pair of pants in $\Sigma$.
 	
 
@@ -72,7 +72,7 @@ This is useful as a jumping off point for the case one dimension higher, that of
 	The boundary circles of the discs are $\Sigma_{t_i-\varepsilon}$ and $\Sigma_{t_i+\varepsilon}$ for each $i$.
 	
 	There are now intervals about each critical point that we know, from our analysis above, pull back to discs, annuli, and pairs of pants.
-	Each of these subsurfaces have circle boundaries that correspond to the circles $\Sigma_{t_i-\varepsilon}$ and $\Sigma_{t_i+\varepsilon}$ which were capped with discs in the previous step.
+	Each of these subsurfaces have circle boundaries that correspond to the regular fibers $\Sigma_{t_i-\varepsilon}$ and $\Sigma_{t_i+\varepsilon}$ which were capped with discs in the previous step.
 	The altered boundary described before is therefore a collection of copies of $S^2$, which we take to be the attaching regions of 3--dimensional 3--handles.
 	
 	With these handles attached, we obtain $(\Sigma\times\I)\cup\{\textrm{2--handles}\}\cup\{\textrm{3--handles}\}$, which is a 3--manifold with exactly one boundary component of $\Sigma_1$, i.e. a cobordism of the pair $(\Sigma,\emptyset)$.
@@ -106,7 +106,7 @@ This is useful as a jumping off point for the case one dimension higher, that of
 	Then $h$ is the quotient map $\Sigma\to \Sigma/\!\!\sim$ where the points of $\Sigma/\!\!\sim$ are the subspaces $\Sigma_x^*$, and $g$ is the map $\Sigma/\!\!\sim\, \to\R$ defined by $g(\Sigma_x^*)=x$.
 
 	The Stein complex $S=\Sigma/\!\!\sim$ can be viewed as a graph $G$.
-	A critical value $x=f(p)$ has an associated critical level $\Sigma_x^p$ in $S$, and possibly some copies of $S^1$ given by $\Sigma_x^i$.
+	A critical value $x=f(p)$ has an associated singular fiber $\Sigma_x^p$ in $S$, and possibly some copies of $S^1$ given by $\Sigma_x^i$.
 	We take the associated points $h(\Sigma_x)$ in $S$ for each critical value to be the vertex set $v(G)$.
 	For a pair of adjacent critical values $x_{j}$, $x_{j+1}$, an appropriate choice of $\varepsilon$ and $x\in(x_{j},x_{j+1})$ yields a collection of regular annuli $\varepsilon(\Sigma_x)$ in $\Sigma$ that has boundary inside of $\Sigma_{x_{j}}\cup\Sigma_{x_{j+1}}$.
 	In $S$, we find $h(\varepsilon(\Sigma_x))$ to consist of 1--dimensional strands that connect components of $\Sigma_{x_{j}}$ and $\Sigma_{x_{j+1}}$.

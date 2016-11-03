@@ -20,10 +20,15 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 	
 	We will first focus on a region $R$ in $\BB$ that is not $R_\infty$.
 	Begin by ``shrinking'' $R$ away from $f(s_f)$ into a space $\D$ that is homeomorphic to $\DD$
-	Every point $x\in D$ has preimage a disjoint collection of copies of $S^1$ by the regular value theorem, giving the preimage $f\inv(\D)$ the structure of a disjoint collection of 1--sphere bundles over $\DD$.
-	As $\DD$ is contractible, these bundles are trivial, and the connected components of $f\inv(\D)$ are solid tori.
-	In particular, they are solid tori for which the zero section of the trivial bundle corresponds to a meridinal disc, and for which the preimages of a boundary point yields a collection of longitudes, one for each connected component of $f\inv(\D)$.
-	We indexed the regions by $R_i$ so the disc $\D$ is indexed $\D_i$ and the $k\nth$ solid torus that maps over $D_i$ is denoted $V_{i,k}$.
+	Every point of $\D$ has preimage a disjoint collection of circles by the regular value theorem, so we centre our analysis on an arbitrary regular value $x$ and its regular fibers, where $M_{x,k}$ denotes the $k\nth$ regular fiber mapped over $x$ by $f$.
+	An appropriate closed tubular neighbourhood of $M_{x,k}$ will consist entirely of regular fibers that map into $\D$ and has the structure of a closed 2--disc bundle over the circle, hence is a solid torus.
+	The neighbourhood can be extended to enclose the entirety of $f\inv(\D)$.
+	
+	In summary, an arbitrary point $x_i$ is chosen from a closed 2--disc $D_i$ which itself is taken as a shrinking of an open region $R_i$.
+	For each $k$, the $k\nth$ regular fiber $M_{i,k}$ over $x_i$ is taken as the zero section of a 2--disc bundles that map over $D_i$.
+	Such a 2--disc bundles is an open solid tori, and the $k\nth$ bundle is denoted $V_{i,k}$.
+	Of particular importance in $V_{i,k}$ is the zero section, which is a regular fiber that maps over a point interior to $\D_i$, and the isotopy class for a longitude found as the $k\nth$ regular fiber over a point in the boundary of $\D_i$.
+	This pair is used to completely determine an attaching map for 4--dimensional 2--handle attached over $V_{i,k}$.
 	
 	\begin{figure}
 		\centering
@@ -32,15 +37,17 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 		\label{fig:arcsleeve}
 	\end{figure}
 	
-	Next, consider an arc $\alpha$ of codimension 1 critical values that separates a pair of regions $R_i$ and $R_j$ where either $i$ or $j$ may be $\infty$.
+	Consider an arc $\alpha$ of codimension 1 critical values that separates a pair of regions $R_i$ and $R_j$ where either $i$ or $j$ may be $\infty$.
 	As when we considered regions, $\alpha$ has been shrunk away from the codimension 2 critical values it connects.
-	Let $\nbhd{\alpha}$ be a closed ``sleeve'' around $\alpha$ whose boundary intersects the boundary of each of $D_i$ and $D_j$ as in Figure \ref{fig:arcsleeve}.
+	Let $\nbhd{\alpha}$ be a closed ``sleeve'' around $\alpha$ whose boundary intersects the boundaries of $D_i$ and $D_j$ as in Figure \ref{fig:arcsleeve}.
 	The restriction of $f$ to the preimage of a linear transversal to $\alpha$ that connects $D_i$ and $D_j$ is, itself, a Morse function.
 	The intersection with $\alpha$ is a critical point of this restriction, and the same techniques from the proof of Theorem \ref{thm:2bound3} may be applied to $f\inv(\nbhd{\alpha})$.
-	We find that $f\inv(\nbhd{\alpha})$ is the union of either a single copy of $P\times\I$, the interval crossed with a pair of pants, or a single copy of $E\times\I$, the interval crossed with a cup or cap extremum, with a disjoint collection of $A\times\I$, the interval crossed with an annulus.
-	In particular, whenever one of the regions that $\alpha$ separates is $R_\infty$, we get the situation where the singular fiber over a point in $\alpha$ is a single point corresponding to a cup/cap extremum.
-	When $\nbhd{\alpha}$ pulls back to a pair of pants crossed with an interval, $\alpha$ is called an \emph{indefinite fold}.
-	Otherwise, $\nbhd{\alpha}$ pulls back to a cup/cap crossed with an interval and $\alpha$ is a \emph{definite fold} in this case.
+	A strand of singular fibers over $\alpha$ consists of an interval in the case of an extremum for the associated Morse function or an interval crossed with the figure 8 when the associated Morse function yields a saddle singularity.
+	The critical neighbourhood $f\inv(\nbhd{\alpha})$ contains a connected component that is either $\DD\times\I$ when we have cross sectional extremum, or $P\times\I$, where $P$ is the pair of pants surface, i.e.\ the twice-punctured 2--disc, when the cross section yields a saddle.
+	All remaining connected components are $A\times\I$ where $A$ is an annulus, i.e.\ the once-punctured 2--disc.
+	
+	Whenever one of the regions that $\alpha$ separates is $R_\infty$, the cross section necessarily gives us an extremum, and the critical neighbourhood over $\nbhd{\alpha}$ is $\DD\times\I$.
+	We call $\alpha$ a \emph{definite fold} when the critical neighbourhood is $\DD\times\I$, and an \emph{indefinite fold} when the critical neighbourhood is $P\times\I$.
 	
 	\begin{figure}
 		\centering
@@ -49,7 +56,7 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 		\label{fig:isolatesleeve}
 	\end{figure}
 	
-	Let $x$ be a codimension 2 critical value $x$ and $\nbhd{x}$ its neighbourhood that intersects the boundaries of the shrunken regions and arc sleeves it is near as in Figure \ref{fig:isolatesleeve}.
+	Let $x$ be a codimension 2 critical value and $\nbhd{x}$ the closed neighbourhoods whose boundary agrees with the shrunken regions and arc sleeves it is near as in Figure \ref{fig:isolatesleeve}.
 	The possible singular fibers over $x$ are cataloged in \cite{Saeki}, and Figure \ref{fig:saekising} displays them.
 	When the singular fibers are disconnected, $f\inv(\nbhd{x})$ is categorized by the codimension 1 analysis.
 	Otherwise, we can find a full analysis in Section 4.4 of \cite{CostThur08}.
@@ -65,25 +72,26 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 	
 	We may now begin describing a handle decomposition for a cobordism $W$ of the pair $(M,\emptyset)$.
 	Begin with $M\times\I$, whose boundary is $M_0\sqcup M_1$ with $M_0=M\times\{0\}$ and $M_1 = M\times\{1\}$, and a proper generic smooth map $f:M_0\to\BB$.
-	First, we attach 2--handles over the solid tori $V_{i,k}$ that map over the shrunken regions $D_i$.
-	For a shrunken region $\D_i$, take an arbitrary internal point $x$ and an arbitrary boundary point $y$.
-	Let $V_{i,k}$ be a closed tubular neighbourhood to the $k\nth$ circle that maps over $x$.
-	Take a copy $H_{i,k}^2=\DD\times\DD$ for $V_{i,k}$, and define a bundle isomorphism
-	\[
-		\varphi : V_{i,k}\to S^1\times\DD = \pd\DD\times\DD\subset H_{i,k}^2
-	\]
-	by extending the conditions
-	\[
-		\begin{array}{rclr}
-			\varphi(z(V_{i,k})) 	& = & \{1\}\times\DD,	& \\
-			\varphi(f\inv(x))  		& = & S^1\times\{0\},	&\textrm{and} \\ 
-			\varphi(f\inv(y)) 		& = & S^1\times\{1\}, 		&			
-		\end{array}	
-	\]
-	over the bundle structure of $V_{i,k}$.
-	The inverse map $\varphi\inv$ satisfies our definition of an attaching map.
-	This handle attachment modifies the boundary $M_0$ by removing $V_{i,k}$ and gluing 2--discs to the collection of longitudes in $\pd V_{i,k}$ that are parallel to $f\inv(y)$.
-	More colloquially, we deleted a solid torus that was ``mean'' and replaced it with a solid torus that is ``nice,'' where ``nice'' means that the newly introduced solid torus can be deleted by attaching a 3--handle.
+
+	For each $i<\infty$ indexing the connected regions of $\BB\setminus f(s_f)$, we index over $k$ the connected components of $f\inv(R_i)$.
+	Consider $D_i\subset R_i$, a 2--disc of regular values, and $V_{i,k}$, the $k\nth$ regular solid torus that maps over $D_i$.
+	The torus $V_{i,k}$ has disc bundle structure over the regular fiber $M_{i,k}$ with $f(M_{i,k})=x$ in the interior of $\D_i$.
+	To attach a 2--handle over $V_{i,k}$, we need
+	\begin{enumerate}
+		\item The isotopy class of an embedding $\varphi_0:S^1\to M_0$, and
+		\item the isotopy class of an identification of $S^1\times\DD$ with $\nbhd{\varphi_0(S^1)}$.
+	\end{enumerate}
+	The embedding $S^1\to M_0$ is easy enough to define as it takes $S^1$ to $M_{i,k}$.
+	For an identification of $S^1\times\DD$ with $\nbhd{\varphi_0(S^1)}$, consider the isotopy class of $f\inv(y)$ in $\pd V_{i,k}$ for an arbitrary point $y$ in the boundary of $D_i$.
+	Becuase $f\inv(y)$ is a longitude, its isotopy class can be represented by a curve in the boundary of $V_{i,k}$ of the form $h_{M}^n(S^1\times\{1\})$ for some $n$, cf.\ Remark \ref{rmk:2handle}.
+	Map the circle $S^1\times\{1\}$ in $S^1\times\DD$ to $h_{M}^n(S^1\times\{1\})$, and extend over the boundary torus by rotation.
+	Note that the definition of $h_M$ gives an orientation to the rotations corresponding to positive or negative integers $n$.
+	 and wh
+	This extends to a map $H_M^n$ as in Remark \ref{rmk:2handle}.
+
+	Attachment of a 2--handle modifies the boundary $M_0$ in a controlled way.
+	Colloquially, we delete a solid torus that is ``mean'' in some way and replace it with a solid torus that is ``nice,'' where ``nice'' means that the newly introduced solid torus can be deleted by attaching a 3--handle.
+	More precisely, we remove $V_{i,k}$ and glue 2--discs to the longitudes in $\pd V_{i,k}$ that map over single points in the boundary of $D_i$.
 		
 	With 2--handles attached, we move onto the preimages of arc sleeves.
 	Let $\nbhd{\alpha}$ be an arc sleeve, and consider the connected components of $f\inv(\nbhd{\alpha})$.
