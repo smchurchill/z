@@ -5,15 +5,16 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 
 \begin{theorem}
 	\label{thm:3bound4}
-	Let $M$ be a closed orientable 3--manifold and $f:M\to \BB$ a proper generic smooth map.
-	Then there exists a cobordism of the pair $(M,\emptyset)$ with an explicit handle decomposition described fully by an integer decorated Stein complex of $f$.
+	Let $M$ be a closed orientable 3--manifold.
+	Then a proper generic smooth map $f:M\to \BB$ determines a handle decomposition for a cobordism of the pair $(M,\emptyset)$ that contains handles of index at most 2.
 \end{theorem}
 
-\begin{proof}%[Proof of Theorem \ref{thm:3bound4}]
+\begin{proof}
 	By Sard's theorem, the image of the singular set $f(s_f)$ in $\BB$ has Lebesgue measure 0.
-	By genericity, and because the maps constructed in Chapter \ref{cha:alg1} satisfy this requirement, we take $s_f$ to consist of a set of arcs in the plane that intersect each other only pairwise and transversally, and in such a way that $\BB\setminus s_f$ consists of a collection of regions $R_i$ homeomorphic to copies of $\BB$ along with a single annular region $R_\infty$ that does not intersect $f(M)$.
-	This leaves us with a classification of critical values of $f$ into codimension 1 critical values, i.e.\ arcs away from crossings, and codimension 2 critical values, i.e.\ arc crossings.
-	This classification gives $f(s_f)$ a natural structure as a 4--valent planar graph, where the vertex set is given by the set of codimension 2 critical values and the edge set is the collection of codimension 1 critical values.
+	By genericity, and because the maps constructed in Chapter \ref{cha:alg1} satisfy this requirement, we take $s_f$ to consist of a set of arcs in the plane that intersect each other only pairwise and transversally, in such a way that $\BB\setminus s_f$ consists of a collection of regions $R_i$ homeomorphic to copies of $\BB$ along with a single annular region $R_\infty$ that does not intersect $f(M)$, and in such a way that $f(s_f)$ has a natural structure as a simple undirected 4--valent planar graph.
+	We classify the critical values of $f$ as codimension 1 inside of arcs away from crossings, and codimension 2 at arc crossings.
+	This classification makes the simple undirected planar graph structure of $f(s_f)$ explicit.
+	The vertex set is given by the set of codimension 2 critical values and the edge set is the collection of codimension 1 critical values.
 	
 	We obtain a 4--manifold with boundary $M$ by attaching 2--handles corresponding to the regular regions $R_i$, 3--handles corresponding to codimension 1 singularities, and 4--handles corresponding to codimension 2 singularities.
 	
@@ -67,7 +68,7 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 	First, we attach 2--handles over the solid tori $V_{i,k}$ that map over the shrunken regions $D_i$.
 	For a shrunken region $\D_i$, take an arbitrary internal point $x$ and an arbitrary boundary point $y$.
 	Let $V_{i,k}$ be a closed tubular neighbourhood to the $k\nth$ circle that maps over $x$.
-	Take a copy $H_{i,k}^2=\DD\times\DD$ for $V_{i,k}$, and define an attaching map
+	Take a copy $H_{i,k}^2=\DD\times\DD$ for $V_{i,k}$, and define a bundle isomorphism
 	\[
 		\varphi : V_{i,k}\to S^1\times\DD = \pd\DD\times\DD\subset H_{i,k}^2
 	\]
@@ -80,15 +81,20 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 		\end{array}	
 	\]
 	over the bundle structure of $V_{i,k}$.
-	
+	The inverse map $\varphi\inv$ satisfies our definition of an attaching map.
+	This handle attachment modifies the boundary $M_0$ by removing $V_{i,k}$ and gluing 2--discs to the collection of longitudes in $\pd V_{i,k}$ that are parallel to $f\inv(y)$.
+	More colloquially, we deleted a solid torus that was ``mean'' and replaced it with a solid torus that is ``nice,'' where ``nice'' means that the newly introduced solid torus can be deleted by attaching a 3--handle.
+		
 	With 2--handles attached, we move onto the preimages of arc sleeves.
 	Let $\nbhd{\alpha}$ be an arc sleeve, and consider the connected components of $f\inv(\nbhd{\alpha})$.
 	Figure \ref{fig:arcsleevepre} displays the possible connected components of arc sleeve preimages, each of which has the form of a surface crossed with the interval.
 	The boundary circles of these surfaces at a cross section $\Sigma\times\{t\}$ project through $f$ over the boundaries of shrunken regions, so they are filled with discs that sit inside of attached 2--handles from the previous step.
 	In each case, we obtain a copy of $S^2\times\D^1$ over which we attach a 3--handle.
+	The further modification to $M_0$ that takes place when we attach 3--handles can be thought of as the deletion of a copy of $S^2\times D^1$ followed by gluing 3--discs over the newly created 2--sphere boundary components.
 	
 	\begin{figure}
 		\centering
+		\captionsetup{justification=centering}
 		\caption{Possible connected components of arc sleeve preimages}
 		\includegraphics[height=3cm]{figures/dummy.jpg}
 		\label{fig:arcsleevepre}
@@ -99,13 +105,21 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 	The analysis of the codimension 2 critical value is then broken down into cases:
 	\begin{enumerate}[label=(\alph*)]
 		\item \label{case:defdef} The crossing of definite folds.
-		\item \label{case:defin} The crossing of a definite fold with an indefinite fold.
+		\item \label{case:defindisco} The crossing of a definite fold with an indefinite fold with disconnected singular fiber.
+		\item \label{case:definconn} The crossing of a definite fold with an indefinite fold with connected singular fiber.
 		\item \label{case:inindisc} The crossing of indefinite folds with disconnected singular fiber.
 		\item \label{case:ininconn} The crossing of indefinite folds with connected singular fiber.
 	\end{enumerate}
-	Cases \ref{case:defdef}, \ref{case:defin}, and \ref{case:inindisc} are simply extensions of the codimension 1 situation, except we are at the point where we may attach 4--handles to close off these boundary components.
-	The folds and singular fibers in case \ref{case:ininconn} are said to be \emph{interactive}, rather than the \emph{uninteractive} cases \ref{case:defdef}, \ref{case:defin}, and \ref{case:inindisc}.
-	Definite folds are necessarily uninteractive, so pairing 
+	Cases \ref{case:defdef}, \ref{case:defindisco}, and \ref{case:inindisc} are simply extensions of the codimension 1 situation, except we are at the point where we may attach 4--handles to close off these boundary components completely.
+	The folds and singular fibers in cases \ref{case:ininconn} and \ref{case:definconn} are said to be \emph{interactive}, rather than the \emph{uninteractive} cases \ref{case:defdef}, \ref{case:defindisco}, and \ref{case:inindisc}.
+	
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\caption{Regular level surfaces projecting near a codimension 2 critical value}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:regprojcodim2}
+	\end{figure}
 	
 	First, however, we look at the connected components of $f\inv(\nbhd{x})$ that do not contain a singular fiber over $x$.
 	These connected components are made from regular fibers, i.e.\ circles, that project over $\nbhd{x}$, i.e. a 2--disc.
@@ -115,15 +129,25 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 	Taking the union of these discs to be meridinal in another solid torus $V_{x,k}^*$, we now have a Heegaard splitting $V_{x,k}\cup_\varphi V_{x,k}^*$ where $\varphi$ takes a longitude of $V_{x,k}$ to a meridian of $V_{x,k}^*$.
 	This is the standard genus 1 Heegaard splitting of $S^3$, so we have a copy of $S^3\times\D^0$ over which we may attach a 4--handle.
 
-	The component that comes from a definite fold is of the form $\DD\times\I$ as in the case of codimension 1 critical values.
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\caption{Definite fold surfaces projecting near a codimension 2 critical value}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:deffoldprojcodim2}
+	\end{figure}
+
+	The component that comes from an uninteractive definite fold is of the form $\DD\times\I$ as in the case of codimension 1 critical values.
 	The 2--sphere boundary of this shape is filled with 2--discs from our 2-- and 3--handles, so this shape is the adjunction of a pair of 3--discs glued over their boundary.
 	This is the genus 0 Heegaard splitting of $S^3$, so we have a copy of $S^3\times\D^0$ over which we may attach a 4--handle.
 	
-	An uninteractive singular fiber that comes from an indefinite fold is the figure 8, and the preimage $f\inv(\nbhd{x})$ is $P\times \I$, as in the codimension 1 case.
-	Here, we find a Heegaard splitting of genus 2 with two destabilizing pairs, showing that the splitting is a splitting of $S^3$, and we can attach a 4--handle to it by Theorem \ref{thm:lilwald}.
-	An appropriate choice of meridians in $f\inv(\nbhd{x})$ would be a pair of curves that run from cuff to waist along the inside of each of the legs in the pair of pants, crest the waist, then down the outside of the legs back to the cuff.
-	Meridians for the solid filled by our 2-- and 3--handles would run around the cuffs of each leg.
-	Figure \ref{fig:destabpants} illustrates the idea.
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\caption{Indefinite uninteractive fold surfaces projecting near a codimension 2 critical value}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:indeffoldprojcodim2}
+	\end{figure}
 	
 	\begin{figure}
 		\centering
@@ -131,174 +155,240 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 		\includegraphics[height=3cm]{figures/dummy.jpg}
 		\label{fig:destabpants}
 	\end{figure}
+		
+	An uninteractive singular fiber that comes from an indefinite fold is the figure 8, and the preimage $f\inv(\nbhd{x})$ is a closed tubular neighbourhood of the figure 8 graph, which is homeomorphic to the pair of pants crossed with an interval.
+	Here, we find a Heegaard splitting of genus 2 with two destabilizing pairs, showing that the splitting is a splitting of $S^3$, and we can attach a 4--handle to it by Theorem \ref{thm:lilwald}.
+	An appropriate choice of meridians in $f\inv(\nbhd{x})$ would be a pair of curves that run from cuff to waist along the inside of each of the legs in the pair of pants, crest the waist, then down the outside of the legs back to the cuff.
+	Meridians for the solid filled by our 2-- and 3--handles would run around the cuffs of each leg.
+	Figure \ref{fig:destabpants} illustrates the idea.
+	
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\caption{The surfaces resulting from interaction between definite and indefinite folds as they project near a codimension 2 critical value}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:defindefconn}
+	\end{figure}
+	
+	When an indefinite and definite fold interact, we get the same shapes found in the case of an uninteractive definite fold.
+	From a 1--dimensional Morse function viewpoint, we witness a homotopy of a pair of peaks separated by a saddle come together into a single peak, eliminating the saddle.
+	See Figure \ref{fig:defindefconn} for a demonstration.
+
+	\begin{figure}
+		\centering
+		\caption{Indefinite interactive fold surfaces projecting near a codimension 2 critical value}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:interactivefoldprojcodim2}		
+	\end{figure}
 	
 	This leaves us with the case of interacting indefinite folds.
 	The full analysis is covered in Section 4.4 of \cite{CostThur08}.
 	They show that filling in $f\inv(\pd\,\nbhd{x})$ with 2--discs and gluing the two genus 3 handlebodies together over $f\inv(\pd\,\nbhd{x})$ results in a Heegard splitting of $S^3$ by explicitly finding 3 destabilizing pairs.
-	We again attach 4--handles over 3--spheres and we are done.
+	We again attach 4--handles over these 3--spheres.
+	Attaching a 4--handle over a 3--sphere fills in the 3--sphere with a 4--disc, so these final modifications completely eliminate what is left of $M_0$.
+	We are left with a handle decomposition for a cobordism of the pair $(M,\emptyset)$ built on top of $M_0$ in $M\times\I$.
+
+	To satisfy our requirement that the handle decomposition contains handles of index at most 2, we turn the decomposition obtained on its head and take its dual.
+	We begin with an empty decomposition.
+	At first we add a disjoint 4--disc for each 4--handle added in the final step of building the original decomposition.
+	The cocores of our 4--handles are single points, so each 4--handle yields a 0--handle in the dual decomposition.
+	The cocores of our 3--handles are intervals that connect 4--handles.
+	The belt sphere of a 3--handle is the boundary of the cocore, so it is a copy of $S^0$ intersecting exactly two 4--handles.
+	We connect the associated 0--handles by a 1--handle in a way that preserves orientability.
+
+	Attachment of 0--handles and 1--handles that preserve orientability are done uniquely.
+	This is not the case with 4--dimensional 2--handles, as we may recall from remark \ref{rmk:2handle}.
+	The 2--handles must be attached in a way that is dual to the attachment described in the original handle decomposition, else the boundary of the resulting 4--manifold need not be $M$.
+	Original 2--handles were attached over solid tori in $M_0$ that were seen as the connected components of preimages of a solid discs of regular points in the image of $f$.
+	Let $V_{i,k}$ be the $k\nth$ solid torus projecting over $D_i$ as before.
+	To dissect the anatomy of the 2--handle attached over $V_{i,k}$, we begin with the attaching sphere.
+	We chose an arbitrary point $x$ in the interior of $D_i$ and took $f\inv(x)$ to be the attaching sphere, with $V_{i,k}$ the tubular neighbourhood to $f\inv(x)$.
 	
-	
-	
-
-
-
-
-
-
-
-
-
 
 
 		
 \end{proof}
 
+\begin{rmk}
+	\label{rmk:definitehandles}
+	Before touching on the Stein complex, we discuss attaching 2--handles over 1--handles corresponding to definite folds.
+\end{rmk}
 
 
-Return now to the case of a closed, oriented 3--manifold $M$ and the generic smooth map $f:M\to \RR$.
-It is assumed that $M$ is compact, so we will assume that the image $f(M)$ is also compact.
-To build a 4--manifold $W$ whose boundary is exactly $M$, we take the 4--manifold with boundary $M\times I$.
-We again let $M\times \{0\}=M_-$ be the boundary component with orientation opposite that of $M$, and $M\times\{1\}=M_+$ the boundary component with orientation exactly that of $M$.
-For reasons that will become clear later, we fill in the boundary component $M_+$, setting the domain of $f$ to be $M_+$.
-This will result in a 4--manifold whose boundary is $M_-$.
-The image of the singular set of $f$ is, as stated before, a set of arcs in the plane.
-These arcs separate the plane into connected regions of regular values, and we can choose $f$ so that these regions are all homeomorphic to discs.
-The discs of regular values all pull back through $f$ to open solid tori in $M$.
-We fill in $M_+$ by attaching 2--, 3--, and 4--handles where the attachment instructions are obtained through $f$.
+\begin{theorem}
+	\label{thm:3stein4}
+	Let $M$ be a closed orientable 3--manifold.
+	The dual handle decomposition recovered from a proper generic smooth map $f:M\to \BB$ in Theorem \ref{thm:3bound4} is described fully by an integer decorated Stein complex of $f$.
+\end{theorem}
 
-Next, we extend over the codimension 1 singularities.
-An arc $a_0$ of codimension 1 critical values are the image of an arc $s_0$ of critical points of $f$ in $M_+$, and the connected component of $f\inv (a_0)$ containing $s_0$ is an interval crossed with the singularities that occur in the 2--dimensional case.
-The endpoints of the arc $a_0$ are codimension 2 critical values of $f$, and the endpoints of the arc $s_0$ are critical points that map to the endpoints of $a_0$.
-Slightly shrink $a_0$ away from its boundary to the arc $a$ of critical values of $f$.
-Take $A$ to be a tubular neighbourhood of $a$ in $\RR$.
-Then $A$ is a copy of $I\times I$ so that lines in the $x$ direction of $A$ are parallel to $a$ and lines in the $y$ direction are normal to $a$.
-The boundary components $I\times \{0\}$ and $I\times \{1\}$ run parallel to $a$ and sit in the boundary of the shrunken regions to either side of $a_0$, and the normal boundary components $\{0\}\times I$ and $\{1\}\times I$ normally intersect $a_0$ at $\pd a$.
-For a given normal arc $\{x\}\times I$, our analysis of the singularities of the Morse function one dimension down allow us to say that $f\inv(\{x\}\times I)$ is a disjoint collection of cylinders with either a pair of pants or a disc.
-Each point of $(I\times \{0\})\cup (I\times\{1\})$ pulls back to a circle that is a boundary component of one of these three shapes.
-Pulling $I\times \{0\}$ and $I\times\{1\}$ back through $f$ then yields cylinders.
-The 2--handles attached over the preimages of the shrunken regions to either side of $a_0$ have filled these cylinders with discs.
-Boundary circles of the $f\inv (\{x\}\times I)$ are filled by discs in $(M\times I)\cup (2\text{--handles})$, so $f$ pulls the normal arcs of $A$ back to spheres in $(M\times I)\cup (2\text{--handles})$.
-This means that each connected component of $f\inv (A)$ is a copy of $S^2\times D^1$, to which we attach 4--dimensional 3--handles.
+To examine the Stein complex of a proper generic smooth map such as $f$, we first define the simple polyhedron.
 
-Finally, we extend over codimension 2 singularities.
-The codimension 1 singularities can be classified into definite or indefinite folds.
-This classification depends on the type of 1--dimensional Morse singularity found by pulling an arc in the plane, normal to the given singular arc, back through $f$ and examining $f$ restricted to the connected component of this preimage containing the critical point that maps through $f$ to the given singular arc.
-If the component we've found is a pair of pants, then the singular arc is an indefinite fold.
-If it is a disc, then the arc is a definite fold.
-Every codimension 2 critical value is either the crossing of a pair of definite folds, a pair of indefinite folds, or of one definite and one indefinite fold.
-A codimension 2 critical is mapped to by exactly two critical points in $M$.
-Put $x$ to be our codimension 2 critical point, and $p_1$, $p_2$ to be the critical points of $f$ projecting over $x$.
-If $x$ is the crossing of a pair of definite folds then we can analyze $p_1$, $p_2$ using Morse theory, so $p_1$, $p_2$ are each of index either 0 or 2.
-We get that the connected components of $f\inv (x)$ containing $p_1$, $p_2$ are just the points $p_1$, $p_2$.
-If $x$ is the crossing of one definite and one indefinite fold, then, without loss of generality, $p_1$ is of index 1 and $p_2$ is index 0 or 2.
-Then the connected component containing $p_1$ is the figure--eight graph from above and the component containing $p_2$ is just $p_2$.
-When $x$ is the crossing of two indefinite folds, each of $p_1$, $p_2$ is of index 1.
-Our analysis only guarantees that $p_1$, $p_2$ are the centres of crosses with arms alternating in and out of $p_i$ in the connected components of $f\inv(x)$ containing $p_i$.
-If $p_{1,2}$ are in different connected components, then each of those components is a figure--eight graph.
-If $p_{1,2}$ are in the same connected component, there are exactly two different directed graphs that contain exactly two vertices, each of degree four, that each have two edges entering and two leaving.
+\begin{defn}
+	\begin{figure}
+		\centering
+		\caption{The three local polyhedral models}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:localpoly}
+	\end{figure}
+	The three \emph{standard local polyhedral models} are the following 3 compact topological spaces, as they sit inside of $\R^3$, under the subspace topology.
+	\begin{enumerate}
+		\item the closed 2--disc $\D^2$.
+		\item the product of the interval $\I$ with the $Y$--shaped graph $K_{1,3}$.
+		\item the cone on the complete graph $K_4$.
+	\end{enumerate}
+	The models each have boundary.
+	Being a surface, the 2--disc has a well defined boundary.
+	In the local model $K_{1,3}\times I$, the boundary consists of the union of the sets $(K_{1,3}\times \{0\})$, $(K_{1,3}\times \{1\})$, and $(v(K_{1,3})\times I)$, where $v(K_{1,3})$ denotes the vertex set of the graph $K_{1,3}$.
+	The cone on $K_4$ is defined as $K_4\times I /\sim$ where $(x,1)\sim (y,1)$ for every $x$, $y$ in $K_4$.
+	When we define the cone this way the boundary is $K_4\times \{0\}$.
+\end{defn}
 
-Each crossing is in the boundary of exactly four regions of regular values and in the boundary of exactly four singular arcs.
-Label the regions $R_1,\dots,R_4$ and the singular arcs by $a_{1,2},a_{2,3}, a_{3,4}, a_{4,1}$.
-The regions are labeled in an anticlockwise order about $x$, and the arcs are named for the pair of regions they border.
-Note that every point in $\RR$ outside of the range of $f$ is vacuously a regular value of $f$.
-Let $x$, $p_{1,2}$ be as they were above.
-Let $D_x$ be a small disc in the plane containing $x$.
-There is an obvious triangulation of $D_x$ with exactly four triangles so that one vertex of each triangle corresponds to $x$, the shared boundary of a pair of triangles corresponds to an arc $a_{i,i+1}$, and the interior of each triangle corresponds to a region $R_i$ of regular values whose boundary contains $x$.
-Let $R_i$ be any of the regions containing $x$ so that $f\inv (R_i)$ is nonempty.
-At this point in our construction, we may form an arc $\gamma_i$ inside of $R_i$ from $a_{i-1,i}$ to $a_{i,i+1}$ that consists entirely of points in the boundary of the shrunken region pulled back through $f$ to attach 2--handles and points in the boundary of the tubular neighbourhood of the shrunken arc pulled back through $f$ to attach 3--handles.
-If every $R_i$ is in the image of $f$, then the union of the $\gamma_i$ is the boundary of $D_x$.
-If some region $R_i$ is outside of the image of $f$, then the arcs $a_{i-1,i}$ and $a_{i,i+1}$ are each definite folds, and the regions to either side of $R_i$ are in the image of $f$.
-This is a special case where $x$ is the crossing of a pair of definite folds, and $x$ sits on the boundary of $f(M)\subset\RR$, and in this case we do not define a $\gamma_i$.
+\begin{defn}
+	Let $P$ to be a compact topological space.	
+	If every point $p$ of $P$ has a neighbourhood homeomorphic to an open set in one of the standard local polyhedral models, then $P$ is a \emph{simple polyhedron}.
+	The set of points which do not have a neighbourhood homeomorphic to an open set in $D^2$ form a 4--valent graph which we call the \emph{singular set} of $P$ and denote by $\Sing (P)$.
+	The vertices and edges of $\Sing (P)$ are called the vertices and edges of $P$.
+	We call the connected components of $P\setminus\Sing (P)$ the \emph{regions} of $P$.
+	
+	
+	If a point $p$ of $P$ has a neighbourhood homeomorphic to an open set containing a point in the boundary of one of our three local models, then $p$ is a \emph{boundary point} of $P$.
+	The set of all boundary points of $P$ is the boundary of $P$ and is denoted by $\pd P$.
+	A region of $P$ is \emph{internal} if its closure is disjoint from $\pd P$.
+	If $\pd P$ is empty then $P$ is \emph{closed}.
+\end{defn}
 
-Each $D_x$ pulls back through $f$ to a collection of disjoint 3--handlebodies that, together with the boundaries of handles already attached in $(M\times I)\cup$({2-- and 3--handles}), form copies of $S^3$ to which we attach 4--dimensional 4--handles.
-When all 4--handles are attached, the component $M_+$ is completely filled, and we have a 4--manifold whose boundary is exactly $M$.
-We prove this first for the connected components that consist entirely of regular points, then use similar arguments to prove this for all other cases.
+\begin{proof}[Proof of Theorem \ref{thm:3stein4}]
+	The Stein factorization and complex of $f$ are defined as before.
+	Define an equivalence relation $\sim$ on $M$ by $p\sim q$ if and only if $f(p)=f(q)=x$ and $p$, $q$ are in the same connected component of $f\inv(x)$.
+	Then $f=g\comp h$ where $h$ is the quotient map $M\to M/\!\!\sim$ and $g$ takes a point in $f\inv(x)$ to $x$.
+	
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\caption{Stein complex over regular values}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:regstein}
+	\end{figure}
+	
+	We get simple polyhedral structure in almost all cases, so we will use the language of simple polyhedra to describe the Stein complex.
+	A disc $D_i$ of regular values has $f\inv(D_i)$ a circle bundle over a disjoint collection of 2--discs, and the components of this collection collapse through $h$ to connected regions of regular levels in the Stein complex.
+	
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\caption{Stein complex over codimension 1 critical values}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:codim1stein}
+	\end{figure}	
+	
+	A sleeve around an arc of codimension 1 critical values pulls back to a disjoint collection of surfaces crossed with the interval.
+	In the case of the annulus crossed with an interval, $h$ sees $A\times\I$ as a circle bundle over $\I\times\I$ and collapses that bundle into a bridge between a pair of regions of regular levels.
+	The pair of regular levels join into a single region of regular levels.
+	When the surface is a disc, that disc has boundary circle that maps through $f$ to a regular value, so $h$ already takes that circle to a regular level.
+	As we move inwards along internal circles towards the core of $\DD\times\I$, $h$ continues to collapse these circles to regular levels, extending an existing region of the Stein complex.
+	When we get to the core of the solid cylinder, $h$ takes $\{0\}\times\I$ to a boundary edge of the extended region.
+	We label the portion of the boundary edge formed this way by $e$ for \emph{definite}.
+	When the surface is a pair of pants, the boundary circles of the pants all lie in distinct regions of regular levels.
+	The circles join together at the singular fibers mapping over the arc of critical values, and $h$ maps the strand of singular fibers to an internal edge of the Stein complex.
+	One may also think of this case as a copy of the local polyhedral model corresponding to an internal edge connecting the three regions.
 
-Let $U$ be a component of $f\inv (D_x)$ that consists entirely of regular points.
-Then the connected component of $f\inv (x)$ that sits inside of $U$ is a circle, and $T$ is a closed regular neighbourhood of this circle, i.e.\ a solid torus in $M$.
-A meridian of this solid torus maps through $f$ to the boundary of $D_x$.
-Through handle attachment we have filled every circle in $M_+$ that maps to a point in $\pd D_x$ with a disc.
-Then $U$ shares a boundary with a solid torus $V$ in $(M\times I)\cup$(2-- and 3--handles), and the meridian of $U$ is a longitude of $V$, so $U\cup V\subset (M\times I)\cup$(2-- and 3--handles) is a 3--sphere.
-We use this 3--sphere as an attaching neighbourhood of a 4--handle.
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\caption{Boundary graphs in the Stein complex}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:holegraphs}
+	\end{figure}
+	
+	At this point the boundary of the Stein complex is the disjoint union of a trivalent graph whose edges all intersect definite edges of the boundary along with a some copies of $S^1$ and some graphs of the shapes found in Figure \ref{fig:holegraphs}.
+	A sleeve around a codimension 2 critical value $x$ pulls back to a disjoint collection of handlebodies in $M$.
+	
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\caption{Stein complex of genus 1 handlebody of regular points projecting near codimension 2 critical values}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:codim2steinregular}
+	\end{figure}
+	
+	Such a handlebody is of genus 1 when it contains no critical points and is of genus 0 or 2 when the folds over $x$ are not interactive.
+	The handlebody of genus 1 collapses through $h$ to fill a hole in a regular level, and in this way we cap off all $S^1$ boundary regions of the Stein complex with 2--discs.
 
-Next, we consider the case where $U$ contains only one of $p_1$ or $p_2$, abbreviated to $p$, which we recall as being a critical point of $f$ so that $f(p)=x$.
-If $p$ is a definite fold, then a pair of opposite singular arcs, say $a_{4,1}$ and $a_{2,3}$, are also definite folds, and the image of $f$ near the strand of critical points $f\inv (a_{4,1}\cup x \cup a_{2,3})$ lies entirely on one side of $a_{4,1}\cup x \cup a_{2,3}$ in the plane, which we will take to be $R_1\cup a_{1,2}\cup R_2$ without loss of generality.
-The strand $a_{1,2}$ pulls back through $f$ to only regular points in $U$, so these are circles.
-It is easy to see that $U$ is a 3--ball, and $f\inv (\gamma_1\cup\gamma_2)$ is a 2--sphere filled with discs to make another 3--ball.
-Gluing these 3--balls together results in another 3--sphere over which we may attach a 4--handle.
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\caption{Stein complex of uninteractive and interactive definite folds projecting near codimension 2 critical values}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:codim2steindef}
+	\end{figure}
+	
+	The genus 0 handlebodies occur in the case of definite folds, both interactive and uninteractive.
+	In the uninteractive case, there is a section within an edge of the trivalent graph that is not labeled definite.
+	We extend that region to its termination as in the previous case, labeling the terminating points as definite edges.
+	When the definite fold interacts with an indefinite fold, the internal edge terminates in a vertex of the trivalent graph that is not labeled definite.
+	As before, the regions are extended out their terminus and the resulting edges are labeled definite.
+	In this case there is a vertex corresponding to the termination of a saddle singularity that we label definite.
+	Both cases are considered in Figure \ref{fig:codim2steindef}
 
-If $p$ is an indefinite fold, then the component of $f\inv (x)$ containing $p$ is an oriented figure--eight graph embedded in $U$, $U$ is a regular neighbourhood of the figure--eight graph, and $f$ maps $\pd U$ to the boundary of $D_x$.
-Again, the boundary of $U$ maps through $f$ to 
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\caption{Stein complex of the uninteractive indefinite fold projecting near codimension 2 critical values}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:codim2steinindefun}
+	\end{figure}
+	
+	Genus 2 handlebodies are dealt with exactly as in the case of the pair of pants crossed with the interval.
+	The hole is filled with the local polyhedral model corresponding to the edge, as seen in Figure \ref{fig:codim2steinindefun}.
+	
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\caption{Crossing saddle singular fiber}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:crossingsaddles}
+	\end{figure}
+	
+	When the handlebody is of genus 3, we are in the situations detailed in Section 4.4 of \cite{CostThur08}.
+	The hole corresponding to $K_4$ is filled in with the polyhedral model corresponding to a vertex.
+	This Stein complex is simple enough to justify, as it is simply what happens when a pair of saddles cross as in Figure \ref{fig:crossingsaddles}.
 
-In each remaining case $U$ shares a boundary with another handlebody of the same genus and the two form a Heegard Diagram of $S^3$.
-The proof is covered in detail in Section 4.4 of \cite{CostThur08}.
-At this point, $M\cup$(2--, 3--, and 4--handles) has only one boundary component: $M_-$.
-We obtain a 4--manifold whose boundary is $M$, and whose handle decomposition contains handles of index at most 2, by building the handle decomposition dual to that we've just described.
-The process can be simplified somewhat.
-For example, the only 4--handles that can't be dealt with by extending 2-- and 3-- handles are those that were added when $p_1$ and $p_2$ were in the same connected component of $f\inv (x)$.
-The object of study that simplifies our work considerably is called the \emph{Stein complex} of the Morse 2--function $f:M\to\RR$.
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\caption{Rotating torus singular fiber}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:doublecone}
+	\end{figure}
+	
+	The final hole can be filled in with the nonstandard vertex--like compact topological space in \ref{fig:doublecone}.
+	This justification is more difficult to see, but Figure \ref{fig:doublecone} attempts to demonstrate.
+	We consider a twice punctured torus and a Morse function given by a simple height map.
+	By rotating the torus over a horizontal axis halfway between the punctures, we cause the singular fibers to eventually reside in the same critical level, and then separate again.
+	It is possible to replace this shape with an integer decorated simple polyhedron containing two internal vertices and a trivalent boundary graph matching the hole we need to fill, but we need to discuss integer decoration first.
+	
+	We now have a Stein complex that almost describes a handle decomposition of a cobordism of $(M,\emptyset)$.
+	For each vertex we attach a 0--handle, for each edge we attach a 1--handle, and for each region we attach a 2--handle.
+	The only piece of information missing is a framing constant that defines how to attach our 2--handles.
+	Each region of the complex that does not contain a definite edge, cf. Remark \ref{rmk:definitehandles}, will be decorated with the framing constant for that handle determined during the proof of Theorem \ref{thm:3bound4}.
+	
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\caption{The integer decorated simple polyhedron that replaces the double cone vertex}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:simplepoly}
+	\end{figure}
+	
+	Now that we know what integer decoration means, we do away with the double cone vertex.
+	We instead fill the final holes of the Stein complex with the simple polyhedron in Figure \ref{fig:simplepoly}.
+	The regions decorated by relative integers modify the regions they are joined to in the existing Stein complex, whereas the absolute integral region stands alone.	  
+	
+	We are left with an integer decorated Stein complex of the map $f:M\to\BB$ that describes fully the dual handle decomposition recovered in Theorem \ref{thm:3bound4} for a cobordism of the pair $(M,\emptyset)$.
+\end{proof}
 
-Let $f$ be a Morse function or Morse 2--function with compact fibers as before.
-Define the \emph{Stein factorization} of $f$ to be a factorization $f=g\comp h$ so that the following are satisfied:
-\begin{enumerate}
-  \item The map $h$ has connected fibers, and
-  \item the map $g$ is finite--to--one.
-\end{enumerate}
-We can also see the image of $h$ as the quotient space of the domain of $f$ by the connected fibers of $f$.
-The image of $h$ will also be called the \emph{Stein complex} of the map $f$.
-
-In the case of the oriented surface $\Sigma$, the Stein complex of $f$ is a graph whose vertices correspond to the singularities of $f$.
-Vertices corresponding to critical points of index 0 or 2 being of degree 1, and vertices corresponding to critical points of index 1 being of degree 3.
-We form a 3--manifold whose boundary is $\Sigma$ by starting with a disc bundle over the edges of $h(\Sigma)$, then extending over the vertices by attaching 3--balls as in the analysis above.
-There is an obvious deformation retraction of the resulting 3--manifold to the Stein complex of $f$.
-
-In the case of the 3--manifold $M$, the Stein complex is generically a surface and the possible singularities are more interesting.
-As in the analysis above, some singularities are just the singularities from the lower dimensional Morse function crossed with an interval, so the corresponding shape in the Stein complex is simply a degree--one or degree--three vertex crossed with an interval.
-The more interesting parts of the Stein complex are brought forth at the crossing of indefinite folds in the plane.
-As in the case of $\Sigma$, $M$ is a circle bundle over the Stein complex at generic points and the 4--manifold $W$ with $\pd W = M$ is a disc bundle.
-We extend over singularities by attaching handles and, as before, $W$ retracts onto the Stein complex.
-The Stein complex, along with some extra information we can obtain from $f$, provides a set of building instructions for $W$ explored in the next section.
-
-\begin{cor}
-	\label{cor:3stein4}
-	Let $M$ be a closed, orientable 3--manifold.
-	Then there exists a Morse 2--function $f:M\to\RR$ with Stein factorization $f=g\comp h$ and a Stein complex $S=h(M)$ whose regions can be assigned framing constants such that $S$ provides a full set of instructions for the construction of a 4--manifold $W$ with $\pd W=M$.
-\end{cor}
-
-
-
-
-
-
-
-For $M$ a closed, oriented 3--manifold, we would like to describe a 4--manifold $W$ with $\pd W=M$.
-An appropriate Morse 2--function $f:M\to\DD$ with Stein complex $S$ is a starting point.
-The preimage circles of the regular values of $f$ can all be filled in to copies of $\DD$.
-Extending over the 
-
-In the case of the oriented surface $\Sigma$, the Stein complex of $f$ is a graph whose vertices correspond to the singularities of $f$.
-Vertices corresponding to critical points of index 0 or 2 being of degree 1, and vertices corresponding to critical points of index 1 being of degree 3.
-We form a 3--manifold whose boundary is $\Sigma$ by starting with a disc bundle over the edges of $h(\Sigma)$, then extending over the vertices by attaching 3--balls as in the analysis above.
-There is an obvious deformation retraction of the resulting 3--manifold to the Stein complex of $f$.
-
-In the case of the 3--manifold $M$, the Stein complex is generically a surface and the possible singularities are more interesting.
-As in the analysis above, some singularities are just the singularities from the lower dimensional Morse function crossed with an interval, so the corresponding shape in the Stein complex is simply a degree--one or degree--three vertex crossed with an interval.
-The more interesting parts of the Stein complex are brought forth at the crossing of indefinite folds in the plane.
-As in the case of $\Sigma$, $M$ is a circle bundle over the Stein complex at generic points and the 4--manifold $W$ with $\pd W = M$ is a disc bundle.
-We extend over singularities by attaching handles and, as before, $W$ retracts onto the Stein complex.
-The Stein complex, along with some extra information we can obtain from $f$, provides a set of building instructions for $W$ explored in the next section.
-
-
-\begin{cor}
-	Let $M$ be a closed, orientable 3--manifold.
-	Then there exists a Morse 2--function $f:M\to\RR$ with Stein factorization $f=g\comp h$ and a Stein complex $S=h(M)$ whose regions can be assigned framing constants such that $S$ provides a full set of instructions for the construction of a 4--manifold $W$ with $\pd W=M$.
-\end{cor}
-
-
-
-
-
-
-From the regular value theorem, the preimage of a regular value of $f$ is the disjoint union of oriented circles in $M$.
-The image of the singular set of $f$ is a collection of arcs in $\RR$ that only intersect pairwise and transversally.
-This leaves us with a classification of critical values of $f$ into codimension 1 singularities, i.e.\ arcs away from crossings, and codimension 2 singularities, i.e.\ arc crossings.
+\begin{rmk}
+	The justification that the double cone can be replaced by the polyhedron in Figure \ref{fig:simplepoly} necessitates delving into the central object of study in \cite{CostThur08} and \cite{Turaev91}: the shadow surface.
+	The Stein complex constructed in Theorem \ref{thm:3stein4} is a \emph{shadow} of both $M$ and the cobordism $W$ of $(M,\emptyset)$ whose dual decomposition Theorem \ref{thm:3bound4} describes.
+	Moreover, the dual decomposition described follows a specific case of the Turaev Reconstruction Theorem that can be found in either \cite{CostThur08} or \cite{Turaev91}.
+\end{rmk}
