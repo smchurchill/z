@@ -75,16 +75,24 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 
 	For each $i<\infty$ indexing the connected regions of $\BB\setminus f(s_f)$, we index over $k$ the connected components of $f\inv(R_i)$.
 	Consider $D_i\subset R_i$, a 2--disc of regular values, and $V_{i,k}$, the $k\nth$ regular solid torus that maps over $D_i$.
-	The solid torus $V_{i,k}$ has a trivial disc bundle structure with trivialization $\varphi:V_{i,k}\to S^1\times\DD$ over the regular fiber $M_{i,k}=z(V_{i,k})$, and $f(M_{i,k})=x$ in the interior of $\D_i$.
+	The solid torus $V_{i,k}$ has a trivial disc bundle structure over the regular fiber $M_{i,k}=z(V_{i,k})$, and $f(M_{i,k})=x$ in the interior of $\D_i$.
 	Because we consider a single solid torus for the rest of this argument, we abbreviate $V_{i,k}$ to $V$, $M_{i,k}$ to $z(V)$ and $\D_i$ to $\D$.
+
+	Let's remember what we're doing here --- we're attaching handles in such a way that, once all handles have been attached, the boundary component $M_0$ of $M\times\I$ has been filled in.
+	In this step we attach 2--handles over $V$.
+	Our goal is to do so in such a way that we remove the ``bad'' solid torus $V$ and replace it with a solid torus that is ``nice,'' where ``nice'' means that the newly introduced solid torus can be filled in by attaching 3-- and 4--handles.
+	This happens by deleting $V$ and gluing 2--discs to the longitudes in $\pd V$ that are regular fibers of points in the boundary of $D$.
 	To attach a 2--handle over $V$, we need
 	\begin{enumerate}
 		\item The isotopy class of an embedding $g:S^1\to M_0$, and
-		\item the isotopy class of an identification of $S^1\times\DD$ with $\nbhd{\varphi_0(S^1)}$.
+		\item the isotopy class of an identification $G:S^1\times\DD\to\nbhd{g(S^1)}$.
 	\end{enumerate}
-	The embedding $S^1\to M_0$ is easy enough to define as it takes $S^1$ to $z(V)$.
-	We want to attach our 2--handle in such a way that we remove the ``bad'' solid torus $V$ and replace it with a solid torus that is ``nice,'' where ``nice'' means that the newly introduced solid torus can be filled in by attaching 3-- and 4--handles.
-	More precisely, we want to remove $V$ and glue 2--discs to the longitudes in $\pd V$ that are regular fibers of points in the boundary of $D$.
+	The embedding $S^1\to M_0$ is easy enough to define as we will just be identifying $S^1$ with $z(V)$.
+	This $S^1$ lives as the attaching sphere $S^1\times\{0\}$ inside of the 2--handle $\DD\times\DD$ that we plan to attach.
+	Taking $\pd (\DD\times\DD)=(S^1\times\DD)\cup(\DD\times S^1)$ to be the genus 1 Heegard splitting of $S^3$, we will be defining $G$ on the first torus component $S^1\times\DD$.
+	We call the other torus $V^*$.
+	In order to satisfy our desired criteria, we need to have $G$ be in the isotopy class of a map that takes $S^1\times\{1\}$ to a regular fiber over a point in the boundary of $\D$.
+	When this is true, that fiber will bound a disc in $V^*$, and the adjunction $(M\times\I)\cup_{G\inv}(\DD\times\DD)$ has the property we wanted --- we've replaced the ``bad'' solid torus $V$ with the ``nice'' solid torus $V^*$.
 	
 	\begin{figure}
 		\centering
@@ -94,20 +102,29 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 		\label{fig:VV*}
 	\end{figure}
 	
-	To make an identification of $S^1\times\DD$ with $\nbhd{g(S^1)}$ that serves this purpose, let $J=f\inv(q)$ in $\pd V$ represent the isotopy class of regular fibers over boundary points of $\D$, where $q$ is an arbitrary point in the boundary of $D$.
-	Let $K=\varphi\inv(\{1\}\times S^1)$ represent the meridinal isotopy class of $V$, and let $L$ be the longitude in $\pd V$ defined by $L=\varphi\inv(S^1\times\{1\})$.
-	Figure \ref{fig:VV*} shows the curves $J$, $K$, and $L$ with orientations.
-	Thinking of $S^1\times\DD$ as a subset of $\C^2$ gives it a natural orienations, which we have pulled back through $\varphi$ onto $K$ and $L$.
+	A class $[G]$ is unique and it exists.
+	To see why, let $\varphi:V\to S^1\times\DD$ be any trivialization of $V$, take $K=\varphi\inv(\{1\}\times S^1)$ to represent the meridinal isotopy class of $V$, and take $L$ be the longitude in $\pd V$ defined by $L=\varphi\inv(S^1\times\{1\})$.
+	Let $J=f\inv(q)$ in $\pd V$ represent the isotopy class of regular fibers over boundary points of $\D$, where $q$ is an arbitrary point in the boundary of $D$.	
+	Figure \ref{fig:VV*} shows the curves $J$, $K$, and $L$ with orientations sitting on $\varphi(V)$.
+	Thinking of $S^1\times\DD$ as a subset of $\C^2$ gives it a natural orientation, which we have pulled back through $\varphi$ onto $K$ and $L$.
 	We give $J$ a compatible orientation so that its intersections with $K$ and $L$ can be counted.
 	Put $\kappa$ to be the oriented intersection number of $J$ and $L$.
 	Then $\varphi(J)\in \pd\varphi(V)$ is in the isotopy class of $h_M^{\kappa}(\varphi(L))$, where $h_M$ is the meridinal twist defined in Theorem \ref{thm:mpgV}.
 	Take $G=H_M^{-\kappa}\comp\varphi$, where $H_M$ is the extension of $h_M$ to the solid torus defined in Remark \ref{rmk:2handle}.
+	In the boundary of $G(V)$, $[G(J)]=[S^1\times\{1\}]$, $[G(K)]=[\{1\}\times S^1]$, and $G(L)=h_M^\kappa(S^1\times\{1\})$.
+	Existence of $G$ is proved, and uniqueness up to isotopy comes from the same uniqueness in trivializations of $V$ and of $H_M$.
 	
-	Taking $\pd (\DD\times\DD)$ to be the genus 1 Heegard splitting of $S^3$, we can see that one of the solid tori is identified with $V$ under the map $G$.
-	In the boundary of the torus identified with $V$, $[G(J)]=[S^1\times\{1\}]$, $[G(K)]=[\{1\}\times S^1]$, and $G(L)=h_M^\kappa(S^1\times\{1\})$.
+	Eventually we want to turn this handle decomposition on its head.
+	T do so we need $G$ to be defined with respect to a fixed feature of $V^*$.
+		shared boundary torus $T\pd V = \pd V^*$ that is a longitude of both $V$ and $V^*$.
+	To define such a curve, let's investigate $T$ as a circle bundle over $\pd\D$.
 	
-	We call the other torus $V^*$.
-	The isotopy class of meridians in $V^*$ is exactly $[G(J)]$, so the adjunction $(M\times\I)\cup_{G\inv}(\DD\times\DD)$ has the property we wanted --- we've replaced the ``bad'' solid torus $V$ with the ``nice'' solid torus $V^*$.
+	Restrict the fibers of $V$ to their $S^1$ disc boundaries to yield a bundle structure on $T$ over $\pd D$.
+	We say $T$ has the structure of a fiber bundle $S^1$ over $S^1$, where the (regular) fibers are preimages of points in the boundary.
+	
+	
+	
+	
 		
 	With 2--handles attached, we move onto the preimages of arc sleeves.
 	Let $\nbhd{\alpha}$ be an arc sleeve, and consider the connected components of $f\inv(\nbhd{\alpha})$.
