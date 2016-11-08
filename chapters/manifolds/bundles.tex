@@ -1,5 +1,5 @@
 A common tool in both the construction and description of a manifold is a \emph{bundle}.
-The ultimate construction in this section is the tubular neighbourhood of a submanifold, which is unique up to a fibre-preserving isotopy.
+The ultimate construction in this section is the tubular neighbourhood of a submanifold, an object that is unique up to a fibre-preserving isotopy.
 
 \begin{defn}[Bundle]
 	A real \emph{vector bundle} is a tuple $\beta = (E,B,\pi:E\to B)$ where $B$ is called the \emph{base space}, $E$ the \emph{total space}, and $\pi$ the \emph{projection}.
@@ -53,10 +53,9 @@ The ultimate construction in this section is the tubular neighbourhood of a subm
 	The machinery we build for vector bundles restricts to this construction.
 \end{defn}
 
-\begin{rmk}
-	Other spaces, such as spheres, may be taken as fibers to form the general \emph{fiber bundle}.
-	The definition follows that for vector bundles, except we lose the structure that guarantees the existence of a zero section.
-\end{rmk}
+Other spaces, such as spheres, may be taken as fibers to form the general \emph{fiber bundle}.
+The definition follows that for vector bundles, except we lose the structure that guarantees the existence of a zero section.
+
 
 \begin{defn}[Bundle Isomorphism]
 	Let $\Phi:\beta_0\to \beta_1$ be a map between vector bundles.
@@ -117,8 +116,6 @@ The notion of ``closed'' used in this naming convention is that of topological c
 	Then $X$ has a tubular neighbourhood in $M$.
 \end{theorem}
 
-Similar to the tubular neighbourhood is the collar of a manifold's boundary.
-
 \begin{prop}[Collar]
 	\label{defthm:collar}
 	Let $M$ be a manifold with nonempty boundary $X = \pd M$.
@@ -130,6 +127,7 @@ Similar to the tubular neighbourhood is the collar of a manifold's boundary.
 	The pair $(X,f)$ is called a \emph{collar neighbourhood} or \emph{collar} of $X$.	
 \end{prop}
 
+A collar can be thought of as a half--tubular neighbourhood of the boundary.
 Note that the collar is actually a fibre bundle with base $\pd M$, fibre $\HH^1$, and trivial structure.
 This allows us to relate our future results on tubular neighbourhoods to include collars.
 In particular, tubular neighbourhoods are unique up to a fibre-preserving isotopy, which we define now.
@@ -172,7 +170,8 @@ In particular, tubular neighbourhoods are unique up to a fibre-preserving isotop
 	 is an \emph{isotopy of tubular neighbourhoods}, and the tubular neighbourhoods $(X,f)$ and $(X,g)$ are \emph{isotopic}.
 \end{defn}
 
-This lets us precisely state our uniqueness result for tubular neighbourhoods.
+Now that all of the terms have been defined, we can precisely state the uniqueness result for tubular neighbourhoods.
+There is a similar theorem that applies to collars.
 
 \begin{theorem}[Uniqueness of Tubular Neighbourhoods, Theorem 3.3.1 of \cite{Kosi93}]
 	\label{prop:uniquenesstubularneighbourhood}
@@ -180,9 +179,7 @@ This lets us precisely state our uniqueness result for tubular neighbourhoods.
 	Any pair of tubular neighbourhoods of $X$ in $M$ are isotopic.
 \end{theorem}
 
-A similar theorem also applies to collar neighbourhoods.
-
-\begin{theorem}
+\begin{theorem}[Uniqueness of Collars]
 	Let $M$ be a manifold with boundary $X = \pd M$.
 	Let $(X,f)$ and $(X,g)$ be collars of $X$.
 	Then $f(X\times\HH^1)$ and $g(X\times\HH^1)$ are isotopic through an isotopy $F:(X\times\HH^1)\times\I\to M$ with $F_0=f$, $F_1=g$, and $F_t(x)=x$ for every $x\in X$.	
@@ -230,8 +227,8 @@ We can perform a similar strengthening on open tubular neighbourhoods as long as
 	A tubular neighbourhood that is obtained by an arbitrarily small shrinking of another tubular neighbourhood is called \emph{proper}.
 \end{defn}
 
-Examples of improper tubular neighbourhoods would be $\RRN$ as a neighbourhood of the origin in $\RRN$, or the strip $\{ x\in \RR : \norm{x}< \frac{\pi}{2}\}$ as a neighbourhood of the line $x=0$ in $\RR$ whose fibres are the curves $y=\tan x + c$.
-An example of a proper tubular neighbourhood would be the same strip, but with fibres $y=c$.
+Examples of improper tubular neighbourhoods would be $\RRN$ as a neighbourhood of the origin in $\RRN$, or the strip $\{ x\in \RR : \norm{x}< \frac{\pi}{2}\}$ as a neighbourhood of the line $x=0$ in $\RR$ whose fibres are the curves $y=\tan x + C$ for each $C\in\R$.
+An example of a proper tubular neighbourhood would be the same strip, but with fibres $y=C$.
 It should be clear that the interior of a closed tubular neighbourhood is proper, and every proper tubular neighbourhood is the interior of a closed tubular neighbourhood.
 
 \begin{theorem}[Uniqueness of Proper Tubular Neighbourhoods, Theorem 3.3.5 of \cite{Kosi93}]
@@ -266,7 +263,7 @@ It should be clear that the interior of a closed tubular neighbourhood is proper
 
 For $X$ a closed submanifold of $\pd M$, our definitions guarantee a tubular neighbourhood of $X$ in $\pd M$, but not of $X$ in $M$.
 Letting $X=\pd M$, notice that $\pd M$ has a trivial normal bundle $\pd M\times \R$ in $M$, and a collar that is an embedding of $\pd M\times\HH^1$ in $M$.
-It is clear that an appropriate analogue of the tubular neighbourhood to submanifolds of the boundary would be a generalization of the collar to a sort of ``half-tubular neighbourhood.''
+It is clear that an appropriate analogue of the tubular neighbourhood to submanifolds of the boundary would be a generalization of the collar to a half-tubular neighbourhood.
 
 \begin{defn}
 	\label{def:halfneighbourhood}
@@ -274,7 +271,6 @@ It is clear that an appropriate analogue of the tubular neighbourhood to submani
 	The normal bundle of $X$ in $W$ is the fibre-wise direct sum of $N_M X$ with $\restr{(N_W M)}{X}$.
 	Because $N_W M$ is a trivial bundle, the normal bundle of $X$ in $W$ is just $N_M X\times \R$.
 	We can only embed one half of $N_M X\times \R$ in $W$, so we extend $f$ to an embedding $F:N_M X\times \HH^1\to W$ such that $F$ restricted to $z(N_M X)\times\HH^1$ coincides with a collar of $M$ on $X$.
-	Such a neighbourhood is called a \emph{regular neighbourhood}.
 \end{defn}
 
 Our theorems regarding the existence and uniqueness of tubular neighbourhoods extend with the definition.

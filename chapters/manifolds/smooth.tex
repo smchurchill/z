@@ -108,6 +108,7 @@ This classification helps us define a submanifold and provides some of the groun
 \end{defn}
 
 Maps that are ``close enough'' to one another via perturbation tend to be considered equivalent.
+This concept is made precise through homotopy.
 
 \begin{defn}[Homotopy]
 	\label{def:homotopy}
@@ -138,8 +139,6 @@ Maps that are ``close enough'' to one another via perturbation tend to be consid
 	For a fixed pair $(X,M)$ of spaces, homotopy and smooth homotopy are equivalence relations on the space of maps $X\to M$.
 \end{prop}
 
-This also allows us to classify the properties of a smooth map.
-
 \begin{defn}
 	Let $f:X\to M$ be a smooth map between manifolds.
 	A property of $f$ is \emph{stable under perturbation} if, for any smooth homotopy $H:X\times \I\to M$ with $H_0=f$, there is an $\varepsilon>0$ such that $H_t$ has that property for any $t<\varepsilon$.
@@ -161,12 +160,13 @@ Another generic property is transversality.
 \end{defn}
 
 Transversality of a pair of submanifolds $X$, $Y$ is stable under small perturbations of the embeddings $X\into M$ and $Y\into M$.
-If $\dim X + \dim Y = M$, the intersection points $X$ and $Y$ that are not transverse may be perturbed into stable transversality or non-intersection.
+Intersections between $X$ and $Y$ generically transverse when $\dim X + \dim Y = M$.
+The intersection points $X$ and $Y$ that are not transverse may be perturbed into stable transversality or non-intersection.
 
 \begin{theorem}[Regular Value Theorem]
 	Let $f:X\to M$ be a smooth map between manifolds.
 	Let $q\in M$ be a regular value.
-	The preimage $f\inv(q)$ is either empty or a $(\dimn{X}-\dimn{M})$--submanifold of $X$.
+	The preimage $f\inv(q)$ is either empty or a $(\dim X-\dim M)$--submanifold of $X$.
 \end{theorem}
 
 \begin{prop}
