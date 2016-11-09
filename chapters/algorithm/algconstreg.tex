@@ -1,0 +1,62 @@
+\label{alg:constreg}
+
+This algorithm concerns itself with producing a shadow of $T''$ from $\pi''$.
+Because we do not refer to the inital triangulation or its projection in this algorithm or the next, we will abbreviate $T''$ by $T$, $\pi''$ by $\pi$, and $G''$ by $G$ to ease notation.
+We begin by constructing an empty shadow $S$ and populating it with regions.
+Each region $R$ of $G$ is a polygon, i.e.\ a topological disc, whose boundary is a triangulated $\sone$.
+The edges of this $\sone$ are all associated with edges of $G$, and each edge of $G$ is coloured $I$ if the edge might produce an internal edge of our shadow, $F$ if the edge will produce a boundary edge of our shadow, or $H$ if the edge was introduced by removing an internal vertex of $G$.
+Similarly, the regions of $G$ are coloured $I$ for ``internal'' and $H$ for ``hole.''
+
+Let $p$ be a generic point in an internal region $R$.
+The preimage of the point $p$ is the disjoint union $l_1\cup\dots\cup l_m$ where each $l_i$ is a piecewise--linear circle in $T$.
+To split $\pi$ into $g\comp h$ with $g$ finite--to--one, we just say that $p$ pulls back through $g$ to exactly $m$ points.
+The points in the regions of our shadow represent circles in $T$, the points in the interior edges of our shadow represent two circles joining together to become a single circle, the points in the boundary edges of our shadow represent circles collapsing to points, and the vertices of our shadow are interpreted using two local models.
+
+We restrict our consideration to the internal regions of $G$.
+The region $R$ pulls back through $\pi$ to a disjoint collection of $m$ open solid tori in $T$, and any torus $N$ in this collection can be seen as a circle bundle $N\overset{\pi}{\to} R$.
+We pull $R$ back through $g$ to $m$ disjoint copies of itself.
+We let a \emph{copy of $R$} be the pair $(P(R),l_i)$ where $P$ is a polygon identical to $R$ whose edges are coloured identically to the edges of $R$ and $l_i$ is one of the piecewise--linear circles of $T$ in the preimage of $p$.
+For every internal region $R$ of $G$ and every piecewise--linear circle $l_i$ of $R$, we add $(P(R),l_i)$ to $S$.
+
+We analyzed how the edges of $G$ are pulled back to $T$ through $\pi$ in Section~\ref{alg:countwedge} and this analysis can be extended to see how edges of $G$ are pulled back to our shadow through $g$.
+Let $e$ be an internal edge of $G$ and let $A$, $B$ be the internal regions of $G$ which are adjacent over $e$.
+There is an associated edge $E$ of $T$ so that $E$ projects over $e$ through $\pi$.
+Let $a$ in $A$ and $b$ in $B$ be points near $e$ and let $\gamma_t = ta + (1-t)b$ be the line segment in the plane that connects $a$ and $b$, and let $t'a+(1-t'b)$ be the point on this line segment that lies in $e$.
+We know that $\pi\inv(a)$ consists of exactly $m$ piecewise--linear circles $k_1\cup\dots\cup k_m$ and $\pi\inv(b)$ of exactly $n$ piecewise--linear circles $l_1\cup\dots\cup l_n$ in $T$.
+The wedge number of $E$ is at most 2, so the numbers $m$, $n$ differ by at most 1.
+Recall that piecewise--linear circles in $T$ are represented by ordered lists of 2--cells in $T$.
+If a circle $k_i$ does not contain $E$ in any of its 2--cells, then the circle $k_i$ is unchanged as we pass over $e$.
+There is a circle $l_j$ that is represented by the same ordered list of 2--cells (up to a cyclic permutation) as $k_i$.
+We glue the region copies $(P(A),k_i)$ and $(P(B),l_j)$ over the edge of each corresponding to $e$.
+The result is a copy of $A\cup_e B$, and the polygon $P(A\cup_e B)$ is identical, in terms of edge identifications, to the polygon obtained by gluing $A$ to $B$ over the edge $e$ in an orientation preserving way.
+The piecewise--linear circles associated to the region copies $(P(A),k_i)$ and $(P(B),l_j)$ are equivalent, so we may take either circle as the piecewise--linear circle associated to $P(A\cup_e B)$.
+All copies of $A$ and $B$ whose associated piecewise--linear circles not containing $E$ are dealt with in this manner.
+We reduced all wedge numbers to at most 2 via edge blowups, so there are exactly three cases to consider when dealing with the copies of $A$ and $B$ containing $E$.
+
+If the wedge number of $E$ is 0, then there is exactly one region copy $(P,l)$ among the copies of $A$, $B$ where $l$ contains $E$.
+The edge copy in $P$ corresponding to $e$ is coloured $F$ for \emph{false}.
+This edge corresponds to a shrinking singularity of $\pi$, where a circle in $T$ collapses to a point.
+
+If the wedge number of $E$ is 1, then there are exactly two region copies $(P(A),k)$ and $(P(B),l)$ among the copies of $A$ and $B$ where $k$ and $l$ each contain $E$.
+We combine $P(A)$ and $P(B)$ as before into $P(A\cup_e B)$, but the piecewise--linear circles $k$ and $l$ are distinct in a way that has been hinted at before.
+The intersection of $k$ and $l$ as a list of 2--cells consists of exactly the 2--cells in either circle that do not contain $E$, and the symmetric difference of $k$ and $l$ is exactly the set of 2--cells in $T$ containing $E$.
+We are left with the region copy pair $(P(A\cup_e B), (k,l))$.
+If the region copy $P(A\cup_e B)$ is considered in the future, it is with respect to some edge $f$ of $A\cup_e B$ and $f$ is exclusively an edge of either $A$ or $B$.
+The representative circle for $P(A\cup_e B)$ is then taken to be $k$ if $f$ is from $A$, and $l$ if $f$ is from $B$.
+In this case, the edge of $G$ did not correspond to a singularity of $\pi$ at all.
+
+If the wedge number of $E$ is 2, then there are exactly three region copies.
+Without loss of generality, two of these are copies of $A$ and the last is a copy of $B$ and we call these copies $(P(A),k_1)$, $(P(A),k_2)$ and $(P(B),l)$.
+In this case we have encountered the boundary of all three region copies along an internal edge of $S$, so we glue each region copy along their edge $e$.
+This gluing should be orientation reversing when restricted to $(P(A),k_1)$, $(P(A),k_2)$ and orientation preserving when restricted to $(P(A),k_1)$, $(P(B),l)$ and to $(P(A),k_2)$, $(P(B),l)$.
+Colour the shared edge $e$ by $i$ for \emph{internal}.
+This edge corresponds to a simple saddle singularity of $\pi$, where a single circle splits into two distinct circles.
+
+Iterating over all adjacent internal region pairs produces a connected simple polyhedron $S$ with boundary a graph whose connected components are coloured either $F$ or $H$.
+The false boundary is not considered until the next chapter, but we fill in each boundary component coloured $H$ with a simple block.
+
+
+
+
+
+

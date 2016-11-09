@@ -7,6 +7,7 @@ The \emph{CW--complex} is our first foray into combinatorial descriptions of man
 	Let $M$ be a Hausdorff space.
 	A \emph{cell decomposition} of $M$ is a collection $T=\{t_\alpha\}$ such that every $t_\alpha$ is an open cell, every pair of cells of $T$ is disjoint, and the union of the cells of $T$ is exactly $M$.
 	The \emph{$n$--skeleton} of $T$ is the disjoint union of the cells of $T$ with dimension at most $n$, and it is denoted $T^n$.
+	Note that the 1--skeleton of a cell decomposition is a graph.
 	
 	Let $T$ be a cell decomposition of the Hausdorff space $M$.
 	Then $T$ is a \emph{closure--finite weak--topology complex} if the following are satisfied: 
@@ -16,6 +17,8 @@ The \emph{CW--complex} is our first foray into combinatorial descriptions of man
 		\item A subset $X$ of $M$ is closed if and only if $X\cap \overline{t_\alpha}$ is closed for every $t_\alpha$ in $T$ (i.e. the topology of $M$ is weak).		
 	\end{enumerate}
 	It is standard to abbreviate such a cell decomposition as a \emph{CW--complex}.	
+	The \emph{dimension} of a CW--complex $T$ is the highest dimension among the cells of $T$.
+	A CW--complex is \emph{edge distinct} if no pair of edges $e$, $f$ in $T^1$ have $\pd e=(u,v)=\pd f$.
 \end{defn}
 
 We concern ourselves mostly with a specific type of cell decomposition called a \emph{triangulation.}
@@ -88,6 +91,10 @@ There is a very slick way of checking whether a gluing complex is a triangulatio
   Then the intersection of $\sigma^*$ with $\tau$ is defined as the convex hull over $B_\tau(\sigma)$ inside of $\tau$.
   The union of these hulls over all $\tau_i$ containing $\sigma$ is then a closed $(n-k)$--cell whose interior is then defined to be the dual cell $\sigma^*$.
   The union of all $\sigma^*$ forms a CW--complex $T^*$ for $M$ that we call the \emph{dual decomposition} to $T$.
+  
+  When $T$ is a triangulated 3--manifold, the top dimensional dual cells of $T^*$ are all solid polyhedra.
+  We call a 3--dimensional CW--complex whose top--dimensional cells are all polyhedra a \emph{solid polyhedral gluing}.
+  Note that a 3--manifold triangulation is also a solid polyhedral gluing.
 \end{defn}
 
 A description of a manifold through a cell decomposition offers us a finite, combinatorial object that we are able to tinker with and investigate using methods that are computable, and the algorithms found in future chapters all use cell decompositions as their main data type.

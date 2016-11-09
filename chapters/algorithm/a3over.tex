@@ -1,0 +1,26 @@
+Section\{deprecated\} discussed constructing a 4--manifold $W$ with a given a shadow $S=(P,\glm)$ out of handles with index at most two.
+For every vertex of $P$ we attach a 0--handle, every edge a 1--handle, and every region a 2--handle.
+The 0-- and 1--handles are attached according to the combinatorics of $P$, but the 2--handles needed more information.
+In particular, $P$ alone didn't tell us how to frame the attaching sphere of any particular 2--handle.
+
+Our goal is to take a disc bundle over a polyhedron $P$, which is standard hence has a canonical cell decomposition as a 2--complex.
+If we define the bundle over the 0--, 1--, then 2--skeleton of $P$, there is an obstruction to extending this bundle over the 2--cells of $P$.
+This obstruction only exists on 2--cells whose closures are disjoint from the boundary of $P$.
+We modify $P$ by removing a small neighbourhood from each region whose closure does not touch the boundary of $P$, and put a disc bundle on the remaining space.
+A disc bundle near a vertex of $P$ is a 4--dimensional 0--handle and near an edge is a 4--dimensional 1--handle.
+Extending the disc bundle over the removed regions then amounts to attaching 2--handles whose cores are the removed regions.
+
+This is where we argue that ignoring false regions/edges during reconstruction produces an equivalent 4--manifold.
+
+A trivalent boundary graph is made of edges coloured $f$.
+We coloured certain edges $f$ because those edges were introduced to $G$ via shrinking singularities of our map.
+Examine the preimage of a generic point in a sufficiently small neighbourhood of a point $p$ in a false edge.
+If $q$ is near $p$ in the region whose boundary contains $p$, then the preimage of $q$ is a single circle in $T$.
+Every false edge of our shadow comes directly from an edge of $T$, so the preimage of $p$ is a point.
+If we walk a path from $q$ to $p$ in our neighbourhood of $p$, then this path pulls back to a sequence of circles in $T$ which collapse to the point $\pi\inv(p)$ in $T$.
+The intuition we're bringing to this method is that every preimage circle of $\pi$ is filled with a disc in order to construct a bounded 4--manifold.
+We see that filling in circles near a false edge amounts to attaching a 4--ball over a pair of boundary 3--balls.
+This attachment has no effect on the 4--manifold we're constructing, so we neglect to fill in discs near any false edge.
+Extending this to any region containing a false edge is easily justified, as a disc bundle over a disc is contractible.
+
+Furthermore, ignoring the false edges and regions entirely rather than collapsing them removes any dependence on shadow moves and equivalences to reconnect a disconnected shadow, get rid of embedded graphs or make a nonstantard polyhedron standard again.

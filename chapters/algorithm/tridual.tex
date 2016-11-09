@@ -1,0 +1,56 @@
+An edge distinct triangulation $T$ of a closed, connected, orientable 3--manifold is a simplicial complex that can be run through the algorithms of the previous sections.
+We also consider the dual polyhedral complex to $T^*$ and observe how it changes as $T$ is changed.
+
+To begin, let $\pi:T\to\C$ be a crossing distinct projection, and let $X$ be the 2--complex produced by Algorithm \ref{alg:crossdis2complex}.
+We want $\pi$ to be the piecewise--linear analogue to the generic, proper, smooth map of Section \ref{sec:3bound4}.
+Because $\pi$ is linear on each tetrahedron of $T$, the only analogues to critical values would occur on the images of edges of $T$.
+This leaves the 2--cells of $X$ as our analogue to regions of regular values.
+Under the classification in from Definition \ref{def:projpttypes}, these are points of type 5.
+Restricting our focus to a single tetrahedron $\sigma$, a point of type 5 would pull back through $\pi$ to a line segment $s$ in $\sigma$ that intersects the faces $F^i(\sigma)$ and $F^j(\sigma)$.
+Because $p$ is continuous and $T$ is closed, there are tetrahedra $\sigma_i$ and $\sigma_j$ that are incident to $\sigma$ over $F^i(\sigma)$ and $F^j(\sigma)$.
+Then $s$ meets the endpoints of two more line segments that pass through $\sigma_i$ and $\sigma_j$.
+This continues until the segments join up into a simplicial circle interior to $T$, just as in the smooth regular value theorem.
+
+\begin{algorithm}[h]
+	\caption{Collect circles that map over a region}
+	\label{alg:regularcircles}
+	\KwData{a 2--cell $c$ of $X$, $T$, $T^*$, $\pi:T\to\C$}
+	\KwResult{a collection $C=\{C_i\}$ of simplicial circles in $T^*$ representing the circles in $T$ that project through $\pi$ over the region in the plane that correspond to $c$}
+	\Begin{
+		$c_\pi\longleftarrow$ the region of type 5 points in the plane corresponding to $c$\;
+		$C\longleftarrow\emptyset$\;
+		\ForEach{edge $o^*$ in $T^*$}{
+			\If{the dual 2--cell $o$ in $T$ has $c_\pi\subset\pi(o)$}{
+				add $o^*$, including its boundary vertices, to $C$\;
+			}			
+		}
+	}	
+\end{algorithm}
+
+The circles we find this way unambiguously define cycles in the 1--skeleton of $T^*$, the dual complex to $T$.
+We use the dual complex as a central data structure alongside the 2--complex $X$ to store information about $\pi$.
+The first example of this is in Algorithm \ref{alg:regularcircles}, where we find all of the simplicial circles in $T^*$ that map over a region of $X$.
+We produce $C$, a collection of disjoint simplicial circles in $T^*$ that project over $c_\pi$, the region of type 5 points in the plane corresponding to $c$, and we decorate the associated 2--cell $c$ of $X$ by a positive integer: the number of connected components of $C$.
+
+In Section \ref{sub:truncttet}, we deleted balls about each vertex of $T$ to find $T'$.
+The best we can do to reflect this modification in $T^*$ is to delete the interior of each 3--cell.
+This modification yields a 2--complex $T'^*$ and preserves the simplicial circles found during Algorithm \ref{alg:regularcircles}.
+
+In Section \ref{sub:edgeblowup} we blew up edges into 2--cells.
+By duality of dimension, the appropriate action to consider would be to split a 2--cell by an edge.
+An edge $o^*$ of $T'^*$ connects vertices that are dual to 3--cells.
+These 3--cells are adjacent over the 2--cell $o$ that is dual to $o^*$.
+We can therefore consider an edge in $T'^*$ to indicate adjacency between a pair of 3--cells.
+
+Let $E$ be the edge and $\sigma$, $\tau$ be the 3--cells that we blow up.
+The modification of $T'^*$ appropriate to a blowup over $E$ then begins by introducing a 1--cell $\hat{E}^*$ into $T^*$ over the vertices $\hat{\sigma}^*$ and $\hat{\tau}^*$.
+We then remove $E^*$ and introduce a pair of 2--cells corresponding to the new edges of $\hat{E}$ over the newly created chordless cycles containing $\hat{E}^*$.
+We can see the modified structure in Figure \ref{fig:dualblowup}.
+
+\begin{figure}
+	\centering
+	\captionsetup{justification=centering}
+	\caption{Dual edge blowup}
+	\includegraphics[height=3cm]{figures/dummy.jpg}
+	\label{fig:dualblowup}
+\end{figure}

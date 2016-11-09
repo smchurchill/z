@@ -1,0 +1,19 @@
+Our algorithm begins by defining a projection $\pi:T\to\RR$ satisfying some properties that are very similar to the properties of a smooth Morse 2--function.
+We demand first that if we restrict $\pi$ to any tetrahedron $\tet$ of $T$, then $\restr{\pi}{\tet}$ is an affine--linear tetrahedral projection.
+Next, let $E,E'$ be edges of $T$ and $\pi(E),\pi(E')$ their images.
+From the first condition it is guaranteed that if $\pi(E)\cap\pi(E')$ is nonempty then it consists of the single point $z$.
+We demand that if $z$ is interior to $\DD$ then it is in the image of no other edge of $T$ through $\pi$.
+
+The first requirement can be met by choosing arbitrary images for the vertices of $T$, then extending to a linear tetrahedral projection on each tetrahedron as in Equation \ref{affine_extension}.
+An arbitrary placement of the $m$ vertices of $T$ does not, however, guarantee the second condition.
+Choosing as images for the vertices odd $n\nth$ complex roots of unity (with $n\geq m$) does guarantee this condition by a theorem in \cite{PoonRub98}.
+Line segments between vertices of a regular polygon in the plane are called \emph{diagonals}.
+The theorem places a bound on the number of diagonals that can intersect at a point.
+If the polygon has an odd number of vertices, then this bound is two.
+
+To see how we use this theorem, let $T$ be our input triangulation, and let $|T^0|=m$.
+Put an arbitrary ordering on the elements of $T^0$.
+Let $n$ be the least odd number greater than or equal to $m$.
+Define $\pi(v_k)=e^{2\pi i k/n}$ for every $v_k$ in $T^0$.
+Extend $\pi$ over all of $T$.
+Then $\pi:T\to\RR$ satisfies our desired properties.

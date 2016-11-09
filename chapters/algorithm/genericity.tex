@@ -1,0 +1,40 @@
+In Section \ref{sub:tridual} we mentioned that we would like $\pi$ to be the piecewise linear analogue to the generic proper smooth map of Section \ref{sec:3bound4}.
+The important condition that we do not necessarily have is genericity.
+An investigation of the analogue to critical points of $\pi$ demonstrates why an appropriate choice of edge blowups will introduce the genericity we are looking for.
+
+Generic singular fibers in the smooth case have the form of either a point or a figure 8 graph.
+Taking $T$, $\pi:T\to\C$, and $X$ be as in Section \ref{sub:tridual}.
+A singular fiber of a $\pi$ is found by checking how simplicial circles change when we pass over the images of edges in $T$.
+Let $X(c_i)$, $X(c_j)$ be 2--cells in $X$ that intersect at a 1--cell $X(e)$, let $c_i$, $c_j$ be the regions of points of type 5 in the plane corresponding to $X(c_i)$, $X(c_j)$, and let $e$ be the strand of points of type 4 that corresponds to $X(e)$.
+Let $E$ be the edge of $T$ with $e\subset\pi(E)$, let $C_i=\{C_{i,k}\}$ be the collection of simplicial circles in $T^*$ that correspond to the circles of $T$ that map through $\pi$ over $c_i$, and let $C_j=\{C_{j,l}\}$ be the similar collection for $c_j$.
+Considering $C_i$ and $C_j$ as sets of edges in $T^*$, the method of building $C_i$ and $C_j$ found in Algorithm \ref{alg:regularcircles} tells us that the symmetric difference of $C_i$ and $C_j$ is either the boundary of the dual 2--cell $E*$, or is empty.
+The form of the singular fiber over a point in $e$ is then seen by pulling the centres of the edges of $\pd E^*$ towards the centre of $E^*$.
+This is justified by considering the centre of $E^*$ as the sole intersection of $E$ and $E^*$, and recognizing that the preimage of a point in $e$ through $\pi$ must intersect the edge $E$.
+We illustrate this situation in Figure \ref{fig:plsingularities}.
+
+\begin{figure}
+	\centering
+	\captionsetup{justification=centering}
+	\caption{Simplicial circles that form the basis of our analysis of the piecewise--linear analogue of singular fibers}
+	\includegraphics[height=3cm]{figures/dummy.jpg}
+	\label{fig:plsingularities}
+\end{figure}
+
+The form of the singular fiber is thus the wedge of $n$ simplicial circles.
+We define $n$ to be the \emph{wedge number} of $E$, and this can be computed by investigating the link of $E$ in $T$ through $\pi$, which is precisely what we do in Algorithm \ref{alg:computewedgesum}.
+
+\begin{algorithm}[h]
+	\caption{Computing a wedge number}
+	\label{alg:computewedgesum}
+	\KwData{$T$, $\pi:T\to\C$, and edge $E$ of $T$}
+	\KwResult{the wedge number of $E$, denoted $w_E$}
+	\Begin{
+		$C=\{e_0,e_1,\dots,e_k,e_0\}\longleftarrow\lk{E}$ as a cycle of the graph $T^1$\;
+		$w_E\longleftarrow 0$\;
+		\ForEach{edge $e$ in $C$}{
+			\If{$\pi(e)$ crosses $\pi(E)$}{
+				$w_E\longleftarrow w_E+1$\;
+			}
+		}
+	}
+\end{algorithm}

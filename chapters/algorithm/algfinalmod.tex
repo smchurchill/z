@@ -1,0 +1,43 @@
+\label{alg:finalmod}
+Once all offensive edges have been blown up, we are left with a solid polyhedral gluing $T''$, a map $\pi'':T''\to \DD$ and a planar graph $(G'',p'')$.
+To most efficiently assemble a shadow we perform one last set of modifications to $(G'',p'')$ colour all of the edges and regions of $(G'',p'')$ for easy identification.
+The wedge numbers of our edges are all at most 2, so the singularities of $\pi''$ are well understood.
+We remove the more complicated singularities that occur at the interior vertices of $(G'',p'')$.
+
+Let $v$ be an interior vertex of $(G'',p'')$.
+By design, $v$ has degree 4 and we may order the edges containing $v$ in clockwise order, following the standard orientation of $\DD$.
+These edges will be $e_0,e_1,e_2,e_3$.
+Because $v$ is interior, the $e_i$ are also interior.
+The $e_i$ have boundary vertices $v$ and $v_i$ in $G''$.
+Delete $v$ and the edges $e_i$.
+Add to the vertex set the vertices $v_i'$, and to the edge set the edges $e_i'$, $i=0,\dots,4$, where $e_i'=v_i v_i'$ and directed edges $v_{i}'\to v_{i+1}'$, subscript addition modulo 4.
+When all interior vertices are replaced, we have the graph $G'''$.
+
+Recall that our planar embedding $p''$ embedded edges of $G''$ to straight line segments in the plane.
+That is, we have $p''(e_i)=tp''(v)+(1-t)p''(v_i)$.
+To define a planar embedding on $G'''$, we again define the embedding of the vertices of $G'''$ and embed the edges of $G'''$ as straight line segments connecting these vertices.
+The intended effect is to ``carve away'' small discs around each embedded interior vertex of $G$.
+For a new vertex $v_i'$ with the notation above, defining $p'''$ as
+\[
+  p'''(v_i')=\frac{1}{5}p''(v) + \frac{4}{5}p''(v_i)
+\]
+will suffice.
+Every exterior vertex of $G''$ has an associated vertex in $G'''$, and $p'''$ will agree with $p''$ on these vertices.
+Finally, the edges of $G'''$ are embedded as straight line segments in the plane.
+The result is a planar graph $(G''',p''')$.
+
+The difference in regions between $(G''',p''')$  and $(G'',p'')$ amounts to a new region for each interior vertex of $(G'',p'')$.
+These regions represent the ``carved away'' portions of the plane near the critical values of $\pi''$ that may have the form of the crossing of a pair of indefinite folds (see Section~\ref{sec:3bound4}).
+We colour these regions $H$ for \emph{hole}.
+All other interior regions of $(G''',p''')$ are coloured $I$ for \emph{interior}.
+Using the notation above, the new edges $e_i'$ are each the shared boundary of a pair of interior regions, hence will be coloured $I$.
+Directed edges $v_{i}'\to v_{i+1}'$ and the vertices $v_i'$ are on the boundary of a region coloured $H$, so are also coloured $H$.
+The exterior region of $(G''',p''')$ is ignored.
+These final modifications are mostly an attempt to simplify the language and algorithms of Chapter~\ref{cha:shadow}.
+We don't bother modifying $T''$ or $\pi''$ to reflect our changing of $G''$ into $G'''$.
+
+The algorithms of Chapter~\ref{cha:projection} have provided us with two objects and the data connecting them.
+Namely, we have a solid polyhedral gluing $T''$ that is equivalent to the 3--manifold triangulation with some 3--balls carved away.
+The edges of $T''$ inherited from $T$ and produced as copies of edges inherited from $T$ via blow ups are also equipped with wedge numbers.
+We also have a planar graph $(G''',p''')$ which is connected to $T''$ by a projection $\pi'':T''\to\DD$ and a list of piecewise--linear circles associated to each interior region of $G'''$.
+

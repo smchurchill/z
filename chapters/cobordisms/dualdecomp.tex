@@ -1,0 +1,38 @@
+	To satisfy our requirement that the handle decomposition contains handles of index at most 2, we turn the decomposition obtained on its head and take its dual.
+	This method begins with an empty space and attaches 4--dimensional handles to it until the boundary of the handle decomposition is exactly $M$.
+	
+	Let $W_0$ be an empty decomposition.
+	The cocores of our 4--handles are single points, so each 4--handle yields a 0--handle in the dual decomposition.
+	Add a disjoint 4--disc (i.e.\ a 0--handle) to $W_0$ for each 4--handle added in the final step of building the original decomposition.
+	We have after this $W_1=\bigsqcup \D^4$ whose boundary is $\pd W_1 = \bigsqcup S^3$.
+	This is the same boundary that we had before adding any 4--handles to the original decomposition.
+	
+	The cocores of our 3--handles are intervals that connect 4--handles.
+	The belt sphere of a 3--handle is the boundary of the cocore, so it is a copy of $S^0$ intersecting exactly two 4--handles.
+	We connect the associated 0--handles by 3--disc bundles over copies of the interval whose endpoints are embedded in our 0--handles (i.e.\ attach 1--handles) in a way that preserves orientability.
+	We get $W_2$ as the 4--dimensional thickening of a graph whose vertices correspond to 0--handles and whose edges correspond to 1--handles.
+	The boundary of this is the collection of $S^3$'s from $\pd W_1$ that have been connected together by copies of $S^2\times\I$.
+
+	Attaching 0--handles and 1--handles in a way that preserves orientability is done uniquely.
+	This is not the case with 4--dimensional 2--handles (see Remark \ref{rmk:2handle}).
+	The 2--handles must be attached in a way that is dual to the attachment described in the original handle decomposition, else the boundary of the resulting 4--manifold need not be $M$.
+	
+	An original 2--handle is attached over a solid torus $V$ with $f(V)=D$, and the desired action on the boundary $M_0$ was the replacement of $V$ by $V^*$, a solid torus that could be filled in by a 3--handle.
+	The core of the handle attached over $V$ is the disc bounded by the zero section $z(V)$, and the cocore of the handle is the disc bounded by the zero section $z(V^*)$.
+	The core and cocore intersect at $\vec{0}$, and nowhere else.
+	
+	The attachment of 3--and 4--handles filled in $V^*$, so adding 0-- and 1--handles to our dual decomposition recovers $V^*$, the 4--manifold constructed contains $V^*$, running through $S^3$'s and along $S^2\times\I$'s, but not $V$.
+	We give $V^*$ the structure of a trivial 2--disc bundle over the belt sphere of the original 2--handle with trivialization $\psi:V^*\to S^1\times\DD$.
+	In the boundary of $V^*$ we find the curves $J$, $K$ and $L$ as defined before, displayed in Figure \ref{fig:VV*}.
+	Just as it was when we were attaching the original 2--handle, Figure \ref{fig:VV*} is slightly misleading.
+	What it really shows us is how the curves sit in $\psi(V^*)$.
+	
+	In $S^1\times\DD$, $\psi(J)$ is a meridian, $\psi(L)$ is a curve that wraps once around $\pd(S^1\times\DD)$ in the meridinal direction and $\kappa$ times around $\pd(S^1\times\DD)$ in the longitudinal direction, with oriented intersection count with $\psi(J)$ of $\kappa$, and $\psi(K)$ is exactly $S^1\times\{1\}$ in $\pd(S^1\times\DD)$.
+	
+	For a 2--handle attached over $V^*$, take $\pd (\DD\times\DD)$ to be the genus 1 Heegaard splitting of $S^3$ as before.
+	One of the solid tori will be identified with $V^*$ and the other will be $V^{**}$.
+	We need an explicit identification $G^*:V^*\to S^1\times\DD$ such that $G^*(K)$ is a meridian of $V^{**}$
+	
+	At this point it becomes convenient to view $T^2$ as the space $[0,1]\times[0,1]/\sim$, where $(\theta,0)\sim(\theta,1)$ and $(0,\phi)\sim(1,\phi)$.
+	Using the notation from Theorem \ref{thm:mpgV}, a meridian is of the form $(\theta,0)$, and $\psi(J)$ is then isotopic to a line with slope $1/0$, and $\psi(K)$ is isotopic to the longitude $(0,\phi)$, which is a line with slope $0/1$.
+	We find that $\psi(L)$ is isotopic to a line of slope $-1/\kappa$, or, alternatively, is a line of the form $-\kappa\phi=\theta$.

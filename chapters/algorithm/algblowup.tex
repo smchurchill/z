@@ -1,0 +1,29 @@
+We truncate simplicial complexes because we want to be able to perform edge blowups.
+Let $T'$ be a truncated simplicial complex as defined in Section \ref{sub:truncttet}, let $E$ be an internal edge of the polyhedral gluing with $\pd E=(u,v)$ where each of $u$, $v$ are boundary vertices of $T'$, and let $\sigma$, $\tau$ be 3--cells of $T'$ with $\sigma\cap\tau=E$.
+A blowup of $E$ across $\sigma$ and $\tau$ is the process of replacing $E$, $\sigma$ and $\tau$ by $\hat{E}$, $\hat{\sigma}$ and $\hat{\tau}$ where $\hat{E}$ is a rectangular 2--cell and $\hat{\sigma}$, $\hat{\tau}$ are 3--cells with $\hat{\sigma}\cap\hat{\tau}=\hat{E}$.
+This does not modify any of the other adjacencies of $\sigma$ or $\tau$.
+A model blowup is depicted in Figure \ref{fig:edgeblowup}.
+The explicit modification of $T'$ involves replacing a small cylinder containing $E$ with a small cylinder that contains $\hat{E}$ in its place.
+We then need to define $\pi'$ on this cylinder.
+There is already definition of $\pi'$ on the boundary of the cylinder, so we define $\pi'$ on the edges of $\hat{E}$ internal to $T'$ to be a pair of lines that are parallel to $\pi'(E)$, and extend linearly.
+Note that there are exactly two ways to define $\pi'$ on $\hat{E}$ that correspond to flipping $\pi'(\hat{E})$ over a central axis.
+
+The effect this has on the 2--complex associated to $T'$ is depicted in Figure \ref{fig:edgeblowup2complex}.
+The level of bookkeeping involved in writing an explicit algorithm only serves to obfuscate understanding.
+Because Figure \ref{fig:edgeblowup2complex} depicts a representative case of modification, we take it as a full demonstration.
+
+\begin{figure}
+	\centering
+	\captionsetup{justification=centering}
+	\caption{Blowing up an edge in a polyhedral gluing}
+	\includegraphics[height=3cm]{figures/dummy.jpg}
+	\label{fig:edgeblowup}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\captionsetup{justification=centering}
+	\caption{Blowing up the associated path in the 2--complex}
+	\includegraphics[height=3cm]{figures/dummy.jpg}
+	\label{fig:edgeblowup2complex}
+\end{figure}

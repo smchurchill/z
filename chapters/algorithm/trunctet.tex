@@ -1,0 +1,65 @@
+We are interested in what happens to the 2--complex obtained in Section \ref{sub:2complex} when we begin truncating tetrahedra.
+Truncation must be done in a controlled way, to keep gluing maps between faces well--defined.
+A model truncated tetrahedron can be seen in Figure \ref{fig:truncttet}
+
+\begin{figure}
+	\centering
+	\captionsetup{justification=centering}
+	\caption{A truncated tetrahedron}
+	\includegraphics[height=3cm]{figures/dummy.jpg}
+	\label{fig:truncttet}
+\end{figure}
+
+Let $T$ be a 3--dimensional edge--distinct connected simplicial complex and $\pi:T\to\C$ a crossing distinct projection of $T^1$ into $\C$.
+One way to turn each tetrahedron of $T$ into a truncated tetrahedron is to remove a neighbourhood from each vertex of $T$.
+Each ball removed leaves a $\DD$ boundary in each truncated tetrahedron that contained the removed vertex.
+Once all removals are complete, we have a polyhedral gluing complex whose polyhedral 3--cells are truncated tetrahedra.
+We choose the removed balls so that if $B$ is the ball removed about the vertex $v$ in $T^0$, then $B = \pi\inv(B_\varepsilon(\pi(v)))$ where $B_\varepsilon$ is a ball of radius $\varepsilon$ about $\pi(v)$.
+Figure \ref{fig:neuter} depicts this process.
+
+\begin{figure}
+	\centering
+	\captionsetup{justification=centering}
+	\caption{Balls to remove}
+	\includegraphics[height=3cm]{figures/dummy.jpg}
+	\label{fig:neuter}
+\end{figure}
+
+We also make explicit the effect this has on the 2--complex we recover from $\pi':T'\to\C$, where $\pi'$ is just $\pi$ restricted to $T'\subset T$.
+This is done in Algorithm \ref{alg:neuter}, taking $T$ and $\pi$ to be as in the input to Algorithm \ref{alg:crossdis2complex}.
+Figure \ref{fig:neuter2complex} depicts the result of an application around a specific vertex.
+
+\begin{algorithm}[h]
+	\caption{Generating a 2--complex from a truncated linear tetrahedral projection}
+	\label{alg:neuter}
+	\KwData{$T$, $\pi:T\to\C$}
+	\KwResult{a 2--complex $X'$ corresponding to the truncated complex $T'$}
+	\Begin{
+		$X \longleftarrow$ result of Algorithm \ref{alg:crossdis2complex} applied to $T$ \;
+		\ForEach{vertex $v$ of $X$ with $v\in\pi(T^0)$}{
+			delete all 2--cells containing $v$\;
+			\ForEach{edge $e=(v,u)$ of $X$}{
+				\ForEach{edge $f=(v,w)$, $f\neq e$}{
+					temporarily label $w$ by $\theta_{u,w}$, the positive clockwise rotation in radians about $v$ that takes $e$ onto $f$\;
+				}
+				delete $e$\;
+				add a vertex $u_v$ to $X$\;\label{line:vertexadd1}
+				add an edge $(u_v,u)$ to $X$\;
+			}
+			\ForEach{vertex $u_v$ added at Line \ref{line:vertexadd1}}{
+				$w_v\longleftarrow$ the vertex with smallest $\theta_{u,w}$ between $0$ and $\pi$\;
+				add an edge $(u_v,w_v)$ to $X$\;
+			}
+			delete $v$\;
+		}
+	}
+\end{algorithm}
+
+
+\begin{figure}
+	\centering
+	\captionsetup{justification=centering}
+	\caption{A 2--complex before and after Algorithm \ref{alg:neuter}}
+	\includegraphics[height=3cm]{figures/dummy.jpg}
+	\label{fig:neuter2complex}
+\end{figure}

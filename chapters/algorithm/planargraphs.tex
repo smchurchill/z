@@ -1,0 +1,59 @@
+We establish some properties of piecewise--linear maps from polyhedra to $\RR$, and develop an algorithm to produce an associated 2--dimensional CW--complex.
+This CW--complex is used as a data type to keep track of the piecewise linear version of the generic proper smooth maps of Section \ref{sec:3bound4}.
+In Section \ref{sec:stein}, we use the 2--complex produced to form a Stein complex.
+
+\begin{defn}
+	\label{def:stdproj}
+	Let $\Delta$ be a tetrahedron with the four vertices $u$, $v$, $w$, $x$, six edges $uv$, $uw$, $ux$, $vw$, $vx$, $wx$, and faces $\hat{u}$, $\hat{v}$, $\hat{w}$, $\hat{x}$, where a face is named by the vertex of $\Delta$ it does not contain.
+	Define a projection $\pi: \Delta \to\DD$ by first choosing a map from the vertices of $\Delta$ to distinct points in $\sone$.
+	Each point $p$ of $T$ is decribed by the convex combination
+	\[
+		p = t_u u + t_v v + t_w w + t_x x
+	\]
+	with the $t_*$ nonnegative and summing to 1.
+	We can define $\pi$ at $p$ by
+	\begin{eqnarray}
+		\label{affine_extension}
+		\pi(p)
+		&=&
+		\pi(t_u u + t_v v + t_w w + t_x x) \nonumber \\
+		&=&
+		t_u \pi(u) + t_v \pi(v) + t_w \pi(w) + t_x \pi(x)
+	\end{eqnarray}
+	  
+	Without loss of generality, we assume that the points $\pi(u),\pi(v),\pi(w),\pi(x)$ are ordered in a clockwise orientation about $\sone$.
+	We call $\pi:T\to\DD$ a \emph{linear tetrahedral projection}.
+\end{defn}
+
+\begin{defn}
+	\label{def:projpttypes}
+	A point of $\DD$ in the image of $\pi$ is one of five types:
+	\begin{enumerate}
+		\item The four points of type 1 are the images of the vertices of $T$ under $\pi$.
+		\item The single point of type 2 is the intersection $\pi(uw)\cap\pi(vx)$.
+		\item All points in $\pi(uv)\cup\pi(vw)\cup\pi(wx)\cup\pi(xu)$, excluding the points of type 1, are of type 3.
+		\item All points in $\pi(uw)\cup\pi(vx)$ excluding the points of type 1 or 2 are of type 4.
+		\item The points of type 5 are the points outside of the image of any vertex or edge of $T$.
+	\end{enumerate}
+\end{defn}
+
+By definition, the preimage of a point of type 1 is a vertex of $T$.
+The preimage of the single point of type 2 is a line segment between the edges $uw$ and $vx$ interior to $T$.
+A point of type 3 is the image of exactly one point in an edge of $T$.
+A point of type 4 is in the image of exactly one edge and one face, so the preimage of one of these points is a line segment interior to $T$ between those two facets.
+Finally, points of type 5 are in the image of exactly two faces of $T$, and pull back to line segments interior to $T$ between those two faces.
+
+We naturally associate the 
+The image of the $1$--skeleton of $T$ forms a planar graph $G$ inside of $\DD$ whose vertex set consists of the points of types 1 and 2 and whose edges consist of points of type 3 and 4.
+The planar graph embedding cuts the plane into five connected regions: four inner regions that contain all points of type 5, and one outer region.
+This graph has four outer edges, consisting of the points of type 3, and four inner edges, consisting of the points of type 4.
+
+\begin{algorithm}
+	\label{alg:lintetTOplanar}
+	\KwIn{An ordering of the vertices of a tetrahedron linear tetrahedral projection $\pi$}
+	\KwOut{A planar graph $(G,p)$}
+	\KwResult{output}
+	\caption{Planar graph corresponding to a linear tetrahedral projection}
+\end{algorithm}
+
+

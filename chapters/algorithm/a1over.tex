@@ -1,0 +1,11 @@
+The data we are trying to collect and retain with the algorithms of this chapter are as follows:
+\begin{enumerate}
+  \item A list of polygons which we will call regions.
+  \item A colouring of every edge of every region using one of the three colours $i,f,h$.
+  \item A wedge number of $0$, $1$, or $2$ for any edge coloured $i$.
+  \item A list of adjacencies between regions.
+        An item in this list consists of a pair of regions and an $i$--coloured boundary edge of each region.
+  \item A list of piecewise--linear circles associated to each region.
+        An item in this list is an ordered list of polygonal 2--cells which live in a closed polyhedral 3--complex so that any two consecutive 2--cells lie on the boundary of the same 3--cell, yet any 3--cell contributes either zero or two 2--cells to any given list.  This list is indexed by the list of regions in item 1.
+\end{enumerate}
+This data is sufficient to build a shadow, as seen in Chapter \ref{cha:shadow}.

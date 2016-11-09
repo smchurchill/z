@@ -1,0 +1,98 @@
+\label{alg:handlebody}
+
+This algorithm takes as input a shadow $S=(P,\glm)$ as produced in Chapter~\ref{cha:shadow}.
+In particular, all boundary edges of $P$ are coloured false, and $\glm$ is defined only the regions of $P$ whose closures do not touch the boundary of $P$.
+This algorithm gives as output a 4--dimensional orientable manifold which is a disc bundle over a regular neighbourhood of $\Sing (P)\setminus\pd P$.
+All that remains at that point is to extend the disc bundle over the removed regions.
+
+The singular set $\Sing (P)$ is a graph with 4--valent interior vertices and 3--valent boundary graph.
+Let $\Sing'(P)$ denote $\Sing(P)$ minus the boundary edges of $\Sing(P)$
+Take note, though, that a boundary vertex of $P$ is 4--valent in $\Sing (P)$.
+We take $N$ to be a regular neighbourhood of $\Sing(P)$.
+This is $P$ minus a shrunken copy of each region of $P$ and can be decomposed into nice blocks with gluing instructions.
+The blocks associated to the neighbourhoods of interior vertices and edges are the standard vertex and edge blocks from Figure \{FIGURE: Let's get a new figure in here\}.
+The blocks associated to the neighbourhoods of boundary vertices and edges are the standard edge block and $I^2$ respectively.
+Each of these blocks is contractible, so a disc bundle over these blocks is also contractible.
+The prisms of the previous section allow us to take interval bundles quite easily, so we form our disc bundle by first taking an interval bundle over $N$ then taking another interval bundle over that space.
+The interval bundle over $N$ must be taken as $N\times I$ so that we may keep track of the attaching spheres for our 2--handles later.
+The space $N\times I$ may be nonorientable, but we may take an interval bundle over $N\times I$ in such a way that the total space is orientable, as discussed in the previous section.
+ 
+
+We take the interval bundle over a vertex block to be a single tetrahedron.
+Let $v$ be a vertex of $N$ and $\Delta_v$ the tetrahedron associated to the interval bundle over the vertex block of $v$.
+We call $\Delta_v$ a \emph{vertex bundle block}.
+Each interior vertex is incident to four edges and six regions, so if $\Delta_v$ comes from an interior vertex then to each edge of $\Delta_v$ we associate a region of $P$ and each face of $\Delta_v$ we associate an edge of $P$ in a way that makes combinatorial sense.
+Each boundary vertex is incident to four edges and three regions, but three of those edges are coloured false and all three of the regions are boundary regions.
+By the discussion at the beginning of the chapter, false edges along with the vertices and regions touching them contribute contractible 4--balls to the disc bundle over $P$.
+So if $v$ is boundary, we do not construct a vertex bundle block for it.
+
+\{FIGURE: $v$ AS IT SITS IN $P$ AND THE RESULTING $\Delta_v$ WITH EDGE AND FACE COLOURING\}
+
+We take the interval bundle over an edge block to be a 3--prism with identical walls.
+Let $e$ be an edge of $N$ and $\Pi_e$ the prism associated to the interval bundle over the edge block of $e$.
+We call $\Pi_e$ an \emph{edge bundle block}.
+Each interior edge is incident to two vertices and three regions, so if $\Pi_e$ comes from an interior edge then to each of the three walls of $\Pi_e$ we associate a region of $P$ and to the top and bottom faces of $\Pi_e$ we associate a vertex of $P$.
+Again, we can discard any edge bundle blocks that would come from false edges.
+
+\{FIGURE: $e$ AS IT SITS IN $P$ AND THE RESULTING $\Pi_e$ WITH EDGE/FACE COLOURING\}
+
+There are clear gluing maps between the $\Delta_v$ and $\Pi_e$ which form a possibly nonorientable 3--handlebody which can be seen as the trivial interval bundle over $N$.
+The top triangular face of a given $\Pi_e$ is associated to the vertex $v$ of $\Sing (P)$.
+We call that face $t$.
+If $v$ is a boundary vertex then we colour $t$ ``false.''
+Otherwise, the walls of $\Pi_e$ are associated to regions $r_1,r_2,r_3$, and we call those triangulated walls by $w_1$, $w_2$ and $w_3$.
+A face of $t$ intersects one $w_i$ nontrivially.
+We call that face of $t$ by $t_i$.
+There is a $\Delta_v$ with face $F^e(\Delta_v)$ associated with $e$.
+The three edges of $F^e(\Delta_v)$ are associated with the regions $r_1,r_2,r_3$, so we identify $t$ to $F^e(\Delta_v)$ by their edge.
+
+At this point, we have not glued any faces together.
+If we were to glue the faces based on their identifications, though, we would have the 3--handlebody described above.
+Instead, let $M$ be a maximal spanning tree of the graph $\Sing'(P)$.
+The subcomplex of $N$ associated with $M$ is $M_c$.
+We freely glue together the $\Delta_v$ and $\Pi_e$ associated to $\Sing'(P)$.
+The result is the 3--ball $H=M_c\times I$, which is orientable, and a collection of edge bundle blocks $\Pi_e$, one for each edge $e$ not in $M$.
+Iterating through the remaining edge bundle blocks, if the attachment of a given $P_e$ to $H$ would cause the resulting 3--handlebody to be orientable, we attach both faces of $P_e$ to $H$.
+Otherwise, we attach exactly one of the faces of $P_e$ to $H$, and remember the attaching map between the other two faces.
+The orientation preservation condition can be easily checked by comparing the orientation of $H$ with the attaching faces of $P_e$.
+The edge bundle block $P_e$ is attached to $H$ over the oriented triangular top and bottom faces of $\Pi_e$, and a pair of oriented triangular faces of $H$.
+Recall that if both attaching maps are orientation preserving or orientation reversing, then the resulting body is nonorientable and if one map is orientation preserving and the other is orientation reversing, then the resulting body is orientable.
+Here, an attaching map between oriented triangles is completely described by an element of $\Sigma_3$, the symmetric group on three points.
+An even element of $\Sigma_3$ corresponds to an orientation preserving attaching map and an odd element corresponds to an orientation reversing attaching map.
+The result is an orientable simplicial manifold $H$ along with some additional gluing information.
+Furthermore, every region of $P$ is associated to either an annulus or strip on the boundary of $H$ built from the walls of the 3--prisms.
+For each region $R$, call its annulus or strip by $R_f$, where $f$ stands for ``framing.''
+These objects are significant because they allow us to define 0--framings for our 2--handle attachments.
+
+To perform 4--thickening, we take two copies of $H$: $H\times\{1\}$ and $H\times \{-1\}$.
+For every tetrahedron $\tet$ of $H$, take the tetrahedra $\tet\times\{1\}$ and $\tet\times\{-1\}$ to be the ``top'' and ``bottom'' tetrahedra of a 4--prism with identical walls.
+We glue the walls of every prism together in the way we designed the walls to do.
+A pair of unglued edge bundle block faces are triangles $t_{1,2}$ along with a gluing map $g:t_1\to t_2$.
+The 4--thickening of these triangles is a pair of triangulated 3--balls $b_{1,2}$.
+Each of $b_{1,2}$ has the triangulation of a 3--prism with identical walls, complete with the triangles $t_{1,2}\times\{\pm 1\}$.
+
+\{FIGURE: DRAW THESE SPECIFIC 3--PRISMS\}
+
+The reason we did not glue $t_{1,2}$ in the first place was because $g$ corresponded to an odd permutation between the vertices of the triangles according to their orientations as induced by the orientation of $H$.
+We may now glue $b_{1,2}$ by first gluing $t_1\times\{1\}$ to $t_2\times\{- 1\}$ and $t_1\times\{- 1\}$ to $t_2\times\{ 1\}$ using the map $g$, then by gluing over the tetrahedra of $b_{1,2}$ as forced by this identification.
+One may view this map as multiplication by $-1$ in the $[-1,1]$ factor of the object $\tri\times[-1,1]$.
+The result is a compact orientable triangulated 4--handlebody which has $N$ as its shadow.
+
+Lets examine what has happened to the objects $R_f$.
+First, the case where $R_f$ is an annulus.
+Choose a triangulated boundary circle $C$ of $R_f$.
+In the 4--thickening of $H$, $R_f$ is thickened to an open solid torus $V$, and $C$ is a longitude of this open solid torus.
+We take $C$ to be the 0--framing of the core of $V$.
+
+Next, the case where $R_f$ is a strip in $H$.
+The gluing map $g$ associated with $R_f$ would make $R_f$ into a M\"obius strip, so the boundary of $R_f$ can be easily decomposed into four pieces: two pieces $C,C'$ which form the boundary circle of the M\"obius strip and a pair of edges which are glued together by $g$.
+We took our 4--thickening to be orientable by treating the strips $R_f$ differently, so the 4--thickening of $R_f$ is an open solid torus $V$.
+Then $C$ sits on the boundary of $V$ as a curve which runs once around the longitudinal direction of $V$, but has endpoints which are diametrically opposed in a meridinal disc.
+Choose $C^+$ to be the 0--framing of the core of $V$, where $C^+$ is formed from $C$ by connecting the endpoints of $C$ by a positive one half twist around the boundary of $V$, where positive is defined by the orientation of $V$.
+The gleam of $R$ is a half--integer in this case, so the alteration to the 0--framing we've performed here is corrected by decreasing the gleam of $R$ by $\nicefrac{1}{2}$.
+
+\{REF: COSTANTINO, INTRO TO SHADOWS?\}
+
+The triangulation of $V$ is built from a number of 3--dimensional prisms with identical walls equal to the number of edges $m$ in the boundary of $R$, where $R$ is the region of $P$ to which $V$ corresponds.
+Such an open solid torus has easily defined curves which intersect a given 0--framing only at vertices in exactly $n$ points, where $n\leq k$.
+Thus, an $n$--framing of such a torus with respect to our given 0--framing is realizable. 

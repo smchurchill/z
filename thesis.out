@@ -10,19 +10,19 @@
 \BOOKMARK [1][-]{section.3.2}{2\205Manifolds Bound 3\205Manifolds}{chapter.3}% 10
 \BOOKMARK [1][-]{section.3.3}{3\205Manifolds Bound 4\205Manifolds}{chapter.3}% 11
 \BOOKMARK [0][-]{chapter.4}{Algorithms}{}% 12
-\BOOKMARK [1][-]{section.4.1}{Planar Graphs and Piecewise\205linear Maps}{chapter.4}% 13
-\BOOKMARK [1][-]{section.4.2}{Build a projection}{chapter.4}% 14
-\BOOKMARK [1][-]{section.4.3}{Obtain a planar graph}{chapter.4}% 15
-\BOOKMARK [1][-]{section.4.4}{Find all mapping triangles}{chapter.4}% 16
-\BOOKMARK [1][-]{section.4.5}{Find all mapping circles}{chapter.4}% 17
-\BOOKMARK [1][-]{section.4.6}{Count wedge numbers}{chapter.4}% 18
-\BOOKMARK [1][-]{section.4.7}{Truncate tetrahedra}{chapter.4}% 19
-\BOOKMARK [1][-]{section.4.8}{Blow up edges}{chapter.4}% 20
-\BOOKMARK [1][-]{section.4.9}{Final Modifications}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.10}{Construct and connect regions}{chapter.4}% 22
-\BOOKMARK [1][-]{section.4.11}{Extend over vertices}{chapter.4}% 23
-\BOOKMARK [1][-]{section.4.12}{Compute Framing Constants}{chapter.4}% 24
-\BOOKMARK [1][-]{section.4.13}{The triangulated prism}{chapter.4}% 25
-\BOOKMARK [1][-]{section.4.14}{Build a handlebody}{chapter.4}% 26
-\BOOKMARK [1][-]{section.4.15}{Attach 2-handles}{chapter.4}% 27
+\BOOKMARK [1][-]{section.4.1}{The Projection}{chapter.4}% 13
+\BOOKMARK [2][-]{subsection.4.1.1}{Piecewise\205linear Maps and 2\205Complexes}{section.4.1}% 14
+\BOOKMARK [2][-]{subsection.4.1.2}{Tetrahedral Truncation}{section.4.1}% 15
+\BOOKMARK [2][-]{subsection.4.1.3}{Edge Blowups}{section.4.1}% 16
+\BOOKMARK [2][-]{subsection.4.1.4}{Triangulations and Dual Complexes}{section.4.1}% 17
+\BOOKMARK [2][-]{subsection.4.1.5}{Genericity Via Blowups}{section.4.1}% 18
+\BOOKMARK [2][-]{subsection.4.1.6}{Final Modifications}{section.4.1}% 19
+\BOOKMARK [1][-]{section.4.2}{The Stein Complex}{chapter.4}% 20
+\BOOKMARK [2][-]{subsection.4.2.1}{Construct and connect regions}{section.4.2}% 21
+\BOOKMARK [2][-]{subsection.4.2.2}{Extend over vertices}{section.4.2}% 22
+\BOOKMARK [2][-]{subsection.4.2.3}{Compute Framing Constants}{section.4.2}% 23
+\BOOKMARK [1][-]{section.4.3}{The 4\205Manifold}{chapter.4}% 24
+\BOOKMARK [2][-]{subsection.4.3.1}{The triangulated prism}{section.4.3}% 25
+\BOOKMARK [2][-]{subsection.4.3.2}{Build a handlebody}{section.4.3}% 26
+\BOOKMARK [2][-]{subsection.4.3.3}{Attach 2-handles}{section.4.3}% 27
 \BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 28
