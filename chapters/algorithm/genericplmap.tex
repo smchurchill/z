@@ -1,0 +1,42 @@
+This section comes to fruition with the definition of the piecewise--linear analog to a generic proper smooth map.
+Let $T$ be a closed, orientable, edge--distinct 3--manifold triangulation.
+We build a map $\pi':T'\to\C$ satisfying the following criteria:
+\begin{enumerate}
+	\item The space $T'$ is a solid polyhedral gluing whose boundary components are homeomorphic to $S^2$.
+	\item Attaching 3--balls over the boundary components of $T'$ results in a complex homeomorphic to $T$.
+	\item For any pair of edges $E$, $F$ in $T'$, if $\pi'(E)\cap\pi(F)=z$ is nonempty, then $z$ is not the intersection of any other pair of edges in $T'$.
+	\item The wedge number of every edge of $T'$ is 0, 1, or 2.
+\end{enumerate}
+The first two conditions are met by modifying $T$ only through truncation and the blowing up of edges.
+Condition 3 we obtain by requiring $\pi$ to be crossing distinct on $T$, and then modifying $T$ only in the controlled ways discussed in this section.
+For condition 4, we blow up the appropriate edges.
+The details are laid out in Algorithm \ref{alg:proj}, where we also obtain the 2--complex associated to $\pi'$ along the way.
+We pass the results of Algorithm \ref{alg:proj} into the algorithms of Section \ref{sec:stein}
+
+\begin{algorithm}[H]
+	\caption{Building the piecewise--linear analogue to a generic proper smooth map}
+	\label{alg:proj}
+	\KwData{the closed, orientable, edge--distinct 3--manifold triangulation $T$}
+	\KwResult{a map $\pi':T'\to\C$ satisying the above criteria, and the associated 2--complex $X'$}
+	\Begin{
+		$m\longleftarrow |T^0|$\;
+		put an arbitrary order on $T^0$\;
+		\ForEach{integer $k$ in $[1,m]$}{
+			define $\pi(x_k)=e^{2\pi i \frac{k}{m}}$	
+		}
+		extend $\pi$ linearly as in Section \ref{sub:2complex}\;
+		\ForEach{edge $E$ of $T$}{
+			$w_E\longleftarrow$ result of Algorithm \ref{alg:computewedgenum}\;
+			distribute $w_E$ across the tetrahedra containing $E$\;
+		}
+		truncate $T$ to $T'$ and $\pi$ to $\pi'$\;
+		$X\longleftarrow$ result of Algorithm \ref{alg:neuter} on $\pi$\;
+		\ForEach{internal edge $E'$ of $T'$}{
+			\While{$w_E>2$}{
+				$(\sigma^*,\tau^*)\longleftarrow$ result of Algorithm \ref{alg:wedgereduction}\;
+				$\pi',T',T'^*,X'\longleftarrow$ result of blowing up $E'$ over $\sigma$ and $\tau$\;
+				$w_E\longleftarrow w_E-1$\;
+			}
+		}
+	}
+\end{algorithm}

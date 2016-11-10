@@ -12,7 +12,7 @@ Then $s$ meets the endpoints of two more line segments that pass through $\sigma
 This continues until the segments join up into a simplicial circle interior to $T$, just as in the smooth regular value theorem.
 
 \begin{algorithm}[h]
-	\caption{Collect circles that map over a region}
+	\caption{Building a collection of circles that map over a region}
 	\label{alg:regularcircles}
 	\KwData{a 2--cell $c$ of $X$, $T$, $T^*$, $\pi:T\to\C$}
 	\KwResult{a collection $C=\{C_i\}$ of simplicial circles in $T^*$ representing the circles in $T$ that project through $\pi$ over the region in the plane that correspond to $c$}
@@ -54,3 +54,13 @@ We can see the modified structure in Figure \ref{fig:dualblowup}.
 	\includegraphics[height=3cm]{figures/dummy.jpg}
 	\label{fig:dualblowup}
 \end{figure}
+
+It is worth noting here that we need only build directly the collection of circles that map over a single region.
+Once that is built, the circles mapping over neighbouring regions are determined from our first collection.
+This is especially useful once edges are blown up, as tracking the specifics of a projection $\pi$ through such modifications is tedious.
+
+Let $X$ be a 2--complex generated as described by any of our algorithms from a polyhedral gluing $T$ and let $T^*$ be the appropriate dual complex to $T$.
+Let $c$ be a 2--cell of $X$, let $c'$ be a neighbouring 2--cell over the edge $e$ in $X$, let $C$ be the collection of circles mapping over $c$, and $C'$ the collection over $c'$.
+There is an edge $E$ of $T$ and dual 2--cell $E^*$ that correspond to $e$.
+By Algorithm \ref{alg:regularcircles} the only set of edges in $T^*$ on which $C$ and $C'$ differ is $\pd E^*$.
+We can then obtain $C'$ from $C$ by taking the symmetric difference of $C$ with $\pd E^*$.

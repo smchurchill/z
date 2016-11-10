@@ -48,11 +48,11 @@ We detail this construction in Algorithm \ref{alg:lintet2complex}.
 \begin{algorithm}[h]
 	\caption{Generating a 2--complex from a linear tetrahedral projection}
 	\label{alg:lintet2complex}
-	\KwData{a simplex $\sigma$, a map $\pi:\sigma^0\to\C$}
+	\KwData{a simplex $\sigma$, a map $\pi:\sigma\to\C$}
 	\KwResult{a 2--complex $X$}
 	\Begin{
 		$X^1 \longleftarrow \sigma^1$\;
-		\While{there is a pair of edges $(e,f)=((u,v),(w,x)$ in $X$ that cross at the point $y\in\RR$}{
+		\While{there is a pair of edges $(e,f)=((u,v),(w,x))$ in $X$ that cross at the point $y\in\RR$}{
 			delete $e$, $f$\;
 			add a vertex $y'$ to $X$\;
 			define $\pi(y')=y$\;			
@@ -81,7 +81,7 @@ In Algorithm \ref{alg:crossdis2complex} we continue to let $T$ be a 3--dimension
 	\KwResult{a 2--complex $X$}
 	\Begin{
 		$X^1 \longleftarrow T^1$\;
-		\While{there is a pair of edges $(e,f)=((u,v),(w,x)$ in $X$ that cross at the point $y\in\RR$}{
+		\While{there is a pair of edges $(e,f)=((u,v),(w,x))$ in $X$ that cross at the point $y\in\RR$}{
 			delete $e$, $f$\;
 			add a vertex $y'$ to $X$\;
 			define $\pi(y')=y$\;			

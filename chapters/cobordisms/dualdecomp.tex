@@ -1,3 +1,211 @@
+
+In the case that $G$ is of genus 1, 
+
+$G$ contains no critical points of $f$, and we have already seen how to give $G$ the structure of a circle bundle over a disc whose fibers are the preimages through $f$ of points in $\nbhd{x}$.
+Here, $h(G)$ is a 2--disc in a region of $S$, and fills a hole 
+The handlebody of genus 1 collapses through $h$ to fill a hole in a regular level, and in this way we cap off all $S^1$ boundary regions of the Stein complex with 2--discs.
+
+and is of genus 0 or 2 when the folds over $x$ are not interactive.
+
+
+\begin{figure}
+	\centering
+	\captionsetup{justification=centering}
+	\caption{Stein complex of uninteractive and interactive definite folds projecting near codimension 2 critical values}
+	\includegraphics[height=3cm]{figures/dummy.jpg}
+	\label{fig:codim2steindef}
+\end{figure}
+
+The genus 0 handlebodies occur in the case of definite folds, both interactive and uninteractive.
+In the uninteractive case, there is a section within an edge of the trivalent graph that is not labeled definite.
+We extend that region to its termination as in the previous case, labeling the terminating points as definite edges.
+When the definite fold interacts with an indefinite fold, the internal edge terminates in a vertex of the trivalent graph that is not labeled definite.
+As before, the regions are extended out their terminus and the resulting edges are labeled definite.
+In this case there is a vertex corresponding to the termination of a saddle singularity that we label definite.
+Both cases are considered in Figure \ref{fig:codim2steindef}
+
+\begin{figure}
+	\centering
+	\captionsetup{justification=centering}
+	\caption{Stein complex of the uninteractive indefinite fold projecting near codimension 2 critical values}
+	\includegraphics[height=3cm]{figures/dummy.jpg}
+	\label{fig:codim2steinindefun}
+\end{figure}
+
+Genus 2 handlebodies are dealt with exactly as in the case of the pair of pants crossed with the interval.
+The hole is filled with the local polyhedral model corresponding to the edge, as seen in Figure \ref{fig:codim2steinindefun}.
+
+\begin{figure}
+	\centering
+	\captionsetup{justification=centering}
+	\caption{Crossing saddle singular fiber}
+	\includegraphics[height=3cm]{figures/dummy.jpg}
+	\label{fig:crossingsaddles}
+\end{figure}
+
+When the handlebody is of genus 3, we are in the situations detailed in Section 4.4 of \cite{CostThur08}.
+The hole corresponding to $K_4$ is filled in with the polyhedral model corresponding to a vertex.
+This Stein complex is simple enough to justify, as it is simply what happens when a pair of saddles cross as in Figure \ref{fig:crossingsaddles}.
+
+\begin{figure}
+	\centering
+	\captionsetup{justification=centering}
+	\caption{Rotating torus singular fiber}
+	\includegraphics[height=3cm]{figures/dummy.jpg}
+	\label{fig:doublecone}
+\end{figure}
+
+The final hole can be filled in with the nonstandard vertex--like compact topological space in \ref{fig:doublecone}.
+This justification is more difficult to see, but Figure \ref{fig:doublecone} attempts to demonstrate.
+We consider a torus and a Morse function given by a simple height map.
+By rotating the torus over a horizontal axis halfway between the punctures, we cause the singular fibers to eventually reside in the same critical level, and then separate again.
+
+
+
+
+
+
+	
+	They are handlebodies of 
+	A sleeve around a codimension 2 critical value $x$ pulls back to a disjoint collection of handlebodies in $M$.
+	
+	If we were to remove these portions from $S$, we would be left with 
+	At this point the boundary of the Stein complex has several connected components.
+	The components that intersect the definite edges of the boundary 
+	is the disjoint union of a trivalent graph whose edges all intersect definite edges of the boundary along with a some copies of $S^1$ and some graphs of the shapes found in Figure \ref{fig:holegraphs}.
+
+
+	
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\caption{Boundary graphs in the Stein complex}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:holegraphs}
+	\end{figure}
+
+The Stein complex formed has the structure of a simple polyhedron almost everywhere.
+
+
+It is possible to replace this shape with an integer decorated simple polyhedron containing two internal vertices and a trivalent boundary graph matching the hole we need to fill, but we need to discuss integer decoration first.
+
+We now have a Stein complex that almost describes a handle decomposition of a cobordism of $(M,\emptyset)$.
+For each vertex we attach a 0--handle, for each edge we attach a 1--handle, and for each region we attach a 2--handle.
+The only piece of information missing is a framing coefficient that defines how to attach our 2--handles.
+Each region of the complex is be decorated with the framing coefficient for that handle determined during the proof of Theorem \ref{thm:3bound4}.
+
+\begin{figure}
+	\centering
+	\captionsetup{justification=centering}
+	\caption{The integer decorated simple polyhedron that replaces the double cone vertex}
+	\includegraphics[height=3cm]{figures/dummy.jpg}
+	\label{fig:simplepoly}
+\end{figure}
+
+Now that we know what integer decoration means, we do away with the double cone vertex.
+We instead fill the final holes of the Stein complex with the simple polyhedron in Figure \ref{fig:simplepoly}.
+The boundary regions of the polyhedron are equipped with relative integers that modify the decorations associated to the regions they are joined to in the existing Stein complex.
+The internal region has an absolute integer to describe its 2--handle attachment.
+
+We are left with an integer decorated Stein complex of the map $f:M\to\BB$ that describes fully the dual handle decomposition recovered in Theorem \ref{thm:3bound4} for a cobordism of the pair $(M,\emptyset)$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Before we delve into the specifics of obtaining the Stein complex and how it provides a set of instructions used to build the dual decomposition, we define the 2--dimensional analogue to a graph that we use to describe the Stein complex combinatorially.
+
+\begin{defn}
+	\begin{figure}
+		\centering
+		\caption{The three local polyhedral models}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:localpoly}
+	\end{figure}
+	The three \emph{standard local polyhedral models} are the following 3 compact topological spaces, as they sit inside of $\R^3$, under the subspace topology.
+	\begin{enumerate}
+		\item the closed 2--disc $\D^2$.
+		\item the product of the interval $\I$ with the $Y$--shaped graph $K_{1,3}$.
+		\item the cone on the complete graph $K_4$.
+	\end{enumerate}
+	The models each have boundary.
+	Being a surface, the 2--disc has a well defined boundary.
+	In the local model $K_{1,3}\times I$, the boundary consists of the union of the sets $(K_{1,3}\times \{0\})$, $(K_{1,3}\times \{1\})$, and $(v(K_{1,3})\times I)$, where $v(K_{1,3})$ denotes the vertex set of the graph $K_{1,3}$.
+	The cone on $K_4$ is defined as $K_4\times I /\sim$ where $(x,1)\sim (y,1)$ for every $x$, $y$ in $K_4$.
+	When we define the cone this way the boundary is $K_4\times \{0\}$.
+\end{defn}
+
+\begin{defn}
+	Let $P$ be a compact topological space.	
+	If every point $p$ of $P$ has a neighbourhood homeomorphic to an open set in one of the standard local polyhedral models, then $P$ is a \emph{simple polyhedron}.
+	The set of points which do not have a neighbourhood homeomorphic to an open set in $D^2$ form a 4--valent graph which we call the \emph{singular set} of $P$ and denote by $\Sing (P)$.
+	The vertices and edges of $\Sing (P)$ are called the vertices and edges of $P$.
+	We call the connected components of $P\setminus\Sing (P)$ the \emph{regions} of $P$.
+	A simple polyhedron whose regions are homeomorphic to discs is \emph{standard}.
+	
+	If a point $p$ of $P$ has a neighbourhood homeomorphic to an open set containing a point in the boundary of one of our three local models, then $p$ is a \emph{boundary point} of $P$.
+	The set of all boundary points of $P$ is the boundary of $P$ and is denoted by $\pd P$.
+	A region of $P$ is \emph{internal} if its closure is disjoint from $\pd P$.
+	If $\pd P$ is empty then $P$ is \emph{closed}.
+\end{defn}
+
+\begin{theorem}
+	Let $M$ be a closed, orientable 3--manifold and $f:M\to\BB$ a generic proper smooth map.
+	Then the Stein complex of $f$ has a canonical embedding in  is a simple polyhedron everywhere except for at most finitely many points.
+\end{theorem}
+
+
+
+\begin{lem}[Lemma 4.4 from \cite{CostThur08}]
+	The simple polyhedron that is the Stein complex of $f$ subject to the conditions in the proof of Theorem \ref{thm:3bound4} is standard.
+\end{lem}
+
+
+\begin{theorem}	
+	Let $W$ be a cobordism of the pair $(M,\emptyset)$ constructed in Theorem \ref{thm:3bound4} and $S$ the Stein complex of $f$.
+	Then $S$ embeds in $W$ in such a way that the regions of $S$ are locally flat in $W$ and the map $h:M\to S$ of the Stein factorization of $f$ can be extended to a map $h:W\to S$.
+\end{theorem}
+
+\begin{rmk}
+	The justification that the double cone can be replaced by the polyhedron in Figure \ref{fig:simplepoly} necessitates delving into the central object of study in \cite{CostThur08} and \cite{Turaev91}: the shadow surface.
+	The Stein complex constructed in Theorem \ref{thm:3stein4} is a \emph{shadow} of both $M$ and the cobordism $W$ of $(M,\emptyset)$ whose dual decomposition Theorem \ref{thm:3bound4} describes.
+	Moreover, the dual decomposition described follows a specific case of the Turaev Reconstruction Theorem that can be found in either \cite{CostThur08} or \cite{Turaev91}.
+\end{rmk}
+
+
+
+
+
+
+
 	To satisfy our requirement that the handle decomposition contains handles of index at most 2, we turn the decomposition obtained on its head and take its dual.
 	This method begins with an empty space and attaches 4--dimensional handles to it until the boundary of the handle decomposition is exactly $M$.
 	
@@ -12,7 +220,7 @@
 	We connect the associated 0--handles by 3--disc bundles over copies of the interval whose endpoints are embedded in our 0--handles (i.e.\ attach 1--handles) in a way that preserves orientability.
 	We get $W_2$ as the 4--dimensional thickening of a graph whose vertices correspond to 0--handles and whose edges correspond to 1--handles.
 	The boundary of this is the collection of $S^3$'s from $\pd W_1$ that have been connected together by copies of $S^2\times\I$.
-
+	
 	Attaching 0--handles and 1--handles in a way that preserves orientability is done uniquely.
 	This is not the case with 4--dimensional 2--handles (see Remark \ref{rmk:2handle}).
 	The 2--handles must be attached in a way that is dual to the attachment described in the original handle decomposition, else the boundary of the resulting 4--manifold need not be $M$.
