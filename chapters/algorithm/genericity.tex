@@ -30,7 +30,7 @@ We define $n$ to be the \emph{wedge number} of $E$, and this can be computed by 
 	\KwData{$T$, $\pi:T\to\C$, and edge $E$ of $T$}
 	\KwResult{the wedge number of $E$, denoted $w_E$}
 	\Begin{
-		$C=\{e_0,e_1,\dots,e_k,e_0\}\longleftarrow\lk{E}$ as a cycle of the graph $T^1$\;
+		$C\longleftarrow\lk{E}=\{e_0,e_1,\dots,e_k,e_0\}$ as a cycle of the graph $T^1$\;
 		$w_E\longleftarrow 0$\;
 		\ForEach{edge $e$ in $C$}{
 			\If{$\pi(e)$ crosses $\pi(E)$}{
@@ -88,7 +88,7 @@ The details to reduce a single edge number are found in Algorithm \ref{alg:wedge
 	\KwData{a dual 2--cell $E^*$ of a truncated dual complex $T'^*$ with wedge number $w_E>2$}
 	\KwResult{a pair of dual vertices $(\sigma^*,\tau^*)$ of $\pd E^*$ over which we may split $E^*$, so that the two new 2--cells have wedge numbers of 2 and $w_E-1$}
 	\Begin{
-		$C=\{\sigma_0^*,\dots,\sigma_k^*\}\longleftarrow\pd E^*$ as a cycle in the 1--skeleton of $T'^*$\;
+		$C\longleftarrow\pd E^*=\{\sigma_0^*,\dots,\sigma_k^*\}$ as a cycle in the 1--skeleton of $T'^*$\;
 		$\sigma^*\longleftarrow\sigma_i^*$ where $\sigma_i^*$ is the first dual vertex in $C$ with nonzero wedge coefficient\;
 		$w,j\longleftarrow 0$\;
 		\While{$w<2$}{

@@ -2,11 +2,14 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {algocf}{\numberline {1}{\ignorespaces Generating a 2--complex from a linear tetrahedral projection\relax }}{54}{algocf.1}
-\contentsline {algocf}{\numberline {2}{\ignorespaces Generating a 2--complex from a crossing distinct projection\relax }}{55}{algocf.2}
-\contentsline {algocf}{\numberline {3}{\ignorespaces Generating a 2--complex from a truncated linear tetrahedral projection\relax }}{56}{algocf.3}
-\contentsline {algocf}{\numberline {4}{\ignorespaces Building a collection of circles that map over a region\relax }}{59}{algocf.4}
-\contentsline {algocf}{\numberline {5}{\ignorespaces Wedge number computations\relax }}{61}{algocf.5}
-\contentsline {algocf}{\numberline {6}{\ignorespaces Wedge number reduction\relax }}{63}{algocf.6}
-\contentsline {algocf}{\numberline {7}{\ignorespaces Building the piecewise--linear analogue to a generic proper smooth map\relax }}{64}{algocf.7}
+\contentsline {algocf}{\numberline {1}{\ignorespaces Generating a 2--complex from a linear tetrahedral projection\relax }}{56}{algocf.1}
+\contentsline {algocf}{\numberline {2}{\ignorespaces Generating a 2--complex from a crossing distinct projection\relax }}{57}{algocf.2}
+\contentsline {algocf}{\numberline {3}{\ignorespaces Generating a 2--complex from a truncated linear tetrahedral projection\relax }}{58}{algocf.3}
+\contentsline {algocf}{\numberline {4}{\ignorespaces Building a collection of circles that map over a region\relax }}{61}{algocf.4}
+\contentsline {algocf}{\numberline {5}{\ignorespaces Wedge number computations\relax }}{63}{algocf.5}
+\contentsline {algocf}{\numberline {6}{\ignorespaces Wedge number reduction\relax }}{65}{algocf.6}
+\contentsline {algocf}{\numberline {7}{\ignorespaces Building the piecewise--linear analogue to a generic proper smooth map\relax }}{66}{algocf.7}
+\contentsline {algocf}{\numberline {8}{\ignorespaces Adding vertices to $S$\relax }}{69}{algocf.8}
+\contentsline {algocf}{\numberline {9}{\ignorespaces Adding edges to $S$\relax }}{69}{algocf.9}
+\contentsline {algocf}{\numberline {10}{\ignorespaces Adding 2--cells to $S$\relax }}{70}{algocf.10}
 \addvspace {10\p@ }

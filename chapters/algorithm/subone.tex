@@ -1,0 +1,23 @@
+With the 0--cells of $S$ determined, we find the 1--cells.
+As with the vertices, the 1--cells of the Stein complex project over the 1--cells of $X'$.
+Take $p$, $q$ vertices of $S$ adjacent over an edge $e$ of $X'$.
+To find the associated edges of $S$, examine the sets of interactive elements over $p$ and $q$.
+The shared circles within the elements of $N(p)$ and $N(q)$ tell us whether a pair of vertices are adjacent in $S$.
+
+\begin{algorithm}[h]
+	\caption{Adding edges to $S$}
+	\label{alg:steinedges}
+	\KwData{a pair of interactive elements $\{P_i\}$ from $N(p)}$ and $\{Q_j\}$ from $N(q)$}
+	\KwResult{whether the pair is adjacent in $SW$}
+	\Begin{
+		$c_i\longleftarrow$ the 2--cells of $X'$ incident to $x$\;
+		$C_i\longleftarrow$ the result of Algorithm \ref{alg:regularcircles} with input $c_i$\;
+		$N(x)\longleftarrow\emptyset$\;
+		\ForEach{circle $C_{0,k}$ in $C_0$}{
+			$y\longleftarrow\{C_{0,k}\}$\;
+			add each circle incident to $C_{0,k}$ to $y$\;
+			add each circle incident to a circle incident to $C_{0,k}$ to $y$\;
+			add $y$ to $N(x)$\;	
+		}
+	}
+\end{algorithm}

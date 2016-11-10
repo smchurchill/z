@@ -27,7 +27,7 @@ This continues until the segments join up into a simplicial circle interior to $
 	}	
 \end{algorithm}
 
-The circles we find this way unambiguously define cycles in the 1--skeleton of $T^*$, the dual complex to $T$.
+The circles we find this way unambiguously define cycles in the 1--skeleton of $T^*$, the dual complex to $T$, so we also take the result Algorithm \ref{alg:regularcircles} to be the corresponding dual cycles.
 We use the dual complex as a central data structure alongside the 2--complex $X$ to store information about $\pi$.
 The first example of this is in Algorithm \ref{alg:regularcircles}, where we find all of the simplicial circles in $T^*$ that map over a region of $X$.
 We produce $C$, a collection of disjoint simplicial circles in $T^*$ that project over $c_\pi$, the region of type 5 points in the plane corresponding to $c$, and we decorate the associated 2--cell $c$ of $X$ by a positive integer: the number of connected components of $C$.
@@ -63,4 +63,4 @@ Let $X$ be a 2--complex generated as described by any of our algorithms from a p
 Let $c$ be a 2--cell of $X$, let $c'$ be a neighbouring 2--cell over the edge $e$ in $X$, let $C$ be the collection of circles mapping over $c$, and $C'$ the collection over $c'$.
 There is an edge $E$ of $T$ and dual 2--cell $E^*$ that correspond to $e$.
 By Algorithm \ref{alg:regularcircles} the only set of edges in $T^*$ on which $C$ and $C'$ differ is $\pd E^*$.
-We can then obtain $C'$ from $C$ by taking the symmetric difference of $C$ with $\pd E^*$.
+We can then obtain $C'$ from $C$ by taking the symmetric difference of $C$ with $\pd E^*$, which we denote by $C'=C\triangle \pd E^*$.
