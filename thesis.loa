@@ -8,8 +8,10 @@
 \contentsline {algocf}{\numberline {4}{\ignorespaces Building a collection of circles that map over a region\relax }}{61}{algocf.4}
 \contentsline {algocf}{\numberline {5}{\ignorespaces Wedge number computations\relax }}{63}{algocf.5}
 \contentsline {algocf}{\numberline {6}{\ignorespaces Wedge number reduction\relax }}{65}{algocf.6}
-\contentsline {algocf}{\numberline {7}{\ignorespaces Building the piecewise--linear analogue to a generic proper smooth map\relax }}{66}{algocf.7}
-\contentsline {algocf}{\numberline {8}{\ignorespaces Adding vertices to $S$\relax }}{69}{algocf.8}
-\contentsline {algocf}{\numberline {9}{\ignorespaces Adding edges to $S$\relax }}{69}{algocf.9}
-\contentsline {algocf}{\numberline {10}{\ignorespaces Adding 2--cells to $S$\relax }}{70}{algocf.10}
+\contentsline {algocf}{\numberline {7}{\ignorespaces Building the piecewise--linear analogue to a generic proper smooth map\relax }}{67}{algocf.7}
+\contentsline {algocf}{\numberline {8}{\ignorespaces Finding vertices for the Stein complex\relax }}{70}{algocf.8}
+\contentsline {algocf}{\numberline {9}{\ignorespaces Finding edges for the Stein complex\relax }}{70}{algocf.9}
+\contentsline {algocf}{\numberline {10}{\ignorespaces Finding 2--cells for the Stein complex\relax }}{71}{algocf.10}
+\contentsline {algocf}{\numberline {11}{\ignorespaces Finding edges for the Stein complex\relax }}{72}{algocf.11}
+\contentsline {algocf}{\numberline {12}{\ignorespaces $n$--thickening of an $(n-1)$--dimensional triangulation\relax }}{73}{algocf.12}
 \addvspace {10\p@ }

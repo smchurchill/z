@@ -40,7 +40,7 @@ A 2--cell of $S$ projects over a 2--cell $c$ of $X'$, and each 2--cell correspon
 The attachment is determined entirely by a cycle in the 1-skeleton of $S$, found in Algorithm \ref{alg:stein2cells}.
 
 \begin{algorithm}[h]
-	\caption{Adding vertices to $S$}
+	\caption{Finding vertices for the Stein complex}
 	\label{alg:steinvertices}
 	\KwData{a vertex $v$ of $X'$}
 	\KwResult{the set $N(v)$ of sets of interacting circles near $v$}
@@ -58,7 +58,7 @@ The attachment is determined entirely by a cycle in the 1-skeleton of $S$, found
 \end{algorithm}
 
 \begin{algorithm}[h]
-	\caption{Adding edges to $S$}
+	\caption{Finding edges for the Stein complex}
 	\label{alg:steinedges}
 	\KwData{an edge $e=(u,v)$ of $X'$}
 	\KwResult{the set $N(e)$ of pairs $(U,V)$ with $U\in N(u)$ and $V\in N(v)$ such that $U$ and $V$ are adjacent over an edge of $S$}
@@ -76,7 +76,7 @@ The attachment is determined entirely by a cycle in the 1-skeleton of $S$, found
 \end{algorithm}
 
 \begin{algorithm}[h]
-	\caption{Adding 2--cells to $S$}
+	\caption{Finding 2--cells for the Stein complex}
 	\label{alg:stein2cells}
 	\KwData{a 2--cell $c$ of $X'$ with $\{v_0,\dots,v_k\}=\pd c$}
 	\KwResult{the set $N(c)$ of cycles $\{V_0,\dots,V_k\}$ where $V_i$ is in $N(v_i)$ such that a 2--cell is attached over $\{V_0,\dots,V_k\}$ in $S$}
