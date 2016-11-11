@@ -1,7 +1,8 @@
 The basic building block that we used in our 4--manifold reconstruction is the triangulated $n$--prism with identical walls.
-By $n$--prism, we mean the $n$--disc seen as $\Delta^{n-1}\times [-1,1]$ in Figure \ref{fig:nprism}.
-The prism has canonical ``top'' and ``bottom'' faces which are $\Delta^{n-1}\times \{1\}$ and $\Delta^{n-1}\times \{-1\}$ respectively.
-It also has $n$ identical ``walls'' which are $F^i(\Delta^{n-1})\times [-1,1]$ for each $i=0,\dots,n-1$.
+Take $\sigma^n$ to be the standard $n$--simplex.
+By $n$--prism, we mean the $n$--disc seen as $\sigma^{n-1}\times [-1,1]$ in Figure \ref{fig:nprism}.
+The prism has canonical ``top'' and ``bottom'' faces which are $\sigma^{n-1}\times \{1\}$ and $\sigma^{n-1}\times \{-1\}$ respectively.
+It also has $n$ identical ``walls'' which are $F^i(\sigma^{n-1})\times [-1,1]$ for each $i=0,\dots,n-1$.
 The triangulation we construct for the $n$--prism is designed so that the walls have identical triangulations.
 We do this so that we are able to perform an $n$--thickening of an $(n-1)$--dimensional triangulation.
 
@@ -13,56 +14,59 @@ We do this so that we are able to perform an $n$--thickening of an $(n-1)$--dime
 	\label{fig:nprism}
 \end{figure}
 
-If a pair of $\Delta^{n-1}$ are glued over a face, then we take those simplices to be the bottom faces of a pair of prisms.
+If a pair of $\sigma^{n-1}$ are glued over a face, then we take those simplices to be the bottom faces of a pair of prisms.
 We glue these prisms together over their corresponding walls.
-This provides the two $\Delta^{n-1}$ with an $n$--dimensional thickening.
+This provides the two $\sigma^{n-1}$ with an $n$--dimensional thickening.
 If we can do this to any pair of simplices, then we can do this to an entire triangulation, as in Algorithm \ref{alg:nthickening}
 
 \begin{algorithm}[h]
-	\caption{Finding edges for the Stein complex}
-	\label{alg:steinedges}
-	\KwData{an edge $e=(u,v)$ of $X'$}
-	\KwResult{the set $N(e)$ of pairs $(U,V)$ with $U\in N(u)$ and $V\in N(v)$ such that $U$ and $V$ are adjacent over an edge of $S$}
+	\caption{Thickening a triangulation}
+	\label{alg:nthickening}
+	\KwData{an $n$--dimensional triangulation $T$}
+	\KwResult{an $(n+1)$--dimensional triangulation $H(T)$ that is the $(n+1)$--thickening of $T$}
 	\Begin{
-		$N(u), N(v)\longleftarrow$ the results of Algorithm \ref{alg:steinvertices} with inputs $u$, $v$\;
-		$N(e)\longleftarrow\emptyset$\;
-		\ForEach{element $U$ of $N(u)$}{
-			\ForEach{element $V$ of $N(v)$}{
-				\If{$U\cap V\neq\emptyset$}{
-					add $(U,V)$ to $N(e)$\;
-				}
-			}	
+		$H(T)\longleftarrow \emptyset$\;
+		\ForEach{$n$--simplex $\sigma$ of $T$}{
+			add a triangulated $(n+1)$--prism $H(\sigma)$ to $T'$\;
+		}
+		\ForEach{face $F^i(\sigma)=F^j(\tau)$ over which a pair $\sigma$, $\tau$ of $n$--simplices are glued in $T$}{
+			glue the $i\nth$ wall of $H(\sigma)$ to the $j\nth$ wall of $H(\tau)$\;			
 		}
 	}
 \end{algorithm}
 
-\begin{algorithm}[h]
-	\caption{$n$--thickening of an $(n-1)$--dimensional triangulation}
-	\label{alg:stein2cells}
-	\KwData{a 2--cell $c$ of $X'$ with $\{v_0,\dots,v_k\}=\pd c$}
-	\KwResult{the set $N(c)$ of cycles $\{V_0,\dots,V_k\}$ where $V_i$ is in $N(v_i)$ such that a 2--cell is attached over $\{V_0,\dots,V_k\}$ in $S$}
-	\Begin{
-		$C\longleftarrow$ the result of Algorithm \ref{alg:regularcircles} with input $c$\;
-		$N(v_i)\longleftarrow$ the result of Algorithm \ref{alg:steinvertices} with input $v_i$\;
-		$N(c)\longleftarrow\emptyset$\;
-		\ForEach{simplicial circle $C_j$ of $C$}{
-			$N_j\longleftarrow\emptyset$\;
-			\ForEach{integer $i$ in $[0,k]$}{
-				\ForEach{element $V_i$ of $N(v_i)$}{
-					\If{$C_j\in V_i$}{
-						add $V_i$ to $N_j$\;
-					}	
-				}			
-			}
-			add $N_j$ to $N(c)$\;
-		}
-	}	
-\end{algorithm}
-
-
-Seeing that $F^i(\Delta^{n-1})$ is an $(n-2)$--simplex, it is reasonable to build our prisms iteratively.
+Considering $F^i(\sigma^{n-1})$ is an $(n-2)$--simplex, it is reasonable to build our prisms recursively.
 The intuition is that we build an $(n-1)$--sphere whose walls are $(n-2)$--prisms, themselves with identical walls.
 Then, we cone the $(n-1)$--sphere to make a triangulated $n$--prism.
+The details are in Algorithm \ref{alg:nprism}, assuming the base case of the 1--prism being an edge.
+
+\begin{algorithm}[h]
+	\caption{Building a standard $n$--prism}
+	\label{alg:nprism}
+	\KwData{a positive integer $n$}
+	\KwResult{$P^n$, a triangulated $n$--prism with identical walls}
+	\Begin{
+		\If{$n=1$}{
+			$P^1=\I$, the standard 1--simplex\;	
+		}
+		$\sigma_0^n,\sigma_1^n\longleftarrow$ standard $n$--simplices\;
+		$P_0^{n-1},P_1^{n-1},\dots,P_n^{n-1}\longleftarrow$ result of Algorithm \ref{alg:nprism} with input $n-1$\;
+		\ForEach{$(n-1)$ prism $P_i^{n-1}$}{
+			attach $\sigma_0^{n-1}$ of $P_i^{n-1}$ to $F^i(\sigma_0^n)$	of $\sigma_0^n$\;
+			attach $\sigma_1^{n-1}$ of $P_i^{n-1}$ to $F^i(\sigma_1^n)$	of $\sigma_1^n$\;
+		}
+		\ForEach{$n-2$ simplex of $$}{}
+
+
+		\ForEach{$n$--simplex $\sigma$ of $T$}{
+			add a triangulated $(n+1)$--prism $H(\sigma)$ to $T'$\;
+		}
+		\ForEach{face $F^i(\sigma)=F^j(\tau)$ over which a pair $\sigma$, $\tau$ of $n$--simplices are glued in $T$}{
+			glue the $i\nth$ wall of $H(\sigma)$ to the $j\nth$ wall of $H(\tau)$\;			
+		}
+	}
+\end{algorithm}
+
 
 The 1--prism is just an edge.
 This is the base case, so no coning is needed.

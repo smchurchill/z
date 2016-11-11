@@ -244,3 +244,84 @@ Before we delve into the specifics of obtaining the Stein complex and how it pro
 	At this point it becomes convenient to view $T^2$ as the space $[0,1]\times[0,1]/\sim$, where $(\theta,0)\sim(\theta,1)$ and $(0,\phi)\sim(1,\phi)$.
 	Using the notation from Theorem \ref{thm:mpgV}, a meridian is of the form $(\theta,0)$, and $\psi(J)$ is then isotopic to a line with slope $1/0$, and $\psi(K)$ is isotopic to the longitude $(0,\phi)$, which is a line with slope $0/1$.
 	We find that $\psi(L)$ is isotopic to a line of slope $-1/\kappa$, or, alternatively, is a line of the form $-\kappa\phi=\theta$.
+	
+	
+	
+	
+	
+	\begin{defn}
+		Let $S$ be a compact topological space that is generically a 2--manifold.
+		We call the set of points in $S$ at which $S$ fails to be a 2--manifold the \emph{singular set} of $S$, and denote it by $\Sing(S)$.
+		In other words, we take $\Sing(S)$ to be the minimal subset of $S$ such that $S\setminus\Sing(S)$ is a (possibly disconnected) closed 2--manifold.
+		The connected components of $\Sigma$ are called the \emph{regions} of $S$.
+		Note that when $S$ is a 2--manifold with boundary, $\Sing(S)=\pd S$.
+		The singular set of $S$ is generically a 1--manifold.
+	\end{defn}
+	
+	
+	
+	
+	
+	
+	We simultaneously construct the Stein complex of $f$ and the map $\psi$.
+	A disc $D$ of regular values of $f$ pulls back to a collection of solid tori.
+	To obtain a handle decomposition for $W$, we first attached 2--handles over these tori.
+	
+	
+	
+	These circle bundles share a boundary 2--torus $T=\pd V=\pd V^*$.
+	Let $\mathcal{J}$ be the isotopy class of curves in $T$ that are the preimages of points in the boundary of $D$.
+	Recall that a representative of $\mathcal{J}$ is a longitude of $V$ and a meridian of $V^*$ by construction.
+	This means that some representative $J$ of $\mathcal{J}$ bounds a disc in $V^*$, and is a section over the boundary of the circle bundle over the core of $H$.
+	We first examine $H$ as a 2--disc bundle over its cocore $\{\vec{0}\}\times\DD$, appearing as the zero section of the bundle.
+	By 
+	The cocore of $H_{i,k}^2$ is a disc embedded in $W$, .cocore of these 2--handles are 
+	has $f\inv(D_i)$ a circle bundle over a disjoint collection of 2--discs, and the components of this collection collapse through $h$ to connected regions of regular levels in the Stein complex.
+	
+	
+	A sleeve around an arc of codimension 1 critical values (Figure \ref{fig:arcsleeve}) pulls back to a disjoint collection of surfaces crossed with the interval.
+	In the case of the annulus crossed with an interval, $h$ sees $A\times\I$ as a bundle of preimage circles over $\I\times\I$ and collapses that bundle onto $\I\times\I$.
+	Two ends of this strip already map through $\psi$ to the boundaries of a pair of cocores of 2--handles.
+	In $S$, we get a copy of $\I\times\I$ bridging a pair of 2--discs from the previous step.
+	We define $\psi$ on this copy of $\I\times\I$ to bridge the associated cocores in $W$.
+	
+	When the surface is a disc, there is an interval of boundary circles that map through $f$ to regular values, so $\psi$ is already defined on this circle.
+	As we move inwards along concentric circles towards the central interval $\{0\}\times\I$ of $\DD\times\I$, $h$ collapses these circles to extend an existing region of the Stein complex.
+	When we get to the core of the solid cylinder, $h$ takes $\{0\}\times\I$ to a boundary edge of the extended region.
+	We label the portion of the boundary edge formed this way by $d$ for \emph{definite}, and this edge becomes part of $\Sing(S)$.
+	The central interval corresponds to the cocore of the 3--handle we attached over $D^2\times\I\subset S^2\times\D^1$.
+	We define $\psi$ on the definite boundary edge to go to the cocore of this 3--handle, and extend over the rest of the region in a smooth way.
+	
+	When the surface is a pair of pants, the boundary circles of the pants map through $\psi$ over the boundaries of 2--handle cocores, and those cocores correspond to regions of $S$.
+	The interval of critical points in $P\times\I$ corresponds to the cocore of a 3--handle, as in the case of the 2--disc.
+	The three regions of $S$ corresponding to the cocores discussed above extend to meet along an internal edge in $\Sing(S)$.
+	The neighbourhood of an internal edge in $S$ looks like a ``three--page book,'' or a $Y$--shaped graph crossed with an interval.
+	We take this internal edge to the cocore of the 3--handle attached over $P\times\I\subset S^2\times\D^1$ through $\psi$, and extend $\psi$ over the regions meeting this edge in a smooth way.
+	
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\caption{Stein complex of genus 1 handlebody of regular points projecting near codimension 2 critical values}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:codim2steinregular}
+	\end{figure}
+	
+	The only parts of the Stein complex we haven't investigated yet are the portions corresponding to the codimension 2 critical values of $f$.
+	Let $x$ be a codimension 2 critical value and $\nbhd{x}$ its neighbourhood (Figure \ref{fig:isolatesleeve}).
+	We've already classified the subspaces of $M$ that project over $\nbhd{x}$: they are handlebodies.
+	Such a handlebody completes into $S^3$ in every case encountered during our construction of $W$, and over these 3--spheres we attached 4--handles.
+	Let $G$ be a handlebody that projects over $\nbhd{x}$.
+	
+	
+	\newpage
+	{
+		section incomplete
+	}
+	\newpage
+	
+	
+	
+	
+	
+	
+	

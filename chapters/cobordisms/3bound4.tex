@@ -226,58 +226,41 @@ Let $f:M:\to\BB$ be a proper generic smooth function and $W$ a the cobordism of 
 Because the handle decomposition produced for $W$ consists of handles of index 2,3, and 4, the associated dual decomposition contains handles of degree 0,1, and 2.
 Our goal is to obtain a combinatorial description of this decomposition, and we find this through the Stein complex.
 
-Recall that the Stein complex for a Morse function on a surface was generically a 1--manifold, and we described the object combinatorially via a graph.
-In the case of a proper generic smooth map $M\to\BB$, the Stein complex is generically a surface.
+Recall that the Stein complex for a Morse function on a surface was given by a 1--complex.
+In the case of a proper generic smooth map $M\to\BB$, the Stein complex is given by a 2--complex $S$.
+The vertices of $S$ correspond to 0--handles, the edges to 1--handles and the 2--cells to 2--handles.
+
 We define the Stein factorization and complex of $f$ as usual.
 Let $\sim$ be an equivalence relation on $M$ defined by $p\sim q$ if and only if $f(p)=f(q)=x$ and $p$, $q$ are in the same connected component of $f\inv(x)$.
 Then $f=g\comp h$ where $h$ is the quotient map $M\to M/\!\!\sim$ and $g$ takes a point in $f\inv(x)$ to $x$.
-The complex $S=h(M)$ sits inside of $W$ in a way that suggests its use as an instruction set for a handle decomposition.
-We make this more precise with some definitions.
-
-\begin{defn}
-	Let $S$ be a compact topological space that is generically a 2--manifold.
-	We call the set of points in $S$ at which $S$ fails to be a 2--manifold the \emph{singular set} of $S$, and denote it by $\Sing(S)$.
-	In other words, we take $\Sing(S)$ to be the minimal subset of $S$ such that $S\setminus\Sing(S)$ is a (possibly disconnected) closed 2--manifold.
-	The connected components of $\Sigma$ are called the \emph{regions} of $S$.
-	Note that when $S$ is a 2--manifold with boundary, $\Sing(S)=\pd S$.
-	The singular set of $S$ is generically a 1--manifold.
-\end{defn}
 
 \begin{theorem}
+	\label{thm:stein2complex}
 	Let $f$, $M$, $S$, and $W$ be as we defined above.
-	Let $\Sigma = S\setminus\Sing(S)$ be a boundaryless 2--manifold.
-	There is a map $\psi:S\into W$ such that $\psi(\Sigma)$ is locally flat in $W$.
+	Then $S$ is a 2--dimensional CW--complex that embeds flatly in $W$.
 \end{theorem}
 
 \begin{proof}
-	We simultaneously construct the Stein complex of $f$ and the map $\psi$.
-	A disc $D$ of regular values of $f$ pulls back to a collection of solid tori.
-	To obtain a handle decomposition for $W$, we first attached 2--handles over these tori.
-	Let $H$ be the 2--handle attached over one such solid torus $V$.
-	The boundary of $H$ is a 3--sphere with genus 1 Heegaard splitting consisting of $V$ and a dual torus $V^*$.
-	It is useful to think of $H$ in terms of two possible structures as a $\DD$ bundle over $\DD$, where the base space, and zero section, is either the core or cocore of the handle.
-	In both cases we restrict to the 1--sphere boundaries of the 2--disc fibers to get circle bundles over the core and cocore.
-	When the base space is the core, the associated circle bundle is $V^*$.
-	When the base space is the cocore, the associated circle bundle is $V$ and the fibres of this bundle are the circles $p_V = f\inv(p)\cap V$ for $p$ in $D$.
-	Then $h$ is constant on a fibre $p_V$, and this immediately implies that $h(V)$ is a 2--disc subset of a region of $S$.
-	The bundle structure of $V$ over the cocore of $H$ comes with a projection $\pi$, and we define $\psi$ to map $h(V)$ to the cocore of $H$ by defining $\psi(h(p_V))=\pi(p_V)$.
+	There are only a few locations where $S$ could fail to be a CW--complex, and those are found over the critical values of $f$.
+	We construct $S$ as we would any other CW--complex, by iteratively attaching cells of increasing dimension, and define a map $\varphi:S\into W$ that is almost a flat embedding in a similar fashion.
+	Let $S$ be empty and begin by adding 0--cells to $S$.
 		
 	\begin{figure}
 		\centering
 		\captionsetup{justification=centering}
-		\caption{Stein complex over regular values}
+		\caption{Stein complex over codimension 2 critical values}
 		\includegraphics[height=3cm]{figures/dummy.jpg}
-		\label{fig:regstein}
+		\label{fig:codim2stein}
 	\end{figure}
-										
-									These circle bundles share a boundary 2--torus $T=\pd V=\pd V^*$.
-									Let $\mathcal{J}$ be the isotopy class of curves in $T$ that are the preimages of points in the boundary of $D$.
-									Recall that a representative of $\mathcal{J}$ is a longitude of $V$ and a meridian of $V^*$ by construction.
-									This means that some representative $J$ of $\mathcal{J}$ bounds a disc in $V^*$, and is a section over the boundary of the circle bundle over the core of $H$.
-									We first examine $H$ as a 2--disc bundle over its cocore $\{\vec{0}\}\times\DD$, appearing as the zero section of the bundle.
-									By 
-									The cocore of $H_{i,k}^2$ is a disc embedded in $W$, .cocore of these 2--handles are 
-									has $f\inv(D_i)$ a circle bundle over a disjoint collection of 2--discs, and the components of this collection collapse through $h$ to connected regions of regular levels in the Stein complex.
+
+	
+	For a codimension 2 singular value $x$ of $f$, the fibers of over $x$ were discussed in Theorem \ref{thm:3bound4}.
+	The Stein factorization $f=g\comp h$ has $h$ crush each fiber to a point, which we take as a new 0--cell in $S$.
+	Let $\nbhd{x}$ be a sleeve of $x$ as in Theorem \ref{thm:3bound4}.
+	In the construction of $W$, we attached 4--handles over 3--spheres with Heegaard decompositions over $f\inv(\nbhd{x})$.
+	The cocore of a 4--handle is a single point, so we associate the 0--cells of $S$ with the cocores of 4--handles in $W$.
+	Let $x_i$ be a fiber over $x$, let $H_i^4\subset W$ be the 4--handle associated to $x_i$, let $c_i\in H_i^4$ be the cocore of $H_i^4$, and let $v_i$ be the vertex of $S$ associated to $x_i$.
+	Define $\varphi(v_i)=c_i$.
 		
 	\begin{figure}
 		\centering
@@ -285,56 +268,109 @@ We make this more precise with some definitions.
 		\caption{Stein complex over codimension 1 critical values}
 		\includegraphics[height=3cm]{figures/dummy.jpg}
 		\label{fig:codim1stein}
-	\end{figure}	
+	\end{figure}
 	
-	A sleeve around an arc of codimension 1 critical values (Figure \ref{fig:arcsleeve}) pulls back to a disjoint collection of surfaces crossed with the interval.
-	In the case of the annulus crossed with an interval, $h$ sees $A\times\I$ as a bundle of preimage circles over $\I\times\I$ and collapses that bundle onto $\I\times\I$.
-	Two ends of this strip already map through $\psi$ to the boundaries of a pair of cocores of 2--handles.
-	In $S$, we get a copy of $\I\times\I$ bridging a pair of 2--discs from the previous step.
-	We define $\psi$ on this copy of $\I\times\I$ to bridge the associated cocores in $W$.
+	We can now add edges to $S$.
+	Let $\alpha$ be an open strand of codimension 1 critical points of $f$ with $\pd\overline\alpha=\{x,y\}$, a pair of codimension 2 critical points of $f$.
+	Pulling back $\alpha$ to $M$ yields an open interval crossed with the fibers over any point of $\alpha$ and pulling back $\overline\alpha$ connects the fibers over $x$ and $y$.
+	For a fiber $\alpha_i$ over $\alpha$ with endpoints $\alpha_i^x$ sitting inside of a fiber over $x$ and $\alpha_i^y$ sitting in a fiber over $y$, we add an edge attached over the vertices $v_i^x$ and $v_i^y$ associated to the fibers over $x$ and $y$.
+	This corresponds to the action of $h$ on $\alpha_i$, which crushes the interval of fibers to an interval.
 	
-	When the surface is a disc, there is an interval of boundary circles that map through $f$ to regular values, so $\psi$ is already defined on this circle.
-	As we move inwards along concentric circles towards the central interval $\{0\}\times\I$ of $\DD\times\I$, $h$ collapses these circles to extend an existing region of the Stein complex.
-	When we get to the core of the solid cylinder, $h$ takes $\{0\}\times\I$ to a boundary edge of the extended region.
-	We label the portion of the boundary edge formed this way by $d$ for \emph{definite}, and this edge becomes part of $\Sing(S)$.
-	The central interval corresponds to the cocore of the 3--handle we attached over $D^2\times\I\subset S^2\times\D^1$.
-	We define $\psi$ on the definite boundary edge to go to the cocore of this 3--handle, and extend over the rest of the region in a smooth way.
-	
-	When the surface is a pair of pants, the boundary circles of the pants map through $\psi$ over the boundaries of 2--handle cocores, and those cocores correspond to regions of $S$.
-	The interval of critical points in $P\times\I$ corresponds to the cocore of a 3--handle, as in the case of the 2--disc.
-	The three regions of $S$ corresponding to the cocores discussed above extend to meet along an internal edge in $\Sing(S)$.
-	The neighbourhood of an internal edge in $S$ looks like a ``three--page book,'' or a $Y$--shaped graph crossed with an interval.
-	We take this internal edge to the cocore of the 3--handle attached over $P\times\I\subset S^2\times\D^1$ through $\psi$, and extend $\psi$ over the regions meeting this edge in a smooth way.
-
 	\begin{figure}
 		\centering
 		\captionsetup{justification=centering}
-		\caption{Stein complex of genus 1 handlebody of regular points projecting near codimension 2 critical values}
+		\caption{Stein complex embedding over codimension 1 critical values}
 		\includegraphics[height=3cm]{figures/dummy.jpg}
-		\label{fig:codim2steinregular}
+		\label{fig:codim1steinembed}
 	\end{figure}
 	
-	The only parts of the Stein complex we haven't investigated yet are the portions corresponding to the codimension 2 critical values of $f$.
-	Let $x$ be a codimension 2 critical value and $\nbhd{x}$ its neighbourhood (Figure \ref{fig:isolatesleeve}).
-	We've already classified the subspaces of $M$ that project over $\nbhd{x}$: they are handlebodies.
-	Such a handlebody completes into $S^3$ in every case encountered during our construction of $W$, and over these 3--spheres we attached 4--handles.
-	Let $G$ be a handlebody that projects over $\nbhd{x}$.
-												
-												
-												\newpage
-												{
-													section incomplete
-												}
-												\newpage
-												
-											
-													
-													
-													
-													
-													
-													
+	Let $\nbhd{\alpha}$ be a sleeve of $\alpha$ as in Theorem \ref{thm:3bound4}.
+	To construct $W$ we attached 3--handles over copies of $S^2\times\D^1$, those $S^2\times\D^1$ contained copies of $\Sigma\times\D^1$ with $\Sigma$ the 2--sphere with one, two, or three open 2--balls removed, and those $\Sigma\times\D^1$ projected over $\nbhd{\alpha}$.
+	The cocore of a 3--handle is a copy of $\D^1$, which corresponds to an edge in $S$.
+	Let $\alpha_i$ be a fiber over $\alpha$, $H_i^3$ the 3--handle associated with $\alpha_i$, $c_i$ the interval cocore of $H_i^3$, and $e_i$ the edge of $S$ corresponding to $\alpha_i$ with $\pd e_i=\{u,v\}$.
+	Because $e_i$ is a 1--cell, it is homeomorphic to an interval $[\,0,1\,]$, so we take a slightly smaller closed subinterval $e_i'$ in $e_i$ (just as we can take $[\,\varepsilon,1-\varepsilon\,]$ inside of $[\,0,1\,]$) and define $\varphi(e_i')=c_i$.
+	The endpoints of $c_i$ are the belt sphere of $H_i^3$, and they intersect the 4--handles $H_u^4$ and $H_v^4$ corresponding to $u$ and $v$.
+	The intersection points are in the boundary 3--spheres of these 4--handles, so there are straight lines inside of the 4--handle that connect the cocore to these boundary points.
+	Define $\varphi$ on $e_i\setminus e_i'$ to be those straight line segments in the appropriate continuous way.
+	
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\caption{Stein complex over regular values}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:regstein}
+	\end{figure}
+	
+	And finally, the 2--cells.
+	Let $R$ be an open ball of regular values in the plane, and let $D$ be the 2--disc inside of $R$ that pulls back through $f$ to a disjoint collection of solid tori over which we attached 2--handles in our construction of $W$.
+	Let $H$ be the 2--handle attached over a solid torus $V$ projecting over $D$.
+	The boundary of $H^2$ is a 3--sphere with genus 1 Heegaard splitting consisting of $V$ and a dual torus $V^*$.
+	We attached $H^2$ because we wanted to fill the boundary of $V$ with 2--discs that were easy to attach 4-- and 3--handles over, and $V^*$ is also contained in the union of these 4-- and 3--handles.
+	The vertices and edges of $S$ corresponding to this collection 4-- and 3--handles forms a cycle $C$ in the 1---skeleton of the Stein complex already built.
+	We know that $R$ contains only regular values, so it pulls back to a disjoint collection of open solid tori.
+	Let $U$ be the open solid torus in this collection with $f(U)=R$ and $V\subset U$.
+	In particular, $\pd V=\pd V^*\subset U$.
+	The fibers of $S$ are fibers of $f$ that project over the regular values in $R$, so $h(U)$ is a 2--ball.
+	The closure of $U$ intersects the singular fibers corresponding to the 4-- and 3--handles that contain $V^*$.
+	We take $h(U)$ in $S$ to be a 2--cell attached over $C$.
+	
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\caption{Stein complex embedding over regular values}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:regularsteinembed}
+	\end{figure}
+	
+	To define $\varphi$ on the 2--cell $\sigma_U$ corresponding to $U$, we start by defining it on $\sigma_V$, a subdisc of $\sigma_U$ (cf.\ the case of defining $\varphi$ on the edges of $S$, where $\sigma_V\subset\sigma_U$ just like how $\{z\in\C:|z|^2\leq 1-\varepsilon\}\subset\DD$).
+	Recall that	$H^2$ is the 2--handle attached over $V$.
+	It is useful to think of $H^2$ as a $\DD$ bundle over $\DD$, where the base space and zero section are the cocore $C_V$ of $H^2$.
+	We define $\varphi(\sigma_V)=C_V$, and then examine the intersection of $C_V$ with the 4-- and 3--handles of $W$.
+	The collection of higher index handles that intersect $H^2$ is exactly the collection that contains $V^*$, and the intersection is exactly $V^*$.
+	The cocore $C_V$ intersects $V^*$ in exactly the belt sphere of $H^2$.
+	We then extend $\varphi$ to $\sigma_U\setminus\sigma_V$ exactly as we did with the edges of $S$, by connecting the belt sphere of $H^2$ with the cocores of the 4-- and 3--handles by line segments.
+	
+	This demonstrates first that the Stein complex $S=h(M)$ has the structure of a 2--complex.
+	Secondly, the map $\varphi:S\into W$ constructed here is piecewise--linear where it is not smooth, so can be smoothed into a flat embedding of a CW--complex.											
 \end{proof}
-												
-												
-												
+
+All that's left is to realize the Stein complex as a set of instructions to build a handle decomposition of $W$, dual to the one obtained in Theorem \ref{thm:3bound4}, that relies only on $f$ and $S$.
+We state this more precisely in Theorem \ref{thm:3stein4}.
+
+\begin{theorem}
+	\label{thm:3stein4}
+	Let $f$, $M$, $S$ be as defined above.
+	Then there exists a 4--manifold $W$ that is a cobordism of the pair $(M,\emptyset)$ in which $S$ embeds flatly as in Theorem \ref{thm:stein2complex}, and this manifold may be reconstructed from the combinatorics of $S$ and the map $f$.
+\end{theorem}
+
+\begin{proof}
+	Let $G$ be the 1--skeleton of $S$, and put $W=\emptyset$.
+	For each vertex $v$ of $G$, add a 4--dimensional 0--handle $H_v^0$ to $W$, and embed $v$ as the core of $H_v^0$.
+	For each edge $e=(u,v)$ of $G$, add a 1--handle $H_e^1$ with orientation preserving attaching maps into $\pd H_u^0$ and $\pd H_v^0$.
+	The result of 0-- and 1--handle attachment is a 4--dimensional handlebody called the \emph{4--thickening} of $G$.
+	
+	Now take $U(G)$, a closed regular neighbourhood of $G$ in $S$.
+	This is equivalent to $S$ minus an open ball inside of each 2--cell (as in Theorem \ref{thm:stein2complex} when we considered $\sigma_U\setminus\sigma_v$), or can also be seen as $G$ plus an annulus attached by one of its boundary components over each cycle that a 2--cell was attached over in Theorem \ref{thm:stein2complex}.
+	In either case, $U(G)$ collapses onto $G$ and the 4--thickening of $U(G)$ is homeomorphic to the 4--thickening of $G$.
+	We build now the 4--thickening of $U(G)$ in the same way as we built the 4--thickening of $G$, this time paying attention to how the 2--cells of $S$ interact with the thickening.
+	
+	
+	
+	
+	
+	The dual handle decomposition would have us attach a 0--handle for each vertex of $S$ and a 1--handle for each edge.
+	
+	This results in a 4--dimensional object, and the 1--skeleton of $S$ can be flatly embedded i.
+	We call such an object a \emph{4--thickening of the 1--skeleton of $S$}, and it is generically a 3--disc bundle over the 1--skeleton.
+	Then 
+	
+	
+	, along with the annuli $\sigma_U\setminus\sigma_V$ from Theorem \ref{thm:stein2complex}.	
+	
+	It may also be realized by first 3--thickening the skeleton, marking some important sections, then thickening again.
+	
+	Put $G$ to be the 1--skeleton of $S$ and $H(G)$ its 3--thickening.
+	Over the edges of $G$ we 
+	
+	We start by forming a thickening of the 1--skeleton of $S$, then 
+\end{proof}
