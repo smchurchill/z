@@ -1,0 +1,51 @@
+Section \ref{sec:3bound4} ends with a discussion of framing coefficients with respect to a canonical 0--framing.
+Take $V$ to be a solid torus of $M$ mapping through $\pi'$ to a disc $D$ in $\C$, itself existing as a shrunken region associated with a 2--cell $c$ of $S$ found in Section \ref{sub:zero}.
+The zero section of $V$ as it sits in $T'$ can be represented by any of the 2--cells of $T'$ that intersect $V$ in a disc.
+The simplicial circle representing the core of $V$ that projects through $\pi$ over $c$ is described by a dual cycle $c_V^*$ in the dual complex $T^*$, so any dual 1--cell of this description will suffice.
+A section over $\pd D$ is realized as a closed walk over $c_V^*$, and the framing coefficient is the oriented number of times that the dual 1--cell representing $z(V)$ is traversed in this walk.
+
+To describe a section over $\pd D$, we first describe a section over the portions of $\pd D$ that run parallel to edges in $X'$.
+Let $e$ be such an edge, and $f$ its parallel strand in $D$.
+A section over $e$ is a portion of an edge $E$ in $T'$.
+An appropriate section over $f$, denoted $s(f)$, sits entirely inside of a single 3--cell $\sigma$ of $T'$ that contains $E$.
+This is appropriate because of the piecewise--linear nature of $\pi$.
+
+The section we construct will have the same oriented intersection number with any choice of zero section for $V$.
+If $s(f)$ leaves $\sigma$, it leaves through a boundary 2--cell of $\sigma$.
+If it does not travel at least once around $E$, then it is identical in our computations to the version of $s(f)$ that sits entirely inside of $\sigma$.
+If it does travel around $E$, then recall that we may take as $z(V)$ \emph{any} 2--cell projecting over $D$.
+Here, if a 2--cell incident to $E$ projects over $D$, then all of them must project over $D$, and no other 2--cell of $T'$ may project over $D$ in order to keep the oriented intersection number invariant.
+In this case, $E$ forms a definite fold singularity so $s(f)$ can be isotoped through the 3--ball in $M$ associated to this type of singularity back to a position in which it sits entirely inside of $\sigma$.
+
+We conclude that every intersection of $s(f)$ with $z(V)$ occurs near a vertex of $S$.
+Referring back to the representative circle $c_V^*$ in the dual complex, we may associate $s(f)$ with a dual vertex $v_f^*$ in $c_V$.
+The full section $s(\pd D)$ is then determined by how we walk between these vertices.
+
+Ordering the edges of $\pd c$ and their parallel strands on $\pd D$, we investigate the arc used to connect $s(f_i)$ and $s(f_{i+1})$ in the section over $\pd D$.
+
+
+
+will have oriented intersection number with $z(V)$ of 0 or $\pm1$.
+In other words, the path we take from 
+
+\begin{algorithm}
+	\caption{Computation of Framing Coefficients}
+	\label{alg:gleams}
+	\KwData{a 2--cell $c$ of the Stein complex $S$}
+	\KwResult{the framing coefficient $n_c$ for $c$}
+	\Begin{
+		$f_0\longleftarrow\emptyset$, the 0--framing\;
+		$R_c\longleftarrow$ the 2--cell of $X'$ over which $c$ projects\;
+		$\Sigma\longleftarrow\emptyset$, the ordered vertices of $T'^*$ corresponding to the 0--framing near the edges of $c$\;
+		\ForEach{edge $e_i$ in $\pd c=\{e_0,e_1,\dots,e_k,e_0\}$}{
+			$E_i\longleftarrow$ the edge of $T'$ projecting over $e_i$\;
+			$\sigma_i\longleftarrow$ a 3--cell $T'$ containing $E_i$ projecting over $R_c$\;
+			add $\sigma_i^*$ to $\Sigma$\;
+		}
+		\ForEach{vertex $v_i$ in
+			$\pd c=\{e_0=(v_0,v_1),e_1=(v_1,v_2),\dots,e_k=(v_k,v_0),e_0\}$
+		}{
+			
+		}
+	}	
+\end{algorithm}

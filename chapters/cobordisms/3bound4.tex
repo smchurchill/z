@@ -334,43 +334,104 @@ Then $f=g\comp h$ where $h$ is the quotient map $M\to M/\!\!\sim$ and $g$ takes 
 	Secondly, the map $\varphi:S\into W$ constructed here is piecewise--linear where it is not smooth, so can be smoothed into a flat embedding of a CW--complex.											
 \end{proof}
 
+In Section \ref{sec:proj} it is convenient to remove open balls from a given 3--manifold $M$ and build a projection of $M'$ instead.
+We want the results of this section to still apply, so we state this in Theorem \ref{lem:stillworks}
+
+\begin{lem}
+	\label{lem:stillworks}
+	Let $M$ be a closed orientable 3--manifold, and let $M'$ be $M$ with a finite number of disjoint 3--balls removed.
+	Call the disjoint 2--sphere boundary components of $M'$ by $pd_i M'$.
+	Let $f:M'\to\DD$ be a proper generic smooth map such that $f(\pd M')$ is a disjoint collection of intervals in the boundary of $\DD$ and the image of the singular set of $f$ away from $\pd M'$ is as described in the proof of Theorem \ref{thm:3bound4}.
+	Then the Stein complex recovered for $f$ in the manner of Theorem \ref{thm:stein2complex} is exactly the Stein complex recovered for an extension of $f$ to $M$.
+\end{lem}
+
+\begin{proof}
+	The singular fibres near $f(\pd M')$ are all definite folds, and extending $f$ to 3-balls attached over the boundary components of $M'$ yields an extension of that definite fold over the image of the 3--ball.
+\end{proof}
+
 All that's left is to realize the Stein complex as a set of instructions to build a handle decomposition of $W$, dual to the one obtained in Theorem \ref{thm:3bound4}, that relies only on $f$ and $S$.
 We state this more precisely in Theorem \ref{thm:3stein4}.
 
 \begin{theorem}
 	\label{thm:3stein4}
-	Let $f$, $M$, $S$ be as defined above.
-	Then there exists a 4--manifold $W$ that is a cobordism of the pair $(M,\emptyset)$ in which $S$ embeds flatly as in Theorem \ref{thm:stein2complex}, and this manifold may be reconstructed from the combinatorics of $S$ and the map $f$.
+	Let $f$, $M$, $S$, $W$ be as defined above.
+	Then there exists a 4--manifold $W^*$ that is a cobordism of the pair $(M,\emptyset)$ in which $S$ embeds flatly as in Theorem \ref{thm:stein2complex}, and this manifold may be reconstructed from the combinatorics of $S$ and the map $f$.
 \end{theorem}
 
 \begin{proof}
-	Let $G$ be the 1--skeleton of $S$, and put $W=\emptyset$.
-	For each vertex $v$ of $G$, add a 4--dimensional 0--handle $H_v^0$ to $W$, and embed $v$ as the core of $H_v^0$.
-	For each edge $e=(u,v)$ of $G$, add a 1--handle $H_e^1$ with orientation preserving attaching maps into $\pd H_u^0$ and $\pd H_v^0$.
-	The result of 0-- and 1--handle attachment is a 4--dimensional handlebody called the \emph{4--thickening} of $G$.
+	Let $G$ be the 1--skeleton of $S$.
+	We consider first the 4--handlebody obtained by attaching to $\emptyset$ a 4--dimensional 0--handle $H_v^0$ for each vertex $v$ of $G$, embedding $v$ as the core of $H_v^0$, attaching a 1--handle $H_e^1$ with orientation preserving attaching maps into $\pd H_u^0$ and $\pd H_v^0$ for each edge $e=(u,v)$ of $G$, embedding $e$ as the core of $H_e^1$ plus a pair of line segments to the cores $\pd H_u^0$ and $\pd H_v^0$.
+	The result is a 4--dimensional handlebody called the \emph{4--thickening} of $G$, and is denoted by $H_4(G)$.
 	
-	Now take $U(G)$, a closed regular neighbourhood of $G$ in $S$.
-	This is equivalent to $S$ minus an open ball inside of each 2--cell (as in Theorem \ref{thm:stein2complex} when we considered $\sigma_U\setminus\sigma_v$), or can also be seen as $G$ plus an annulus attached by one of its boundary components over each cycle that a 2--cell was attached over in Theorem \ref{thm:stein2complex}.
-	In either case, $U(G)$ collapses onto $G$ and the 4--thickening of $U(G)$ is homeomorphic to the 4--thickening of $G$.
-	We build now the 4--thickening of $U(G)$ in the same way as we built the 4--thickening of $G$, this time paying attention to how the 2--cells of $S$ interact with the thickening.
+	Consider now $U_S(G)$, a closed regular neighbourhood of $G$ in $S$.
+	This is equivalent to $S$ minus an open ball inside of each 2--cell (as in Theorem \ref{thm:stein2complex} when we considered $\sigma_U\setminus\sigma_V$), or can also be seen as $G$ plus an annulus attached by one of its boundary components over each cycle that a 2--cell was attached over in Theorem \ref{thm:stein2complex}.
+	In either case, $U_S(G)$ collapses onto $G$ and the 4--thickening of $U_S(G)$ is homeomorphic to the 4--thickening of $G$.
+	To build $W$, we make a 3--thickening of $U_S(G)$, and then a 4--thickening of the 3--handlebody obtained.
+	This time, however, we pay attention to how the 2--cells of $S$ interact with the thickening.
 	
+	We built $S$ to have a 1--skeleton $G$ whose interior vertices are all of degree 4 and whose boundary vertices are all of degree 3.
+	The 3--thickened regular neighbourhoods of the five possible vertex types and the three possible edge types in $S$ are depicted in Figure \ref{fig:3thickeningblocks}.
+	We use these to build the 3--thickening $H_3(U_S(G))$ of $U_S(G)$ where $U_S(G)$ is embedded in $H_3(U_S(G))$ and intersects the boundary of $H_3(U_S(G))$ in the curves depicted on the blocks in Figure \ref{fig:3thickeningblocks}.
+	Thinking of $H_3(U_S(G))$ as generically a bundle of $\II$ over $U_S(G)$, the curves would be the zero section of the bundle over the boundary of $U_S(G)$.
+	Once we have $H_3(U_S(G))$, there is a unique orientable $\II$ bundle over $H_3(U_S(G))$, and this is the 4--thickening of $G$.
+	This bundle can be obtained either by specifying local trivializations that reverse the orientation of the $\II$ factor along the curves in $H_3(U_S(G))$ along which the space becomes nonorientable, or by first building the 3--thickening of $T\subset G$, a maximal spanning tree of $G$, 4--thickening that space, and then attaching all remaining 1--handles in the unique orientation preserving way.
+	We choose the second construction.
 	
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\caption{The blocks used in the 3--thickening of the 1--skeleton of the Stein complex}
+		\includegraphics[height=3cm]{figures/dummy.jpg}
+		\label{fig:3thickeningblocks}
+	\end{figure}
 	
+	Building $H_3(U_S(T))$ by adding an appropriate vertex block to $H_3(U_S(T))$ for each vertex of $T$, then connect them together with edge blocks in the unique way that is forced by the combinatorics of $S$ for each edge of $T$.
+	Take the product of this space with $\II$.
+	The result is a $\II$--bundle over $H_3(U_S(T))$ and generically a $\II^2$--bundle over $U_S(T)$.
+	To extend this to $G$, we add 1--handles for each edge in $G$ that is not in $T$.
+	Every such edge has at least one 2-handle in $S$ attached over it, and every 2--cell of $S$ attaches over at least one edge added in this step.
+	We use the product of our edge blocks with $\II$ as the 4--disc structure for our 1--handles.
+	The combinatorics of $S$ and the requirement that $H_4(U_S(G))$ is orientable make these handle attachments unique.
+	Our 4--thickening $H_4(U_S(G))$ is once again a $\II$--bundle over $H_3(U_S(G))$ and generically a $\II^2$--bundle over $U_S(G)$.
+	The boundary circles of $U_S(G)$, corresponding to 2--cells of $S$ and thus 2--handles of $W$, are now thickened to solid tori in $H_4(U_S(G))$.
+	The last step to this construction is the attachment of 2--handles over these solid tori. 
 	
+	Let $v^*$ be a boundary circle of $U_S(G)$ corresponding to a 2--cell $c_v$ of $S$ with thickening $V^*$ in the boundary of $H_4(U_S(G))$.
+	The first thing we must do is specify a canonical 0--framing on $V^*$, which we do by investigating the diagonal of the square fibers $\II$.
+	As a subspace of $V^*$, the union of the fibers have the structure of an annulus or a M\"obius strip.
+	To see which we get, we turn to the completion of $H_4(U_S(T))$ into $H_4(U_S(G))$ accomplished by attaching 4--dimensional 1--handles.
+	At least one such 1--handle corresponded to an edge of $\pd c_v$, and $n$ of them were attached with an orientation reversal in both $\II$ factors.
+	If $n$ is even then the diagonal is an annulus and we put the canonical 0--framing as the trivialization that takes one boundary component of that annulus to $S^1\times\{1\}$.
+	If $n$ is odd then the diagonal is a M\"obius strip.
+	In this case we take a curve that follows one half of the boundary component of the M\"obius strip (i.e. once around $V^*$ in the longitudinal direction along the boundary), then connects to itself via one half positive twist in the orientation of $V^*$ (which is canonically oriented by the canonical orientations of the double intervals $\II$).
 	
-	The dual handle decomposition would have us attach a 0--handle for each vertex of $S$ and a 1--handle for each edge.
+	With a 0--framing specified, we just need framing coefficients.
+	To recover those, we ask how our canonical framing sits inside of $M$.
+	This question is well defined because the solid tori we are attaching 2--handles over are the $V^*$ we examined in the proof of Theorem \ref{thm:3bound4}, and the boundaries of these tori are contained in $M$.
 	
-	This results in a 4--dimensional object, and the 1--skeleton of $S$ can be flatly embedded i.
-	We call such an object a \emph{4--thickening of the 1--skeleton of $S$}, and it is generically a 3--disc bundle over the 1--skeleton.
-	Then 
-	
-	
-	, along with the annuli $\sigma_U\setminus\sigma_V$ from Theorem \ref{thm:stein2complex}.	
-	
-	It may also be realized by first 3--thickening the skeleton, marking some important sections, then thickening again.
-	
-	Put $G$ to be the 1--skeleton of $S$ and $H(G)$ its 3--thickening.
-	Over the edges of $G$ we 
-	
-	We start by forming a thickening of the 1--skeleton of $S$, then 
+	The complex $S$ embeds flatly into $W$, and the restriction of that embedding to the 0-- and 1--handles of $W$ is exactly how $U_S(G)$ embeds in $H_4(U_S(G))$.
+	Specifically, the zero section of the torus $V^*$ above is the belt sphere of the 2--handle in $W$ corresponding to the 2--cell $c_v$ in $S$.
+	This belt sphere is then the attaching sphere of the dual 2--handle in the handle decomposition of $W^*$ and the framing coefficient is then the number of meridinal twists from the 0--framing to the longitude in $V^*$ that is a meridian of $V$.
+	Attaching a 2--handles over every such $V^*$'s yields a handle decomposition of a 4--manifold $W^*$ that is dual to the decomposition of $W$ acquired in Theorem \ref{thm:3bound4}.
+	We conclude that $W^*$ is the desired cobordism of $(M,\emptyset)$.
 \end{proof}
+
+There are a couple of points left to address in this chapter.
+The first is that of explicitly recovering the 0--framing curve used in the attachment of 2--handles in Theorem \ref{thm:3stein4}, a necessity for turning this process into an algorithm.
+The second is an acknowledgment of the origin of the ideas in this Section.
+
+The 0--framing $L$ is a curve in the shared boundary of $V$ and $V^*$ that is a number of meridinal twists of $V^*$ away a meridian of $V$.
+This number is the framing coefficient we equip to the 2--cell of $S$ representing 2--handle attachment over $V^*$ in the construction of $W^*$.
+
+Because $L$ is a longitude of $V^*$, it wraps exactly once around the meridinal direction of $V$, and can thus be realized as a section over $\pd \D$ where $f(V)=\D$.
+Let $\D_0$ be the zero section of $V$ as a disc bundle over an interior regular fiber of $V$.
+Then the oriented intersection number of $J$ with $D$ yields the framing coefficient.
+We compute the framing coefficient for a 2--cell of $S$ in Section \ref{sub:gleams} using this method.
+
+
+This work is based on that of Costantino and Thurston in \cite{CostThur08} and of Turaev in \cite{Turaev91}.
+Theorem \ref{thm:3stein4} in particular is a version of the Turaev Reconstruction Theorem.
+Three distinct versions can be found as Theorem 4.1 of \cite{Cost05}, 3.8 of \cite{CostThur08}, and 19.1 of \cite{Turaev91}.
+The proof presented is closest in form to that found in \cite{Cost05}.
+These selections offer a decent introduction to the theory of shadows of 4--manifolds.
+A shadow is a 2--complex with extra structure, and the Stein complex found in this section is almost a shadow.

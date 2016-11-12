@@ -1,38 +1,40 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Genus 1 Heegaard splitting of $S^3$\relax }}{25}{figure.2.1}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Genus 1 Heegaard splitting of $S^3$\relax }}{24}{figure.2.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces A typical Morse function $T^2\# T^2\to \mathbb {R}$.\relax }}{37}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Smoothing a cross into a saddle\relax }}{38}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Critical neighbourhoods and regular annuli\relax }}{38}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Attaching regions for 2--dimensional 2--handles and 3--handles\relax }}{39}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Stein factorization, Stein complex, and dual decomposition\relax }}{39}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces A closed sleeve around an arc of codimension 1 critical values\relax }}{42}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces A closed sleeve around a codimension 2 critical value\relax }}{43}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Possible singular fibers of a proper generic smooth map from an orientable 3--manifold to a surface\relax }}{43}{figure.3.8}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces The solid tori $V$ and $V^*$ with boundary curves $J$, $K$, and $L$.\relax }}{45}{figure.3.9}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Possible connected components of arc sleeve preimages\relax }}{46}{figure.3.10}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Regular level surfaces projecting near a codimension 2 critical value\relax }}{46}{figure.3.11}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Definite fold surfaces projecting near a codimension 2 critical value\relax }}{47}{figure.3.12}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Indefinite uninteractive fold surfaces projecting near a codimension 2 critical value\relax }}{47}{figure.3.13}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Destabilizing pairs for the pair of pants\relax }}{47}{figure.3.14}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces The surfaces resulting from interaction between definite and indefinite folds as they project near a codimension 2 critical value\relax }}{48}{figure.3.15}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Indefinite interactive fold surfaces projecting near a codimension 2 critical value\relax }}{48}{figure.3.16}
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Stein complex over codimension 2 critical values\relax }}{49}{figure.3.17}
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Stein complex over codimension 1 critical values\relax }}{50}{figure.3.18}
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Stein complex embedding over codimension 1 critical values\relax }}{50}{figure.3.19}
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Stein complex over regular values\relax }}{51}{figure.3.20}
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Stein complex embedding over regular values\relax }}{51}{figure.3.21}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces A typical Morse function $T^2\# T^2\to \mathbb {R}$.\relax }}{36}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Smoothing a cross into a saddle\relax }}{37}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Critical neighbourhoods and regular annuli\relax }}{37}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Attaching regions for 2--dimensional 2--handles and 3--handles\relax }}{38}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Stein factorization, Stein complex, and dual decomposition\relax }}{38}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces A closed sleeve around an arc of codimension 1 critical values\relax }}{41}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces A closed sleeve around a codimension 2 critical value\relax }}{42}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Possible singular fibers of a proper generic smooth map from an orientable 3--manifold to a surface\relax }}{42}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces The solid tori $V$ and $V^*$ with boundary curves $J$, $K$, and $L$.\relax }}{43}{figure.3.9}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Possible connected components of arc sleeve preimages\relax }}{44}{figure.3.10}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Regular level surfaces projecting near a codimension 2 critical value\relax }}{45}{figure.3.11}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Definite fold surfaces projecting near a codimension 2 critical value\relax }}{45}{figure.3.12}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Indefinite uninteractive fold surfaces projecting near a codimension 2 critical value\relax }}{45}{figure.3.13}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Destabilizing pairs for the pair of pants\relax }}{46}{figure.3.14}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces The surfaces resulting from interaction between definite and indefinite folds as they project near a codimension 2 critical value\relax }}{46}{figure.3.15}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Indefinite interactive fold surfaces projecting near a codimension 2 critical value\relax }}{46}{figure.3.16}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Stein complex over codimension 2 critical values\relax }}{47}{figure.3.17}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Stein complex over codimension 1 critical values\relax }}{48}{figure.3.18}
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Stein complex embedding over codimension 1 critical values\relax }}{48}{figure.3.19}
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Stein complex over regular values\relax }}{49}{figure.3.20}
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Stein complex embedding over regular values\relax }}{49}{figure.3.21}
+\contentsline {figure}{\numberline {3.22}{\ignorespaces The blocks used in the 3--thickening of the 1--skeleton of the Stein complex\relax }}{52}{figure.3.22}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces A truncated tetrahedron\relax }}{57}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Balls to remove\relax }}{58}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces A 2--complex before and after Algorithm \ref {alg:neuter}\relax }}{59}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Blowing up an edge in a polyhedral gluing\relax }}{59}{figure.4.4}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces A truncated tetrahedron\relax }}{58}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Balls to remove\relax }}{59}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces A 2--complex before and after Algorithm \ref {alg:neuter}\relax }}{60}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Blowing up an edge in a polyhedral gluing\relax }}{60}{figure.4.4}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Blowing up the associated path in the 2--complex\relax }}{60}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Dual edge blowup\relax }}{61}{figure.4.6}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Dual edge blowup\relax }}{62}{figure.4.6}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Simplicial circles that form the basis of our analysis of the piecewise--linear analogue of singular fibers\relax }}{63}{figure.4.7}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Preimages of points on either side of $e$ as they sit in $\sigma $\relax }}{64}{figure.4.8}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Wedge numbers after a blowup\relax }}{65}{figure.4.9}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces A vertex in $X'$ and the circles that map over incident 2--cells\relax }}{71}{figure.4.10}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Sample 1--, 2--, and 3--prisms\relax }}{72}{figure.4.11}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Wedge numbers after a blowup\relax }}{66}{figure.4.9}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces A vertex in $X'$ and the circles that map over incident 2--cells\relax }}{69}{figure.4.10}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Sample 1--, 2--, and 3--prisms\relax }}{73}{figure.4.11}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces The triangulated blocks used in the 3--thickening of the 1--skeleton of the Stein complex\relax }}{75}{figure.4.12}
 \addvspace {10\p@ }

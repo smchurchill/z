@@ -1,0 +1,19 @@
+Here we tie the algorithms of Section \ref{sec:4man} together into a single algorithm.
+
+\begin{algorithm}
+	\caption{Building a 4--manifold}
+	\label{alg:4manifold}
+	\KwData{an integer decorated Stein complex $S$}
+	\KwResult{a triangulated 4--manifold $W$ with boundary triangulation homeomorphic to the closed orientable 3--manifold $M$ whose triangulation was taken as input to Algorithm \ref{alg:proj}}
+	\Begin{
+		$W,\mathcal{V},\mathcal{C}\longleftarrow$ the result of Algorithm \ref{alg:4handlebody} with input $S$\;
+		$\Lambda\longleftarrow$ the set of pairs $(V,\lambda)$ with $V$ from $\mathcal{V}$ and $\lambda$ the 0--framing of $V$\;
+		\ForEach{pair $(V,\lambda)$ of $\Lambda$}{
+			$n\longleftarrow$ the framing coefficient of the 2--cell of $S$ corresponding to $V$\;
+			$W\longleftarrow$ the result of subdividing $V$ to a triangulated solid torus $V'$ for which a curve $\lambda^n$ as described in Section \ref{sub:2handles} exists\;
+			$\lambda'\longleftarrow$ the subdivision of $\lambda$ from the previous line\;
+			$H^4\longleftarrow$ the result of Algorithm \ref{alg:2handle} with input $V'$,$\lambda'$,$n$\;
+			$W\longleftarrow$ the result of gluing $H^4$ to $W$ over $V'$\;
+		}
+	}
+\end{algorithm}

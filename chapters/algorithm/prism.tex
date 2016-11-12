@@ -1,8 +1,8 @@
 The basic building block that we used in our 4--manifold reconstruction is the triangulated $n$--prism with identical walls.
 Take $\sigma^n$ to be the standard $n$--simplex.
-By $n$--prism, we mean the $n$--disc seen as $\sigma^{n-1}\times [-1,1]$ in Figure \ref{fig:nprism}.
+By $n$--prism, we mean the $n$--disc seen as $\sigma^{n-1}\times \II$ in Figure \ref{fig:nprism}.
 The prism has canonical ``top'' and ``bottom'' faces which are $\sigma^{n-1}\times \{1\}$ and $\sigma^{n-1}\times \{-1\}$ respectively.
-It also has $n$ identical ``walls'' which are $F^i(\sigma^{n-1})\times [-1,1]$ for each $i=0,\dots,n-1$.
+It also has $n$ identical ``walls'' which are $F^i(\sigma^{n-1})\times \II$ for each $i=0,\dots,n-1$.
 The triangulation we construct for the $n$--prism is designed so that the walls have identical triangulations.
 We do this so that we are able to perform an $n$--thickening of an $(n-1)$--dimensional triangulation.
 
@@ -47,57 +47,22 @@ The details are in Algorithm \ref{alg:nprism}, assuming the base case of the 1--
 	\KwResult{$P^n$, a triangulated $n$--prism with identical walls}
 	\Begin{
 		\If{$n=1$}{
-			$P^1=\I$, the standard 1--simplex\;	
-		}
-		$\sigma_0^n,\sigma_1^n\longleftarrow$ standard $n$--simplices\;
-		$P_0^{n-1},P_1^{n-1},\dots,P_n^{n-1}\longleftarrow$ result of Algorithm \ref{alg:nprism} with input $n-1$\;
-		\ForEach{$(n-1)$ prism $P_i^{n-1}$}{
-			attach $\sigma_0^{n-1}$ of $P_i^{n-1}$ to $F^i(\sigma_0^n)$	of $\sigma_0^n$\;
-			attach $\sigma_1^{n-1}$ of $P_i^{n-1}$ to $F^i(\sigma_1^n)$	of $\sigma_1^n$\;
-		}
-		\ForEach{$n-2$ simplex of}{}
-
-
-		\ForEach{$n$--simplex $\sigma$ of $T$}{
-			add a triangulated $(n+1)$--prism $H(\sigma)$ to $T'$\;
-		}
-		\ForEach{face $F^i(\sigma)=F^j(\tau)$ over which a pair $\sigma$, $\tau$ of $n$--simplices are glued in $T$}{
-			glue the $i\nth$ wall of $H(\sigma)$ to the $j\nth$ wall of $H(\tau)$\;			
+			$P^1=\II$\;
+			
+		} \Else {
+			$\sigma_{-1}^n,\sigma_1^n\longleftarrow$ standard $n$--simplices\;
+			$P^n\longleftarrow \sigma_{-1}^n\sqcup\sigma_1^n$\;
+			$P_0^{n-1},P_1^{n-1},\dots,P_n^{n-1}\longleftarrow$ result of Algorithm \ref{alg:nprism} with input $n-1$\;
+			
+			\ForEach{$(n-1)$ prism $P_i^{n-1}$}{
+				attach $\sigma_{-1}^{n-1}$ of $P_i^{n-1}$ to $F^i(\sigma_{-1}^n)$ of $\sigma_{-1}^n$ in $P^n$\;
+				attach $\sigma_1^{n-1}$ of $P_i^{n-1}$ to $F^i(\sigma_1^n)$	of $\sigma_1^n$ in $P^n$\;
+			}
+			
+			\ForEach{$n-2$ simplex $F^k(F^i(\sigma_{1}^n))=F^l(F^j(\sigma_{1}^n))$ of $\sigma_{1}^n$}{
+				attach the wall of $P_i^{n-1}$ containing $F^k(F^i(\sigma_{1}^n))$ to the wall of $P_j^{n-1}$ containing $F^l(F^j(\sigma_{1}^n))$\;
+			}
+			$P^n\longleftarrow CP^n$, the cone on $P^n$\;
 		}
 	}
 \end{algorithm}
-
-
-The 1--prism is just an edge.
-This is the base case, so no coning is needed.
-
-To make the 2--prism, we take two copies of the 1--simplex: $e\times\{1\}$ and $e\times\{-1\}$.
-The two face maps of $e$ give us the two vertices of $e$.
-Then $F^0(e)=v_1$ and $F^1(e)=v_0$, so we now have the 1--sphere triangulated by the top face $e\times\{1\}$, bottom face $e\times\{-1\}$, and walls $v_1\times I$ and $v_0\times I$.
-Coning gives us a triangulation of $\DD$ whose walls are single edges and whose top and bottom faces are 1--simplices.
-
-To make the 3--prism, we take two copies of the 2--simplex: $t\times\{1\}$ and $t\times\{-1\}$.
-The three face maps of $t$ give us the three edges of $t$.
-Then $F^0(t)=[v_1,v_2]$, $F^1(t)=[v_0,v_2]$ and $F^2(t)=[v_1,v_2]$, so we now have the 2--sphere triangulated by the top face $t\times\{1\}$, bottom face $t\times\{-1\}$, and walls $[v_1,v_2]\times I$, $[v_0,v_2]\times I$ and $[v_1,v_2]\times I$.
-The walls are 2--prisms with the previous triangulation.
-The walls glue to the top and bottom triangles in the obvious way, and are glued to each other over their identical $1$--dimensional walls.
-Coning gives us a triangulation of $\D^3$ whose walls are the 2--prism found above and whose top and bottom faces are 2--simplices.
-
-The 4--prism construction is nearly identical to the 3--prism construction, but it's not a bad idea to write it down.
-To make the 4--prism, we take two copies of the 3--simplex $T$: $T\times\{1\}$ and $T\times\{-1\}$.
-The four face maps of $T$ give us the four triangles of $T$.
-Then $F^0(T)=[v_1,v_2,v_3]$, $F^1(T)=[v_0,v_2,v_3]$, $F^2(T)=[v_0,v_1,v_3]$ and $F^3(T)=[v_0,v_1,v_2]$.
-We now have a triangulated 3--sphere with top face $T\times\{1\}$, bottom face $T\times\{-1\}$, and walls $[v_1,v_2,v_3]\times I$, $[v_0,v_2,v_3]\times I$, $[v_0,v_1,v_3]\times I$ and $[v_0,v_1,v_2]\times I$.
-The walls are 3--prisms with the previous triangulation.
-The walls glue to the top and bottom faces in the obvious way, and are glued to each other over their identical $2$--dimensional walls.
-This triangulation is seen to be $\sthr$ because it is constructed by gluing together three basic pieces.
-The three pieces are the top face (a 3--ball), which is glued to the union of the walls (an $\stwo\times I$), which is glued to the bottom face (a 3--ball).
-Coning gives us a triangulation of $\D^4$ whose walls are each the 3--prism found above and whose top and bottom faces are 3--simplices.
-
-\begin{rmk} 
-  Before moving further with construction, we should revisit the idea of an ``$n$--dimensional thickening.''
-  The 3--thickening of the M\"obius band under the definition above gives the solid Klein bottle and, in general, the thickening as described produces the trivial interval bundle over the base triangulation.
-  Our goal in later sections is to produce an interval bundle over a possibly nonorientable 3--handlebody $H$ whose total space is orientable.
-  For a smooth bundle, this would amount to identifying all 1--handles whose attachments cause $H$ to be nonorientable, and defining the fiber bundle so that a transition function on each such 1--handle is the reflection diffeomorphism in the fiber direction.
-  Our prisms are symmetric through switching of ``top'' and ``bottom,'' so such a strategy can be employed here as well.
-\end{rmk}
