@@ -6,7 +6,7 @@ A model truncated tetrahedron can be seen in Figure \ref{fig:truncttet}
 	\centering
 	\captionsetup{justification=centering}
 	\caption{A truncated tetrahedron}
-	\includegraphics[height=3cm]{figures/dummy.jpg}
+	\includegraphics[height=2in]{figures/truncttet.jpg}
 	\label{fig:truncttet}
 \end{figure}
 
@@ -20,14 +20,14 @@ Figure \ref{fig:neuter} depicts this process.
 \begin{figure}
 	\centering
 	\captionsetup{justification=centering}
-	\caption{Balls to remove}
-	\includegraphics[height=3cm]{figures/dummy.jpg}
+	\caption{Balls to remove and the effect of Algorithm \ref{alg:neuter} on the 2--complex}
+	\includegraphics[height=4in]{figures/neuter.jpg}
 	\label{fig:neuter}
 \end{figure}
 
 We also make explicit the effect this has on the 2--complex we recover from $\pi':T'\to\C$, where $\pi'$ is just $\pi$ restricted to $T'\subset T$.
 This is done in Algorithm \ref{alg:neuter}, taking $T$ and $\pi$ to be as in the input to Algorithm \ref{alg:crossdis2complex}.
-Figure \ref{fig:neuter2complex} depicts the result of an application around a specific vertex.
+Figure \ref{fig:neuter} depicts the result of an application around a specific vertex.
 
 \begin{algorithm}[h]
 	\caption{Generating a 2--complex from a truncated linear tetrahedral projection}
@@ -54,12 +54,3 @@ Figure \ref{fig:neuter2complex} depicts the result of an application around a sp
 		}
 	}
 \end{algorithm}
-
-
-\begin{figure}
-	\centering
-	\captionsetup{justification=centering}
-	\caption{A 2--complex before and after Algorithm \ref{alg:neuter}}
-	\includegraphics[height=3cm]{figures/dummy.jpg}
-	\label{fig:neuter2complex}
-\end{figure}
