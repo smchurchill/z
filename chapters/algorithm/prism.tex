@@ -19,7 +19,7 @@ We glue these prisms together over their corresponding walls.
 This provides the two $\sigma^{n-1}$ with an $n$--dimensional thickening.
 If we can do this to any pair of simplices, then we can do this to an entire triangulation, as in Algorithm \ref{alg:nthickening}
 
-\begin{algorithm}[h]
+\begin{algorithm}
 	\caption{Thickening a triangulation}
 	\label{alg:nthickening}
 	\KwData{an $n$--dimensional triangulation $T$}
@@ -40,7 +40,7 @@ The intuition is that we build an $(n-1)$--sphere whose walls are $(n-2)$--prism
 Then, we cone the $(n-1)$--sphere to make a triangulated $n$--prism.
 The details are in Algorithm \ref{alg:nprism}, assuming the base case of the 1--prism being an edge.
 
-\begin{algorithm}[h]
+\begin{algorithm}
 	\caption{Building a standard $n$--prism}
 	\label{alg:nprism}
 	\KwData{a positive integer $n$}

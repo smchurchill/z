@@ -24,7 +24,7 @@ We illustrate this situation in Figure \ref{fig:plsingularities}.
 The form of the singular fiber is then the wedge of $n$ simplicial circles.
 We define $n$ to be the \emph{wedge number} of $E$, and this can be computed by investigating the link of $E$ in $T$ through $\pi$, which is precisely what we do in Algorithm \ref{alg:computewedgenum}.
 
-\begin{algorithm}[h]
+\begin{algorithm}
 	\caption{Wedge number computations}
 	\label{alg:computewedgenum}
 	\KwData{$T$, $\pi:T\to\C$, and edge $E$ of $T$}
@@ -82,7 +82,7 @@ The vertices over which we connect contribute their wedge coefficient to both of
 The wedge numbers of the new 2--cells are then easily recomputed as displayed in Figure \ref{fig:wedgenumblowup}.
 The details to reduce a single edge number are found in Algorithm \ref{alg:wedgereduction}
 
-\begin{algorithm}[h]
+\begin{algorithm}
 	\caption{Wedge number reduction}
 	\label{alg:wedgereduction}
 	\KwData{a dual 2--cell $E^*$ of a truncated dual complex $T'^*$ with wedge number $w_E>2$}

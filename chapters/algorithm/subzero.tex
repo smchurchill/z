@@ -39,7 +39,7 @@ Attaching the 2--cells is very similar to attaching the 1--cells.
 A 2--cell of $S$ projects over a 2--cell $c$ of $X'$, and each 2--cell corresponds to a simplicial circle projecting through $\pi'$ over $c$.
 The attachment is determined entirely by a cycle in the 1-skeleton of $S$, found in Algorithm \ref{alg:stein2cells}.
 
-\begin{algorithm}[h]
+\begin{algorithm}
 	\caption{Finding vertices for the Stein complex}
 	\label{alg:steinvertices}
 	\KwData{a vertex $v$ of $X'$}
@@ -57,7 +57,7 @@ The attachment is determined entirely by a cycle in the 1-skeleton of $S$, found
 	}
 \end{algorithm}
 
-\begin{algorithm}r[h]
+\begin{algorithm}
 	\caption{Finding edges for the Stein complex}
 	\label{alg:steinedges}
 	\KwData{an edge $e=(u,v)$ of $X'$}
@@ -75,7 +75,7 @@ The attachment is determined entirely by a cycle in the 1-skeleton of $S$, found
 	}
 \end{algorithm}
 
-\begin{algorithm}[h]
+\begin{algorithm}
 	\caption{Finding 2--cells for the Stein complex}
 	\label{alg:stein2cells}
 	\KwData{a 2--cell $c$ of $X'$ with $\{v_0,\dots,v_k\}=\pd c$}

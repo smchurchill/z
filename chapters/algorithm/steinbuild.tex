@@ -1,0 +1,30 @@
+The preceding algorithms are now combined into Algorithm \ref{alg:steincomplex} to build our integer decorated Stein complex.
+
+\begin{algorithm}
+	\caption{Building the Stein complex}
+	\label{alg:steincomplex}
+	\KwData{the closed, orientable, edge--distinct 3--manifold triangulation $T$}
+	\KwResult{an integer decorated Stein complex $S$}
+	\Begin{
+		$X'\longleftarrow$ the result of Algorithm \ref{alg:proj} with input $T$\;
+		$S\longleftarrow\emptyset$\;
+		\ForEach{vertex $v$ of $X'$}{
+			\ForEach{element $V_i$ of $N(v)$}{
+				add a vertex $v_i$ to $S$\;	
+			}
+		}
+		\ForEach{edge $e=(u,v)$ of $X'$}{
+			\ForEach{element $(U_i,V_j)$ of $N(e)$}{
+				add an edge $(u_i,v_j)$ to $S$\;	
+			}
+		}
+		\ForEach{2--cell $c$ of $X'$}{
+			\ForEach{element $N_j$ of $N(c)$}{
+				attach a 2--cell to $S$ over the cycle $N_j$\;
+			}
+		}
+		\ForEach{2--cell $c$ of $S$}{
+			decorate $c$ with the result of Algorithm \ref{alg:gleams} with input $c$\;
+		}
+	}
+\end{algorithm}

@@ -3,9 +3,10 @@ We tie the algorithms of Section \ref{sec:4man} together into Algorithm \ref{alg
 \begin{algorithm}
 	\caption{Building a 4--manifold}
 	\label{alg:4manifold}
-	\KwData{an integer decorated Stein complex $S$}
+	\KwData{the closed, orientable, edge--distinct 3--manifold triangulation $T$}
 	\KwResult{a triangulated 4--manifold $W$ with boundary triangulation homeomorphic to the closed orientable 3--manifold $M$ whose triangulation was taken as input to Algorithm \ref{alg:proj}}
 	\Begin{
+		$S\longleftarrow$ the result of Algorithm \ref{alg:steincomplex} with input $T$\;
 		$W,\mathcal{V},\mathcal{C}\longleftarrow$ the result of Algorithm \ref{alg:4handlebody} with input $S$\;
 		$\Lambda\longleftarrow$ the set of pairs $(V,\lambda)$ with $V$ from $\mathcal{V}$ and $\lambda$ the 0--framing of $V$\;
 		\ForEach{pair $(V,\lambda)$ of $\Lambda$}{

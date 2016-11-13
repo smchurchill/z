@@ -45,7 +45,7 @@ Finally, points of type 5 are in the image of exactly two faces of $\sigma$, and
 Our classification of points in the image of $\pi$ naturally lends itself to the structure of a 2--complex.
 We detail this construction in Algorithm \ref{alg:lintet2complex}.
 
-\begin{algorithm}[h]
+\begin{algorithm}
 	\caption{Generating a 2--complex from a linear tetrahedral projection}
 	\label{alg:lintet2complex}
 	\KwData{a simplex $\sigma$, a map $\pi:\sigma\to\C$}
@@ -74,7 +74,7 @@ A sufficient condition to guarantee that a crossing point between a pair of edge
 The 2--complex construction can now be extended to simplicial complexes.
 In Algorithm \ref{alg:crossdis2complex} we continue to let $T$ be a 3--dimensional edge--distinct connected simplicial complex with crossing distinct projection $\pi:T\to\C$.
 
-\begin{algorithm}[h]
+\begin{algorithm}
 	\caption{Generating a 2--complex from a crossing distinct projection}
 	\label{alg:crossdis2complex}
 	\KwData{ $T$, $\pi:T\to\C$}
