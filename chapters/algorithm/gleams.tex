@@ -1,11 +1,16 @@
 Section \ref{sec:3bound4} ends with a discussion of framing coefficients with respect to a canonical 0--framing.
 Take $V$ to be a solid torus of $M$ mapping through $\pi'$ to a disc $D$ in $\C$, itself existing as a shrunken region associated with a 2--cell $c$ of $S$ found in Section \ref{sub:zero}.
-The zero section of $V$ as it sits in $T'$ can be represented by any of the 2--cells of $T'$ that intersect $V$ in a disc.
+A meridinal disc $m$ of $V$ as it sits in $T'$ can be represented by any of the 2--cells of $T'$ that intersect $V$ in a disc.
 The simplicial circle representing the core of $V$ that projects through $\pi$ over $c$ is described by a dual cycle $c_V^*$ in the dual complex $T^*$, so any dual 1--cell of this description will suffice.
-A section over $\pd D$ is realized as a closed walk over $c_V^*$, and the framing coefficient is the oriented number of times that the dual 1--cell representing $z(V)$ is traversed in this walk.
+A section over $\pd D$ is realized as a closed walk over $c_V^*$, and the framing coefficient is the oriented number of times that the dual 1--cell representing $m$ is traversed in this walk.
 
-To describe a section over $\pd D$, we first describe a section over the portions of $\pd D$ that run parallel to edges in $X'$.
-Let $e$ be such an edge, and $f$ its parallel strand in $D$.
+To describe a section over $\pd D$, we first equip $\pd D$ with a cell decomposition parallel to $\pd c$, which we write as
+\[
+	\pd c=\{e_0=(v_0,v_1),e_1=(v_1,v_2),\dots,e_k=(v_k,v_0),e_0\}.
+\]
+Triangulate $\pd D$ with edges and vertices $f_i=(y_i,y_{i+1})$ running parallel to $e_i=(v_i,v_{i+1})$.
+
+Let $e$ be an edge of $\pd c$ with parallel $f$.
 A section over $e$ is a portion of an edge $E$ in $T'$.
 An appropriate section over $f$, denoted $s(f)$, sits entirely inside of a single 3--cell $\sigma$ of $T'$ that contains $E$.
 This is appropriate because of the piecewise--linear nature of $\pi$.
@@ -13,15 +18,27 @@ This is appropriate because of the piecewise--linear nature of $\pi$.
 The section we construct will have the same oriented intersection number with any choice of zero section for $V$.
 If $s(f)$ leaves $\sigma$, it leaves through a boundary 2--cell of $\sigma$.
 If it does not travel at least once around $E$, then it is identical in our computations to the version of $s(f)$ that sits entirely inside of $\sigma$.
-If it does travel around $E$, then recall that we may take as $z(V)$ \emph{any} 2--cell projecting over $D$.
+If it does travel around $E$, then recall that we may take as $m$ \emph{any} 2--cell projecting over $D$.
 Here, if a 2--cell incident to $E$ projects over $D$, then all of them must project over $D$, and no other 2--cell of $T'$ may project over $D$ in order to keep the oriented intersection number invariant.
 In this case, $E$ forms a definite fold singularity so $s(f)$ can be isotoped through the 3--ball in $M$ associated to this type of singularity back to a position in which it sits entirely inside of $\sigma$.
 
-We conclude that every intersection of $s(f)$ with $z(V)$ occurs near a vertex of $S$.
+We conclude that every intersection of $s(f)$ with $m$ occurs near a vertex of $S$.
 Referring back to the representative circle $c_V^*$ in the dual complex, we may associate $s(f)$ with a dual vertex $v_f^*$ in $c_V$.
 The full section $s(\pd D)$ is then determined by how we walk between these vertices.
+Walking between the vertices $v_{f_i}^*\neq v_{f_{i+1}}^*$ necessarily travels along one of the dual 1--cells adjacent to $v_{f_i}^*$,.
+More generally, we examine a pair of dual 1--cells that separate each pair of vertices we walk between and look for intersections between the associated 2--cells and the zero framing.
 
 Ordering the edges of $\pd c$ and their parallel strands on $\pd D$, we investigate the arc used to connect $s(f_i)$ and $s(f_{i+1})$ in the section over $\pd D$.
+To get at this arc, we use the triangulated solid torus $U$ associated to $c$ in the 4--handlebody $A_4$ found by Algorithm \ref{alg:attachingregions}.
+The solid torus $U$ came equipped with a triangulated boundary curve $\lambda$ curves that determines its 0--framing, and $\lambda$ has a natural partitioning into the framing pieces from which it was built in Algorithm \ref{alg:4handlebody}.
+
+The framing pieces from edge blocks of $U$ exhibit the same behaviour as the lifts $s(f)$ by design.
+A pair of edge block framing pieces $F_i$ and $F_{i+1}$ sitting in the boundaries of the components $U_i^f$ and $U_{i+1^f}$ of $U$ are connected by an oriented vertex framing piece $Y_{i+1}$ sitting on the boundary of the component $U_{i+1}^y$ of $U$.
+Take a pair $\alpha$, $\beta$ of meridians of $V$ so that splitting $\pd U$ along $\alpha$ and $\beta$ will yield a pair of connected components, one containing $F_i$ and one containing $F_{i+1}$.
+In practice we may take $\alpha$, $\beta$ to be the boundaries of the 2--cells dual to the edges incident to $\sigma_i^*$.
+
+We place $\alpha$ and $\beta$ with respect to $F_i$ and $F_{i+1}$ so that a particle traveling along a meridian of $U$ away from $F_i$ will encounter first $\alpha$ then $\beta$, while a particle traveling from $F_{i+1}$ will encounter first $\beta$ then $\alpha$.
+The 0--framing curve connects $F_i$ and $F_{i+1}$, so it must intersect one of $\alpha$, $\beta$.
 
 \begin{algorithm}
 	\caption{Computation of Framing Coefficients}
@@ -29,18 +46,19 @@ Ordering the edges of $\pd c$ and their parallel strands on $\pd D$, we investig
 	\KwData{a 2--cell $c$ of the Stein complex $S$}
 	\KwResult{the framing coefficient $n_c$ for $c$}
 	\Begin{
-		$f_0\longleftarrow\emptyset$, the 0--framing\;
+		$U,\lambda\longleftarrow$ the attaching region corresponding to $c$ that results from Algorithm \ref{alg:attachingregions} with input $S$\;
+		$c_V^*\longleftarrow$ the oriented circle in $T^*$ corresponding to $c$\;
+		$f_0\longleftarrow\emptyset$, the walk in $c_V^*$ corresponding to 0--framing of $U$\;
 		$R_c\longleftarrow$ the 2--cell of $X'$ over which $c$ projects\;
-		$\Sigma\longleftarrow\emptyset$, the ordered vertices of $T'^*$ corresponding to the 0--framing near the edges of $c$\;
 		\ForEach{edge $e_i$ in $\pd c=\{e_0,e_1,\dots,e_k,e_0\}$}{
 			$E_i\longleftarrow$ the edge of $T'$ projecting over $e_i$\;
-			$\sigma_i\longleftarrow$ a 3--cell $T'$ containing $E_i$ projecting over $R_c$\;
-			add $\sigma_i^*$ to $\Sigma$\;
+			$\sigma_i\longleftarrow$ a 3--cell of $T'$ containing $E_i$ that projects over $R_c$ and corresponds to 0--framing of $U$ near the edges of $c$\;
+			add $\sigma_i^*$ to $f_0$\;
 		}
 		\ForEach{vertex $v_i$ in
 			$\pd c=\{e_0=(v_0,v_1),e_1=(v_1,v_2),\dots,e_k=(v_k,v_0),e_0\}$
 		}{
-			
+			add the path from $\sigma_i*$ to $\sigma_{i+1}^*$ \;			
 		}
 	}	
 \end{algorithm}

@@ -8,6 +8,9 @@ We tie the algorithms of Section \ref{sec:4man} together into Algorithm \ref{alg
 	\Begin{
 		$S\longleftarrow$ the result of Algorithm \ref{alg:steincomplex} with input $T$\;
 		$W,\mathcal{V},\mathcal{C}\longleftarrow$ the result of Algorithm \ref{alg:4handlebody} with input $S$\;
+		\ForEach{2--cell $c$ of $S$}{
+			decorate $c$ with the result of Algorithm \ref{alg:gleams} with input $c$\;
+		}		
 		$\Lambda\longleftarrow$ the set of pairs $(V,\lambda)$ with $V$ from $\mathcal{V}$ and $\lambda$ the 0--framing of $V$\;
 		\ForEach{pair $(V,\lambda)$ of $\Lambda$}{
 			$n\longleftarrow$ the framing coefficient of the 2--cell of $S$ corresponding to $V$\;

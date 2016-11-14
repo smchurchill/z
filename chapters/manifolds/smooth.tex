@@ -23,14 +23,16 @@ Manifolds are defined by their local homogeneity, and a tangent space is a preci
 	Let $\gamma$ be a smooth map $(-\varepsilon,0\,] \to M$ or $[\,0,\varepsilon) \to M$ each with $\gamma(0)=p$.
 	A map of the first type is called an \emph{outward curve} in $M$ through $p$ and a map of the second type is called an \emph{inward curve} in $M$ through $p$.
 	
-	Let $C_p M$ be the space of smooth curves in $M$ through $p$ and $\gamma_1, \gamma_2$ elements of $C_p M$.
+	Let $C_p M$ be the space of smooth curves in $M$ through $p$, $\varphi$ a coordinate system at $p$ with $\varphi(p)=\vec{0}$, and $\gamma_1, \gamma_2$ elements of $C_p M$.
 	We can define an equivalence relation $\sim$ on $C_p(M)$ by saying that $\gamma_1\sim\gamma_2$ if
 	\[
-		\Ddt(f\comp\gamma_1)(0) = \Ddt(f\comp\gamma_2)(0).
+		\Ddt(\varphi\comp\gamma_1)(0) = \Ddt(\varphi\comp\gamma_2)(0),
 	\]
+	where we apply the appropriate one sided derivative to inward and outward curves.
 	An equivalence class of the curve $\gamma$ in $C_p M$ is a \emph{tangent vector} at $p$ and is written as $\gamma'(0)$.
 	The quotient $C_p M/\sim$ is the \emph{tangent space} at $p$, denoted $T_p M$.
 	A vector $\gamma'(0)$ of $T_p M$ is called an \emph{inward vector} if the equivalence class $[\gamma]$ contains only inward curves, and an \emph{outward vector} if $[\gamma]$ contains only outward curves.
+	
 \end{defn}
 
 \begin{prop}
@@ -40,26 +42,26 @@ Manifolds are defined by their local homogeneity, and a tangent space is a preci
 \end{prop}
 
 \begin{proof}
-	Let $(U,f)$ be a chart containing $p$ with $f(p)=\vec{0}$.
+	Let $(U,\varphi)$ be a chart containing $p$ with $\varphi(p)=\vec{0}$.
 	It follows from our definition of tangent space that the map defined by
 	\[
 		\begin{array}{crcl}
-			df : & T_p M & \to & \RRN \\
-			& \gamma'(0) & \mapsto & \Ddt(f\comp \gamma)(0) .
+			d\varphi : & T_p M & \to & \RRN \\
+			& \gamma'(0) & \mapsto & \Ddt(\varphi\comp \gamma)(0) .
 		\end{array}
 	\]
-	is a bijection, so we also have a well defined inverse $(df)\inv$.
+	is a bijection, so we also have a well defined inverse $(d\varphi)\inv$.
 	We define operations on $T_p M$ so that $F$ is strengthened to a vector space isomorphism:
 	\[
 		\begin{array}{rcl}
-			\gamma_1'(0)+\gamma_2'(0) & = & (df)\inv(df(\gamma_1'(0))+df(\gamma_2'(0))), \\
-			t\gamma_1'(0) & = & (df)\inv(t\:df(\gamma_1'(0))).
+			\gamma_1'(0)+\gamma_2'(0) & = & (d\varphi)\inv(d\varphi(\gamma_1'(0))+d\varphi(\gamma_2'(0))), \\
+			t\gamma_1'(0) & = & (d\varphi)\inv(t\:d\varphi(\gamma_1'(0))).
 		\end{array}
 	\]
 	The vector space structure of $T_p M$ is independent of the choice of chart.
 	To see this, let $L_v$ be the parameterized straight line through $\vec{0}$ whose velocity is $v\in\RRN$.
 	Precisely, $L_v(t)=tv.$
-	For any chart $(U,f)$ with $f(p)=0$, the curve $f\inv\comp L_v$ is a curve through $p$ for which $df(f\inv\comp L_v)=v$.
+	For any chart $(U,\varphi)$ with $\varphi(p)=0$, the curve $\varphi\inv\comp L_v$ is a curve through $p$ for which $d\varphi(\varphi\inv\comp L_v)=v$.
 	Because an equivalence class contains such a curve for any applicable chart, the association of a tangent vector with a vector in $\RRN$ does not depend on the chart used.
 \end{proof}
 
@@ -80,12 +82,12 @@ We use tangent spaces to define the derivative of a smooth map between manifolds
 \end{defn}
 
 We also classify smooth maps between manifolds.
-This classification helps us define a submanifold and provides some of the groundwork for defining handles in the next chapter.
+This classification helps us define a submanifold and provides some of the groundwork for defining handles in the next section.
 
 \begin{defn}[Embedding]
 	Let $f:X\to M$ be a smooth map between manifolds.
 	The \emph{rank} of $f$ at the point $p\in X$ is the rank of the differential $df$.
-	This is computed as the rank of the Jacobian matrix of $f$ under a coordinate system or as the dimension of $f(T_p X)\subset T_q M$.
+	This is computed as the rank of the Jacobian matrix of $f$ under a coordinate system or as the dimension of $df(T_p X)\subset T_q M$.
 	If $f$ has rank $k$ for every $p$ in $X$, then $f$ is of \emph{constant rank} and we say $\rk f=k$.
 	
 	If $df$ is injective at $p$, then $f$ is \emph{immersive} at $p$.
@@ -97,7 +99,7 @@ This classification helps us define a submanifold and provides some of the groun
 	If $\rk{df_p}$ is less than maximal, then $p$ is a \emph{critical point} of $f$.
 	In this case, $f(p)=q$ is a \emph{critical value}.
 	The set of critical points of $f$ in $M$ is called the \emph{singular set} of $M$, and is denoted $s_f$.
-	If $p$ is a critical point and $d^2f_p$ is of less than full rank, then $p$ is a \emph{degenerate critical point}.
+	If $p$ is a critical point and $d^2f_p = d(df)_p$ is of less than full rank, then $p$ is a \emph{degenerate critical point}.
 	A point $q\in M$ whose preimage $f\inv(q)$ consists entirely of regular points is called a \emph{regular value}.
 	
 	If $f$ is an injective immersion that is a homeomorphism onto its image $f(X)\subset M$ under the subspace topology, then it is a \emph{smooth embedding} or just \emph{embedding}.
@@ -154,14 +156,14 @@ Another generic property is transversality.
 
 \begin{defn}
 	Let $M$ be a $n$--manifold with submanifolds $X$ and $Y$.
-	We say that $X$ and $Y$ are \emph{transvere} as submanifolds if, at every intersection point, the sum of their tangent spaces is the tangent space of $M$ at that point.
+	We say that $X$ and $Y$ are \emph{transverse} as submanifolds if, at every intersection point, the sum of their tangent spaces is the tangent space of $M$ at that point.
 	Symbolically, transversality is denoted by $\pitchfork$ and the condition is stated by $X\pitchfork Y$ if and only if for every point $p\in X\cap Y$, $T_p X\oplus T_p Y=T_p M$.
 	We may also say that an intersection point is, itself, \emph{transverse}, or that $X$ and $Y$ \emph{intersect transversally at a point}.	
 \end{defn}
 
 Transversality of a pair of submanifolds $X$, $Y$ is stable under small perturbations of the embeddings $X\into M$ and $Y\into M$.
-Intersections between $X$ and $Y$ generically transverse when $\dim X + \dim Y = M$.
-The intersection points $X$ and $Y$ that are not transverse may be perturbed into stable transversality or non-intersection.
+Intersections between $X$ and $Y$ are generically transverse when $\dim X + \dim Y = M$.
+A point of $X\cap Y$ that is not a transverse intersection may be perturbed into stable transversality or non-intersection when $\dim X + \dim Y = M$, so we say that intersections of complementary codimension are generically transverse.
 
 \begin{theorem}[Regular Value Theorem]
 	Let $f:X\to M$ be a smooth map between manifolds.
@@ -187,7 +189,9 @@ Essentially, orientability is a guarantee that when you go for a walk your right
 	If $\det A$ is negative, then $b_1$ and $b_2$ are \emph{negatively oriented}.
 	We can define an equivalence relation $\sim$ on $\mathcal{B}(V^n)$ by saying that $b_1\sim b_2$ if they are positively oriented.
 	An \emph{orientation} of $V^n$ is a choice of one of the two equivalence classes of $\mathcal{B}(V^n)$.
-	This also allows us to classify linear transformations of $\gl{n}{\R}$ by their action on the quotient space $\mathcal{B}(V^n)/\sim$ by saying they are \emph{orientation preserving} if they have positive determinant and \emph{orientation reversing} if they have negative determinant.
+	This also allows us to classify linear transformations of $\gl{n}{\R}$ by their action on the quotient space $\mathcal{B}(V^n)/\sim$.
+	If $A\in\gl{n}{\R}$ has positive determinant then it fixes the equivalent classes, and $A$ is \emph{orientation preserving}.
+	If $A$ has negative determinant then it swaps the equivalence classes, and $S$ is \emph{orientation reversing}.
 \end{defn}
 
 Orientations of $\RRN$ let us define orientations of manifolds.
@@ -204,6 +208,6 @@ Orientations of $\RRN$ let us define orientations of manifolds.
 Orientations of manifolds let us decide whether a map is orientation preserving or reversing.
 
 \begin{defn}
-	Let $\phi:X\to M$ be a smooth map between oriented $n$--manifolds.
-	If the differential $df_p:T_p X\to T_{\phi(p)} M$ is orientation preserving (resp. orientation reversing) as a map between vector spaces for every $p$ in $X$, then $\phi$ is \emph{orientation preserving} (resp. \emph{orientation reversing}) as a map.
+	Let $f:X\to M$ be a smooth map between oriented $n$--manifolds.
+	If the differential $df_p:T_p X\to T_{f(p)} M$ is orientation preserving (resp. orientation reversing) as a map between vector spaces for every $p$ in $X$, then $f$ is \emph{orientation preserving} (resp. \emph{orientation reversing}) as a map.
 \end{defn}

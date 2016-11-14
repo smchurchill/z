@@ -7,7 +7,6 @@ The \emph{CW--complex} is our first foray into combinatorial descriptions of man
 	Let $M$ be a Hausdorff space.
 	A \emph{cell decomposition} of $M$ is a collection $T=\{t_\alpha\}$ such that every $t_\alpha$ is an open cell, every pair of cells of $T$ is disjoint, and the union of the cells of $T$ is exactly $M$.
 	The \emph{$n$--skeleton} of $T$ is the disjoint union of the cells of $T$ with dimension at most $n$, and it is denoted $T^n$.
-	Note that the 1--skeleton of a cell decomposition is a graph.
 	
 	Let $T$ be a cell decomposition of the Hausdorff space $M$.
 	Then $T$ is a \emph{closure--finite weak--topology complex} if the following are satisfied: 
@@ -18,7 +17,10 @@ The \emph{CW--complex} is our first foray into combinatorial descriptions of man
 	\end{enumerate}
 	It is standard to abbreviate such a cell decomposition as a \emph{CW--complex}.	
 	The \emph{dimension} of a CW--complex $T$ is the highest dimension among the cells of $T$.
-	A CW--complex is \emph{edge distinct} if no pair of edges $e$, $f$ in $T^1$ have $\pd e=(u,v)=\pd f$.
+	
+	The 1--skeleton of a CW--complex is a graph with vertex set $T^0$ and edge set the collection of pairs $(u,v)$ where $u\cup v$ is the boundary of the closure of a 1--cell.
+	A CW--complex is \emph{edge distinct} if no pair of edges $e$, $f$ in $T^1$ have $\pd e=(u,v)=\pd f$, and in this case $T^1$ is a simple graph.
+	
 	A map $\phi:T\to X$ where $X$ is an $m$--manifold and $T$ is a $n$--complex is an \emph{embedding} if $\phi$ restricted to any cell of $T$ is an embedding.
 	That embedding is \emph{flat} if for every point $\phi(p)$ of any top dimensional embedded $n$--cell $\phi(c)$ of $T$, there is a chart $(U,f)$ of $X$ about $\phi(p)$ for which $f(U\cap X)$ sits inside of $\R^n\subset \R^m$.
 \end{defn}

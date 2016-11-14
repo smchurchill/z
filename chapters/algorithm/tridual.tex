@@ -15,7 +15,7 @@ This continues until the segments join up into a simplicial circle interior to $
 	\caption{Building a collection of circles that map over a region}
 	\label{alg:regularcircles}
 	\KwData{a 2--cell $c$ of $X$, $T$, $T^*$, $\pi:T\to\C$}
-	\KwResult{a collection $C=\{C_i\}$ of simplicial circles in $T^*$ representing the circles in $T$ that project through $\pi$ over the region in the plane that correspond to $c$}
+	\KwResult{a collection $C=\{C_i\}$ of oriented simplicial circles in $T^*$ representing the circles in $T$ that project through $\pi$ over the region in the plane that correspond to $c$}
 	\Begin{
 		$c_\pi\longleftarrow$ the region of type 5 points in the plane corresponding to $c$\;
 		$C\longleftarrow\emptyset$\;
@@ -24,6 +24,7 @@ This continues until the segments join up into a simplicial circle interior to $
 				add $o^*$, including its boundary vertices, to $C$\;
 			}			
 		}
+		orient the edges of $C$ by the orientation of $T$\;
 	}	
 \end{algorithm}
 

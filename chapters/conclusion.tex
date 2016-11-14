@@ -1,1 +1,21 @@
+We now have an algorithmic method to obtaining a 4--manifold with a given boundary 3--manifold, provided that 3--manifold is orientable and given as a triangulation.
+This work fits into some distinct areas of low dimensional topology, and there are some clear directions that we could take in the future.
 
+The first consideration is an actual software implementation of the algorithm into a framework such as Regina: software for low dimensional topology \cite{regina}.
+This is especially useful if we want to get our hands on explicit triangulations of 4--manifolds for the purposes of building census or because we would like to compute cobordism invariants such as the Rohklin invariant.
+
+In that same vein, the work can be refined somewhat.
+For example, the handlebody built in Section \ref{sub:handlebody} is the gluing of several copies of the 3--disc, all of which have undergone two barycentric subdivisions and are thus triangulated by $21\cdot 24^2$ tetrahedra.
+We then 4--thicken each tetrahedron of that handlebody with a 4--prism.
+The number $P_n$ of $n$--simplices used to triangulated the $n$--prism designed in Section \ref{sub:nprism} is  $nP_n +2$, with the first few numbers being $P_1=1$, $P_2=4$, $P_3=14$, and $P_4=58$.
+We quickly approach numbers of pentachora in the thousands, making some computations unfeasible without suitable simplification of triangulation.
+
+It is also worth making modifications to the algorithm to ensure that the 4--manifold produced is simply connected, as in Theorem 5.4 of \cite{CostThur08}, or to acquire a spin structure for the 4--manifold as in Theorem 6.1 of \cite{CostThur08}.
+We said before that the Stein complex was `almost' a shadow, and one route to both of these would be to explicitly turn the Stein complex acquired in Section \ref{sec:stein} into a gleamed shadow.
+
+The final and most general avenue is the conversion of theorem proofs in smooth low--dimensional topology to algorithms on triangulations.
+Much of the groundwork that went into the triangulating of the smooth case in this document was explored in \cite{CostThur08}, but the history of the problem has yielded a large number of smooth proofs.
+The first step in our algorithm was to develop a piecewise--linear analogue to the generic proper smooth map, and this is entirely because our proof of smooth 3--manifolds bounding 4--manifolds did this as well.
+Investigating other proofs that smooth 3--manifolds bound 4--manifolds may allow explicit constructions to arise, but these constructions need to be directly obtainable from a triangulation.
+There are standard arguments in the literature using triangulations that any closed, orientable 3--manifold has a Heegaard decomposition, and this is shown by explicitly constructing the decomposition.
+Combining the construction of Heegaard diagrams with proof in the smooth case of 3--manifolds bounding 4--manifolds is a promising direction for future work.
