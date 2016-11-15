@@ -1,0 +1,114 @@
+Section \ref{sec:3bound4} ends with a discussion of framing coefficients with respect to a canonical 0--framing, and it does so by identifying the boundaries of tori $V$ and $V^*$ with $\pd V = \pd V^*$.
+
+Let $c$ be a 2--cell of $S$ and $V^*$ the triangulated solid torus associated to $c$ in the 4--handlebody $A_4$ found by Algorithm \ref{alg:attachingregions}.
+The solid torus $V^*$ also comes equipped with a triangulated boundary curve $\gamma$ that determines its 0--framing, and $\gamma$ has a natural partitioning into the framing pieces from which it was built in Algorithm \ref{alg:4handlebody}.
+
+We acquire a triangulation of an open solid torus $V$ projecting through $\pi$ over the disc of regular values $D$ associated to $c$.
+First equip $\pd D$ with a cell decomposition parallel to $\pd c$, which we write as
+\[
+	\pd c=\{e_0=(v_0,v_1),e_1=(v_1,v_2),\dots,e_k=(v_k,v_0),e_0\},
+\]
+the vertices and edges being those contained in $S$.
+Triangulate $\pd D$ with an edge for each vertex and each edge of $\pd c$.
+Take $f_i$ to be the edge corresponding to the edge $e_i$ and $y_i$ the edge corresponding to the vertex $v_i$.
+We triangulate $D'$ as the cone on this decomposition.
+If a 2--cell of $T'$ intersects $V$ it does so in a meridinal disc, so we take a copy of $D'$ for each such 2--cell.
+We connect these discs together with triangulated 3--prisms to form $V$.
+Now $V$ has a collection of meridinal discs $m_i$ that are copies of the triangulated discs $D_i'$ and whose boundaries $\pd m_i$ are meridians of $V$. 
+We may also equip $V$ with a longitude corresponding to a meridian of $V^*$.
+Indeed, we obtain a set of parallel triangulated longitudes over each vertex of $\pd D'$, each corresponding to a meridinal disc of $V^*$.
+
+Now, we turn to the blocks of $V^*$ containing the framing pieces of $\gamma$.
+Such a framing piece is a curve in the boundary of a 4--thickened vertex or edge block, vertices and edges coming from $\pd c$.
+We call the portion of $V^*$ corresponding to a vertex block over $v_i$ by $Y_i$ and the portion corresponding to an edge block over $e_i$ by $F_i$.
+These blocks share triangulated boundaries that are parallel meridinal discs of $V^*$.
+
+Cut $\pd V$ along its parallel triangulated boundary longitudes into the longitudinal strips $\lambda_j$ and $\pd V^*$ along its parallel triangulated boundary meridians into meridinal strips $\mu_j$.
+Each $\lambda_j$ contains a set of parallel triangulated curves between its boundary components corresponding to its intersection with the $m_i$, and each $\mu_j$ contains a triangulated curve between its boundary components corresponding to its intersection with the framing piece of $\gamma$ over the corresponding edge or vertex block.
+The longitudinal strip $\lambda_i$ is equivalent to the meridinal strip $\mu_i$ inside of $M$ by our analysis of the smooth case, so we identify these annuli by building a common triangulation.
+First, we justify that the framing pieces in edge blocks run parallel to the meridinal  pieces in the associated annuli in the boundary of $V$.
+
+Let $e$ be an edge of $\pd c$ with parallel $f$ in $\pd D'$.
+The 0--framing curve $\gamma$ is a section over $\pd D'$, as per Theorem \ref{thm:3stein4}.
+First examine a section over $e$, which is a portion of an edge $E$ in $T'$.
+An appropriate section over $f$, denoted $s(f)$, sits entirely inside of a single 3--cell $\sigma$ of $T'$ that contains $E$.
+If this is true, then $s(f)$ intersects no 2--cells of $T'$, hence is parallel to the set of meridians of $V$ we have found.
+
+It is appropriate to take $s(f)$ completely inside of $\sigma$ because of the piecewise--linear nature of $\pi$.
+The section we construct will have the same oriented intersection number with any of the $m_i$ of $V$.
+If $s(f)$ leaves $\sigma$, it leaves through a boundary 2--cell of $\sigma$.
+If it does not travel at least once around $E$, then it is identical in our computations to the version of $s(f)$ that sits entirely inside of $\sigma$.
+Suppose that $s(f)$ does travel around $E$, and recall that we have a collection of meridians $m_i$ corresponding to the 2--cells mapping over $D$.
+Here, if a 2--cell incident to $E$ projects over $D$ then all of them must project over $D$ and we must have that no other 2--cell of $T'$ may project over $D$ in order to keep the oriented intersection number invariant.
+In this case, $E$ forms a definite fold singularity so $s(f)$ can be isotoped through the 3--ball in $M$ associated to this type of singularity back to a position in which it sits entirely inside of $\sigma$.
+
+We conclude that every intersection of $s(f)$ with an $m_i$ occurs near a vertex of $S$.
+This means that if $\mu$ is the annulus corresponding to a framing piece $s(f)$ over an edge block, then the associated annulus $\lambda$ may be subdivided to contain a triangulated curve between its boundaries that is parallel to the meridinal curves in $\lambda$ and sits between the two meridinal curves that are closest to the 3--cell $\sigma$ in which $s(f)$ resides.
+At this point, we connect $\lambda$ to $\mu$ over a triangulated 3--manifold.
+Subdivide the boundary curves of $\lambda$ to be identical to the boundary curves of $\mu$ but with opposite orientation, glue $\lambda$ to $\mu$ over their boundary curves so that the boundaries of $s(f)$ in each annulus agree and so that the space is orientable, and attach a triangulated disc over the copies of $s(f)$ in each annulus.
+Cutting this space along the disc with boundary $2s(f)$ yields a 2--sphere, so it's cone is a 2--disc glued to itself in an orientation preserving way over a boundary disc, hence is a solid torus.
+We build a solid torus like this for each pair $\mu_i$, $\lambda_i$ that arise from edge blocks, then move onto the framing pieces near vertices.
+
+Let $\mu_{i-1}$, $\mu_i$, and $\mu_{i+1}$ be annuli corresponding to an edge block, a vertex block, and an edge block respectively.
+Take $\Lambda_*$ be the solid tori constructed above that identify the meridinal curves of $V$ inside of $\lambda_*$ with curves in $\mu_*$ and the framing pieces inside of $\mu_*$ with curves in $\lambda_*$.
+Of the pair of curves in $\pd \Lambda_*$ over which we attached $\mu_*$ and $\lambda_*$, one corresponds to a boundary curve of $\mu_i$, and we will call that curve by $l_*$.
+Attach each of the $\Lambda_*$ to $\mu_i$ by identifying the curves $l_*$ with their corresponding boundary curve of $\mu_i$.
+There are now points in the boundary of $\mu_i$ corresponding exactly to how a meridian of $V$ lies in the boundary of $V^*$ near a vertex.
+We subdivide the boundary curves of $\lambda_i$ as before, but this times we glue $\lambda_i$ and $\mu_i$ together to that the meridians of $V$ agree.
+The result is a torus $t_i$.
+There is an ordered pair of points $(a,b)$ realized as the boundary of the oriented framing piece $s(y_i)$ in $Y_i$, and $(a,b)$ sit in $\lambda_i$ is a way that corresponds to how the 0--framing of $V^*$ lies in the boundary of $V$ near a vertex of $S$.
+The points $(a,b)$ bound the curve $s(y_i)$ in $\mu_i$, and we form another oriented curve $s(y_i)'$ in $\lambda_i$ connecting $a$ and $b$ by first traveling through $\lambda_i$ parallel to the meridians of $V$ from $b$ to the shared boundary component $A$ of $\mu_i$ and $\lambda_i$ containing $a$.
+Once inside of $A$, we examine the orientation of $A$ as it sits inside of $\mu_i$, and follow that direction to $a$.
+In keeping with the construction of the $\Lambda_*$'s, we demand that the curve $s(y_i)+s(y_i)'$ as well as the meridians of $V$ as they appear in $t_i$ all bound discs in the completion of $t_i$ into a solid torus.
+This forces the meridians to complete in a unique way inside of $\mu_i$.
+Glue a disc over $s(y_i)+s(y_i)'$ and cone the complex as before to obtain a solid torus.
+
+The collection $\{\Lambda_i\}$ of solid tori can be glued together over the parallel meridians of $V^*$/longitudes of $V$, which we denoted by $\l_i$.
+This is a simplicial gluing 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ordering the edges of $\pd c$ and their parallel strands on $\pd D$, we investigate the arc used to connect $s(f_i)$ and $s(f_{i+1})$ in the section over $\pd D$.
+To get at this arc, we use
+
+The framing pieces from edge blocks of $U$ exhibit the same behaviour as the lifts $s(f)$ by design.
+A pair of edge block framing pieces $F_i$ and $F_{i+1}$ sitting in the boundaries of the components $U_i^f$ and $U_{i+1^f}$ of $U$ are connected by an oriented vertex framing piece $Y_{i+1}$ sitting on the boundary of the component $U_{i+1}^y$ of $U$.
+Take a pair $\alpha$, $\beta$ of meridians of $V$ so that splitting $\pd U$ along $\alpha$ and $\beta$ will yield a pair of connected components, one containing $F_i$ and one containing $F_{i+1}$.
+In practice we may take $\alpha$, $\beta$ to be the boundaries of the 2--cells dual to the edges incident to $\sigma_i^*$.
+
+We place $\alpha$ and $\beta$ with respect to $F_i$ and $F_{i+1}$ so that a particle traveling along a meridian of $U$ away from $F_i$ will encounter first $\alpha$ then $\beta$, while a particle traveling from $F_{i+1}$ will encounter first $\beta$ then $\alpha$.
+The 0--framing curve connects $F_i$ and $F_{i+1}$, so it must intersect one of $\alpha$, $\beta$.
+
+\begin{algorithm}
+	\caption{Computation of Framing Coefficients}
+	\label{alg:gleams}
+	\KwData{a 2--cell $c$ of the Stein complex $S$}
+	\KwResult{the framing coefficient $n_c$ for $c$}
+	\Begin{
+		$U,\gamma\longleftarrow$ the attaching region corresponding to $c$ that results from Algorithm \ref{alg:attachingregions} with input $S$\;
+		$c_V^*\longleftarrow$ the oriented circle in $T^*$ corresponding to $c$\;
+		$f_0\longleftarrow\emptyset$, the walk in $c_V^*$ corresponding to 0--framing of $U$\;
+		$R_c\longleftarrow$ the 2--cell of $X'$ over which $c$ projects\;
+		\ForEach{edge $e_i$ in $\pd c=\{e_0,e_1,\dots,e_k,e_0\}$}{
+			$E_i\longleftarrow$ the edge of $T'$ projecting over $e_i$\;
+			$\sigma_i\longleftarrow$ a 3--cell of $T'$ containing $E_i$ that projects over $R_c$ and corresponds to 0--framing of $U$ near the edges of $c$\;
+			add $\sigma_i^*$ to $f_0$\;
+		}
+		\ForEach{vertex $v_i$ in
+			$\pd c=\{e_0=(v_0,v_1),e_1=(v_1,v_2),\dots,e_k=(v_k,v_0),e_0\}$
+		}{
+			add the path from $\sigma_i*$ to $\sigma_{i+1}^*$ \;			
+		}
+	}	
+\end{algorithm}
