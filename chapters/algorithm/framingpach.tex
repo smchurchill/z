@@ -1,4 +1,5 @@
 Section \ref{sec:3bound4} ends with a discussion of framing coefficients with respect to a canonical 0--framing, and it does so by identifying the boundaries of tori $V$ and $V^*$ with $\pd V = \pd V^*$.
+As in the case of the effect of edge blowups on the 2--complex recovered in Section \ref{sub:edgeblowup}, the details of this algorithm are not easily digested in the form of pseudocode, so Algorithm \ref{alg:gleams} deals only in broad strokes.
 
 Let $c$ be a 2--cell of $S$ and $V^*$ the triangulated solid torus associated to $c$ in the 4--handlebody $A_4$ found by Algorithm \ref{alg:attachingregions}.
 The solid torus $V^*$ also comes equipped with a triangulated boundary curve $\gamma$ that determines its 0--framing, and $\gamma$ has a natural partitioning into the framing pieces from which it was built in Algorithm \ref{alg:4handlebody}.
@@ -63,52 +64,43 @@ In keeping with the construction of the $\Lambda_*$'s, we demand that the curve 
 This forces the meridians to complete in a unique way inside of $\mu_i$.
 Glue a disc over $s(y_i)+s(y_i)'$ and cone the complex as before to obtain a solid torus.
 
-The collection $\{\Lambda_i\}$ of solid tori can be glued together over the parallel meridians of $V^*$/longitudes of $V$, which we denoted by $\l_i$.
-This is a simplicial gluing 
+The collection $\{\Lambda_i\}$ of solid tori can be glued together over the parallel meridians of $V^*$ (also parallel longitudes of $V$), which we denoted by $\l_i$.
+This is a CW--complex that is not a simplicial gluing, but we don't really need it to be.
+All we need to do is recognize that the space obtained relates the boundaries of $V$ and $V^*$, showing us how to get from one to the other.
+More important are the annuli $\mu_i$ and $\lambda_i$, which now each contain triangulated curves representing the 0--framing of $V^*$ and meridians of $V$.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-Ordering the edges of $\pd c$ and their parallel strands on $\pd D$, we investigate the arc used to connect $s(f_i)$ and $s(f_{i+1})$ in the section over $\pd D$.
-To get at this arc, we use
-
-The framing pieces from edge blocks of $U$ exhibit the same behaviour as the lifts $s(f)$ by design.
-A pair of edge block framing pieces $F_i$ and $F_{i+1}$ sitting in the boundaries of the components $U_i^f$ and $U_{i+1^f}$ of $U$ are connected by an oriented vertex framing piece $Y_{i+1}$ sitting on the boundary of the component $U_{i+1}^y$ of $U$.
-Take a pair $\alpha$, $\beta$ of meridians of $V$ so that splitting $\pd U$ along $\alpha$ and $\beta$ will yield a pair of connected components, one containing $F_i$ and one containing $F_{i+1}$.
-In practice we may take $\alpha$, $\beta$ to be the boundaries of the 2--cells dual to the edges incident to $\sigma_i^*$.
-
-We place $\alpha$ and $\beta$ with respect to $F_i$ and $F_{i+1}$ so that a particle traveling along a meridian of $U$ away from $F_i$ will encounter first $\alpha$ then $\beta$, while a particle traveling from $F_{i+1}$ will encounter first $\beta$ then $\alpha$.
-The 0--framing curve connects $F_i$ and $F_{i+1}$, so it must intersect one of $\alpha$, $\beta$.
+Take $\pd V^*$ to be the 2--complex obtained by gluing together the $\mu_i$ over the curves $l_i$.
+Then $\pd V^*$ contains a triangulated curve $\gamma$ that determines the 0--framing of $V^*$ and a set of triangulated curves $\{m_i\}$ that represent meridians of $V$.
+The oriented intersection number of $\gamma$ with any $m_i$ determines the framing coefficient for the 2--handle attached over $V^*$.
 
 \begin{algorithm}
 	\caption{Computation of Framing Coefficients}
 	\label{alg:gleams}
 	\KwData{a 2--cell $c$ of the Stein complex $S$}
-	\KwResult{the framing coefficient $n_c$ for $c$}
+	\KwResult{the framing coefficient $n$ for $c$}
 	\Begin{
-		$U,\gamma\longleftarrow$ the attaching region corresponding to $c$ that results from Algorithm \ref{alg:attachingregions} with input $S$\;
-		$c_V^*\longleftarrow$ the oriented circle in $T^*$ corresponding to $c$\;
-		$f_0\longleftarrow\emptyset$, the walk in $c_V^*$ corresponding to 0--framing of $U$\;
-		$R_c\longleftarrow$ the 2--cell of $X'$ over which $c$ projects\;
+		$V^*,\gamma\longleftarrow$ the attaching region corresponding to $c$ that results from Algorithm \ref{alg:attachingregions} with input $S$\;
+		$V,\{m_i\}\longleftarrow$ triangulation of $V$ with ordered meridians\;
+		$C_V\longleftarrow$ the dual simplicial cycle in $T'^*$ that represents regular fibres of $\pi'$ in $V$\;
+		$\lambda_i\longleftarrow$ the triangulated strips from $\pd V$ cut by parallel longitudes of $V$\;
+		$\mu_i\longleftarrow$ the triangulated strips from $\pd V^*$ cut by parallel meridians of $V^*$\;
 		\ForEach{edge $e_i$ in $\pd c=\{e_0,e_1,\dots,e_k,e_0\}$}{
-			$E_i\longleftarrow$ the edge of $T'$ projecting over $e_i$\;
-			$\sigma_i\longleftarrow$ a 3--cell of $T'$ containing $E_i$ that projects over $R_c$ and corresponds to 0--framing of $U$ near the edges of $c$\;
-			add $\sigma_i^*$ to $f_0$\;
+			determine a lift $s(f_i)$ into a 3--cell $\tau$ for $f_i$ parallel to $e_i$\;
+			$w_j^*,w_{j+1}^*\longleftarrow$ the dual edges in $C_V$ incident to $\tau^*$\;
+			subdivide $\lambda_i$ so that its boundary components match $\mu_i$\;
+			subdivide $\lambda_i$ so that there is room for $s(f_i)$ between $\pd w_j$ and $\pd w_{j+1}$\;
+			add the meridinal curves of $\lambda_i$ to $\mu_i$\;
+			add $s(f)$ to $\lambda_i$ between $\pd w_j=m_j$ and $\pd w_{j+1}=m_{j+1}$\;
 		}
+		$n\longleftarrow 0$\;
 		\ForEach{vertex $v_i$ in
 			$\pd c=\{e_0=(v_0,v_1),e_1=(v_1,v_2),\dots,e_k=(v_k,v_0),e_0\}$
 		}{
-			add the path from $\sigma_i*$ to $\sigma_{i+1}^*$ \;			
+			$\Lambda\longleftarrow$ the torus formed by gluing $\lambda_i$ to $\mu_i$\; 
+			$\hat{s}(y_i)\longleftarrow$ the completion of $s(y_i)$ over $\lambda_i$ in $\Lambda$\;
+			$\hat{m}_0\longleftarrow$ the completion of $m_0$ over $\mu_i$ in $\Lambda$\;
+			$\kappa\longleftarrow$ the oriented intersection number of $\hat{s}(y_i)$ with $\hat{m}_0$\;
+			$n\longleftarrow n+\kappa$\;
 		}
 	}	
 \end{algorithm}
