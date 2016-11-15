@@ -17,14 +17,15 @@ This is useful as a jumping off point for the case one dimension higher, that of
 \end{figure}
 
 \begin{proof}
-	Figure \ref{fig:typicalmorse} depicts a typical Morse function acting on the closed oriented surface of genus 2, and samples some of the notation we will define initially.
+	Figure \ref{fig:typicalmorse} depicts a typical Morse function acting on the closed oriented surface of genus 2.
 	We begin by examining the preimages of points $x\in\R$.
-	Denote the space $f\inv(x)$ by $\Sigma_x$, a small interval around $x$ by $\varepsilon(x)=(x-\varepsilon,x+\varepsilon)$, and the neighbourhood in $\Sigma$ around $\Sigma_x$ by $f\inv(\varepsilon(x))=\varepsilon(\Sigma_x)$.
+	Denote the space $f\inv(x)$ by $\Sigma_x$, a small interval around $x$ by $\varepsilon(x)=[\,x-\varepsilon,x+\varepsilon\,])$, and the neighbourhood in $\Sigma$ around $\Sigma_x$ by $f\inv(\varepsilon(x))=\varepsilon(\Sigma_x)$.
 	The spaces $\Sigma_x$ and $\varepsilon(\Sigma_x)$ may not be connected, so we index the connected components by superscript.
 	Let $p$ be a critical point of $f$ with critical value $f(p)=x$.
 	By our assumption that critical values are distinct, $p$ is the only critical point of $f$ in $\Sigma_x$.
 	The connected component of $\Sigma_x$ containing $p$ is called the \emph{singular fiber} at $p$ and is denoted $\Sigma_x^p$.
 	The connected component of $\varepsilon(\Sigma_x)$ containing $p$ is called the \emph{critical neighbourhood} at $p$ and is denoted $\varepsilon^p(\Sigma_x)$.
+	
 	By the regular value theorem, any regular value pulls back through $f\inv$ to a disjoint collection of circles in $\Sigma$ called \emph{regular fibers}.
 	Likewise, a neighbourhood $\varepsilon(x)$ that contains no critical values of $f$ pulls back to a disjoint collection of annuli in $\Sigma$.
 	The restriction of $f$ to the components of $\Sigma_x$ that do not contain a critical point has $x$ as a regular value, so the remaining connected components of $\Sigma_x$ are all copies of $S^1$ that we index by $\Sigma_x^i$ for $i=1,\dots,k$, and their associated neighbourhoods are the annuli $\varepsilon^i(\Sigma_x)$.
@@ -32,7 +33,7 @@ This is useful as a jumping off point for the case one dimension higher, that of
 	
 	The shape of a singular fiber $\Sigma_x^p$ is determined by the index of $p$.
 	Because $f$ is a Morse function whose domain is a surface, its critical points are easily classified by the Morse lemma (Lemma \ref{lem:morselemma}).
-	Locally in $\Sigma$, a critical point of index 0 is a minimum, of index 1 a saddle, and of index 2 a maximum of $f$.
+	Locally in $\Sigma$, a critical point of index 0 is a minimum, of index 1 a saddle, and of index 2 a maximum.
 	
 	Let $x$ be a critical value for the critical point $p$ and take $\varepsilon$ to be small enough that $\varepsilon(x)$ contains no critical values other than $x$.
 	When $p$ is of index 0 or 2, we can immediately deduce that $\varepsilon^p(\Sigma_x)$ is diffeomorphic to a disc.
@@ -53,7 +54,7 @@ This is useful as a jumping off point for the case one dimension higher, that of
 	\end{figure}
 	
 	This analysis is sufficient to form a handle decomposition for a cobordism of $(\Sigma,\emptyset)$.
-	We begin with the 3--manifold $\Sigma\times\I$ with boundary components $\Sigma_0=\Sigma\times\{0\}$ and $\Sigma_1=\Sigma\times\{1\}$, and let $f:\Sigma_0\to\I$ be a Morse function with distinct critical values $x_i$.
+	We begin with the 3--manifold $\Sigma\times\I$ whose boundary components $\Sigma_0=\Sigma\times\{0\}$ and $\Sigma_1=\Sigma\times\{1\}$ are copies of $\Sigma$, and let $f:\Sigma_0\to\I$ be a Morse function with distinct critical values $x_i$.
 	The general idea is that we attach handles to $\Sigma_0$, altering that boundary component until it is empty.
 	The $x_i$ partition $\I$ into open intervals containing only regular values.
 	We take the associated regular annuli to be attaching regions for 3--dimensional 2--handles, and then fill in what remains with 3--dimensional 3--handles.
@@ -68,7 +69,7 @@ This is useful as a jumping off point for the case one dimension higher, that of
 	Each of these subsurfaces have circle boundaries that correspond to the regular fibers $\Sigma_{t_i-\varepsilon}$ and $\Sigma_{t_i+\varepsilon}$ which were capped with discs in the previous step.
 	The altered boundary described before is therefore a collection of copies of $S^2$, which we take to be the attaching regions of 3--dimensional 3--handles.
 	
-	With these handles attached, we obtain $(\Sigma\times\I)\cup\{\textrm{2--handles}\}\cup\{\textrm{3--handles}\}$, which is a 3--manifold with exactly one boundary component of $\Sigma_1$, i.e. a cobordism of the pair $(\Sigma,\emptyset)$.
+	With these handles attached, we obtain $(\Sigma\times\I)\cup\{\textrm{2--handles}\}\cup\{\textrm{3--handles}\}$, which is a 3--manifold whose only boundary component is $\Sigma_1$, i.e. is a cobordism of the pair $(\Sigma,\emptyset)$.
 	
 	The corresponding dual handle decomposition is realized by turning the process upside down.
 	Where we previously had 3--handle attachments with cores $\D^3\times\{\vec{0}\}$ and cocores $\{\vec{0}\}\times\{\vec{0}\}$, we now have 0--handles with cores $\{\vec{0}\}\times\{\vec{0}\}$ and cocores $\D^3\times\{\vec{0}\}$.
@@ -84,7 +85,7 @@ This is useful as a jumping off point for the case one dimension higher, that of
 	Then $h$ is the quotient map $\Sigma\to \Sigma/\!\!\sim$ where the points of $\Sigma/\!\!\sim$ are the subspaces $\Sigma_x^*$, and $g$ is the map $\Sigma/\!\!\sim\, \to\R$ defined by $g(\Sigma_x^*)=x$.
 
 	The Stein complex $S=\Sigma/\!\!\sim$ can be viewed as a graph $G$.
-	A critical value $x=f(p)$ has an associated singular fiber $\Sigma_x^p$ in $S$, and possibly some copies of $S^1$ given by $\Sigma_x^i$.
+	A critical value $x=f(p)$ has as its preimage one associated singular fiber $\Sigma_x^p$ in $S$ plus a number of copies of $S^1$ (possibly 0) given by $\Sigma_x^i$.
 	We take the associated points $h(\Sigma_x)$ in $S$ for each critical value to be the vertex set $v(G)$.
 	For a pair of adjacent critical values $x_{j}$, $x_{j+1}$, an appropriate choice of $\varepsilon$ and $x\in(x_{j},x_{j+1})$ yields a collection of regular annuli $\varepsilon(\Sigma_x)$ in $\Sigma$ that has boundary inside of $\Sigma_{x_{j}}\cup\Sigma_{x_{j+1}}$.
 	In $S$, we find $h(\varepsilon(\Sigma_x))$ to consist of 1--dimensional strands that connect components of $\Sigma_{x_{j}}$ and $\Sigma_{x_{j+1}}$.
