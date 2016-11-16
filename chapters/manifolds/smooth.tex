@@ -17,7 +17,7 @@ Manifolds are defined by their local homogeneity, and a tangent space is a preci
 	\label{def:tangentspace}
 	Let $M$ be an $n$--manifold and $p$ be a point in $M$.
 	A smooth map $\gamma:(-\varepsilon,\varepsilon)\to M$ with $\gamma(0)=p$ is called a \emph{curve} in $M$ through $p$.
-	Note that this definition is independent of the chart used, as all of our transition maps are smooth.
+	This definition is independent of the chart used, as all of our transition maps are smooth.
 	
 	For $p$ in the boundary of $M$, we allow an additional type of curve in our definition.
 	Let $\gamma$ be a smooth map $(-\varepsilon,0\,] \to M$ or $[\,0,\varepsilon) \to M$ each with $\gamma(0)=p$.
@@ -54,8 +54,8 @@ Manifolds are defined by their local homogeneity, and a tangent space is a preci
 	We define operations on $T_p M$ so that $F$ is strengthened to a vector space isomorphism:
 	\[
 		\begin{array}{rcl}
-			\gamma_1'(0)+\gamma_2'(0) & = & (d\varphi)\inv(d\varphi(\gamma_1'(0))+d\varphi(\gamma_2'(0))), \\
-			t\gamma_1'(0) & = & (d\varphi)\inv(t\:d\varphi(\gamma_1'(0))).
+			\gamma_1'(0)+\gamma_2'(0) & = & (d\varphi)\inv\Big(d\varphi\big(\gamma_1'(0)\big)+d\varphi\big(\gamma_2'(0)\big)\Big), \\
+			t\gamma_1'(0) & = & (d\varphi)\inv\Big(t\:d\varphi\big(\gamma_1'(0\big)\Big).
 		\end{array}
 	\]
 	The vector space structure of $T_p M$ is independent of the choice of chart.
@@ -99,15 +99,27 @@ This classification helps us define a submanifold and provides some of the groun
 	If $\rk{df_p}$ is less than maximal, then $p$ is a \emph{critical point} of $f$.
 	In this case, $f(p)=q$ is a \emph{critical value}.
 	The set of critical points of $f$ in $M$ is called the \emph{singular set} of $M$, and is denoted $s_f$.
-	If $p$ is a critical point and $d^2f_p = d(df)_p$ is of less than full rank, then $p$ is a \emph{degenerate critical point}.
-	A point $q\in M$ whose preimage $f\inv(q)$ consists entirely of regular points is called a \emph{regular value}.
+	If $p$ is a critical point and $d^{\,2}\!f_p = d(df)_p$ is of less than full rank, then $p$ is a \emph{degenerate critical point}.
+	For $q\in M$, the set of points $x$ in $X$ such that $f(x)=q$ is called the \emph{preimage} of $q$ through $f$ or the \emph{fiber} of $f$ over $q$ and is denoted $f\inv(q)$.
+	A point $q \in M$ whose fiber consist entirely of regular points is a \emph{regular value} of $f$.
 	
 	If $f$ is an injective immersion that is a homeomorphism onto its image $f(X)\subset M$ under the subspace topology, then it is a \emph{smooth embedding} or just \emph{embedding}.
 	
 	Let $X\subset M$ where $M$ is a manifold, and let $i:X\into M$ be inclusion.
-	If $i$ is an embedding, then we call $X$ an \emph{embedded submanifold} or \emph{submanifold} of $M$.
-	One can consider $X$ to be a manifold with smooth structure induced by the embedding.
+	If $i$ is an embedding, then we call $X$ an \emph{embedded submanifold} or \emph{submanifold} of $M$, and $X$ is, by itself, a manifold with smooth structure induced by the embedding.
 \end{defn}
+
+\begin{prop}
+	\label{prop:boundariesaremanifolds}
+	Let $M$ be an $(n+1)$--manifold.
+	The boundary $\pd M$ is an $n$--dimensional boundaryless submanifold of $M$.
+\end{prop}
+
+\begin{theorem}[Regular Value Theorem]
+	Let $f:X\to M$ be a smooth map between manifolds.
+	Let $q\in M$ be a regular value.
+	The preimage $f\inv(q)$ is either empty or a $(\dim X-\dim M)$--submanifold of $X$.
+\end{theorem}
 
 Maps that are ``close enough'' to one another via perturbation tend to be considered equivalent.
 This concept is made precise through homotopy.
@@ -116,25 +128,26 @@ This concept is made precise through homotopy.
 	\label{def:homotopy}
 	Let $f,g:X\to M$ be smooth maps between smooth manifolds.
 	Denote the closed unit interval $[0,1]$ by $\I$.
-	A continuous function 
+	Let $H$ be a continuous function 
 	\[
 		\begin{array}{cccc}
 			H: & X\times \I & \to & M \\
 			& (x,t)	& \mapsto & H_t(x)
 		\end{array}
 	\]
-	with $H_0(x)=f(x)$ and $H_1(x)=g(x)$ is a \emph{homotopy} between $f$ and $g$.
+	with $H_t$ a continuous function $X\to M$ for all $t$, $H_0(x)=f(x)$, and $H_1(x)=g(x)$.
+	Then $H$ is called a \emph{homotopy} between $f$ and $g$.
 	If a homotopy exists, then $f$ and $g$ are \emph{homotopic}.
 	Less formally, $f$ and $g$ being homotopic means that one can be continuously deformed into the other.
 	The topological spaces $X$ and $M$ are \emph{homotopy equivalent} if there exist continuous maps $f:X\to M$ and $g:M\to X$ for which $g\comp f$ is homotopic to $\ident{X}$ and $f\comp g$ is homotopic to $\ident{M}$.
 	
 	Because we are primarily interested in smooth functions to build our machinery, we extend our definition of homotopy to a smooth version.
-	With the notation above, a smooth map $H:X\times[0,1]\to M$ with $H_0(x)=f(x)$ and $H_1(x)=g(x)$ is a \emph{smooth homotopy} between $f$ and $g$.
+	With the notation above, a smooth map $H:X\times\I\to M$ with $H_0(x)=f(x)$ and $H_1(x)=g(x)$ is a \emph{smooth homotopy} between $f$ and $g$.
 	If a smooth homotopy exists, then $f$ and $g$ are \emph{smoothly homotopic}.
 	
 	Let $M$ be a manifold and $X\subset M$ a subspace that is not necessarily a submanifold.
 	A continuous map $F:M\times\I\to M$ such that, for every $m$ in $M$ and $x$ in $X$, $F(m,0)=m$, $F(m,1)\in X$, and $F(x,1)=x$, is called a \emph{deformation retraction}, and the subspace $X$ is called a \emph{deformation retract} of $M$.
-	Note that a deformation retraction is a homotopy equivalence between $M$ and $X$, so a deformation retraction from $M$ onto $X$ exists if and only if $M$ and $X$ are homotopic.
+	Because a deformation retraction is a homotopy equivalence between $M$ and $X$, a deformation retraction from $M$ onto $X$ exists if and only if $M$ and $X$ are homotopic.
 \end{defn}
 
 \begin{prop}
@@ -151,34 +164,26 @@ This concept is made precise through homotopy.
 The property of having no degenerate critical points is our standard model for genericity.
 Consider the map $f:\R\to\R$, $f(x)=x^3$.
 The critical point at $x=0$ is degenerate, but it may be perturbed into a pair of nondegenerate critical points or into a map with no critical points, and for either of these maps that property is stable.
-Because degenerate critical points may be easily ``fixed,'' we use \emph{generic} to refer to a map whose critical points are all nondegenerate.
+Because degenerate critical points may be easily ``fixed,'' a generic smooth map is one whose critical points are all nondegenerate.
 Another generic property is transversality.
 
 \begin{defn}
-	Let $M$ be a $n$--manifold with submanifolds $X$ and $Y$.
+	Let $M$ be an $n$--manifold with submanifolds $X$ and $Y$.
 	We say that $X$ and $Y$ are \emph{transverse} as submanifolds if, at every intersection point, the sum of their tangent spaces is the tangent space of $M$ at that point.
 	Symbolically, transversality is denoted by $\pitchfork$ and the condition is stated by $X\pitchfork Y$ if and only if for every point $p\in X\cap Y$, $T_p X\oplus T_p Y=T_p M$.
 	We may also say that an intersection point is, itself, \emph{transverse}, or that $X$ and $Y$ \emph{intersect transversally at a point}.	
 \end{defn}
 
 Transversality of a pair of submanifolds $X$, $Y$ is stable under small perturbations of the embeddings $X\into M$ and $Y\into M$.
-Intersections between $X$ and $Y$ are generically transverse when $\dim X + \dim Y = M$.
-A point of $X\cap Y$ that is not a transverse intersection may be perturbed into stable transversality or non-intersection when $\dim X + \dim Y = M$, so we say that intersections of complementary codimension are generically transverse.
-
-\begin{theorem}[Regular Value Theorem]
-	Let $f:X\to M$ be a smooth map between manifolds.
-	Let $q\in M$ be a regular value.
-	The preimage $f\inv(q)$ is either empty or a $(\dim X-\dim M)$--submanifold of $X$.
-\end{theorem}
-
-\begin{prop}
-	\label{prop:boundariesaremanifolds}
-	Let $M$ be an $(n+1)$--manifold.
-	The boundary $\pd M$ is an $n$--dimensional boundaryless submanifold of $M$.
-\end{prop}
+A point of $X\cap Y$ that is not a transverse intersection may be perturbed into stable transversality or non-intersection when $\dim X + \dim Y = M$, so we say that intersections of submanifolds with complementary codimension are generically transverse.
 
 The main result of this work is applicable to orientable 3--manifolds, so we will review what is meant by a space being orientable.
-Essentially, orientability is a guarantee that when you go for a walk your right and left sides haven't switched places by the time you get home.
+Orientability is the guarantee that when you go for a walk through a manifold you don't return home to find that your right and left sides have switched places.
+
+We first define orientations on artibrary real vector spaces, which allows us to define orientations on $\RRN$.
+Orientations of $\RRN$ let us define orientations of manifolds.
+Orientations of manifolds let us define a smooth map as orientation preserving or orientation reversing.
+
 
 \begin{defn}
 	\label{def:orientation}
@@ -194,7 +199,7 @@ Essentially, orientability is a guarantee that when you go for a walk your right
 	If $A$ has negative determinant then it swaps the equivalence classes, and $S$ is \emph{orientation reversing}.
 \end{defn}
 
-Orientations of $\RRN$ let us define orientations of manifolds.
+
 
 \begin{defn}
 	Suppose we have fixed an orientation of $\RRN$.
@@ -205,9 +210,9 @@ Orientations of $\RRN$ let us define orientations of manifolds.
 	If $M$ does not admit an orientation, then it is \emph{non-orientable}.	
 \end{defn}
 
-Orientations of manifolds let us decide whether a map is orientation preserving or reversing.
+
 
 \begin{defn}
 	Let $f:X\to M$ be a smooth map between oriented $n$--manifolds.
-	If the differential $df_p:T_p X\to T_{f(p)} M$ is orientation preserving (resp. orientation reversing) as a map between vector spaces for every $p$ in $X$, then $f$ is \emph{orientation preserving} (resp. \emph{orientation reversing}) as a map.
+	If the differential $df_p:T_p X\to T_{f(p)} M$ is orientation preserving (resp. reversing) as a map between vector spaces for every $p$ in $X$, then $f$ is \emph{orientation preserving} (resp. \emph{reversing}) as a map.
 \end{defn}

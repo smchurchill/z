@@ -1,10 +1,10 @@
-An important tool in both the construction and description of a manifold is a \emph{bundle}.
-The ultimate construction in this section is the tubular neighbourhood of a submanifold, an object that is unique up to a fibre-preserving isotopy.
+Important tools in both constructing and describing manifolds are \emph{bundles}.
+The ultimate construction in this section is the tubular neighbourhood of a submanifold, an object that is unique up to a fiber-preserving isotopy.
 
 \begin{defn}[Bundle]
 	A real \emph{vector bundle} is a tuple $\beta = (E,B,\pi:E\to B)$ where $B$ is called the \emph{base space}, $E$ the \emph{total space}, and $\pi$ the \emph{projection}.
 	The projection is a continuous map for which the subspaces $\pi\inv(b)=V_b$ all have the structure of a $k$--dimensional vector space.
-	The space $V_b$ is called the \emph{fibre} over $b$.
+	The space $V_b$ is \emph{fiber} over $b$.
 	
 	A bundle is \emph{locally trivial}.
 	That is, for every point $b\in B$ there exists an open neighbourhood $U\subset B$ containing $b$ and a homeomorphism
@@ -49,7 +49,7 @@ The ultimate construction in this section is the tubular neighbourhood of a subm
 	and its image $z(B)$ in $E$.
 	Note that the compatibility condition on local trivialization guarantees that the zero section is well defined.
 	
-	For $\beta$ a $k$--vector bundle, we can form new objects called \emph{$k$--disc bundles} by restricting the fibres of $\beta$ to vectors with length at most 1.
+	For $\beta$ a $k$--vector bundle, we can form new objects called \emph{$k$--disc bundles} by restricting the fibers of $\beta$ to vectors with length at most 1.
 	The machinery we build for vector bundles restricts to this construction.
 \end{defn}
 
@@ -59,7 +59,7 @@ The definition follows that for vector bundles, except we lose the structure tha
 
 \begin{defn}[Bundle Isomorphism]
 	Let $\Phi:\beta_0\to \beta_1$ be a map between vector bundles.
-	We call $\Phi$ a \emph{fibre map} if $\Phi:E_0\to E_1$ covers a map $\varphi:B_0\to B_1$.
+	We call $\Phi$ a \emph{fiber map} if $\Phi:E_0\to E_1$ covers a map $\varphi:B_0\to B_1$.
 	For $\Phi$ to cover $\varphi$, that means the following diagram commutes:
 	\[
 		\begin{tikzcd}
@@ -70,19 +70,19 @@ The definition follows that for vector bundles, except we lose the structure tha
 	This means that if $b\in B_0$ and $\varphi(b)=c$, then $\Phi$ maps $V_b$ to $V_c$ by a map we will denote $\Phi_b$.
 
 	If $\Phi_b$ is a linear map for every $b\in B_0$, then we call $\Phi$ a \emph{bundle morphism}.
-	If $\Phi$ is a bundle morphism, $B_0=B_1=B$, $\Phi_b$ bijective for each $b\in B$, and $\varphi$ is $\ident{B}$, then $\Phi$ is a \emph{bundle isomorphism}.
+	If $\Phi$ is a bundle morphism, $B_0=B_1=B$, $\Phi_b$ is bijective for each $b\in B$, and $\varphi$ is $\ident{B}$, then $\Phi$ is a \emph{bundle isomorphism}.
 	A bundle isomorphism $\Phi:E\to E$ is a \emph{bundle automorphism}.
 \end{defn}
 
 \begin{defn}[Tangent Bundle]
-	Let $M$ be an $m$--manifold.
-	We define the total space $TM$ of a smooth vector bundle with base space $M$ and fibres $\RRN\approx T_p M$ at any $p\in M$ by taking the disjoint union of all tangent spaces:
+	Let $M$ be an $n$--manifold.
+	We define the total space $TM$ of a smooth vector bundle with base space $M$ and fibers $\RRN\approx T_p M$ at any $p\in M$ by taking the disjoint union of all tangent spaces:
 	\[
 		TM = \bigsqcup_{p\in M} T_p M.
 	\]
 	The projection $\pi:TM\to M$ is defined by $\pi(q)=p$ for every $q\in T_p M$.
 	We call $TM$ the \emph{tangent bundle} over $M$.
-	A section $s:M\to TM$ is called a \emph{vector field} on $M$.
+	A section $s:M\to TM$ is a \emph{vector field} on $M$.
 \end{defn}
 
 \begin{defn}[Normal Bundle]
@@ -91,7 +91,7 @@ The definition follows that for vector bundles, except we lose the structure tha
 	Denote the orthogonal complement to $T_p X$ in $T_p M$ by $N_p X$ and call it the normal space at $p$ in $X$.
 	That is, $T_p X\oplus N_p X = T_p M$.
 	From linear algebra, $N_p X$ is an $n$--dimensional vector space.
-	We define the total space $N_M X$ of a vector bundle with base space $X$ and fibres $\RRN\approx N_p X$ at any $p\in X$ by taking the disjoint union of all normal spaces:
+	We define the total space $N_M X$ of a vector bundle with base space $X$ and fibers $\RRN\approx N_p X$ at any $p\in X$ by taking the disjoint union of all normal spaces:
 	\[
 		N_M X = \bigsqcup_{p\in X} N_p X.
 	\]
@@ -108,7 +108,7 @@ The definition follows that for vector bundles, except we lose the structure tha
 
 Similar to the tubular neighbourhood is the \emph{closed tubular neighbourhood}, which has instead the structure of a normal disc bundle over $X$.
 We use $\D_M X\subset N_M X$ to denote the disc bundle over $X$, and $\overline{\nu}_M X$ to denote a closed tubular neighbourhood.
-The notion of ``closed'' used in this naming convention is that of topological closure.
+This naming convention refers to topological closure.
 
 \begin{theorem}[Existence of Tubular Neighbourhoods, Theorem 4.5.2 in \cite{Hirsch67}]
 	\label{thm:tubularneighbourhood}
@@ -118,7 +118,7 @@ The notion of ``closed'' used in this naming convention is that of topological c
 
 \begin{prop}[Collar]
 	\label{defthm:collar}
-	Let $M$ be a manifold with nonempty boundary $X = \pd M$.
+	Let $M$ be a manifold and $X = \pd M$ its nonempty boundary.
 	There exists an open neighbourhood $U$ of $X$ in $M$ and a diffeomorphism
 	\[
 	f: U \to X\times\HH^1
@@ -128,9 +128,9 @@ The notion of ``closed'' used in this naming convention is that of topological c
 \end{prop}
 
 A collar can be thought of as a half--tubular neighbourhood of the boundary.
-Note that the collar is actually a fibre bundle with base $\pd M$, fibre $\HH^1$, and trivial structure.
+Note that the collar is actually a fiber bundle with base $\pd M$, fiber $\HH^1$, and trivial structure.
 This allows us to relate our future results on tubular neighbourhoods to include collars.
-In particular, tubular neighbourhoods are unique up to a fibre-preserving isotopy, which we define now.
+In particular, tubular neighbourhoods are unique up to a fiber-preserving isotopy, which we define now.
 
 \begin{defn}[Isotopy]
 	\label{def:isotopy}
@@ -170,8 +170,11 @@ In particular, tubular neighbourhoods are unique up to a fibre-preserving isotop
 	 is an \emph{isotopy of tubular neighbourhoods}, and the tubular neighbourhoods $(X,f)$ and $(X,g)$ are \emph{isotopic}.
 \end{defn}
 
-Now that all of the terms have been defined, we can precisely state the uniqueness result for tubular neighbourhoods.
-There is a similar theorem that applies to collars.
+\begin{prop}
+	For $M$ a manifold, isotopy and diffeotopy are equivalence relations on the space of submanifolds of $M$.
+\end{prop}
+
+With these definitions at hand, we can precisely state the uniqueness result for tubular neighbourhoods and the similar result for collars.
 
 \begin{theorem}[Uniqueness of Tubular Neighbourhoods, Theorem 3.3.1 of \cite{Kosi93}]
 	\label{prop:uniquenesstubularneighbourhood}
@@ -203,7 +206,7 @@ It essentially says that two of these neighbourhoods are isotopic through a diff
 	\[
 		L = \bigcup_{t\in[0,1]} F_t(X).
 	\]
-	There exists a diffeotopy 
+	Then there exists a diffeotopy 
 	\[
 		\begin{array}{crcl}
 			G: & M\times\I & \to & M \\
@@ -215,20 +218,20 @@ It essentially says that two of these neighbourhoods are isotopic through a diff
 
 \begin{defn}[Ambient Isotopy]
 	\label{def:ambientisotopy}
-	Let $X$, $M$, $F$ be as above.
+	Let $X$, $M$, $F$ be as in Theorem \ref{thm:isotopyextension}.
 	The isotopy $G:M\times\I\to M$ guaranteed by Theorem \ref{thm:isotopyextension} is called an \emph{ambient isotopy}.
 	The images $F_0(X)$ and $F_1(X)$ are \emph{ambiently isotopic} as submanifolds of $M$.
 \end{defn}
 
-Notice that, when the neighbourhood is closed, isotopy extension can strengthen the uniqueness of tubular neighbourhoods theorem to one that is unique through an ambient isotopy.
+When the neighbourhood is closed, isotopy extension can strengthen the uniqueness of tubular neighbourhoods theorem to one that is unique through an ambient isotopy.
 We can perform a similar strengthening on open tubular neighbourhoods as long as we restrict the definition slightly.
 
 \begin{defn}
 	A tubular neighbourhood that is obtained by an arbitrarily small shrinking of another tubular neighbourhood is called \emph{proper}.
 \end{defn}
 
-Examples of improper tubular neighbourhoods would be $\RRN$ as a neighbourhood of the origin in $\RRN$, or the strip $\{ (x,y)\in \RR : |x|< \frac{\pi}{2}\}$ as a neighbourhood of the line $x=0$ in $\RR$ whose fibres are the curves $y=\tan x + C$ for each $C\in\R$.
-An example of a proper tubular neighbourhood would be the same strip, but with fibres $y=C$.
+Examples of improper tubular neighbourhoods would be $\RRN$ as a neighbourhood of the origin in $\RRN$, or the strip $\{ (x,y)\in \RR : |x|< \frac{\pi}{2}\}$ as a neighbourhood of the line $x=0$ in $\RR$ whose fibers are the curves $y=\tan x + C$ for each $C\in\R$.
+An example of a proper tubular neighbourhood would be the same strip, but with fibers $y=C$.
 It should be clear that the interior of a closed tubular neighbourhood is proper, and every proper tubular neighbourhood is the interior of a closed tubular neighbourhood.
 
 \begin{theorem}[Uniqueness of Proper Tubular Neighbourhoods, Theorem 3.3.5 of \cite{Kosi93}]
@@ -268,7 +271,7 @@ It is clear that an appropriate analogue of the tubular neighbourhood to submani
 \begin{defn}
 	\label{def:halfneighbourhood}
 	Let $W$ be a manifold with boundary and let $X$ be a submanifold of $M=\pd W$.
-	The normal bundle of $X$ in $W$ is the fibre-wise direct sum of $N_M X$ with $\restr{(N_W M)}{X}$.
+	The normal bundle of $X$ in $W$ is the fiber-wise direct sum of $N_M X$ with $\restr{(N_W M)}{X}$.
 	Because $N_W M$ is a trivial bundle, the normal bundle of $X$ in $W$ is just $N_M X\times \R$.
 	We can only embed one half of $N_M X\times \R$ in $W$, so we extend $f$ to an embedding $F:N_M X\times \HH^1\to W$ such that $F$ restricted to $z(N_M X)\times\HH^1$ coincides with a collar of $M$ on $X$.
 \end{defn}
