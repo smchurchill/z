@@ -3,8 +3,46 @@
 To extend the results of the previous section to the case of 3--manifolds bounding 4--manifolds, we consider generic proper smooth maps from closed orientable 3--manifolds into the 2--ball $B^2$.
 Such a map is Morse--like in the sense that its singular set is well behaved, it can be studied via the same techniques as in Section \ref{sec:2bound3}, and we may recover a Stein factorization and Stein complex that define a handle decomposition for a bounding 4--manifold.
 
+Throughout this section $M$ is a closed orientable 3--manifold and $f$ is a generic proper smooth map $M\to\BB$.
+The image $X=f(s_f)$ forms the space of critical values for $f$ in the plane.
+By Sard's theorem, $X$ is a set of closed arcs in the plane.
+By genericity of $f$, we can take the set of arcs to intersect only transversely and in such a way that $\BB\setminus X$ is a set of regions $R_0,\dots,R_k,R_\infty$ such that each $R_i$, $i<\infty$ is homeomorphic to $\BB$, $R_\infty$ is homeomorphic to a open annulus, and one of the boundary components of the closure of $R_\infty$ inside of the closure of $\BB$ is exactly $\pd\DD$.
+
+\begin{definition}
+	A \emph{stratified} $n$--manifold is a space that satisfies the definition of an $n$--manifold everywhere except for a
+\end{definition}
+
+
+\begin{lem}
+	\label{lem:3bodydecomp}
+	There is a decomposition of $M$ induced by $f$ into $(3,1)$--handlebodies of genus 0, 1, 2, and 3, and these handlebodies intersect one another only along annuli embedded in their boundaries.		
+\end{lem}
+
+\begin{lem}
+	\label{lem:3body2handle}
+	Let $M$ have the decomposition of Lemma \ref{lem:3bodydecomp}.
+	If $M$ is the boundary of some 4--manifold $W$, then 4--dimensional 2--handles can be attached to $W$ over the regular genus 1 handlebodies in the decomposition of $M$ in such a way that the induced surgery on $M$ turns every genus 0, 1, and 2 codimension 1 handlebody into a copy of $S^2\times\D^1$.
+\end{lem}
+
+\begin{lem}
+	\label{lem:3body3handle}
+	Let $M^2$ have the decomposition of Lemma \ref{lem:3bodydecomp} surgered by the 2--handle attachments of Lemma \ref{lem:3body2handle}, and take $M^2$ to be the boundary of some 4--manifold $W^2$.
+	Then 4--dimensional 3--handles can be attached to $W^2$ over the copies of $S^2\times\D^1$ in $M^2$ formed in Lemma \ref{lem:3body2handle}, and the surgery on $M^2$ induced by the attachments of this lemma and Lemma \ref{lem:3body2handle} turns every genus 0, 1, 2, and 3 codimension 2 handlebody into a copy of $S^3$.
+\end{lem}
+
 \begin{theorem}
+	\label{lem:3body4handle}
 	\label{thm:3bound4}
+	The map $f$ determines entirely a handle decomposition for a cobordism of the pair $(M,\emptyset)$.
+\end{theorem}
+
+\begin{proof}
+	The preceding lemmas provide a
+	
+\end{proof}
+
+\begin{theorem}
+
 	Let $M$ be a closed orientable 3--manifold.
 	Then a proper generic smooth map $f:M\to \BB$ determines a handle decomposition for a cobordism of the pair $(M,\emptyset)$.
 \end{theorem}
