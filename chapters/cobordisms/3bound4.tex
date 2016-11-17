@@ -23,24 +23,24 @@ For this reason we also call an arc of critical values of $X$ an \emph{edge}, an
 	\label{fig:critsleeve}
 \end{figure}
 
-\begin{lemma}
+\begin{lem}
 	\label{lem:bbdecomp}
 	There is a decomposition of $\BB$ induced by $f$ into 2--manifolds with corners all but one of which are homeomorphic to $\DD$.
 	These cornered discs intersect one another along intervals embedded in their boundaries, boundary points of these intervals are exactly the disc corners, and the number of corners in this decomposition is exactly 8 times the number of vertices of $X$.
-\end{lemma}
+\end{lem}
 
 \begin{proof}
 	Refer to Figure \ref{fig:critsleeve} for the general idea.	
-	Around each vertex $v$ of $X$ we fit an octogon $\nbhd{v}$ such that the edges of the octogon alternate between transverse intersection and nonintersection with an arc of codimension 1 critical values.
+	Around each vertex $x$ of $X$ we fit an octagon $\nbhd{x}$ such that the edges of the octagon alternate between transverse intersection and nonintersection with an arc of codimension 1 critical values.
 	
-	Consider $\BB_*=\overline{\BB\setminus\cup_v \nbhd{v}}$.
-	The topological boundary of $\BB_*$ consists of the octogonal boundaries of the $\nbhd{v}$.
-	The edges of $X$ connect the boundary components of $\BB_*$, so we may fit neat closed tubular neighbourhoods around the edges in such a way that the corners of this neighbourhood agree with the corners of the $\nbhd{v}$.
+	Consider $\BB_*=\overline{\BB\setminus\cup_v \nbhd{x}}$.
+	The topological boundary of $\BB_*$ consists of the octagonal boundaries of the $\nbhd{x}$.
+	The edges of $X$ connect the boundary components of $\BB_*$, so we may fit neat closed tubular neighbourhoods around the edges in such a way that the corners of this neighbourhood agree with the corners of the $\nbhd{x}$.
 	For $\alpha$ and edge of $X$, $\nbhd{\alpha}$ is the sleeve around $\alpha$.
 	
 	Now, $\BB_{**}=\overline{\BB_*\setminus\cup_\alpha\nbhd{\alpha}}$.
-	Each connected component is either a subset of $R_\infty$ or an open octogonal subset of a region $\R_i$.
-	We take the topologinal closure of these octogons in $\BB$ and call these spaces by $D_i$.
+	Each connected component is either a subset of $R_\infty$ or an open octagonal subset of a region $\R_i$.
+	We take the topologinal closure of these octagons in $\BB$ and call these spaces by $D_i$.
 	
 	The union of the topological boundaries of the decomposing blocks form a subspace $Y$ of $\BB$ that intersects $X$ only along edges of $X$.
 	By construction, $Y$ has the structure of a 3--valent graph whose vertices are its corners and whose edges are the edges of the decomposing blocks for $B$.
@@ -53,15 +53,38 @@ For this reason we also call an arc of critical values of $X$ an \emph{edge}, an
 \end{lem}
 
 \begin{proof}
-	First consider the vertices in the graph $Y$ obtained in Lemma \ref{lem:bbdecomp}.
-	Some of these vertices are outside of the image of $f$, so we disregard them entirely.
-	The rest are regular points of $f$, so their preimages are disjoint unions of circles in $M$.
-	For a vertex $w$ of $Y$, we call the preimage by $M_w$.
+	First consider the vertices of $Y$ obtained in Lemma \ref{lem:bbdecomp}.
+	Some of these vertices are outside the image of $f$, so we disregard them entirely.
+	The rest are regular points of $f$, so their preimages are disjoint collections of circles in $M$.
+	For a vertex $v$ of $Y$, we call the preimage by $M_v$ and index the individual circles by $M_{v,k}$.
 	
 	Now, the edges of $Y$.
 	Again, some edges of $Y$ are outside of $f(M)$, so we disregard them.
 	Of the rest, we first consider those that do not intersect $X$.
-	These are strands of regular points of $f$, hence 
+	These are strands of regular points of $f$, so their preimages are disjoint collections of annuli in $M$ as in Lemma \ref{lem:2bodyannuli2}.
+	An edge $e$ of this type is one of the edges bounding an octagon $D_i$ interior to $R_i$, and it does so as the shared boundary of $D_i$ with either an edge sleeve $\nbhd{\alpha}$ of $X$ or a vertex sleeve $\nbhd{x}$ of $X$.
+	We call the preimage annuli by $M_{e,1}$ and index the connected components by $M_{e,1}^{k_u,k_v}$, where $u$ and $v$ are the vertices of $Y$ that bound $e$ and $M_{v,k_v}$ and $M_{u,k_u}$ are the boundary circles of the component.
+	The term ``1'' in the subscript denotes the genus of the $(2,1)$--handlebody that projects over the edge $e$.
+	
+	If an edge $e$ of $Y$ intersects an edge $\alpha$ of $X$, then $f\inv(e)$ is the disjoint union of a collection of some number of annuli (possibly zero) with a pair of pants or a disc, as in Lemma \ref{lem:2bodysing}.
+	We call the preimage annuli in this collection by $M_{e,1}^{k_u,k_v}$ as before.
+	If there is a disc projecting over $e$, it is denoted $M_{e,0}^{k_u}$, and if there is a pair of pants it is $M_{e,2}^{k_u,k_v,k_w}$, where the indexing follows the established pattern.
+	
+	Pulling back $Y$ to $f\inv(Y)=M_\Sigma$ yields a collection of $(2,1)$--handlebodies of genus 0, 1, and 2 that intersect other handlebodies only along their boundary circles.
+	These circles are the union
+	\[
+		M_\Sigma^c = \bigcup_{v\in v(Y)}\Big( \bigcup_k M_{v,k}\Big),
+	\]
+	and $M_\Sigma\setminus M_\Sigma^c$ is just the collection of open $(2,1)$--handlebodies that project over the interiors of the edges of $Y$.
+	
+	We now show that $M\setminus M_\Sigma$ is a disjoint collection of open sets, each of which is homeomorphic to the interior of a $(3,1)$--handlebody of genus 0, 1, or 2.
+	
+	Let $D$ be a disc in the decomposition of $\BB$.
+	For $p$ a point interior to $D$, $p$ is regular.
+	We invoke the same arguments made in Lemmas \ref{lem:2bodyannuli1} and \ref{lem:2bodyannuli2}, finding a small tubular neighbourhood about $p$, then taking the union of tubular neighbourhoods to form an open neighbourhood that projects surjectively over $D$.
+	This implies that the preimage of $\inter{D}$ is a collection of open solid tori whose topological boundary in $M$ sits inside of $M_\Sigma$ as a collection of disjoint cornered surfaces homeomorphic to tori.
+	
+	For an arc sleeve $\nbhd{\alpha}$, 
 	
 	
 \end{proof}
