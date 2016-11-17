@@ -8,15 +8,63 @@ The image $X=f(s_f)$ forms the space of critical values for $f$ in the plane.
 By Sard's theorem, $X$ is a set of closed arcs in the plane.
 By genericity of $f$, we can take the set of arcs to intersect only transversely and in such a way that $\BB\setminus X$ is a set of regions $R_0,\dots,R_k,R_\infty$ such that each $R_i$, $i<\infty$ is homeomorphic to $\BB$, $R_\infty$ is homeomorphic to a open annulus, and one of the boundary components of the closure of $R_\infty$ inside of the closure of $\BB$ is exactly $\pd\DD$.
 
-\begin{definition}
-	A \emph{stratified} $n$--manifold is a space that satisfies the definition of an $n$--manifold everywhere except for a
-\end{definition}
+We decompose $X$ into arc crossings and arcs that connect crossings.
+The arcs are \emph{codimension 1 critical values} and the crossings are \emph{codimension 2 critical values}.
+This induces a structure on $X$ as a 4--valent graph whose vertex set consists of the set of codimension 2 critical values.
+The edge set of $X$ then consists of pairs $p,q$ such that $p$ and $q$ corresponds to codimension 2 critical values connected by an arc of codimension 1 critical values in $X$.
+For this reason we also call an arc of critical values of $X$ an \emph{edge}, and a codimension 2 critical value of $X$ a \emph{vertex} of $X$.
 
+
+\begin{figure}
+	\centering
+	\captionsetup{justification=centering}
+	\caption{Closed sleeve around an arc of codimension 1 critical values and the two neighbouring codimension 2 critical values}
+	\includegraphics[height=4in]{figures/critsleeve.jpg}
+	\label{fig:critsleeve}
+\end{figure}
+
+\begin{lemma}
+	\label{lem:bbdecomp}
+	There is a decomposition of $\BB$ induced by $f$ into 2--manifolds with corners all but one of which are homeomorphic to $\DD$.
+	These cornered discs intersect one another along intervals embedded in their boundaries, boundary points of these intervals are exactly the disc corners, and the number of corners in this decomposition is exactly 8 times the number of vertices of $X$.
+\end{lemma}
+
+\begin{proof}
+	Refer to Figure \ref{fig:critsleeve} for the general idea.	
+	Around each vertex $v$ of $X$ we fit an octogon $\nbhd{v}$ such that the edges of the octogon alternate between transverse intersection and nonintersection with an arc of codimension 1 critical values.
+	
+	Consider $\BB_*=\overline{\BB\setminus\cup_v \nbhd{v}}$.
+	The topological boundary of $\BB_*$ consists of the octogonal boundaries of the $\nbhd{v}$.
+	The edges of $X$ connect the boundary components of $\BB_*$, so we may fit neat closed tubular neighbourhoods around the edges in such a way that the corners of this neighbourhood agree with the corners of the $\nbhd{v}$.
+	For $\alpha$ and edge of $X$, $\nbhd{\alpha}$ is the sleeve around $\alpha$.
+	
+	Now, $\BB_{**}=\overline{\BB_*\setminus\cup_\alpha\nbhd{\alpha}}$.
+	Each connected component is either a subset of $R_\infty$ or an open octogonal subset of a region $\R_i$.
+	We take the topologinal closure of these octogons in $\BB$ and call these spaces by $D_i$.
+	
+	The union of the topological boundaries of the decomposing blocks form a subspace $Y$ of $\BB$ that intersects $X$ only along edges of $X$.
+	By construction, $Y$ has the structure of a 3--valent graph whose vertices are its corners and whose edges are the edges of the decomposing blocks for $B$.
+\end{proof}
 
 \begin{lem}
 	\label{lem:3bodydecomp}
-	There is a decomposition of $M$ induced by $f$ into $(3,1)$--handlebodies of genus 0, 1, 2, and 3, and these handlebodies intersect one another only along annuli embedded in their boundaries.		
+	There is a decomposition of $M$ induced by $f$ and Lemma \ref{lem:bbdecomp} into distinct subspaces, each of which is a manifold with corners that is homeomorphic to a $(3,1)$--handlebody of genus 0, 1, 2, or 3.
+	These cornered handlebodies intersect one another along $(2,1)$--handlebodies embedded in their boundaries and the boundary circles of these embedded $(2,1)$--handlebodies are exactly the corners of the $(3,1)$--handlebodies.
 \end{lem}
+
+\begin{proof}
+	First consider the vertices in the graph $Y$ obtained in Lemma \ref{lem:bbdecomp}.
+	Some of these vertices are outside of the image of $f$, so we disregard them entirely.
+	The rest are regular points of $f$, so their preimages are disjoint unions of circles in $M$.
+	For a vertex $w$ of $Y$, we call the preimage by $M_w$.
+	
+	Now, the edges of $Y$.
+	Again, some edges of $Y$ are outside of $f(M)$, so we disregard them.
+	Of the rest, we first consider those that do not intersect $X$.
+	These are strands of regular points of $f$, hence 
+	
+	
+\end{proof}
 
 \begin{lem}
 	\label{lem:3body2handle}
@@ -69,13 +117,7 @@ By genericity of $f$, we can take the set of arcs to intersect only transversely
 	The zero section $z(V_{i,k})$ is a regular fiber that maps over a point interior to $\D_i$, and the longitudinal isotopy class is the one that contains regular fibers that map to single boundary points of $D_i$.
 	This pair determines an attaching map for 4--dimensional 2--handle attached over $V_{i,k}$.
 	
-	\begin{figure}
-		\centering
-		\captionsetup{justification=centering}
-		\caption{Closed sleeve around an arc of codimension 1 critical values and the two neighbouring codimension 2 critical values}
-		\includegraphics[height=4in]{figures/critsleeve.jpg}
-		\label{fig:critsleeve}
-	\end{figure}
+
 	
 	Consider an arc $\alpha$ of codimension 1 critical values that separates a pair of regions $R_i$ and $R_j$ where either $i$ or $j$ may be $\infty$.
 	As when we considered regions, $\alpha$ has been shrunk away from the codimension 2 critical values it connects.
