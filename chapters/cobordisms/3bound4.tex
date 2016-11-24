@@ -6,7 +6,7 @@ Such a map is Morse--like in the sense that its singular set is well behaved, it
 Throughout this section $M$ is a closed orientable 3--manifold and $f$ is a generic proper smooth map $M\to\BB$.
 The image $X=f(s_f)$ forms the space of critical values for $f$ in the plane.
 By Sard's theorem, $X$ is a set of closed arcs in the plane.
-By genericity of $f$, we can take the set of arcs to intersect only transversely and in such a way that $\BB\setminus X$ is a set of regions $R_0,\dots,R_k,R_\infty$ such that each $R_i$, $i<\infty$ is homeomorphic to $\BB$, $R_\infty$ is homeomorphic to a open annulus, and one of the boundary components of the closure of $R_\infty$ inside of the closure of $\BB$ is exactly $\pd\DD$.
+By genericity of $f$, we can take the set of arcs to intersect only transversely and in such a way that $\BB\setminus X$ is a set of regions $R_0,\dots,R_k,R_\infty$ such that each $R_i$, $i<\infty$ is homeomorphic to $\BB$, $R_\infty$ is homeomorphic to a open annulus, and one of the boundary components of $\overline{R_\infty}$ inside of $\overline{\BB}=\DD$ is exactly $\pd\DD$.
 
 We decompose $X$ into arc crossings and arcs that connect crossings.
 The arcs are \emph{codimension 1 critical values} and the crossings are \emph{codimension 2 critical values}.
@@ -25,8 +25,7 @@ For this reason we also call an arc of critical values of $X$ an \emph{edge}, an
 
 \begin{lem}
 	\label{lem:bbdecomp}
-	There is a decomposition of $\BB$ induced by $f$ into 2--manifolds with corners all but one of which are homeomorphic to $\DD$.
-	These cornered discs intersect one another along intervals embedded in their boundaries, boundary points of these intervals are exactly the disc corners, and the number of corners in this decomposition is exactly 8 times the number of vertices of $X$.
+	There is a decomposition of $\BB$ induced by $f$ into the a colelction of 2--manifolds with corners. All but one of these cornered surfaces are homeomorphic to $\DD$, these cornered discs intersect one another along intervals embedded in their boundaries, and boundary points of these intervals are exactly the disc corners.
 \end{lem}
 
 \begin{proof}
@@ -53,7 +52,11 @@ For this reason we also call an arc of critical values of $X$ an \emph{edge}, an
 \end{lem}
 
 \begin{proof}
-	First consider the vertices of $Y$ obtained in Lemma \ref{lem:bbdecomp}.
+	Take $Y$ to be the graph obtained in Lemma \ref{lem:bbdecomp} that is embedded in $\BB$ and decomposes $\BB$.
+	We examine how $f\inv(Y)$ sits in $M$.
+	In particular, $M\setminus f\inv(Y)$ is a collection of open $(3,1)$--handlebodies, and their topological closure decomposes $M$ exactly as desired.
+	
+	First consider the vertices of $Y$.
 	Some of these vertices are outside the image of $f$, so we disregard them entirely.
 	The rest are regular points of $f$, so their preimages are disjoint collections of circles in $M$.
 	For a vertex $v$ of $Y$, we call the preimage by $M_v$ and index the individual circles by $M_{v,k}$.
