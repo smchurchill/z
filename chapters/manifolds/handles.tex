@@ -26,8 +26,16 @@ Attaching an $n$--dimensional $\lambda$--handle to $M$ is the process of joining
 \begin{defn}[Handle]
 	\label{def:handle}
 	Let $\varphi:\pd\D^\lambda\times\D^\mu\to\pd M$ be an embedding, and consider it to be an attaching map between $M$ and $H^\lambda$.
-	The space $M\cup_\varphi H^\lambda$ is a ``manifold with corners,'' and we smooth those corners immediately smooth in a canonical way as mentioned in Remark \ref{rmk:corners}.
+	The space $M\cup_\varphi H^\lambda$ is a manifold with corners, and the corners of $M\cup_\varphi H^\lambda$ are the set $\varphi(\pd\D^\lambda\times\pd\D^\mu)$.
+%	 and we smooth those corners immediately smooth in a canonical way as mentioned in Remark \ref{rmk:corners}.
 	The attached space $H^\lambda$ is an \emph{$n$--dimensional $\lambda$--handle}, and $M\cup_\varphi H^\lambda$ is the result of an $n$--dimensional \emph{$\lambda$--handle attachment}.
+\end{defn}
+
+\begin{defn}[Surgery]
+	\label{def:surgery}
+	Let $M\cup_\varphi H^\lambda$ be the result of an $n$--dimensional $\lambda$--handle attachment and consider the manifolds $\pd M$ and $\pd (M\cup_\varphi H^\lambda)$.
+	We can recover $\pd (M\cup_\varphi H^\lambda)$ from $\pd M$ by deleting the image $\varphi(\pd\D^\lambda\times\D^\mu)$ from $\pd M$ and taking the adjunction of $\pd M\setminus \varphi(\pd\D^\lambda\times\D^\mu)$ with $\D^\lambda\times\pd\D^\mu$ over the attaching map $\restr{\varphi}{\pd\D^\lambda\times\pd\D^\mu}$.
+	We call this process \emph{surgery induced by attaching $H^\lambda$} and say that the new boundary $\pd (M\cup_\varphi H^\lambda)$ is \emph{$\pd M$ surgered over $H^\lambda$}.
 \end{defn}
 
 Note that the domain of $\varphi$ has the structure of a trivial $\mu$--disc bundle over $S^{\lambda-1}$ and, using the language of vector bundles, the image of $\varphi$ has the structure of a closed tubular neighbourhood of $f_0(S^{\lambda-1})=\varphi\comp z(S^{\lambda-1})$.
