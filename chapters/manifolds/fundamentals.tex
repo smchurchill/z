@@ -1,6 +1,14 @@
 At its simplest, most colloquial definition, an $n$--dimensional manifold is a space that locally looks like an $n$--dimensional real or half space.
 We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``looks like.''
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	we can easily rework the definition to a more standard one
+%	by that, i just mean that we define a manifold without boundary
+%	then a manifold with boundary then a manifold with corners.
+%	it only made sense to do it as it is now when we wanted to combine
+%	boundaryless and boundarywith manifolds into one definition.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{defn}[Coordinates]
 	\label{def:coordinates}
 	Let $\HH\subset\R$ denote the closed real half space under the subspace topology, defined as $\HH=\{x\in\R : x\geq 0\}$.
@@ -9,18 +17,18 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 	\[
 		\HH^k\times\R^{n-k}=\{(x_0,\dots,x_{n-1})\in\RRN : x_i\geq 0, i=0,\dots,k-1\}.
 	\]
-	When $k=1$, we use the notations $\inter{\HH\times\R^{n-1}}$ and $\pd \HH\times\R^{n-1}$ to denote the topological interior and boundary of $\HH\times\R^{n-1}$ as subsets of $\RRN$ which, when $n>0$, are
+	When $k=1$, we use the notations $\inter{\HH\times\R^{n-1}}$ and $\pd (\HH\times\R^{n-1})$ to denote the topological interior and boundary of $\HH\times\R^{n-1}$ as subsets of $\RRN$ which, when $n>0$, are
 	\[
 		\begin{array}{ccccc}
 			\inter{\HH\times\R^{n-1}} & = & \{(x_0,\dots,x_{n-1})\in\RRN : x_0 > 0\}, & &\\
-			\pd (\HH\times\R^{n-1)}	& = & \{(x_0,\dots,x_{n-1})\in\RRN : x_0 = 0\} & \approx & \R^{n-1}.
+			\pd (\HH\times\R^{n-1})	& = & \{(x_0,\dots,x_{n-1})\in\RRN : x_0 = 0\} & \approx & \R^{n-1}.
 		\end{array}
 	\]
 	When $n=0$, $\HH^0 = \R^0 = \{0\}$, so $\inter{\HH^0}=\R^0$ and $\pd\HH^0=\emptyset$.
 
 	Let $M$ be a second-countable Hausdorff space.
 	The pair $(U,\varphi)$ where $U$ is an open subset of $M$ and $\varphi$ is a homeomorphism from $U$ onto an open set of either $\RRN$ or $\HH\times\R^{n-1}$ is called a \emph{chart} of $M$.
-	The pair $(U,\varphi)$ where $U$ is an open subset of $M$ and $\varphi$ is a homeomorphism from $U$ onto an open set of $\HH^k\times\R^{n-k}$ is called a \emph{corner chart} of $M$.
+	The pair $(U,\varphi)$ where $U$ is an open subset of $M$ and $\varphi$ is a homeomorphism from $U$ onto an open set of $\HH^k\times\R^{n-k}$, $1<k\leq n$, is called a \emph{corner chart} of $M$.
 	
 	The map $\varphi$ is a \emph{coordinate system} on $U$ and its inverse $\varphi\inv$ is a \emph{parameterization} of $U$.
 	Writing $\varphi$ as
@@ -52,6 +60,7 @@ It eases the notational burden to assume that our manifolds are always equipped 
 This assumption allows us to omit writing an atlas when talking about a manifold.
 	
 \begin{defn}[Boundary]
+	\label{def:boundary}
 	Let $M$ be a smooth $n$--manifold.
 	A chart $(U,\varphi)$ is called an \emph{interior chart} if $\varphi(U)$ is an open subset of $\RRN$ and is a \emph{boundary chart} if $\varphi(U)$ is an open subset of $\HH\times\R^{n-1}$ with $\varphi(U)$ nontrivially intersecting $\pd \HH\times\R^{n-1}$.
 	Let $p\in M$.
@@ -79,6 +88,8 @@ Otherwise, a ``closed manifold'' will refer to a manifold with empty boundary.
 	Let $p\in M$.
 	We say that $p$ is a \emph{corner point} if it is in the domain of a full corner chart $(U,\varphi)$ so that $\varphi(p)\in(\HH^2\times\R^{n-2})_c$.
 	The set of all corner points of $M$ is called the \emph{corner(s) of $M$} and is denoted by $M_c$.
+	The interior and boundary of $M$ are defined as in Definition \ref{def:boundary}.
+	Note that $\pd M\cup M_c=M\setminus\inter{M}$.
 \end{defn}
 
 \begin{ex}
@@ -97,9 +108,17 @@ Otherwise, a ``closed manifold'' will refer to a manifold with empty boundary.
 	The space $\D^{n+1}$, the topological closure of $B^{n+1}$, is the closed $(n+1)$--disc.
 	Both $B^{n+1}$ and $\D^{n+1}$ are $(n+1)$--manifolds.
 	The disc $\D^{n+1}$ is a manifold whose boundary the $n$--sphere, a closed $n$--manifold.
+	Note that the closed 1--disc is the unit interval, which we denote by $\I=[\,0,1\,]$.
 	
 	It is often more efficient, in terms of notation, to consider $S^1$, $\D^2$, $S^3$, and $D^4$ as submanifolds of the complex plane $\C$ or $\C^2$.
 	We do exactly this in Theorem \ref{thm:mpgV} while defining maps $S^1\times\DD\to S^1\times\DD$.
-	
-	A regular $n$--gon in the plane is a 2--manifold with corners that is homeomorphic to $\DD$.
 \end{ex}
+
+\begin{ex}
+	A regular $n$--gon, $G^n$, in the plane is a 2--manifold with corners $G_c^n=\{z\in\C:z^n=1\}$ that is homeomorphic to $\DD$.
+	Included in this example is the unit square $\I\times \I$.
+	
+	Taking the product $G^n\times S^1$ yields a manifold with corners that is homeomorphic to $D^2\times S^1$ and whose corners are exactly $G^n_c\times S^1$.	
+\end{ex}
+
+
