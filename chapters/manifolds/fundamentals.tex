@@ -44,6 +44,7 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 	\label{def:coordinates}
 	Let $M$ be a second-countable Hausdorff space.
 	The pair $(U,\varphi)$ where $U$ is an open subset of $M$ and $\varphi$ is a homeomorphism from $U$ onto an open set of $\HH^k\times\R^{n-k}$ is called a \emph{chart}.
+	If $p$ is a point in $M$ and $(U,\varphi)$ is a chart such that $p\in U$, then $(U,\varphi)$ is a \emph{chart about $p$}.
 	The map $\varphi$ is a \emph{coordinate system} on $U$ and its inverse $\varphi\inv$ is a \emph{parameterization} of $U$.
 	Writing $\varphi$ as
 	\[
@@ -76,6 +77,17 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 
 It eases the notational burden to assume that our manifolds are always equipped with a smooth structure.
 This assumption allows us to omit writing an atlas when talking about a manifold.
+
+We classify the points of a manifold by the charts that exist around them.
+
+\begin{defn}
+	Let $M$ be a smooth $n$--manifold, $p\in M$, and $(U,\varphi)$ a chart about $p$.
+	Consider $\varphi(p)=(x_0,\dots,x_{n-1})\in \HH^k\times\R^{n-k}$.
+	We call $p$ a \emph{$j$--corner point}, where $j$ is the number of entries $x_0,\dots,x_{k-1}$ that are 0.
+	By smooth compatibility of our charts, examining the image of $p$ through exactly one chart is sufficient for classification in this way.
+	
+	We call a $0$--corner an \emph{interior point}, and for $j>0$, a $j$--corner is a \emph{boundary point}.	
+\end{defn}
 	
 \begin{defn}[Boundary]
 	\label{def:boundary}
