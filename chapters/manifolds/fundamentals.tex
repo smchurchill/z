@@ -1,4 +1,4 @@
-At its simplest, most colloquial definition, an $n$--dimensional manifold is a space that locally looks like an $n$--dimensional real or half space.
+At its simplest, most colloquial definition, an $n$--dimensional manifold is a space that locally looks like an $n$--dimensional real, half, or cornered space.
 We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``looks like.''
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -15,33 +15,48 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 %	check on tangent space...
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{defn}[Real, Half, and Cornered Spaces]
+	Let $n>0$ and $0\leq k\leq n$ be integers.
+	The \emph{$n$--dimensional real space} is denoted $\R^n$ and is defined by
+	\[
+		\R^n=\{(x_0,x_1,\dots x_{n-1}):x_i\in\R\textrm{ for each }i\},
+	\]
+	and the \emph{closed half space}, denoted $\HH$, is defined by
+	\[
+		\HH=\{x\in\R:x\geq 0\},
+	\]
+	and is a topological subspace of $\R$ endowed with the subspace topology.
+	We use the notations $\inter{\HH}$ and $\pd \HH$ to denote the topological interior and boundary of $\HH$ as subsets of $\R$ which are $\{0\}$ and $\{x\in\R:x>0\}$ respectively.
+	
+	We take products of $\HH^k$ with $\R^{n-k}$ to form \emph{$n$--dimensional real space with a $k$--corner}.
+	Explicitly, this space is
+	\[
+		\HH^k\times\R^{n-k} = \{(x_0,\dots,x_{n-1})\in\RRN:x_i\geq\textrm{ for } i=0,\dots,k-1\},
+	\]
+	with the origin $\zz=(0,\dots,0)$ the \emph{model $k$-corner}.
+	
+	We use the notations $\inter{\HH^k\times\R^{n-k}}$ and $\pd (\HH^k\times\R^{n-k})$ to denote the topological interior and boundary of $\HH^k\times\R^{n-k}$ as subsets of $\RRN$ which, when $n>0$, are
+	\[
+	\begin{array}{rcl}
+	\inter{\HH^k\times\R^{n-1}} & = & \{(x_0,\dots,x_{n-1})\in\RRN : x_i > 0\textrm{ for }i=0,\dots,k-1\},\\
+	\pd (\HH^k\times\R^{n-1})	& = & \{(x_0,\dots,x_{n-1})\in\RRN : x_i = 0\textrm{ for some }i\in\{0,\dots,k-1\}\}.
+	\end{array}
+	\]
+	When we allow $n=0$, $\HH^0 = \R^0 = \{0\}$, so $\inter{\HH^0}=\R^0$ and $\pd\HH^0=\emptyset$.
+	The \emph{dimension} of $\HH^k\times\R^{n-k}$ is $n$.
+\end{defn}
+
 \begin{defn}[Coordinates]
 	\label{def:coordinates}
-	Let $\HH\subset\R$ denote the closed real half space under the subspace topology, defined as $\HH=\{x\in\R : x\geq 0\}$.
-	We use the notations $\inter{\HH}$ and $\pd \HH$ to denote the topological interior and boundary of $\HH$ as subsets of $\R$ which are $\{0\}$ and $\{x\in\R:x>0\}$.
-	Our main use for $\HH$ is to take the product of it with a real vector space:
-	\[
-		\HH^k\times\R^{n-k}=\{(x_0,\dots,x_{n-1})\in\RRN : x_i\geq 0, i=0,\dots,k-1\}.
-	\]
-	When $k=1$, we use the notations $\inter{\HH\times\R^{n-1}}$ and $\pd (\HH\times\R^{n-1})$ to denote the topological interior and boundary of $\HH\times\R^{n-1}$ as subsets of $\RRN$ which, when $n>0$, are
-	\[
-		\begin{array}{ccccc}
-			\inter{\HH\times\R^{n-1}} & = & \{(x_0,\dots,x_{n-1})\in\RRN : x_0 > 0\}, & &\\
-			\pd (\HH\times\R^{n-1})	& = & \{(x_0,\dots,x_{n-1})\in\RRN : x_0 = 0\} & \approx & \R^{n-1}.
-		\end{array}
-	\]
-	When $n=0$, $\HH^0 = \R^0 = \{0\}$, so $\inter{\HH^0}=\R^0$ and $\pd\HH^0=\emptyset$.
-
 	Let $M$ be a second-countable Hausdorff space.
-	The pair $(U,\varphi)$ where $U$ is an open subset of $M$ and $\varphi$ is a homeomorphism from $U$ onto an open set of either $\RRN$ or $\HH\times\R^{n-1}$ is called a \emph{chart} of $M$.
-	The pair $(U,\varphi)$ where $U$ is an open subset of $M$ and $\varphi$ is a homeomorphism from $U$ onto an open set of $\HH^k\times\R^{n-k}$, $1<k\leq n$, is called a \emph{corner chart} of $M$.
-	
+	The pair $(U,\varphi)$ where $U$ is an open subset of $M$ and $\varphi$ is a homeomorphism from $U$ onto an open set of $\HH^k\times\R^{n-k}$ is called a \emph{chart}.
+	If $p$ is a point in $M$ and $(U,\varphi)$ is a chart such that $p\in U$, then $(U,\varphi)$ is a \emph{chart about $p$}.
 	The map $\varphi$ is a \emph{coordinate system} on $U$ and its inverse $\varphi\inv$ is a \emph{parameterization} of $U$.
 	Writing $\varphi$ as
 	\[
 		\varphi(u) = (\xi_0(u),\dots,\xi_{n-1}(u)),
 	\]
-	the functions $\xi_i$ are \emph{coordinate functions}
+	the functions $\xi_i$ are \emph{coordinate functions}	
 \end{defn}
 
 \begin{defn}[Atlas]
@@ -49,8 +64,12 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 	Fix a nonnegative integer $n$.
 	Let $\mathcal{A}=\{(U_\alpha,\varphi_\alpha):\alpha\in A\}$ be a collection of charts of $M$ such that the codomain for each chart is of the fixed dimension $n$.
 	If $\bigcup_A U_\alpha$ contains $M$, then $\mathcal{A}$ is an \emph{atlas} for $M$.
+	
 	The homeomorphisms $\varphi_\alpha\comp \varphi_\beta\inv:\varphi_\beta(U_\alpha\cap U_\beta)\to \varphi_\alpha(U_\alpha\cap U_\beta)$ are \emph{transition maps} of $\mathcal{A}$.
-	We say that $(U_\alpha,\varphi_\alpha)$ and $(U_\beta,\varphi_\beta)$ are \emph{smoothly compatible} if either $U_\alpha\cap U_\beta$ is empty or the transition maps $\varphi_\alpha\comp \varphi_\beta\inv$ and $\varphi_\beta\comp \varphi_\alpha\inv$ are smooth as maps $\RRN\to\RRN$, i.e.\ they have continuous partial derivatives of all orders.
+	We say that $(U_\alpha,\varphi_\alpha)$ and $(U_\beta,\varphi_\beta)$ are \emph{smoothly compatible} if either $U_\alpha\cap U_\beta$ is empty or the transition maps $\varphi_\alpha\comp \varphi_\beta\inv$ and $\varphi_\beta\comp \varphi_\alpha\inv$ are smooth as maps $\HH^{k_\beta}\times\R^{n-k_\beta}\to\HH^{k_\alpha}\times\R^{n-k_\alpha}$ and  $\HH^{k_\alpha}\times\R^{n-k_\alpha}\to\HH^{k_\beta}\times\R^{n-k_\beta}$ respectively.
+	
+	A map $f:\HH^{k_\alpha}\times\R^{n-k_\alpha}\to\HH^{k_\beta}\times\R^{n-k_\beta}$ is \emph{smooth} if it can be extended to a smooth map $\tilde{f}:\RRN\to\RRN$, i.e.\ if it can be extended to a map $\tilde{f}$ that has continuous partial derivatives of all orders.
+	
 	If every pair of charts in an atlas is smoothly compatible then that atlas is a \emph{smooth atlas}.
 	Two smooth atlases are equivalent if their union is a smooth atlas.
 \end{defn}
@@ -64,6 +83,17 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 
 It eases the notational burden to assume that our manifolds are always equipped with a smooth structure.
 This assumption allows us to omit writing an atlas when talking about a manifold.
+
+We classify the points of a manifold by the charts that exist around them.
+
+\begin{defn}
+	Let $M$ be a smooth $n$--manifold, $p\in M$, and $(U,\varphi)$ a chart about $p$.
+	Consider $\varphi(p)=(x_0,\dots,x_{n-1})\in \HH^k\times\R^{n-k}$.
+	We call $p$ a \emph{$j$--corner point}, where $j$ is the number of entries $x_0,\dots,x_{k-1}$ that are 0.
+	By smooth compatibility of our charts, examining the image of $p$ through exactly one chart is sufficient for classification in this way.
+	
+	We call a $0$--corner an \emph{interior point}, and for $j>0$, a $j$--corner is a \emph{boundary point}.	
+\end{defn}
 	
 \begin{defn}[Boundary]
 	\label{def:boundary}
