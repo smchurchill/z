@@ -103,7 +103,7 @@ This classification let's us define the subclass of smooth manifolds with corner
 \begin{defn}
 	Let $M$ be a smooth $n$--manifold, and $\pd_1(M)$ the 1--boundary of $M$.
 	A \emph{connected face} of $M$ is the closure of a connected component of $\pd_1 M$.
-	We say that $M$ is a \emph{manifold with faces} if, for every $j$--corner point $p\in M$, $p$ belongs to exactly $j$ different connected faces of $M$.
+	We say that $M$ is a \emph{manifold with faces} if, for every $j$--corner point $p\in M$, $p$ belongs to exactly $j$ different connected faces of $M$, and we denote the set of faces of $M$ by $\pd_f M$
 \end{defn}
 
 There are a few advantages to considering the subclass of manifolds with faces.
@@ -157,17 +157,23 @@ Otherwise, a ``closed manifold'' will refer to a manifold with empty boundary.
 	We also obtain the 2--corners of $\I\times\I\times S^1$ by taking the product of the 2--corners of $\I\times\I$ with $S^1$.
 	
 	These results are due to the fact that $S^1$ is a closed manifold.
-	For contrast, consider $\I\times\I\times\I=\I^3$, the unit cube.
-	The 1--corners of $\I^3$ are the products of the 0--corners of $\I\times\I$ with the 1--corners of $\I$ and the products of the 1--corners of $\I\times\I$ with the 0--corners of $\I$.
-	The 2--corners of $\I^3$ are the products of the 0--corners of $\I\times\I$ with the 2--corners of $\I$, the products of the 2--corners of $\I\times\I$ with the 0--corners of $\I$, and the product of the 1--corners of $\I\times\I$ with the 1--corners of $\I$.
-	This pattern continues into the 3--corners of found as the product  of the 2--corners of $\I\times\I$ with the 1--corners of $\I$.
-	
-	In general, if $M$ and $N$ are manifolds with faces then the $k$--corners of $M\times N$ are found as
+	For contrast, consider $\I\times\I\times\I=\I^3$, the unit cube:
+	\begin{enumerate}
+		\item The set of 1--corners of $\I^3$ is the union of $\pd_0(\I\times\I)\times\pd_1\I$ with $\pd_1(\I\times\I)\times\pd_0\I$.
+		\item The set of 2--corners of $\I^3$ is the union of $\pd_0(\I\times\I)\times\pd_2\I$ with $\pd_1(\I\times\I)\times\pd_1\I$ and $\pd_2(\I\times\I)\times\pd_0\I$.
+		\item The set of 3--corners of $\I^3$ is the union of $\pd_1(\I\times\I)\times\pd_2\I$ with $\pd_2(\I\times\I)\times\pd_1\I$.
+	\end{enumerate}	
+	This pattern generalizes.
+	If $X$ and $M$ are manifolds with faces then the $k$--corners of $X\times M$ are found as
 	\[
-		\bigcup_{\substack{i+j=k\\i,j\,\geq0}} \pd_i M\times \pd_j N,
+		\pd_k(X\times M) = \bigcup_{\substack{i+j=k\\i,j\,\geq0}} \pd_i X\times \pd_j M,
 	\]
-	and the faces of $M\times N$ are the products of the 0--corners of $M$ with the faces of $N$ along with the products of the faces of $M$ with the 0--corners of $N$.
+	and the set of faces of $X\times M$ is the union $(\pd_0 X\times\pd_f M)\cup(\pd_f X\times\pd_0 M)$.
 \end{ex}
 
+We conclude this section by abbreviating our terminology.
+An \emph{$n$--manifold} refers to a \emph{smooth $n$--dimensional manifold with faces}.
+In other words, ``manifold'' refers to the broadest definition of the term.
+We may get more specific by saying \emph{$M$ is a closed manifold}, and in this case every point of $M$ is a 0--corner, and $M$ is compact.
 
 
