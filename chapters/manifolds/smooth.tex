@@ -12,17 +12,170 @@
 \end{prop}
 
 Manifolds are defined by their local homogeneity, and a tangent space is a precise description of that homogeneity near a point.
-There are many ways to define tangent spaces, and we do so using derivations as in, as in \cite{Lee00}.
+There are many ways to define tangent spaces, and we do so using derivations as in \cite{Lee00}.
 This approach is used for two reasons.
-First, 
+First, it causes the vector space structure of the tangent space to follow directly from the definition.
+Second, the definition is applicable to manifolds with faces without any fiddling around with details, and the tangent spaces obtained are still vector spaces of an appropriate dimension.
 
-\begin{defn}[Derivation]
-	
-	
+\begin{defn}[Derivations on $\R^n$]
+	Let $x$ be a point in $\R^n$, and denote the space of smooth functions $\R^n\to\R$ be $C^\infty(\R^n)$.
+	A linear map $A:C^\infty(\R^n)\to\R$ is called a \emph{derivation at $x$} if it satisfies the product rule
+	\[
+		A(\varphi\,\psi)=\varphi(x)A\psi+\psi(x)A\varphi
+	\]
+	for any $\varphi,\psi\in C^\infty(\R^n)$.
+	Denote the set of all derivations at $x$ of $C^\infty(\R^n)$ by $T_x \R^n$.
+	The derivations $T_x \R^n$ form a vector space under the operations
+	\[
+		\begin{array}{rcl}
+			(A+B)\varphi&=&A\varphi+B\varphi,\\
+			(cA)\varphi&=&c(A\varphi).
+		\end{array}
+	\]
 \end{defn}
 
+\begin{prop}[Corollory 3.3 in \cite{Lee00}]
+	\label{prop:cor33}
+	For any $x$ in $\R^n$, the $n$ derivations
+	\[
+		\restr{\frac{\pd}{\pd x_1}}{x}, \dots, \restr{\frac{\pd}{\pd x_n}}{x}
+	\]
+	defined by
+	\[
+		\restr{\frac{\pd}{\pd x_i}}{x}\varphi=\frac{\pd \varphi}{\pd x_i}(x)
+	\]
+	form a basis for $T_x\R^n$, and $T_x\R^n$ is therefore an $n$--dimensional vector space. 
+\end{prop}
 
+Our definition of derivation extends to the spaces $\HH^k\times\R^{n-k}$, and Proposition~\ref{prop:cor33} extends as well after we establish the following lemma.
 
+\begin{lem}[Extension Lemma, 2.7 in \cite{Lee00}]
+	\label{lem:ext}
+	Let $M$ be a smooth manifold, let $V\subset M$ be a closed subset, and let $f:V\to\R^d$ be a smooth function.
+	Let $U$ be any open set containing $V$.
+	Then there exists a smooth extension $\tilde{f}:M\to\R^d$ such that $\restr{\tilde{f}}{V}=f$ and $\supp \tilde{f}\subset U$.
+\end{lem}
+
+\begin{defn}[Derivations on $\HH^n$]
+	Let $x$ be a point in $\HH^n$.
+	A linear map $A:C^\infty(\HH^n)\to\R$ is called a \emph{derivation at $x$} if it satisfies the product rule
+	\[
+	A(\varphi\,\psi)=\varphi(x)A\psi+\psi(x)A\varphi
+	\]
+	for any $\varphi,\psi\in C^\infty(\HH^n)$.
+	Denote the set of all derivations at $x$ of $C^\infty(\HH^n)$ by $T_x \HH^n$.
+	The derivations $T_x \HH^n$ form a vector space under the operations
+	\[
+	\begin{array}{rcl}
+	(A+B)\varphi&=&A\varphi+B\varphi,\\
+	(cA)\varphi&=&c(A\varphi).
+	\end{array}
+	\]
+\end{defn}
+
+\begin{prop}[Lemma 3.10 in \cite{Lee00}]
+	\label{prop:cor310}
+	For any $x$ in $\HH^n$, the $n$ derivations
+	\[
+	\restr{\frac{\pd}{\pd x_1}}{x}, \dots, \restr{\frac{\pd}{\pd x_n}}{x}
+	\]
+	defined by
+	\[
+	\restr{\frac{\pd}{\pd x_i}}{x}\varphi=\frac{\pd \varphi}{\pd x_i}(x)
+	\]
+	form a basis for $T_x\HH^n$, and $T_x\HH^n$ is therefore an $n$--dimensional vector space. 
+\end{prop}
+
+\begin{proof}
+	The case where $x$ is in the interior of $\HH^n$ is exactly the same as in Proposition~\ref{prop:cor33}.
+	We concern ourselves only with the case when $x$ is a boundary point of $\HH^n$.
+	
+	Let $i:\HH^n\to\R^n$ be inclusion.
+	We will show that $i_*:T_x\HH^n\to T_x\R^n$ is an isomorphism.
+	In the case where $i_*X=0$, let $f$ be a smooth, real--valued function defined on a neighbourhood of $x$ in $\HH^n$ and let $\tilde{f}$ extend $f$ to a smooth function on an open subset of $\R^n$.
+	From this, we have $\tilde{f}\comp i=f$, so
+	\[
+		Xf = X(\tilde{f}\comp i) = (i_* X)(\tilde{f})=0.
+	\]
+	This means that $i_*X=0$ implies $X=0$, so $i_*$ is injective.
+	For surjectivity, let $Y\in T_x\R^n$ and let $f\in C^\infty(\HH^n)$.
+	Define $X\in T_x \HH^n$ by
+	\[
+		Xf = Y\tilde{f},
+	\]
+	where $\tilde{f}$ is any extension of $f$.
+	Expressing $Y$ in terms of the basis for $T_x \R^n$ on the right hand side of this expression gives us
+	\[
+		Xf = \sum_{i=1}^n Y_i \frac{\pd \tilde{f}}{\pd x_i}(x).
+	\]
+	The derivatives $\pd\tilde{f}/\pd x_i$ are determined by the derivatives of $f$ in $\HH^n$, and this definition of $X$ is shown to be a derivation by evaluating $X(fg)$ as $Y(\tilde{f}\tilde{g})$.
+	After confirming that $i_*X=Y$ using $f=\tilde{f}\comp i$ as above, we can say that $i_*$ is surjective.
+	We conclude that $i_*$ is an isomorphism.
+\end{proof}
+
+Note that $\HH^n$ contains model corner points for every type of $j$--corner, $0\leq j\leq n$, along the intersections of its coordinate planes.
+Investigating the tangent spaces in $\HH^k\times\R^{n-k}$ allows us to fully realize tangent spaces to manifolds through the use of charts.
+
+\begin{defn}
+	Let $M$ be an $n$--manifold and $p$ a point in $M$.
+	A linear map $A:C^\infty(M)\to\R$ is a \emph{derivation at p} if it satisfies
+	\[
+		A(\varphi\,\psi)=\varphi(p)A\psi+\psi(p)A\varphi
+	\]
+	for any $\varphi,\psi\in C^\infty(M)$.
+	Denote the set of all derivations at $p$ of $C^\infty(M)$ by $T_p M$.
+	As in the case with $\R^n$, $T_p M$ is a vector space.
+	We call $T_p M$ the \emph{tangent space to $M$ at $p$} and call the elements of $T_p M$ \emph{tangent vectors}
+\end{defn}
+
+To find a basis, and therefore dimension, of a tangent space we first define how smooth maps act on tangent vectors.
+
+\begin{defn}[Pushforward]
+	Let $f:X\to M$ be a smooth map between manifolds.
+	For every $p\in X$, we define the map
+	\[
+		f_*:T_p X\to T_{f(p)} M
+	\]
+	by
+	\[
+		(f_*A)(\varphi) = A(\varphi\comp f).
+	\]
+	If $\varphi\in C^\infty(X)$ then $\varphi\comp f\in C^\infty(M)$, so $X(\varphi\comp f)$ is, at least, defined.
+	The operator is linear and it is a derivation at $f(p)$ by
+	\[
+		\begin{array}{rcl}
+			(f_* A)(\varphi\,\psi)&=&A((\varphi\,\psi)\comp f)\\
+			&=&X((\varphi\comp f)(\psi\comp f))\\
+			&=&(\varphi\comp f(p))A(\psi\comp f) + (\psi\comp f(p))A(\varphi\comp f)\\
+			&=&\varphi(f(p))(f_* A)(\psi) + \psi(f(p))(f_* A)(\varphi).
+		\end{array}
+	\]
+	The map $f_*$ is called the \emph{pushforward} of $f$, and it relates how the tangent vectors in $T_p X$ are transformed into tangent vectors of $T_{f(p)}M$ when $p$ is passed through $f$.
+\end{defn}
+
+\begin{lem}[Lemma 3.5 in \cite{Lee00}]
+	Let $f:X\to M$ and $g:M\to N$ be smooth maps.  Let $p\in X$.
+	\begin{enumerate}
+		\item $f_*:T_p X\to$
+		
+	\end{enumerate}
+	
+\end{lem}
+
+\begin{lem}
+	Let $M$ be a smooth manifold and $p$ a point in $M$.
+	Then $T_p M$ is an $n$--dimensional vector space with basis given by the coordinate vectors
+	\[
+		\restr{\frac{\pd}{\pd x_1}}{p}, \dots,	\restr{\frac{\pd}{\pd x_n}}{p}
+	\]	
+	in any smooth chart.
+\end{lem}
+
+\begin{proof}
+	Let $(U,\varphi)$ be a chart about $p$.
+	Then the pushforward
+	
+\end{proof}
 
 \begin{defn}[Tangent Space]
 	\label{def:tangentspace}
