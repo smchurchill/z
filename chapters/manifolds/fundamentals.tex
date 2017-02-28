@@ -33,7 +33,7 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 	\[
 		\HH^k\times\R^{n-k} = \{(x_0,\dots,x_{n-1})\in\RRN:x_i\geq\textrm{ for } i=0,\dots,k-1\},
 	\]
-	with the origin $\zz=(0,\dots,0)$ the \emph{model $k$-corner}.
+	with the origin $\zz=(0,\dots,0)$ called the \emph{model $k$-corner point}.
 	
 	We use the notations $\inter{\HH^k\times\R^{n-k}}$ and $\pd (\HH^k\times\R^{n-k})$ to denote the topological interior and boundary of $\HH^k\times\R^{n-k}$ as subsets of $\RRN$ which, when $n>0$, are
 	\[
@@ -65,11 +65,12 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 	Let $\mathcal{A}=\{(U_\alpha,\varphi_\alpha):\alpha\in A\}$ be a collection of charts of $M$ such that the codomain for each chart is of the fixed dimension $n$.
 	If $\bigcup_A U_\alpha$ contains $M$, then $\mathcal{A}$ is an \emph{atlas} for $M$.
 	
+	First , recall that a map $f:\HH^{k_\alpha}\times\R^{n-k_\alpha}\to\HH^{k_\beta}\times\R^{n-k_\beta}$ is \emph{smooth} if it can be extended to a smooth map $\tilde{f}:\RRN\to\RRN$, i.e.\ if it can be extended to a map $\tilde{f}$ that has continuous partial derivatives of all orders.
+	
 	The homeomorphisms $\varphi_\alpha\comp \varphi_\beta\inv:\varphi_\beta(U_\alpha\cap U_\beta)\to \varphi_\alpha(U_\alpha\cap U_\beta)$ are \emph{transition maps} of $\mathcal{A}$.
 	We say that $(U_\alpha,\varphi_\alpha)$ and $(U_\beta,\varphi_\beta)$ are \emph{smoothly compatible} if either $U_\alpha\cap U_\beta$ is empty or the transition maps $\varphi_\alpha\comp \varphi_\beta\inv$ and $\varphi_\beta\comp \varphi_\alpha\inv$ are smooth as maps $\HH^{k_\beta}\times\R^{n-k_\beta}\to\HH^{k_\alpha}\times\R^{n-k_\alpha}$ and  $\HH^{k_\alpha}\times\R^{n-k_\alpha}\to\HH^{k_\beta}\times\R^{n-k_\beta}$ respectively.
 	
-	A map $f:\HH^{k_\alpha}\times\R^{n-k_\alpha}\to\HH^{k_\beta}\times\R^{n-k_\beta}$ is \emph{smooth} if it can be extended to a smooth map $\tilde{f}:\RRN\to\RRN$, i.e.\ if it can be extended to a map $\tilde{f}$ that has continuous partial derivatives of all orders.
-	
+
 	If every pair of charts in an atlas is smoothly compatible then that atlas is a \emph{smooth atlas}.
 	Two smooth atlases are equivalent if their union is a smooth atlas.
 \end{defn}
@@ -83,50 +84,39 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 
 It eases the notational burden to assume that our manifolds are always equipped with a smooth structure.
 This assumption allows us to omit writing an atlas when talking about a manifold.
+We also assume that our manifolds are connected.
 
 We classify the points of a manifold by the charts that exist around them.
 
 \begin{defn}
 	Let $M$ be a smooth $n$--manifold, $p\in M$, and $(U,\varphi)$ a chart about $p$.
 	Consider $\varphi(p)=(x_0,\dots,x_{n-1})\in \HH^k\times\R^{n-k}$.
-	We call $p$ a \emph{$j$--corner point}, where $j$ is the number of entries $x_0,\dots,x_{k-1}$ that are 0.
-	By smooth compatibility of our charts, examining the image of $p$ through exactly one chart is sufficient for classification in this way.
+	Then $p$ is classified as a \emph{$j$--corner point}, where $j$ is the number of entries $x_0,\dots,x_{k-1}$ that are 0.
+	By smooth compatibility of our charts, examining the image of $p$ through exactly one chart is sufficient this classification.
 	
-	We call a $0$--corner an \emph{interior point}, and for $j>0$, a $j$--corner is a \emph{boundary point}.	
+	To coincide with the topological notion of interior and boundary, we call a $0$--corner an \emph{interior point}, and a $j$--corner is a \emph{boundary point} for $j>0$.
+	For $j>0$, we use $\pd_j M$ to denote the set of points $\{p\in M:p\textrm{ is a }j\textrm{--corner}\}$, and call $\pd_j M$ the \emph{$j$--boundary} of $M$. 
+\end{defn}	
+
+This classification let's us define the subclass of smooth manifolds with corners that is most useful to us.
+
+\begin{defn}
+	Let $M$ be a smooth $n$--manifold, and $\pd_1(M)$ the 1--boundary of $M$.
+	A \emph{connected face} of $M$ is the closure of a connected component of $\pd_1 M$.
+	We say that $M$ is a \emph{manifold with faces} if, for every $j$--corner point $p\in M$, $p$ belongs to exactly $j$ different connected faces of $M$.
 \end{defn}
+
+There are a few advantages to considering the subclass of manifolds with faces.
+First, if $M$ is a manifold with faces then any connected face or disjoint union of connected faces of $M$ is, itself, a manifold with faces.
+Second, if $M$ is a manifold with faces then so is $M\times \HH$.
 	
-\begin{defn}[Boundary]
-	\label{def:boundary}
-	Let $M$ be a smooth $n$--manifold.
-	A chart $(U,\varphi)$ is called an \emph{interior chart} if $\varphi(U)$ is an open subset of $\RRN$ and is a \emph{boundary chart} if $\varphi(U)$ is an open subset of $\HH\times\R^{n-1}$ with $\varphi(U)$ nontrivially intersecting $\pd \HH\times\R^{n-1}$.
-	Let $p\in M$.
-	We say that $p$ is an \emph{interior point} if it is in the domain of an interior chart, and is a \emph{boundary point} if it is in the domain of a boundary chart $(U,\varphi)$ such that $\varphi(p)$ lies in $\pd\HH\times\R^{n-1}$.
-	The set of all boundary points of $M$ is called the \emph{boundary of $M$} and is denoted by $\pd M$.
-	Similarly, the set of all interior points of $M$ is called the \emph{interior} of $M$ and is denoted by $\inter{M}$.
-	If $M$ is compact with empty boundary then $M$ is \emph{closed} as a manifold.
+\begin{defn}
+	If $M$ is a compact smooth manifold and every point of $M$ is interior, then $M$ is \emph{closed} as a manifold.
 \end{defn}
 
 There is a potential conflict of this definition with the concept of topological closure.
 In the rare case that we want to say that a manifold is topologically closed, we will specify that the type of closure is topological.
 Otherwise, a ``closed manifold'' will refer to a manifold with empty boundary.
-
-\begin{defn}[Manifolds with Corners]
-	Let $M$ be a second-countable Hausdorff topological space.
-	An atlas that permits corner charts is called an \emph{atlas with corners}, and equipping $M$ with a maximal atlas with corners produces a \emph{manifold with corners}.
-	If $(M,\mathcal{A})$ is an atlas with corners such that $\mathcal{A}$ is a smooth atlas on $\inter{M}$, then $M$ is a \emph{smooth manifold with corners}.
-	
-	A corner chart $(U,\varphi)$ is a \emph{full corner chart} if $\varphi(U)$ is an open subset of $\HH^2\times\R^{n-2}$ and $\varphi(U)$ intersects the subspace 
-	\[
-		(\HH^2\times\R^{n-2})_c = \{(x_0,x_1,\dots,x_{n-1})\in\HH\times\HH\times\R^{n-2}:x_0=0,x_1=0\}
-	\]
-	nontrivially.
-	
-	Let $p\in M$.
-	We say that $p$ is a \emph{corner point} if it is in the domain of a full corner chart $(U,\varphi)$ so that $\varphi(p)\in(\HH^2\times\R^{n-2})_c$.
-	The set of all corner points of $M$ is called the \emph{corner(s) of $M$} and is denoted by $M_c$.
-	The interior and boundary of $M$ are defined as in Definition \ref{def:boundary}.
-	Note that $\pd M\cup M_c=M\setminus\inter{M}$.
-\end{defn}
 
 \begin{ex}
 	The $n$--sphere, denoted $S^n$ and defined as a subset of $\R^{n+1}$, is
@@ -151,10 +141,33 @@ Otherwise, a ``closed manifold'' will refer to a manifold with empty boundary.
 \end{ex}
 
 \begin{ex}
-	A regular $n$--gon, $G^n$, in the plane is a 2--manifold with corners $G_c^n=\{z\in\C:z^n=1\}$ that is homeomorphic to $\DD$.
-	Included in this example is the unit square $\I\times \I$.
+	The unit square $\I\times \I=\I^2$ is a 2--manifold with faces that is homeomorphic to $\DD$.
+	The 1--boundary is 
+	\[\pd_1(\I\times\I) = \big((0,1)\times\{0\}\big)\cup\big((0,1)\times\{1\}\big)\cup\big(\{0\}\times(0,1)\big)\cup\big(\{1\}\times(0,1)\big),\]
+	which yields connected faces of
+	\[
+		\begin{array}{cccc}
+			\I\times\{0\}, & \I\times\{1\}, & \{0\}\times\I, \textmd{ and}&\{1\}\times\I.
+		\end{array}
+	\]
+	The 2--corners of $\I\times\I$ are the points $(0,0)$, $(0,1)$, $(1,0)$, and $(1,1)$.
+
+	The product $\I\times\I\times S^1$ is also a manifold with faces.
+	It's faces are exactly the products of the faces of $\I\times\I$ with $S^1$.
+	We also obtain the 2--corners of $\I\times\I\times S^1$ by taking the product of the 2--corners of $\I\times\I$ with $S^1$.
 	
-	Taking the product $G^n\times S^1$ yields a manifold with corners that is homeomorphic to $D^2\times S^1$ and whose corners are exactly $G^n_c\times S^1$.	
+	These results are due to the fact that $S^1$ is a closed manifold.
+	For contrast, consider $\I\times\I\times\I=\I^3$, the unit cube.
+	The 1--corners of $\I^3$ are the products of the 0--corners of $\I\times\I$ with the 1--corners of $\I$ and the products of the 1--corners of $\I\times\I$ with the 0--corners of $\I$.
+	The 2--corners of $\I^3$ are the products of the 0--corners of $\I\times\I$ with the 2--corners of $\I$, the products of the 2--corners of $\I\times\I$ with the 0--corners of $\I$, and the product of the 1--corners of $\I\times\I$ with the 1--corners of $\I$.
+	This pattern continues into the 3--corners of found as the product  of the 2--corners of $\I\times\I$ with the 1--corners of $\I$.
+	
+	In general, if $M$ and $N$ are manifolds with faces then the $k$--corners of $M\times N$ are found as
+	\[
+		\bigcup_{\substack{i+j=k\\i,j\,\geq0}} \pd_i M\times \pd_j N,
+	\]
+	and the faces of $M\times N$ are the products of the 0--corners of $M$ with the faces of $N$ along with the products of the faces of $M$ with the 0--corners of $N$.
 \end{ex}
+
 
 
