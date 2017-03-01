@@ -92,24 +92,24 @@ Our definition of derivation extends to the spaces $\HH^k\times\R^{n-k}$, and Pr
 	
 	Let $i:\HH^n\to\R^n$ be inclusion.
 	We will show that $i_*:T_x\HH^n\to T_x\R^n$ is an isomorphism.
-	In the case where $i_*X=0$, let $f$ be a smooth, real--valued function defined on a neighbourhood of $x$ in $\HH^n$ and let $\tilde{f}$ extend $f$ to a smooth function on an open subset of $\R^n$.
-	From this, we have $\tilde{f}\comp i=f$, so
+	In the case where $i_*A=0$, let $\varphi$ be a smooth, real--valued function defined on a neighbourhood of $x$ in $\HH^n$ and let $\tilde{\varphi}$ extend $\varphi$ to a smooth function on an open subset of $\R^n$.
+	From this, we have $\tilde{\varphi}\comp i=\varphi$, so
 	\[
-		Xf = X(\tilde{f}\comp i) = (i_* X)(\tilde{f})=0.
+		A\varphi = A(\tilde{\varphi}\comp i) = (i_* A)(\tilde{\varphi})=0.
 	\]
-	This means that $i_*X=0$ implies $X=0$, so $i_*$ is injective.
-	For surjectivity, let $Y\in T_x\R^n$ and let $f\in C^\infty(\HH^n)$.
-	Define $X\in T_x \HH^n$ by
+	This means that $i_*A=0$ implies $A=0$, so $i_*$ is injective.
+	For surjectivity, let $B\in T_x\R^n$ and let $\varphi\in C^\infty(\HH^n)$.
+	Define $A\in T_x \HH^n$ by
 	\[
-		Xf = Y\tilde{f},
+		A\varphi = B\tilde{\varphi},
 	\]
-	where $\tilde{f}$ is any extension of $f$.
-	Expressing $Y$ in terms of the basis for $T_x \R^n$ on the right hand side of this expression gives us
+	where $\tilde{\varphi}$ is any extension of $\varphi$.
+	Expressing $B$ in terms of the basis for $T_x \R^n$ on the right hand side of this expression gives us
 	\[
-		Xf = \sum_{i=1}^n Y_i \frac{\pd \tilde{f}}{\pd x_i}(x).
+		A\varphi = \sum_{i=1}^n B_i \frac{\pd \tilde{\varphi}}{\pd x_i}(x).
 	\]
-	The derivatives $\pd\tilde{f}/\pd x_i$ are determined by the derivatives of $f$ in $\HH^n$, and this definition of $X$ is shown to be a derivation by evaluating $X(fg)$ as $Y(\tilde{f}\tilde{g})$.
-	After confirming that $i_*X=Y$ using $f=\tilde{f}\comp i$ as above, we can say that $i_*$ is surjective.
+	The derivatives $\pd\tilde{\varphi}/\pd x_i$ are determined by the derivatives of $\varphi$ in $\HH^n$, and this definition of $A$ is shown to be a derivation by evaluating $A(\varphi\psi)$ as $B(\tilde{\varphi}\tilde{\psi})$.
+	Confirming that $i_*A=B$ uses $\varphi=\tilde{\varphi}\comp i$ as above, and $i_*$ is therefore surjective.
 	We conclude that $i_*$ is an isomorphism.
 \end{proof}
 
@@ -124,8 +124,14 @@ Investigating the tangent spaces in $\HH^k\times\R^{n-k}$ allows us to fully rea
 	\]
 	for any $\varphi,\psi\in C^\infty(M)$.
 	Denote the set of all derivations at $p$ of $C^\infty(M)$ by $T_p M$.
-	As in the case with $\R^n$, $T_p M$ is a vector space.
-	We call $T_p M$ the \emph{tangent space to $M$ at $p$} and call the elements of $T_p M$ \emph{tangent vectors}
+	As in the case with $\R^n$, $T_p M$ is a vector space under
+	\[
+		\begin{array}{rcl}
+			(A+B)\varphi&=&A\varphi+B\varphi,\\
+			(cA)\varphi&=&c(A\varphi).
+		\end{array}
+	\]
+	We call $T_p M$ the \emph{tangent space to $M$ at $p$} and call the elements of $T_p M$ \emph{tangent vectors}.
 \end{defn}
 
 To find a basis, and therefore dimension, of a tangent space we first define how smooth maps act on tangent vectors.
@@ -141,7 +147,7 @@ To find a basis, and therefore dimension, of a tangent space we first define how
 		(f_*A)(\varphi) = A(\varphi\comp f).
 	\]
 	If $\varphi\in C^\infty(X)$ then $\varphi\comp f\in C^\infty(M)$, so $X(\varphi\comp f)$ is, at least, defined.
-	The operator is linear and it is a derivation at $f(p)$ by
+	The operator is clearly linear and it is a derivation at $f(p)$ by
 	\[
 		\begin{array}{rcl}
 			(f_* A)(\varphi\,\psi)&=&A((\varphi\,\psi)\comp f)\\
@@ -154,16 +160,28 @@ To find a basis, and therefore dimension, of a tangent space we first define how
 \end{defn}
 
 \begin{lem}[Lemma 3.5 in \cite{Lee00}]
+	\label{lem:pushprop}
 	Let $f:X\to M$ and $g:M\to N$ be smooth maps.  Let $p\in X$.
 	\begin{enumerate}
-		\item $f_*:T_p X\to$
-		
+		\item $f_*:T_p X\to T_{f(p)}M$ is linear.
+		\item $(g\comp f)_*=g_*\comp f_*:T_p X\to T_{g\comp f(p)}N$
+		\item $(\id_X)_*=\id_{T_p X}:T_p X\to T_p X$
+		\item If $f$ is a diffeomorphism then $f_*:T_p X\to T_{f(p)}M$ is an isomorphism.
 	\end{enumerate}
-	
 \end{lem}
 
+\begin{prop}[Proposition 3.7 in \cite{Lee00}]
+	\label{prop:incl}
+	Let $M$ be a smooth manifold and $U\subset M$ an open submanifold.
+	Let $i:U\to M$ be inclusion.
+	For any $p\in U$, the pushforward $i_*:T_p U\to T_p M$ is an isomorphism.	
+\end{prop}
+
+We know that $T_x \HH^n$ is $n$--dimensional for any $x$ in $\HH^n$.
+Combining Lemma~\ref{lem:pushprop} and Proposition~\ref{prop:incl} with a smooth chart proves the corresponding dimension theorem for tangent spaces to smooth manifolds.
+
 \begin{lem}
-	Let $M$ be a smooth manifold and $p$ a point in $M$.
+	Let $M$ be a smooth $n$--manifold and $p$ a point in $M$.
 	Then $T_p M$ is an $n$--dimensional vector space with basis given by the coordinate vectors
 	\[
 		\restr{\frac{\pd}{\pd x_1}}{p}, \dots,	\restr{\frac{\pd}{\pd x_n}}{p}
@@ -173,91 +191,30 @@ To find a basis, and therefore dimension, of a tangent space we first define how
 
 \begin{proof}
 	Let $(U,\varphi)$ be a chart about $p$.
-	Then the pushforward
-	
+	Then $\varphi$ is a diffeomorphism from $U$ to an open subset $\tilde{U}$ of $\HH^k\times\R^{n-k}$ for some value of $k$. 
+	By Lemma~\ref{lem:pushprop} and Proposition~\ref{prop:incl}, the pushforward $\varphi_*$ is an isomorphism $T_p M\to T_{\varphi(p)}\HH^k\times\R^{n-k}$.
+	By Proposition~\ref{prop:cor310} $T_x\HH^k\times\R^{n-k}$ is an $n$--dimensional vector space with basis the derivations
+	\[
+		\restr{\frac{\pd}{\pd x_1}}{x}, \dots, \restr{\frac{\pd}{\pd x_n}}{x},
+	\]
+	so $T_p M$ is as well.
 \end{proof}
-
-\begin{defn}[Tangent Space]
-	\label{def:tangentspace}
-	Let $M$ be an $n$--manifold and $p$ be a point in $M$.
-	A smooth map $\gamma:(-\varepsilon,\varepsilon)\to M$ with $\gamma(0)=p$ is called a \emph{curve} in $M$ through $p$.
-	This definition is independent of the chart used, as all of our transition maps are smooth.
-	
-	For $p$ in the boundary of $M$, we allow an additional type of curve in our definition.
-	Let $\gamma$ be a smooth map $(-\varepsilon,0\,] \to M$ or $[\,0,\varepsilon) \to M$ each with $\gamma(0)=p$.
-	A map of the first type is called an \emph{outward curve} in $M$ through $p$ and a map of the second type is called an \emph{inward curve} in $M$ through $p$.
-	
-	Let $C_p M$ be the space of smooth curves in $M$ through $p$, $\varphi$ a coordinate system at $p$ with $\varphi(p)=\vec{0}$, and $\gamma_1, \gamma_2$ elements of $C_p M$.
-	We can define an equivalence relation $\sim$ on $C_p(M)$ by saying that $\gamma_1\sim\gamma_2$ if
-	\[
-		\Ddt(\varphi\comp\gamma_1)(0) = \Ddt(\varphi\comp\gamma_2)(0),
-	\]
-	where we apply the appropriate one sided derivative to inward and outward curves.
-	An equivalence class of the curve $\gamma$ in $C_p M$ is a \emph{tangent vector} at $p$ and is written as $\gamma'(0)$.
-	The quotient $C_p M/\sim$ is the \emph{tangent space} at $p$, denoted $T_p M$.
-	A vector $\gamma'(0)$ of $T_p M$ is called an \emph{inward vector} if the equivalence class $[\gamma]$ contains only inward curves, and an \emph{outward vector} if $[\gamma]$ contains only outward curves.
-	
-\end{defn}
-
-\begin{prop}
-	\label{prop:tangentspacevectorspace}
-	Let $M$ be an $n$--manifold and $p$ a point in $M$.
-	Then $T_p M$ is a vector space isomorphic to $\RRN$.
-\end{prop}
-
-\begin{proof}
-	Let $(U,\varphi)$ be a chart containing $p$ with $\varphi(p)=\vec{0}$.
-	It follows from our definition of tangent space that the map defined by
-	\[
-		\begin{array}{crcl}
-			d\varphi : & T_p M & \to & \RRN \\
-			& \gamma'(0) & \mapsto & \Ddt(\varphi\comp \gamma)(0) .
-		\end{array}
-	\]
-	is a bijection, so we also have a well defined inverse $(d\varphi)\inv$.
-	We define operations on $T_p M$ so that $F$ is strengthened to a vector space isomorphism:
-	\[
-		\begin{array}{rcl}
-			\gamma_1'(0)+\gamma_2'(0) & = & (d\varphi)\inv\Big(d\varphi\big(\gamma_1'(0)\big)+d\varphi\big(\gamma_2'(0)\big)\Big), \\
-			t\gamma_1'(0) & = & (d\varphi)\inv\Big(t\:d\varphi\big(\gamma_1'(0\big)\Big).
-		\end{array}
-	\]
-	The vector space structure of $T_p M$ is independent of the choice of chart.
-	To see this, let $L_v$ be the parameterized straight line through $\vec{0}$ whose velocity is $v\in\RRN$.
-	Precisely, $L_v(t)=tv.$
-	For any chart $(U,\varphi)$ with $\varphi(p)=0$, the curve $\varphi\inv\comp L_v$ is a curve through $p$ for which $d\varphi(\varphi\inv\comp L_v)=v$.
-	Because an equivalence class contains such a curve for any applicable chart, the association of a tangent vector with a vector in $\RRN$ does not depend on the chart used.
-\end{proof}
-
-In normal calculus, the derivative is a linearization of a function.
-We use tangent spaces to define the derivative of a smooth map between manifolds because tangent spaces are used as pointwise linearizations of manifolds.
-
-\begin{defn}[Differential]
-	Let $f:X\to M$ be a smooth map between manifolds.
-	Let $p\in X$ and $f(p)=q\in M$.
-	The \emph{differential} of $f$ at $p$ is a linear map defined as
-	\[
-		\begin{array}{crcl}
-			df_p: & T_p X & \to & T_q M\\
-					  & \gamma'(0) & \mapsto & (f\comp\gamma)'(0),
-		\end{array}
-	\]
-	and the element $(f\comp\gamma)'(0)$ of $T_q M$ is the \emph{pushforward} of the tangent vector $\gamma'(0)$.
-\end{defn}
 
 We also classify smooth maps between manifolds.
 This classification helps us define a submanifold and provides some of the groundwork for defining handles in the next section.
 
 \begin{defn}[Embedding]
 	Let $f:X\to M$ be a smooth map between manifolds.
-	The \emph{rank} of $f$ at the point $p\in X$ is the rank of the differential $df$.
-	This is computed as the rank of the Jacobian matrix of $f$ under a coordinate system or as the dimension of $df(T_p X)\subset T_q M$.
+	The \emph{rank} of $f$ at the point $p\in X$ is the rank of the pushforward $f_*$ as a linear map.
+	This is computed as the rank of the Jacobian matrix of $f$ under a coordinate system or as the dimension of $f_*(T_p X)\subset T_{f(p)} M$.
 	If $f$ has rank $k$ for every $p$ in $X$, then $f$ is of \emph{constant rank} and we say $\rk f=k$.
 	
-	If $df$ is injective at $p$, then $f$ is \emph{immersive} at $p$.
+	TODO: rewrite below wrt. Lee00 \cite{Lee00}
+	
+	If $f_*$ is injective at $p$, then $f$ is \emph{immersive} at $p$.
 	If $f$ is an everywhere immersive, then it is an \emph{immersion}.
 	This is equivalent to $\rk{f}=\dimn X$.
-	If $df$ is surjective at $p$, then $f$ is \emph{submersive} at $p$, and $p$ is a \emph{regular point} of $f$.
+	If $f_*$ is surjective at $p$, then $f$ is \emph{submersive} at $p$, and $p$ is a \emph{regular point} of $f$.
 	If $f$ is everywhere submersive, then it is a \emph{submersion}.
 	This is equivalent to $\rk{f}=\dimn M$.
 	If $\rk{df_p}$ is less than maximal, then $p$ is a \emph{critical point} of $f$.
