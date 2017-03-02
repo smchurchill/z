@@ -1,7 +1,10 @@
 \begin{defn}[Smooth Map]
 	\label{def:smoothmap}
-	Let $(X,\{U_\alpha,\varphi_\alpha\})$ and $(M,\{V_\beta,\psi_\beta\})$ be smooth $n$-- and $k$--manifolds respectively and let $f:X\to M$ be a map between them.
+	Let $(X,\{U_\alpha,\varphi_\alpha\})$ and $(M,\{V_\beta,\psi_\beta\})$ be smooth $n$-- and $k$--manifolds, with $\{U_\alpha,\varphi_\alpha\}$ and $\{V_\beta,\psi_\beta\}$ maximal smooth atlases.
+	Let $f:X\to M$ be a map.
 	If, for any $\alpha$ and $\beta$, the composition $\psi_\beta\comp f\comp \varphi_\alpha\inv$ is smooth as a map $$\psi_\beta\comp f\comp \varphi_\alpha\inv:\R^n\supset\varphi_\alpha(U_\alpha)\to\varphi_\beta(V_\beta)\subset\R^k,$$ then we say $f$ is \emph{smooth} as a map between manifolds.
+	The space of smooth maps $X\to M$ is denoted $C^\infty(X,M)$.
+	
 	If $f$ is smooth and a well-defined $f\inv$ exists and is smooth, then $f$ is called a \emph{diffeomorphism} between manifolds.
 	We say that manifolds are \emph{diffeomorphic} if there exists a diffeomorphism between them.
 \end{defn}
@@ -237,7 +240,7 @@ This classification helps us define a submanifold and provides some of the groun
 \begin{theorem}[Regular Value Theorem]
 	Let $f:X\to M$ be a smooth map between manifolds.
 	Let $q\in M$ be a regular value.
-	The preimage $f\inv(q)$ is either empty or a $(\dim X-\dim M)$--submanifold of $X$.
+	The preimage $f\inv(q)$ is a $(\dim X-\dim M)$--submanifold of $X$.
 \end{theorem}
 
 Maps that are ``close enough'' to one another via perturbation tend to be considered equivalent.
@@ -266,7 +269,7 @@ This concept is made precise through homotopy.
 	
 	Let $M$ be a manifold and $X\subset M$ a subspace that is not necessarily a submanifold.
 	A continuous map $F:M\times\I\to M$ such that, for every $m$ in $M$ and $x$ in $X$, $F(m,0)=m$, $F(m,1)\in X$, and $F(x,1)=x$, is called a \emph{deformation retraction}, and the subspace $X$ is called a \emph{deformation retract} of $M$.
-	Because a deformation retraction is a homotopy equivalence between $M$ and $X$, a deformation retraction from $M$ onto $X$ exists if and only if $M$ and $X$ are homotopic.
+	Because a deformation retraction is a homotopy equivalence between $M$ and $X$, a deformation retraction from $M$ onto $X$ exists if and only if $M$ and $X$ are homotopy equivalent.
 \end{defn}
 
 \begin{prop}
@@ -274,10 +277,9 @@ This concept is made precise through homotopy.
 \end{prop}
 
 \begin{defn}
-	Let $f:X\to M$ be a smooth map between manifolds.
-	A property of $f$ is \emph{stable under perturbation} if, for any smooth homotopy $H:X\times \I\to M$ with $H_0=f$, there is an $\varepsilon>0$ such that $H_t$ has that property for any $t<\varepsilon$.
-	
-	A property of $f$ is considered \emph{generic} if $f$ does not have that property but is homotopic to a map for which that property is stable.
+	Let $X$, $M$ be smooth manifolds, let $P$ be a property that an element of $C^\infty(X,M)$ can have, and let $C_P^\infty(X,M)$ be the subset of elements of $C^\infty(X,M)$ that possess property $P$.
+	A property $P$ is \emph{stable under perturbation} if, for any function $f$ possessing $P$ and any smooth homotopy $H:X\times \I\to M$ with $H_0=f$, there is an $\varepsilon>0$ such that $H_t$ possesses $P$ for any $t<\varepsilon$.
+	A property $P$ is considered \emph{generic} if $C_P^\infty(X,M)$ is open and dense in $C^\infty(X,M)$.
 \end{defn}
 
 The property of having no degenerate critical points is our standard model for genericity.
