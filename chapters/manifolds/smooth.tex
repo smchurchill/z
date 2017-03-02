@@ -206,21 +206,19 @@ This classification helps us define a submanifold and provides some of the groun
 \begin{defn}[Embedding]
 	Let $f:X\to M$ be a smooth map between manifolds.
 	The \emph{rank} of $f$ at the point $p\in X$ is the rank of the pushforward $f_*$ as a linear map.
-	This is computed as the rank of the Jacobian matrix of $f$ under a coordinate system or as the dimension of $f_*(T_p X)\subset T_{f(p)} M$.
+	This is computed as the rank of the matrix of partial derivatives of $f$ in any smooth chart or as the dimension of $f_*(T_p X)\subset T_{f(p)} M$.
 	If $f$ has rank $k$ for every $p$ in $X$, then $f$ is of \emph{constant rank} and we say $\rk f=k$.
-	
-	TODO: rewrite below wrt. Lee00 \cite{Lee00}
-	
+		
 	If $f_*$ is injective at $p$, then $f$ is \emph{immersive} at $p$.
 	If $f$ is an everywhere immersive, then it is an \emph{immersion}.
 	This is equivalent to $\rk{f}=\dimn X$.
 	If $f_*$ is surjective at $p$, then $f$ is \emph{submersive} at $p$, and $p$ is a \emph{regular point} of $f$.
 	If $f$ is everywhere submersive, then it is a \emph{submersion}.
 	This is equivalent to $\rk{f}=\dimn M$.
-	If $\rk{df_p}$ is less than maximal, then $p$ is a \emph{critical point} of $f$.
+	If $\rk{f_*}$ is less than maximal, then $p$ is a \emph{critical point} of $f$.
 	In this case, $f(p)=q$ is a \emph{critical value}.
 	The set of critical points of $f$ in $M$ is called the \emph{singular set} of $M$, and is denoted $s_f$.
-	If $p$ is a critical point and $d^{\,2}\!f_p = d(df)_p$ is of less than full rank, then $p$ is a \emph{degenerate critical point}.
+	If $p$ is a critical point and the Hessian of $f$, i.e.\ the matrix of second partial derivatives of $f$ in any smooth chart, is of less than full rank, then $p$ is a \emph{degenerate critical point}.
 	For $q\in M$, the set of points $x$ in $X$ such that $f(x)=q$ is called the \emph{preimage} of $q$ through $f$ or the \emph{fiber} of $f$ over $q$ and is denoted $f\inv(q)$.
 	A point $q \in M$ whose fiber consist entirely of regular points is a \emph{regular value} of $f$.
 	
@@ -233,7 +231,7 @@ This classification helps us define a submanifold and provides some of the groun
 \begin{prop}
 	\label{prop:boundariesaremanifolds}
 	Let $M$ be an $(n+1)$--manifold.
-	The boundary $\pd M$ is an $n$--dimensional boundaryless submanifold of $M$.
+	Any connected face in $\pd_f M$ is an $n$--dimensional submanifold of $M$.
 \end{prop}
 
 \begin{theorem}[Regular Value Theorem]
