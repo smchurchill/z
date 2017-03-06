@@ -277,20 +277,26 @@ This concept is made precise through homotopy.
 \end{prop}
 
 \begin{defn}
-	Let $X$, $M$ be smooth manifolds, let $P$ be a property that an element of $C^\infty(X,M)$ can have, and let $C_P^\infty(X,M)$ be the subset of elements of $C^\infty(X,M)$ that possess property $P$.
-	A property $P$ is \emph{stable under perturbation} if, for any function $f$ possessing $P$ and any smooth homotopy $H:X\times \I\to M$ with $H_0=f$, there is an $\varepsilon>0$ such that $H_t$ possesses $P$ for any $t<\varepsilon$.
-	A property $P$ is considered \emph{generic} if $C_P^\infty(X,M)$ is open and dense in $C^\infty(X,M)$.
+	Let $X$ be a topological space, let $P$ be a property that an element of $X$ can possess, and let $X_P$ be the subset of elements of $X$ that posses property $P$.
+	A property $P$ is \emph{stable under perturbation} if, for any element $x$ in $X_P$, there is an open set $U$ of $X$ such that $x\in U$ and $U\subset X_P$.
+	A property is \emph{generic} if $X_P$ is open and dense in $X$
 \end{defn}
 
-The property of having no degenerate critical points is our standard model for genericity.
+We are mainly concerned with the property of having no degenerate critical points.
 Consider the map $f:\R\to\R$, $f(x)=x^3$.
-The critical point at $x=0$ is degenerate, but it may be perturbed into a pair of nondegenerate critical points or into a map with no critical points, and in either case the result is a map whose critical point classification is stable.
-Because degenerate critical points may be easily ``fixed,'' a generic smooth map is one whose critical points are all nondegenerate.
-Another generic property is transversality.
+The critical point at $x=0$ is degenerate, but the maps $H_{\varepsilon}(x)=x^3+\varepsilon x$ have either a pair of nondegenerate critical points (for $\varepsilon<0$) or no critical points (for $\varepsilon>0$), and in either case $H_{\varepsilon}(x)$ has no degenerate critical points and that property is stable.
+Degenerate critical points are easily ``fixed,'' so our model generic functions are those without degenerate critical points.
+
+\begin{prop}
+	A generic smooth map between manifolds has no degenerate critical points.
+\end{prop}
+
+Intersections between embedded submanifolds also fit in the language of genericity.
+We call this property transversality.
 
 \begin{defn}
 	Let $M$ be an $n$--manifold with submanifolds $X$ and $Y$.
-	We say that $X$ and $Y$ are \emph{transverse} as submanifolds if, at every intersection point, the sum of their tangent spaces is the tangent space of $M$ at that point.
+	We say that $X$ and $Y$ \emph{intersect transversely} as submanifolds if, at every intersection point, the sum of their tangent spaces is the tangent space of $M$ at that point.
 	Symbolically, transversality is denoted by $\pitchfork$ and the condition is stated by $X\pitchfork Y$ if and only if for every point $p\in X\cap Y$, $T_p X+ T_p Y=T_p M$.
 	We may also say that an intersection point is, itself, \emph{transverse}, or that $X$ and $Y$ \emph{intersect transversally at a point}.	
 \end{defn}
@@ -298,42 +304,55 @@ Another generic property is transversality.
 Transversality of a pair of submanifolds $X$, $Y$ is stable under small perturbations of the embeddings $X\into M$ and $Y\into M$.
 A point of $X\cap Y$ that is not a transverse intersection may be perturbed into stable transversality or non-intersection, so we say that intersections of submanifolds with complementary codimension are generically transverse.
 
+\begin{prop}
+	If $X$, $Y$ are generic embedded submanifolds of $M$, then they intersect transversely.
+\end{prop}
+
 The main result of this work is applicable to orientable 3--manifolds, so we will review what is meant by a space being orientable.
 Orientability is the guarantee that when you go for a walk through a manifold you don't return home to find that your right and left sides have switched places.
 
-We first define orientations on artibrary real vector spaces, which allows us to define orientations on $\RRN$.
-Orientations of $\RRN$ let us define orientations of manifolds.
+We first define orientations on real vector spaces.
+Orientations of real vector spaces let us define orientations of manifolds.
 Orientations of manifolds let us define a smooth map as orientation preserving or orientation reversing.
-
 
 \begin{defn}
 	\label{def:orientation}
-	Let $V^n$ be an $n$--dimensional real vector space, $\mathcal{B}(V^n)$ the set of ordered bases for $V^n$, and $\gl{n}{\R}$ the general linear group, i.e.\ the space of $n\times n$ invertible matrices with entries in $\R$.
-	Let $b_1$ and $b_2$ be any two ordered bases from $\mathcal{B}(V^n)$.
-	It is a standard result of linear algebra that there is a unique element $A$ of $\gl{n}{\R}$ that transforms $b_1$ into $b_2$.
-	If the determinant $\det A$ is positive, then $b_1$ and $b_2$ are \emph{positively oriented} with respect to each other.
-	If $\det A$ is negative, then $b_1$ and $b_2$ are \emph{negatively oriented}.
-	We can define an equivalence relation $\sim$ on $\mathcal{B}(V^n)$ by saying that $b_1\sim b_2$ if they are positively oriented.
-	An \emph{orientation} of $V^n$ is a choice of one of the two equivalence classes of $\mathcal{B}(V^n)$.
-	This also allows us to classify linear transformations of $\gl{n}{\R}$ by their action on the quotient space $\mathcal{B}(V^n)/\sim$.
-	If $A\in\gl{n}{\R}$ has positive determinant then it fixes the equivalent classes, and $A$ is \emph{orientation preserving}.
-	If $A$ has negative determinant then it swaps the equivalence classes, and $S$ is \emph{orientation reversing}.
+	Let $V^n$ be an $n$--dimensional real vector space and $\mathcal{B}(V^n)$ the set of ordered bases for $V^n$.
+	Then $\mathcal{B}(V^n)$ has exactly two path--connected components.
+	An \emph{orientation} of $V^n$ is a choice of one of these components.
+	
+	Let $A:V\to W$ be a linear map between $n$--dimensional oriented real vector spaces.
+	If $A$ maps the orientation of $V$ to the orientation of $W$, $A$ is \emph{orientation preserving}.
+	Otherwise, $A$ maps the the orientation of $V$ to the orientation opposite that of $W$, and in this case $A$ is \emph{orientation reversing}.	
 \end{defn}
 
+\begin{ex}
+	Consider $V=\HH^k\times\R^{n-k}$.
+	At $x\in V$, the basis vectors of $T_x V$ are the derivations
+	\[
+		\restr{\frac{\pd}{\pd x_1}}{x}, \dots, \restr{\frac{\pd}{\pd x_n}}{x}.
+	\]
+	This means that there is a canonical orientation of $T_x V$ induced by the orientation of $V$ for every $x\in V$.
+	Now, let $y\in V$ different from $x$.
+	Because all of the tangent spaces of $V$ have the same basis, an orientation of $T_x V$ can be meaningfully compared to an orientation of $T_y V$.
+	In particular, we can determine whether $T_x V$ and $T_y V$ have the same orientation.
+\end{ex}
 
+The fact that orientations of tangent spaces in $\HH^k\times\R^{n-k}$ can be compared leads to our definition of orientation for manifolds.
+We define an orientation of a manifold $M$ to be a continuous orientation of the tangent spaces to $M$.
+We use continuous here to mean that the orientation is constant on any chart.
 
 \begin{defn}
-	Suppose we have fixed an orientation of $\RRN$.
-	Let $M$ be an $n$--manifold.
-	We say that an \emph{orientation} of $M$ is a consistent choice of orientation of the tangent space at every point of $M$.
-	A consistent choice of orientation means that for every chart $(U,f)$ with $f:U\to\RRN$, the vector space isomorphism $df:T_p M\to \RRN$ is orientation preserving at every point in $U$. 
-	If $M$ admits an orientation, then it is \emph{orientable}.
-	If $M$ does not admit an orientation, then it is \emph{non-orientable}.	
+	Let $M$ be an $n$--manifold with maximal smooth atlas $\mathcal{A}$, let $(\varphi, U)\in\mathcal{A}$.
+	A \emph{continuous choice of orientation} on $U$ is an orientation of every tangent space to $U$ such that, for every $p,q\in U$, the linear isomorphisms
+	\begin{eqnarray*}
+		\varphi_*^p:T_p U&\to& T_{\varphi(p)}\varphi(U)\\
+		\varphi_*^q:T_q U&\to& T_{\varphi(q)}\varphi(U)		
+	\end{eqnarray*} take the orientations of $T_p U$, $T_q U$ to the same orientation of $T_{\varphi(p)}\varphi(U)\cong  T_{\varphi(q)}\varphi(U)$.
+	An \emph{orientation} of $M$ is an orientation of every tangent space to $M$ that induces a continuous choice of orientation for every chart of $\mathcal{A}$. 
 \end{defn}
 
-
-
 \begin{defn}
-	Let $f:X\to M$ be a smooth map between oriented $n$--manifolds.
-	If the differential $df_p:T_p X\to T_{f(p)} M$ is orientation preserving (resp. reversing) as a map between vector spaces for every $p$ in $X$, then $f$ is \emph{orientation preserving} (resp. \emph{reversing}) as a map.
+	Let $f:X\to M$ be a smooth map between oriented manifolds.
+	If $f_*$ is orientation preserving (reversing) for every $p\in X$, $f$ is an \emph{orientation preserving (reversing)} smooth map.	
 \end{defn}

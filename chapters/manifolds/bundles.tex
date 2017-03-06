@@ -116,18 +116,19 @@ This naming convention refers to topological closure.
 	Then $X$ has a tubular neighbourhood in $M$.
 \end{theorem}
 
-\begin{prop}[Collar]
+\begin{defn}
 	\label{defthm:collar}
-	Let $M$ be a manifold and $X = \pd M$ its nonempty boundary.
-	There exists an open neighbourhood $U$ of $X$ in $M$ and a diffeomorphism
-	\[
-	f: U \to X\times\HH^1
-	\]
-	where $f(X)=X\times \{0\}$.
-	The pair $(X,f)$ is called a \emph{collar neighbourhood} or \emph{collar} of $X$.	
+	Let $M$ be a manifold and $X$ a codimension 1 submanifold of $M$ with $X\subset \pd M$.
+	A \emph{collar} of $X$ is a map $f:X_U\to X_U\times \HH$ such that $U_X$ is an open neighbourhood of $X$ in $M$, $f(x)=(x,0)$ for every $x\in X$, and $f$ is a diffeomorphism.
+	The set $U_X$ is a \emph{collar neighbourhood} of $X$.
+\end{defn}
+
+\begin{prop}
+	Let $M$ be a manifold and $X$ a codimension 1 submanifold of $M$ with $X$ a connected subset of $\pd M$.
+	If $X$ is an open subset of a face of $M$, then $X$ admits a collar.
 \end{prop}
 
-A collar can be thought of as a half--tubular neighbourhood of the boundary.
+A collar can be thought of as a half--tubular neighbourhood of a submanifold of the boundary.
 Note that the collar is actually a fiber bundle with base $\pd M$, fiber $\HH^1$, and trivial structure.
 This allows us to relate our future results on tubular neighbourhoods to include collars.
 In particular, tubular neighbourhoods are unique up to a fiber-preserving isotopy, which we define now.
