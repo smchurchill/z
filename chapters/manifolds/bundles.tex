@@ -119,8 +119,9 @@ This naming convention refers to topological closure.
 \begin{defn}
 	\label{defthm:collar}
 	Let $M$ be a manifold and $X$ a codimension 1 submanifold of $M$ with $X\subset \pd M$.
-	A \emph{collar} of $X$ is a map $f:X_U\to X_U\times \HH$ such that $U_X$ is an open neighbourhood of $X$ in $M$, $f(x)=(x,0)$ for every $x\in X$, and $f$ is a diffeomorphism.
+	A \emph{collar} of $X$ is a diffeomorphism $f: X\times \HH\to X_U$ such that $U_X$ is an open neighbourhood of $X$ in $M$ and $f(x,0)=(x)$ for every $x\in X$.
 	The set $U_X$ is a \emph{collar neighbourhood} of $X$.
+	As with tubular neighbourhoods, we denote a collar by $(X,f)$.
 \end{defn}
 
 \begin{prop}
@@ -129,7 +130,7 @@ This naming convention refers to topological closure.
 \end{prop}
 
 A collar can be thought of as a half--tubular neighbourhood of a submanifold of the boundary.
-Note that the collar is actually a fiber bundle with base $\pd M$, fiber $\HH^1$, and trivial structure.
+Note that the collar is actually a fiber bundle with base $X\subset \pd M$, fiber $\HH$, and trivial structure.
 This allows us to relate our future results on tubular neighbourhoods to include collars.
 In particular, tubular neighbourhoods are unique up to a fiber-preserving isotopy, which we define now.
 
@@ -184,9 +185,9 @@ With these definitions at hand, we can precisely state the uniqueness result for
 \end{theorem}
 
 \begin{theorem}[Uniqueness of Collars]
-	Let $M$ be a manifold with boundary $X = \pd M$.
+	Let $M$ be a manifold and let $X$ be a codimension 1 submanifold of $M$ with $X\subset \pd M$.
 	Let $(X,f)$ and $(X,g)$ be collars of $X$.
-	Then $f(X\times\HH^1)$ and $g(X\times\HH^1)$ are isotopic through an isotopy $F:(X\times\HH^1)\times\I\to M$ with $F_0=f$, $F_1=g$, and $F_t(x)=x$ for every $x\in X$.	
+	Then $f(X\times\HH)$ and $g(X\times\HH)$ are isotopic through an isotopy $F:(X\times\HH)\times\I\to M$ with $F_0=f$, $F_1=g$, and $F_t(x,0)=x$ for every $x\in X$.	
 \end{theorem}
 
 There is a stronger uniqueness theorem for tubular neighbourhoods that uses a tighter definition.
@@ -228,7 +229,7 @@ When the neighbourhood is closed, isotopy extension can strengthen the uniquenes
 We can perform a similar strengthening on open tubular neighbourhoods as long as we restrict the definition slightly.
 
 \begin{defn}
-	A tubular neighbourhood that is obtained by an arbitrarily small shrinking of another tubular neighbourhood is called \emph{proper}.
+	A \emph{proper tubular neighbourhood} is a tubular neighbourhood that is the interior of a closed tubular neighbourhood.
 \end{defn}
 
 Examples of improper tubular neighbourhoods would be $\RRN$ as a neighbourhood of the origin in $\RRN$, or the strip $\{ (x,y)\in \RR : |x|< \frac{\pi}{2}\}$ as a neighbourhood of the line $x=0$ in $\RR$ whose fibers are the curves $y=\tan x + C$ for each $C\in\R$.
