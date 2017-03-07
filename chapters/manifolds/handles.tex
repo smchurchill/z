@@ -16,13 +16,15 @@ We focus mainly on the definitions and results needed to meaningfully attach 1--
 
 \begin{rmk}
 	\label{rmk:corners}
-	There is more than one way to define handle attachment, and we choose to do so in a way that feels more combinatorial in nature.
+	There is more than one way to define handle attachment, and we choose to do so in a way that feels combinatorial in nature.
 	The main concern with this approach is that the object resulting from handle attachment is a manifold with corners rather than a smooth manifold.
-	There are arguments that the corners can be smoothed away in a canonical way such that a manifold obtained via handle attachment is smooth and unique up to diffeomorphism, but delving into such an argument at this point would be a distraction.
+	There are arguments that the corners can be smoothed away in such a way that a manifold obtained via handle attachment is smooth and unique up to diffeomorphism.
+	Delving into such an argument at this point would be a distraction.	
 	A construction that does not require the smoothing of corners can be found in \cite{Kosi93}, but the machinery makes explicit handle attachment unnecessarily complicated.
 \end{rmk}
 
-There is a common tool in topology called the \emph{attaching map} that we use in this section and the next to build our machinery, so we take this opportunity to lay out the definition and notation.
+There is a common tool in topology called the \emph{attaching map} that we use in this section and the next to build our machinery.
+We take this opportunity to lay out the definition and notation.
 
 \begin{defn}
   Let $X$ and $Y$ be topological spaces, $A\subset X$ a subspace, and $f:A\to Y$ a continuous map.
@@ -30,10 +32,27 @@ There is a common tool in topology called the \emph{attaching map} that we use i
   Denote the quotient space $X\sqcup Y/\sim$ by $X\cup_f Y$.
   We call the map $f$ the \emph{attaching map}.  
   We say that $X$ is \emph{attached} or \emph{glued} to $Y$ over $A$.
-  A space obtained through attachment is often called a \emph{adjunction space} or \emph{attachment space}.
+  A space obtained through attachment is called an \emph{adjunction space} or \emph{attachment space}.
+  
+  Alternatively, we let $A$ be a topological space and let $i_X:A\to X$, $i_Y:A\to Y$ be inclusions.
+  Here, the adjunction is formed by taking $i_X(a)\sim i_Y(a)$ for every $a\in A$ and we denote the adjunction space by $X\cup_A Y$.
 \end{defn}
 
-Throughout this section, we have $n=\lambda+\mu$, $M$ an $n$--manifold with boundary, and $H^\lambda=\D^\lambda\times\D^\mu$.
+Our first results regarding attaching spaces can be found in \cite{JSP}.
+They tell us that manifolds can be attached over faces, the attachment space is a manifold with faces, and the faces of the attachment space are well defined.
+
+\begin{prop}[Theorem 3.3 in~\cite{JSP}]
+	Let $X$ and $X'$ be smooth $n$--manifolds with faces and let $Y$ be a manifold with corners such that there exist inclusion maps $i:Y\into X$ and $i':Y\into X'$ such that $i(Y)$ and $i'(Y)$ are faces of $X$ and $X'$ respectively.
+	If there exist collars of $i(Y)$ and $i'(Y)$ in $X$ and $X'$ then the adjunction $X\cup_Y X'$ is a smooth $n$--manifold with faces.
+	Moreover, the adjunction $X\cup_Y X'$ is unique up to diffeomorphisms that fix $Y$ and coincide with the identity map outside a neighbourhood of $Y$.
+\end{prop}
+
+Throughout this section we have $n=\lambda+\mu$ and $M$ an $n$--manifold with faces.
+
+
+
+
+, and $H^\lambda=\D^\lambda\times\D^\mu$.
 Attaching an $n$--dimensional $\lambda$--handle to $M$ is the process of joining $M$ to $H^\lambda$ along an embedding of $\pd\D^\lambda\times\D^\mu$ in $\pd M$. 
 
 \begin{defn}[Handle]
