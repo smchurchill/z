@@ -2,22 +2,22 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {algocf}{\numberline {1}{\ignorespaces Generating a 2--complex from a linear tetrahedral projection\relax }}{65}{algocf.1}
-\contentsline {algocf}{\numberline {2}{\ignorespaces Generating a 2--complex from a crossing distinct projection\relax }}{66}{algocf.2}
-\contentsline {algocf}{\numberline {3}{\ignorespaces Generating a 2--complex from a truncated linear tetrahedral projection\relax }}{68}{algocf.3}
-\contentsline {algocf}{\numberline {4}{\ignorespaces Building a collection of circles that map over a region\relax }}{70}{algocf.4}
-\contentsline {algocf}{\numberline {5}{\ignorespaces Wedge number computations\relax }}{73}{algocf.5}
-\contentsline {algocf}{\numberline {6}{\ignorespaces Wedge number reduction\relax }}{75}{algocf.6}
-\contentsline {algocf}{\numberline {7}{\ignorespaces Building the piecewise--linear analogue to a generic proper smooth map\relax }}{77}{algocf.7}
-\contentsline {algocf}{\numberline {8}{\ignorespaces Finding vertices for the Stein complex\relax }}{79}{algocf.8}
-\contentsline {algocf}{\numberline {9}{\ignorespaces Finding edges for the Stein complex\relax }}{80}{algocf.9}
-\contentsline {algocf}{\numberline {10}{\ignorespaces Finding 2--cells for the Stein complex\relax }}{80}{algocf.10}
-\contentsline {algocf}{\numberline {11}{\ignorespaces Building the Stein complex\relax }}{81}{algocf.11}
-\contentsline {algocf}{\numberline {12}{\ignorespaces Thickening a triangulation\relax }}{83}{algocf.12}
-\contentsline {algocf}{\numberline {13}{\ignorespaces Building a standard $n$--prism\relax }}{84}{algocf.13}
-\contentsline {algocf}{\numberline {14}{\ignorespaces Building the 4--handlebody of the 1--skeleton of the Stein complex\relax }}{85}{algocf.14}
-\contentsline {algocf}{\numberline {15}{\ignorespaces Finding attaching regions and 0--framing strips for 2--handle attachment\relax }}{86}{algocf.15}
-\contentsline {algocf}{\numberline {16}{\ignorespaces Computation of Framing Coefficients\relax }}{91}{algocf.16}
-\contentsline {algocf}{\numberline {17}{\ignorespaces Building a 2--handle\relax }}{92}{algocf.17}
-\contentsline {algocf}{\numberline {18}{\ignorespaces Building a 4--manifold\relax }}{93}{algocf.18}
+\contentsline {algocf}{\numberline {1}{\ignorespaces Generating a 2--complex from a linear tetrahedral projection\relax }}{66}{algocf.1}
+\contentsline {algocf}{\numberline {2}{\ignorespaces Generating a 2--complex from a crossing distinct projection\relax }}{67}{algocf.2}
+\contentsline {algocf}{\numberline {3}{\ignorespaces Generating a 2--complex from a truncated linear tetrahedral projection\relax }}{69}{algocf.3}
+\contentsline {algocf}{\numberline {4}{\ignorespaces Building a collection of circles that map over a region\relax }}{71}{algocf.4}
+\contentsline {algocf}{\numberline {5}{\ignorespaces Wedge number computations\relax }}{74}{algocf.5}
+\contentsline {algocf}{\numberline {6}{\ignorespaces Wedge number reduction\relax }}{76}{algocf.6}
+\contentsline {algocf}{\numberline {7}{\ignorespaces Building the piecewise--linear analogue to a generic proper smooth map\relax }}{78}{algocf.7}
+\contentsline {algocf}{\numberline {8}{\ignorespaces Finding vertices for the Stein complex\relax }}{80}{algocf.8}
+\contentsline {algocf}{\numberline {9}{\ignorespaces Finding edges for the Stein complex\relax }}{81}{algocf.9}
+\contentsline {algocf}{\numberline {10}{\ignorespaces Finding 2--cells for the Stein complex\relax }}{81}{algocf.10}
+\contentsline {algocf}{\numberline {11}{\ignorespaces Building the Stein complex\relax }}{82}{algocf.11}
+\contentsline {algocf}{\numberline {12}{\ignorespaces Thickening a triangulation\relax }}{84}{algocf.12}
+\contentsline {algocf}{\numberline {13}{\ignorespaces Building a standard $n$--prism\relax }}{85}{algocf.13}
+\contentsline {algocf}{\numberline {14}{\ignorespaces Building the 4--handlebody of the 1--skeleton of the Stein complex\relax }}{86}{algocf.14}
+\contentsline {algocf}{\numberline {15}{\ignorespaces Finding attaching regions and 0--framing strips for 2--handle attachment\relax }}{87}{algocf.15}
+\contentsline {algocf}{\numberline {16}{\ignorespaces Computation of Framing Coefficients\relax }}{92}{algocf.16}
+\contentsline {algocf}{\numberline {17}{\ignorespaces Building a 2--handle\relax }}{93}{algocf.17}
+\contentsline {algocf}{\numberline {18}{\ignorespaces Building a 4--manifold\relax }}{94}{algocf.18}
 \addvspace {10\p@ }

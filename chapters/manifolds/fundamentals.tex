@@ -69,7 +69,6 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 	
 	The homeomorphisms $\varphi_\alpha\comp \varphi_\beta\inv:\varphi_\beta(U_\alpha\cap U_\beta)\to \varphi_\alpha(U_\alpha\cap U_\beta)$ are \emph{transition maps} of $\mathcal{A}$.
 	We say that $(U_\alpha,\varphi_\alpha)$ and $(U_\beta,\varphi_\beta)$ are \emph{smoothly compatible} if either $U_\alpha\cap U_\beta$ is empty or the transition maps $\varphi_\alpha\comp \varphi_\beta\inv$ and $\varphi_\beta\comp \varphi_\alpha\inv$ are smooth as maps $\HH^{k_\beta}\times\R^{n-k_\beta}\to\HH^{k_\alpha}\times\R^{n-k_\alpha}$ and  $\HH^{k_\alpha}\times\R^{n-k_\alpha}\to\HH^{k_\beta}\times\R^{n-k_\beta}$ respectively.
-	
 
 	If every pair of charts in an atlas is smoothly compatible then that atlas is a \emph{smooth atlas}.
 	Two smooth atlases are equivalent if their union is a smooth atlas.
@@ -134,7 +133,7 @@ Otherwise, a ``closed manifold'' will refer to a manifold with empty boundary.
 	\]
 	The space $\D^{n+1}$, the topological closure of $B^{n+1}$, is the closed $(n+1)$--disc.
 	Both $B^{n+1}$ and $\D^{n+1}$ are $(n+1)$--manifolds.
-	The disc $\D^{n+1}$ is a manifold whose boundary the $n$--sphere, a closed $n$--manifold.
+	The disc $\D^{n+1}$ is a manifold whose boundary is the $n$--sphere, a closed $n$--manifold.
 	Note that the closed 1--disc is the unit interval, which we denote by $\I=[\,0,1\,]$.
 	
 	It is often more efficient, in terms of notation, to consider $S^1$, $\D^2$, $S^3$, and $D^4$ as submanifolds of the complex plane $\C$ or $\C^2$.
@@ -171,6 +170,33 @@ Otherwise, a ``closed manifold'' will refer to a manifold with empty boundary.
 	\]
 	and the set of faces of $X\times M$ is the union $(\pd_0 X\times\pd_f M)\cup(\pd_f X\times\pd_0 M)$.
 \end{ex}
+
+At times it is necessary to form a \emph{partition of unity} on a manifold.
+To do this, we first require a suitable atlas.
+
+\begin{defn}
+	Let $M$ be a manifold and $\mathcal{A}=\{(U_\alpha,\varphi_\alpha)\}$ an atlas on $M$.
+	Then $\mathcal{A}$ is \emph{adequate} if it is locally finite, the image of $U_\alpha$ through $\varphi_\alpha$ is the whole of $H^k\times\R^{n-k}$ for the appropriate value of $k$, and the union 
+	\[
+		\bigcup_\alpha \varphi_\alpha\inv(B^n)
+	\]
+	covers $M$.
+\end{defn}
+
+\begin{theorem}[Theorem 2.2 in \cite{Kosi93}]
+	Let $\mathcal{V}=\{V_\beta\}$ be a covering of the manifold $M$.
+	Then there is an adequate atlas $\{U_\alpha,\varphi_\alpha\}$ such that $\{U_\alpha\}$ is a refinement of $\mathcal{V}$
+\end{theorem}
+
+\begin{defn}
+	Let $M$ be an $n$--manifold, let $\{U_\alpha,\varphi_\alpha\}$ be an adequate atlas on $M$, and let $\lambda$ be a smooth nonnegative function on $\R^n$ that takes the value of $1$ on the disc of radius $1$ and is zero outside of the disc of radius $2$.
+	Define the smooth functions $\lambda_\alpha$ on $M$ by $\lambda_\alpha=\lambda\comp\varphi_\alpha$ on $U_\alpha$ and $\lambda_\alpha=0$ outside of $U_\alpha$.
+	Then $\{\lambda_\alpha\}$ is \emph{the family of bump functions} associated to $\{U_\alpha\}$, and the family $\{\mu_\alpha\}$ of functions defined by
+	\[
+		\mu_\alpha(p)=\frac{\lambda_\alpha(p)}{\sum_\alpha\lambda_\alpha(p)}
+	\]
+	is the \emph{partition of unity} associated to $\{U_\alpha,\varphi_\alpha\}$.
+\end{defn}
 
 We conclude this section by abbreviating our terminology.
 An \emph{$n$--manifold} refers to a \emph{smooth $n$--dimensional manifold with faces}.
