@@ -132,13 +132,27 @@ This naming convention refers to topological closure.
 \end{prop}
 
 Collars are a standard object in the study of manifolds without corners, and Proposition~\ref{prop:collar1} is the standard result.
-The proof found in \cite{Kosi93} relies on the existence of solutions to inward pointing differential vector fields defined on $\pd M$, and the vector field defined in \cite{Kosi93} can be adapted to manifolds with corners.
+The proof found in Section I.7 of \cite{Kosi93} relies on the existence of solutions to inward pointing vector fields defined on $\pd M$, and the vector field defined in \cite{Kosi93} can be adapted to manifolds with faces.
+
+\begin{defn}
+	Let $M$ be a manifold, let $p\in \pd M$, and let $v\in T_p M$.
+	Suppose $\varphi:U\to\HH^k\times\R^{n-k}$ is a chart about $p$ such that $\varphi(p)={\bf 0}$.
+	Then $$v=\sum_{i}v_i\restr{\frac{\pd}{\pd x_i}}{p}$$ is \emph{inward pointing} if $v_i>0$ for $i=0,\dots,k-1$, and \emph{outward pointing} if $v_i\leq 0$ for any $i=0,\dots,k-1$.
+\end{defn}
 
 \begin{prop}
-	Let $M$ be a manifold with faces for which $\{(U,\varphi)\}$ is an atlas
-	There is a vector field $s$ on $M$
-	
+	\label{prop:inward}
+	If $M$ is a manifold with faces then there is a vector field $s$ on $M$ that is inward pointing on $\pd M$.	
 \end{prop}
+
+\begin{proof}
+	Let $\{(U_\alpha,\varphi)\alpha)\}$ be an \emph{adequate} atlas (Definition~\ref{def:adequate}) for $M$ and let $\{\mu_\alpha\}$ be an associated partition of unity.
+	The field $s$ defined by
+	\[
+		s(p) = \sum_\alpha \Bigl(\mu_\alpha\sum_{i=1}^n \restr{\frac{\pd}{\pd x_i}}{p}\Bigr)
+	\]
+	is inward pointing on $\pd M$.
+\end{proof}
 
 \begin{prop}
 	\label{prop:collar2}
@@ -147,9 +161,7 @@ The proof found in \cite{Kosi93} relies on the existence of solutions to inward 
 \end{prop}
 
 \begin{proof}
-	The proof is nearly identical to that found in \cite{Kosi93} except with a differnt inward pointing differential vector field.
-	
-	
+	Replacing I.7.1 of \cite{Kosi93} with Proposition~\ref{prop:inward}, the proof in Section I.7 of \cite{Kosi93} applies to manifolds with faces.
 \end{proof}
 
 \begin{prop}
@@ -157,8 +169,8 @@ The proof found in \cite{Kosi93} relies on the existence of solutions to inward 
 	If $X$ is an open subset of a face of $M$, then $X$ admits a collar.
 \end{prop}
 
-A collar can be thought of as a half--tubular neighbourhood of a submanifold of the boundary.
-Note that the collar is actually a fiber bundle with base $X\subset \pd M$, fiber $\HH$, and trivial structure.
+A collar can be thought of as a half--tubular neighbourhood of the boundary.
+Note that the collar is actually a fiber bundle with base $\pd M$, fiber $\HH$, and trivial structure.
 This allows us to relate our future results on tubular neighbourhoods to include collars.
 In particular, tubular neighbourhoods are unique up to a fiber-preserving isotopy, which we define now.
 
