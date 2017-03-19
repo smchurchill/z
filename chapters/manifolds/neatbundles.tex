@@ -1,0 +1,39 @@
+
+The existence of tubular neighbourhoods was guaranteed only for closed submanifolds of closed manifolds.
+We can extend our results to manifolds with boundary as long as the boundaries satisfy some niceness conditions.
+
+\begin{defn}[Neat Submanifold]
+	We use here $\ttilde{\HH}^m$ to denote the subspace of $\HH\times\R^{n-1}$ for which the last $n-m$ coordinates are $0$. 
+	Let $X\subset M$ be a $m$--submanifold of the $n$--manifold $M$ satisfying the following conditions:
+	\begin{enumerate}
+		\item $X$ is a topologically closed subset of $M$,
+		\item $X\cap \pd M=\pd X$, and
+		\item for every $x\in\pd X$, there is a chart $(U,f)$ of $M$ with $f:U\to\HH\times\R^{n-1}$ such that $f\inv(\tilde{\HH}^m)=U\cap X$.
+	\end{enumerate}
+	Then $X$ is a \emph{neat} submanifold of $M$.
+	The last condition for neatness essentially guarantees that $\pd X$ meets $\pd M$ the same way that $\tilde{\HH}^m$ meets $\HH\times\R^{n-1}$.
+\end{defn}
+
+\begin{defn}[Neat Tubular Neighbourhood]
+	Let $X$ be a neat submanifold of $M$, and $\nu X$ a tubular neighbourhood of $X$.
+	We say that $\nu X$ is a \emph{neat tubular neighbourhood} if $\nu X\cap \pd M$ is a tubular neighbourhood of $\pd X$ in $\pd M$.	
+\end{defn}
+
+\begin{theorem}[Theorem 3.4.2 of \cite{Kosi93}]
+	If $X$ is a neat submanifold of $M$, then it has a neat tubular neighbourhood.
+\end{theorem}
+
+For $X$ a closed submanifold of $\pd M$, our definitions guarantee a tubular neighbourhood of $X$ in $\pd M$, but not of $X$ in $M$.
+Letting $X=\pd M$, notice that $\pd M$ has a trivial normal bundle $\pd M\times \R$ in $M$, and a collar that is an embedding of $\pd M\times\HH^1$ in $M$.
+It is clear that an appropriate analogue of the tubular neighbourhood to submanifolds of the boundary would be a generalization of the collar to a half-tubular neighbourhood.
+
+\begin{defn}
+	\label{def:halfneighbourhood}
+	Let $W$ be a manifold with boundary and let $X$ be a submanifold of $M=\pd W$.
+	The normal bundle of $X$ in $W$ is the fiber-wise direct sum of $N_M X$ with $\restr{(N_W M)}{X}$.
+	Because $N_W M$ is a trivial bundle, the normal bundle of $X$ in $W$ is just $N_M X\times \R$.
+	We can only embed one half of $N_M X\times \R$ in $W$, so we extend $f$ to an embedding $F:N_M X\times \HH^1\to W$ such that $F$ restricted to $z(N_M X)\times\HH^1$ coincides with a collar of $M$ on $X$.
+\end{defn}
+
+Our theorems regarding the existence and uniqueness of tubular neighbourhoods extend with the definition.
+Proper tubular neighbourhoods are defined in exactly the same way, and uniqueness up to isotopy is now uniqueness up to composition of isotopies of $\nu_M X$ and isotopies of the collar neighbourhood.
