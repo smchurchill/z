@@ -118,8 +118,8 @@ This naming convention refers to topological closure.
 
 \begin{defn}
 	\label{defthm:collar}
-	Let $M$ be a manifold and $X$ a codimension 1 submanifold of $M$ with $X\subset \pd M$.
-	A \emph{collar} of $X$ is a diffeomorphism $f: X\times \HH\to X_U$ such that $U_X$ is an open neighbourhood of $X$ in $M$ and $f(x,0)=(x)$ for every $x\in X$.
+	Let $M$ be an $n$--manifold and $X\subset \pd M$.
+	A \emph{collar} of $X$ is a diffeomorphism $f: X\times \HH\to X_U$ such that $U_X$ is an open neighbourhood of $X$ in $M$, $f(x,0)=(x)$ for every $x\in X$, and $U_X$ is an $n$--submanifold of $M$.
 	The set $U_X$ is a \emph{collar neighbourhood} of $X$.
 	As with tubular neighbourhoods, we denote a collar by $(X,f)$.
 	If a collar exists for $X$, we say that \emph{X admits a collar}.
@@ -165,6 +165,7 @@ The proof found in Section I.7 of \cite{Kosi93} relies on the existence of solut
 \end{proof}
 
 \begin{prop}[Lemma 2.1.6 of \cite{Lau00}]
+	\label{prop:facecollar}
 	If $M$ is a manifold with faces and $F_1,\dots,F_k$ are faces of $M$ such that $F_i\cap F_j$ is a face of $F_i$ and $F_j$ for $i\neq j$, then $\bigcup_i F_i$ admits a collar.
 \end{prop}
 
