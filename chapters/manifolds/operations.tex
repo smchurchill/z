@@ -83,48 +83,82 @@ They tell us that manifolds can be attached over faces, the attachment space is 
 
 \begin{proof}
 	To prove this proposition we put a smooth structure on $X\cup_F X'$ so that if $x\in F$ is a $j$--corner then $\iota(x)\sim \iota'(F)\in X\cup_F X'$ is a $j$--corner as well.
-	We first decompose $X$ into the triad $X=(X;G,M)$ where
+	We first decompose $X$ into the triad $X=(X;K,M)$ where
 	\begin{enumerate}
-		\item $G=\iota(F)$,
-		\item $G\cup M=\pd X$, and
-		\item $G\cap M=\pd G = \pd M =\iota(\pd F)$.
+		\item $K=\iota(F)$,
+		\item $M\cup K=\pd X$, and
+		\item $M\cap K=\pd K = \pd M =\iota(\pd F)$.
 	\end{enumerate}
-	We do the same, respectively, to $X'=(X';G',M')$.
+	We do the same, respectively, to $X'=(X';K',M')$.
 	
-	Let $h:G\times\HH\to X$ and $h':G'\times\HH \to X'$ be collars of $G$ and $G'$ in $X$ and $X'$.
+	Let $\psi:K\times\HH\to X$ and $\psi':K'\times\HH \to X'$ be collars of $K$ and $K'$ in $X$ and $X'$.
 	Also take
 	\[
 		\begin{array}{lrcl}
-			g_G:&
+			\varphi_K:&
 			\pd F\times\HH&
 			\to&
-			G\\
-			g_M:&
+			K\\
+			\varphi_M:&
 			\pd F\times\HH&
 			\to&
 			M\\
-			g_G':&
+			\varphi_K':&
 			\pd F\times\HH&
 			\to&
-			G'\\
-			g_M':&
+			K'\\
+			\varphi_M':&
 			\pd F\times\HH&
 			\to&
 			M'\\		
 		\end{array}
 	\]
-	to be collars of $\pd G$ and $\pd G'$ in their respective codomains, ensuring that 
+	to be collars of $\pd K$ and $\pd K'$ in their respective codomains, ensuring that 
 	\[
-		\iota\inv\comp g_G = (\iota')\inv\comp g_G'.
+		\iota\inv\comp \varphi_K = (\iota')\inv\comp \varphi_K'.
 	\]
-
-
-	
+	Defining
+	\[
+		\begin{array}{rcl}
+			X\setminus K	&	\into	& 	X\cup_F X', \textrm{ and}	\\
+			X'\setminus K'	&	\into	&	X\cup_F X'		
+		\end{array}
+	\]
+	by inclusion, and
+	\[
+		\begin{array}{crcl}
+			\Psi:&(F\setminus\pd F)\times\R&\into&X\cup_F X'\\
+			\Phi:&(\pd F)\times\R\times\HH&\into&X\cup_F X'		
+		\end{array}
+	\]
+	by
+	\[
+		\Psi(x,t)=
+		\begin{cases}
+			\psi(\iota(x),t),		& 	\mbox{if } t\geq 0 \\
+			\psi'(\iota'(x),-t),	&	\mbox{if } t\leq 0
+		\end{cases}	
+	\]
+	and
+	\[
+		\Phi(x,r\cos\theta,r\sin\theta)=
+		\begin{cases}
+			\psi(\varphi_M(x,r\cos(2\theta)),r\sin(2\theta))
+				&	\mbox{if } \theta\in[\,0,\pi/4\,]		\\
+			\psi(\varphi_K(x,-r\cos(2\theta)),r\sin(2\theta))
+				&	\mbox{if } \theta\in[\,\pi/4,2\pi/4\,]	\\
+			\psi'(\varphi'_K(x,-r\cos(2\theta)),-r\sin(2\theta))				
+				&	\mbox{if } \theta\in[\,2\pi/4,3\pi/4\,]	\\
+			\psi'(\varphi'_M(x,r\cos(2\theta)),-r\sin(2\theta))				
+				&	\mbox{if } \theta\in[\,3\pi/4,4\pi/4\,]
+		\end{cases}	
+	\]
+	gives $X\cup_F X'$ a smooth structure induced by the open cover
+	\[
+		X\cup_F X'=(X\setminus K)\cup(X'\setminus K')\cup\Psi((F\setminus\pd F)\times\R)\cup	\Phi((\pd F)\times\R\times\HH).
+	\]
+	In this open cover, the $j$--corners of $\iota(F)=\iota'(F)$, $j\geq 1$, appear only as $j$--corners of $\Phi((\pd F)\times\R\times\HH))$, hence they are $j$--corners in $X\cup_F X'$, thus the proposition is proved.
 \end{proof}
-
-
-[Theorem 3.3 in~\cite{JSP}]
-
 
 
 
