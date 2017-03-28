@@ -76,7 +76,6 @@ They tell us that manifolds can be attached over faces, the attachment space is 
 	Let $X$ and $X'$ be smooth $n$--manifolds with faces, let $F$ be a manifold with faces, and let $\iota:F\to X$ and $\iota':F\to X'$ be inclusion maps such that $\iota(F)$ and $\iota'(F)$ are faces of $X$ and $X'$ respectively.
 	Then the adjunction $X\cup_F X'$ is a smooth $n$--manifold with faces.
 	Moreover, the boundary of $X\cup_F X'$ is decomposed by $$\pd_j( X \cup_F X') = (\pd_j X\setminus \iota(F))\cup(\pd_j X'\setminus \iota'(F))\cup(\pd_j F).$$
-
 \end{prop}
 
 \{ASIDE FOR EDITING:  The following proof is based on some informal notes by Jim Davis found \href{http://www.indiana.edu/~jfdavis/notes/m623/smooth_structures_and_handles.pdf}{here}. Is this even citable?\}
@@ -157,22 +156,18 @@ They tell us that manifolds can be attached over faces, the attachment space is 
 	\[
 		X\cup_F X'=(X\setminus K)\cup(X'\setminus K')\cup\Psi((F\setminus\pd F)\times\R)\cup	\Phi((\pd F)\times\R\times\HH).
 	\]
-	In this open cover, the $j$--corners of $\iota(F)=\iota'(F)$, $j\geq 1$, appear only as $j$--corners of $\Phi((\pd F)\times\R\times\HH))$, hence they are $j$--corners in $X\cup_F X'$, thus the proposition is proved.
+	In this open cover, the $j$--corners of $\iota(F)=\iota'(F)$, $j\geq 1$, appear only as $j$--corners of $\Phi((\pd F)\times\R\times\HH)$, hence they are $j$--corners in $X\cup_F X'$, thus the proposition is proved.
 \end{proof}
 
-
-
-
-
 \begin{cor}
-	Let $X$, $X'$ be manifolds with faces and let $F_1,\dots, F_k$ be faces of $X$ and let $\varphi:\bigcup_i F_i\to \pd X'$ be an embedding such that $\varphi(F_i)$ is a face of $X'$ for each $i$.
-	, let $\iota:\bigcup_i F_i\to \pd X$ and $\iota':\bigcup_i F_i\to \pd X'$ be inclusion maps such that 
-	\begin{enumerate}
-		\item $\iota(F_i)$ and $\iota'(F_i)$ are faces of $X$ and $X'$ for each $i$,
-		\item $\iota(F_i)\cap \iota(F_j)$ is a face of $\iota(F_i)$ and $\iota(F_j)$ for $i\neq j$, and
-		\item $\iota'(F_i)\cap\iota'(F_j)$ is a face of $\iota'(F_i)$ and $\iota'(F_j)$, for $i\neq j$.
-	\end{enumerate}
-	Then $X \cup_F X'$, the adjunction of $X$ and $X'$ over $F=\bigcup_i F_i$, is a smooth manifold with faces.
+	Let $X$, $X'$ be manifolds with faces and let $F_1,\dots, F_k$ be faces of $X$ such that $F_i\cap F_j$ is a face of $F_i$ and $F_j$ for every $i\neq j$.
+	Denote $\cup_i F_i$ by ${\bf F}$ and let $\varphi:{\bf F}\to \pd X'$ be an embedding such that $\varphi(F_i)$ is a face of $X'$ for each $i$.
+	Then the adjunction $X \cup_{\bf F} X'$ is a smooth manifold with faces.
+	
+	The 1--boundary of $X\cup_{\bf F} X'$ consists of the union
+	$$\pd_1(X\cup_{\bf F}X')=(\pd_1 X\setminus {\bf F})\cup(\pd_1 X'\setminus \varphi({\bf F}))\cup(\pd_1 {\bf F})\cup(\pd^*{\bf F})$$
+	where we define $\pd^*{\bf F}$ to consist of all $j$--corners of 
+	$$\pd_j( X \cup_F X') = (\pd_j X\setminus \iota(F))\cup(\pd_j X'\setminus \iota'(F))\cup(\pd_j F).$$
 
 	We find the $j$--boundaries of $X\cup_F X'$ by classifying the boundary points of the faces of $F$.
 \end{cor}
