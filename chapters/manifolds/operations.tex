@@ -73,9 +73,11 @@ Our results regarding attaching manifolds over faces are found in \cite{JSP}.
 They tell us that manifolds can be attached over faces, the attachment space is a manifold with faces, and the faces of the attachment space are well defined.
 
 \begin{prop}
-	Let $X$ and $X'$ be smooth $n$--manifolds with faces, let $F$ be a manifold with faces, and let $\iota:F\to X$ and $\iota':F\to X'$ be inclusion maps such that $\iota(F)$ and $\iota'(F)$ are faces of $X$ and $X'$ respectively.
+	Let $X$ and $X'$ be smooth $n$--manifolds with faces, let $F$ be a manifold with faces, and let $\iota:F\to X$ and $\iota':F\to X'$ be inclusion maps such that $\iota(F)$ is a face of $X$ and $\iota'(F)$ is a face of $X'$.
 	Then the adjunction $X\cup_F X'$ is a smooth $n$--manifold with faces.
-	Moreover, the boundary of $X\cup_F X'$ is decomposed by $$\pd_j( X \cup_F X') = (\pd_j X\setminus \iota(F))\cup(\pd_j X'\setminus \iota'(F))\cup(\pd_j F).$$
+	
+	For each $j$, the $j$--boundary of $X\cup_F X'$ is decomposed into the $j$--boundary of $X$ minus the image of $F$ in $X$, the $j$--boundary of $X'$ minus the image of $F$ in $X'$, and the $j$--boundary of $F$ seen as a subset of $X\cup_F X'$.
+	Symbolically, this is $$\pd_j( X \cup_F X') = (\pd_j X\setminus \iota(F))\cup(\pd_j X'\setminus \iota'(F))\cup(\pd_j F).$$
 \end{prop}
 
 \{ASIDE FOR EDITING:  The following proof is based on some informal notes by Jim Davis found \href{http://www.indiana.edu/~jfdavis/notes/m623/smooth_structures_and_handles.pdf}{here}. Is this even citable?\}
