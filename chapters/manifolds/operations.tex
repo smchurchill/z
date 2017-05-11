@@ -163,70 +163,22 @@ They tell us that manifolds can be attached over faces, the attachment space is 
 
 \begin{cor}
 	Let $X$, $X'$ be manifolds with faces and let $F_1,\dots, F_k$ be faces of $X$ such that $F_i\cap F_j$ is a face of $F_i$ and $F_j$ for every $i\neq j$.
-	Denote $\cup_i F_i$ by ${\bf F}$ and let $\varphi:{\bf F}\to \pd X'$ be an embedding such that $\varphi(F_i)$ is a face of $X'$ for each $i$.
+	Let ${\bf F}=\cup_i F_i$ and let $\varphi:{\bf F}\to \pd X'$ be an embedding such that $\varphi(F_i)$ is a face of $X'$ for each $i$.
 	Then the adjunction $X \cup_{\bf F} X'$ is a smooth manifold with faces.
+		
+	If $p$ is a $j$--corner of $X$, $j\geq 0$, and $k$ is the number of faces in ${\bf F}$ that contain $p$, then $p$ is a $(j-k)$--corner of $X\cup_{\bf F} X'$.
+	Similarly, if $p$ is a $j$--corner of $X'$, $j\geq 0$, and $k$ is the number of faces in $\varphi({\bf F})$ that contain $p$, then $p$ is a $(j-k)$--corner of $X\cup_{\bf F} X'$.
 	
-	The 1--boundary of $X\cup_{\bf F} X'$ consists of the union
-	$$\pd_1(X\cup_{\bf F}X')=(\pd_1 X\setminus {\bf F})\cup(\pd_1 X'\setminus \varphi({\bf F}))\cup(\pd_1 {\bf F})\cup(\pd^*{\bf F})$$
-	where we define $\pd^*{\bf F}$ to consist of all $j$--corners of 
-	$$\pd_j( X \cup_F X') = (\pd_j X\setminus \iota(F))\cup(\pd_j X'\setminus \iota'(F))\cup(\pd_j F).$$
-
-	We find the $j$--boundaries of $X\cup_F X'$ by classifying the boundary points of the faces of $F$.
 \end{cor}
 
-The space $M\cup_\varphi H^\lambda$ is a 
-
-
-, and the corners of $M\cup_\varphi H^\lambda$ are the set $\varphi(\pd\D^\lambda\times\pd\D^\mu)$.
-
-
-\begin{defn}[Surgery]
-	\label{def:surgery}
-	We can recover $\pd (M\cup_\varphi H^\lambda)$ from $\pd M$ by deleting the image $\varphi(\pd\D^\lambda\times\D^\mu)$ from $\pd M$ and taking the adjunction of $\pd M\setminus \varphi(\pd\D^\lambda\times\D^\mu)$ with $\D^\lambda\times\pd\D^\mu$ over the attaching map $\restr{\varphi}{\pd\D^\lambda\times\pd\D^\mu}$.
-	We call this process \emph{surgery induced by attaching $H^\lambda$} and say that the new boundary $\pd (M\cup_\varphi H^\lambda)$ is \emph{$\pd M$ surgered over $H^\lambda$}.
-\end{defn}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+%\begin{defn}[Surgery]
+%	\label{def:surgery}
+%	We can recover $\pd (M\cup_\varphi H^\lambda)$ from $\pd M$ by deleting the image $\varphi(\pd\D^\lambda\times\D^\mu)$ from $\pd M$ and taking the adjunction of $\pd M\setminus \varphi(\pd\D^\lambda\times\D^\mu)$ with $\D^\lambda\times\pd\D^\mu$ over the attaching map $\restr{\varphi}{\pd\D^\lambda\times\pd\D^\mu}$.
+%	We call this process \emph{surgery induced by attaching $H^\lambda$} and say that the new boundary $\pd (M\cup_\varphi H^\lambda)$ is \emph{$\pd M$ surgered over $H^\lambda$}.
+%\end{defn}
 
 
 
