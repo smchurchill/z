@@ -11,7 +11,48 @@
 
 
 We now have the necessary framework to demonstrate that a closed, oriented 2--manifold bounds a 3--manifold through an explicit construction.
-This is useful as a jumping off point for the case one dimension higher, that of 3--manifolds bounding 4--manifolds, which draws on the same framework and methods.
+This is useful as a jumping off point for the case one dimension higher which draws on the same framework and methods.
+
+Let $\Sigma$ be a closed, oriented 2--manifold.
+Our construction of a 3--manifold $M$ for which $\pd M=\Sigma$ begins by letting $f:\Sigma\to\II$ be a Morse function.
+We take as our base for a 3--manifold $M=\Sigma\times\II$.
+Then $M$ has two boundary components $\Sigma^-$ and $\Sigma^+$ corresponding to $\Sigma\times\{-1\}$ and $\Sigma\times\{+1\}$ respectively.
+Our goal is to attach handles to $M$ over $\Sigma^+$ until that boundary component is reduced to $\emptyset$.
+The construction follows the general structure of
+\begin{enumerate}
+	\item Decompose $\Sigma^+$ via our Morse function.
+	\item Some of the pieces into which $\Sigma^+$ is decomposed serve as attaching regions in $M$ for 1--handles.
+	\item The attachment of 1--handles alters $\Sigma^+$ in a controlled way, and yields attaching regions for 2--handles.  Attaching 2--handles over these regions empties $\Sigma^+$.
+\end{enumerate}
+
+Before detailing our decomposition, we define the pieces into which our surface will decomposed.
+
+\begin{defn}
+	\label{def:annulus}
+	An \emph{annulus} is any surface homeomorphic to $S^1\times\I$.
+	An annulus's boundary consists of two components that are homeomorphic to $S^1$.
+	Another description of an annulus is as a 2--disc minus an open ball.
+\end{defn}
+
+\begin{defn}
+	\label{def:pants}
+	A \emph{pair of pants} is a surface that is homeomorphic to a 2--disc minus two disjoint open balls.
+	The boundary of a pair of pants consists of three components that are homeomorphic to $S^1$.
+\end{defn}
+
+\begin{lem}
+	\label{lem:sigmadecomp}
+	Let $\Sigma$ be a closed, oriented 2--manifold and let $f:\Sigma\to\II$ be a Morse function.
+	Then $f$ induces a decomposition of $\Sigma$ as
+	\[
+		\Sigma=A\cup D\cup P
+	\]
+	where $A$ is a collection of annuli, $D$ is a collection of 2--discs, and $P$ is a collection of pairs of pants.
+	The intersection between any pair of elements in this decomposition is either empty or a boundary component of both.
+	Further, discs and pants only intersect annuli.	
+\end{lem}
+
+
 
 \begin{theorem}
 	\label{thm:2bound3}
