@@ -59,12 +59,14 @@ Handle attachment is the process of joining $M$ and $H^\lambda$ along an embeddi
 
 \begin{defn}[Handle]
 	\label{def:handle}
-	Take $n=\lambda+\mu$ and $M$ a smooth $n$--manifold with nonempty $\pd_1 M$ and $\pd_j M=\emptyset$ for $j>1$.
-	Let $\varphi:\pd\D^\lambda\times\D^\mu\to\pd M$ be an embedding and an attaching map between $M$ and $H^\lambda$.
+	Take $n=\lambda+\mu$ and $M$ a smooth $n$--manifold with nonempty $\pd_1 M$.
+	%	 and $\pd_j M=\emptyset$ for $j>1$
+	Let $\varphi:\pd\D^\lambda\times\D^\mu\to\pd_1 M$ be an embedding and an attaching map between $M$ and $H^\lambda$.
 	The attached space $H^\lambda$ is an \emph{$n$--dimensional $\lambda$--handle}, and $M\cup_\varphi H^\lambda$ is the result of an $n$--dimensional \emph{$\lambda$--handle attachment}.
 \end{defn}
 
 \begin{prop}
+	\label{prop:handle}
 	Let $M'=M\cup_\varphi H^\lambda$ be the result of an $n$--dimensional $\lambda$--handle attachment.
 	Then $M'$ is a smooth $n$--manifold with faces, the 1--boundary of $M'$ consists of $\pd M\setminus\varphi(\pd\D^\lambda\times\D^\mu)$ and $\D^\lambda\times\pd\D^\mu$, the 2--boundary consists of $\varphi(\pd\D^\lambda\times\pd\D^\mu)$, and $\pd_j$ is empty for $j>2$.
 \end{prop}
@@ -73,6 +75,7 @@ Our results regarding attaching manifolds over faces are found in \cite{JSP}.
 They tell us that manifolds can be attached over faces, the attachment space is a manifold with faces, and the faces of the attachment space are well defined.
 
 \begin{prop}
+	\label{prop:addface}
 	Let $X$ and $X'$ be smooth $n$--manifolds with faces, let $F$ be a manifold with faces, and let $\iota:F\to X$ and $\iota':F\to X'$ be inclusion maps such that $\iota(F)$ is a face of $X$ and $\iota'(F)$ is a face of $X'$.
 	Then the adjunction $X\cup_F X'$ is a smooth $n$--manifold with faces.
 	
@@ -162,6 +165,7 @@ They tell us that manifolds can be attached over faces, the attachment space is 
 \end{proof}
 
 \begin{cor}
+	\label{cor:addfaces}
 	Let $X$, $X'$ be manifolds with faces and let $F_1,\dots, F_k$ be faces of $X$ such that $F_i\cap F_j$ is a face of $F_i$ and $F_j$ for every $i\neq j$.
 	Let ${\bf F}=\cup_i F_i$ and let $\varphi:{\bf F}\to \pd X'$ be an embedding such that $\varphi(F_i)$ is a face of $X'$ for each $i$.
 	Then the adjunction $X \cup_{\bf F} X'$ is a smooth manifold with faces.
@@ -170,44 +174,66 @@ They tell us that manifolds can be attached over faces, the attachment space is 
 	Similarly, if $p$ is a $j$--corner of $X'$, $j\geq 0$, and $k$ is the number of faces in $\varphi({\bf F})$ that contain $p$, then $p$ is a $(j-k)$--corner of $X\cup_{\bf F} X'$.
 \end{cor}
 
+\begin{ex}
+	\label{ex:handlesphere}
+	We first see an example of Proposition~\ref{prop:handle}.
+	Let $V$ be a 3--dimensional solid torus (i.e.\ $V=\D^2\times S^1$) and recall that a 3--dimensional 2--handle has the form $H^2=\D^2\times\D^1$.
+	Let $\varphi$ be 2--handle attachment map defined by
+	\[
+		\begin{array}{rrcl}
+			\varphi:	&	\pd\D^2\times\D^1	&	\to		&	\pd\D^2\times S^1=\pd V	\\
+						&	(e^{i\theta},t)		&	\mapsto	&	(e^{i\theta},e^{\pi it/2}).
+		\end{array}
+	\]
+	The 3-manifold $V\cup_{\varphi}H^1$ that results from this handle attachments has one boundary component.
+	It consists of the faces $\D^2\times\{e^{i\pi/2}\}$, $\D^2\times\{e^{-i\pi/2}\}$, and $\pd\D^2\times[e^{i\pi/2},e^{-i\pi/2}]$, where we use $[e^{i\pi/2},e^{-i\pi/2}]$ to denote the oriented arc in $S^1$, orientation agreeing with that of $S^1$, from the angle $\theta=\pi/2$ to $\theta=-\pi/2$.
+	
+	Next, we use Corollary~\ref{cor:addfaces} and add a copy of $D^2\times\D^1$ to $V\cup_{\varphi}H^1$.
+	We define an attachment map $\psi$ on $\pd(\D^2\times\D^1)$ piecewise by
+	\[
+		\begin{array}{rccl}
+			\restr{\psi}{S^1\times\D^1}:
+				&	S^1\times\D^1
+				&	\to	
+				&	\pd (V\cup_\varphi H^1)			\\
+			
+				&	(e^{i\theta},t)
+				&	\mapsto
+				&	(e^{i\theta},e^{\pi i(t+2)/2}),	\\
 
+			\restr{\psi}{\D^2\times\{-1\}}:
+				&	\D^2\times\{-1\}
+				&	\to	
+				&	\pd (V\cup_\varphi H^1)			\\
+				
+				&	(re^{i\theta},-1)
+				&	\mapsto
+				&	(re^{i\theta},e^{\pi i/2}),		\\
+				
+			\restr{\psi}{\D^2\times\{1\}}:
+				&	\D^2\times\{1\}
+				&	\to	
+				&	\pd (V\cup_\varphi H^1)			\\
+				
+				&	(re^{i\theta},1)
+				&	\mapsto
+				&	(re^{i\theta},e^{-\pi i/2}).
+		\end{array}
+	\]
+	The resulting 3--manifold $(V\cup_\varphi H^1)\cup_\psi (D^2\times\D^1)$ is smooth and closed.	
+\end{ex}
 
+The 3--manifold found in Example~\ref{ex:handlesphere} is $S^3$.
+We spend the remainder of this section developing tools that help classify the manifolds that arise from our operations.
 
-%\begin{defn}[Surgery]
-%	\label{def:surgery}
-%	We can recover $\pd (M\cup_\varphi H^\lambda)$ from $\pd M$ by deleting the image $\varphi(\pd\D^\lambda\times\D^\mu)$ from $\pd M$ and taking the adjunction of $\pd M\setminus \varphi(\pd\D^\lambda\times\D^\mu)$ with $\D^\lambda\times\pd\D^\mu$ over the attaching map $\restr{\varphi}{\pd\D^\lambda\times\pd\D^\mu}$.
-%	We call this process \emph{surgery induced by attaching $H^\lambda$} and say that the new boundary $\pd (M\cup_\varphi H^\lambda)$ is \emph{$\pd M$ surgered over $H^\lambda$}.
-%\end{defn}
-
-
-
-
-
-
-
-
-
-
-
-Throughout this section we have $n=\lambda+\mu$ and $M$ an $n$--manifold with faces.
-
-
-
-
-, and $H^\lambda=\D^\lambda\times\D^\mu$.
-Attaching an $n$--dimensional $\lambda$--handle to $M$ is the process of joining $M$ to $H^\lambda$ along an embedding of $\pd\D^\lambda\times\D^\mu$ in $\pd M$. 
-
-
-
-
-
+Put $n=\mu+\lambda$, recall that $H^\lambda=D^\lambda\times\D^\mu$, let $M$ be an $n$--manifold and let $M'=M\cup_\varphi H^\lambda$ be the result of an $n$--dimensional $\lambda$--handle attachment.
 Note that the domain of $\varphi$ has the structure of a trivial $\mu$--disc bundle over $S^{\lambda-1}$ and, using the language of vector bundles, the image of $\varphi$ has the structure of a closed tubular neighbourhood of $f_0(S^{\lambda-1})=\varphi\comp z(S^{\lambda-1})$.
 Our uniqueness theorems for tubular neighbourhoods tell us that the closed tubular neighbourhood
 \[
 	f:\D_{\pd M}f_0(S^{\lambda-1})\to\overline{\nu}_{\pd M}\,f_0(S^{\lambda-1})
 \]
 of $f_0(S^{\lambda-1})$ is unique up to ambient isotopy of the embedding $f_0$.
-Thus, if we have an embedding $f_0:S^{\lambda-1}\to \pd M$ (i.e.\ a knot) with trivial disc bundle, then a handle attachment can be defined using $f_0$ and an explicit embedding 
+Thus, if we have an embedding $f_0:S^{\lambda-1}\to \pd M$ with trivial disc bundle, then a handle attachment can be defined using $f_0$ and an explicit embedding 
 \[
 	f: S^{\lambda-1}\times\D^\mu\to \D_{\pd M}\,f_0(S^{\lambda-1})
 \]
@@ -235,8 +261,7 @@ For this we define the general notion of a decomposition.
 
 \begin{defn}
 	\label{def:morsehandle}
-	Let $W$ be a compact $n$--manifold.
-	The boundary $\pd W$ will be taken to be a disjoint pair $M_0\sqcup M_1$, neither of which is necessarily nonempty.
+	Let $W$ be a compact $n$--manifold with boundary $M_0\sqcup M_1$, where $M_0$ and $M_1$ are smooth closed $(n-1)$--manifolds.
 	Describe $W$ as a chain of inclusions
 	\[
 	M_0 \times\I = W_0 \subset W_1 \subset W_2 \subset \cdots \subset W_{k-1} \subset W_k = W
@@ -246,24 +271,23 @@ For this we define the general notion of a decomposition.
 \end{defn}
 
 \begin{defn}
-	A connected manifold $M$ that has a handle decomposition that consisting of exactly one 0--handle and $g$ 1--handles is called a \emph{handlebody} of \emph{genus} $g$.
-	Let $V$ be a handlebody of genus $g$.
+	A connected manifold $M$ that has a handle decomposition consisting of exactly one 0--handle and $g$ 1--handles is called an \emph{$(m,1)$--handlebody} of \emph{genus} $g$.
+	Let $V$ be a $(m,1)$--handlebody of genus $g$.
 	A simple closed curve in $\pd V$ is called \emph{essential} if it is not homotopic to a point.
-	A simple closed curve $J$, essential in $\pd V$, that bounds a 2--disc in $V$ is called a \emph{meridian}.
+	A simple closed curve $J$ in $\pd V$ that is essential in $\pd V$ and that bounds a 2--disc in $V$ is called a \emph{meridian}.
 	The properly embedded disc in $V$ that has boundary $J$ is called a \emph{meridinal disc}.
 	
-	The special case of the oriented genus 1 handlebody is called a \emph{solid torus}.
-	More generally, any space that is homeomorphic to $S^1\times\DD$ is called a \emph{solid torus}.
+	The special case of the oriented genus 1 $(m,1)$--handlebody is called a \emph{solid torus}.
+	More generally, any space that is homeomorphic to $S^1\times\D^{n-1}$ is called a \emph{solid $n$--torus}.
+	In our most common case of $n=3$, we just say that $S^1\times\D^2$ is a \emph{solid torus}.
 	A simple closed curve $J$ in the boundary of a solid torus that intersects a meridian at a single point is called a \emph{longitude}.
-	Note that a longitude is essential in a solid torus and that there are infinitely many isotopy classes of longitudes, whereas there's exactly one isotopy class of meridians.
+	A longitude is essential in a solid torus and there are infinitely many isotopy classes of longitudes, but there is exactly one isotopy class of meridians.
 \end{defn}
 
-An essential role of the handlebody is in the definition of a Heegaard splitting of a closed, orientable 3--manifold.
-
 \begin{defn}	
-	Let $U$ and $V$ be 3--dimensional handlebodies of genus $g$ and let $f:\pd U\to \pd V$ be an orientation reversing diffeomorphism.
+	Let $U$ and $V$ be 3--dimensional handlebodies of genus $g$ and let $f:\pd U\to \pd V$ be an orientation preserving diffeomorphism.
 	The adjunction $M=U\cup_f V$ is a \emph{Heegaard splitting} of $M$, the shared boundary $H = \pd U = \pd V$ is the \emph{Heegaard surface} of the splitting, and the shared genus of $U$ and $V$ is the \emph{genus} of the splitting as well.
-	We also denote a Heegaard splitting by the pair $(M,H)$.
+	A Heegaard splitting is also denoted by the pair $(M,H)$.
 	
 	We use the notion of equivalence between splittings from \cite{SchlWald}.
 	A pair of splittings $(M,H)$ and $(M,H')$ are \emph{equivalent} if there is a homeomorphism $h:M\to M$ such that $h$ is isotopic to $\ident{M}$ and $\restr{h}{H}$ is an orientation preserving homeomorphism $H\to H'$.
@@ -280,20 +304,16 @@ An essential role of the handlebody is in the definition of a Heegaard splitting
 	The 3--sphere $S^3$ has two standard Heegaard splittings.
 	The first is the genus 0 splitting, usually realized by considering $S^3$ as the set of unit vectors in $\R^4$.
 	Take the Heegaard surface to be the intersection of $S^3$ with the $xyz$--hyperplane in $\R^4$.
-	This yields a copy of $S^2$ that separates $S^3$ into two connected components.
+	This is a copy of $S^2$ that separates $S^3$ into two connected components.
 	This splitting is written $(S^3,S^2)$
 	
 	The second is the genus 1 splitting, which is visualized using the realization of $S^3$ as the one--point compactification of $\R^3$.
 	Take solid tori $U$ and $V$ and identify $\pd U$ with $\pd V$ by the homeomorphism that swaps a meridian with a longitude.
-	The adjunction that results is $S^3$, and the pair of solid tori are displayed in Figure \ref{fig:genus1split}.
+	The adjunction is $S^3$, and the pair of solid tori are displayed in Figure \ref{fig:genus1split}.
 	This splitting is written $(S^3,T^2)$.
-	Note that this description of $S^3$ may also be obtained by examining the boundary of a 4--dimensional 2--handle $\pd (\DD\times\DD)$.
+	This description of $S^3$ may also be obtained by examining the boundary of a 4--dimensional 2--handle $\pd (\DD\times\DD)$.
 \end{ex}
 
-The standard genus 1 splitting is used in conjunction with the connect sum operation in the following essential theorems.
-
-
-	
 \begin{defn}
 	Let $(M,H)=U\cup_f V$ be a Heegaard splitting of $M$.
 	The connected sum $(M,H)\#(S^3,T^2)$ is called an \emph{elementary stabilization} of $M$, and itself is a splitting $(M,H\#T^2)$.
@@ -351,9 +371,9 @@ Because a $\lambda$--handle is also a $\mu$--handle of the same dimension, any h
 
 Notice that if the handles of a decomposition are attached in order of increasing index, then the handles of the dual decomposition are as well.
 
-There are two special cases of handle attachment.
+There are two special cases of handle attachment to mention.
 The first is 1--handle attachment, which reduces to investigating the orientations of the attaching maps.
-The second is 4--dimensional 2--handle attachment, which draws on concepts central to knot theory.
+The second is 4--dimensional 2--handle attachment, which reduces to identifying the homology class of a single oriented curve.
 
 \begin{rmk}
 	\label{rmk:1handle}
@@ -373,11 +393,18 @@ The second is 4--dimensional 2--handle attachment, which draws on concepts centr
 
 Let $W$ be a 4--manifold with orientable boundary $M$.
 To attach a 2--handle to $W$, we need an embedding $f_0:S^1\to M$ and a framing $S^1\times\D^2\to\overline{\nu}_{\pd M}f_0(S^1)$.
-Recall that the space $S^1\times D^2$ is what we call a solid torus.
+%Recall that the space $S^1\times D^2$ is what we call a solid torus.
+
 Once an embedding $f_0:S^1\to M$ is chosen, $W\cup_\varphi H^2$ is determined by the framing $f:S^1\times \D^2\to \overline{\nu}_{\pd M}\,f(S^1)$.
-To investigate possible framings, we consider the \emph{mapping class group} of the solid torus.
-The mapping class group of a space $X$ is the group of isotopy classes of automorphisms $X$, and it is denoted $mpg(X)$.
-For $V$ a solid torus, $mpg(V)$ is very closely linked to the mapping class group of the torus $T^2 = S^1\times S^1=\pd V$, which is the special linear group $\textrm{SL}_2(\Z)$, the group of $2\times 2$ matrices with integer entries and determinant $\pm 1$.
+To investigate possible framings, we consider the mapping class group of the solid torus.
+
+\begin{defn}
+	Let $X$ be a manifold and let $\Aut (X)$ be the group of automorphisms of $X$ (isomorphisms $X\to X$ under composition).
+	Define an equivalence relation $\sim$ on $\Aut X$ by $f\sim g$ if $f$ is isotopic to $g$.
+	The group $\Aut(X)/\sim$ is the \emph{mapping class group} of $X$ and is denoted $mpg(X)$.
+\end{defn}
+
+For $V$ a solid torus, $mpg(V)$ is very closely linked to the mapping class group of the torus $T^2 = S^1\times S^1=\pd V$, which is isomorphic to the special linear group $\textrm{SL}_2(\Z)$, the group of $2\times 2$ matrices with integer entries and determinant $\pm 1$.
 \begin{lem}
 	Let $V$ be a solid torus and let $f$ be an automorphism of the torus $\pd V$.
 	Then $f$ extends to an automorphism of $V$ if and only if $f$ maps a meridian to a meridian.	
@@ -389,8 +416,9 @@ For $V$ a solid torus, $mpg(V)$ is very closely linked to the mapping class grou
 
 \begin{theorem}
 	\label{thm:mpgV}
-	The mapping class group of a solid torus $V$ is the subgroup of the mapping class group of $\pd V$ containing automorphisms that map meridians to meridians.
-	This subgroup is isomorphic to $\Z$.	
+	The mapping class group of a solid torus $V$ is the direct sum of the subgroup of the mapping class group of $\pd V$ containing automorphisms that map meridians to meridians with the subgroup generated by the automorphism that reverses the direction of longitudes.
+	$S^1\times\D^2\to S^1\times\D^2$ defined by $(e^{i\theta},re^{i\phi})\mapsto(e^{-i\theta},re^{i\phi})$.
+	The first subgroup is isomorphic to $\Z$ and the second is isomorphic to $\Z_2$.	
 \end{theorem}
 
 \begin{proof}
