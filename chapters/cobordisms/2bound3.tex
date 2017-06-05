@@ -36,23 +36,34 @@ Before detailing our decomposition, we define the pieces into which our surface 
 
 \begin{defn}
 	\label{def:pants}
-	A \emph{pair of pants} is a surface that is homeomorphic to a 2--disc minus two disjoint open balls.
+	A \emph{pair of pants} or \emph{pants surface} is a surface that is homeomorphic to a 2--disc minus two disjoint open balls.
 	The boundary of a pair of pants consists of three components that are homeomorphic to $S^1$.
 \end{defn}
 
 \begin{lem}
 	\label{lem:sigmadecomp}
-	Let $\Sigma$ be a closed, oriented 2--manifold and let $f:\Sigma\to\II$ be a Morse function.
+	Let $\Sigma$ be a closed, oriented 2--manifold and let $f:\Sigma\to\II$ be a Morse function with distinct critical values.
 	Then $f$ induces a decomposition of $\Sigma$ as
 	\[
-		\Sigma=A\cup D\cup P
+		\Sigma=\MA\cup \MD\cup \MP
 	\]
-	where $A$ is a collection of annuli, $D$ is a collection of 2--discs, and $P$ is a collection of pairs of pants.
-	The intersection between any pair of elements in this decomposition is either empty or a boundary component of both.
-	Further, discs and pants only intersect annuli.	
+	where $\MA$ is a collection of annuli, $\MD$ is a collection of 2--discs, and $\MP$ is a collection of pants.
+	
+	Furthermore, if $X$ and $Y$ are components of this decomposition and $X\cap Y\neq\emptyset$, then $X\cap Y$ is a boundary circle of each of $X$, $Y$, and at least one of $X$, $Y$ is an annulus.
 \end{lem}
 
-
+\begin{proof}
+	Let $x_1<\dots<x_n$ be the critical values of $f$ and let $t_i^+$, $t_i^-$ be real numbers such that
+	\[
+		\begin{array}{ccc}
+			t_i^-<x_i<t_i^+ & \textrm{ and } & t_i^+<t_{i+1}^-. 		
+		\end{array}
+	\]
+	The desired decomposition of $\Sigma$ is obtained by slicing $\Sigma$ open over the curves $f\inv(t_i^\pm)$.
+	
+	The manifold $\Sigma^*=\Sigma\setminus(f\inv(\bigcup_i t_i^\pm))$ consists of the interiors of embedded discs, annuli, and pants
+	
+\end{proof}
 
 \begin{theorem}
 	\label{thm:2bound3}
