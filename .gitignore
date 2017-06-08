@@ -23,5 +23,5 @@
 *.loa
 *.lof
 *.pdf
-	figures/pspictures/
-	geogebra/
+figures/pspictures/*
+geogebra/*

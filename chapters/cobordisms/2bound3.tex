@@ -59,7 +59,24 @@ Before detailing our decomposition, we define the pieces into which our surface 
 			t_i^-<x_i<t_i^+ & \textrm{ and } & t_i^+<t_{i+1}^-. 		
 		\end{array}
 	\]
-	Let $X_i=[t_i^-,t_i^+]$ and $T_i=[t_i^+,t_{i+1}^-]$ and consider $f\inv(X_i)$ and $f\inv(T_i)$.
+	The $t_i^\pm$ decompose the range of $f$ into the intervals $X_i=[t_i^-,t_i^+]$ for $i\in\{1,\dots,n\}$ and $T_i=[t_i^+,t_{i+1}^-]$ for $i\in\{1\dots, n-1\}$.
+	For each $i$, the interval $X_i$ contains the critical value $x_i$ and $T_i$ consists entirely of regular values.
+	We decompose of $\Sigma$ into a collection whose elements are the connected components of $f\inv(X_i)$ and $f\inv(T_i)$.
+		
+	First, we investigate the $T_i$.
+	No $T_i$ contains a critical value of $f$, so $f\inv(a)$ for any $a$ in $T_i$ is a 1--dimensional submanifold of $\Sigma$, i.e.\ a disjoint collection of copies of $S^1$.
+	Let $a\in\inter{T_i}$.
+	Then $f\inv (a)$ is a closed submanifold of the closed manifold $\Sigma$, hence $f\inv(a)$ has a closed tubular neighbourhood in $\Sigma$ diffeomorphic to $f\inv (a)\times \I$, i.e.\ a disjoint collection of annuli.
+	Because $f\inv(T_i)$ is diffeomorphic to, and deformation retracts onto, $f\inv[a-\varepsilon,a+\varepsilon]$ for any $\varepsilon>0$ by Theorem~\ref{thm:morseretract}, we conclude that $f\inv(T_i)$ is diffeomorphic to a disjoint collection of annuli -- one component for each circle in $f\inv(a)$.
+	
+	Next, each $X_i$ contains exactly one critical value at $x_i$ corresponding to the critical point $p_i$ in $\Sigma$.
+	Call the $m$ connected components of $f\inv(X_i)$ that do not contain $p_i$ by $\Sigma_i^k$ for $k\in\{1\dots m\}$ and call the connected component of $f\inv(X_i)$ that contains $p_i$ by $\Sigma_i^p$.
+	
+	Consider $f$ restricted to $\Sigma\setminus\Sigma_i^p$.
+	This restriction has only regular values in $X_i$, so each of $\Sigma_i^k$ is an annulus by the previous argument.
+	
+	For 
+	
 	
 	
 	
