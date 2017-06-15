@@ -21,8 +21,8 @@ Our goal is to attach handles to $M$ over $\Sigma^+$ until that boundary compone
 The construction follows the general structure of
 \begin{enumerate}
 	\item Decompose $\Sigma^+$ via our Morse function.
-	\item Some of the pieces into which $\Sigma^+$ is decomposed serve as attaching regions in $M$ for 1--handles.
-	\item The attachment of 1--handles alters $\Sigma^+$ in a controlled way, and yields attaching regions for 2--handles.  Attaching 2--handles over these regions empties $\Sigma^+$.
+	\item Some of the pieces into which $\Sigma^+$ is decomposed serve as attaching regions in $M$ for 2--handles.
+	\item The attachment of 2--handles alters $\Sigma^+$ in a controlled way, and yields attaching regions for 3--handles.  Attaching 3--handles over these regions empties $\Sigma^+$.
 \end{enumerate}
 
 Before detailing our decomposition, we define the pieces into which our surface will decomposed.
@@ -61,7 +61,14 @@ Before detailing our decomposition, we define the pieces into which our surface 
 	\]
 	The $t_i^\pm$ decompose the range of $f$ into the intervals $X_i=[t_i^-,t_i^+]$ for $i\in\{1,\dots,n\}$ and $T_i=[t_i^+,t_{i+1}^-]$ for $i\in\{1\dots, n-1\}$.
 	For each $i$, the interval $X_i$ contains the critical value $x_i$ and $T_i$ consists entirely of regular values.
-	We decompose of $\Sigma$ into a collection whose elements are the connected components of $f\inv(X_i)$ and $f\inv(T_i)$.
+	We decompose of $\Sigma$ into a collection whose elements are the connected components of $f\inv(X_i)$ and $f\inv(T_i)$ (See Figure~\ref{fig:sigmadecomp}).
+	
+	\begin{figure}
+		\centering
+		\caption{Decomposing a surface by a Morse function}
+		\includegraphics[height=3in]{figures/dummy.jpg}
+		\label{fig:sigmadecomp}
+	\end{figure}
 		
 	First, we investigate the $T_i$.
 	No $T_i$ contains a critical value of $f$, so $f\inv(a)$ for any $a$ in $T_i$ is a 1--dimensional submanifold of $\Sigma$, i.e.\ a disjoint collection of copies of $S^1$.
@@ -70,32 +77,45 @@ Before detailing our decomposition, we define the pieces into which our surface 
 	Because $f\inv(T_i)$ is diffeomorphic to, and deformation retracts onto, $f\inv[a-\varepsilon,a+\varepsilon]$ for any $\varepsilon>0$ by Theorem~\ref{thm:morseretract}, we conclude that $f\inv(T_i)$ is diffeomorphic to a disjoint collection of annuli -- one component for each circle in $f\inv(a)$.
 	
 	Next, each $X_i$ contains exactly one critical value at $x_i$ corresponding to the critical point $p_i$ in $\Sigma$.
-	Call the $m$ connected components of $f\inv(X_i)$ that do not contain $p_i$ by $\Sigma_i^k$ for $k\in\{1\dots m\}$ and call the connected component of $f\inv(X_i)$ that contains $p_i$ by $\Sigma_i^p$.
+	Call the $m$ connected components of $f\inv(X_i)$ that do not contain $p_i$ by $\Sigma_{i,k}$ for $k\in\{1\dots m\}$ and call the connected component of $f\inv(X_i)$ that contains $p_i$ by $\Sigma_{i,p}$.
 	
-	Consider $f$ restricted to $\Sigma\setminus\Sigma_i^p$.
-	This restriction has only regular values in $X_i$, so each of $\Sigma_i^k$ is an annulus by the previous argument.
+	Consider $f$ restricted to $\Sigma\setminus\Sigma_{i,p}$.
+	This restriction has only regular values in $X_i$, so each of $\Sigma_{i,k}$ is an annulus by the previous argument.
 	
-	For 
+	For the components $\Sigma_{i,p}$, we check the index $\lambda_i$ of $p_i$.
+	When $\lambda_i$ is 0 or 2, Lemma~\ref{lem:morselemma} immediately tells us that $\Sigma_{i,p}$ is diffeomorphic to a 2--disc.
+	When $\lambda_i=1$, we use Lemma~\ref{lem:morselemma} and the orientability of $\Sigma$ to say that $\Sigma_p$ diffeomorphic to a pair of pants.
 	
+	We now have $\Sigma$ decomposed into the connected components of $f\inv(T_i)$ and $f\inv(X_i)$, and each decomposing piece is either a 2--disc, an annulus, or a pair of pants.
+	By design, a pair of decomposing pieces will either intersect along a circle in some $f\inv(t_i^\pm)$ or not at all.
+	Further, if a decomposing piece is a 2--disc or pair of pants, then it is a connected component of $f\inv(X_i)$ for some $i$.
+	Because the $X_i$ are separated by $T_i$, so are the $f\inv(X_i)$ by $f\inv(T_i)$.	
+\end{proof}
+
+With $\Sigma$ decomposed, we start attaching handles.
+In the notation used in the of the proof of Lemma~\ref{lem:sigmadecomp}, we attach 2--handles over the $f\inv(T_i)$.
+
+\begin{lem}
+	\label{lem:sigma2handles}
+	Let $\Sigma$ be a closed, oriented 2--manifold and let $f:\Sigma\to\II$ be a Morse function with distinct critical values.
+	Let $M=\Sigma\times\I$ be a 3--manifold with boundary and consider the boundary component $\Sigma\times\{1\}=\Sigma^+$.
+	Then it is possible to attach 2--handles to $M$ over submanifolds of $\Sigma^+$	such that $M\cup\{\textrm{2--handles}\}$ is a 3--manifold with faces whose boundary consists of $\Sigma\times\{-1\}$ and a disjoint collection of boundary components that are homeomorphic to 2--spheres.
+\end{lem}
+
+\begin{proof}
+	By Lemma~\ref{lem:sigmadecomp}, there is a decomposition of $\Sigma^+$ into a collection of 2--discs, annuli, and pants.
+	This decomposition was obtained by first decomposing $f(\Sigma)$ into intervals $T_i$ and $X_i$, where each $X_i$ contained exactly one critical value, the $T_i$ consisted entirely of regular values, the $T_i$ separated the $X_i$, and vice versa.
 	
+	Consider the annuli in this decomposition that map only over regular values through $f$.
+	In other words, the $f\inv(T_i)$.
+	Because the $T_i$ are disjoint, none of these annuli intersect one another.
+	We attach a 2--handle to $M$ over each of these annuli.
 	
+	A 3--dimensional 2--handle is a copy of $\D^2\times\I$ attached over the $\pd(D^2)\times\I$ annular boundary component.
+	By Proposition~\ref{prop:handle}, these handle attachments alter $\Sigma^+$ by replacing the annuli $f\inv(T_i)$ with 2--discs at each circular boundary component.
+	This is equivalent to attaching a 2--disc to $\Sigma^+\setminus(\cup_i f\inv(T_i))$ over each boundary component.
 	
-	
-	
-	
-	The desired decomposition of $\Sigma$ is obtained by slicing $\Sigma$ open over the curves $f\inv(t_i^\pm)$.
-	
-	The manifold $\Sigma^*=\Sigma\setminus(f\inv(\bigcup_i t_i^\pm))$ consists of a disjoint collection of disc, annulus, and pant interiors.
-	These surfaces are embedded submanifolds of $\Sigma$ under inclusion $\Sigma^*\into \Sigma$.
-	We decompose $\Sigma$ as the union of the closures of these submanifolds.
-	
-	Equivalently, consider
-	
-	
-	To show that a nontrivial $X\cap Y$ implies that at least one of $X$, $Y$ is an annulus, we identify all elements of the decomposition that are not annuli.
-	
-	
-	
+	This leaves $M\cup\{\textrm{2--handles}\}$ with boundary consisting of $\Sigma\times\{-1\}$ plus a disjoint collection of 2--discs, annuli, and pants with 2--discs glued to their boundary components.	
 \end{proof}
 
 \begin{theorem}
