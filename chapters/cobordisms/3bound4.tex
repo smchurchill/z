@@ -12,19 +12,46 @@ To extend the results of the previous section to the case of 3--manifolds boundi
 Such a map is Morse--like in the sense that its singular set is well behaved, it can be studied via the same techniques as in Section \ref{sec:2bound3}, and we recover a Stein factorization and Stein complex that define a handle decomposition for a bounding 4--manifold.
 
 Throughout this section $M$ is a closed orientable 3--manifold and $f$ is a generic smooth map $M\to\BB$.
-We define here the terminology used in \cite{Saeki91} to describe $f$, its singularities, and its critical values.
-Denote by $S(f)$ the singular set of $f$ in $M$.
-The image $X=f(s_f)$ forms the space of critical values for $f$ in the plane.
+It is summarized in \cite{Levine65} that $f$ has the following properties:
+\begin{enumerate}
+	\item
+		The rank of $f_*$ is never zero.
+	
+	\item
+		Let $S_1(f)$ be the set of points in $M$ such that $f_*$ has rank 1.
+		Then $S_1$ consists of smooth non-intersecting curves called the \emph{fold curves} of $f$.
+	
+	\item
+		Let $S_1^2(f)$ be the set of points on $S_1(f)$ at which $\restr{f}{S_1(f)}$ has zero differential.
+		Then $S_1^2(f)$ is a finite set of points call the \emph{cusps} of $f$.
+		In the case of a generic map from a closed oriented 3--manifold to an oriented 2--manifold, Theorem (2) from \cite{Levine65} allows us to assume $S_1^2$ is empty without loss of generality.
+	
+	\item
+		If $p\in S_1(f)\setminus S_1^2(f)$, then there exist coordinates $(u,z_1,z_2)$ centred at $p$ and $(x,y)$ centred at $f(p)$ such that $f$ takes the form of either
+		\begin{enumerate}
+			\item \label{form:definitefold} $(x,y)=(u,\pm(z_1^2+z_2^2))$, or			
+			\item \label{form:indefinitefold} $(x,y)=(u,\pm(z_1^2-z_2^2))$
+		\end{enumerate}
+		in a neighbourhood of $p$.
+		If $f$ takes form of \ref{form:definitefold} then we further classify $p$ as a \emph{definite fold}, and if $f$ takes the form of \ref{form:indefinitefold} then $p$ is an \emph{indefinite fold}.
+\end{enumerate}
 
-
+Let $X$ be the image of $S(f)$ through $f$ and $Y$ the image of $M$ through $f$.
 By Sard's theorem, $X$ is a set of closed curves in the plane.
-By genericity of $f$, we can take the set of arcs to intersect only transversely and in such a way that $\BB\setminus X$ is a set of regions $R_0,\dots,R_k,R_\infty$ such that each $R_i$, $i<\infty$ is homeomorphic to $\BB$, $R_\infty$ is homeomorphic to a open annulus, and one of the boundary components of $\overline{R_\infty}$ inside of $\overline{\BB}=\DD$ is exactly $\pd\DD$.
-
+By genericity of $f$, we can assume that these curves intersect transversely.
 We decompose $X$ into arc crossings and arcs that connect crossings.
 The arcs are \emph{codimension 1 critical values} and the crossings are \emph{codimension 2 critical values}.
-This induces a structure on $X$ as a 4--valent graph whose vertex set consists of the set of codimension 2 critical values.
-The edge set of $X$ then consists of pairs $p,q$ such that $p$ and $q$ corresponds to codimension 2 critical values connected by an arc of codimension 1 critical values in $X$.
-For this reason we also call an arc of critical values of $X$ an \emph{edge}, and a codimension 2 critical value of $X$ a \emph{vertex} of $X$.
+This induces a structure on $X$ as a 1--dimensional CW--complex such that every vertex is adjacent to exactly 4 edges.
+The vertices of $X$ are the codimension 2 critical values of $f$.
+The edges of $X$ are the arcs of codimension 1 critical values of $f$ that connect codimension 2 critical values of $f$.
+Then $X$ forms the 1--skeleton of a 2--dimensional CW--complex structure on $Y$.
+The faces of $Y$ are the connected components of the set of regular values of $f$.
+%We will continue to call an arc of codimension 1 critical values of $X$ an \emph{edge} of $X$ and a codimension 2 critical value of $X$ a \emph{vertex} of $X$.
+
+%
+%and in such a way that $\BB\setminus X$ is a set of regions $R_0,\dots,R_k,R_\infty$ such that each $R_i$, $i<\infty$ is homeomorphic to $\BB$, $R_\infty$ is homeomorphic to a open annulus, and one of the boundary components of $\overline{R_\infty}$ inside of $\overline{\BB}=\DD$ is exactly $\pd\DD$.
+
+
 
 
 \begin{figure}
@@ -37,21 +64,32 @@ For this reason we also call an arc of critical values of $X$ an \emph{edge}, an
 
 \begin{lem}
 	\label{lem:bbdecomp}
-	There is a decomposition of $\BB$ induced by $f$ into a collection of 2--manifolds with corners. All but one of these cornered surfaces are homeomorphic to $\DD$, these cornered discs intersect one another along intervals embedded in their boundaries, and boundary points of these intervals are exactly the disc corners.
+	There is a decomposition of $\BB$ induced by $f$ into a collection of 2--manifolds with faces that intersect only along faces.
+	Furthermore, all but one of these surfaces are \emph{cornered discs} --- 2--manifolds with faces that are homeomorphic to $\DD$.
 \end{lem}
 
 \begin{proof}
 	Refer to Figure \ref{fig:critsleeve} for the general idea.	
-	Around each vertex $x$ of $X$ we fit an octagon $\nbhd{x}$ such that the edges of the octagon alternate between transverse intersection and nonintersection with an arc of codimension 1 critical values.
+	Around each vertex $x$ of $X$ we fit an octagon $\nbhd{x}$ such that the edges of the octagon alternate between transverse intersection and nonintersection with an edge of $X$.
+	Take the collection $D_2=\cup_x \nbhd{x}$ to be our first set of cornered discs in our decomposition of $\BB$.
 	
-	Consider $\BB_*=\overline{\BB\setminus\cup_x \nbhd{x}}$.
-	The topological boundary of $\BB_*$ consists of the octagonal boundaries of the $\nbhd{x}$.
+	Consider $B_0=\overline{\BB\setminus D_2}$.
+	We further decompose $B_0$ by pairing off faces of $B_0$.
+	Faces $F$ and $G$ of $B_0$ are paired if there is an arc of codimension 1 critical values connecting them.
+	Call this arc $FG$ and connect the boundary of $F$ to the boundary of $G$ with arcs $FG_1$ and $FG_2$.
+	Then the simple closed curve  $F\cup G \cup FG_1\cup FG_2$ separates $B_0$ into two components -- one of which is a cornered disc that contains $\alpha_FG$.
+	For each such edge $\alpha$ we call the cornered disc containing $\alpha$ by $\nbhd{\alpha}$.
+	Take the collection $D_1=\cup_\alpha \nbhd{\alpha}$ to be our second set of cornered discs in our decomposition of $\BB$.
+	
+	Consider $B_1=B_0\setminus D_1$.
+		
+	Then $B$ boundary of $\BB_*$ consists of the octagonal boundaries of the $\nbhd{x}$.
 	The edges of $X$ connect the boundary components of $\BB_*$, so we may fit neat closed tubular neighbourhoods around the edges in such a way that the corners of this neighbourhood agree with the corners of the $\nbhd{x}$.
 	For $\alpha$ an edge of $X$, $\nbhd{\alpha}$ is the sleeve around $\alpha$.
 	
 	Now, $\BB_{**}=\overline{\BB_*\setminus\cup_\alpha\nbhd{\alpha}}$.
 	Each connected component is either a subset of $R_\infty$ or an open octagonal subset of a region $\R_i$.
-	We take the topologinal closure of these octagons in $\BB$ and call these spaces by $D_i$.
+	We take the  closure of these octagons in $\BB$ and call these spaces by $D_i$.
 	
 	The union of the topological boundaries of the decomposing blocks form a subspace $Y$ of $\BB$ that intersects $X$ only along edges of $X$.
 	By construction, $Y$ has the structure of a 3--valent graph whose vertices are its corners and whose edges are the edges of the decomposing blocks for $B$.
