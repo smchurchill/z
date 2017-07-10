@@ -36,8 +36,9 @@ It is summarized in \cite{Levine65} that $f$ has the following properties:
 		If $f$ takes form of \ref{form:definitefold} then we further classify $p$ as a \emph{definite fold}, and if $f$ takes the form of \ref{form:indefinitefold} then $p$ is an \emph{indefinite fold}.
 \end{enumerate}
 
-Let $X_f$ be the image of $S(f)$ through $f$ and $Y$ the image of $M$ through $f$.
+Let $X_f$ be the image of $S(f)$, which itself consists entirely of fold curves, through $f$ and $Y_f$ the image of $M$ through $f$.
 By Sard's theorem, $X_f$ is a set of closed curves in the plane.
+By the following Lemma, we also assume that $X_f$ is connected.
 %By genericity of $f$, we can assume that these curves intersect transversely.
 
 \begin{lem}
@@ -46,18 +47,26 @@ By Sard's theorem, $X_f$ is a set of closed curves in the plane.
 \end{lem}
 
 \begin{proof}
-	We prove by induction on the number of connected components of $S(f)$.
+	We prove in the case where $X_f$ has exactly 2 connected components.
+	Iterating this proof yields the result in full generality by transitivity of homotopy.
 	
+	Let $X_f^1$ and $X_f^2$ be the connected components of $X_f$, let $s_1$ and $s_2$ be the subsets of $S(f)$ such that $f(s_1)=X_f^1$ and $f(s_2)=X_f^2$.
+	Let $\xx$ be a constant plane vector such that $X_f^1+\xx$ intersects $X_f^2$ transversely, let $\nu_0(s_1)\subsetneq\nu_1(s_1)$ be tubular neighbourhoods of $s_1$ disjoint from $S(f)\setminus s_1$ in $M$, and let $\mu$ be a smooth function $M\to\R$ such that $\mu(p)=1$ for $p\in\nu_0(s_1)$ and $\mu(p)=0$ for $p\in M\setminus\nu_1(s_1)$.
 	
+	Then $g(p)=f(p)+\mu(p)\xx$ is homotopic to $f$ via
+	\[
+		\begin{array}{cccl}
+			H: 	& M\times \I & \to & \RR \\
+				& (p,t)	& \mapsto & f(p)+t\mu(p)\xx,
+		\end{array}
+	\]
 \end{proof}
 
-
-
-We decompose $X$ into arc crossings and arcs that connect crossings.
+We decompose $X_f$ into arc crossings and arcs that connect crossings.
 The arcs are \emph{codimension 1 critical values} and the crossings are \emph{codimension 2 critical values}.
-This induces a structure on $X$ as a 1--dimensional CW--complex such that every vertex is adjacent to exactly 4 edges.
-The vertices of $X$ are the codimension 2 critical values of $f$.
-The edges of $X$ are the arcs of codimension 1 critical values of $f$ that connect codimension 2 critical values of $f$.
+This induces a structure on $X_f$ as a 1--dimensional CW--complex such that every vertex is adjacent to exactly 4 edges.
+The vertices of $X_f$ are the codimension 2 critical values of $f$.
+The edges of $X_f$ are the arcs of codimension 1 critical values of $f$ that connect codimension 2 critical values of $f$.
 Then $X$ forms the 1--skeleton of a 2--dimensional CW--complex structure on $Y$.
 The faces of $Y$ are the connected components of the set of regular values of $f$.
 %We will continue to call an arc of codimension 1 critical values of $X$ an \emph{edge} of $X$ and a codimension 2 critical value of $X$ a \emph{vertex} of $X$.
