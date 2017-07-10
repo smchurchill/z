@@ -36,9 +36,23 @@ It is summarized in \cite{Levine65} that $f$ has the following properties:
 		If $f$ takes form of \ref{form:definitefold} then we further classify $p$ as a \emph{definite fold}, and if $f$ takes the form of \ref{form:indefinitefold} then $p$ is an \emph{indefinite fold}.
 \end{enumerate}
 
-Let $X$ be the image of $S(f)$ through $f$ and $Y$ the image of $M$ through $f$.
-By Sard's theorem, $X$ is a set of closed curves in the plane.
-By genericity of $f$, we can assume that these curves intersect transversely.
+Let $X_f$ be the image of $S(f)$ through $f$ and $Y$ the image of $M$ through $f$.
+By Sard's theorem, $X_f$ is a set of closed curves in the plane.
+%By genericity of $f$, we can assume that these curves intersect transversely.
+
+\begin{lem}
+	Let $f$ be a generic smooth map from a closed orientable 3--manifold into the plane and let $X_f=f(S(f))$ be the set of critical values of $f$ in the plane.
+	Then $f$ is homotopic to a generic smooth map $g$ such that $X_g$ is connected.
+\end{lem}
+
+\begin{proof}
+	We prove by induction on the number of connected components of $S(f)$.
+	
+	
+\end{proof}
+
+
+
 We decompose $X$ into arc crossings and arcs that connect crossings.
 The arcs are \emph{codimension 1 critical values} and the crossings are \emph{codimension 2 critical values}.
 This induces a structure on $X$ as a 1--dimensional CW--complex such that every vertex is adjacent to exactly 4 edges.
@@ -82,6 +96,7 @@ The faces of $Y$ are the connected components of the set of regular values of $f
 	Take the collection $D_1=\cup_\alpha \nbhd{\alpha}$ to be our second set of cornered discs in our decomposition of $\BB$.
 	
 	Consider $B_1=B_0\setminus D_1$.
+	
 		
 	Then $B$ boundary of $\BB_*$ consists of the octagonal boundaries of the $\nbhd{x}$.
 	The edges of $X$ connect the boundary components of $\BB_*$, so we may fit neat closed tubular neighbourhoods around the edges in such a way that the corners of this neighbourhood agree with the corners of the $\nbhd{x}$.
