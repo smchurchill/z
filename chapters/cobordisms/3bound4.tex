@@ -51,7 +51,7 @@ By the following Lemma, we also assume that $X_f$ is connected.
 	Iterating this proof yields the result in full generality by transitivity of homotopy.
 	
 	Let $X_f^1$ and $X_f^2$ be the connected components of $X_f$, let $s_1$ and $s_2$ be the subsets of $S(f)$ such that $f(s_1)=X_f^1$ and $f(s_2)=X_f^2$.
-	Let $\xx$ be a constant plane vector such that $X_f^1+\xx$ intersects $X_f^2$ transversely, let $\nu_0(s_1)\subsetneq\nu_1(s_1)$ be tubular neighbourhoods of $s_1$ disjoint from $S(f)\setminus s_1$ in $M$, and let $\mu$ be a smooth function $M\to\R$ such that $\mu(p)=1$ for $p\in\nu_0(s_1)$ and $\mu(p)=0$ for $p\in M\setminus\nu_1(s_1)$.
+	Let $\xx$ be a constant plane vector such that $X_f^1+\xx$ non-trivially intersects $X_f^2$ transversely, let $\nu_0(s_1)\subsetneq\nu_1(s_1)$ be tubular neighbourhoods of $s_1$ disjoint from $S(f)\setminus s_1$ in $M$, and let $\mu$ be a smooth function $M\to\R$ such that $\mu(p)=1$ for $p\in\nu_0(s_1)$ and $\mu(p)=0$ for $p\in M\setminus\nu_1(s_1)$.
 	
 	Then $g(p)=f(p)+\mu(p)\xx$ is homotopic to $f$ via
 	\[
@@ -62,13 +62,13 @@ By the following Lemma, we also assume that $X_f$ is connected.
 	\]
 \end{proof}
 
-We decompose $X_f$ into arc crossings and arcs that connect crossings.
+Decompose $X_f$ into arc crossings and arcs that connect crossings.
 The arcs are \emph{codimension 1 critical values} and the crossings are \emph{codimension 2 critical values}.
 This induces a structure on $X_f$ as a 1--dimensional CW--complex such that every vertex is adjacent to exactly 4 edges.
 The vertices of $X_f$ are the codimension 2 critical values of $f$.
 The edges of $X_f$ are the arcs of codimension 1 critical values of $f$ that connect codimension 2 critical values of $f$.
-Then $X$ forms the 1--skeleton of a 2--dimensional CW--complex structure on $Y$.
-The faces of $Y$ are the connected components of the set of regular values of $f$.
+Then $X_f$ forms the 1--skeleton of a 2--dimensional CW--complex structure on $Y_f$.
+The faces of $Y_f$ are the connected components of the set of regular values of $f$.
 %We will continue to call an arc of codimension 1 critical values of $X$ an \emph{edge} of $X$ and a codimension 2 critical value of $X$ a \emph{vertex} of $X$.
 
 %
@@ -96,37 +96,51 @@ The faces of $Y$ are the connected components of the set of regular values of $f
 	Around each vertex $x$ of $X$ we fit an octagon $\nbhd{x}$ such that the edges of the octagon alternate between transverse intersection and nonintersection with an edge of $X$.
 	Take the collection $D_2=\cup_x \nbhd{x}$ to be our first set of cornered discs in our decomposition of $\BB$.
 	
-	Consider $B_0=\overline{\BB\setminus D_2}$.
-	We further decompose $B_0$ by pairing off faces of $B_0$.
-	Faces $F$ and $G$ of $B_0$ are paired if there is an arc of codimension 1 critical values connecting them.
-	Call this arc $FG$ and connect the boundary of $F$ to the boundary of $G$ with arcs $FG_1$ and $FG_2$.
-	Then the simple closed curve  $F\cup G \cup FG_1\cup FG_2$ separates $B_0$ into two components -- one of which is a cornered disc that contains $\alpha_FG$.
+	Consider $B_1=\overline{\BB\setminus D_2}$.
+	We further decompose $B_1$ by pairing off faces of $B_1$.
+	Faces $F$ and $G$ of $B_1$ are paired if there is an arc of codimension 1 critical values connecting them.
+	Call such an arc $FG$ and connect the boundary of $F$ to the boundary of $G$ with arcs $FG_1$ and $FG_2$ parallel to $FG$.
+	Then the simple closed curve  $F\cup G \cup FG_1\cup FG_2$ separates $B_1$ into two components -- one of which is a cornered disc that contains $\alpha_FG$.
 	For each such edge $\alpha$ we call the cornered disc containing $\alpha$ by $\nbhd{\alpha}$.
 	Take the collection $D_1=\cup_\alpha \nbhd{\alpha}$ to be our second set of cornered discs in our decomposition of $\BB$.
 	
-	Consider $B_1=B_0\setminus D_1$.
+	Consider $B_0=B_1\setminus D_1$.
+	It is a disjoint collection of cornered 2--manifolds, of which all but one are cornered discs in one--to--one correspondence with the 2--cells of the 2--complex structure on $Y_f=f(M)$.
+	For a 2--cell $y$ of $Y_f$, itself corresponding to a connected component $c_y$ of regular values of $f$, define the one--to--one correspondence between the cornered discs $D_k$ of $B_0$ and the 2--cells of $Y_f$ by $c(y)=D_k$ if any only if $D_k\cap c_y\neq\emptyset$.
+	The last cornered surface in $B_0$ is $A=B\setminus\nu(Y_f)$ for some tubular neighbourhood of $Y_f$, and this is homeomorphic to an annulus.
+	Take the collection $D_0=\cup_y c(y)$ to be our third set of cornered discs in our decomposition of $\BB$.
 	
-		
-	Then $B$ boundary of $\BB_*$ consists of the octagonal boundaries of the $\nbhd{x}$.
-	The edges of $X$ connect the boundary components of $\BB_*$, so we may fit neat closed tubular neighbourhoods around the edges in such a way that the corners of this neighbourhood agree with the corners of the $\nbhd{x}$.
-	For $\alpha$ an edge of $X$, $\nbhd{\alpha}$ is the sleeve around $\alpha$.
-	
-	Now, $\BB_{**}=\overline{\BB_*\setminus\cup_\alpha\nbhd{\alpha}}$.
-	Each connected component is either a subset of $R_\infty$ or an open octagonal subset of a region $\R_i$.
-	We take the  closure of these octagons in $\BB$ and call these spaces by $D_i$.
-	
-	The union of the topological boundaries of the decomposing blocks form a subspace $Y$ of $\BB$ that intersects $X$ only along edges of $X$.
-	By construction, $Y$ has the structure of a 3--valent graph whose vertices are its corners and whose edges are the edges of the decomposing blocks for $B$.
+	Together, $\BB=A\cup D_0\cup D_1\cup D_2$ as desired.
 \end{proof}
 
 \begin{lem}
 	\label{lem:3bodydecomp}
-	There is a decomposition of $M$ induced by $f$ and Lemma \ref{lem:bbdecomp} into distinct subspaces, each of which is a manifold with corners that is homeomorphic to a $(3,1)$--handlebody of genus 0, 1, 2, or 3.
-	These cornered handlebodies intersect one another along $(2,1)$--handlebodies embedded in their boundaries and the boundary circles of these embedded $(2,1)$--handlebodies are exactly the corners of the $(3,1)$--handlebodies.
+	There is a decomposition of $M$ induced by $f$
+%	and Lemma \ref{lem:bbdecomp}
+	into a collection of 3--manifolds with faces that intersect only along faces.
+	Furthermore, each decomposing piece is homeomorphic to a $(3,1)$--handlebody of genus 0, 1, 2, or 3.
+%	These cornered handlebodies intersect one another along $(2,1)$--handlebodies embedded in their boundaries and the boundary circles of these embedded $(2,1)$--handlebodies are exactly the corners of the $(3,1)$--handlebodies.
 \end{lem}
 
 \begin{proof}
-	Take $Y$ to be the graph obtained in Lemma \ref{lem:bbdecomp} that is embedded in $\BB$ and decomposes $\BB$.
+	Take $\BB=A\cup D_0\cup D_1\cup D_2$ to be the decomposition of $\BB$ obtained in Lemma \ref{lem:bbdecomp}.
+	We examine $f\inv(D_i)$ for each type of disc in this decomposition.
+	
+	Start with $f\inv(D_0)$.
+	Every point of $D_0$ is a regular value of $f$, so a point $p$ in a connected component $D_{0,k}$ has preimage through $f$ a disjoint collection of circles in $M$.
+	This means $f\inv(D_{0,k})$ has the structure of a bundle over $D_{0,k}$ with fiber a disjoint collection of circles.
+	This bundle is trivial because $D_{0,k}$ is simply connected, so each connected component of $f\inv(D_{0,k})$ is homeomorphic to a $(3,1)$--handlebody of genus 1.
+	By the same argument, the 1--boundary of $D_{0,k}$ pulls back to a collection of annuli and the 2--boundary pulls back to a collection of circles.
+	
+	There are several cases for $f\inv(D_1)$.
+	We first consider the case where a component $D_{1,k}$ lies on the boundary of $f(M)$, i.e.\ when $D_{1,k}\cap A\neq\emptyset$.
+	The disc $D_{1,k}$ is bisected by an arc $\alpha$ of codimension 1 critical points into the discs $D_{1,k}^+$ and $D_{1,k}^-$.
+	On one side of $\D_{1,k}$
+
+	
+	
+	
+	 that is embedded in $\BB$ and decomposes $\BB$.
 	We examine how $f\inv(Y)$ sits in $M$.
 	In particular, $M\setminus f\inv(Y)$ is a collection of open $(3,1)$--handlebodies, and their topological closure decomposes $M$ exactly as desired.
 	
