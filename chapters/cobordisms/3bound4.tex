@@ -11,7 +11,7 @@
 To extend the results of the previous section to the case of 3--manifolds bounding 4--manifolds, we consider generic proper smooth maps from closed orientable 3--manifolds into the 2--ball $B^2$.
 Such a map is Morse--like in the sense that its singular set is well behaved, it can be studied via the same techniques as in Section \ref{sec:2bound3}, and we recover a Stein factorization and Stein complex that define a handle decomposition for a bounding 4--manifold.
 
-Throughout this section $M$ is a closed orientable 3--manifold and $f$ is a generic smooth map $M\to\BB$.
+Throughout this section $M$ is a closed orientable 3--manifold and $f$ is a generic smooth map $M\to\BB$, so we establish some facts about these maps before proceeding.
 It is summarized in \cite{Levine65} that $f$ has the following properties:
 \begin{enumerate}
 	\item
@@ -69,6 +69,32 @@ The vertices of $X_f$ are the codimension 2 critical values of $f$.
 The edges of $X_f$ are the arcs of codimension 1 critical values of $f$ that connect codimension 2 critical values of $f$.
 Then $X_f$ forms the 1--skeleton of a 2--dimensional CW--complex structure on $Y_f$.
 The faces of $Y_f$ are the connected components of the set of regular values of $f$.
+
+\begin{defn}
+	Because $M$ is closed, $f$ is proper.
+	This means, for any point $q$ in $f(M)$, a fiber of $f$ above $q$ (i.e.\ a connected component of $f\inv$) either is a closed 1--manifold (i.e.\ a copy $S^1$ that we refer to just as a \emph{circle}) or contains a critical point of $f$.
+	
+	A fiber that contains a critical point of $f$ is called a \emph{singular fiber}, and is called a \emph{regular fiber} if it consists entirely of regular points.	
+\end{defn}
+
+\begin{theorem}[Theorem 3.15 of \cite{Saeki} restricted to orientable 3--manifolds]
+	\label{thm:saekising}
+	Let $f$ be a generic smooth map from a closed orientable 3--manifold into the plane and let $q$ be a critical value of $f$ of codimension $\kappa$.
+	
+	Then the possible singular fibers over $q$ are shown in Figure~\ref{fig:saekising}.
+	Moreover, no two fibers in the list are equivalent to each other even after taking the union with regular circle components.
+\end{theorem}
+
+	
+\begin{figure}
+	\centering
+	\captionsetup{justification=centering}
+	\caption{Possible singular fibers over a codimension $\kappa$ critical value of a proper generic smooth map from an orientable 3--manifold to a surface}
+	\includegraphics[height=3in]{figures/saekising.jpg}
+	\label{fig:saekising}
+\end{figure}
+
+
 %We will continue to call an arc of codimension 1 critical values of $X$ an \emph{edge} of $X$ and a codimension 2 critical value of $X$ a \emph{vertex} of $X$.
 
 %
@@ -77,13 +103,7 @@ The faces of $Y_f$ are the connected components of the set of regular values of 
 
 
 
-\begin{figure}
-	\centering
-	\captionsetup{justification=centering}
-	\caption{Closed sleeve around an arc of codimension 1 critical values and the two neighbouring codimension 2 critical values}
-	\includegraphics[height=4in]{figures/critsleeve.jpg}
-	\label{fig:critsleeve}
-\end{figure}
+
 
 \begin{lem}
 	\label{lem:bbdecomp}
@@ -113,6 +133,14 @@ The faces of $Y_f$ are the connected components of the set of regular values of 
 	Together, $\BB=A\cup D_0\cup D_1\cup D_2$ as desired.
 \end{proof}
 
+\begin{figure}
+	\centering
+	\captionsetup{justification=centering}
+	\caption{Closed sleeve around an arc of codimension 1 critical values and the two neighbouring codimension 2 critical values}
+	\includegraphics[height=4in]{figures/critsleeve.jpg}
+	\label{fig:critsleeve}
+\end{figure}
+
 \begin{lem}
 	\label{lem:3bodydecomp}
 	There is a decomposition of $M$ induced by $f$
@@ -128,26 +156,59 @@ The faces of $Y_f$ are the connected components of the set of regular values of 
 	
 	Start with $f\inv(D_0)$.
 	Every point of $D_0$ is a regular value of $f$, so a point $p$ in a connected component $D_{0,k}$ has preimage through $f$ a disjoint collection of circles in $M$.
-	This means $f\inv(D_{0,k})$ has the structure of a bundle over $D_{0,k}$ with fiber a disjoint collection of circles.
+	This means $f\inv(D_{0,k})$ has the structure of a bundle over $D_{0,k}$ with fiber a disjoint collection of circles and projection map $f$.
 	This bundle is trivial because $D_{0,k}$ is simply connected, so each connected component of $f\inv(D_{0,k})$ is homeomorphic to a $(3,1)$--handlebody of genus 1.
 	By the same argument, the 1--boundary of $D_{0,k}$ pulls back to a collection of annuli and the 2--boundary pulls back to a collection of circles.
 	
-	To investigate $f\inv(D_1)$ we have two cases.
-	A disc $D_{1,k}$ in $D_1$ is bisected by an arc $\alpha$ of codimension 1 critical points, and that arc is the image of either a definite fold or an indefinite fold.
+	Next, let $D_{1,k}\in D_1$.
+	The preimage $f\inv(D_{1,k})$ has structure determined by whether the arc $\alpha$ of codimension 1 critical points that bisects $D_{1,k}$ into the discs $D_{1,k}^+$ and $D_{1,k}^-$ is the image of a definite or indefinite fold.
+%	A disc $D_{1,k}$ in $D_1$ is bisected into  by an arc $\alpha$ of codimension 1 critical points, and that arc is the image of either a definite fold or an indefinite fold.
+	First, we focus on the connected components of $D_{1,k}$ that contain no critical points of $f$
+%	Each of $D_{1,k}^\pm$ consists entirely of regular values of $f$, so $f\inv(D_{1,k}^\pm)$ is shown to be a disjoint collection of cornered $(3,1)$--handlebodies of genus 1.
+	
+	For $q\in\alpha$, consider $f\inv(q)$.
+	Each connected component of $f\inv(D_{1,k})$ that contains a regular fiber over $q$ is a cornered 3--manifold homeomorphic to a $(3,1)$--handlebody of genus 1 by the same argument we made for $D_0$ above.
+	
+	If a component $K$ of $f\inv(D_{1,k})$ contains a singular fiber over $q$, then
+%	 Theorem~\ref{thm:saekising} 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	Then a connected component of $f\inv(q)$ is either a circle or contains a critical point of $f$.
+	By design, exactly one connected component of $f\inv(q)$ contains a critical point of $f$.
+	For the rest, each connected component of $D_{1,k}$ that does not contain a critical point of $f$ is a cornered 3--manifold homeomorphic to a $(3,1)$--handlebodies of genus 1 by the same argument we made for $D_0$ above.
+	
+	Next, let $s_q$ be the fiber of $f$ above $q$ that contains a critical point of $f$.
+	
+	
+	
+	
+	is the disjoint union of a collection of circles along with a connected component that contains the critical point $p$ of $f$ that maps over $q$
+	
+
+
+	
+	
+	
+	
+		In either case, let $\gamma$ 
+	
+	
+	the case of a definite fold, 
+	
 	In both cases let $p\in S(f)$ with $f(p)=q\in\alpha$ and consider the local coordinates $(u,z_1,z_2)$ on $U$ about $p$ such that $f$ takes the form of either $(x,y)=(u,\pm(z_1^2+z_2^2))$ (if $p$ is a definite fold point), or $(x,y)=(u,\pm(z_1^2-z_2^2))$ (if $p$ is an indefinite fold point) on $f(U)$ about $f(p)$.
 	
 	A simple arc in $f(U)$ transverse to $\alpha$
 	
 	
 	The orientability of $M$ guarantees that
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
@@ -303,13 +364,7 @@ The faces of $Y_f$ are the connected components of the set of regular values of 
 	In each case $f\inv(\nbhd{x})$ is a 3--dimensional thickening of the corresponding fibers, hence is a disjoint collection of handlebodies of genus 0,1,2, or 3.
 	The neighbourhood of a regular fiber is still a solid torus, so all but at most two of the connected components of $f\inv(\nbhd{x})$ will be genus 1 handlebodies.
 	
-	\begin{figure}
-		\centering
-		\captionsetup{justification=centering}
-		\caption{Possible singular fibers of a proper generic smooth map from an orientable 3--manifold to a surface}
-		\includegraphics[height=3in]{figures/saekising.jpg}
-		\label{fig:saekising}
-	\end{figure}
+
 	
 	We may now begin describing a handle decomposition for a cobordism $W$ of the pair $(M,\emptyset)$.
 	Begin with $M\times\I$, whose boundary is $M_0\sqcup M_1$ with $M_0=M\times\{0\}$ and $M_1 = M\times\{1\}$, and a proper generic smooth map $f:M_0\to\BB$.
