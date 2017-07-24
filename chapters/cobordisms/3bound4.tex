@@ -152,148 +152,63 @@ The faces of $Y_f$ are the connected components of the set of regular values of 
 
 \begin{proof}
 	Take $\BB=A\cup D_0\cup D_1\cup D_2$ to be the decomposition of $\BB$ obtained in Lemma \ref{lem:bbdecomp}.
-	We examine $f\inv(D_i)$ for each type of disc in this decomposition.
+	We examine $f\inv(D_i)$ for each type of cornered disc in this decomposition.
 	
 	Start with $f\inv(D_0)$.
 	Every point of $D_0$ is a regular value of $f$, so a point $p$ in a connected component $D_{0,k}$ has preimage through $f$ a disjoint collection of circles in $M$.
 	This means $f\inv(D_{0,k})$ has the structure of a bundle over $D_{0,k}$ with fiber a disjoint collection of circles and projection map $f$.
-	This bundle is trivial because $D_{0,k}$ is simply connected, so each connected component of $f\inv(D_{0,k})$ is homeomorphic to a $(3,1)$--handlebody of genus 1.
-	By the same argument, the 1--boundary of $D_{0,k}$ pulls back to a collection of annuli and the 2--boundary pulls back to a collection of circles.
+	This bundle is trivial because $D_{0,k}$ is simply connected, so each connected component of $f\inv(D_{0,k})$ is $D_0$ crossed with a circle, which is a 3--manifold with faces homeomorphic to a $(3,1)$--handlebody of genus 1.
+	By the same argument, a collection of annuli, one per face of $D_{0,k}$, project through $f$ over the 1--boundary of $D_{0,k}$ and their shared boundaries project over the 2--boundary of $D){0,k}$.
+	These annuli are the faces of the decomposing pieces for $M$ that project over $D_{0,k}$.
 	
 	Next, let $D_{1,k}\in D_1$.
-	The preimage $f\inv(D_{1,k})$ has structure determined by whether the arc $\alpha$ of codimension 1 critical points that bisects $D_{1,k}$ into the discs $D_{1,k}^+$ and $D_{1,k}^-$ is the image of a definite or indefinite fold.
+	The preimage $f\inv(D_{1,k})$ has structure determined by whether the arc $\alpha$ of codimension 1 critical points that bisects $D_{1,k}$ into the cornered discs $D_{1,k}^+$ and $D_{1,k}^-$ is the image of a definite or indefinite fold.
 %	A disc $D_{1,k}$ in $D_1$ is bisected into  by an arc $\alpha$ of codimension 1 critical points, and that arc is the image of either a definite fold or an indefinite fold.
-	First, we focus on the connected components of $D_{1,k}$ that contain no critical points of $f$
+%	First, we focus on the connected components of $D_{1,k}$ that contain no critical points of $f$
 %	Each of $D_{1,k}^\pm$ consists entirely of regular values of $f$, so $f\inv(D_{1,k}^\pm)$ is shown to be a disjoint collection of cornered $(3,1)$--handlebodies of genus 1.
-	
-	For $q\in\alpha$, consider $f\inv(q)$.
-	Each connected component of $f\inv(D_{1,k})$ that contains a regular fiber over $q$ is a cornered 3--manifold homeomorphic to a $(3,1)$--handlebody of genus 1 by the same argument we made for $D_0$ above.
-	
-	Now suppose a component $K$ of $f\inv(D_{1,k})$ contains a singular fiber over $q$.
-	Call the critical point in $K$ by $p$.
-	If $p$ is a definite fold, then we have local coordinates $(u,z_1,z_2)$ in a neighbourhood $U$ about $p$ and $(x,y)$ about $q$ so that $f$ has the form $(x,y)=(u,\pm(z_1^2+z_2^2))$ on $U$.
-	In other words, $f\inv(D_{1,k})\cap U$ has the structure of a disc crossed with an interval.
-	
-	form of a disc (in $z_1$, $z_2$ coordinates) crossed with an interval (in the $u$ coordinate)
-	
-	Then we use the orientability of $M$ along with our guaranteed local coordinates about $p$ and $q$ to 
-%	 Theorem~\ref{thm:saekising} 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	Then a connected component of $f\inv(q)$ is either a circle or contains a critical point of $f$.
-	By design, exactly one connected component of $f\inv(q)$ contains a critical point of $f$.
-	For the rest, each connected component of $D_{1,k}$ that does not contain a critical point of $f$ is a cornered 3--manifold homeomorphic to a $(3,1)$--handlebodies of genus 1 by the same argument we made for $D_0$ above.
-	
-	Next, let $s_q$ be the fiber of $f$ above $q$ that contains a critical point of $f$.
-	
-	
-	
-	
-	is the disjoint union of a collection of circles along with a connected component that contains the critical point $p$ of $f$ that maps over $q$
-	
-
-
-	
-	
-	
-	
-		In either case, let $\gamma$ 
-	
-	
-	the case of a definite fold, 
-	
-	In both cases let $p\in S(f)$ with $f(p)=q\in\alpha$ and consider the local coordinates $(u,z_1,z_2)$ on $U$ about $p$ such that $f$ takes the form of either $(x,y)=(u,\pm(z_1^2+z_2^2))$ (if $p$ is a definite fold point), or $(x,y)=(u,\pm(z_1^2-z_2^2))$ (if $p$ is an indefinite fold point) on $f(U)$ about $f(p)$.
-	
-	A simple arc in $f(U)$ transverse to $\alpha$
-	
-	
-	The orientability of $M$ guarantees that
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-%	We first consider the case where a component $D_{1,k}$ lies on the boundary of $f(M)$, i.e.\ when $D_{1,k}\cap A\neq\emptyset$.
-	The disc $D_{1,k}$ is bisected by an arc $\alpha$ of codimension 1 critical points into a pair of cornered discs.
-%	One of these discs is outside of $f(M)$.
-	Call these discs $D_{1,k}^1$ and $D_{1,k}^2$.
-	Then $D_{1,k}$ has faces $F$, $G$, $FG_1$ and $FG_2$ as in Lemma~\ref{lem:bbdecomp}, labelled so that $D_{1,k}^1$ has $FG_1$ as a face and $D_{1,k}^2$ has $FG_2$ as a face.
-	
-	
-	
-	
-	
-	
-	Let $\gamma(t)$ be a simple curve with one endpoint in $FG_1$ and the other in $FG_2$ so that $\gamma$ intersects alpha transversely at exactly one point.
-	Then $\gamma\inv\comp f$ is a Morse function $M\to\R$
-	
-	
-	
-	 that is embedded in $\BB$ and decomposes $\BB$.
-	We examine how $f\inv(Y)$ sits in $M$.
-	In particular, $M\setminus f\inv(Y)$ is a collection of open $(3,1)$--handlebodies, and their topological closure decomposes $M$ exactly as desired.
-	
-	First consider the vertices of $Y$.
-	Some of these vertices are outside the image of $f$, so we disregard them entirely.
-	The rest are regular points of $f$, so their preimages are disjoint collections of circles in $M$.
-	For a vertex $v$ of $Y$, we call the preimage by $M_v$ and index the individual circles by $M_{v,k}$.
-	
-	Now, the edges of $Y$.
-	Again, some edges of $Y$ are outside of $f(M)$, so we disregard them.
-	Of the rest, we first consider those that do not intersect $X$.
-	These are strands of regular points of $f$, so their preimages are disjoint collections of annuli in $M$ as in Lemma \ref{lem:2bodyannuli2}.
-	An edge $e$ of this type is one of the edges bounding an octagon $D_i$ interior to $R_i$, and it does so as the shared boundary of $D_i$ with either an edge sleeve $\nbhd{\alpha}$ of $X$ or a vertex sleeve $\nbhd{x}$ of $X$.
-	We call the preimage annuli by $M_{e,1}$ and index the connected components by $M_{e,1}^{k_u,k_v}$, where $u$ and $v$ are the vertices of $Y$ that bound $e$ and $M_{v,k_v}$ and $M_{u,k_u}$ are the boundary circles of the component.
-	The term ``1'' in the subscript denotes the genus of the $(2,1)$--handlebody that projects over the edge $e$.
-	
-	If an edge $e$ of $Y$ intersects an edge $\alpha$ of $X$, then $f\inv(e)$ is the disjoint union of a collection of some number of annuli (possibly zero) with a pair of pants or a disc, as in Lemma \ref{lem:2bodysing}.
-	We call the preimage annuli in this collection by $M_{e,1}^{k_u,k_v}$ as before.
-	If there is a disc projecting over $e$, it is denoted $M_{e,0}^{k_u}$, and if there is a pair of pants it is $M_{e,2}^{k_u,k_v,k_w}$, where the indexing follows the established pattern.
-	
-	Pulling back $Y$ to $f\inv(Y)=M_\Sigma$ yields a collection of $(2,1)$--handlebodies of genus 0, 1, and 2 that intersect other handlebodies only along their boundary circles.
-	These circles are the union
-	\[
-		M_\Sigma^c = \bigcup_{v\in v(Y)}\Big( \bigcup_k M_{v,k}\Big),
-	\]
-	and $M_\Sigma\setminus M_\Sigma^c$ is just the collection of open $(2,1)$--handlebodies that project over the interiors of the edges of $Y$.
-	
-	We now show that $M\setminus M_\Sigma$ is a disjoint collection of open sets, each of which is homeomorphic to the interior of a $(3,1)$--handlebody of genus 0, 1, or 2.
-	
-	Let $D$ be a disc in the decomposition of $\BB$.
-	For $p$ a point interior to $D$, $p$ is regular.
-	We invoke the same arguments made in Lemmas \ref{lem:2bodyannuli1} and \ref{lem:2bodyannuli2}, finding a small tubular neighbourhood about $p$, then taking the union of tubular neighbourhoods to form an open neighbourhood that projects surjectively over $D$.
-	This implies that the preimage of $\inter{D}$ is a collection of open solid tori whose topological boundary in $M$ sits inside of $M_\Sigma$ as a collection of disjoint cornered surfaces homeomorphic to tori.
-	We know that a pair of tubular neighbourhoods to disjoint circles over the same point reside in two disjoint solid tori over $D$ because a pair of fibers join into a single circle only at a critical point, and every value in $D$ is regular.
-	This also means that the annuli over the edges of.
-	
-	For an arc sleeve $\nbhd{\alpha}$, 
-	
-	
+	If a connected component of $f\inv(D_{1,k})$ consists entirely of regular fibers, then it is a 3--manifold with faces homeomorphic to a $(3,1)$--handlebody of genus 1 by the same argument we made for $D_0$ above.
+	As before, in these cases a collection of annuli projects through $f$ over the 1--boundary of $D_{1,k}$ and a collection of circles projects over the 2--boundary of $D_{1,k}$.
+	On the other hand, let $K$ be a connected component of $f\inv(D_{1,k})$ that contains singular fibers over $\alpha$.
+	By design, there is exactly one component of $f\inv(D_{1,k})$ satisfying this property.
+	We consider two cases: $K$ intersects $S(f)$ on either a definite fold or an indefinite fold.
+	
+	If $K$ contains a definite fold, then the singular fiber in $K$ above any point in $\alpha$ is of the first form displayed in Figure~\ref{fig:saekising}.
+	Local coordinates $(u,z_1,z_2)$ tell us that $f$ has the form of $f(u,z_1,z_2)=(u,\pm(z_1^2+z_2^2))$ near the fold, where the fold points correspond to the line $z_1=z_2=0$ in these local coordinates.
+	The component $K$ is thus the cross product of a 2--disc (corresponding to the parabolic level surfaces in $u$) with an interval (corresponding to the line $z_1=z_2=0$).
+	In other words, $K$ is a 3--manifold with faces homeomorphic to a $(3,1)$--handlebody of genus 0.
+	It follows that a pair of discs and an annulus project through $f$ over the 1--boundary of $D_{1,k}$ and the shared boundaries of these surfaces project over the 2--boundary of $D_{1,k}$.
+	These discs and this annulus form the faces of the decomposing piece for $M$ containing the fold over $\alpha$ that projects over $D_{1,k}$.
+	
+	If $K$ contains an indefinite fold,
+%	then the singular fiber above any point in $\alpha$ is of the second form in Figure~\ref{fig:saekising}.
+	local coordinates $(u,z_1,z_2)$ tell us that $f$ has the form of $f(u,z_1,z_2)=(u,\pm(z_1^2-z_2^2))$ near the fold, where the fold points correspond to the line $z_1=z_2=0$ in these local coordinates.
+	The level surfaces in $u$ in this case are simple saddles.
+	The orientability of $M$ guarantees that the singular fiber above any point in $\alpha$ is of the second form in Figure~\ref{fig:saekising}, and this tells us the simple saddle is contained in a pants surface inside of $K$.
+	The component $K$ is thus the cross product of a pant surface with an interval.
+	In other words, $K$ is a 3--manifold with faces homeomorphic to a $(3,1)$--handlebody of genus 2.
+	In this case, two pants surfaces and two annuli project through $f$ over the 1--boundary of $D_{1,k}$, and the shared boundaries of these surfaces project over the 2--boundary of $D_{1,k}$.
+	These pants and annuli form the faces of the decomposing piece containing the fold over $\alpha$ that projects over $D_{1,k}$. 
+		
+	Connected components of $f\inv(D_2)$ follow the same pattern seen so far.
+	Consider a single cornered disc $D_{2,k}$.
+	A component of $f\inv(D_{2,k})$ consisting entirely of regular fibers has the form of $D_{2,k}$ crossed with a circle and is homeomorphic to a $(2,1)$--handlebody of genus 1 crossed with an interval.
+	Let $v$ be the codimension 2 critical value of $f$ inside of $D_{2,k}$.
+	Then the singular fibre over $v$ is either connected or disconnected
+	If the singular fibre is disconnected, we obtain the disjoint union of cornered decomposing blocks found in the codimension 1 case.
+	
+	The singular fibre over $v$ is connected only if the pair of folds, whose images through $f$ cross at $v$, are both indefinite.
+	When the singular fibre over $v$ is connected, we say that the folds are \emph{interactive} at the fiber.	
+	The connected component of $f\inv(D_{2,k})$ containing the singular fiber is a 3--manifold with faces homeomorphic to a $(3,1)$--handlebody of genus 3.
+	For a full argument see Section 4.4 of \cite{CostThur08}.
+	We are primarily concerned with the boundary of this handlebody.
+	Let $\alpha$ and $\beta$ be the arcs of codimension 1 critical values of $f$ that cross at $v$.
+	As in the codimension 1 case, we find that a collection of four pants surfaces and four annuli project through $f$ over the 1--boundary of $D_{2,k}$.
+	The pants project over the faces of $D_{2,k}$ that cross $\alpha$ and $\beta$ and the annuli project over the faces of $D_{2,k}$ that are shared by $D_0$.
+	The shared circular boundaries of these surfaces project over the 2--corners of $D_{0,k}$.
+	These pants and annuli form the faces of the decomposing piece containing the folds over $\alpha$ and $\beta$ that projects over $D_{2,k}$.
+	
+	The previous analysis is exhaustive over the entirety of $M$, thus we have equipped $M$ with a decomposition into 3--manifolds with faces that intersect only along faces.
+	Furthermore, each decomposing piece is homeomorphic to a $(3,1)$--handlebody of genus 0, 1, 2, or 3 as desired.
 \end{proof}
 
 \begin{lem}
