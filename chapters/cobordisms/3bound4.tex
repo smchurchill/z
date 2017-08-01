@@ -11,7 +11,8 @@
 To extend the results of the previous section to the case of 3--manifolds bounding 4--manifolds, we consider generic proper smooth maps from closed orientable 3--manifolds into the 2--ball $B^2$.
 Such a map is Morse--like in the sense that its singular set is well behaved, it can be studied via the same techniques as in Section \ref{sec:2bound3}, and we recover a Stein factorization and Stein complex that define a handle decomposition for a bounding 4--manifold.
 
-Throughout this section $M$ is a closed orientable 3--manifold and $f$ is a generic smooth map $M\to\BB$, so we establish some facts about these maps before proceeding.
+Throughout this section we discuss generic smooth maps from closed orientable 3--manifolds to the plane, so we establish some facts about these maps before proceeding.
+Let $M$ be a closed orientable 3--manifold and $f$ a generic smooth map $M\to\BB$.
 It is summarized in \cite{Levine65} that $f$ has the following properties:
 \begin{enumerate}
 	\item
@@ -107,6 +108,7 @@ The faces of $Y_f$ are the connected components of the set of regular values of 
 
 \begin{lem}
 	\label{lem:bbdecomp}
+	Let $M$ be a closed orientable 3--manifold and $f$ a generic smooth map $M\to\BB$.
 	There is a decomposition of $\BB$ induced by $f$ into a collection of 2--manifolds with faces that intersect only along faces.
 	Furthermore, all but one of these surfaces are \emph{cornered discs} --- 2--manifolds with faces that are homeomorphic to $\DD$.
 \end{lem}
@@ -120,7 +122,7 @@ The faces of $Y_f$ are the connected components of the set of regular values of 
 	We further decompose $B_1$ by pairing off faces of $B_1$.
 	Faces $F$ and $G$ of $B_1$ are paired if there is an arc of codimension 1 critical values connecting them.
 	Call such an arc $FG$ and connect the boundary of $F$ to the boundary of $G$ with arcs $FG_1$ and $FG_2$ parallel to $FG$.
-	Then the simple closed curve  $F\cup G \cup FG_1\cup FG_2$ separates $B_1$ into two components -- one of which is a cornered disc that contains $\alpha_FG$.
+	Then the simple closed curve  $F\cup G \cup FG_1\cup FG_2$ separates $B_1$ into two components -- one of which is a cornered disc that contains $\alpha_{FG}$.
 	For each such edge $\alpha$ we call the cornered disc containing $\alpha$ by $\nbhd{\alpha}$.
 	Take the collection $D_1=\cup_\alpha \nbhd{\alpha}$ to be our second set of cornered discs in our decomposition of $\BB$.
 	
@@ -143,6 +145,7 @@ The faces of $Y_f$ are the connected components of the set of regular values of 
 
 \begin{lem}
 	\label{lem:3bodydecomp}
+	Let $M$ be a closed orientable 3--manifold and $f$ a generic smooth map $M\to\BB$.
 	There is a decomposition of $M$ induced by $f$
 %	and Lemma \ref{lem:bbdecomp}
 	into a collection of 3--manifolds with faces that intersect only along faces.
@@ -158,10 +161,10 @@ The faces of $Y_f$ are the connected components of the set of regular values of 
 	Every point of $D_0$ is a regular value of $f$, so a point $p$ in a connected component $D_{0,k}$ has preimage through $f$ a disjoint collection of circles in $M$.
 	This means $f\inv(D_{0,k})$ has the structure of a bundle over $D_{0,k}$ with fiber a disjoint collection of circles and projection map $f$.
 	This bundle is trivial because $D_{0,k}$ is simply connected, so each connected component of $f\inv(D_{0,k})$ is $D_0$ crossed with a circle, which is a 3--manifold with faces homeomorphic to a $(3,1)$--handlebody of genus 1.
-	By the same argument, a collection of annuli, one per face of $D_{0,k}$, project through $f$ over the 1--boundary of $D_{0,k}$ and their shared boundaries project over the 2--boundary of $D){0,k}$.
+	By the same argument, a collection of annuli, one per face of $D_{0,k}$, project through $f$ over the 1--boundary of $D_{0,k}$ and their shared boundaries project over the 2--boundary of $D_{0,k}$.
 	These annuli are the faces of the decomposing pieces for $M$ that project over $D_{0,k}$.
 	
-	Next, let $D_{1,k}\in D_1$.
+	Next, let $D_{1,k}$ be a connected component of $D_1$.
 	The preimage $f\inv(D_{1,k})$ has structure determined by whether the arc $\alpha$ of codimension 1 critical points that bisects $D_{1,k}$ into the cornered discs $D_{1,k}^+$ and $D_{1,k}^-$ is the image of a definite or indefinite fold.
 %	A disc $D_{1,k}$ in $D_1$ is bisected into  by an arc $\alpha$ of codimension 1 critical points, and that arc is the image of either a definite fold or an indefinite fold.
 %	First, we focus on the connected components of $D_{1,k}$ that contain no critical points of $f$
@@ -213,9 +216,48 @@ The faces of $Y_f$ are the connected components of the set of regular values of 
 
 \begin{lem}
 	\label{lem:3body2handle}
-	Let $M$ have the decomposition of Lemma \ref{lem:3bodydecomp}.
-	If $M$ is the boundary of some 4--manifold $W$, then 4--dimensional 2--handles can be attached to $W$ over the regular genus 1 handlebodies in the decomposition of $M$ in such a way that the induced surgery on $M$ turns every genus 0, 1, and 2 codimension 1 handlebody into a copy of $S^2\times\D^1$.
+	Let $M$ be a closed orientable 3--manifold and $f$ a generic smooth map $M\to\BB$.
+	Let $W=M\times\I$ be a 4--manifold with boundary and consider the boundary component $M\times\{1\}=M^+$.
+	
+	Suppose that $M^+$ has been decomposed into a collection of 3--manifolds with faces induced by $f$ as in the proof of Lemma~\ref{lem:3bodydecomp}.
+%	We write the decomposition in two ways.
+%	The first way is as
+%	\[
+%		M^+ = H_0\cup H_1\cup H_2\cup H_3
+%	\]
+%	where an element of $H_i$ is a 3--manifolds with faces that is homeomorphic to a $(3,1)$--handlebody of genus i.
+%	The second is as
+	We write the decomposition as
+	\[
+		M^+ = f\inv D_0\cup f\inv D_1\cup f\inv D_2
+	\]
+	where $\BB=A\cup D_0\cup D_1\cup D_2$ is the decomposition of $\BB$ induced by $f$ as in the proof of Lemma \ref{lem:bbdecomp}.
+	
+	Then for each connected component $D_{0,k}$ of $D_0$ and each connected component $(f\inv D_{0,k})_j$ of $f\inv D_{0,k}$, the attachment of a copy of $D_{0,k}\times\DD$ to $(D_{0,k})_j$ over $D_{0,k}\times S^1$, obtained as $D_{0,k}\times \pd \DD\subset D_{0,k}\times\DD$, for each $j$, $k$ turns each decomposing block of $M^+$ in $f\inv D_1$ into a copy of $S^2\times D_1$.
 \end{lem}
+
+\begin{proof}
+	We examine the connected components of $f\inv D_1$.
+	
+	
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{lem}
 	\label{lem:3body3handle}

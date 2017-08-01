@@ -101,15 +101,17 @@ In the notation used in the of the proof of Lemma~\ref{lem:sigmadecomp}, we atta
 	\label{lem:sigma2handles}
 	Let $\Sigma$ be a closed, oriented 2--manifold and let $f:\Sigma\to\II$ be a Morse function with distinct critical values.
 	Let $M=\Sigma\times\I$ be a 3--manifold with boundary and consider the boundary component $\Sigma\times\{1\}=\Sigma^+$.
-	Then it is possible to attach 2--handles to $M$ over submanifolds of $\Sigma^+$	such that $M\cup\{\textrm{2--handles}\}$ is a 3--manifold with faces whose boundary consists of $\Sigma\times\{-1\}$ and a disjoint collection of boundary components that are homeomorphic to 2--spheres.
+	Then there exists a collection of submanifolds of $\Sigma^+$ such that attaching 2--handles to $M$ over this collection results in a 3--manifold with faces whose boundary consists of $\Sigma\times\{-1\}$ and a disjoint collection of boundary components that are homeomorphic to 2--spheres.
+%	Then attaching 2--handles to $M$ over submanifolds of $\Sigma^+$ such that $M\cup\{\textrm{2--handles}\}$ is 
 \end{lem}
 
 \begin{proof}
-	By Lemma~\ref{lem:sigmadecomp}, there is a decomposition of $\Sigma^+$ into a collection of 2--discs, annuli, and pants.
-	This decomposition was obtained by first decomposing $f(\Sigma)$ into intervals $T_i$ and $X_i$, where each $X_i$ contained exactly one critical value, the $T_i$ consisted entirely of regular values, the $T_i$ separated the $X_i$, and vice versa.
+	By Lemma~\ref{lem:sigmadecomp}, there is a decomposition of $\Sigma^+$ into $\Sigma^+=\MA\cup \MD\cup \MP$ where $\MA$ is a collection of annuli, $\MD$ is a collection of  2--discs, and $\MP$ is a collection of pants surfaces.
+	Then the collection that satisfies the statement of the lemma is $\MA$.
 	
-	Consider the annuli in this decomposition that map only over regular values through $f$.
-	In other words, the $f\inv(T_i)$.
+	Our decomposition was obtained by first decomposing $f(\Sigma)$ into intervals $T_i$ and $X_i$, where each $X_i$ contained exactly one critical value, the $T_i$ consisted entirely of regular values, the $T_i$ separated the $X_i$, and vice versa.	
+	Consider first the elements of $\MA$ that map only over regular values through $f$.
+	In other words, $f\inv(T_i)$ for each $i$.
 	Because the $T_i$ are disjoint, none of these annuli intersect one another.
 	We attach a 2--handle to $M$ over each of these annuli.
 	
