@@ -214,6 +214,8 @@ The faces of $Y_f$ are the connected components of the set of regular values of 
 	Furthermore, each decomposing piece is homeomorphic to a $(3,1)$--handlebody of genus 0, 1, 2, or 3 as desired.
 \end{proof}
 
+
+
 \begin{lem}
 	\label{lem:3body2handle}
 	Let $M$ be a closed orientable 3--manifold and $f$ a generic smooth map $M\to\BB$.
@@ -233,13 +235,31 @@ The faces of $Y_f$ are the connected components of the set of regular values of 
 	\]
 	where $\BB=A\cup D_0\cup D_1\cup D_2$ is the decomposition of $\BB$ induced by $f$ as in the proof of Lemma \ref{lem:bbdecomp}.
 	
-	Then for each connected component $D_{0,k}$ of $D_0$ and each connected component $(f\inv D_{0,k})_j$ of $f\inv D_{0,k}$, the attachment of a copy of $D_{0,k}\times\DD$ to $(D_{0,k})_j$ over $D_{0,k}\times S^1$, obtained as $D_{0,k}\times \pd \DD\subset D_{0,k}\times\DD$, for each $j$, $k$ turns each decomposing block of $M^+$ in $f\inv D_1$ into a copy of $S^2\times D_1$.
+	For each connected component $D_{0,k}$ of $D_0$ and each connected component $(f\inv D_{0,k})_j$ of $f\inv D_{0,k}$, suppose we attach a copy of $D_{0,k}\times\DD$ to $(D_{0,k})_j$ over $D_{0,k}\times S^1$, obtained as $D_{0,k}\times \pd \DD\subset D_{0,k}\times\DD$.
+%	 for each $j$, $k$ turns 
+	Then this attachment alters each decomposing block of $M^+$ in $f\inv D_1$ by turning it into a copy of $S^2\times D^1$.
 \end{lem}
 
 \begin{proof}
 	We examine the connected components of $f\inv D_1$.
+	Let $D_{1,k}$ be a connected component of $D_1$ and $(f\inv D_{1,k})_j$ a connected component of $f\inv D_{1,k}$.
+	Then there are three possibilities; $(f\inv D_{1,k})_j$ is either $\DD\times\I$, $A\times\I$ with $A$ an annulus, or $P\times\I$ with $P$ a pants surface.
+	These three decomposing blocks are illustrated in Figure~\ref{fig:arcsleevepre}.
 	
+	\begin{figure}
+		\centering
+		\captionsetup{justification=centering}
+		\caption{Possible connected components of  $f\inv D_1$}
+		\includegraphics[height=4in]{figures/arcsleevepre.jpg}
+		\label{fig:arcsleevepre}
+	\end{figure}
 	
+	When the decomposing block is $B=\DD\times\I$, consider the face $B_1=\pd \DD\times \I$.
+	This face projects through $f$ over a face of $D_{1,i}$ that is also a face of a connected component $D_{0,k}$ of $D_0$.
+	A copy of $D_{0,k}\times\DD$ was attached over each connected component of $f\inv D_{0,k}$, so Proposition~\ref{prop:addface} tells us that the effect of this attachment on $B$ is identical to gluing a copy of $\DD\times \I$ over its $\pd \DD\times \I$ face to $B$ over its $B_1$ face.
+	Thus the block $B$ is replaced with $S^2\times\I=S^2\times D^1$ and the lemma is proved in this case.
+	
+	For the cases of $A\times\I$ and $P\times\I$, we iterate the previous argument for each face obtained as $\pd A\times\I$ and $\pd P\times\I$.	
 \end{proof}
 
 
@@ -382,14 +402,7 @@ The faces of $Y_f$ are the connected components of the set of regular values of 
 	The boundary circles of these surfaces at a cross section $\Sigma\times\{t\}$ project through $f$ over the boundaries of shrunken regions, so they are filled with discs that sit inside of attached 2--handles from the previous step.
 	In each case, we obtain a copy of $S^2\times\D^1$ over which we attach a 3--handle.
 	The further modification to $M_0$ that takes place when we attach 3--handles can be thought of as the deletion of a copy of $S^2\times D^1$ followed by gluing 3--discs over the newly created 2--sphere boundary components.
-	
-	\begin{figure}
-		\centering
-		\captionsetup{justification=centering}
-		\caption{Possible connected components of arc sleeve preimages}
-		\includegraphics[height=4in]{figures/arcsleevepre.jpg}
-		\label{fig:arcsleevepre}
-	\end{figure}
+
 	
 	Finally, let $x$ be a codimension 2 critical value and let $\nbhd{x}$ be its sleeve.
 	We find $x$ at the crossing of a pair of strands of codimension 1 critical values, and those strands are classified as definite or indefinite folds.
