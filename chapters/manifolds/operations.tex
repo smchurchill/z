@@ -83,7 +83,8 @@ They tell us that manifolds can be attached over faces, the attachment space is 
 	Symbolically, this is $$\pd_j( X \cup_F X') = (\pd_j X\setminus \iota(F))\cup(\pd_j X'\setminus \iota'(F))\cup(\pd_j F).$$
 \end{prop}
 
-\{ASIDE FOR EDITING:  The following proof is based on some informal notes by Jim Davis found \href{http://www.indiana.edu/~jfdavis/notes/m623/smooth_structures_and_handles.pdf}{here}. Is this even citable?\}
+The following proof is an adaptation from \cite{davis}
+%\{ASIDE FOR EDITING:  The following proof is based on some informal notes by Jim Davis found \href{http://www.indiana.edu/~jfdavis/notes/m623/smooth_structures_and_handles.pdf}{here}. Is this even citable?\}
 
 \begin{proof}
 	To prove this proposition we put a smooth structure on $X\cup_F X'$ so that if $x\in F$ is a $j$--corner then $\iota(x)\sim \iota'(F)\in X\cup_F X'$ is a $j$--corner as well.
@@ -174,6 +175,88 @@ They tell us that manifolds can be attached over faces, the attachment space is 
 	Similarly, if $p$ is a $j$--corner of $X'$, $j\geq 0$, and $k$ is the number of faces in $\varphi({\bf F})$ that contain $p$, then $p$ is a $(j-k)$--corner of $X\cup_{\bf F} X'$.
 \end{cor}
 
+\begin{figure}[H]
+	\centering
+	\caption{Attaching two copies of $\D^2\times\I$ together.}
+	\includegraphics[height=3in]{figures/dummy.jpg}
+	\label{fig:DxIuDxI}
+\end{figure}
+
+The following examples illustrate the changes that occur in the boundary of a 4--manifold with faces when we perform the cornered version of a handle attachment.
+Such operations are used extensively in Section~\ref{sec:3bound4}.
+
+\begin{ex}
+	\label{ex:DxIuDxI}
+	Let $X$ and $Y$ each be copies of $\DD\times\I$.
+	Include the face $F=S^1\times\I$ into $X$ as
+	\[
+	x:F= S^1\times\I\into S^1\times\I=\pd \DD \times\I\subset \pd X,
+	\]
+	with a similar map $y$ including $F$ into $Y$.
+	We immediately deduce that the adjunction $X\cup_F Y$ is exactly $S^2\times\I$.
+	See Figure~\ref{fig:DxIuDxI}
+\end{ex}
+
+\begin{ex}
+	\label{ex:AxIuDxI}
+	Let $X=S^1\times\I\times\I$ and $Y=\DD\times\I$.
+	Include the face $F=S^1\times\I$ into $X$ as
+	\[
+		x:F= S^1\times\I \into S^1\times\I=S^1 \times\I\times\{1\}\subset \pd X,
+	\]
+	and into $Y$ as
+	\[
+		y:F= S^1\times\I\into S^1\times\I=\pd \DD \times\I\subset \pd Y.
+	\]
+	The adjunction $X\cup_F Y$ forms $\DD\times\I$.
+	See Figure~\ref{fig:AxIuDxI}
+\end{ex}
+
+\begin{figure}[H]
+	\centering
+	\caption{Attaching $S^1\times\I\times\I$ to $\D^2\times\I$.}
+	\includegraphics[height=3in]{figures/dummy.jpg}
+	\label{fig:AxIuDxI}
+\end{figure}
+
+\begin{ex}
+	\label{ex:PxIuDxI}
+	Let $P$ be a pants surface and take $X=P\times\I$ with faces $P\times\{\pm 1\}$ and $\pd P\times\I$ (three copies of $S^1\times \I$).
+	Let $Y=\DD\times\I$.
+	
+	Include the face $F=S^1\times\I$ into $X$ over one of its annular boundary components and into $Y$ over its only annular boundary component.
+	Then the adjunction $X\cup_F Y$ is $ S^1\times\I\times\I $.
+	See Figure~\ref{fig:PxIuDxI}
+\end{ex}
+
+\begin{figure}[H]
+	\centering
+	\caption{Attaching a pair of pants crossed with an interval to $\D^2\times\I$.}
+	\includegraphics[height=3in]{figures/dummy.jpg}
+	\label{fig:PxIuDxI}
+\end{figure}
+
+The pattern established continues when the cylindrical blocks fill in 3--manifolds over annular boundary components.
+We examine two more specific cases of this that are relevant in Section~\ref{sec:3bound4}.
+
+\begin{ex}
+	\label{ex:interactivefiber1uDxI}
+	Let $H$ be the 3--manifold illustrated in Figure~\ref{fig:interactivefiber1uDxI}.
+	The 
+	
+\end{ex}
+
+\begin{figure}[H]
+	\centering
+	\caption{Attaching cylindrical blocks over annular boundary components.
+	The 3--manifold is illustrated by its boundary which is embedded in $S^3$, realized as the one point compactification of $ \R^3 $.
+	The 3--manifold is the solid containing the point at infinity, and cylindrical blocks are attached over the highlighted annuli.}
+	\includegraphics[height=3in]{figures/dummy.jpg}
+	\label{fig:interactivefiber1uDxI}
+\end{figure}
+
+
+
 \begin{ex}
 	\label{ex:handlesphere}
 	We first see an example of Proposition~\ref{prop:handle}.
@@ -185,7 +268,7 @@ They tell us that manifolds can be attached over faces, the attachment space is 
 						&	(e^{i\theta},t)		&	\mapsto	&	(e^{i\theta},e^{\pi it/2}).
 		\end{array}
 	\]
-	The 3-manifold $V\cup_{\varphi}H^1$ that results from this handle attachments has one boundary component.
+	The 3-manifold $V\cup_{\varphi}H^1$ that results from this handle attachment has one boundary component.
 	It consists of the faces $\D^2\times\{e^{i\pi/2}\}$, $\D^2\times\{e^{-i\pi/2}\}$, and $\pd\D^2\times[e^{i\pi/2},e^{-i\pi/2}]$, where we use $[e^{i\pi/2},e^{-i\pi/2}]$ to denote the oriented arc in $S^1$, orientation agreeing with that of $S^1$, from the angle $\theta=\pi/2$ to $\theta=-\pi/2$.
 	
 	Next, we use Corollary~\ref{cor:addfaces} and add a copy of $D^2\times\D^1$ to $V\cup_{\varphi}H^1$.

@@ -1,12 +1,5 @@
 \label{sec:3bound4}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	
-%
-%
-%
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 To extend the results of the previous section to the case of 3--manifolds bounding 4--manifolds, we consider generic proper smooth maps from closed orientable 3--manifolds into the 2--ball $B^2$.
 Such a map is Morse--like in the sense that its singular set is well behaved, it can be studied via the same techniques as in Section \ref{sec:2bound3}, and we recover a Stein factorization and Stein complex that define a handle decomposition for a bounding 4--manifold.
@@ -258,79 +251,114 @@ Our structure is as follows:
 \end{proof}
 
 At this point we start modifying the 4--manifold $W=M \times \I$ by attaching cornered 2--handles (i.e.\ forming the adjunction space of $W$ with 4--manifolds $D\times\D^2$ over $D\times\pd D^2$ where $D$ is a cornered disc).
-First, we examine the effect this has on the decomposing pieces $f\inv D_1$.
+%First, we examine the effect this has on the decomposing pieces $f\inv D_1$.
+
+We consolidate our previous two lemmas into something more digestible.
 
 \begin{lem}
-	\label{lem:3body2handlept1}
+	\label{lem:3bodyredecomp}
 	Let $M_0$ be a closed orientable 3--manifold and $f$ a generic smooth map $M_0\to\BB$.
 	Let $W_0=M_0\times\I$ be a 4--manifold with boundary and consider the boundary component $M_0\times\{1\}=M_0^+$.
 	
-	Suppose that $M_0^+$ has been decomposed into a collection of 3--manifolds with faces induced by $f$ as in the proof of Lemma~\ref{lem:3bodydecomp}.
-%	We write the decomposition in two ways.
-%	The first way is as
-%	\[
-%		M^+ = H_0\cup H_1\cup H_2\cup H_3
-%	\]
-%	where an element of $H_i$ is a 3--manifolds with faces that is homeomorphic to a $(3,1)$--handlebody of genus i.
-%	The second is as
+	Suppose that $M^+$ has been decomposed into a collection of 3--manifolds with faces induced by $f$ as in the proof of Lemma~\ref{lem:3bodydecomp}.
 	We write the decomposition as
 	\[
-		M_0^+ = f\inv D_0\cup f\inv D_1\cup f\inv D_2
+	M_0^+ = f\inv D_0\cup f\inv D_1\cup f\inv D_2
 	\]
 	where $\BB=A\cup D_0\cup D_1\cup D_2$ is the decomposition of $\BB$ induced by $f$ as in the proof of Lemma \ref{lem:bbdecomp}.
 	
-	For each connected component $D_{0,k}$ of $D_0$ and each connected component $(f\inv D_{0,k})_j$ of $f\inv D_{0,k}$, suppose we attach a copy of $D_{0,k}\times\DD$ to $(D_{0,k})_j$ over $D_{0,k}\times S^1$, obtained as $D_{0,k}\times \pd \DD\subset D_{0,k}\times\DD$.
-	Then this attachment alters all decomposing blocks of $_0M^+$ in $f\inv D_1$ by turning them each into copies of $S^2\times D^1$.
-
-%	In other words, call the resulting 4--manifold adjunction $W_1$.
-%	Then the boundary components of $W_1$ are $M_1^-$, identical to $M_0^1$, and $M_1^+$, which has a decomposition into collection of copies of $S^2\times\D^1$, one per connected component of $f\inv D_1$, plus 
+	For each connected component $D_{0,n}$ of $D_0$ and each connected component $(f\inv D_{0,n})(m)$ of $f\inv D_{0,n}$, suppose we attach a copy of $D_{0,n}\times\DD$ to $(D_{0,n})(m)$ over $D_{0,n}\times S^1$, obtained as $D_{0,n}\times \pd \DD\subset D_{0,n}\times\DD$.
+	Denote the resulting 4--manifold by $W_1$ and consider the boundary of $W_1$ away from $M_1^-=M_0\times\{-1\}$.
+	Denote this part of $\pd W_1$ by $M_1^+$, which we obtain as $M_1^+=\pd W_1\setminus M_1^-$.
+	Then $M_1^+$ has a decomposition into a collection of 3-manifolds satisfying the following:
+	\begin{enumerate}
+		\item
+		The collection is indexed by the connected components of $f\inv D_1$ and the connected components of $f\inv D_2$.
+		
+		\item
+		A decomposing piece has nontrivial boundary, and that boundary is a disjoint union of 2--spheres.
+		
+		\item
+		A decomposing piece indexed by a connected component of $f\inv D_1$ shares each of its boundary spheres with a decomposing piece indexed by a connected component of $f\inv D_2$, and vice versa.
+	\end{enumerate}
+	Denote by $(f\inv D_{1,i})(j)$ the decomposing piece of $M_1^+$ indexed by the $j\nth$ connected component of $f\inv D_{1,i}$, where $D_{1,i}$ is the $i\nth$ connected component of $D_1$.
+	We similarly write $(f\inv D_{2,k})(l)$ to denote a decomposing piece over $D_2$.
 \end{lem}
 
-
 \begin{proof}
-	We examine the connected components of $f\inv D_1$.
-	Let $D_{1,k}$ be a connected component of $D_1$ and $(f\inv D_{1,k})_j$ a connected component of $f\inv D_{1,k}$.
-	Then there are three possibilities; $(f\inv D_{1,k})_j$ is either $\DD\times\I$, $A\times\I$ with $A$ an annulus, or $P\times\I$ with $P$ a pants surface.
+	The decomposing blocks that we find are built by attaching 3--dimensional 2--handles to the decomposing blocks that project over $D_1$ and $D_2$.
+	This corresponds exactly to effect of 4--dimensional 2--handle attachment on the boundary of $W_0$ cf. Proposition~\ref{prop:addface}.
+	
+	Let $D_{0,n}$ be a connected component of $D_0$ and let $(f\inv D_{0,n})(m)$ be a fiber of $f$ over $D_{0,n}$.
+	To obtain $W_1$, we attached a copy of $D_{0,n}\times\DD$ to $W_0$ with attaching maps the inclusions
+	$$D_{0,n}\times \pd\DD \into D_{0,n}\times \pd\DD$$
+	and
+	$$D_{0,n}\times \pd\DD \into (f\inv D_{0,n})(m)$$
+	for each $n,m$.
+	We use Proposition~\ref{prop:addface} to examine $\pd W_1$.
+	The $d$--boundary of $W_1$ for $d>0$ is decomposed into
+	\begin{enumerate}
+		\item
+			the $d$--boundary of $W_0$ minus $(f\inv D_{0,n})(m)$, the image of $D_{0,n}\times \pd\DD$ in $W_0$, for each $n,m$,
+		\item
+			the $d$--boundary of $D_{0,n}\times\DD$ minus $D_{0,n}\times \pd\DD$, the image of $D_{0,n}\times \pd\DD$ in $D_{0,n}\times\DD$, and
+		\item
+			the $d$--boundary of $D_{0,n}\times \pd\DD$ see as a subset of $W_1$.
+	\end{enumerate}
+	The $d$--boundary of $W_0$ is empty for $d>1$ and consists of $M_0\times\{\pm 1\}$ for $d=1$.
+	For $D_{0,n}\times\DD$, things are a bit more involved.
+	The $d$--boundary of $D_{0,n}\times\DD$ is empty for $d>2$.
+	For $d=2$, we find the 2--boundary of $D_{0,n}\times\DD$ as
+	\begin{enumerate}
+		\item
+			the Cartesian product of the 2--boundary of $D_{0,n}$ with the 0--boundary of $\DD$, which is a collection of 2--disc interiors, union with		
+		\item
+			the Cartesian product of the 1--boundary of $D_{0,n}$ with the 1--boundary of $\DD$, which is a collection of annuli.			
+	\end{enumerate}
+	For $d=1$, we find the 1--boundary of $D_{0,n}\times\DD$ as
+	\begin{enumerate}
+		\item
+		the Cartesian product of the 1--boundary of $D_{0,n}$ with the 0--boundary of $\DD$, which is a collection of copies of $\BB\times\I$, union with		
+		\item
+		the Cartesian product of the 0--boundary of $D_{0,n}$ with the 1--boundary of $\DD$, which is the open solid torus $\inter{D_{0,n}}\times\pd\DD$.			
+	\end{enumerate}
+
+	This lets us describe the boundary of $W_1$.
+	For $d=1$, the 1--boundary of $W_1$ is decomposed as
+	\begin{enumerate}
+		\item the 1--boundary of $W_0$ minus $(f\inv D_{0,n})(m)$ for each $n,m$,
+		
+		\item the 1--boundary of $D_{0,n}\times\DD$ minus $D_{0,n}\times\pd\DD$,
+		
+		\item 
+	\end{enumerate} minus $(f\inv D_{0,n})(m)$ for each $n,m$
+	
+	  
+	
+	For each $j$, the $j$--boundary of $X\cup_F X'$ is decomposed into the $j$--boundary of $X$ minus the image of $F$ in $X$, the $j$--boundary of $X'$ minus the image of $F$ in $X'$, and the $j$--boundary of $F$ seen as a subset of $X\cup_F X'$.	
+	
+	
+		
+	First, we examine the connected components of $f\inv D_1$.
+	Let $D_{1,i}$ be a connected component of $D_1$ and $(f\inv D_{1,i})(j)$ a connected component of $f\inv D_{1,i}$.
+	Then there are three possibilities; $(f\inv D_{1,i})(j)$ is either $\DD\times\I$, $A\times\I$ with $A$ an annulus, or $P\times\I$ with $P$ a pants surface.
 	These three decomposing blocks are illustrated in Figure~\ref{fig:arcsleevepre}.
 	
 	When the decomposing block is $B=\DD\times\I$, consider the face $B_1=\pd \DD\times \I$.
-	This face projects through $f$ over a face of $D_{1,i}$ that is also a face of a connected component $D_{0,k}$ of $D_0$.
-	A copy of $D_{0,k}\times\DD$ was attached over each connected component of $f\inv D_{0,k}$, so Proposition~\ref{prop:addface} tells us that the effect of this attachment on $B$ is identical to gluing a copy of $\DD\times \I$ over its $\pd \DD\times \I$ face to $B$ over its $B_1$ face.
+	Then $B_1$ projects through $f$ over a face of $D_{1,i}$, and this face is also a face of $D_{0,n}$, a connected component of $D_0$.
+	We attached a copy of $D_{0,n}\times\DD$ to $W_0$ over each connected component of $f\inv D_{0,n}$ where the attaching map was inclusion $D_{0,n}\times \pd \DD\into $, so Proposition~\ref{prop:addface} tells us that, for each $d$, a the $d$-boundary of $W_1$ is decomposed into the $d$--boundary of $W_0$ minus the image of 
+	
+	obtained from the boundaries of $W_0$ and $D_{0,k}\times\DD$ by 
+	
+
+	
+	effect of this attachment on $B$ is identical to gluing a copy of $\DD\times \I$ over its $\pd \DD\times \I$ face to $B$ over its $B_1$ face.
 	In other words, the effect is identical to the attachment of a 3--dimensional 2--handle over the  $B_1$ face of $B$.
 	This handle attachment results in a 3--manifold with no corners of depth greater than 1, thus the block $B$ is replaced with $S^2\times\I=S^2\times D^1$ and the lemma is proved in this case.
 	
 	For the cases of $A\times\I$ and $P\times\I$, we iterate the previous argument for each face obtained as $\pd A\times\I$ and $\pd P\times\I$.
-\end{proof}
 
-Next, we examine the effect on the decomposing pieces $f\inv D_2$.
 
-\begin{lem}
-	\label{lem:3body2handlept2}
-	Let $M_0$ be a closed orientable 3--manifold and $f$ a generic smooth map $M_0\to\BB$.
-	Let $W_0=M_0\times\I$ be a 4--manifold with boundary and consider the boundary component $M_0\times\{1\}=M_0^+$.
-	
-	Suppose that $M_0^+$ has been decomposed into a collection of 3--manifolds with faces induced by $f$ as in the proof of Lemma~\ref{lem:3bodydecomp}.
-	%	We write the decomposition in two ways.
-	%	The first way is as
-	%	\[
-	%		M^+ = H_0\cup H_1\cup H_2\cup H_3
-	%	\]
-	%	where an element of $H_i$ is a 3--manifolds with faces that is homeomorphic to a $(3,1)$--handlebody of genus i.
-	%	The second is as
-	We write the decomposition as
-	\[
-		M_0^+ = f\inv D_0\cup f\inv D_1\cup f\inv D_2
-	\]
-	where $\BB=A\cup D_0\cup D_1\cup D_2$ is the decomposition of $\BB$ induced by $f$ as in the proof of Lemma \ref{lem:bbdecomp}.
-	
-	For each connected component $D_{0,k}$ of $D_0$ and each connected component $(f\inv D_{0,k})_j$ of $f\inv D_{0,k}$, suppose we attach a copy of $D_{0,k}\times\DD$ to $(D_{0,k})_j$ over $D_{0,k}\times S^1$, obtained as $D_{0,k}\times \pd \DD\subset D_{0,k}\times\DD$.
-	Then this attachment alters all decomposing blocks of $M_0^+$ in $f\inv D_2$ by turning them into 3--manifolds whose boundary components are copies of $S^2$.
-%	that are homeomorphic to $(3,2)$--handlebodies.
-	%	In other words, call the resulting 4--manifold adjunction $W_1$.
-	%	Then the boundary components of $W_1$ are $M_1^-$, identical to $M_0^1$, and $M_1^+$, which has a decomposition into collection of copies of $S^2\times\D^1$, one per connected component of $f\inv D_1$, plus 
-\end{lem}
-
-\begin{proof}
 	There are five types of decomposing blocks that can project over $D_2$.
 	Three of them are the familiar shapes, up to homeomorphism, of $\DD\times\I$, $A\times\I$ with $A$ an annulus, or $P\times\I$ with $P$ a pants surface.
 	The other two are the $(3,1)$--handlebodies of genus 3 whose boundaries are illustrated in Figures~\ref{fig:interactivefiber1} and~\ref{fig:interactivefiber2}.
@@ -362,40 +390,90 @@ Next, we examine the effect on the decomposing pieces $f\inv D_2$.
 	\end{figure}
 \end{proof}
 
-We consolidate our previous two lemmas into something more digestible.
 
-\begin{cor}
-	\label{cor:3bodyredecomp}
-	Let $M_0$ be a closed orientable 3--manifold and $f$ a generic smooth map $M_0\to\BB$.
-	Let $W_0=M_0\times\I$ be a 4--manifold with boundary and consider the boundary component $M_0\times\{1\}=M_0^+$.
-	
-	Suppose that $M^+$ has been decomposed into a collection of 3--manifolds with faces induced by $f$ as in the proof of Lemma~\ref{lem:3bodydecomp}.
-	We write the decomposition as
-	\[
-		M_0^+ = f\inv D_0\cup f\inv D_1\cup f\inv D_2
-	\]
-	where $\BB=A\cup D_0\cup D_1\cup D_2$ is the decomposition of $\BB$ induced by $f$ as in the proof of Lemma \ref{lem:bbdecomp}.
-	
-	For each connected component $D_{0,k}$ of $D_0$ and each connected component $(f\inv D_{0,k})_j$ of $f\inv D_{0,k}$, suppose we attach a copy of $D_{0,k}\times\DD$ to $(D_{0,k})_j$ over $D_{0,k}\times S^1$, obtained as $D_{0,k}\times \pd \DD\subset D_{0,k}\times\DD$.
-	Denote the resulting 4--manifold by $W_1$ and consider the boundary of $W_1$ away from $M_1^-=M_0\times\{-1\}$.
-	Then the remaining boundary has a decomposition into a collection of 3-manifolds satisfying the following:
-	\begin{enumerate}
-		\item
-			The collection is indexed by the connected components of $f\inv D_1$ and the connected components of $f\inv D_2$.
-		
-		\item
-			A decomposing piece has nontrivial boundary, and that boundary is a disjoint union of 2--spheres.
-		
-		\item
-			A decomposing piece indexed by a connected component of $f\inv D_1$ shares each of its boundary spheres with a decomposing piece indexed by a connected component of $f\inv D_2$, and vice versa.
-	\end{enumerate}
-	The decomposing piece indexed by the $i\nth$ connected component of $f\inv D_1$ is denoted by $(f\inv D_1)(i)$, and the decomposing piece indexed by the $j\nth$ connected component of $f\inv D_2$ is denoted by $(f\inv D_2)(j)$.
-\end{cor}
+%
+%\begin{lem}
+%	\label{lem:3body2handlept1}
+%	Let $M_0$ be a closed orientable 3--manifold and $f$ a generic smooth map $M_0\to\BB$.
+%	Let $W_0=M_0\times\I$ be a 4--manifold with boundary and consider the boundary component $M_0\times\{1\}=M_0^+$.
+%	
+%	Suppose that $M_0^+$ has been decomposed into a collection of 3--manifolds with faces induced by $f$ as in the proof of Lemma~\ref{lem:3bodydecomp}.
+%%	We write the decomposition in two ways.
+%%	The first way is as
+%%	\[
+%%		M^+ = H_0\cup H_1\cup H_2\cup H_3
+%%	\]
+%%	where an element of $H_i$ is a 3--manifolds with faces that is homeomorphic to a $(3,1)$--handlebody of genus i.
+%%	The second is as
+%	We write the decomposition as
+%	\[
+%		M_0^+ = f\inv D_0\cup f\inv D_1\cup f\inv D_2
+%	\]
+%	where $\BB=A\cup D_0\cup D_1\cup D_2$ is the decomposition of $\BB$ induced by $f$ as in the proof of Lemma \ref{lem:bbdecomp}.
+%	
+%	For each connected component $D_{0,k}$ of $D_0$ and each connected component $(f\inv D_{0,k})_j$ of $f\inv D_{0,k}$, suppose we attach a copy of $D_{0,k}\times\DD$ to $(D_{0,k})_j$ over $D_{0,k}\times S^1$, obtained as $D_{0,k}\times \pd \DD\subset D_{0,k}\times\DD$.
+%	Then this attachment alters all decomposing blocks of $_0M^+$ in $f\inv D_1$ by turning them each into copies of $S^2\times D^1$.
+%
+%%	In other words, call the resulting 4--manifold adjunction $W_1$.
+%%	Then the boundary components of $W_1$ are $M_1^-$, identical to $M_0^1$, and $M_1^+$, which has a decomposition into collection of copies of $S^2\times\D^1$, one per connected component of $f\inv D_1$, plus 
+%\end{lem}
 
-\begin{proof}
-	We choose our decomposing pieces to be the 3--manifolds obtained in the proofs of Lemmas~\ref{lem:3body2handlept1} and~\ref{lem:3body2handlept2}.
-	Each of these 3--manifolds has an obvious correspondence with a connected component of $f\inv D_1$ or $f\inv D_2$.	
-\end{proof}
+%Next, we examine the effect on the decomposing pieces $f\inv D_2$.
+%
+%\begin{lem}
+%	\label{lem:3body2handlept2}
+%	Let $M_0$ be a closed orientable 3--manifold and $f$ a generic smooth map $M_0\to\BB$.
+%	Let $W_0=M_0\times\I$ be a 4--manifold with boundary and consider the boundary component $M_0\times\{1\}=M_0^+$.
+%	
+%	Suppose that $M_0^+$ has been decomposed into a collection of 3--manifolds with faces induced by $f$ as in the proof of Lemma~\ref{lem:3bodydecomp}.
+%	%	We write the decomposition in two ways.
+%	%	The first way is as
+%	%	\[
+%	%		M^+ = H_0\cup H_1\cup H_2\cup H_3
+%	%	\]
+%	%	where an element of $H_i$ is a 3--manifolds with faces that is homeomorphic to a $(3,1)$--handlebody of genus i.
+%	%	The second is as
+%	We write the decomposition as
+%	\[
+%		M_0^+ = f\inv D_0\cup f\inv D_1\cup f\inv D_2
+%	\]
+%	where $\BB=A\cup D_0\cup D_1\cup D_2$ is the decomposition of $\BB$ induced by $f$ as in the proof of Lemma \ref{lem:bbdecomp}.
+%	
+%	For each connected component $D_{0,k}$ of $D_0$ and each connected component $(f\inv D_{0,k})_j$ of $f\inv D_{0,k}$, suppose we attach a copy of $D_{0,k}\times\DD$ to $(D_{0,k})_j$ over $D_{0,k}\times S^1$, obtained as $D_{0,k}\times \pd \DD\subset D_{0,k}\times\DD$.
+%	Then this attachment alters all decomposing blocks of $M_0^+$ in $f\inv D_2$ by turning them into 3--manifolds whose boundary components are copies of $S^2$.
+%%	that are homeomorphic to $(3,2)$--handlebodies.
+%	%	In other words, call the resulting 4--manifold adjunction $W_1$.
+%	%	Then the boundary components of $W_1$ are $M_1^-$, identical to $M_0^1$, and $M_1^+$, which has a decomposition into collection of copies of $S^2\times\D^1$, one per connected component of $f\inv D_1$, plus 
+%\end{lem}
+
+%\begin{proof}
+%	We choose our decomposing pieces to be the 3--manifolds obtained in the proofs of Lemmas~\ref{lem:3body2handlept1} and~\ref{lem:3body2handlept2}.
+%	Each of these 3--manifolds has an obvious correspondence with a connected component of $f\inv D_1$ or $f\inv D_2$.	
+%\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 We now attach 3--handles.
 
@@ -412,15 +490,25 @@ We now attach 3--handles.
 	where $\BB=A\cup D_0\cup D_1\cup D_2$ is the decomposition of $\BB$ induced by $f$ as in the proof of Lemma \ref{lem:bbdecomp}.
 	
 	For each connected component $D_{0,k}$ of $D_0$ and each connected component $(f\inv D_{0,k})_j$ of $f\inv D_{0,k}$, suppose we attach a copy of $D_{0,k}\times\DD$ to $(D_{0,k})_j$ over $D_{0,k}\times S^1$, obtained as $D_{0,k}\times \pd \DD\subset D_{0,k}\times\DD$.
-	Denote the resulting 4--manifold by $W_1$ and consider the boundary of $W_1$ away from $M_1^-=M_0\times\{-1\}$.
+	Denote the resulting 4--manifold by $W_1$ and consider the boundary of $W_1$ away from $M_1^-=M_0^-$.
 	
-	Denote $\pd W_1\setminus M_1^-$ by $M_1^+$ and suppose $M_1^+$ has the decomposition guaranteed by Corollary~\ref{cor:3bodyredecomp} into 3--manifolds $(f\inv D_1)(i)$, each a copy of $S^2\times D^1$, and 3--manifolds $(f\inv D_2)(j)$, each with boundary consisting of a disjoint union of 2--spheres.
-	Suppose now that we attach a 4--dimensional 3--handle over $(f\inv D_1)(i)$ for each $i$.
-	Then this attachment alters the decomposing 3--manifolds $(f\inv D_2)(j)$ of $M_1^+$ by turning them each into copies of $S^3$.
+	Denote $\pd W_1\setminus M_1^-$ by $M_1^+$ and suppose $M_1^+$ has the decomposition guaranteed by Corollary~\ref{cor:3bodyredecomp} into 3--manifolds $(f\inv D_{1,i})(j)$, each a copy of $S^2\times D^1$, and 3--manifolds $(f\inv D_{2,k})(l)$, each with boundary consisting of a disjoint union of 2--spheres.
+	Suppose now that we attach a 4--dimensional 3--handle over $(f\inv D_{1,i})(j)$ for each $i,j$.
+	Then this attachment alters the decomposing 3--manifolds $(f\inv D_{2,k})(l)$ of $M_1^+$ by turning them each into copies of $S^3$.
 \end{lem}
 
 \begin{proof}
-	The proof in all cases is 
+	Each case is proved by examining a genus $g$ Heegaard splitting of the resulting 3--manifold, finding a collection of $g$ disjoint destabilizing pairs, and applying Theorem~\ref{thm:lilwald}.
+	
+	Denote the 4--manifold that results from our prescribed 3--handle attachment by $W_2$.
+	For $(f\inv D_{2,k})(l)$ a decomposing piece of $M_1^+$, 
+	For a component $D_{2,k}$ of $D_{2}$
+	
+	For a 3--manifold in 
+	The splitting surface used in each case is the surface that projects .
+	
+	has a Heegaard 
+	The proof in all cases relies
 	
 	
 \end{proof}
