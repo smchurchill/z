@@ -86,6 +86,13 @@ They tell us that manifolds can be attached over faces, the attachment space is 
 The following proof is an adaptation from \cite{davis}
 %\{ASIDE FOR EDITING:  The following proof is based on some informal notes by Jim Davis found \href{http://www.indiana.edu/~jfdavis/notes/m623/smooth_structures_and_handles.pdf}{here}. Is this even citable?\}
 
+\begin{figure}[H]
+	\centering
+	\caption{Face gluing near a corner.}
+	\includegraphics[height=3in]{figures/dummy.jpg}
+	\label{fig:addface}
+\end{figure}
+
 \begin{proof}
 	To prove this proposition we put a smooth structure on $X\cup_F X'$ so that if $x\in F$ is a $j$--corner then $\iota(x)\sim \iota'(F)\in X\cup_F X'$ is a $j$--corner as well.
 	We first decompose $X$ into the triad $X=(X;K,M)$ where
@@ -241,72 +248,109 @@ We examine two more specific cases of this that are relevant in Section~\ref{sec
 
 \begin{ex}
 	\label{ex:interactivefiber1uDxI}
-	Let $H$ be the 3--manifold illustrated in Figure~\ref{fig:interactivefiber1uDxI}.
-	The 
-	
+	Let $H$ be the 3--manifold with faces illustrated in Figure~\ref{fig:interactivefiber1uDxI}.
+	Take 8 copies of the cylindrical block $\DD\times\I$, one for each highlighted annulus in Figure~\ref{fig:interactivefiber1uDxI}, and include a copy of the annular face $S^1\times\I$ into the boundary of each cylindrical block and into the corresponding annular boundary component of $H$.
+	The resulting adjunction has boundary consisting of 6 copies of $S^2$.
 \end{ex}
 
 \begin{figure}[H]
 	\centering
 	\caption{Attaching cylindrical blocks over annular boundary components.
-	The 3--manifold is illustrated by its boundary which is embedded in $S^3$, realized as the one point compactification of $ \R^3 $.
+	The 3--manifold with faces is illustrated by its boundary which is embedded in $S^3$, realized as the one point compactification of $ \R^3 $.
+	Each face is either an annulus or a pair of pants.
 	The 3--manifold is the solid containing the point at infinity, and cylindrical blocks are attached over the highlighted annuli.}
 	\includegraphics[height=3in]{figures/dummy.jpg}
 	\label{fig:interactivefiber1uDxI}
 \end{figure}
 
-
-
 \begin{ex}
-	\label{ex:handlesphere}
-	We first see an example of Proposition~\ref{prop:handle}.
-	Let $V$ be a 3--dimensional solid torus (i.e.\ $V=\D^2\times S^1$) and recall that a 3--dimensional 2--handle has the form $H^2=\D^2\times\D^1$.
-	Let $\varphi$ be 2--handle attachment map defined by
-	\[
-		\begin{array}{rrcl}
-			\varphi:	&	\pd\D^2\times\D^1	&	\to		&	\pd\D^2\times S^1=\pd V	\\
-						&	(e^{i\theta},t)		&	\mapsto	&	(e^{i\theta},e^{\pi it/2}).
-		\end{array}
-	\]
-	The 3-manifold $V\cup_{\varphi}H^1$ that results from this handle attachment has one boundary component.
-	It consists of the faces $\D^2\times\{e^{i\pi/2}\}$, $\D^2\times\{e^{-i\pi/2}\}$, and $\pd\D^2\times[e^{i\pi/2},e^{-i\pi/2}]$, where we use $[e^{i\pi/2},e^{-i\pi/2}]$ to denote the oriented arc in $S^1$, orientation agreeing with that of $S^1$, from the angle $\theta=\pi/2$ to $\theta=-\pi/2$.
-	
-	Next, we use Corollary~\ref{cor:addfaces} and add a copy of $D^2\times\D^1$ to $V\cup_{\varphi}H^1$.
-	We define an attachment map $\psi$ on $\pd(\D^2\times\D^1)$ piecewise by
-	\[
-		\begin{array}{rccl}
-			\restr{\psi}{S^1\times\D^1}:
-				&	S^1\times\D^1
-				&	\to	
-				&	\pd (V\cup_\varphi H^1)			\\
-			
-				&	(e^{i\theta},t)
-				&	\mapsto
-				&	(e^{i\theta},e^{\pi i(t+2)/2}),	\\
-
-			\restr{\psi}{\D^2\times\{-1\}}:
-				&	\D^2\times\{-1\}
-				&	\to	
-				&	\pd (V\cup_\varphi H^1)			\\
-				
-				&	(re^{i\theta},-1)
-				&	\mapsto
-				&	(re^{i\theta},e^{\pi i/2}),		\\
-				
-			\restr{\psi}{\D^2\times\{1\}}:
-				&	\D^2\times\{1\}
-				&	\to	
-				&	\pd (V\cup_\varphi H^1)			\\
-				
-				&	(re^{i\theta},1)
-				&	\mapsto
-				&	(re^{i\theta},e^{-\pi i/2}).
-		\end{array}
-	\]
-	The resulting 3--manifold $(V\cup_\varphi H^1)\cup_\psi (D^2\times\D^1)$ is smooth and closed.	
+	\label{ex:interactivefiber2uDxI}
+	Let $H$ be the 3--manifold with faces illustrated in Figure~\ref{fig:interactivefiber2uDxI}.
+	Take 6 copies of the cylindrical block $\DD\times\I$, one for each highlighted annulus in Figure~\ref{fig:interactivefiber2uDxI}, and include a copy of the annular face $S^1\times\I$ into the boundary of each cylindrical block and into the corresponding annular boundary component of $H$.
+	The resulting adjunction has boundary consisting of 4 copies of $S^2$.
 \end{ex}
 
-The 3--manifold found in Example~\ref{ex:handlesphere} is $S^3$.
+\begin{figure}[H]
+	\centering
+	\caption{Attaching cylindrical blocks over annular boundary components.
+		The 3--manifold with faces is illustrated by its boundary which is embedded in $S^3$, realized as the one point compactification of $ \R^3 $.
+		Each face is either an annulus or a pair of pants.
+		The 3--manifold is the solid containing the point at infinity, and cylindrical blocks are attached over the highlighted annuli.}
+	\includegraphics[height=3in]{figures/dummy.jpg}
+	\label{fig:interactivefiber2uDxI}
+\end{figure}
+
+\begin{ex}
+	Let $W$ be a 4--manifold with boundary a 3--manifold $M$ (i.e.\ $ \pd_j W =\emptyset$ for $j>1$).
+	Suppose $M$ has a decomposition $M=\cup_i H_i$ into a collection of submanifolds $H_i$ with faces such that if $H_i\cap H_j\neq\emptyset$, $i\neq j$, then $H_i\cap H_j$ is a face of each.
+	We will call the $H_i$ \emph{decomposing blocks} of $M$.
+	
+	Suppose a decomposing block $H_i$ of $M$ is diffeomorphic to a regular $n$--gon $G_n$ crossed with $S^1$, and suppose $H_j$ is a decomposing block such that $H_i\cap H_j$ is an annular face of each.
+	Let $D=G_n\times\DD$ be a 4--manifold with faces, and consider the inclusion maps
+	\[
+		\iota_W:G_n\times S^1\into H_i\subset \pd W 
+	\]
+	and
+	\[
+		\iota_D:G_n\times S^1\into G_n\times S^1\subset \pd D.
+	\]
+	Then $\iota_W(G_n\times S^1)$ and $\iota_D(G_n\times S^1)$ are each faces of $W$ and $D$, so we form the adjunction $W'=W\cup_{G_n\times S^1} D$.
+	
+	
+	
+\end{ex}
+
+
+%\begin{ex}
+%	\label{ex:handlesphere}
+%	We first see an example of Proposition~\ref{prop:handle}.
+%	Let $V$ be a 3--dimensional solid torus (i.e.\ $V=\D^2\times S^1$) and recall that a 3--dimensional 2--handle has the form $H^2=\D^2\times\D^1$.
+%	Let $\varphi$ be 2--handle attachment map defined by
+%	\[
+%		\begin{array}{rrcl}
+%			\varphi:	&	\pd\D^2\times\D^1	&	\to		&	\pd\D^2\times S^1=\pd V	\\
+%						&	(e^{i\theta},t)		&	\mapsto	&	(e^{i\theta},e^{\pi it/2}).
+%		\end{array}
+%	\]
+%	The 3-manifold $V\cup_{\varphi}H^1$ that results from this handle attachment has one boundary component.
+%	It consists of the faces $\D^2\times\{e^{i\pi/2}\}$, $\D^2\times\{e^{-i\pi/2}\}$, and $\pd\D^2\times[e^{i\pi/2},e^{-i\pi/2}]$, where we use $[e^{i\pi/2},e^{-i\pi/2}]$ to denote the oriented arc in $S^1$, orientation agreeing with that of $S^1$, from the angle $\theta=\pi/2$ to $\theta=-\pi/2$.
+%	
+%	Next, we use Corollary~\ref{cor:addfaces} and add a copy of $D^2\times\D^1$ to $V\cup_{\varphi}H^1$.
+%	We define an attachment map $\psi$ on $\pd(\D^2\times\D^1)$ piecewise by
+%	\[
+%		\begin{array}{rccl}
+%			\restr{\psi}{S^1\times\D^1}:
+%				&	S^1\times\D^1
+%				&	\to	
+%				&	\pd (V\cup_\varphi H^1)			\\
+%			
+%				&	(e^{i\theta},t)
+%				&	\mapsto
+%				&	(e^{i\theta},e^{\pi i(t+2)/2}),	\\
+%
+%			\restr{\psi}{\D^2\times\{-1\}}:
+%				&	\D^2\times\{-1\}
+%				&	\to	
+%				&	\pd (V\cup_\varphi H^1)			\\
+%				
+%				&	(re^{i\theta},-1)
+%				&	\mapsto
+%				&	(re^{i\theta},e^{\pi i/2}),		\\
+%				
+%			\restr{\psi}{\D^2\times\{1\}}:
+%				&	\D^2\times\{1\}
+%				&	\to	
+%				&	\pd (V\cup_\varphi H^1)			\\
+%				
+%				&	(re^{i\theta},1)
+%				&	\mapsto
+%				&	(re^{i\theta},e^{-\pi i/2}).
+%		\end{array}
+%	\]
+%	The resulting 3--manifold $(V\cup_\varphi H^1)\cup_\psi (D^2\times\D^1)$ is smooth and closed.	
+%\end{ex}
+%
+%The 3--manifold found in Example~\ref{ex:handlesphere} is $S^3$.
 We spend the remainder of this section developing tools that help classify the manifolds that arise from our operations.
 
 Put $n=\mu+\lambda$, recall that $H^\lambda=D^\lambda\times\D^\mu$, let $M$ be an $n$--manifold and let $M'=M\cup_\varphi H^\lambda$ be the result of an $n$--dimensional $\lambda$--handle attachment.

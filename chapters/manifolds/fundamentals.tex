@@ -92,11 +92,11 @@ We classify the points of a manifold by the charts that exist around them.
 	Consider $\varphi(p)=(x_0,\dots,x_{n-1})\in \HH^k\times\R^{n-k}$.
 	Then $p$ is classified as a \emph{$j$--corner point}, where $j$ is the number of entries $x_0,\dots,x_{k-1}$ that are 0.
 	For $p$ a $j$--corner, we define the \emph{depth} of $p$ by $\dep{p}=j$.
-	By smooth compatibility of our charts, examining the image of $p$ through exactly one chart is sufficient this classification.
+	By smooth compatibility of our charts, examining the image of $p$ through exactly one chart is sufficient for this classification.
 	
 	To coincide with the topological notion of interior and boundary, we call a $0$--corner an \emph{interior point}, and a $j$--corner is a \emph{boundary point} for $j>0$.
 	For $j>0$, we use $\pd_j M$ to denote the set of points $\{p\in M:p\textrm{ is a }j\textrm{--corner}\}$, and call $\pd_j M$ the \emph{$j$--boundary} of $M$.
-	The union $$\bigcup_{j>1} \pd_j M$$ is denoted $\pd M$ and is called the \emph{boundary} of $M$.
+	The union $$\bigcup_{j\geq 1} \pd_j M$$ is denoted $\pd M$ and is called the \emph{boundary} of $M$.
 \end{defn}	
 
 This classification let's us define the subclass of smooth manifolds with corners that is most useful to us.
@@ -110,6 +110,19 @@ This classification let's us define the subclass of smooth manifolds with corner
 There are several advantages to considering the subclass of manifolds with faces.
 First, if $M$ is a manifold with faces then any connected face or disjoint union of connected faces of $M$ is, itself, a manifold with faces.
 Second, if $M$ is a manifold with faces then so is $M\times \HH$.
+
+%\begin{prop}
+%	Let $(W,\mathcal{A})$ be an $n$--manifold such that the boundary $M=\pd W$ is an $(n-1)$--manifold.
+%	Suppose $M$ has a decomposition $M=\cup_i H_i$ into submanifolds with faces such that $H_i\cap H_j$ is nonempty if and only if $H_i\cap H_j$ is a face of each.
+%	The $H_i$ are the \emph{decomposing blocks} of $M$.
+%	
+%	Then there exists a smooth structure $\mathcal{B}$ on $W$ such that $(W,\mathcal B)$ is a manifold with faces and each face of $(W,\mathcal B)$ is a decomposing block of $M$.	
+%\end{prop}
+%
+%\begin{proof}
+%	We obtain $\mathcal{B}$ from $\mathcal{A}$ by restricting the charts of $A$ near the corners of the $H_i$.
+%	More specifically, we obtain $\mathcal B$ by removing each chart $(\varphi,U)$ of $\mathcal{A}$ about a given $j$--corner $p$ of $H_i$ if $U$ cannot be restricted to $U'$ in such a way that $\varphi(p)$ is a $(j+1)$--corner in $\varphi(U')$ inside of an appropriate $\HH^k\times\R^{n-k}$, and replacing $(\varphi,U)$ with $(\varphi,U')$ otherwise.
+%\end{proof}
 	
 \begin{defn}
 	If $M$ is a compact smooth manifold and every point of $M$ is interior, then $M$ is \emph{closed} as a manifold.
