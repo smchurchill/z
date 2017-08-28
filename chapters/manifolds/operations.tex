@@ -76,7 +76,7 @@ They tell us that manifolds can be attached over faces, the attachment space is 
 
 \begin{prop}
 	\label{prop:addface}
-	Let $X$ and $X'$ be smooth $n$--manifolds with faces, let $F$ be a manifold with faces, and let $\iota:F\to X$ and $\iota':F\to X'$ be inclusion maps such that $\iota(F)$ is a face of $X$ and $\iota'(F)$ is a face of $X'$.
+	Let $X$ and $X'$ be smooth $n$--manifolds with faces, let $F$ be an $(n-1)$--manifold with faces, and let $\iota:F\to X$ and $\iota':F\to X'$ be inclusion maps such that $\iota(F)$ is a face of $X$ and $\iota'(F)$ is a face of $X'$.
 	Then the adjunction $X\cup_F X'$ is a smooth $n$--manifold with faces.
 	
 	For each $j$, the $j$--boundary of $X\cup_F X'$ is decomposed into the $j$--boundary of $X$ minus the image of $F$ in $X$, the $j$--boundary of $X'$ minus the image of $F$ in $X'$, and the $j$--boundary of $F$ seen as a subset of $X\cup_F X'$.
@@ -182,9 +182,31 @@ The following proof is an adaptation from \cite{davis}
 	Similarly, if $p$ is a $j$--corner of $X'$, $j\geq 0$, and $k$ is the number of faces in $\varphi({\bf F})$ that contain $p$, then $p$ is a $(j-k)$--corner of $X\cup_{\bf F} X'$.
 \end{cor}
 
+These two results are our main tools for attaching manifolds with faces together over their faces.
+The following is used to produce manifolds with faces.
+
 \begin{figure}[H]
 	\centering
-	\caption{Attaching two copies of $\D^2\times\I$ together.}
+	\caption{Attaching two copies of $\D^2\times\I$ together, disc in disc.}
+	\includegraphics[height=3in]{figures/dummy.jpg}
+	\label{fig:cyloncyl}
+\end{figure}
+
+\begin{prop}
+	\label{prop:attachingManifoldsFaceUInterior}
+	Let $X$, $X'$ be $n$--manifolds with, let $F$ be an $(n-1)$--manifold with faces and let $\iota:F\into X$ and $\iota':F\into X'$ be inclusion maps such that $\iota(F)$ is a face of $X$ and such that $\iota'(F)$ is contained in the interior of a face of $X'$.
+	Then the adjunction $X\cup_F X'$ is a smooth $n$--manifold with faces.
+	
+	Moreover, for each $j$, the $j$--boundary of $X\cup_F X'$ may be decomposed as follows.
+	For $j=1$, the 1--boundary of $X\cup_F X'$ is decomposed into the $1$--boundary of $X$ minus the image of $F$ in $X$ and the 1--boundary of $X'$ minus the image of $F$ in $X'$.
+	For $j>1$, the $j$--boundary is  decomposed into the $j$--boundary of $X$ and the $j$--boundary of $X'$.
+\end{prop}
+
+Note that Proposition~\ref{prop:handle} is a special case of this proposition.
+
+\begin{figure}[H]
+	\centering
+	\caption{Attaching two copies of $\D^2\times\I$ together, annulus to annulus.}
 	\includegraphics[height=3in]{figures/dummy.jpg}
 	\label{fig:DxIuDxI}
 \end{figure}
@@ -281,9 +303,9 @@ We examine two more specific cases of this that are relevant in Section~\ref{sec
 \end{figure}
 
 \begin{ex}
-	Let $W$ be a 4--manifold with boundary a 3--manifold $M$ (i.e.\ $ \pd_j W =\emptyset$ for $j>1$).
+	Let $W$ be a 4--manifold with boundary $M$, itself a 3--manifold  (i.e.\ $ \pd_j W =\emptyset$ for $j>1$).
 	Suppose $M$ has a decomposition $M=\cup_i H_i$ into a collection of submanifolds $H_i$ with faces such that if $H_i\cap H_j\neq\emptyset$, $i\neq j$, then $H_i\cap H_j$ is a face of each.
-	We will call the $H_i$ \emph{decomposing blocks} of $M$.
+	The $H_i$ are \emph{decomposing blocks} of $M$.
 	
 	Suppose a decomposing block $H_i$ of $M$ is diffeomorphic to a regular $n$--gon $G_n$ crossed with $S^1$, and suppose $H_j$ is a decomposing block such that $H_i\cap H_j$ is an annular face of each.
 	Let $D=G_n\times\DD$ be a 4--manifold with faces, and consider the inclusion maps
@@ -294,10 +316,11 @@ We examine two more specific cases of this that are relevant in Section~\ref{sec
 	\[
 		\iota_D:G_n\times S^1\into G_n\times S^1\subset \pd D.
 	\]
-	Then $\iota_W(G_n\times S^1)$ and $\iota_D(G_n\times S^1)$ are each faces of $W$ and $D$, so we form the adjunction $W'=W\cup_{G_n\times S^1} D$.
+	Then $\iota_D(G_n\times S^1)$ is a face of $D$ and $\iota_W(G_n\times S^1)$ is interior to a face of $W$, so we form the adjunction $W'=W\cup_{G_n\times S^1} D$.
+	By Proposition~\ref{prop:attachingManifoldsFaceUInterior}, the result is a manifold with faces, and the $j$--boundaries of $W'$ is well--defined for each $j$.
 	
-	
-	
+	For $j=1$, the $j$--boundary of $W'$ is decomposed into $M\setminus H_i$ and $g_i\times \DD$ for each $i$, where the $g_i$ are the faces of $G_n$.
+	i.e.\ the $1$--boundary of $W'$ is $M\setminus H_i$ along with a collection of cylinders, one per face of $G_n$.
 \end{ex}
 
 
