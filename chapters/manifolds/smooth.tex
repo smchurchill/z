@@ -1,3 +1,8 @@
+\label{sec:smooth}
+
+If we hope to glue manifolds together and produce another manifold, that manifold needs an atlas.
+This section and the next provide the tools that allow us to construct new atlases from old.
+
 \begin{defn}[Smooth Map]
 	\label{def:smoothmap}
 	Let $(X,\{U_\alpha,\varphi_\alpha\})$ and $(M,\{V_\beta,\psi_\beta\})$ be smooth $n$-- and $k$--manifolds, with $\{U_\alpha,\varphi_\alpha\}$ and $\{V_\beta,\psi_\beta\}$ maximal smooth atlases.
@@ -18,10 +23,10 @@ Manifolds are defined by their local homogeneity, and a tangent space is a preci
 There are many ways to define tangent spaces, and we do so using derivations as in \cite{Lee00}.
 This approach is used for two reasons.
 First, it causes the vector space structure of the tangent space to follow directly from the definition.
-Second, the definition is applicable to manifolds with faces without any fiddling around with details, and the tangent spaces obtained are still vector spaces of an appropriate dimension.
+Second, the definition is applicable to manifolds with faces, and the tangent spaces obtained are still vector spaces of an appropriate dimension.
 
 \begin{defn}[Derivations on $\R^n$]
-	Let $x$ be a point in $\R^n$, and denote the space of smooth functions $\R^n\to\R$ be $C^\infty(\R^n)$.
+	Let $x$ be a point in $\R^n$ and let the space of smooth functions $\R^n\to\R$ be $C^\infty(\R^n)$.
 	A linear map $A:C^\infty(\R^n)\to\R$ is called a \emph{derivation at $x$} if it satisfies the product rule
 	\[
 		A(\varphi\,\psi)=\varphi(x)A\psi+\psi(x)A\varphi
@@ -203,12 +208,12 @@ Combining Lemma~\ref{lem:pushprop} and Proposition~\ref{prop:incl} with a smooth
 	so $T_p M$ is as well.
 \end{proof}
 
-We also classify smooth maps between manifolds.
-This classification helps us define a submanifold and provides some of the groundwork for defining handles in the next section.
+We define standard terminology for smooth maps between manifolds.
+This helps us describe submanifolds and provides some of the groundwork for defining handles in the next section.
 
 \begin{defn}[Embedding]
 	Let $f:X\to M$ be a smooth map between manifolds.
-	The \emph{rank} of $f$ at the point $p\in X$ is the rank of the pushforward $f_*$ as a linear map.
+	The \emph{rank} of $f$ at the point $p\in X$ is the rank of $f_*(p)$, the pushforward evaluated at $p$, as a linear map.
 	This is computed as the rank of the matrix of partial derivatives of $f$ in any smooth chart or as the dimension of $f_*(T_p X)\subset T_{f(p)} M$.
 	If $f$ has rank $k$ for every $p$ in $X$, then $f$ is of \emph{constant rank} and we say $\rk f=k$.
 		
@@ -257,7 +262,7 @@ This concept is made precise through homotopy.
 			& (x,t)	& \mapsto & H_t(x)
 		\end{array}
 	\]
-	with $H_t$ a continuous function $X\to M$ for all $t$, $H_0(x)=f(x)$, and $H_1(x)=g(x)$.
+	and $H_t$ a continuous function $X\to M$ for all $t$, $H_0(x)=f(x)$, and $H_1(x)=g(x)$.
 	Then $H$ is called a \emph{homotopy} between $f$ and $g$.
 	If a homotopy exists, then $f$ and $g$ are \emph{homotopic}.
 	Less formally, $f$ and $g$ being homotopic means that one can be continuously deformed into the other.
@@ -269,7 +274,7 @@ This concept is made precise through homotopy.
 	
 	Let $M$ be a manifold and $X\subset M$ a subspace that is not necessarily a submanifold.
 	A continuous map $F:M\times\I\to M$ such that, for every $m$ in $M$ and $x$ in $X$, $F(m,0)=m$, $F(m,1)\in X$, and $F(x,1)=x$, is called a \emph{deformation retraction}, and the subspace $X$ is called a \emph{deformation retract} of $M$.
-	Because a deformation retraction is a homotopy equivalence between $M$ and $X$, a deformation retraction from $M$ onto $X$ exists if and only if $M$ and $X$ are homotopy equivalent.
+	A deformation retraction is a homotopy equivalence between $M$ and $X$.
 \end{defn}
 
 \begin{prop}
@@ -277,8 +282,8 @@ This concept is made precise through homotopy.
 \end{prop}
 
 \begin{defn}
-	Let $X$ be a topological space, let $P$ be a property that an element of $X$ can possess, and let $X_P$ be the subset of elements of $X$ that posses property $P$.
-	A property $P$ is \emph{stable under perturbation} if, for any element $x$ in $X_P$, there is an open set $U$ of $X$ such that $x\in U$ and $U\subset X_P$.
+	Let $X$ be a topological space, let $P$ be a property that an element of $X$ can possess, and let $X_P$ be the subset of elements of $X$ that possess property $P$.
+	A property $P$ is \emph{stable} if, for any element $x$ in $X_P$, there is an open set $U$ of $X$ such that $x\in U$ and $U\subset X_P$.
 	A property is \emph{generic} if $X_P$ is open and dense in $X$
 \end{defn}
 
@@ -343,13 +348,15 @@ We define an orientation of a manifold $M$ to be a continuous orientation of the
 We use continuous here to mean that the orientation is constant on any chart.
 
 \begin{defn}
-	Let $M$ be an $n$--manifold with maximal smooth atlas $\mathcal{A}$, let $(\varphi, U)\in\mathcal{A}$.
+	Let $M$ be an $n$--manifold with maximal smooth atlas $\mathcal{A}$, let $(\varphi, U)\in\mathcal{A}$, $U$ connected.
 	A \emph{continuous choice of orientation} on $U$ is an orientation of every tangent space to $U$ such that, for every $p,q\in U$, the linear isomorphisms
 	\begin{eqnarray*}
 		\varphi_*^p:T_p U&\to& T_{\varphi(p)}\varphi(U)\\
 		\varphi_*^q:T_q U&\to& T_{\varphi(q)}\varphi(U)		
 	\end{eqnarray*} take the orientations of $T_p U$, $T_q U$ to the same orientation of $T_{\varphi(p)}\varphi(U)\cong  T_{\varphi(q)}\varphi(U)$.
-	An \emph{orientation} of $M$ is an orientation of every tangent space to $M$ that induces a continuous choice of orientation for every chart of $\mathcal{A}$. 
+	
+	If $(\varphi,U)\in\mathcal{A}$ is a chart with $U$ disconnected, a continuous choice of orientation on each connected component of $U$ is a continuous choice of orientation on $U$.
+	An \emph{orientation} of $M$ is an orientation of every tangent space to $M$ that induces a continuous choice of orientation for every chart of $\mathcal{A}$.
 \end{defn}
 
 \begin{defn}

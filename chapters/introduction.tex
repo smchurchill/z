@@ -1,27 +1,31 @@
-Every 3--manifold is the boundary of some 4--manifold.
+Every closed 3--manifold is the boundary of some 4--manifold.
 The earliest proofs of this fact are due to Ren\'e Thom in the early 1950's \cite{Thom}.
 Since then the problem has been approached from multiple avenues.
 A series of papers in the 1960's by Hirsch~\cite{Hirsch61}, Rokhlin~\cite{Rokhlin65}, and Wall~\cite{Wall65} built up the theory of immersing and then embedding 3--manifolds in $\R^5$.
 The embedded 3--manifold then bounds a ``Seifert 4--manifold'' as with knots bounding Seifert surfaces in $\R^3$.
 Also in the 60's, Lickorish showed that all orientable 3--manifolds may be represented as surgery on a 3--sphere, and thus bound 4--manifolds.
 A later result by Rourke~\cite{Rourke85} demonstrates something similar, this time by investigating Heegaard diagrams of the given 3--manifolds.
+In the 90's, Turaev~\cite{Turaev91} discussed shadow surfaces as a method of studying quantum invariants.
+He also showed that a 3--manifold as well as a 4--manifold whose boundary is that 3--manifold may both be reconstructed from the same shadow surface.
 
-Historical arguments prove 3--manifolds bound 4--manifolds, but we normally describe our 3-- and 4--manifolds using triangulations.
-We would like a process that takes us from a triangulated 3--manifold to a triangulated 4--manifold.
-The work done by Turaev in ~\cite{Turaev91} paved the way for an argument in ~\cite{CostThur08} that includes a process used to estimate a bound on the number of 4--dimensional simplices needed to triangulate a 4--manifold whose boundary is a given 3--manifold.
-This process involved the definition of structures called \emph{shadows} that feature prominently in the work of Thurston and Costantino at the time.
-A shadow is, essentially, a 2--dimensional CW--complex with some extra structure.
-Most importantly, a shadow puts restrictions on how many 2--cells may be incident to a single vertex or attached over a single edge.
-The extra structure of the shadow is not needed in the scope of this work, so we define only the concept of the 2--dimensional CW--complex.
+Expressing a manifold in the form of a triangulation allows for automated computations of manifold invariants, so a proof that takes us from a triangulated 3--manifold to a triangulated 4--manifold whose boundary is that 3--manifold is desirable.
+The work done by Turaev in ~\cite{Turaev91} paved the way for Costantino and Thurston's ``3--manifolds Efficiently Bound 4--manifolds.''
+The focus of the paper is a process used to estimate a bound on the number of 4--dimensional simplices needed to triangulate a 4--manifold whose boundary is a given 3--manifold.
+This process follows the structure of a proof that 3--manifolds bound 4--manifolds in the smooth case, but that proof is only provided as a sketch.
 
-What follows is a brief overview of what to expect, only slightly more descriptive than our table of contents.
-\begin{itemize}
-	\item Chapter \ref{cha:manifolds} consists entirely of geometric topology fundamentals.
-	Most of the material is used only to support the main topics of chapter 2, which are handle attachment and the definition of triangulations.
-	A reader that is well read in those topics is encouraged to skim Chapter \ref{cha:manifolds} in order to familiarize themselves with the notation used.
-	\item Chapter \ref{cha:cobordisms} is a build up to an argument that 3--manifolds bound 4--manifolds in the smooth case.
-	We make this argument in a constructive way so that it can be turned into an algorithm in the piecewise--linear case.
-	The main focus is Section \ref{sec:3bound4}, and the first two sections cover definitions and the techniques of proof in the case of orientable 2--manifolds bounding 3--manifolds that we draw from in Section \ref{sec:3bound4}.
-	\item Chapter \ref{cha:algorithm} is our collection of algorithms.
-	We initialize some key definitions and present some minor results before diving directly into the algorithms.
-\end{itemize}
+The focus of this thesis is to provide a detailed proof of that closed, orientable 3--manifolds bound 4--manifolds.
+Given a closed, orientable 3--manifold $M$ and a smooth generic function $f:M\to\RR$, we find an explicit construction of a 4--manifold $W$ whose boundary is exactly $M$.
+Additionally, we provide a handle decomposition of $W$ encoded as a 2--complex $S$ plus a function from the faces of $S$ to the integers.
+This 2--complex is the Stein factorization of $f$, and the pair $(S,f)$ would be a \emph{gleamed shadow} of $W$ in the work of Turaev.
+
+%What follows is a brief overview of what to expect, only slightly more descriptive than our table of contents.
+%\begin{itemize}
+%	\item Chapter \ref{cha:manifolds} consists entirely of geometric topology fundamentals.
+%	Most of the material is used only to support the main topics of chapter 2, which are handle attachment and the definition of triangulations.
+%	A reader that is well read in those topics is encouraged to skim Chapter \ref{cha:manifolds} in order to familiarize themselves with the notation used.
+%	\item Chapter \ref{cha:cobordisms} is a build up to an argument that 3--manifolds bound 4--manifolds in the smooth case.
+%	We make this argument in a constructive way so that it can be turned into an algorithm in the piecewise--linear case.
+%	The main focus is Section \ref{sec:3bound4}, and the first two sections cover definitions and the techniques of proof in the case of orientable 2--manifolds bounding 3--manifolds that we draw from in Section \ref{sec:3bound4}.
+%	\item Chapter \ref{cha:algorithm} is our collection of algorithms.
+%	We initialize some key definitions and present some minor results before diving directly into the algorithms.
+%\end{itemize}

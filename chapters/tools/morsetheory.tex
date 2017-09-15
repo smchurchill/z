@@ -3,7 +3,24 @@
 Our primary use of Morse theory is to define a pair of related constructions.
 The first is the handle decomposition of a manifold that is induced by a Morse function, and this decomposition comes with a dual decomposition.
 The second is the \emph{Stein complex} of a Morse function on a manifold.
-The main results from this chapter connect a Stein complex with a handle decomposition, and this construction is extended to triangulations in the remaining chapter.
+The main results from this chapter connect a Stein complex with a handle decomposition.
+%, and this construction is extended to triangulations in the remaining chapter.
+
+First, we define the concept of genericity.
+
+\begin{defn}
+	Let $X$ be a topological space, let $P$ be a property that an element of $X$ can possess, and let $X_P$ be the subset of elements of $X$ that possess property $P$.
+	A property $P$ is \emph{stable} if, for any element $x$ in $X_P$, there is an open set $U$ of $X$ such that $x\in U$ and $U\subset X_P$.
+	A property is \emph{generic} if $X_P$ is open and dense in $X$
+\end{defn}
+
+To discuss generic functions, we need to consider a function as an element of a topological space.
+The standard topology to use for function spaces is the \emph{compact--open topology.}
+If $C^\infty(X,M)$ is the set of smooth maps $X\to M$, then the open sets of the compact--open topology of $C^\infty(X,M)$ are the arbitrary unions of finite intersections of subsets of the form
+\[
+	V(K,U) = \{f|f(K)\subset U\}
+\] 
+where $K\subset X$ is compact and $U\subset M$ is open.
 
 \begin{defn}
 	A generic smooth function $f:M\to\R$ with $M$ an $n$--manifold is called a \emph{Morse function}.

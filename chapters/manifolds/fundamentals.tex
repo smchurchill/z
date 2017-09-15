@@ -26,7 +26,7 @@ We use \emph{charts} and \emph{atlases} to make explicit what is meant by ``look
 		\HH=\{x\in\R:x\geq 0\},
 	\]
 	and is a topological subspace of $\R$ endowed with the subspace topology.
-	We use the notations $\inter{\HH}$ and $\pd \HH$ to denote the topological interior and boundary of $\HH$ as subsets of $\R$ which are $\{0\}$ and $\{x\in\R:x>0\}$ respectively.
+	We use the notations $\inter{\HH}$ and $\pd \HH$ to denote the topological boundary and interior of $\HH$ as subsets of $\R$ which are $\{0\}$ and $\{x\in\R:x>0\}$ respectively.
 	
 	We take products of $\HH^k$ with $\R^{n-k}$ to form \emph{$n$--dimensional real space with a $k$--corner}.
 	Explicitly, this space is
@@ -85,21 +85,27 @@ It eases the notational burden to assume that our manifolds are always equipped 
 This assumption allows us to omit writing an atlas when talking about a manifold.
 We also assume that our manifolds are connected.
 
-We classify the points of a manifold by the charts that exist around them.
+There is a well--defined description of the points of a manifold $(M,\mathcal{A})$ stemming from the charts that exist around them.
 
 \begin{defn}
 	Let $M$ be a smooth $n$--manifold, $p\in M$, and $(U,\varphi)$ a chart about $p$.
 	Consider $\varphi(p)=(x_0,\dots,x_{n-1})\in \HH^k\times\R^{n-k}$.
-	Then $p$ is classified as a \emph{$j$--corner point}, where $j$ is the number of entries $x_0,\dots,x_{k-1}$ that are 0.
+	Then $p$ is a \emph{$j$--corner point}, where $j$ is the number of entries $x_0,\dots,x_{k-1}$ that are 0.
 	For $p$ a $j$--corner, we define the \emph{depth} of $p$ by $\dep{p}=j$.
-	By smooth compatibility of our charts, examining the image of $p$ through exactly one chart is sufficient for this classification.
+	By smooth compatibility of our charts, examining the image of $p$ through exactly one chart is sufficient to describe it.
 	
 	To coincide with the topological notion of interior and boundary, we call a $0$--corner an \emph{interior point}, and a $j$--corner is a \emph{boundary point} for $j>0$.
 	For $j>0$, we use $\pd_j M$ to denote the set of points $\{p\in M:p\textrm{ is a }j\textrm{--corner}\}$, and call $\pd_j M$ the \emph{$j$--boundary} of $M$.
 	The union $$\bigcup_{j\geq 1} \pd_j M$$ is denoted $\pd M$ and is called the \emph{boundary} of $M$.
 \end{defn}	
 
-This classification let's us define the subclass of smooth manifolds with corners that is most useful to us.
+This description lets us define the subclass of smooth manifolds with corners that is most useful to us.
+
+\begin{rmk}
+	It is worth mentioning that we are defining concepts that are recognizable by other names.
+	For example, $\partial_i M$ may be called ``the open co-dimension $i$ stratum of the manifold with cubical corners.''
+	This would make the closure of $\partial_i M$ the closed co-dimension $i$ stratum, and this is often denoted $M^i$.
+\end{rmk}
 
 \begin{defn}
 	Let $M$ be a smooth $n$--manifold, and $\pd_1(M)$ the 1--boundary of $M$.
@@ -148,7 +154,7 @@ Otherwise, a ``closed manifold'' will refer to a manifold with empty boundary.
 	The space $\D^{n+1}$, the topological closure of $B^{n+1}$, is the closed $(n+1)$--disc.
 	Both $B^{n+1}$ and $\D^{n+1}$ are $(n+1)$--manifolds.
 	The disc $\D^{n+1}$ is a manifold whose boundary is the $n$--sphere, a closed $n$--manifold.
-	Note that the closed 1--disc is the unit interval, which we denote by $\I=[\,0,1\,]$.
+	Note that the closed 1--disc is the interval $[\,-1,1\,]$ which is homeomorphic to the unit interval, denoted by $\I=[\ 0,1\,]$.
 	
 	It is often more efficient, in terms of notation, to consider $S^1$, $\D^2$, $S^3$, and $D^4$ as submanifolds of the complex plane $\C$ or $\C^2$.
 	We do exactly this in Theorem \ref{thm:mpgV} while defining maps $S^1\times\DD\to S^1\times\DD$.
@@ -223,7 +229,7 @@ To do this, we first require a suitable atlas.
 	Define the smooth functions $\lambda_\alpha$ on $M$ by $\lambda_\alpha=\lambda\comp\varphi_\alpha$ on $U_\alpha$ and $\lambda_\alpha=0$ outside of $U_\alpha$.
 	Then $\{\lambda_\alpha\}$ is \emph{the family of bump functions} associated to $\{U_\alpha\}$, and the family $\{\mu_\alpha\}$ of functions defined by
 	\[
-		\mu_\alpha(p)=\frac{\lambda_\alpha(p)}{\sum_\alpha\lambda_\alpha(p)}
+		\mu_\alpha(p)=\frac{\lambda_\alpha(p)}{\sum_\beta\lambda_\beta(p)}
 	\]
 	is the \emph{partition of unity} associated to $\{U_\alpha,\varphi_\alpha\}$.
 \end{defn}
