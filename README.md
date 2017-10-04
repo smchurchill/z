@@ -2,8 +2,6 @@
 
 In-progress thesis for my M.Sc.
 
-In final editing stages.
-
 ## Abstract
 
 The question "which closed 3--manifolds bound 4--manifolds?" has been answered since the early 1950's.
